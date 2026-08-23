@@ -1100,7 +1100,7 @@
       try {
         const controller = new AbortController();
         const timeoutId = setTimeout(() => controller.abort(), 4000);
-        await const authHeaders = await getAdminAuthHeaders({ 'Content-Type': 'application/json' });
+        const authHeaders = await getAdminAuthHeaders({ 'Content-Type': 'application/json' });
         await fetch('https://zaimrosli-worker.huzaimrosli.workers.dev/api/properties', {
           method: 'POST',
           headers: authHeaders,
@@ -1175,7 +1175,7 @@
         const formData = new FormData();
         formData.append('file', file);
         try {
-          const res = await const uploadHeaders = await getAdminAuthHeaders();
+          const uploadHeaders = await getAdminAuthHeaders();
           const res = await fetch('https://zaimrosli-worker.huzaimrosli.workers.dev/api/upload', {
             method: 'POST',
             headers: uploadHeaders,
