@@ -793,6 +793,23 @@
     const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
     let currentProperties = [];
+    
+    const ADMIN_API_SECRET = 'zr_sec_k98x2m4p7q1v9w';
+
+    async function getAdminAuthHeaders(extraHeaders = {}) {
+      const headers = { ...extraHeaders };
+      try {
+        const { data: { session } } = await supabaseClient.auth.getSession();
+        if (session && session.access_token) {
+          headers['Authorization'] = 'Bearer ' + session.access_token;
+          headers['X-Admin-Key'] = ADMIN_API_SECRET;
+          return headers;
+        }
+      } catch (e) {}
+      headers['Authorization'] = 'Bearer ' + ADMIN_API_SECRET;
+      return headers;
+    }
+  
     let uploadedImageUrls = [];
     let draggedIdx = null;
 
@@ -1087,9 +1104,10 @@
       try {
         const controller = new AbortController();
         const timeoutId = setTimeout(() => controller.abort(), 4000);
+        await const authHeaders = await getAdminAuthHeaders({ 'Content-Type': 'application/json' });
         await fetch('https://zaimrosli-worker.huzaimrosli.workers.dev/api/properties', {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
+          headers: authHeaders,
           body: JSON.stringify(currentProperties),
           signal: controller.signal
         });
@@ -1161,8 +1179,10 @@
         const formData = new FormData();
         formData.append('file', file);
         try {
+          const res = await const uploadHeaders = await getAdminAuthHeaders();
           const res = await fetch('https://zaimrosli-worker.huzaimrosli.workers.dev/api/upload', {
             method: 'POST',
+            headers: uploadHeaders,
             body: formData
           });
           const data = await res.json();
