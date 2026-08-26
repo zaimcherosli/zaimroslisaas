@@ -772,7 +772,7 @@
         <!-- Description with full height auto-expand -->
         <div class="form-group" style="margin-bottom: 24px;">
           <label style="display:block; font-size:0.75rem; font-weight:700; color:#64748b; margin-bottom:6px; text-transform:uppercase;">PROPERTY DESCRIPTION (FULL DETAILS)</label>
-          <textarea id="form-description" class="form-textarea" style="min-height: 180px; height: auto; overflow: hidden; resize: vertical;" oninput="autoResizeDescription(this)" required></textarea>
+          <textarea id="form-description" class="form-textarea" style="min-height: 220px; height: 320px; max-height: 550px; overflow-y: auto; resize: vertical; line-height: 1.6; font-size: 0.9rem;" required></textarea>
         </div>
 
         <div class="modal-action-row">
@@ -913,16 +913,17 @@
       }).join('');
     }
 
-    function autoResizeDescription(el) {
+        function autoResizeDescription(el) {
       if (!el) el = document.getElementById('form-description');
       if (el) {
-        el.style.height = 'auto';
-        el.style.height = Math.max(180, el.scrollHeight + 10) + 'px';
+        // Non-destructive smooth expansion without layout-collapsing jumps
+        const targetHeight = Math.max(220, Math.min(550, el.scrollHeight + 10));
+        el.style.height = targetHeight + 'px';
       }
     }
 
     function toggleTenureLotFields() {
-      const status = document.getElementById('form-status').value;
+      const status = document.getElementById('form-status') ? document.getElementById('form-status').value : 'sale';
       const tenureGroup = document.getElementById('group-tenure');
       const lotTypeGroup = document.getElementById('group-lotType');
       if (status === 'rent') {
@@ -940,7 +941,14 @@
       document.getElementById('form-category').value = 'Subsales';
       document.getElementById('form-landSize').value = '';
       document.getElementById('form-ref-url').value = '';
-      document.getElementById('modal-title').textContent = 'Tambah Hartanah';
+      if (document.getElementById('form-source')) document.getElementById('form-source').value = 'my_listing';
+      if (document.getElementById('form-exclusive-expiry')) document.getElementById('form-exclusive-expiry').value = '';
+      if (document.getElementById('form-coa-agent')) document.getElementById('form-coa-agent').value = '';
+      if (document.getElementById('form-coa-phone')) document.getElementById('form-coa-phone').value = '';
+      if (document.getElementById('form-completion')) document.getElementById('form-completion').value = '';
+      if (document.getElementById('form-developer-package')) document.getElementById('form-developer-package').value = '';
+      toggleRenhubFormFields();
+      document.getElementById('modal-title').textContent = 'Add New Property';
       uploadedImageUrls = [];
       rebuildImageThumbsGrid();
       toggleTenureLotFields();
