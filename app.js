@@ -22,34 +22,88 @@ function highlightActiveNavLink() {
   });
 }
 
-// 2. Mobile Drawer Navigation Toggle
+// 2. Mobile Drawer Navigation Toggle & Submenu Accordions (PWA Native Style)
 function initMobileDrawerNav() {
-  const toggleBtn = document.querySelector('.mobile-nav-toggle');
+  const toggleBtns = document.querySelectorAll('.mobile-nav-toggle');
   const overlay = document.querySelector('.mobile-overlay');
-  const closeBtn = document.querySelector('.mobile-drawer-close');
+  const closeBtns = document.querySelectorAll('.mobile-drawer-close');
 
-  if (toggleBtn && overlay) {
-    toggleBtn.addEventListener('click', () => {
-      overlay.classList.add('active');
-      document.body.style.overflow = 'hidden';
-    });
-  }
-
-  if (closeBtn && overlay) {
-    closeBtn.addEventListener('click', () => {
+  function closeDrawer() {
+    if (overlay) {
       overlay.classList.remove('active');
       document.body.style.overflow = '';
-    });
+    }
   }
+
+  toggleBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      if (overlay) {
+        overlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+    });
+  });
+
+  closeBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      closeDrawer();
+    });
+  });
 
   if (overlay) {
     overlay.addEventListener('click', (e) => {
       if (e.target === overlay) {
-        overlay.classList.remove('active');
-        document.body.style.overflow = '';
+        closeDrawer();
       }
     });
   }
+
+  // Setup accordion toggle for mobile drawer dropdowns
+  document.querySelectorAll('.mobile-accordion-header, .mobile-dropdown-toggle').forEach(header => {
+    header.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const parent = header.closest('.mobile-accordion-item, .mobile-item-dropdown');
+      if (parent) {
+        const wasActive = parent.classList.contains('active');
+        // Close other accordions for sleek native feel
+        document.querySelectorAll('.mobile-accordion-item, .mobile-item-dropdown').forEach(item => {
+          if (item !== parent) item.classList.remove('active');
+        });
+        if (wasActive) {
+          parent.classList.remove('active');
+        } else {
+          parent.classList.add('active');
+        }
+      }
+    });
+  });
+
+  // Automatically close mobile drawer when any link is clicked & handle same-page hash changes
+  document.querySelectorAll('.mobile-drawer a').forEach(link => {
+    link.addEventListener('click', (e) => {
+      const href = link.getAttribute('href');
+      if (!href) return;
+
+      closeDrawer();
+
+      // If user is already on /calculator and clicks /calculator#dsr or /calculator#legal
+      if (window.location.pathname.includes('calculator') && href.includes('#')) {
+        const targetHash = href.split('#')[1];
+        if (targetHash && typeof window.switchCalcTab === 'function') {
+          e.preventDefault();
+          window.switchCalcTab(targetHash);
+          const targetSection = document.querySelector('.calc-tabs-wrapper') || document.getElementById('panel-' + targetHash);
+          if (targetSection) {
+            targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }
+      }
+    });
+  });
 }
 
 // 3. Property Card Generator HTML String
