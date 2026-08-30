@@ -158,6 +158,9 @@
       <div id="properties-results-grid" class="properties-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px;">
         <!-- Rendered by JS -->
       </div>
+
+      <!-- Pagination Controls (12 Properties Per Page) -->
+      <div id="properties-pagination" style="display: flex; justify-content: center; align-items: center; gap: 8px; margin-top: 45px; flex-wrap: wrap;"></div>
     </div>
   </section>
 
@@ -177,47 +180,194 @@
     document.addEventListener('DOMContentLoaded', () => {
       const grid = document.getElementById('properties-results-grid');
       const countEl = document.getElementById('results-count');
+      const paginationEl = document.getElementById('properties-pagination');
       const searchInput = document.getElementById('filter-search');
       const typeSelect = document.getElementById('filter-type');
       const regionSelect = document.getElementById('filter-region');
       const statusSelect = document.getElementById('filter-status');
       const resetBtn = document.getElementById('filter-reset-btn');
 
-      // Check URL query parameters
+      const ITEMS_PER_PAGE = 12;
+      let currentPage = 1;
+      let activeCategory = '';
+
+      const path = window.location.pathname.toLowerCase();
       const urlParams = new URLSearchParams(window.location.search);
+
+      if (path.includes('/residential') || urlParams.get('category') === 'Residential') {
+        activeCategory = 'Residential';
+      } else if (path.includes('/commercial') || path.includes('/industrial') || urlParams.get('category') === 'Commercial') {
+        activeCategory = 'Commercial';
+      }
+
+      if (path.includes('/properties/for-sale') || path.includes('/for-sale') || urlParams.get('status') === 'sale') {
+        statusSelect.value = 'sale';
+      } else if (path.includes('/properties/for-rent') || path.includes('/for-rent') || urlParams.get('status') === 'rent') {
+        statusSelect.value = 'rent';
+      }
+
       if (urlParams.get('q')) searchInput.value = urlParams.get('q');
       if (urlParams.get('type')) typeSelect.value = urlParams.get('type');
-      if (urlParams.get('status')) statusSelect.value = urlParams.get('status');
+      if (urlParams.get('page')) {
+        const p = parseInt(urlParams.get('page'), 10);
+        if (!isNaN(p) && p >= 1) currentPage = p;
+      }
+
+      window.setCategoryFilter = function(cat) {
+        activeCategory = cat;
+        currentPage = 1;
+        updatePageHeaderAndFilters();
+        filterAndRender();
+      };
+
+      window.goToPage = function(pageNumber) {
+        currentPage = pageNumber;
+        filterAndRender();
+        const target = document.getElementById('properties-results-grid');
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      };
+
+      function updatePageHeaderAndFilters() {
+        document.querySelectorAll('.cat-tab-btn').forEach(btn => {
+          btn.style.background = '#ffffff';
+          btn.style.color = '#334155';
+        });
+        if (activeCategory === 'Residential') {
+          const resBtn = document.getElementById('cat-tab-res');
+          if (resBtn) { resBtn.style.background = '#0f172a'; resBtn.style.color = '#fff'; }
+        } else if (activeCategory === 'Commercial') {
+          const commBtn = document.getElementById('cat-tab-comm');
+          if (commBtn) { commBtn.style.background = '#0f172a'; commBtn.style.color = '#fff'; }
+        } else {
+          const allBtn = document.getElementById('cat-tab-all');
+          if (allBtn) { allBtn.style.background = '#0f172a'; allBtn.style.color = '#fff'; }
+        }
+
+        // Smart Filter Property Type Select Options
+        const commTypes = ['Factory', 'Industrial Land', 'Commercial Land', 'Commercial Space', 'Office Space', 'Shop / Office', 'Land', 'Kilang', 'Tanah Industri', 'Kedai / Pejabat', 'Ruang Komersial', 'Tanah', 'Tanah Komersial'];
+        const firstOpt = typeSelect.options[0];
+
+        if (activeCategory === 'Residential') {
+          if (firstOpt) firstOpt.text = 'All Residential Types';
+        } else if (activeCategory === 'Commercial') {
+          if (firstOpt) firstOpt.text = 'All Commercial & Industrial Types';
+        } else {
+          if (firstOpt) firstOpt.text = 'All Property Types';
+        }
+
+        Array.from(typeSelect.options).forEach(opt => {
+          if (!opt.value) return;
+          const isComm = commTypes.includes(opt.value);
+          if (activeCategory === 'Residential') {
+            opt.style.display = isComm ? 'none' : 'block';
+            if (isComm && typeSelect.value === opt.value) typeSelect.value = '';
+          } else if (activeCategory === 'Commercial') {
+            opt.style.display = isComm ? 'block' : 'none';
+            if (!isComm && typeSelect.value === opt.value) typeSelect.value = '';
+          } else {
+            opt.style.display = 'block';
+          }
+        });
+      }
+
+      function renderPaginationControls(totalItems, totalPages) {
+        if (!paginationEl) return;
+        if (totalPages <= 1) {
+          paginationEl.innerHTML = '';
+          return;
+        }
+
+        let pages = [];
+        if (totalPages <= 7) {
+          for (let i = 1; i <= totalPages; i++) pages.push(i);
+        } else {
+          if (currentPage <= 4) {
+            pages = [1, 2, 3, 4, 5, '...', totalPages];
+          } else if (currentPage >= totalPages - 3) {
+            pages = [1, '...', totalPages - 4, totalPages - 3, totalPages - 2, totalPages - 1, totalPages];
+          } else {
+            pages = [1, '...', currentPage - 1, currentPage, currentPage + 1, '...', totalPages];
+          }
+        }
+
+        let html = '';
+
+        // Prev Button
+        const isFirst = currentPage === 1;
+        html += `<button type="button" onclick="goToPage(${currentPage - 1})" ${isFirst ? 'disabled style="padding: 8px 16px; border-radius: 8px; font-weight: 700; font-size: 0.85rem; border: 1px solid #e2e8f0; background: #f8fafc; color: #cbd5e1; cursor: not-allowed;"' : 'style="padding: 8px 16px; border-radius: 8px; font-weight: 700; font-size: 0.85rem; border: 1px solid #cbd5e1; background: #ffffff; color: #0f172a; cursor: pointer; transition: all 0.2s;"'}>&laquo; Prev</button>`;
+
+        // Page Number Buttons
+        pages.forEach(p => {
+          if (p === '...') {
+            html += `<span style="padding: 8px 6px; color: #94a3b8; font-weight: 700; font-size: 0.85rem;">&hellip;</span>`;
+          } else {
+            const isActive = p === currentPage;
+            const btnStyle = isActive
+              ? 'padding: 8px 16px; border-radius: 8px; font-weight: 800; font-size: 0.85rem; border: 1px solid #0f172a; background: #0f172a; color: #ffffff; box-shadow: 0 2px 6px rgba(15,23,42,0.25); cursor: default;'
+              : 'padding: 8px 16px; border-radius: 8px; font-weight: 700; font-size: 0.85rem; border: 1px solid #cbd5e1; background: #ffffff; color: #0f172a; cursor: pointer; transition: all 0.2s;';
+            html += `<button type="button" onclick="goToPage(${p})" style="${btnStyle}">${p}</button>`;
+          }
+        });
+
+        // Next Button
+        const isLast = currentPage === totalPages;
+        html += `<button type="button" onclick="goToPage(${currentPage + 1})" ${isLast ? 'disabled style="padding: 8px 16px; border-radius: 8px; font-weight: 700; font-size: 0.85rem; border: 1px solid #e2e8f0; background: #f8fafc; color: #cbd5e1; cursor: not-allowed;"' : 'style="padding: 8px 16px; border-radius: 8px; font-weight: 700; font-size: 0.85rem; border: 1px solid #cbd5e1; background: #ffffff; color: #0f172a; cursor: pointer; transition: all 0.2s;"'}>Next &raquo;</button>`;
+
+        paginationEl.innerHTML = html;
+      }
 
       function filterAndRender() {
+        const commTypes = ['Factory', 'Industrial Land', 'Commercial Land', 'Commercial Space', 'Office Space', 'Shop / Office', 'Land', 'Kilang', 'Tanah Industri', 'Kedai / Pejabat', 'Ruang Komersial', 'Tanah', 'Tanah Komersial'];
+
         const q = searchInput.value.toLowerCase().trim();
         const type = typeSelect.value;
         const region = regionSelect.value;
         const status = statusSelect.value;
 
-        const filtered = PROPERTIES_DATA.filter(item => {
+        const dataToFilter = (window.PROPERTIES_DATA && Array.isArray(window.PROPERTIES_DATA)) ? window.PROPERTIES_DATA : (typeof PROPERTIES_DATA !== 'undefined' ? PROPERTIES_DATA : []);
+        const filtered = dataToFilter.filter(item => {
+          if (item.hidden) return false;
           const matchQ = !q || item.title.toLowerCase().includes(q) || item.location.toLowerCase().includes(q);
           const matchType = !type || item.type === type;
           const matchRegion = !region || item.region === region;
           const matchStatus = !status || item.status === status;
-          return matchQ && matchType && matchRegion && matchStatus;
+          
+          const isComm = commTypes.includes(item.type);
+          let matchCat = true;
+          if (activeCategory === 'Residential') matchCat = !isComm;
+          if (activeCategory === 'Commercial') matchCat = isComm;
+
+          return matchQ && matchType && matchRegion && matchStatus && matchCat;
         });
 
-        countEl.textContent = filtered.length;
+        const totalItems = filtered.length;
+        const totalPages = Math.ceil(totalItems / ITEMS_PER_PAGE) || 1;
+        if (currentPage > totalPages) currentPage = totalPages;
+        if (currentPage < 1) currentPage = 1;
 
-        if (filtered.length === 0) {
+        const startIdx = (currentPage - 1) * ITEMS_PER_PAGE;
+        const endIdx = startIdx + ITEMS_PER_PAGE;
+        const pageItems = filtered.slice(startIdx, endIdx);
+
+        if (totalItems === 0) {
+          countEl.innerHTML = `<span style="color: var(--accent-gold); font-weight: 800;">0</span>`;
           grid.innerHTML = `<div style="grid-column: 1 / -1; text-align: center; padding: 60px; color: var(--text-muted);">
             <h3>No properties found matching your search filters.</h3>
             <p>Try resetting filters or adjusting search keywords.</p>
           </div>`;
+          if (paginationEl) paginationEl.innerHTML = '';
         } else {
-          grid.innerHTML = filtered.map(item => createPropertyCardHTML(item)).join('');
+          countEl.innerHTML = `<span style="color: var(--accent-gold); font-weight: 800;">${startIdx + 1}&ndash;${Math.min(endIdx, totalItems)}</span> of <span style="color: var(--accent-gold); font-weight: 800;">${totalItems}</span>`;
+          grid.innerHTML = pageItems.map(item => createPropertyCardHTML(item)).join('');
+          renderPaginationControls(totalItems, totalPages);
         }
       }
 
       [searchInput, typeSelect, regionSelect, statusSelect].forEach(el => {
-        el.addEventListener('input', filterAndRender);
-        el.addEventListener('change', filterAndRender);
+        el.addEventListener('input', () => { currentPage = 1; filterAndRender(); });
+        el.addEventListener('change', () => { currentPage = 1; filterAndRender(); });
       });
 
       resetBtn.addEventListener('click', () => {
@@ -225,9 +375,12 @@
         typeSelect.value = '';
         regionSelect.value = '';
         statusSelect.value = '';
+        currentPage = 1;
+        updatePageHeaderAndFilters();
         filterAndRender();
       });
 
+      updatePageHeaderAndFilters();
       filterAndRender();
       window.addEventListener('properties-updated', filterAndRender);
     });

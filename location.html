@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="ssr-title">Hartanah di Malaysia — Zaim Rosli (REN39575)</title>
+  <meta name="description" id="ssr-desc" content="Senarai hartanah untuk dijual dan disewa di Malaysia. Disahkan oleh REN Berdaftar.">
+  
+  <link rel="canonical" id="ssr-canonical" href="https://zaimrosli.my/properties">
+  <meta property="og:type" content="website">
+  <meta property="og:title" id="ssr-og-title" content="Hartanah di Malaysia — Zaim Rosli (REN39575)">
+  <meta property="og:description" id="ssr-og-desc" content="Senarai hartanah untuk dijual dan disewa di Malaysia.">
+  <meta property="og:url" id="ssr-og-url" content="https://zaimrosli.my/properties">
+  <meta property="og:image" content="https://zaimrosli.my/icons/og-share.jpg">
+
+  <link rel="stylesheet" href="/styles.css?v=94">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#0f172a">
+  <link rel="icon" type="image/png" sizes="192x192" href="/icons/icon-192.png">
+
+  <style>
+    .location-hero {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      color: #ffffff;
+      padding: 48px 0 36px 0;
+      border-bottom: 1px solid var(--border-color);
+    }
+    .location-breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+    .location-breadcrumb a {
+      color: #94a3b8;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .location-breadcrumb a:hover {
+      color: var(--accent-gold);
+    }
+    .location-hero-title {
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      font-weight: 800;
+      line-height: 1.25;
+      margin-bottom: 16px;
+      color: #ffffff;
+    }
+    .location-hero-desc {
+      font-size: 1.05rem;
+      color: #cbd5e1;
+      max-width: 840px;
+      line-height: 1.65;
+      margin-bottom: 24px;
+    }
+    .location-stats-bar {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+    .location-stat-card {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 12px;
+      padding: 12px 20px;
+      min-width: 140px;
+    }
+    .location-stat-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #94a3b8;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .location-stat-val {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--accent-gold);
+    }
+    .subareas-wrapper {
+      margin-top: 24px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .subarea-pill {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #e2e8f0;
+      font-size: 0.8rem;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-weight: 600;
+    }
+    .filter-tabs-bar {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      padding: 16px 0;
+      margin-bottom: 24px;
+      border-bottom: 1px solid var(--border-color);
+      scrollbar-width: none;
+    }
+    .filter-tabs-bar::-webkit-scrollbar {
+      display: none;
+    }
+    .loc-tab-btn {
+      padding: 8px 18px;
+      border-radius: 8px;
+      border: 1px solid var(--border-color);
+      background: var(--bg-card);
+      color: var(--text-muted);
+      font-weight: 700;
+      font-size: 0.88rem;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.2s;
+    }
+    .loc-tab-btn.active, .loc-tab-btn:hover {
+      background: var(--accent-gold);
+      color: #0f172a;
+      border-color: var(--accent-gold);
+    }
+    .faq-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      margin-bottom: 12px;
+      overflow: hidden;
+    }
+    .faq-q {
+      padding: 16px 20px;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--text-main);
+    }
+    .faq-a {
+      padding: 0 20px 16px 20px;
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+    .owner-cta-box {
+      background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+      border: 1px solid var(--accent-gold);
+      border-radius: 16px;
+      padding: 32px;
+      color: #ffffff;
+      margin-top: 48px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 16px;
+    }
+    @media (max-width: 768px) {
+      .location-hero {
+        padding: 96px 0 28px 0 !important;
+      }
+      .location-stats-bar {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 10px !important;
+      }
+      .location-stat-card {
+        min-width: 0 !important;
+        padding: 10px 14px !important;
+      }
+      .properties-grid, #location-listings-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+      }
+    }
+    @media (min-width: 768px) {
+      .location-hero {
+        padding: 110px 0 36px 0 !important;
+      }
+      .owner-cta-box {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+  </style>
+  <script src="/analytics.js?v=94" defer></script>
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container nav-wrapper">
+      <a href="/" class="logo">
+        <span class="logo-main">ZAIM<span>ROSLI</span></span>
+        <span class="logo-sub">REN39575</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="/" class="nav-link">Home</a></li>
+        
+        <!-- Properties Dropdown -->
+        <li class="nav-item-dropdown">
+          <a href="/properties" class="nav-link nav-link-dropdown active">
+            Properties <span class="arrow">▾</span>
+          </a>
+          <div class="dropdown-menu">
+            <a href="/properties/residential" class="dropdown-item">Residential Properties</a>
+            <a href="/properties/commercial-industrial" class="dropdown-item">Commercial & Industrial</a>
+            <div style="margin: 4px 8px; border-top: 1px solid rgba(255,255,255,0.15);"></div>
+            <a href="/properties/for-sale" class="dropdown-item">Properties For Sale</a>
+            <a href="/properties/for-rent" class="dropdown-item">Rental Properties</a>
+            <a href="/properties" class="dropdown-item">All Listings</a>
+            <div class="area-focus-nav area-focus-desktop">
+            <div style="margin: 6px 8px; border-top: 1px solid rgba(255,255,255,0.15);"></div>
+            <div class="dropdown-section-header" style="font-size: 0.72rem; font-weight: 800; color: #fbbf24; padding: 4px 14px 2px; text-transform: uppercase; letter-spacing: 0.8px;">LOKASI FOKUS</div>
+            <a href="/properties/bangi" class="dropdown-item">Bangi Properties</a>
+            <a href="/properties/nilai" class="dropdown-item">Nilai Properties</a>
+            </div>
+          </div>
+        </li>
+
+        <!-- Services Dropdown -->
+        <li class="nav-item-dropdown">
+          <a href="/services" class="nav-link nav-link-dropdown">
+            Services <span class="arrow">▾</span>
+          </a>
+          <div class="dropdown-menu">
+            <a href="/services#selling" class="dropdown-item">Property Selling Advisory</a>
+            <a href="/services#valuation" class="dropdown-item">Free Market Valuation</a>
+            <a href="/services#legal-loan" class="dropdown-item">Legal & Loan Assistance</a>
+            <a href="/foreign-buyers" class="dropdown-item" style="color: #f59e0b; font-weight: 800;">Foreign Buyer & Expat Advisory</a>
+          </div>
+        </li>
+
+        <!-- Calculators Dropdown -->
+        <li class="nav-item-dropdown">
+          <a href="/calculator" class="nav-link nav-link-dropdown">
+            Calculators <span class="arrow">▾</span>
+          </a>
+          <div class="dropdown-menu">
+            <a href="/calculator#legal" class="dropdown-item">Legal Fee & Stamp Duty</a>
+            <a href="/calculator#dsr" class="dropdown-item">Bank Loan DSR Check</a>
+          </div>
+        </li>
+
+        <!-- Resources Dropdown -->
+        <li class="nav-item-dropdown">
+          <a href="/blog" class="nav-link nav-link-dropdown">
+            Resources <span class="arrow">▾</span>
+          </a>
+          <div class="dropdown-menu">
+            <a href="/foreign-buyers" class="dropdown-item" style="color: #f59e0b; font-weight: 800;">Foreign Buyer Guide</a>
+            <a href="/blog" class="dropdown-item">Blog & Guides</a>
+            <a href="/testimonials" class="dropdown-item">Client Reviews</a>
+            <a href="/faq" class="dropdown-item">FAQ</a>
+            <div style="margin: 4px 8px; border-top: 1px solid rgba(255,255,255,0.15);"></div>
+            <a href="/login.html" class="dropdown-item" style="color: #fbbf24; font-weight: 700;">Admin Portal</a>
+          </div>
+        </li>
+
+        <li><a href="/about" class="nav-link">About Zaim</a></li>
+        <li><a href="/contact" class="nav-link">Contact</a></li>
+      </ul>
+
+      <div class="nav-cta">
+        <a href="/contact" class="btn btn-accent btn-sm">Appointment</a>
+        <button class="mobile-nav-toggle" aria-label="Toggle Navigation Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Overlay -->
+    <!-- PWA Mobile Navigation Drawer Overlay -->
+  <div class="mobile-overlay" id="mobile-nav-overlay">
+    <div class="mobile-drawer" id="mobile-nav-drawer">
+      <div class="mobile-drawer-header">
+        <div class="drawer-logo">
+          <span class="logo-main">ZAIM<span>ROSLI</span></span>
+          <span class="logo-sub">REN39575</span>
+        </div>
+        <button class="mobile-drawer-close" aria-label="Close Navigation Menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <div class="mobile-drawer-body">
+        <ul class="mobile-nav-list">
+          <li class="mobile-nav-item">
+            <a href="/" class="mobile-nav-link">HOME</a>
+          </li>
+
+          <!-- Properties Accordion -->
+          <li class="mobile-nav-item mobile-accordion-item">
+            <div class="mobile-accordion-header mobile-dropdown-toggle">
+              <span class="mobile-accordion-title">PROPERTIES</span>
+              <span class="mobile-accordion-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </span>
+            </div>
+            <div class="mobile-accordion-content">
+              <a href="/properties/residential" class="mobile-sublink">Residential Properties</a>
+              <a href="/properties/commercial-industrial" class="mobile-sublink">Commercial & Industrial</a>
+              <a href="/properties/for-sale" class="mobile-sublink">Properties For Sale</a>
+              <a href="/properties/for-rent" class="mobile-sublink">Rental Properties</a>
+              <a href="/properties" class="mobile-sublink">All Listings</a>
+              
+              <div class="mobile-subgroup-title">LOKASI FOKUS</div>
+              <div class="area-focus-nav area-focus-mobile">
+                <a href="/properties/bangi" class="mobile-sublink">Bangi Properties</a>
+                <a href="/properties/nilai" class="mobile-sublink">Nilai Properties</a>
+              </div>
+            </div>
+          </li>
+
+          <!-- Services Accordion -->
+          <li class="mobile-nav-item mobile-accordion-item">
+            <div class="mobile-accordion-header mobile-dropdown-toggle">
+              <span class="mobile-accordion-title">SERVICES</span>
+              <span class="mobile-accordion-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </span>
+            </div>
+            <div class="mobile-accordion-content">
+              <a href="/foreign-buyers" class="mobile-sublink" style="color: #d97706; font-weight: 800;">Foreign Buyer & Expat Advisory</a>
+              <a href="/services#selling" class="mobile-sublink">Property Selling Advisory</a>
+              <a href="/services#valuation" class="mobile-sublink">Free Market Valuation</a>
+              <a href="/services#legal-loan" class="mobile-sublink">Legal & Loan Screening</a>
+            </div>
+          </li>
+
+          <!-- Calculators Accordion -->
+          <li class="mobile-nav-item mobile-accordion-item">
+            <div class="mobile-accordion-header mobile-dropdown-toggle">
+              <span class="mobile-accordion-title">CALCULATORS</span>
+              <span class="mobile-accordion-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </span>
+            </div>
+            <div class="mobile-accordion-content">
+              <a href="/calculator#legal" class="mobile-sublink">Legal Fee & Stamp Duty (MOT)</a>
+              <a href="/calculator#dsr" class="mobile-sublink">Bank Loan DSR Check</a>
+            </div>
+          </li>
+
+          <!-- Resources Accordion -->
+          <li class="mobile-nav-item mobile-accordion-item">
+            <div class="mobile-accordion-header mobile-dropdown-toggle">
+              <span class="mobile-accordion-title">RESOURCES</span>
+              <span class="mobile-accordion-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </span>
+            </div>
+            <div class="mobile-accordion-content">
+              <a href="/blog" class="mobile-sublink">Blog & Property Guides</a>
+              <a href="/foreign-buyers" class="mobile-sublink" style="color: #d97706; font-weight: 800;">Foreign Buyer Guide</a>
+              <a href="/testimonials" class="mobile-sublink">Client Reviews & Testimonials</a>
+              <a href="/faq" class="mobile-sublink">Frequently Asked Questions (FAQ)</a>
+              <div style="margin: 6px 0; border-top: 1px solid #e2e8f0;"></div>
+              <a href="/login.html" class="mobile-sublink" style="color: #d97706; font-weight: 800;">Admin Portal (REN39575)</a>
+            </div>
+          </li>
+
+          <li class="mobile-nav-item">
+            <a href="/about" class="mobile-nav-link">ABOUT ZAIM</a>
+          </li>
+          <li class="mobile-nav-item">
+            <a href="/contact" class="mobile-nav-link">CONTACT</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="mobile-drawer-footer">
+        <a href="https://wa.me/60183863488?text=Salam%20Zaim,%20saya%20ingin%20berunding%20mengenai%20hartanah" target="_blank" rel="noopener" class="mobile-drawer-btn btn-wa-drawer">
+          WhatsApp Zaim (REN39575)
+        </a>
+        <a href="/contact" class="mobile-drawer-btn btn-appointment-drawer">
+          Appointment / Temu Janji
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Location Hero Section -->
+  <section class="location-hero">
+    <div class="container">
+      <nav class="location-breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a> <span>›</span>
+        <a href="/properties">Properties</a> <span>›</span>
+        <span id="breadcrumb-loc-name" style="color: var(--accent-gold); font-weight: 700;">Location</span>
+      </nav>
+
+      <h1 class="location-hero-title" id="loc-h1">Hartanah</h1>
+      <p class="location-hero-desc" id="loc-intro">Memuatkan senarai hartanah disahkan...</p>
+
+      <!-- Stats Bar -->
+      <div class="location-stats-bar" id="loc-stats-bar">
+        <div class="location-stat-card">
+          <div class="location-stat-label">Total Listings</div>
+          <div class="location-stat-val" id="stat-total">0</div>
+        </div>
+        <div class="location-stat-card">
+          <div class="location-stat-label">For Sale</div>
+          <div class="location-stat-val" id="stat-sale">0</div>
+        </div>
+        <div class="location-stat-card">
+          <div class="location-stat-label">For Rent</div>
+          <div class="location-stat-val" id="stat-rent">0</div>
+        </div>
+        <div class="location-stat-card">
+          <div class="location-stat-label">Price Range</div>
+          <div class="location-stat-val" id="stat-price-range" style="font-size: 1.05rem;">-</div>
+        </div>
+      </div>
+
+      <!-- Subareas Pills -->
+      <div class="subareas-wrapper" id="subareas-container">
+        <span style="font-size: 0.8rem; font-weight: 700; color: #94a3b8;">Subareas:</span>
+        <div id="subareas-list" style="display: flex; gap: 8px; flex-wrap: wrap;"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content & Listings Grid -->
+  <main class="container py-8" style="padding-top: 32px; padding-bottom: 64px;">
+    
+    <!-- Filter Tabs -->
+    <div class="filter-tabs-bar" id="loc-filter-tabs">
+      <button class="loc-tab-btn active" data-filter="all" onclick="filterLocationListings('all')">All Listings (<span id="count-all">0</span>)</button>
+      <button class="loc-tab-btn" data-filter="sale" onclick="filterLocationListings('sale')" id="tab-sale">For Sale (<span id="count-sale">0</span>)</button>
+      <button class="loc-tab-btn" data-filter="rent" onclick="filterLocationListings('rent')" id="tab-rent">For Rent (<span id="count-rent">0</span>)</button>
+      <button class="loc-tab-btn" data-filter="Residential" onclick="filterLocationListings('Residential')">Residential (<span id="count-res">0</span>)</button>
+      <button class="loc-tab-btn" data-filter="Commercial" onclick="filterLocationListings('Commercial')">Commercial & Land (<span id="count-comm">0</span>)</button>
+    </div>
+
+    <!-- Properties Grid -->
+    <div id="location-listings-grid" class="properties-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px;">
+      <!-- Cards rendered here -->
+    </div>
+
+    <!-- Empty State -->
+    <div id="location-empty-state" style="display: none; text-align: center; padding: 48px 24px; background: var(--bg-card); border-radius: 16px; border: 1px solid var(--border-color); margin: 24px 0;">
+      <h3 style="font-size: 1.25rem; font-weight: 800; color: var(--text-main); margin-bottom: 8px;">Tiada listing aktif dijumpai untuk kategori ini</h3>
+      <p style="font-size: 0.95rem; color: var(--text-muted); max-width: 500px; margin: 0 auto 20px auto;">
+        Hubungi Zaim Rosli (REN39575) untuk semakan unit luar pasaran (*off-market units*) atau pendaftaran minat pembelian & sewaan.
+      </p>
+      <a href="https://wa.me/60108118559?text=Hi%20Zaim,%20saya%20berminat%20dengan%20hartanah%20di%20kawasan%20ini" target="_blank" rel="noopener noreferrer" class="btn btn-accent">WhatsApp Ejen Hartanah</a>
+    </div>
+
+    <!-- Owner / Seller CTA Box -->
+    <div class="owner-cta-box">
+      <div>
+        <h3 style="font-size: 1.35rem; font-weight: 800; margin-bottom: 8px; color: #ffffff;">Pemilik Hartanah di <span id="cta-loc-name">Kawasan Ini</span>?</h3>
+        <p style="font-size: 0.95rem; color: #cbd5e1; max-width: 600px; line-height: 1.5;">
+          Lantik Zaim Rosli (REN39575) untuk khidmat semakan nilai pasaran profesional percuma, penyediaan profil listing berkualiti tinggi, dan pemasaran kepada pembeli & penyewa sedia ada.
+        </p>
+      </div>
+      <a href="https://wa.me/60108118559?text=Halo%20Zaim,%20saya%20pemilik%20hartanah%20dan%20ingin%20dapatkan%20nasihat%20jualan/sewaan" target="_blank" rel="noopener noreferrer" class="btn btn-accent" style="white-space: nowrap; padding: 12px 24px;">Lantik Ejen Hartanah</a>
+    </div>
+
+    <!-- Location FAQs -->
+    <section style="margin-top: 56px;" id="loc-faq-section">
+      <h2 style="font-size: 1.45rem; font-weight: 800; margin-bottom: 20px; color: var(--text-main);">Soalan Lazim Mengenai Hartanah di <span id="faq-loc-name">Lokasi Ini</span></h2>
+      <div id="loc-faq-list"></div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Zaim Rosli (REN39575). All rights reserved. Registered Real Estate Negotiator.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="/properties-data.js?v=37"></script>
+  <script src="/locations-config.js?v=20"></script>
+  <script src="/app.js?v=94"></script>
+
+  <script>
+    let locationProperties = [];
+    let currentActiveFilter = 'all';
+
+    function initLocationPage() {
+      // 1. Determine location config
+      const pathParts = window.location.pathname.split('/').filter(Boolean);
+      const locSlug = (pathParts[0] === 'properties' && pathParts[1]) ? pathParts[1] : 'bangi';
+      
+      const config = (window.LOCATIONS_CONFIG && window.LOCATIONS_CONFIG[locSlug]) ? window.LOCATIONS_CONFIG[locSlug] : (window.__LOCATION_CONFIG__ || null);
+      if (!config) return;
+
+      // 2. Set dataset (prefer SSR injected data, then fetch live if needed)
+      if (window.__LOCATION_INITIAL_DATA__ && Array.isArray(window.__LOCATION_INITIAL_DATA__)) {
+        locationProperties = window.__LOCATION_INITIAL_DATA__;
+      } else {
+        fetchLiveLocationData(config);
+      }
+    }
+
+    function toggleFaq(index) {
+      const el = document.getElementById(`faq-ans-${index}`);
+      if (el) {
+        el.style.display = el.style.display === 'none' ? 'block' : 'none';
+      }
+    }
+
+    async function fetchLiveLocationData(config) {
+      try {
+        const res = await fetch('https://zaimrosli-worker.huzaimrosli.workers.dev/api/properties?t=' + Date.now());
+        if (res.ok) {
+          const allProps = await res.json();
+          locationProperties = filterPropsByLocation(allProps, config);
+          renderLocationListings();
+        }
+      } catch (err) {
+        if (window.PROPERTIES_DATA) {
+          locationProperties = filterPropsByLocation(window.PROPERTIES_DATA, config);
+          renderLocationListings();
+        }
+      }
+    }
+
+    function filterPropsByLocation(dataset, config) {
+      if (!Array.isArray(dataset) || !config) return [];
+      const keywords = (config.filterKeywords || [config.slug, config.name.toLowerCase()]).map(k => k.toLowerCase());
+
+      return dataset.filter(item => {
+        if (item.hidden) return false;
+        const text = `
+          ${item.title || ''} 
+          ${item.location || ''} 
+          ${item.region || ''} 
+          ${item.description || ''}
+        `.toLowerCase();
+
+        return keywords.some(k => text.includes(k));
+      });
+    }
+
+    const ITEMS_PER_PAGE_LOC = 12;
+    let currentLocPage = 1;
+
+    window.goToLocPage = function(pageNumber) {
+      currentLocPage = pageNumber;
+      renderLocationListings();
+      const target = document.getElementById('location-listings-grid');
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    };
+
+    function renderLocPaginationControls(totalItems, totalPages) {
+      const paginationEl = document.getElementById('location-pagination');
+      if (!paginationEl) return;
+      if (totalPages <= 1) {
+        paginationEl.innerHTML = '';
+        return;
+      }
+
+      let pages = [];
+      if (totalPages <= 7) {
+        for (let i = 1; i <= totalPages; i++) pages.push(i);
+      } else {
+        if (currentLocPage <= 4) {
+          pages = [1, 2, 3, 4, 5, '...', totalPages];
+        } else if (currentLocPage >= totalPages - 3) {
+          pages = [1, '...', totalPages - 4, totalPages - 3, totalPages - 2, totalPages - 1, totalPages];
+        } else {
+          pages = [1, '...', currentLocPage - 1, currentLocPage, currentLocPage + 1, '...', totalPages];
+        }
+      }
+
+      let html = '';
+      const isFirst = currentLocPage === 1;
+      html += `<button type="button" onclick="goToLocPage(${currentLocPage - 1})" ${isFirst ? 'disabled style="padding: 8px 16px; border-radius: 8px; font-weight: 700; font-size: 0.85rem; border: 1px solid #e2e8f0; background: #f8fafc; color: #cbd5e1; cursor: not-allowed;"' : 'style="padding: 8px 16px; border-radius: 8px; font-weight: 700; font-size: 0.85rem; border: 1px solid #cbd5e1; background: #ffffff; color: #0f172a; cursor: pointer; transition: all 0.2s;"'}>&laquo; Prev</button>`;
+
+      pages.forEach(p => {
+        if (p === '...') {
+          html += `<span style="padding: 8px 6px; color: #94a3b8; font-weight: 700; font-size: 0.85rem;">&hellip;</span>`;
+        } else {
+          const isActive = p === currentLocPage;
+          const btnStyle = isActive
+            ? 'padding: 8px 16px; border-radius: 8px; font-weight: 800; font-size: 0.85rem; border: 1px solid #0f172a; background: #0f172a; color: #ffffff; box-shadow: 0 2px 6px rgba(15,23,42,0.25); cursor: default;'
+            : 'padding: 8px 16px; border-radius: 8px; font-weight: 700; font-size: 0.85rem; border: 1px solid #cbd5e1; background: #ffffff; color: #0f172a; cursor: pointer; transition: all 0.2s;';
+          html += `<button type="button" onclick="goToLocPage(${p})" style="${btnStyle}">${p}</button>`;
+        }
+      });
+
+      const isLast = currentLocPage === totalPages;
+      html += `<button type="button" onclick="goToLocPage(${currentLocPage + 1})" ${isLast ? 'disabled style="padding: 8px 16px; border-radius: 8px; font-weight: 700; font-size: 0.85rem; border: 1px solid #e2e8f0; background: #f8fafc; color: #cbd5e1; cursor: not-allowed;"' : 'style="padding: 8px 16px; border-radius: 8px; font-weight: 700; font-size: 0.85rem; border: 1px solid #cbd5e1; background: #ffffff; color: #0f172a; cursor: pointer; transition: all 0.2s;"'}>Next &raquo;</button>`;
+
+      paginationEl.innerHTML = html;
+    }
+
+    function renderLocationListings() {
+      const grid = document.getElementById('location-listings-grid');
+      const paginationEl = document.getElementById('location-pagination');
+      if (!grid) return;
+
+      const saleCount = locationProperties.filter(p => p.status === 'sale').length;
+      const rentCount = locationProperties.filter(p => p.status === 'rent').length;
+      const resCount = locationProperties.filter(p => p.category === 'Residential' || ['Terrace House', 'Bungalow', 'Semi-D', 'Apartment', 'Condominium', 'Townhouse', 'Rumah Teres', 'Kondominium'].includes(p.type)).length;
+      const commCount = locationProperties.filter(p => p.category === 'Commercial' || ['Shop / Office', 'Commercial Space', 'Factory', 'Industrial Land', 'Office Space', 'Land', 'Kilang', 'Tanah Industri', 'Kedai / Pejabat'].includes(p.type)).length;
+
+      const badgeSale = document.getElementById('tab-sale-count');
+      const badgeRent = document.getElementById('tab-rent-count');
+      const badgeRes = document.getElementById('tab-res-count');
+      const badgeComm = document.getElementById('tab-comm-count');
+
+      if (badgeSale) badgeSale.innerText = saleCount;
+      if (badgeRent) badgeRent.innerText = rentCount;
+      if (badgeRes) badgeRes.innerText = resCount;
+      if (badgeComm) badgeComm.innerText = commCount;
+
+      const prices = locationProperties.map(p => p.price).filter(Boolean);
+      if (prices.length > 0) {
+        const numPrices = prices.map(pr => {
+          const match = pr.toString().replace(/,/g, '').match(/\d+/);
+          return match ? parseInt(match[0], 10) : 0;
+        }).filter(n => n > 0);
+        if (numPrices.length > 0) {
+          const minP = Math.min(...numPrices);
+          const maxP = Math.max(...numPrices);
+          const statPriceEl = document.getElementById('loc-stat-price');
+          if (statPriceEl) statPriceEl.innerText = 'RM ' + minP.toLocaleString() + (minP !== maxP ? ' - ' + maxP.toLocaleString() : '');
+        }
+      }
+
+      let filtered = locationProperties;
+      if (currentActiveFilter === 'sale') {
+        filtered = locationProperties.filter(p => p.status === 'sale');
+      } else if (currentActiveFilter === 'rent') {
+        filtered = locationProperties.filter(p => p.status === 'rent');
+      } else if (currentActiveFilter === 'Residential') {
+        filtered = locationProperties.filter(p => p.category === 'Residential' || ['Terrace House', 'Bungalow', 'Semi-D', 'Apartment', 'Condominium', 'Townhouse', 'Rumah Teres', 'Kondominium'].includes(p.type));
+      } else if (currentActiveFilter === 'Commercial') {
+        filtered = locationProperties.filter(p => p.category === 'Commercial' || ['Shop / Office', 'Commercial Space', 'Factory', 'Industrial Land', 'Office Space', 'Land', 'Kilang', 'Tanah Industri', 'Kedai / Pejabat'].includes(p.type));
+      }
+
+      const totalItems = filtered.length;
+      const totalPages = Math.ceil(totalItems / ITEMS_PER_PAGE_LOC) || 1;
+      if (currentLocPage > totalPages) currentLocPage = totalPages;
+      if (currentLocPage < 1) currentLocPage = 1;
+
+      const startIdx = (currentLocPage - 1) * ITEMS_PER_PAGE_LOC;
+      const endIdx = startIdx + ITEMS_PER_PAGE_LOC;
+      const pageItems = filtered.slice(startIdx, endIdx);
+
+      if (filtered.length === 0) {
+        grid.style.display = 'none';
+        const emptyState = document.getElementById('location-empty-state');
+        if (emptyState) emptyState.style.display = 'block';
+        if (paginationEl) paginationEl.innerHTML = '';
+      } else {
+        grid.style.display = 'grid';
+        const emptyState = document.getElementById('location-empty-state');
+        if (emptyState) emptyState.style.display = 'none';
+        grid.innerHTML = pageItems.map(item => {
+          if (typeof createPropertyCardHTML === 'function') {
+            return createPropertyCardHTML(item);
+          }
+          return '<div style="padding:20px; background:#fff; border-radius:12px; border:1px solid #e2e8f0;">' + item.title + '</div>';
+        }).join('');
+        renderLocPaginationControls(totalItems, totalPages);
+      }
+    }
+
+    function filterLocationListings(filterType) {
+      currentLocPage = 1;
+      currentActiveFilter = filterType;
+      document.querySelectorAll('.loc-tab-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.filter === filterType);
+      });
+      renderLocationListings();
+    }
+
+    document.addEventListener('DOMContentLoaded', initLocationPage);
+  </script>
+</body>
+</html>
