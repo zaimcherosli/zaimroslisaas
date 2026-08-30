@@ -716,6 +716,13 @@
     border-color: #e2e8f0 !important;
     cursor: not-allowed !important;
   }
+  @media (max-width: 600px) {
+    .admin-pagination-btn {
+      padding: 6px 10px !important;
+      font-size: 0.78rem !important;
+      min-width: 32px !important;
+    }
+  }
   
     /* Dedicated Mobile Responsive Overrides */
     @media (max-width: 768px) {
@@ -2980,23 +2987,39 @@
       const prevDisabled = adminCurrentPage <= 1;
       buttonsHTML += `<button type="button" onclick="goToAdminPage(${adminCurrentPage - 1})" class="admin-pagination-btn" ${prevDisabled ? 'disabled' : ''}>&laquo; Prev</button>`;
 
-      // Page numbers
+      // Page numbers (Mobile: show max 3 pages; Desktop: show full range)
+      const isMobile = window.innerWidth <= 600;
       let pageNumbers = [];
-      if (totalPages <= 7) {
-        for (let i = 1; i <= totalPages; i++) pageNumbers.push(i);
-      } else {
-        if (adminCurrentPage <= 4) {
-          pageNumbers = [1, 2, 3, 4, 5, '...', totalPages];
-        } else if (adminCurrentPage >= totalPages - 3) {
-          pageNumbers = [1, '...', totalPages - 4, totalPages - 3, totalPages - 2, totalPages - 1, totalPages];
+
+      if (isMobile) {
+        if (totalPages <= 3) {
+          for (let i = 1; i <= totalPages; i++) pageNumbers.push(i);
         } else {
-          pageNumbers = [1, '...', adminCurrentPage - 1, adminCurrentPage, adminCurrentPage + 1, '...', totalPages];
+          if (adminCurrentPage === 1) {
+            pageNumbers = [1, 2, 3];
+          } else if (adminCurrentPage === totalPages) {
+            pageNumbers = [totalPages - 2, totalPages - 1, totalPages];
+          } else {
+            pageNumbers = [adminCurrentPage - 1, adminCurrentPage, adminCurrentPage + 1];
+          }
+        }
+      } else {
+        if (totalPages <= 7) {
+          for (let i = 1; i <= totalPages; i++) pageNumbers.push(i);
+        } else {
+          if (adminCurrentPage <= 4) {
+            pageNumbers = [1, 2, 3, 4, 5, '...', totalPages];
+          } else if (adminCurrentPage >= totalPages - 3) {
+            pageNumbers = [1, '...', totalPages - 4, totalPages - 3, totalPages - 2, totalPages - 1, totalPages];
+          } else {
+            pageNumbers = [1, '...', adminCurrentPage - 1, adminCurrentPage, adminCurrentPage + 1, '...', totalPages];
+          }
         }
       }
 
       pageNumbers.forEach(p => {
         if (p === '...') {
-          buttonsHTML += `<span style="color: #94a3b8; font-weight: 700; padding: 4px 6px; font-size: 0.85rem;">...</span>`;
+          buttonsHTML += `<span style="color: #94a3b8; font-weight: 700; padding: 4px 4px; font-size: 0.85rem;">...</span>`;
         } else {
           const isActive = p === adminCurrentPage;
           buttonsHTML += `<button type="button" onclick="goToAdminPage(${p})" class="admin-pagination-btn ${isActive ? 'active' : ''}">${p}</button>`;
@@ -3008,10 +3031,10 @@
       buttonsHTML += `<button type="button" onclick="goToAdminPage(${adminCurrentPage + 1})" class="admin-pagination-btn" ${nextDisabled ? 'disabled' : ''}>Next &raquo;</button>`;
 
       pagContainer.innerHTML = `
-        <div style="display: flex; gap: 6px; align-items: center; justify-content: center; flex-wrap: wrap;">
+        <div style="display: flex; gap: 4px; align-items: center; justify-content: center; flex-wrap: nowrap;">
           ${buttonsHTML}
         </div>
-        <div style="font-size: 0.78rem; font-weight: 600; color: #64748b; text-align: center;">
+        <div style="font-size: 0.78rem; font-weight: 600; color: #64748b; text-align: center; margin-top: 2px;">
           Showing ${displayFrom}–${displayTo} of ${totalItems} listings (Page ${adminCurrentPage} of ${totalPages})
         </div>
       `;
