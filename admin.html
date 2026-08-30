@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin Dashboard | Zaim Rosli Hartanah</title>
-  <link rel="stylesheet" href="/styles.css">
+  <title>Admin Dashboard - Zaim Rosli Portal</title>
+  <link rel="stylesheet" href="/styles.css?v=102">
   <style>
     html, body {
       background-color: #f8fafc;
@@ -83,6 +83,44 @@
       border-radius: 20px;
       padding: 35px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+    }
+
+    .modal-action-row {
+      display: flex;
+      gap: 12px;
+      margin-top: 16px;
+      width: 100%;
+    }
+    .modal-action-row button {
+      height: 48px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: var(--radius-md, 10px);
+    }
+    @media (max-width: 600px) {
+      .modal-action-row {
+        flex-direction: column-reverse;
+        gap: 10px;
+      }
+      .modal-action-row button {
+        width: 100% !important;
+        flex: none !important;
+        height: 48px !important;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .admin-desktop-tabs {
+        display: none !important;
+      }
+      .admin-desktop-user {
+        display: none !important;
+      }
+      .admin-hamburger-btn {
+        display: flex !important;
+      }
     }
 
     .listings-header {
@@ -170,6 +208,7 @@
       margin: 2px 0;
       line-height: 1.4;
       word-break: break-word;
+      text-transform: uppercase;
     }
 
     .listing-price-tag {
@@ -187,6 +226,142 @@
       color: #64748b;
       align-items: center;
       margin-top: 2px;
+    }
+
+    .admin-specs-grid {
+      margin: 10px 0 8px;
+    }
+
+    .admin-specs-row {
+      display: flex !important;
+      flex-wrap: wrap !important;
+      gap: 8px !important;
+      justify-content: flex-start !important;
+      align-items: stretch !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
+    }
+
+    .admin-specs-row.specs-left-aligned {
+      display: flex !important;
+      justify-content: flex-start !important;
+      gap: 8px !important;
+    }
+
+    .admin-specs-row.specs-left-aligned .admin-spec-box {
+      flex: 0 0 auto !important;
+      min-width: 68px !important;
+      padding: 6px 12px !important;
+    }
+
+    .admin-specs-row.specs-grid-2x2 {
+      display: grid !important;
+      grid-template-columns: 1fr 1fr !important;
+      gap: 6px !important;
+    }
+
+    .admin-specs-row.specs-grid-2x2 .admin-spec-box {
+      width: 100% !important;
+      padding: 6px 8px !important;
+    }
+
+    .admin-spec-box {
+      background: #f8fafc !important;
+      border: 1px solid #e2e8f0 !important;
+      border-radius: 8px !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      justify-content: center !important;
+      text-align: center !important;
+      transition: all 0.2s ease !important;
+      box-sizing: border-box !important;
+    }
+
+    .admin-spec-box:hover {
+      background: #f1f5f9 !important;
+      border-color: #cbd5e1 !important;
+    }
+
+    .admin-spec-box.spec-land {
+      background: #f0fdf4 !important;
+      border-color: #bbf7d0 !important;
+    }
+
+    .admin-spec-top {
+      display: block !important;
+      font-size: 0.65rem !important;
+      font-weight: 800 !important;
+      color: #64748b !important;
+      text-transform: uppercase !important;
+      letter-spacing: 0.5px !important;
+      white-space: nowrap !important;
+      line-height: 1 !important;
+      margin-bottom: 4px !important;
+      text-align: center !important;
+    }
+
+    .spec-land .admin-spec-top {
+      color: #166534 !important;
+    }
+
+    .admin-spec-val {
+      font-size: 0.85rem !important;
+      font-weight: 800 !important;
+      color: #0f172a !important;
+      line-height: 1.15 !important;
+      white-space: nowrap !important;
+      overflow: hidden !important;
+      text-overflow: ellipsis !important;
+      max-width: 100% !important;
+      text-align: center !important;
+    }
+
+    .spec-land .admin-spec-val {
+      color: #15803d !important;
+    }
+
+    .admin-spec-banner {
+      width: 100% !important;
+      padding: 8px 12px !important;
+      margin: 6px 0 !important;
+      border-radius: 8px !important;
+      background: #f8fafc !important;
+      border: 1px solid #e2e8f0 !important;
+      display: flex !important;
+      justify-content: space-between !important;
+      align-items: center !important;
+      box-sizing: border-box !important;
+    }
+
+    .admin-spec-banner.spec-land-banner {
+      background: #f0fdf4 !important;
+      border: 1px solid #bbf7d0 !important;
+    }
+
+    .admin-spec-banner .spec-banner-label {
+      font-size: 0.70rem !important;
+      font-weight: 800 !important;
+      color: #64748b !important;
+      letter-spacing: 0.5px !important;
+      text-transform: uppercase !important;
+    }
+
+    .admin-spec-banner.spec-land-banner .spec-banner-label {
+      color: #166534 !important;
+    }
+
+    .admin-spec-banner .spec-banner-val {
+      font-size: 0.90rem !important;
+      font-weight: 800 !important;
+      color: #0f172a !important;
+      white-space: nowrap !important;
+      overflow: hidden !important;
+      text-overflow: ellipsis !important;
+    }
+
+    .admin-spec-banner.spec-land-banner .spec-banner-val {
+      color: #15803d !important;
     }
 
     .meta-chip {
@@ -366,6 +541,48 @@
       box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.12);
     }
 
+    .loc-modal-card {
+      background: #ffffff;
+      width: 100%;
+      max-width: 660px;
+      border-radius: 20px;
+      padding: 26px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+      max-height: 90vh;
+      overflow-y: auto;
+      box-sizing: border-box;
+    }
+
+    .loc-form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+
+    @media (max-width: 640px) {
+      .loc-modal-card {
+        padding: 20px 14px !important;
+        border-radius: 16px !important;
+        max-height: 92vh !important;
+      }
+      .loc-form-grid {
+        grid-template-columns: 1fr !important;
+        gap: 14px !important;
+        margin-bottom: 14px !important;
+      }
+      .loc-modal-card .modal-action-row {
+        flex-direction: column-reverse !important;
+        gap: 8px !important;
+      }
+      .loc-modal-card .modal-action-row button {
+        width: 100% !important;
+        text-align: center !important;
+        justify-content: center !important;
+        padding: 12px 16px !important;
+      }
+    }
+
     /* Dedicated Mobile Responsive Overrides */
     @media (max-width: 768px) {
       .admin-wrapper {
@@ -394,12 +611,17 @@
         padding: 2px 7px !important;
         margin-left: 0 !important;
       }
-      .user-badge {
-        font-size: 0.75rem !important;
-        padding: 4px 8px !important;
-      }
       .user-badge #user-display {
         display: none !important;
+      }
+      .admin-desktop-tabs {
+        display: none !important;
+      }
+      .admin-desktop-user {
+        display: none !important;
+      }
+      .admin-hamburger-btn {
+        display: flex !important;
       }
       .btn-logout .logout-text {
         display: none !important;
@@ -509,7 +731,660 @@
       }
     }
   
-    /* ==========================================================================
+  /* === RENHUB PROPERTY CRM MODERN STYLES (ZERO TEXT ICONS) === */
+  .renhub-metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin-bottom: 20px;
+  }
+  .renhub-metric-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    padding: 16px 18px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .renhub-metric-card:hover {
+    box-shadow: 0 4px 12px rgba(15,23,42,0.06);
+  }
+  .renhub-metric-label {
+    font-size: 0.72rem;
+    font-weight: 800;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+  }
+  .renhub-metric-value {
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: #0f172a;
+    line-height: 1.1;
+  }
+  .renhub-metric-card.metric-alert {
+    border-color: #fca5a5;
+    background: #fffbfb;
+  }
+  .renhub-metric-card.metric-alert .renhub-metric-value {
+    color: #dc2626;
+  }
+  .renhub-metric-card.metric-success {
+    border-color: #86efac;
+    background: #f0fdf4;
+  }
+  .renhub-metric-card.metric-success .renhub-metric-value {
+    color: #15803d;
+  }
+
+  /* RenHUB 3-Category Pills Bar */
+  .renhub-category-tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 14px;
+    flex-wrap: wrap;
+  }
+  .renhub-cat-btn {
+    padding: 10px 18px;
+    border-radius: 24px;
+    font-size: 0.82rem;
+    font-weight: 800;
+    cursor: pointer;
+    border: 1.5px solid transparent;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #ffffff;
+    color: #475569;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+  }
+  .renhub-cat-btn .pill-count {
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.72rem;
+    font-weight: 800;
+  }
+
+  /* Tab 1: All */
+  .renhub-cat-btn.tab-all {
+    border-color: #cbd5e1;
+  }
+  .renhub-cat-btn.tab-all .pill-count {
+    background: #e2e8f0;
+    color: #0f172a;
+  }
+  .renhub-cat-btn.tab-all.active {
+    background: #0f172a;
+    color: #ffffff;
+    border-color: #0f172a;
+  }
+  .renhub-cat-btn.tab-all.active .pill-count {
+    background: rgba(255,255,255,0.25);
+    color: #ffffff;
+  }
+
+  /* Tab 2: My Listing (Blue) */
+  .renhub-cat-btn.tab-my {
+    border-color: #bfdbfe;
+    background: #eff6ff;
+    color: #1d4ed8;
+  }
+  .renhub-cat-btn.tab-my .pill-count {
+    background: #dbeafe;
+    color: #1e40af;
+  }
+  .renhub-cat-btn.tab-my.active {
+    background: #2563eb;
+    color: #ffffff;
+    border-color: #2563eb;
+    box-shadow: 0 2px 8px rgba(37,99,235,0.25);
+  }
+  .renhub-cat-btn.tab-my.active .pill-count {
+    background: #ffffff;
+    color: #1d4ed8;
+  }
+
+  /* Tab 3: COA Listing (Green) */
+  .renhub-cat-btn.tab-coa {
+    border-color: #bbf7d0;
+    background: #f0fdf4;
+    color: #15803d;
+  }
+  .renhub-cat-btn.tab-coa .pill-count {
+    background: #dcfce7;
+    color: #166534;
+  }
+  .renhub-cat-btn.tab-coa.active {
+    background: #16a34a;
+    color: #ffffff;
+    border-color: #16a34a;
+    box-shadow: 0 2px 8px rgba(22,163,74,0.25);
+  }
+  .renhub-cat-btn.tab-coa.active .pill-count {
+    background: #ffffff;
+    color: #15803d;
+  }
+
+  /* Tab 4: Undercon (Orange) */
+  .renhub-cat-btn.tab-undercon {
+    border-color: #fed7aa;
+    background: #fff7ed;
+    color: #c2410c;
+  }
+  .renhub-cat-btn.tab-undercon .pill-count {
+    background: #ffedd5;
+    color: #9a3412;
+  }
+  .renhub-cat-btn.tab-undercon.active {
+    background: #ea580c;
+    color: #ffffff;
+    border-color: #ea580c;
+    box-shadow: 0 2px 8px rgba(234,88,12,0.25);
+  }
+  .renhub-cat-btn.tab-undercon.active .pill-count {
+    background: #ffffff;
+    color: #c2410c;
+  }
+
+  /* Status Filter Tabs (Semua / Jual / Sewa) */
+  .renhub-status-tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+  }
+  .renhub-status-btn {
+    padding: 7px 16px;
+    border-radius: 99px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    border: 1.5px solid #cbd5e1;
+    background: #ffffff;
+    color: #334155;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.2s ease;
+  }
+  .renhub-status-btn:hover {
+    border-color: #94a3b8;
+    background: #f8fafc;
+  }
+  .renhub-status-btn.active {
+    background: #0f172a !important;
+    color: #ffffff !important;
+    border-color: #0f172a !important;
+    box-shadow: 0 2px 6px rgba(15, 23, 42, 0.2);
+  }
+  .renhub-status-btn.active .pill-count {
+    background: rgba(255, 255, 255, 0.25) !important;
+    color: #ffffff !important;
+  }
+  .renhub-status-btn.tab-sale.active {
+    background: linear-gradient(135deg, #d97706, #b45309) !important;
+    border-color: #b45309 !important;
+  }
+  .renhub-status-btn.tab-rent.active {
+    background: linear-gradient(135deg, #0284c7, #0369a1) !important;
+    border-color: #0369a1 !important;
+  }
+  .renhub-status-btn .pill-count {
+    background: #f1f5f9;
+    padding: 2px 8px;
+    border-radius: 99px;
+    font-size: 0.74rem;
+    font-weight: 800;
+    color: #475569;
+  }
+
+  /* Filter Bar (Search + State + District) */
+  .renhub-filter-bar {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    background: #ffffff;
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+  }
+  .renhub-filter-search {
+    flex: 2;
+    min-width: 220px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: 1.5px solid #cbd5e1;
+    font-size: 0.85rem;
+    color: #0f172a;
+    outline: none;
+    box-sizing: border-box;
+  }
+  .renhub-filter-select {
+    flex: 1;
+    min-width: 160px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1.5px solid #cbd5e1;
+    font-size: 0.85rem;
+    color: #0f172a;
+    background: #ffffff;
+    cursor: pointer;
+    box-sizing: border-box;
+  }
+
+  /* RenHUB Modern Listing Card */
+  /* === RENHUB MODERN LISTING CARD (DESKTOP & MOBILE MASTER) === */
+  .renhub-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    padding: 16px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+    transition: all 0.2s ease;
+    margin-bottom: 12px;
+    box-sizing: border-box;
+  }
+  .renhub-card:hover {
+    border-color: #cbd5e1;
+    box-shadow: 0 4px 14px rgba(15,23,42,0.06);
+  }
+  .renhub-card-thumb-wrap {
+    width: 120px;
+    height: 95px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    margin-top: 0;
+  }
+  .renhub-card-thumb {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .renhub-card-body {
+    flex: 1;
+    min-width: 0;
+    margin-top: 0;
+  }
+  .renhub-card-badges-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    margin-bottom: 6px;
+    gap: 12px;
+  }
+  .renhub-badges-left {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-top: 2px;
+  }
+
+  /* RenHUB Colored Badges */
+  .renhub-badge {
+    padding: 3px 8px;
+    border-radius: 6px;
+    font-size: 0.70rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    display: inline-block;
+  }
+  .renhub-badge.badge-my {
+    background: #e0f2fe;
+    color: #0369a1;
+    border: 1px solid #bae6fd;
+  }
+  .renhub-badge.badge-coa {
+    background: #dcfce7;
+    color: #15803d;
+    border: 1px solid #bbf7d0;
+  }
+  .renhub-badge.badge-undercon {
+    background: #ffedd5;
+    color: #c2410c;
+    border: 1px solid #fed7aa;
+  }
+  .renhub-badge.badge-for-sale {
+    background: #fef3c7;
+    color: #b45309;
+    border: 1px solid #fde68a;
+  }
+  .renhub-badge.badge-for-rent {
+    background: #f3e8ff;
+    color: #7e22ce;
+    border: 1px solid #e9d5ff;
+  }
+
+  /* Move to Dropdown & Referral Link Column */
+  .renhub-move-ref-col {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 6px;
+    flex-shrink: 0;
+    width: 175px;
+  }
+  .renhub-move-select {
+    width: 100%;
+    padding: 5px 8px;
+    border-radius: 7px;
+    border: 1.5px solid #cbd5e1;
+    font-size: 0.74rem;
+    font-weight: 800;
+    background: #f8fafc;
+    color: #0f172a;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.2s;
+    height: 30px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+  }
+  .renhub-move-select:focus, .renhub-move-select:hover {
+    border-color: #d97706;
+    background: #ffffff;
+  }
+
+  .renhub-ref-link {
+    width: 100%;
+    height: 30px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    background: #eff6ff;
+    color: #1d4ed8;
+    padding: 0 8px;
+    border-radius: 7px;
+    font-size: 0.74rem;
+    text-decoration: none;
+    font-weight: 800;
+    border: 1px solid #bfdbfe;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+    cursor: pointer;
+    box-sizing: border-box;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+  }
+  .renhub-ref-link:hover {
+    background: #dbeafe;
+    color: #1e40af;
+    border-color: #93c5fd;
+  }
+  .renhub-ref-link-empty {
+    background: #f8fafc;
+    color: #94a3b8;
+    border: 1px dashed #cbd5e1;
+    font-weight: 700;
+  }
+  .renhub-ref-link-empty:hover {
+    background: #f1f5f9;
+    color: #475569;
+    border-color: #94a3b8;
+  }
+
+  .renhub-card-price {
+    font-size: 1.15rem;
+    font-weight: 900;
+    color: #d97706;
+    margin-bottom: 2px;
+  }
+  .renhub-card-title {
+    font-size: 0.95rem;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0 0 4px 0;
+    line-height: 1.35;
+  }
+  .renhub-card-location {
+    font-size: 0.78rem;
+    color: #64748b;
+    margin-bottom: 4px;
+  }
+  .renhub-card-specs {
+    font-size: 0.74rem;
+    font-weight: 700;
+    color: #334155;
+    background: #f8fafc;
+    padding: 3px 8px;
+    border-radius: 4px;
+    display: inline-block;
+    border: 1px solid #f1f5f9;
+  }
+  .renhub-note-badge {
+    margin-top: 6px;
+    padding: 3px 8px;
+    border-radius: 6px;
+    font-size: 0.70rem;
+    font-weight: 700;
+    display: inline-block;
+  }
+
+  /* Right column action buttons (Vertical Column Stack on Desktop) */
+  .renhub-card-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex-shrink: 0;
+    width: 80px;
+    margin-top: 0;
+  }
+  .renhub-action-btn {
+    width: 100%;
+    height: 28px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    border: 1px solid #cbd5e1;
+    background: #ffffff;
+    color: #334155;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.15s ease;
+    box-sizing: border-box;
+  }
+  .renhub-action-btn:hover {
+    background: #0f172a;
+    color: #ffffff;
+    border-color: #0f172a;
+  }
+  .renhub-action-btn.btn-quick-view {
+    background: #0f172a;
+    color: #ffffff;
+    border-color: #0f172a;
+  }
+  .renhub-action-btn.btn-quick-view:hover {
+    background: #1e293b;
+  }
+  .renhub-action-btn.btn-delete {
+    background: #fff;
+    color: #dc2626;
+    border-color: #fca5a5;
+  }
+  .renhub-action-btn.btn-delete:hover {
+    background: #dc2626;
+    color: #ffffff;
+  }
+
+  /* Dedicated Mobile Responsive Styles (< 860px) */
+  @media (max-width: 860px) {
+    .admin-wrapper {
+      padding-top: 70px !important;
+      padding-bottom: 40px !important;
+    }
+    .admin-container {
+      padding: 0 12px !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
+      overflow-x: hidden !important;
+    }
+    .admin-top-action-bar {
+      flex-direction: column !important;
+      align-items: stretch !important;
+      gap: 12px !important;
+    }
+    .admin-top-action-bar > div:last-child {
+      display: flex !important;
+      gap: 8px !important;
+      width: 100% !important;
+    }
+    .admin-top-action-bar .renhub-action-btn,
+    .admin-top-action-bar .btn-add-primary {
+      flex: 1 !important;
+      justify-content: center !important;
+      padding: 10px 14px !important;
+      font-size: 0.85rem !important;
+    }
+    .renhub-metrics-grid {
+      display: grid !important;
+      grid-template-columns: repeat(2, 1fr) !important;
+      gap: 10px !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
+    }
+    .renhub-metric-card {
+      padding: 12px 14px !important;
+      min-width: 0 !important;
+      box-sizing: border-box !important;
+    }
+    .renhub-metric-value {
+      font-size: 1.5rem !important;
+    }
+    .renhub-category-tabs {
+      display: grid !important;
+      grid-template-columns: repeat(2, 1fr) !important;
+      gap: 8px !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
+    }
+    .renhub-cat-btn {
+      width: 100% !important;
+      justify-content: space-between !important;
+      padding: 10px 14px !important;
+      font-size: 0.78rem !important;
+      box-sizing: border-box !important;
+    }
+    .renhub-filter-bar {
+      flex-direction: column !important;
+      gap: 8px !important;
+      padding: 10px !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
+    }
+    .renhub-filter-search, .renhub-filter-select {
+      width: 100% !important;
+      min-width: 100% !important;
+      box-sizing: border-box !important;
+    }
+    .renhub-card {
+      flex-direction: column !important;
+      align-items: stretch !important;
+      padding: 14px !important;
+      gap: 12px !important;
+      box-sizing: border-box !important;
+      width: 100% !important;
+    }
+    .renhub-card-thumb-wrap {
+      width: 100% !important;
+      height: 190px !important;
+      border-radius: 10px !important;
+    }
+    .renhub-card-thumb {
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: cover !important;
+    }
+    .renhub-card-body {
+      width: 100% !important;
+    }
+    .renhub-card-badges-row {
+      flex-direction: column !important;
+      align-items: stretch !important;
+      gap: 10px !important;
+    }
+    .renhub-badges-left {
+      width: 100% !important;
+      display: flex !important;
+      flex-wrap: wrap !important;
+      gap: 6px !important;
+    }
+    .renhub-move-ref-col {
+      width: 100% !important;
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 8px !important;
+      margin: 4px 0 !important;
+    }
+    .renhub-move-select {
+      width: 100% !important;
+      height: 42px !important;
+      padding: 10px 14px !important;
+      font-size: 0.88rem !important;
+      font-weight: 800 !important;
+      border-radius: 8px !important;
+      background: #ffffff !important;
+      border: 1.5px solid #cbd5e1 !important;
+      color: #0f172a !important;
+      box-sizing: border-box !important;
+    }
+    .renhub-ref-link {
+      width: 100% !important;
+      height: 42px !important;
+      padding: 10px 14px !important;
+      font-size: 0.88rem !important;
+      font-weight: 800 !important;
+      border-radius: 8px !important;
+      justify-content: center !important;
+      box-sizing: border-box !important;
+    }
+    .renhub-card-title {
+      white-space: normal !important;
+      font-size: 1.02rem !important;
+      line-height: 1.4 !important;
+      margin: 4px 0 6px !important;
+    }
+    .renhub-card-actions {
+      width: 100% !important;
+      display: grid !important;
+      grid-template-columns: repeat(2, 1fr) !important;
+      gap: 8px !important;
+      margin-top: 10px !important;
+      padding-top: 10px !important;
+      border-top: 1px solid #f1f5f9 !important;
+    }
+    .renhub-action-btn {
+      width: 100% !important;
+      padding: 9px 8px !important;
+      font-size: 0.82rem !important;
+      font-weight: 700 !important;
+      min-height: 38px !important;
+      box-sizing: border-box !important;
+    }
+    .renhub-action-btn.btn-delete {
+      grid-column: span 2 !important;
+      background: #fff5f5 !important;
+      border-color: #fca5a5 !important;
+    }
+  }
+
+/* ==========================================================================
        MODERN SAAS LEFT SIDEBAR & RESPONSIVE DESKTOP/MOBILE LAYOUT
        ========================================================================== */
     @media (min-width: 992px) {
@@ -689,6 +1564,7 @@
   <link rel="apple-touch-icon" href="/icons/icon-192.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/icons/icon-192.png">
   <link rel="shortcut icon" href="/favicon.ico">
+  <script src="/locations-config.js?v=20"></script>
 </head>
 <body>
   <!-- Desktop Modern Left Sidebar Navigation -->
@@ -761,59 +1637,440 @@
 
 
   <!-- Site Navigation Header -->
-  <header class="site-header">
-    <div class="container nav-wrapper" style="display: flex; justify-content: space-between; align-items: center; height: 80px;">
-      <a href="index.html" class="logo" style="display:flex; flex-direction:column; align-items:flex-start; text-decoration:none; gap:2px;">
-        <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
-          <span class="logo-main">ZAIM<span>ROSLI</span></span>
-          <span class="badge-version" style="background: linear-gradient(135deg, #f59e0b, #d97706); color: #0f172a; padding: 2px 8px; border-radius: 8px; font-size: 0.65rem; font-weight: 800; border: 1px solid #b45309; box-shadow: 0 1px 4px rgba(217, 119, 6, 0.25);">v2.9.0 • Live KV</span>
+  <header class="site-header" style="background: #ffffff; border-bottom: 1px solid #e2e8f0;">
+    <div class="container nav-wrapper" style="display: flex; justify-content: space-between; align-items: center; height: 74px;">
+      
+      <!-- Brand Logo & Badges -->
+      <a href="index.html" class="logo" style="display: flex; flex-direction: column; align-items: flex-start; text-decoration: none; gap: 3px;">
+        <div style="display: flex; align-items: center; gap: 8px; white-space: nowrap;">
+          <span class="logo-main" style="font-size: 1.35rem; line-height: 1;">ZAIM<span>ROSLI</span></span>
+          <span class="badge-version" style="background: linear-gradient(135deg, #f59e0b, #d97706); color: #0f172a; padding: 2px 8px; border-radius: 20px; font-size: 0.65rem; font-weight: 800; border: 1px solid #b45309; box-shadow: 0 1px 4px rgba(217, 119, 6, 0.2); white-space: nowrap;">v2.9.0</span>
         </div>
-        <span class="logo-sub" style="margin-top:2px;">PORTAL EJEN (ADMIN)</span>
+        <span style="background: #0f172a; color: #f59e0b; padding: 2px 9px; border-radius: 12px; font-size: 0.65rem; font-weight: 800; letter-spacing: 0.5px; white-space: nowrap;">AGENT PORTAL (ADMIN)</span>
       </a>
 
-      <div class="user-badge">
-        <div class="user-avatar-placeholder">ZR</div>
-        <span id="user-display">huzaimrosli@gmail.com</span>
-        <button onclick="handleLogout()" class="btn-logout" title="Log Keluar">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="vertical-align:middle;"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
-          <span class="logout-text">Log Keluar</span>
+      <!-- Desktop Segmented Tab Control -->
+      <div class="admin-desktop-tabs" style="background: #f1f5f9; padding: 4px; border-radius: 30px; border: 1px solid #e2e8f0; display: flex; gap: 4px; align-items: center;">
+        <button id="tab-btn-active" onclick="switchAdminTab('active')" style="background: #0f172a; color: #ffffff; border-radius: 24px; font-weight: 700; padding: 8px 18px; border: none; cursor: pointer; transition: all 0.2s; font-size: 0.85rem; display: flex; align-items: center; gap: 6px; box-shadow: 0 2px 6px rgba(15,23,42,0.15);">
+          Active Listings
+        </button>
+        <button id="tab-btn-locations" onclick="switchAdminTab('locations')" style="background: transparent; color: #64748b; border-radius: 24px; font-weight: 700; padding: 8px 18px; border: none; cursor: pointer; transition: all 0.2s; font-size: 0.85rem; display: flex; align-items: center; gap: 6px;">
+          Location SEO
+        </button>
+        <button id="tab-btn-past" onclick="switchAdminTab('past')" style="background: transparent; color: #64748b; border-radius: 24px; font-weight: 700; padding: 8px 18px; border: none; cursor: pointer; transition: all 0.2s; font-size: 0.85rem; display: flex; align-items: center; gap: 6px;">
+          Past Deals
+        </button>
+        <a href="/propmall-sync.html" style="background: linear-gradient(135deg, #1e293b, #0f172a); color: #f59e0b; border-radius: 24px; font-weight: 800; padding: 8px 16px; border: 1px solid #f59e0b; text-decoration: none; font-size: 0.82rem; display: flex; align-items: center; gap: 6px; box-shadow: 0 2px 6px rgba(245,158,11,0.2);">
+          PropMall Sync
+        </a>
+      </div>
+
+      <!-- User Badge & Mobile Hamburger -->
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <div class="admin-desktop-user" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 30px; padding: 4px 14px 4px 6px; display: flex; align-items: center; gap: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.04);">
+          <div class="user-avatar-placeholder" style="width: 28px; height: 28px; background: #d97706; color: #ffffff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.72rem;">ZR</div>
+          <span id="user-display" style="font-size: 0.82rem; font-weight: 600; color: #334155;">huzaimrosli@gmail.com</span>
+          <span style="color: #cbd5e1;">|</span>
+          <button onclick="handleLogout()" style="background: none; border: none; color: #ef4444; font-weight: 700; font-size: 0.82rem; cursor: pointer; padding: 0; display: flex; align-items: center; gap: 4px;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+            Log Out
+          </button>
+        </div>
+
+        <button onclick="toggleAdminMobileDrawer()" class="admin-hamburger-btn" aria-label="Toggle Admin Menu" style="display: none; background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 10px; width: 42px; height: 42px; align-items: center; justify-content: center; font-size: 1.3rem; cursor: pointer; color: #0f172a;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
         </button>
       </div>
+
     </div>
   </header>
 
-  <!-- Admin Main Wrapper -->
-  <div class="admin-wrapper">
-    <div class="admin-container">
+  <!-- Mobile Drawer Menu -->
+  <div id="admin-mobile-drawer" class="mobile-drawer-overlay" style="display: none; position: fixed; inset: 0; background: rgba(15, 23, 42, 0.65); backdrop-filter: blur(4px); z-index: 99999; justify-content: flex-end;">
+    <div class="mobile-drawer-content" style="background: #ffffff; width: 85%; max-width: 320px; height: 100%; box-shadow: -4px 0 24px rgba(0,0,0,0.15); display: flex; flex-direction: column; padding: 20px; gap: 16px; box-sizing: border-box; overflow-y: auto;">
       
-      <!-- Panel Card -->
-      <div class="panel" style="display: block;">
-        
-        <div class="listings-header" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
-          <h2>Urus Listings Hartanah</h2>
-          <div class="admin-btn-group" style="display:flex; gap:10px; align-items:center;">
-            <button onclick="loadPropertiesList()" class="btn-add" style="background:#475569; color:#fff;" title="Muat Semula Dari Cloudflare KV">🔄 Refresh List</button>
-            <button onclick="openModal()" class="btn-add">+ Tambah Hartanah</button>
+      <!-- Drawer Header -->
+      <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #f1f5f9; padding-bottom: 12px;">
+        <div style="display: flex; flex-direction: column;">
+          <div style="display: flex; align-items: center; gap: 6px;">
+            <span class="logo-main" style="font-size: 1.2rem; line-height: 1;">ZAIM<span>ROSLI</span></span>
+            <span class="badge-version" style="background: linear-gradient(135deg, #f59e0b, #d97706); color: #0f172a; padding: 2px 7px; border-radius: 12px; font-size: 0.60rem; font-weight: 800;">v2.9.0</span>
           </div>
+          <span style="background: #0f172a; color: #f59e0b; padding: 2px 8px; border-radius: 8px; font-size: 0.60rem; font-weight: 800; width: fit-content; margin-top: 4px;">AGENT PORTAL (ADMIN)</span>
         </div>
+        <button onclick="closeAdminMobileDrawer()" class="mobile-drawer-close" style="background: #f1f5f9; border: none; width: 32px; height: 32px; border-radius: 50%; font-size: 1.3rem; cursor: pointer; display: flex; align-items: center; justify-content: center; color: #0f172a;" aria-label="Close Menu">&times;</button>
+      </div>
 
-        <!-- Listings Grid Container -->
-        <div id="admin-listings-grid" class="listings-grid">
-          <!-- Rendered dynamically -->
+      <!-- User Profile Card -->
+      <div style="background: #f8fafc; padding: 10px 12px; border-radius: 12px; border: 1px solid #e2e8f0; display: flex; align-items: center; gap: 10px;">
+        <div style="width: 34px; height: 34px; background: linear-gradient(135deg, #f59e0b, #d97706); color: #ffffff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.82rem; flex-shrink: 0; box-shadow: 0 2px 6px rgba(217, 119, 6, 0.25);">ZR</div>
+        <div style="overflow: hidden; flex: 1;">
+          <div style="font-weight: 700; font-size: 0.80rem; color: #0f172a; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" id="mobile-user-display">huzaimrosli@gmail.com</div>
+          <div style="font-size: 0.68rem; color: #64748b;">LPPEH Negotiator (REN39575)</div>
         </div>
+      </div>
 
+      <!-- Navigation Menu Items (Top Pinned) -->
+      <div style="display: flex; flex-direction: column; gap: 6px;">
+        <div style="font-size: 0.65rem; font-weight: 800; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 4px; padding-left: 4px;">LISTING MANAGEMENT</div>
+
+        <button id="mobile-tab-btn-all" onclick="setAdminCategoryFilter('all'); switchAdminTab('active'); closeAdminMobileDrawer();" class="btn" style="width: 100%; justify-content: flex-start; gap: 10px; padding: 10px 14px; border-radius: 10px; font-weight: 700; font-size: 0.85rem; background: #0f172a; color: #ffffff; border: none; box-shadow: 0 2px 6px rgba(15,23,42,0.15);">
+          All Active Listings
+        </button>
+
+        <button id="mobile-tab-btn-res" onclick="setAdminCategoryFilter('residential'); switchAdminTab('active'); closeAdminMobileDrawer();" class="btn" style="width: 100%; justify-content: flex-start; gap: 10px; padding: 10px 14px; border-radius: 10px; font-weight: 700; font-size: 0.85rem; background: #ffffff; color: #334155; border: 1px solid #cbd5e1;">
+          Residential Listings
+        </button>
+
+        <button id="mobile-tab-btn-comm" onclick="setAdminCategoryFilter('commercial'); switchAdminTab('active'); closeAdminMobileDrawer();" class="btn" style="width: 100%; justify-content: flex-start; gap: 10px; padding: 10px 14px; border-radius: 10px; font-weight: 700; font-size: 0.85rem; background: #ffffff; color: #334155; border: 1px solid #cbd5e1;">
+          Commercial & Industrial
+        </button>
+
+        <div style="font-size: 0.65rem; font-weight: 800; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 8px; padding-left: 4px;">RECORDS & SHORTCUTS</div>
+
+        <a href="/propmall-sync.html" class="btn" style="width: 100%; justify-content: flex-start; gap: 10px; padding: 10px 14px; border-radius: 10px; font-weight: 800; font-size: 0.85rem; background: linear-gradient(135deg, #1e293b, #0f172a); color: #f59e0b; border: 1px solid #f59e0b; text-decoration: none; box-shadow: 0 2px 8px rgba(245, 158, 11, 0.2);">
+          PropMall Sync Tool
+        </a>
+
+        <button id="mobile-tab-btn-locations" onclick="switchAdminTab('locations'); closeAdminMobileDrawer();" class="btn" style="width: 100%; justify-content: flex-start; gap: 10px; padding: 10px 14px; border-radius: 10px; font-weight: 700; font-size: 0.85rem; background: #ffffff; color: #334155; border: 1px solid #cbd5e1;">
+          Location SEO Hub
+        </button>
+
+        <button id="mobile-tab-btn-past" onclick="switchAdminTab('past'); closeAdminMobileDrawer();" class="btn" style="width: 100%; justify-content: flex-start; gap: 10px; padding: 10px 14px; border-radius: 10px; font-weight: 700; font-size: 0.85rem; background: #ffffff; color: #334155; border: 1px solid #cbd5e1;">
+          Past Deals
+        </button>
+
+        <a href="/index.html" class="btn" style="width: 100%; justify-content: flex-start; gap: 10px; padding: 10px 14px; border-radius: 10px; font-weight: 700; font-size: 0.85rem; background: #ffffff; color: #334155; border: 1px solid #cbd5e1; text-decoration: none;">
+          View Public Website
+        </a>
+
+        <hr style="margin: 6px 0; border: none; border-top: 1px solid #f1f5f9;">
+
+        <button onclick="handleLogout()" class="btn" style="width: 100%; justify-content: center; gap: 8px; padding: 10px 14px; border-radius: 10px; font-weight: 800; font-size: 0.85rem; background: #fef2f2; color: #dc2626; border: 1px solid #fca5a5;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+          Log Out
+        </button>
       </div>
 
     </div>
   </div>
 
+  <!-- Admin Main Wrapper -->
+  <div class="admin-wrapper">
+    <div class="admin-container">
 
+            <!-- Active Listings Panel -->
+      <div id="tab-panel-active" class="panel" style="display: block; background: transparent; border: none; box-shadow: none; padding: 0;">
+        
+        <!-- RenHUB Top Metric Counters Bar -->
+        <div class="renhub-metrics-grid">
+          <div class="renhub-metric-card">
+            <div class="renhub-metric-label">Total Listings</div>
+            <div class="renhub-metric-value" id="renhub-count-total">0</div>
+          </div>
+          <div class="renhub-metric-card metric-success">
+            <div class="renhub-metric-label">Active Listings</div>
+            <div class="renhub-metric-value" id="renhub-count-active">0</div>
+          </div>
+          <div class="renhub-metric-card metric-alert">
+            <div class="renhub-metric-label">Expiring Soon</div>
+            <div class="renhub-metric-value" id="renhub-count-expiring">0</div>
+          </div>
+          <div class="renhub-metric-card">
+            <div class="renhub-metric-label">Expired / Hidden</div>
+            <div class="renhub-metric-value" id="renhub-count-expired">0</div>
+          </div>
+        </div>
+
+        <!-- Top Header Action Bar -->
+        <div class="admin-top-action-bar" style="display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-bottom: 16px;">
+          <div>
+            <h2 style="font-size: 1.3rem; font-weight: 800; color: #0f172a; margin: 0;">Manage Property Portfolio</h2>
+            <p style="font-size: 0.82rem; color: #64748b; margin: 2px 0 0;">Asingkan MyListing, COA Listing & Undercon dalam satu ruang kerja tersusun.</p>
+          </div>
+          <div style="display: flex; gap: 8px; align-items: center;">
+            <button onclick="loadPropertiesList()" class="renhub-action-btn" style="padding: 9px 14px; font-weight: 800;" title="Refresh Data">Refresh</button>
+            <button onclick="openModal()" class="btn-add-primary" style="background: linear-gradient(135deg, #f59e0b, #d97706); color: #ffffff; font-weight: 800; font-size: 0.85rem; padding: 9px 18px; border-radius: 9px; border: none; cursor: pointer; display: flex; align-items: center; gap: 4px; box-shadow: 0 2px 8px rgba(217, 119, 6, 0.25);">
+              + Add Property
+            </button>
+          </div>
+        </div>
+
+        <!-- RenHUB 3-Category Color-Coded Tabs -->
+        <div class="renhub-category-tabs">
+          <button id="renhub-tab-all" onclick="setRenhubSourceFilter('all')" class="renhub-cat-btn tab-all active">
+            All Active <span class="pill-count" id="count-source-all">0</span>
+          </button>
+          <button id="renhub-tab-my" onclick="setRenhubSourceFilter('my_listing')" class="renhub-cat-btn tab-my">
+            My Listing <span class="pill-count" id="count-source-my">0</span>
+          </button>
+          <button id="renhub-tab-coa" onclick="setRenhubSourceFilter('coa')" class="renhub-cat-btn tab-coa">
+            COA Listing <span class="pill-count" id="count-source-coa">0</span>
+          </button>
+          <button id="renhub-tab-undercon" onclick="setRenhubSourceFilter('undercon')" class="renhub-cat-btn tab-undercon">
+            Undercon <span class="pill-count" id="count-source-undercon">0</span>
+          </button>
+        </div>
+
+        <!-- Status Filter Tabs (Semua / Jual / Sewa) -->
+        <div class="renhub-status-tabs">
+          <button id="status-tab-all" onclick="setRenhubStatusFilter('all')" class="renhub-status-btn active">
+            Semua Status <span class="pill-count" id="count-status-all">0</span>
+          </button>
+          <button id="status-tab-sale" onclick="setRenhubStatusFilter('sale')" class="renhub-status-btn tab-sale">
+            🏷️ Untuk Jual <span class="pill-count" id="count-status-sale">0</span>
+          </button>
+          <button id="status-tab-rent" onclick="setRenhubStatusFilter('rent')" class="renhub-status-btn tab-rent">
+            🔑 Untuk Sewa <span class="pill-count" id="count-status-rent">0</span>
+          </button>
+        </div>
+
+        <!-- RenHUB Smart Filter Bar (Search + Status Dropdown + State + District) -->
+        <div class="renhub-filter-bar">
+          <input type="text" id="admin-search-input" oninput="renderListingsGrid()" placeholder="Cari tajuk, lokasi, rujukan, sewa, jual, ejen..." class="renhub-filter-search">
+          <select id="admin-filter-status" onchange="setRenhubStatusFilter(this.value)" class="renhub-filter-select" style="font-weight: 700;">
+            <option value="all">Status: Semua (Jual &amp; Sewa)</option>
+            <option value="sale">🏷️ Untuk Dijual (For Sale)</option>
+            <option value="rent">🔑 Untuk Disewa (For Rent)</option>
+          </select>
+          <select id="admin-filter-state" onchange="handleStateFilterChange()" class="renhub-filter-select">
+            <option value="all">Select State (All)</option>
+          </select>
+          <select id="admin-filter-district" onchange="renderListingsGrid()" class="renhub-filter-select">
+            <option value="all">Select District (All)</option>
+          </select>
+        </div>
+
+        <!-- Listings Card Container -->
+        <div id="admin-listings-grid" style="display: flex; flex-direction: column; gap: 12px;">
+          <!-- Rendered dynamically -->
+        </div>
+
+      </div>
+
+      <!-- Past Deals Panel -->
+      <div id="tab-panel-past" class="panel" style="display: none;">
+        <div class="listings-header" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
+          <h2>Rekod Transaksi Lalu (Past Deals)</h2>
+          <div class="admin-btn-group" style="display:flex; gap:10px; align-items:center;">
+            <button onclick="loadPastDealsAdmin()" class="btn-add" style="background:#475569; color:#fff;" title="Muat Semula Past Deals">Refresh Past Deals</button>
+            <button onclick="openPastDealModal()" class="btn-add" style="background: #d97706;">+ Add Past Deal</button>
+          </div>
+        </div>
+
+        <div id="admin-past-deals-list" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; margin-top: 20px;">
+          <!-- Rendered dynamically -->
+        </div>
+      </div>
+
+      <!-- Location SEO Panel -->
+      <div id="tab-panel-locations" class="panel" style="display: none;">
+        <div class="listings-header" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-bottom: 20px;">
+          <div>
+            <h2 style="font-size: 1.3rem; font-weight: 800; color: #0f172a; margin: 0; display: flex; align-items: center; gap: 8px;">
+              <span>SEO Location Management Hub</span>
+              <span style="background: #e2e8f0; color: #0f172a; font-weight: 800; font-size: 0.72rem; padding: 2px 8px; border-radius: 12px;" id="total-locations-badge">1</span>
+            </h2>
+            <p style="font-size: 0.85rem; color: #64748b; margin: 4px 0 0 0;">
+              Centrally manage location landing pages (e.g. /properties/bangi, /properties/nilai) with automated inventory matching.
+            </p>
+          </div>
+          <div class="admin-btn-group" style="display:flex; gap:8px; align-items:center;">
+            <button onclick="loadLocationsAdmin()" class="btn-add" style="background:#475569; color:#fff; font-size:0.82rem; padding:8px 14px;" title="Refresh Locations">Refresh</button>
+            <button onclick="openLocationModal()" class="btn-add" style="background: linear-gradient(135deg, #f59e0b, #d97706); color: #ffffff; font-size:0.82rem; padding:8px 16px; border:none; box-shadow: 0 2px 6px rgba(217,119,6,0.25);">+ Add Location</button>
+          </div>
+        </div>
+
+        <div id="admin-locations-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 16px;">
+          <!-- Rendered dynamically -->
+        </div>
+      </div>
+
+    
+      <!-- Real-Time Website Traffic & Leads Analytics Panel -->
+      <div id="tab-panel-traffic" class="panel" style="display: none;">
+        <div class="listings-header" style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:12px; margin-bottom: 20px;">
+          <div>
+            <h2 style="font-size: 1.3rem; font-weight: 800; color: #0f172a; margin: 0; display: flex; align-items: center; gap: 8px;">
+              <span>Website Traffic &amp; Lead Analytics</span>
+              <span style="background: #e0f2fe; color: #0369a1; font-weight: 800; font-size: 0.72rem; padding: 2px 8px; border-radius: 12px;" id="live-traffic-badge">LIVE BEACON</span>
+            </h2>
+            <p style="font-size: 0.85rem; color: #64748b; margin: 4px 0 0 0;">
+              Real-time visitor traffic, pageviews, and WhatsApp conversion leads received across Zaim Rosli Portal.
+            </p>
+          </div>
+          <div class="admin-btn-group" style="display:flex; gap:8px; align-items:center;">
+            <button onclick="loadTrafficAnalyticsAdmin()" class="btn-add" style="background:#0f172a; color:#fff; font-size:0.82rem; padding:8px 16px; border:none; border-radius:8px; display:inline-flex; align-items:center; gap:6px; cursor:pointer;" title="Refresh Traffic Data">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
+              <span>Refresh Data</span>
+            </button>
+          </div>
+        </div>
+
+        <div id="trafficAnalyticsContainer">
+          <!-- Rendered dynamically by loadTrafficAnalyticsAdmin() -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Add/Edit Past Deal -->
+  <div id="past-deal-modal" class="modal-overlay">
+    <div class="modal-card">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+        <h3 id="past-modal-title" style="font-size: 1.3rem; font-weight: 800;">Add Past Deal Record</h3>
+        <button onclick="closePastDealModal()" style="background: none; border: none; font-size: 1.8rem; cursor: pointer; color: #64748b;">&times;</button>
+      </div>
+
+      <form id="past-form" onsubmit="savePastDeal(event)">
+        <input type="hidden" id="past-form-id">
+
+        <div class="form-group" style="margin-bottom: 16px;">
+          <label style="display:block; font-size:0.75rem; font-weight:700; color:#64748b; margin-bottom:6px; text-transform:uppercase;">PROPERTY TITLE</label>
+          <input type="text" id="past-form-title" class="form-input" placeholder="e.g. Double Storey Terrace House Bandar Seri Putra" required>
+        </div>
+
+        <div class="form-row" style="display:flex; gap:12px; margin-bottom:16px;">
+          <div style="flex:1;">
+            <label style="display:block; font-size:0.75rem; font-weight:700; color:#64748b; margin-bottom:6px; text-transform:uppercase;">PROPERTY TYPE</label>
+            <input type="text" id="past-form-type" class="form-input" placeholder="e.g. Terrace House / Condominium / Land" required>
+          </div>
+          <div style="flex:1;">
+            <label style="display:block; font-size:0.75rem; font-weight:700; color:#64748b; margin-bottom:6px; text-transform:uppercase;">TRANSACTION STATUS</label>
+            <select id="past-form-category" class="form-select" required>
+              <option value="RENTED">RENTED</option>
+              <option value="SOLD">SOLD</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group" style="margin-bottom: 16px;">
+          <label style="display:block; font-size:0.75rem; font-weight:700; color:#64748b; margin-bottom:6px; text-transform:uppercase;">LOCATION</label>
+          <input type="text" id="past-form-location" class="form-input" placeholder="e.g. Bangi, Selangor / Cyberjaya" required>
+        </div>
+
+        <div class="form-group" style="margin-bottom: 16px;">
+          <label style="display:block; font-size:0.75rem; font-weight:700; color:#64748b; margin-bottom:6px; text-transform:uppercase;">PRICE / RENTAL RATE</label>
+          <input type="text" id="past-form-price" class="form-input" placeholder="e.g. RM 2,100 / mo OR RM 1,450,000" required>
+        </div>
+
+        <div class="form-group" style="margin-bottom: 24px;">
+          <label style="display:block; font-size:0.75rem; font-weight:700; color:#64748b; margin-bottom:6px; text-transform:uppercase;">PROPERTY IMAGE (URL)</label>
+          <input type="text" id="past-form-image" class="form-input" placeholder="e.g. https://images.unsplash.com/... or image link">
+        </div>
+
+        <div class="modal-action-row">
+          <button type="button" onclick="closePastDealModal()" class="btn-cancel" style="flex: 1;">Cancel</button>
+          <button type="submit" id="past-save-btn" class="btn-submit" style="flex: 2; background: #d97706;">Save Past Deal</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal Add/Edit Location SEO -->
+  <div id="location-modal" class="modal-overlay" style="display: none; position: fixed; inset: 0; background: rgba(15, 23, 42, 0.75); backdrop-filter: blur(6px); z-index: 99999; justify-content: center; align-items: center; padding: 14px; box-sizing: border-box; overflow-y: auto;">
+    <div class="modal-card loc-modal-card">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; border-bottom: 1px solid #e2e8f0; padding-bottom: 12px;">
+        <h3 id="loc-modal-title" style="font-size: 1.2rem; font-weight: 800; color: #0f172a; margin: 0;">Add New Location SEO Page</h3>
+        <button type="button" onclick="closeLocationModal()" style="background: none; border: none; font-size: 1.6rem; cursor: pointer; color: #64748b; line-height: 1;">&times;</button>
+      </div>
+
+      <form id="loc-form" onsubmit="saveLocation(event)">
+        <input type="hidden" id="loc-form-id">
+        <input type="hidden" id="loc-is-edit" value="false">
+
+        <div class="loc-form-grid">
+          <div class="form-group">
+            <label style="display:block; font-size:0.75rem; font-weight:700; color:#475569; margin-bottom:4px; text-transform:uppercase;">LOCATION NAME *</label>
+            <input type="text" id="loc-form-name" class="form-input" placeholder="e.g. Nilai" required oninput="handleLocationNameInput(this.value)" style="width:100%; padding:10px 12px; border:1.5px solid #cbd5e1; border-radius:8px; font-size:0.9rem; box-sizing:border-box;">
+          </div>
+          <div class="form-group">
+            <label style="display:block; font-size:0.75rem; font-weight:700; color:#475569; margin-bottom:4px; text-transform:uppercase;">URL SLUG * (e.g. /properties/nilai)</label>
+            <input type="text" id="loc-form-slug" class="form-input" placeholder="e.g. nilai" required style="width:100%; padding:10px 12px; border:1.5px solid #cbd5e1; border-radius:8px; font-size:0.9rem; box-sizing:border-box;">
+          </div>
+        </div>
+
+        <div class="loc-form-grid">
+          <div class="form-group">
+            <label style="display:block; font-size:0.75rem; font-weight:700; color:#475569; margin-bottom:4px; text-transform:uppercase;">STATE / REGION</label>
+            <select id="loc-form-state" class="form-input" style="width:100%; padding:10px 12px; border:1.5px solid #cbd5e1; border-radius:8px; font-size:0.9rem; box-sizing:border-box; background-color:#ffffff; cursor:pointer;">
+              <option value="Selangor">Selangor</option>
+              <option value="Kuala Lumpur">Kuala Lumpur</option>
+              <option value="Negeri Sembilan">Negeri Sembilan</option>
+              <option value="Johor">Johor</option>
+              <option value="Perak">Perak</option>
+              <option value="Melaka">Melaka</option>
+              <option value="Kedah">Kedah</option>
+              <option value="Pahang">Pahang</option>
+              <option value="Pulau Pinang">Pulau Pinang</option>
+              <option value="Terengganu">Terengganu</option>
+              <option value="Kelantan">Kelantan</option>
+              <option value="Perlis">Perlis</option>
+              <option value="Sabah">Sabah</option>
+              <option value="Sarawak">Sarawak</option>
+              <option value="W.P. Putrajaya">W.P. Putrajaya</option>
+              <option value="W.P. Labuan">W.P. Labuan</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label style="display:block; font-size:0.75rem; font-weight:700; color:#475569; margin-bottom:4px; text-transform:uppercase;">STATUS</label>
+            <select id="loc-form-status" class="form-input" style="width:100%; padding:10px 12px; border:1.5px solid #cbd5e1; border-radius:8px; font-size:0.9rem; box-sizing:border-box; background-color:#ffffff; cursor:pointer;">
+              <option value="active">Active (Published &amp; Indexed)</option>
+              <option value="inactive">Inactive (Draft / Hidden - 404)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group" style="margin-bottom: 14px;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
+            <label style="font-size:0.75rem; font-weight:700; color:#475569; text-transform:uppercase;">SEO TITLE</label>
+            <span id="loc-title-count" style="font-size:0.72rem; color:#64748b;">0 / 65</span>
+          </div>
+          <input type="text" id="loc-form-seo-title" class="form-input" placeholder="Ejen Hartanah Nilai &amp; Rumah Dijual / Sewa — Zaim Rosli (REN39575)" oninput="updateCharCount('loc-form-seo-title', 'loc-title-count', 65)" style="width:100%; padding:9px 12px; border:1.5px solid #cbd5e1; border-radius:8px; font-size:0.88rem; box-sizing:border-box;">
+        </div>
+
+        <div class="form-group" style="margin-bottom: 14px;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
+            <label style="font-size:0.75rem; font-weight:700; color:#475569; text-transform:uppercase;">SEO META DESCRIPTION</label>
+            <span id="loc-desc-count" style="font-size:0.72rem; color:#64748b;">0 / 160</span>
+          </div>
+          <textarea id="loc-form-seo-desc" rows="2" class="form-input" placeholder="Search rental homes, terraces, semi-d & commercial spaces for sale in this area. Professional REN39575 real estate services." oninput="updateCharCount('loc-form-seo-desc', 'loc-desc-count', 160)" style="width:100%; padding:9px 12px; border:1.5px solid #cbd5e1; border-radius:8px; font-size:0.88rem; box-sizing:border-box;"></textarea>
+        </div>
+
+        <div class="form-group" style="margin-bottom: 14px;">
+          <label style="display:block; font-size:0.75rem; font-weight:700; color:#475569; margin-bottom:4px; text-transform:uppercase;">H1 HEADLINE</label>
+          <input type="text" id="loc-form-h1" class="form-input" placeholder="Hartanah di Nilai: Rumah Dijual &amp; Sewa" style="width:100%; padding:9px 12px; border:1.5px solid #cbd5e1; border-radius:8px; font-size:0.88rem; box-sizing:border-box;">
+        </div>
+
+        <div class="form-group" style="margin-bottom: 14px;">
+          <label style="display:block; font-size:0.75rem; font-weight:700; color:#475569; margin-bottom:4px; text-transform:uppercase;">INTRO CONTENT</label>
+          <textarea id="loc-form-intro" rows="3" class="form-input" placeholder="Brief summary of the local property market and connectivity..." style="width:100%; padding:9px 12px; border:1.5px solid #cbd5e1; border-radius:8px; font-size:0.88rem; box-sizing:border-box;"></textarea>
+        </div>
+
+        <div class="form-group" style="margin-bottom: 14px;">
+          <label style="display:block; font-size:0.75rem; font-weight:700; color:#475569; margin-bottom:4px; text-transform:uppercase;">FILTER KEYWORDS (PISAHKAN DENGAN KOMA)</label>
+          <input type="text" id="loc-form-keywords" class="form-input" placeholder="nilai, bandar baru nilai, nilai impian, mesa mall" style="width:100%; padding:9px 12px; border:1.5px solid #cbd5e1; border-radius:8px; font-size:0.88rem; box-sizing:border-box;">
+          <small style="color:#64748b; font-size:0.72rem;">Listings containing these keywords in title, location, or description will be automatically matched.</small>
+        </div>
+
+        <div class="form-group" style="margin-bottom: 14px;">
+          <label style="display:block; font-size:0.75rem; font-weight:700; color:#475569; margin-bottom:4px; text-transform:uppercase;">SUBAREAS / SURROUNDING AREAS (COMMA SEPARATED)</label>
+          <input type="text" id="loc-form-subareas" class="form-input" placeholder="Nilai Impian, Bandar Enstek, Kota Seriemas, Desa Palma" style="width:100%; padding:9px 12px; border:1.5px solid #cbd5e1; border-radius:8px; font-size:0.88rem; box-sizing:border-box;">
+        </div>
+
+        <div class="modal-action-row" style="display:flex; justify-content:flex-end; gap:10px; margin-top:20px; border-top:1px solid #e2e8f0; padding-top:16px;">
+          <button type="button" onclick="closeLocationModal()" class="btn" style="background:#f1f5f9; color:#475569; border:1px solid #cbd5e1; padding:10px 18px; border-radius:8px; font-weight:700; cursor:pointer;">Cancel</button>
+          <button type="submit" class="btn" style="background:#d97706; color:#ffffff; border:none; padding:10px 24px; border-radius:8px; font-weight:800; cursor:pointer;">Save Location</button>
+        </div>
+      </form>
+    </div>
+  </div>
 
   <!-- Modal Add/Edit Property -->
   <div id="property-modal" class="modal-overlay">
     <div class="modal-card">
       <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
-        <h3 id="modal-title" style="font-size: 1.3rem; font-weight: 800;">Tambah Hartanah</h3>
+        <h3 id="modal-title" style="font-size: 1.3rem; font-weight: 800;">Add New Property</h3>
         <button onclick="closeModal()" style="background: none; border: none; font-size: 1.8rem; cursor: pointer; color: #64748b;">&times;</button>
       </div>
 
@@ -1025,14 +2282,23 @@
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script src="/properties-data.js"></script>
-  <script src="/app.js"></script>
+  <script src="/properties-data.js?v=102"></script>
+  <script src="/app.js?v=102"></script>
   <script>
     const SUPABASE_URL = 'https://csrzhidtzqxfbapsenhu.supabase.co';
     const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNzcnpoaWR0enF4ZmJhcHNlbmh1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODU0OTM3OTYsImV4cCI6MjEwMTA2OTc5Nn0.NnHFURbQTvsdgGbm1d_PC-hkOgQFQIHKTMQaS2n44SU';
     const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
-    let currentProperties = [];
+    let currentProperties = (() => {
+      try {
+        const stored = localStorage.getItem('ZAIM_ROSLI_PROPERTIES');
+        if (stored) {
+          const parsed = JSON.parse(stored);
+          if (Array.isArray(parsed) && parsed.length > 0) return parsed;
+        }
+      } catch (e) {}
+      return (typeof PROPERTIES_DATA !== 'undefined' && Array.isArray(PROPERTIES_DATA)) ? [...PROPERTIES_DATA] : [];
+    })();
     
     async function getAdminAuthHeaders(extraHeaders = {}) {
       const headers = { ...extraHeaders };
@@ -1070,7 +2336,9 @@
 
     async function loadPropertiesList() {
       try {
-        const res = await fetch('https://zaimrosli-worker.huzaimrosli.workers.dev/api/properties?t=' + Date.now());
+        const res = await fetch('https://zaimrosli-worker.huzaimrosli.workers.dev/api/properties?t=' + Date.now(), {
+          signal: AbortSignal.timeout(5000)
+        });
         if (res.ok) {
           let remoteData = await res.json();
           if (typeof remoteData === 'string') {
@@ -1080,9 +2348,10 @@
             remoteData = [remoteData];
           }
           if (Array.isArray(remoteData) && remoteData.length > 0) {
-            currentProperties = remoteData;
-            localStorage.setItem('ZAIM_ROSLI_PROPERTIES', JSON.stringify(remoteData));
-            renderListingsGrid();
+            currentProperties = remoteData.filter(p => p && p.id !== '__SYS_LOCATIONS_DATA__');
+            localStorage.setItem('ZAIM_ROSLI_PROPERTIES', JSON.stringify(currentProperties));
+            updateRenhubStateFilterOptions();
+      renderListingsGrid();
             return;
           }
         }
@@ -1093,60 +2362,498 @@
       const stored = localStorage.getItem('ZAIM_ROSLI_PROPERTIES');
       if (stored) {
         try {
-          currentProperties = JSON.parse(stored);
+          const parsed = JSON.parse(stored);
+          if (Array.isArray(parsed) && parsed.length > 0) {
+            currentProperties = parsed;
+          } else {
+            currentProperties = (typeof PROPERTIES_DATA !== 'undefined' && Array.isArray(PROPERTIES_DATA)) ? [...PROPERTIES_DATA] : [];
+          }
         } catch(e) {
-          currentProperties = PROPERTIES_DATA;
+          currentProperties = (typeof PROPERTIES_DATA !== 'undefined' && Array.isArray(PROPERTIES_DATA)) ? [...PROPERTIES_DATA] : [];
         }
       } else {
-        currentProperties = PROPERTIES_DATA;
+        currentProperties = (typeof PROPERTIES_DATA !== 'undefined' && Array.isArray(PROPERTIES_DATA)) ? [...PROPERTIES_DATA] : [];
       }
 
       renderListingsGrid();
     }
 
+    // Real-Time Cross-Device Sync (Instantly updates desktop when edited on mobile & vice versa)
+    document.addEventListener('visibilitychange', () => {
+      if (document.visibilityState === 'visible') {
+        const modal = document.getElementById('property-modal');
+        if (!modal || modal.style.display !== 'flex') {
+          loadPropertiesList();
+        }
+      }
+    });
+    window.addEventListener('focus', () => {
+      const modal = document.getElementById('property-modal');
+      if (!modal || modal.style.display !== 'flex') {
+        loadPropertiesList();
+      }
+    });
+
+    let currentAdminCatFilter = 'all';
+
+    function setAdminCategoryFilter(cat) {
+      currentAdminCatFilter = cat;
+      
+      // Update tab pill styles
+      ['all', 'residential', 'commercial'].forEach(c => {
+        const btn = document.getElementById(`admin-cat-${c}`);
+        if (btn) {
+          if (c === cat) {
+            btn.style.background = '#0f172a';
+            btn.style.color = '#ffffff';
+            btn.classList.add('active');
+            const b = btn.querySelector('.badge-pill-count');
+            if (b) { b.style.background = 'rgba(255,255,255,0.25)'; b.style.color = '#ffffff'; }
+          } else {
+            btn.style.background = 'transparent';
+            btn.style.color = '#475569';
+            btn.classList.remove('active');
+            const b = btn.querySelector('.badge-pill-count');
+            if (b) { b.style.background = '#cbd5e1'; b.style.color = '#0f172a'; }
+          }
+        }
+      });
+
+      // Update mobile drawer active buttons if present
+      const mAll = document.getElementById('mobile-tab-btn-all');
+      const mRes = document.getElementById('mobile-tab-btn-res');
+      const mComm = document.getElementById('mobile-tab-btn-comm');
+      if (mAll && mRes && mComm) {
+        [mAll, mRes, mComm].forEach(b => {
+          b.style.background = '#ffffff';
+          b.style.color = '#334155';
+          b.style.borderColor = '#cbd5e1';
+        });
+        if (cat === 'all') { mAll.style.background = '#0f172a'; mAll.style.color = '#ffffff'; mAll.style.borderColor = '#0f172a'; }
+        if (cat === 'residential') { mRes.style.background = '#0f172a'; mRes.style.color = '#ffffff'; mRes.style.borderColor = '#0f172a'; }
+        if (cat === 'commercial') { mComm.style.background = '#0f172a'; mComm.style.color = '#ffffff'; mComm.style.borderColor = '#0f172a'; }
+      }
+
+      renderListingsGrid();
+    }
+
+    let currentRenhubSourceFilter = 'all'; // 'all', 'my_listing', 'coa', 'undercon'
+    let currentRenhubStatusFilter = 'all'; // 'all', 'sale', 'rent'
+
+    function setRenhubStatusFilter(statusKey) {
+      currentRenhubStatusFilter = statusKey;
+      
+      // Sync pill buttons
+      ['all', 'sale', 'rent'].forEach(key => {
+        const btn = document.getElementById('status-tab-' + key);
+        if (btn) {
+          if (key === statusKey) btn.classList.add('active');
+          else btn.classList.remove('active');
+        }
+      });
+
+      // Sync dropdown select
+      const statusSelect = document.getElementById('admin-filter-status');
+      if (statusSelect && statusSelect.value !== statusKey) {
+        statusSelect.value = statusKey;
+      }
+
+      renderListingsGrid();
+    } // 'all', 'my_listing', 'coa', 'undercon'
+
+    function setRenhubSourceFilter(sourceKey) {
+      currentRenhubSourceFilter = sourceKey;
+      ['all', 'my', 'coa', 'undercon'].forEach(key => {
+        const btn = document.getElementById('renhub-tab-' + key);
+        if (btn) {
+          const targetKey = key === 'my' ? 'my_listing' : key;
+          if (targetKey === sourceKey) {
+            btn.classList.add('active');
+          } else {
+            btn.classList.remove('active');
+          }
+        }
+      });
+      renderListingsGrid();
+    }
+
+    function toggleRenhubFormFields() {
+      const source = document.getElementById('form-source')?.value || 'my_listing';
+      const coaRow = document.getElementById('row-coa-fields');
+      const underconRow = document.getElementById('row-undercon-fields');
+      const expiryGroup = document.getElementById('group-exclusive-expiry');
+
+      if (coaRow) coaRow.style.display = (source === 'coa') ? 'flex' : 'none';
+      if (underconRow) underconRow.style.display = (source === 'undercon') ? 'flex' : 'none';
+      if (expiryGroup) expiryGroup.style.display = (source === 'undercon') ? 'none' : 'block';
+    }
+
+    function updateRenhubStateFilterOptions() {
+      const stateSelect = document.getElementById('admin-filter-state');
+      if (!stateSelect) return;
+
+      const currentState = stateSelect.value;
+      const stateCounts = {};
+
+      currentProperties.forEach(p => {
+        const state = (p.region || 'Selangor').trim();
+        stateCounts[state] = (stateCounts[state] || 0) + 1;
+      });
+
+      let optionsHTML = '<option value="all">Select State (All)</option>';
+      Object.keys(stateCounts).sort().forEach(state => {
+        const count = stateCounts[state];
+        const selected = (currentState === state) ? 'selected' : '';
+        optionsHTML += `<option value="${state}" ${selected}>${state} (${count})</option>`;
+      });
+
+      stateSelect.innerHTML = optionsHTML;
+      updateRenhubDistrictFilterOptions();
+    }
+
+    function handleStateFilterChange() {
+      updateRenhubDistrictFilterOptions();
+      renderListingsGrid();
+    }
+
+    function updateRenhubDistrictFilterOptions() {
+      const stateSelect = document.getElementById('admin-filter-state');
+      const districtSelect = document.getElementById('admin-filter-district');
+      if (!districtSelect) return;
+
+      const selectedState = stateSelect ? stateSelect.value : 'all';
+      const districtCounts = {};
+
+      currentProperties.forEach(p => {
+        const pState = (p.region || 'Selangor').trim();
+        if (selectedState !== 'all' && pState.toLowerCase() !== selectedState.toLowerCase()) return;
+        
+        const loc = (p.location || '').trim();
+        const parts = loc.split(',').map(s => s.trim());
+        const dist = parts[0] || 'Lembah Klang';
+        districtCounts[dist] = (districtCounts[dist] || 0) + 1;
+      });
+
+      let optionsHTML = '<option value="all">Select District (All)</option>';
+      Object.keys(districtCounts).sort().forEach(dist => {
+        const count = districtCounts[dist];
+        optionsHTML += `<option value="${dist}">${dist} (${count})</option>`;
+      });
+
+      districtSelect.innerHTML = optionsHTML;
+    }
+
+    function updateRenhubTopMetrics() {
+      const total = currentProperties.length;
+      let active = 0;
+      let expired = 0;
+      let expiring = 0;
+      let countMy = 0;
+      let countCoa = 0;
+      let countUndercon = 0;
+
+      const now = new Date();
+
+      currentProperties.forEach(p => {
+        const isHidden = !!p.hidden;
+        if (!isHidden) active++;
+        else expired++;
+
+        const src = p.listingSource || ((p.category && p.category.toLowerCase().includes('undercon')) ? 'undercon' : 'my_listing');
+        if (src === 'coa') countCoa++;
+        else if (src === 'undercon') countUndercon++;
+        else countMy++;
+
+        if (p.exclusiveExpiryDate) {
+          const exp = new Date(p.exclusiveExpiryDate);
+          const diffDays = Math.ceil((exp - now) / (1000 * 60 * 60 * 24));
+          if (diffDays >= 0 && diffDays <= 30) {
+            expiring++;
+          }
+        }
+      });
+
+      const elTotal = document.getElementById('renhub-count-total');
+      const elActive = document.getElementById('renhub-count-active');
+      const elExpiring = document.getElementById('renhub-count-expiring');
+      const elExpired = document.getElementById('renhub-count-expired');
+
+      if (elTotal) elTotal.innerText = total;
+      if (elActive) elActive.innerText = active;
+      if (elExpiring) elExpiring.innerText = expiring;
+      if (elExpired) elExpired.innerText = expired;
+
+      const countAllEl = document.getElementById('count-source-all');
+      const countMyEl = document.getElementById('count-source-my');
+      const countCoaEl = document.getElementById('count-source-coa');
+      const countUnderconEl = document.getElementById('count-source-undercon');
+
+      if (countAllEl) countAllEl.innerText = active;
+      if (countMyEl) countMyEl.innerText = countMy;
+      if (countCoaEl) countCoaEl.innerText = countCoa;
+      if (countUnderconEl) countUnderconEl.innerText = countUndercon;
+
+      const countStatusAllEl = document.getElementById('count-status-all');
+      const countStatusSaleEl = document.getElementById('count-status-sale');
+      const countStatusRentEl = document.getElementById('count-status-rent');
+
+      if (countStatusAllEl) countStatusAllEl.innerText = active;
+      if (countStatusSaleEl) countStatusSaleEl.innerText = countSale;
+      if (countStatusRentEl) countStatusRentEl.innerText = countRent;
+    }
+
+    function copyListingShareLink(slugOrId, idx) {
+      const url = `${window.location.origin}/property/${slugOrId}`;
+      let prop = (typeof idx === 'number' && currentProperties[idx]) ? currentProperties[idx] : currentProperties.find(p => p.slug === slugOrId || p.id === slugOrId);
+      
+      if (!prop) {
+        try {
+          const stored = localStorage.getItem('ZAIM_ROSLI_PROPERTIES');
+          if (stored) {
+            const parsed = JSON.parse(stored);
+            if (Array.isArray(parsed)) {
+              prop = parsed.find(p => p.slug === slugOrId || p.id === slugOrId);
+            }
+          }
+        } catch(e) {}
+      }
+
+      let shareText = '';
+      if (typeof window.generatePropertyShareSummary === 'function' && prop) {
+        shareText = window.generatePropertyShareSummary(prop, url);
+      } else if (prop) {
+        const isSale = (prop.status || 'sale').toLowerCase() === 'sale';
+        const statusHeader = isSale ? '*WTS / UNTUK DIJUAL (FOR SALE)*' : '*WTL / UNTUK DISEWA (FOR RENT)*';
+        let priceDisplay = 'RM 0';
+        if (prop.price != null && !isNaN(Number(prop.price)) && Number(prop.price) > 0) {
+          priceDisplay = isSale ? 'RM ' + Number(prop.price).toLocaleString('en-US') : 'RM ' + Number(prop.price).toLocaleString('en-US') + ' / bulan';
+        } else if (prop.priceStr) {
+          priceDisplay = prop.priceStr;
+        }
+        const askingLine = isSale ? `*Harga Tawaran (Asking Price):* ${priceDisplay}` : `*Kadar Sewa (Rental Rate):* ${priceDisplay}`;
+        const details = [];
+        if (prop.location) details.push(`- Lokasi: ${prop.location} (${prop.region || 'Selangor'})`);
+        if (prop.type) details.push(`- Jenis: ${prop.type}${prop.category && prop.category !== prop.type ? ' (' + prop.category + ')' : ''}`);
+        if (prop.size && Number(prop.size) > 0) details.push(`- Saiz Binaan (Built-up): ${Number(prop.size).toLocaleString('en-US')} sqft`);
+        if (prop.landSize && prop.landSize !== '-' && prop.landSize !== '0') details.push(`- Saiz Tanah (Land Area): ${prop.landSize}`);
+        const roomParts = [];
+        if (prop.beds > 0) roomParts.push(`${prop.beds}${prop.bedsPlus > 0 ? '+' + prop.bedsPlus : ''} Bilik Tidur`);
+        if (prop.baths > 0) roomParts.push(`${prop.baths}${prop.bathsPlus > 0 ? '+' + prop.bathsPlus : ''} Bilik Air`);
+        if (roomParts.length > 0) details.push(`- Bilik: ${roomParts.join(' & ')}`);
+        if (prop.tenure && prop.tenure !== '-') details.push(`- Pegangan: ${prop.tenure}${prop.lotType && prop.lotType !== '-' ? ' (' + prop.lotType + ')' : ''}`);
+        
+        shareText = `${statusHeader}\n${askingLine}\n\n*${prop.title || 'Hartanah Pilihan'}*\n\n*MAKLUMAT HARTANAH (PROPERTY DETAILS):*\n${details.join('\n')}\n\n*Maklumat lanjut, gambar penuh & temujanji:*\n${url}`;
+      }
+
+      if (navigator.share) {
+        navigator.share({
+          title: prop ? prop.title : 'Property Listing',
+          text: shareText
+        }).catch((err) => {
+          if (err && err.name !== 'AbortError') {
+            copyToClipboard(shareText);
+          }
+        });
+      } else {
+        copyToClipboard(shareText);
+      }
+
+      function copyToClipboard(text) {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(() => {
+            alert('Complete listing summary & share link copied to clipboard! Ready to paste into WhatsApp.');
+          }).catch(() => {
+            prompt('Copy listing summary:', text);
+          });
+        } else {
+          prompt('Salin maklumat listing ini:', text);
+        }
+      }
+    }
+
+    
+    async function quickChangeListingSource(event, idx, newSource) {
+      if (event) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
+      const p = currentProperties[idx];
+      if (!p) return;
+
+      p.listingSource = newSource;
+      if (newSource === 'undercon' && (!p.category || p.category === 'Subsales')) {
+        p.category = 'New Project';
+      }
+
+      // 1. Immediately update UI
+      renderListingsGrid();
+
+      // 2. Persist to Cloudflare Worker KV & localStorage
+      await saveToStorage();
+    }
+
     function renderListingsGrid() {
       const grid = document.getElementById('admin-listings-grid');
-      grid.innerHTML = currentProperties.map((p, idx) => {
-        const mainImg = p.image ? p.image.split(',')[0].trim() : 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=400&q=80';
-        const badgeClass = p.status === 'sale' ? 'badge-sale-style' : 'badge-rent-style';
-        const badgeText = p.status === 'sale' ? 'FOR SALE' : 'FOR RENT';
-        const priceDisplay = p.status === 'sale' ? `RM ${p.price.toLocaleString('en-US')}` : `RM ${p.price.toLocaleString('en-US')} / bln`;
-        const categoryBadge = p.category ? `<span style="background:#f1f5f9; color:#334155; padding:3px 8px; border-radius:6px; font-size:0.72rem; font-weight:700; border:1px solid #e2e8f0;">${p.category}</span>` : '';
-        const typeBadge = p.type ? `<span style="background:#e0f2fe; color:#0369a1; padding:3px 8px; border-radius:6px; font-size:0.72rem; font-weight:700; border:1px solid #bae6fd;">${p.type}</span>` : '';
-        const refLinkHtml = p.refUrl ? `<a href="${p.refUrl}" target="_blank" class="btn-ref-link" style="display:inline-flex; align-items:center; gap:5px; background:#f8fafc; color:#0f172a; padding:4px 10px; border-radius:6px; font-size:0.75rem; text-decoration:none; font-weight:600; border:1px solid #cbd5e1; margin-top:4px; width:fit-content;">🔗 Pautan Rujukan (PropMall)</a>` : '';
+      if (!grid) return;
 
-        const isCommercial = ['Kilang', 'Tanah Industri', 'Kedai / Pejabat', 'Ruang Komersial'].includes(p.type);
-        const bedsChip = (!isCommercial && p.beds > 0) ? `<span class="meta-chip">🛏️ ${p.beds} Bilik</span>` : '';
-        const bathsChip = (p.baths > 0) ? `<span class="meta-chip">🚿 ${p.baths} B.Air</span>` : '';
+      updateRenhubTopMetrics();
+
+      const searchInput = document.getElementById('admin-search-input');
+      const stateSelect = document.getElementById('admin-filter-state');
+      const districtSelect = document.getElementById('admin-filter-district');
+
+      const searchKeyword = searchInput ? searchInput.value.toLowerCase().trim() : '';
+      const selectedState = stateSelect ? stateSelect.value : 'all';
+      const selectedDistrict = districtSelect ? districtSelect.value : 'all';
+
+      const indexedList = currentProperties.map((prop, idx) => ({ property: prop, originalIdx: idx }));
+
+      const displayList = indexedList.filter(({ property: p }) => {
+        // 1. Source filter (All, My Listing, COA, Undercon)
+        const src = p.listingSource || ((p.category && p.category.toLowerCase().includes('undercon')) ? 'undercon' : 'my_listing');
+        if (currentRenhubSourceFilter !== 'all' && src !== currentRenhubSourceFilter) {
+          return false;
+        }
+
+        // 1.5 Status filter (Sale vs Rent)
+        if (currentRenhubStatusFilter !== 'all') {
+          const pStatus = (p.status || '').toLowerCase();
+          const pCat = (p.category || '').toLowerCase();
+          if (currentRenhubStatusFilter === 'sale') {
+            const isSale = pStatus === 'sale' || pCat.includes('jual') || pCat.includes('sale');
+            if (!isSale) return false;
+          } else if (currentRenhubStatusFilter === 'rent') {
+            const isRent = pStatus === 'rent' || pCat.includes('sewa') || pCat.includes('rent');
+            if (!isRent) return false;
+          }
+        }
+
+        // 2. State filter
+        const pState = (p.region || 'Selangor').trim();
+        if (selectedState !== 'all' && pState.toLowerCase() !== selectedState.toLowerCase()) {
+          return false;
+        }
+
+        // 3. District filter
+        if (selectedDistrict !== 'all') {
+          const loc = (p.location || '').toLowerCase();
+          if (!loc.includes(selectedDistrict.toLowerCase())) {
+            return false;
+          }
+        }
+
+        // 4. Search keyword
+        if (searchKeyword) {
+          const matchTitle = (p.title || '').toLowerCase().includes(searchKeyword);
+          const matchLoc = (p.location || '').toLowerCase().includes(searchKeyword);
+          const matchType = (p.type || '').toLowerCase().includes(searchKeyword);
+          const matchAgent = (p.coaAgentName || '').toLowerCase().includes(searchKeyword);
+          if (!matchTitle && !matchLoc && !matchType && !matchAgent) return false;
+        }
+
+        return true;
+      });
+
+      if (displayList.length === 0) {
+        grid.innerHTML = `
+          <div style="background:#ffffff; border:1px dashed #cbd5e1; padding:40px 20px; text-align:center; border-radius:14px; color:#64748b;">
+            <p style="font-size:1.05rem; font-weight:700; margin-bottom:6px; color:#0f172a;">No properties found matching your filter.</p>
+            <p style="font-size:0.82rem;">Try adjusting your search keyword, state, or category tabs.</p>
+          </div>
+        `;
+        return;
+      }
+
+      grid.innerHTML = displayList.map(({ property: p, originalIdx: idx }) => {
+        const mainImg = p.image ? p.image.split(',')[0].trim() : 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=400&q=80';
+        const isHidden = !!p.hidden;
+        const src = p.listingSource || ((p.category && p.category.toLowerCase().includes('undercon')) ? 'undercon' : 'my_listing');
+
+        let srcBadgeHTML = '';
+        if (src === 'coa') {
+          srcBadgeHTML = `<span class="renhub-badge badge-coa">COA Listing</span>`;
+        } else if (src === 'undercon') {
+          srcBadgeHTML = `<span class="renhub-badge badge-undercon">Undercon</span>`;
+        } else {
+          srcBadgeHTML = `<span class="renhub-badge badge-my">My Listing</span>`;
+        }
+
+        const transBadge = p.status === 'sale' 
+          ? `<span class="renhub-badge badge-for-sale">For Sale</span>`
+          : `<span class="renhub-badge badge-for-rent">For Rent</span>`;
+
+        const priceDisplay = (p.price != null && !isNaN(Number(p.price))) 
+          ? (p.status === 'sale' ? `RM ${Number(p.price).toLocaleString('en-US')}` : `RM ${Number(p.price).toLocaleString('en-US')} / mo`) 
+          : (p.priceStr || 'RM 0');
+
+        const specs = [];
+        if (p.beds > 0) specs.push(`BD ${p.beds}`);
+        if (p.baths > 0) specs.push(`BA ${p.baths}`);
+        if (p.size > 0) specs.push(`BU ${Number(p.size).toLocaleString('en-US')} sqft`);
+        if (p.landSize && p.landSize !== '-' && p.landSize !== '0') specs.push(`LS ${p.landSize}`);
+        const specsText = specs.length > 0 ? specs.join(' • ') : (p.type || 'Property Listing');
+
+        let noteHTML = '';
+        if (src === 'coa' && p.coaAgentName) {
+          noteHTML = `<div class="renhub-note-badge" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0;">COA from: ${p.coaAgentName} ${p.coaAgentPhone ? '(' + p.coaAgentPhone + ')' : ''}</div>`;
+        } else if (src === 'undercon' && p.completionDate) {
+          noteHTML = `<div class="renhub-note-badge" style="background:#ffedd5; color:#9a3412; border:1px solid #fed7aa;">Est. Completion: ${p.completionDate} ${p.developerPackage ? '— ' + p.developerPackage : ''}</div>`;
+        } else if (p.exclusiveExpiryDate) {
+          const expDate = new Date(p.exclusiveExpiryDate);
+          const diff = Math.ceil((expDate - new Date()) / (1000 * 60 * 60 * 24));
+          const colorStyle = diff <= 14 ? 'background:#fee2e2; color:#991b1b; border:1px solid #fca5a5;' : 'background:#fef3c7; color:#92400e; border:1px solid #fde68a;';
+          noteHTML = `<div class="renhub-note-badge" style="${colorStyle}">Exclusive Listing — ${diff > 0 ? diff + ' days remaining' : 'Expired'}</div>`;
+        }
+
+        const isCommercial = (p.type && (p.type.toLowerCase().includes('tanah') || p.type.toLowerCase().includes('land') || p.type.toLowerCase().includes('shop') || p.type.toLowerCase().includes('office') || p.type.toLowerCase().includes('factory')));
+        const liveUrl = `/properties/${isCommercial ? 'commercial' : 'residential'}/${p.slug || p.id}`;
 
         return `
-          <div class="listing-item">
-            <img src="${mainImg}" class="listing-thumb" alt="${p.title}" referrerpolicy="no-referrer" onerror="this.src='https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=400&q=80'">
-            <div class="listing-info">
-              <div class="listing-badges-row">
-                <span class="badge-status ${badgeClass}">${badgeText}</span>
-                ${categoryBadge}
-                ${typeBadge}
-              </div>
-              <div style="font-size:1.1rem; font-weight:800; color:#d97706; margin-top:2px;">${priceDisplay}</div>
-              <h3 class="listing-title">${p.title}</h3>
-              <div class="listing-meta-row">
-                <span class="meta-chip">📍 ${p.location}</span>
-                ${bedsChip}
-                ${bathsChip}
-                <span class="meta-chip">📐 Built-up ${p.size} sqft</span>
-                ${p.landSize && p.landSize !== '-' ? `<span class="meta-chip">🌳 Tanah ${p.landSize}</span>` : ''}
-              </div>
-              ${refLinkHtml}
+          <div class="renhub-card" ${isHidden ? 'style="border: 1.5px dashed #fca5a5; background: #fffbfb;"' : ''}>
+            <div class="renhub-card-thumb-wrap">
+              <img src="${mainImg}" class="renhub-card-thumb" alt="${p.title}" referrerpolicy="no-referrer" onerror="this.src='https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=400&q=80'">
             </div>
             
-            <div class="listing-actions-row">
-              <button onclick="editProperty(${idx})" class="action-btn" title="Edit Hartanah">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
-              </button>
-              <button onclick="deleteProperty(event, ${idx})" class="action-btn delete" title="Padam Hartanah">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
-              </button>
+            <div class="renhub-card-body">
+              <div class="renhub-card-badges-row">
+                <div class="renhub-badges-left">
+                  ${srcBadgeHTML}
+                  ${transBadge}
+                  <span class="renhub-badge" style="background:#f1f5f9; color:#475569;">${p.type || 'Residential'}</span>
+                  ${isHidden ? '<span class="renhub-badge" style="background:#dc2626; color:#ffffff;">Hidden</span>' : ''}
+                </div>
+                <div class="renhub-move-ref-col">
+                  <select onchange="quickChangeListingSource(event, ${idx}, this.value)" class="renhub-move-select" title="Quick Move Listing Category">
+                    <option value="my_listing" ${src === 'my_listing' ? 'selected' : ''}>Move to: My Listing</option>
+                    <option value="coa" ${src === 'coa' ? 'selected' : ''}>Move to: COA Listing</option>
+                    <option value="undercon" ${src === 'undercon' ? 'selected' : ''}>Move to: Undercon</option>
+                  </select>
+                  ${p.refUrl && p.refUrl.trim() ? `
+                    <a href="${p.refUrl.trim()}" target="_blank" class="renhub-ref-link" title="${p.refUrl.trim()}">
+                      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                      <span>Link Referral</span>
+                    </a>
+                  ` : `
+                    <button type="button" onclick="editProperty(${idx})" class="renhub-ref-link renhub-ref-link-empty" title="Klik untuk tambah pautan rujukan / PropMall">
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg><span>Link Referral</span>
+                    </button>
+                  `}
+                </div>
+              </div>
+              
+              <div class="renhub-card-price">${priceDisplay}</div>
+              <h3 class="renhub-card-title">${p.title}</h3>
+              <div class="renhub-card-location">${p.location || 'Selangor'} • ${p.region || 'Selangor'}</div>
+              <div class="renhub-card-specs">${specsText}</div>
+              ${noteHTML}
+            </div>
+
+            <div class="renhub-card-actions">
+              <a href="${liveUrl}" target="_blank" class="renhub-action-btn btn-quick-view">Quick View</a>
+              <button onclick="editProperty(${idx})" class="renhub-action-btn">Edit</button>
+              <button onclick="copyListingShareLink('${p.slug || p.id}', ${idx})" class="renhub-action-btn">Share</button>
+              <button onclick="toggleHideProperty(event, ${idx})" class="renhub-action-btn" style="font-size:0.72rem;">${isHidden ? 'Unhide' : 'Hide'}</button>
+              <button onclick="deleteProperty(event, ${idx})" class="renhub-action-btn btn-delete">Delete</button>
             </div>
           </div>
         `;
@@ -1204,23 +2911,45 @@
       if (saveBar) saveBar.style.display = 'flex';
     }
 
-    function editProperty(idx) {
-      const p = currentProperties[idx];
-      document.getElementById('form-id').value = idx;
-      document.getElementById('form-title').value = p.title;
-      document.getElementById('form-price').value = p.price;
+    function editProperty(propIdOrIdx) {
+      let p = null;
+      if (typeof propIdOrIdx === 'object' && propIdOrIdx !== null) {
+        p = propIdOrIdx;
+      } else if (typeof propIdOrIdx === 'number') {
+        p = currentProperties[propIdOrIdx];
+      } else if (typeof propIdOrIdx === 'string') {
+        p = currentProperties.find(item => item.id === propIdOrIdx || item.slug === propIdOrIdx);
+        if (!p && !isNaN(parseInt(propIdOrIdx))) {
+          p = currentProperties[parseInt(propIdOrIdx)];
+        }
+      }
+      if (!p) return;
+
+      document.getElementById('form-id').value = p.id || p.slug;
+      document.getElementById('form-title').value = p.title || '';
+      document.getElementById('form-price').value = p.price || 0;
       document.getElementById('form-category').value = p.category || (p.status === 'rent' ? 'Rental' : 'Subsales');
-      document.getElementById('form-status').value = p.status;
-      document.getElementById('form-location').value = p.location;
-      document.getElementById('form-region').value = p.region;
-      document.getElementById('form-type').value = p.type;
-      document.getElementById('form-beds').value = p.beds;
-      document.getElementById('form-baths').value = p.baths;
+      document.getElementById('form-status').value = p.status || 'sale';
+      document.getElementById('form-location').value = p.location || '';
+      document.getElementById('form-region').value = p.region || 'Selangor';
+      document.getElementById('form-type').value = p.type || 'Kondominium';
+      document.getElementById('form-beds').value = p.beds || '';
+      document.getElementById('form-beds-plus').value = p.bedsPlus || '';
+      document.getElementById('form-baths').value = p.baths || '';
+      document.getElementById('form-baths-plus').value = p.bathsPlus || '';
       document.getElementById('form-landSize').value = p.landSize || '';
-      document.getElementById('form-size').value = p.size;
+      document.getElementById('form-size').value = (p.size && !isNaN(p.size) && p.size > 0) ? p.size : '';
       document.getElementById('form-tenure').value = p.tenure || '-';
       document.getElementById('form-lotType').value = p.lotType || '-';
       document.getElementById('form-ref-url').value = p.refUrl || '';
+      document.getElementById('form-description').value = p.description || '';
+      if (document.getElementById('form-source')) document.getElementById('form-source').value = p.listingSource || ((p.category && p.category.toLowerCase().includes('undercon')) ? 'undercon' : 'my_listing');
+      if (document.getElementById('form-exclusive-expiry')) document.getElementById('form-exclusive-expiry').value = p.exclusiveExpiryDate || '';
+      if (document.getElementById('form-coa-agent')) document.getElementById('form-coa-agent').value = p.coaAgentName || '';
+      if (document.getElementById('form-coa-phone')) document.getElementById('form-coa-phone').value = p.coaAgentPhone || '';
+      if (document.getElementById('form-completion')) document.getElementById('form-completion').value = p.completionDate || '';
+      if (document.getElementById('form-developer-package')) document.getElementById('form-developer-package').value = p.developerPackage || '';
+      toggleRenhubFormFields();
       if (Array.isArray(p.images) && p.images.length > 0) {
         uploadedImageUrls = [...p.images];
       } else if (p.image) {
@@ -1231,18 +2960,69 @@
       rebuildImageThumbsGrid();
       toggleTenureLotFields();
 
-      document.getElementById('modal-title').textContent = 'Edit Hartanah';
+      document.getElementById('modal-title').textContent = 'Edit Property Listing';
       document.getElementById('property-modal').style.display = 'flex';
       const saveBar = document.querySelector('.save-bar');
       if (saveBar) saveBar.style.display = 'none';
       setTimeout(autoResizeDescription, 50);
     }
 
-    function deleteProperty(idx) {
-      if (confirm('Adakah anda pasti untuk memadam hartanah ini?')) {
+    async function toggleHideProperty(event, propIdOrIdx) {
+      if (event) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
+      let p = null;
+      if (typeof propIdOrIdx === 'number') {
+        p = currentProperties[propIdOrIdx];
+      } else {
+        p = currentProperties.find(item => item.id === propIdOrIdx || item.slug === propIdOrIdx);
+      }
+      if (!p) return;
+
+      p.hidden = !p.hidden;
+      renderListingsGrid();
+      
+      const saveBar = document.querySelector('.save-bar');
+      if (saveBar) {
+        saveBar.style.display = 'flex';
+      }
+      
+      await saveToStorage();
+    }
+
+    async function deleteProperty(event, propIdOrIdx) {
+      if (event) {
+        if (typeof event.preventDefault === 'function') event.preventDefault();
+        if (typeof event.stopPropagation === 'function') event.stopPropagation();
+      }
+
+      const confirmed = confirm('Adakah anda pasti ingin memadam listing hartanah ini? / Are you sure you want to delete this listing?');
+      if (!confirmed) return;
+
+      let idx = -1;
+      if (typeof propIdOrIdx === 'number') {
+        idx = propIdOrIdx;
+      } else if (typeof propIdOrIdx === 'string') {
+        idx = currentProperties.findIndex(item => item.id === propIdOrIdx || item.slug === propIdOrIdx);
+      }
+
+      if (idx >= 0 && idx < currentProperties.length) {
+        // 1. Immediately remove item from in-memory array
         currentProperties.splice(idx, 1);
-        saveToStorage();
+
+        // 2. Immediately re-render listing grid & update top metrics in real-time
         renderListingsGrid();
+        if (typeof updateRenhubTopMetrics === 'function') {
+          updateRenhubTopMetrics();
+        }
+
+        // 3. Persist deletion to Cloudflare Worker KV & LocalStorage in background
+        try {
+          await saveToStorage();
+        } catch (err) {
+          console.error('Error saving to storage after delete:', err);
+        }
       }
     }
 
@@ -1256,88 +3036,122 @@
 
     async function saveProperty(e) {
       e.preventDefault();
-      const submitBtn = e.target.querySelector('button[type="submit"]');
+      const submitBtn = document.getElementById('prop-submit-btn');
       const originalText = submitBtn.innerHTML;
-      submitBtn.innerHTML = '⌛ Menyimpan ke Cloudflare R2...';
+      submitBtn.innerHTML = 'Saving...';
       submitBtn.disabled = true;
 
-      const idx = document.getElementById('form-id').value;
-      const title = document.getElementById('form-title').value.trim();
-      const price = parseFloat(document.getElementById('form-price').value);
-      const category = document.getElementById('form-category').value;
-      const status = document.getElementById('form-status').value;
-      const location = document.getElementById('form-location').value.trim();
-      const region = document.getElementById('form-region').value;
-      const type = document.getElementById('form-type').value;
-      const beds = parseInt(document.getElementById('form-beds').value);
-      const baths = parseInt(document.getElementById('form-baths').value);
-      const landSize = document.getElementById('form-landSize').value.trim() || '-';
-      const size = parseInt(document.getElementById('form-size').value);
-      const tenure = document.getElementById('form-tenure').value;
-      const lotType = document.getElementById('form-lotType').value;
-      const refUrl = document.getElementById('form-ref-url').value.trim();
-      const description = document.getElementById('form-description').value.trim();
+      try {
+        const targetId = document.getElementById('form-id').value;
+        const title = document.getElementById('form-title').value.trim();
+        const price = parseFloat(document.getElementById('form-price').value) || 0;
+        const category = document.getElementById('form-category').value;
+        const status = document.getElementById('form-status').value;
+        const location = document.getElementById('form-location').value.trim();
+        const region = document.getElementById('form-region').value;
+        const type = document.getElementById('form-type').value;
+        const beds = parseInt(document.getElementById('form-beds').value) || 0;
+        const bedsPlus = parseInt(document.getElementById('form-beds-plus').value) || 0;
+        const baths = parseInt(document.getElementById('form-baths').value) || 0;
+        const bathsPlus = parseInt(document.getElementById('form-baths-plus').value) || 0;
+        const landSize = document.getElementById('form-landSize').value.trim() || '-';
+        const size = parseInt(document.getElementById('form-size').value) || 0;
+        const tenure = document.getElementById('form-tenure').value;
+        const lotType = document.getElementById('form-lotType').value;
+        const refUrl = document.getElementById('form-ref-url').value.trim();
+        const description = document.getElementById('form-description').value.trim();
 
-      let mainImg = "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1200&q=80";
-      let imagesArr = [];
-      
-      if (uploadedImageUrls.length > 0) {
-        mainImg = uploadedImageUrls[0];
-        imagesArr = [...uploadedImageUrls];
-      }
+        let mainImg = "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1200&q=80";
+        let imagesArr = [];
+        
+        if (uploadedImageUrls.length > 0) {
+          mainImg = uploadedImageUrls[0];
+          imagesArr = [...uploadedImageUrls];
+        }
 
-      const slug = slugify(title);
+        const slug = slugify(title) || `prop-${Date.now()}`;
 
-      const propData = {
-        id: idx !== '' ? currentProperties[idx].id : `prop-${Date.now()}`,
-        slug: slug,
-        title: title,
-        price: price,
-        priceStr: status === 'sale' ? `RM ${price.toLocaleString('en-US')}` : `RM ${price.toLocaleString('en-US')} / bln`,
-        category: category,
-        location: location,
-        region: region,
-        type: type,
-        status: status,
-        beds: beds,
-        baths: baths,
-        parking: 2,
-        size: size,
-        landSize: landSize,
-        tenure: tenure,
-        lotType: lotType,
-        image: mainImg,
-        images: imagesArr,
-        description: description,
-        refUrl: refUrl
-      };
+        // Find existing item by ID or Slug
+        const existingIdx = targetId ? currentProperties.findIndex(p => p.id === targetId || p.slug === targetId) : -1;
+        const finalId = (existingIdx >= 0 && currentProperties[existingIdx].id) ? currentProperties[existingIdx].id : `prop-${Date.now()}`;
+        const isHidden = (existingIdx >= 0 && currentProperties[existingIdx]) ? !!currentProperties[existingIdx].hidden : false;
 
-      if (idx !== '') {
-        currentProperties[idx] = propData;
-      } else {
-        currentProperties.unshift(propData);
-      }
+        const listingSourceVal = document.getElementById('form-source')?.value || (existingIdx >= 0 ? currentProperties[existingIdx].listingSource : 'my_listing') || 'my_listing';
+        const exclusiveExpiryVal = document.getElementById('form-exclusive-expiry')?.value || (existingIdx >= 0 ? currentProperties[existingIdx].exclusiveExpiryDate : '') || '';
+        const coaAgentNameVal = document.getElementById('form-coa-agent')?.value || (existingIdx >= 0 ? currentProperties[existingIdx].coaAgentName : '') || '';
+        const coaAgentPhoneVal = document.getElementById('form-coa-phone')?.value || (existingIdx >= 0 ? currentProperties[existingIdx].coaAgentPhone : '') || '';
+        const completionVal = document.getElementById('form-completion')?.value || (existingIdx >= 0 ? currentProperties[existingIdx].completionDate : '') || '';
+        const developerPackageVal = document.getElementById('form-developer-package')?.value || (existingIdx >= 0 ? currentProperties[existingIdx].developerPackage : '') || '';
 
-      await saveToStorage();
-      renderListingsGrid();
-      
-      submitBtn.innerHTML = '✅ Berjaya Disimpan ke R2!';
-      setTimeout(() => {
+        const propData = {
+          id: finalId,
+          slug: slug,
+          title: title,
+          price: price,
+          priceStr: (price != null && !isNaN(Number(price))) ? (status === 'sale' ? `RM ${Number(price).toLocaleString('en-US')}` : `RM ${Number(price).toLocaleString('en-US')} / month`) : (document.getElementById('form-price').value || 'RM 0'),
+          category: category,
+          location: location,
+          region: region,
+          type: type,
+          status: status,
+          beds: beds,
+          bedsPlus: bedsPlus,
+          baths: baths,
+          bathsPlus: bathsPlus,
+          parking: (existingIdx >= 0 && currentProperties[existingIdx].parking != null) ? currentProperties[existingIdx].parking : 0,
+          size: size,
+          landSize: landSize,
+          tenure: tenure,
+          lotType: lotType,
+          image: mainImg,
+          images: imagesArr,
+          description: description,
+          refUrl: refUrl,
+          listingSource: listingSourceVal,
+          exclusiveExpiryDate: exclusiveExpiryVal,
+          coaAgentName: coaAgentNameVal,
+          coaAgentPhone: coaAgentPhoneVal,
+          completionDate: completionVal,
+          developerPackage: developerPackageVal,
+          hidden: isHidden
+        };
+
+        if (existingIdx >= 0) {
+          currentProperties[existingIdx] = propData;
+        } else {
+          currentProperties.unshift(propData);
+        }
+
+        // Optimistically render UI and save to local storage immediately
+        renderListingsGrid();
+        submitBtn.innerHTML = 'Saved!';
+        
+        // Asynchronous Cloud Sync with timeout (never blocks UI)
+        await saveToStorage();
+
+        setTimeout(() => {
+          submitBtn.innerHTML = originalText;
+          submitBtn.disabled = false;
+          closeModal();
+        }, 400);
+
+      } catch (err) {
+        console.error('Error saving property:', err);
+        alert('Ralat menyimpan hartanah: ' + err.message);
         submitBtn.innerHTML = originalText;
         submitBtn.disabled = false;
-        closeModal();
-      }, 600);
+      }
     }
 
     async function forceSyncCloudflare() {
       const btn = document.querySelector('.btn-save-all');
-      btn.innerHTML = '⌛ Memproses Cloudflare R2...';
+      btn.innerHTML = '⌛ Processing Cloudflare R2...';
       btn.disabled = true;
       await saveToStorage();
       setTimeout(() => {
-        btn.innerHTML = '✅ Berjaya Disimpan ke R2!';
+        btn.innerHTML = 'Saved to Cloudflare R2!';
         setTimeout(() => {
-          btn.innerHTML = '💾 Simpan ke Cloudflare R2';
+          btn.innerHTML = 'Save to Cloudflare R2';
           btn.disabled = false;
         }, 2000);
       }, 800);
@@ -1346,16 +3160,14 @@
     async function saveToStorage() {
       localStorage.setItem('ZAIM_ROSLI_PROPERTIES', JSON.stringify(currentProperties));
       try {
-        const controller = new AbortController();
-        const timeoutId = setTimeout(() => controller.abort(), 4000);
+        let fullList = [...currentProperties];
         const authHeaders = await getAdminAuthHeaders({ 'Content-Type': 'application/json' });
         await fetch('https://zaimrosli-worker.huzaimrosli.workers.dev/api/properties', {
           method: 'POST',
           headers: authHeaders,
-          body: JSON.stringify(currentProperties),
-          signal: controller.signal
+          body: JSON.stringify(fullList),
+          signal: AbortSignal.timeout(5000)
         });
-        clearTimeout(timeoutId);
       } catch (e) {
         console.error('KV save error:', e);
       }
@@ -1463,8 +3275,8 @@
 
         thumb.innerHTML = `
           <img src="${url}" referrerpolicy="no-referrer" style="width:100%;height:100%;object-fit:cover;pointer-events:none;" onerror="this.src='https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=400&q=80'">
-          <button type="button" onclick="removeUploadedImage(${idx})" style="position:absolute;top:3px;right:3px;width:18px;height:18px;border-radius:50%;background:rgba(0,0,0,0.7);color:#fff;border:none;cursor:pointer;font-size:11px;line-height:1;display:flex;align-items:center;justify-content:center;z-index:2;" title="Buang Gambar">&times;</button>
-          ${isMain ? '<span style="position:absolute;bottom:3px;left:3px;background:#0f172a;color:#fff;font-size:8px;font-weight:700;padding:1px 5px;border-radius:3px;z-index:2;">Utama</span>' : ''}
+          <button type="button" onclick="removeUploadedImage(${idx})" style="position:absolute;top:3px;right:3px;width:18px;height:18px;border-radius:50%;background:rgba(0,0,0,0.7);color:#fff;border:none;cursor:pointer;font-size:11px;line-height:1;display:flex;align-items:center;justify-content:center;z-index:2;" title="Remove Photo">&times;</button>
+          ${isMain ? '<span style="position:absolute;bottom:3px;left:3px;background:#0f172a;color:#fff;font-size:8px;font-weight:700;padding:1px 5px;border-radius:3px;z-index:2;">Home</span>' : ''}
         `;
 
         thumb.addEventListener('pointerdown', (e) => {
@@ -1525,7 +3337,915 @@
     }
 
     document.getElementById('form-status').addEventListener('change', toggleTenureLotFields);
+
+    // ==========================================
+    // PAST DEALS MANAGEMENT & ADMIN NAV LOGIC
+    // ==========================================
+    function toggleAdminMobileDrawer() {
+      const drawer = document.getElementById('admin-mobile-drawer');
+      if (!drawer) return;
+      const isVisible = drawer.classList.contains('active') || drawer.style.display === 'flex';
+      if (isVisible) {
+        drawer.classList.remove('active');
+        drawer.style.display = 'none';
+        document.body.style.overflow = '';
+      } else {
+        drawer.classList.add('active');
+        drawer.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+      }
+    }
+
+    function closeAdminMobileDrawer() {
+      const drawer = document.getElementById('admin-mobile-drawer');
+      if (!drawer) return;
+      drawer.classList.remove('active');
+      drawer.style.display = 'none';
+      document.body.style.overflow = '';
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const drawer = document.getElementById('admin-mobile-drawer');
+      if (drawer) {
+        drawer.addEventListener('click', (e) => {
+          if (e.target === drawer) {
+            closeAdminMobileDrawer();
+          }
+        });
+      }
+    });
+
+    let locationsList = [];
+
+    function switchAdminTab(tab) {
+      const activeBtn = document.getElementById('tab-btn-active');
+      const locBtn = document.getElementById('tab-btn-locations');
+      const pastBtn = document.getElementById('tab-btn-past');
+      const trafficBtn = document.getElementById('tab-btn-traffic');
+      const topTrafficBtn = document.getElementById('tab-btn-traffic-top');
+
+      const mActiveBtn = document.getElementById('mobile-tab-btn-active') || document.getElementById('mobile-tab-btn-all');
+      const mLocBtn = document.getElementById('mobile-tab-btn-locations');
+      const mPastBtn = document.getElementById('mobile-tab-btn-past');
+      const mTrafficBtn = document.getElementById('mobile-tab-btn-traffic');
+
+      const activePanel = document.getElementById('tab-panel-active');
+      const locPanel = document.getElementById('tab-panel-locations');
+      const pastPanel = document.getElementById('tab-panel-past');
+      const trafficPanel = document.getElementById('tab-panel-traffic');
+
+      // Reset all buttons
+      [activeBtn, locBtn, pastBtn, trafficBtn, topTrafficBtn].forEach(b => {
+        if (b) {
+          b.style.background = 'transparent';
+          b.style.color = '#64748b';
+          b.style.boxShadow = 'none';
+          b.classList.remove('active');
+        }
+      });
+      [mActiveBtn, mLocBtn, mPastBtn, mTrafficBtn].forEach(b => {
+        if (b) {
+          b.style.background = '#ffffff';
+          b.style.color = '#334155';
+          b.style.border = '1px solid #cbd5e1';
+          b.style.boxShadow = 'none';
+        }
+      });
+
+      // Hide all panels
+      if (activePanel) activePanel.style.display = 'none';
+      if (locPanel) locPanel.style.display = 'none';
+      if (pastPanel) pastPanel.style.display = 'none';
+      if (trafficPanel) trafficPanel.style.display = 'none';
+
+      if (tab === 'active') {
+        if (activeBtn) {
+          activeBtn.style.background = '#0f172a';
+          activeBtn.style.color = '#ffffff';
+          activeBtn.style.boxShadow = '0 2px 6px rgba(15,23,42,0.15)';
+          activeBtn.classList.add('active');
+        }
+        if (mActiveBtn) {
+          mActiveBtn.style.background = '#0f172a';
+          mActiveBtn.style.color = '#ffffff';
+          mActiveBtn.style.border = 'none';
+        }
+        if (activePanel) activePanel.style.display = 'block';
+      } else if (tab === 'locations') {
+        if (locBtn) {
+          locBtn.style.background = '#0f172a';
+          locBtn.style.color = '#ffffff';
+          locBtn.style.boxShadow = '0 2px 6px rgba(15,23,42,0.15)';
+          locBtn.classList.add('active');
+        }
+        if (mLocBtn) {
+          mLocBtn.style.background = '#0f172a';
+          mLocBtn.style.color = '#ffffff';
+          mLocBtn.style.border = 'none';
+        }
+        if (locPanel) locPanel.style.display = 'block';
+        loadLocationsAdmin();
+      } else if (tab === 'past') {
+        if (pastBtn) {
+          pastBtn.style.background = '#0f172a';
+          pastBtn.style.color = '#ffffff';
+          pastBtn.style.boxShadow = '0 2px 6px rgba(15,23,42,0.15)';
+          pastBtn.classList.add('active');
+        }
+        if (mPastBtn) {
+          mPastBtn.style.background = '#0f172a';
+          mPastBtn.style.color = '#ffffff';
+          mPastBtn.style.border = 'none';
+        }
+        if (pastPanel) pastPanel.style.display = 'block';
+        loadPastDealsAdmin();
+      } else if (tab === 'traffic') {
+        if (trafficBtn) {
+          trafficBtn.style.background = '#0f172a';
+          trafficBtn.style.color = '#ffffff';
+          trafficBtn.style.boxShadow = '0 2px 6px rgba(15,23,42,0.15)';
+          trafficBtn.classList.add('active');
+        }
+        if (topTrafficBtn) {
+          topTrafficBtn.style.background = '#0f172a';
+          topTrafficBtn.style.color = '#ffffff';
+          topTrafficBtn.style.boxShadow = '0 2px 6px rgba(15,23,42,0.15)';
+        }
+        if (mTrafficBtn) {
+          mTrafficBtn.style.background = '#0f172a';
+          mTrafficBtn.style.color = '#ffffff';
+          mTrafficBtn.style.border = 'none';
+        }
+        if (trafficPanel) trafficPanel.style.display = 'block';
+        loadTrafficAnalyticsAdmin();
+      }
+    }
+
+    async function loadTrafficAnalyticsAdmin() {
+      const container = document.getElementById('trafficAnalyticsContainer');
+      if (!container) return;
+
+      container.innerHTML = `
+        <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:14px; padding:40px 20px; text-align:center; color:#64748b;">
+          <div style="display:inline-block; width:28px; height:28px; border:3px solid #cbd5e1; border-top-color:#0f172a; border-radius:50%; animation:spin 0.8s linear infinite; margin-bottom:12px;"></div>
+          <p style="font-size:0.9rem; font-weight:700; color:#0f172a; margin:0;">Loading real-time traffic & lead analytics...</p>
+        </div>
+      `;
+
+      try {
+        const res = await fetch('/api/traffic-stats?t=' + Date.now());
+        if (!res.ok) throw new Error('Failed to load server analytics data.');
+
+        const data = await res.json();
+        const stats = data.stats || {};
+        const dev = stats.device_breakdown || { mobile_pct: 0, desktop_pct: 0, tablet_pct: 0 };
+        const topPages = stats.top_pages || [];
+        const topCountries = stats.top_countries || [];
+        const recent = stats.recent_activities || [];
+
+        container.innerHTML = `
+          <!-- Metric Stats Cards (4 Columns) -->
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; margin-bottom: 20px;">
+            
+            <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 18px; box-shadow: 0 1px 3px rgba(0,0,0,0.03); border-top: 3.5px solid #0f172a;">
+              <div style="font-size: 0.72rem; font-weight: 800; color: #64748b; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px;">Total Unique Visitors</div>
+              <div style="font-size: 2rem; font-weight: 900; color: #0f172a; line-height: 1.1; margin-bottom: 6px;">${stats.total_visitors || 0}</div>
+              <div style="font-size: 0.76rem; color: #16a34a; font-weight: 700; background: #f0fdf4; display: inline-block; padding: 3px 8px; border-radius: 6px; border: 1px solid #bbf7d0;">Today: +${stats.today_visitors || 0} active</div>
+            </div>
+
+            <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 18px; box-shadow: 0 1px 3px rgba(0,0,0,0.03); border-top: 3.5px solid #0284c7;">
+              <div style="font-size: 0.72rem; font-weight: 800; color: #64748b; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px;">Total Pageviews</div>
+              <div style="font-size: 2rem; font-weight: 900; color: #0284c7; line-height: 1.1; margin-bottom: 6px;">${stats.total_pageviews || 0}</div>
+              <div style="font-size: 0.76rem; color: #0284c7; font-weight: 700; background: #f0f9ff; display: inline-block; padding: 3px 8px; border-radius: 6px; border: 1px solid #bae6fd;">Today: +${stats.today_pageviews || 0} views</div>
+            </div>
+
+            <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 18px; box-shadow: 0 1px 3px rgba(0,0,0,0.03); border-top: 3.5px solid #16a34a;">
+              <div style="font-size: 0.72rem; font-weight: 800; color: #64748b; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px;">WhatsApp Inquiries (Leads)</div>
+              <div style="font-size: 2rem; font-weight: 900; color: #16a34a; line-height: 1.1; margin-bottom: 6px;">${stats.total_whatsapp_clicks || 0}</div>
+              <div style="font-size: 0.76rem; color: #16a34a; font-weight: 700; background: #f0fdf4; display: inline-block; padding: 3px 8px; border-radius: 6px; border: 1px solid #bbf7d0;">Today: +${stats.today_whatsapp_clicks || 0} clicks</div>
+            </div>
+
+            <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 18px; box-shadow: 0 1px 3px rgba(0,0,0,0.03); border-top: 3.5px solid #d97706;">
+              <div style="font-size: 0.72rem; font-weight: 800; color: #64748b; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px;">Device Breakdown</div>
+              <div style="display: flex; gap: 6px; align-items: center; margin-top: 6px;">
+                <div style="background: #f8fafc; border: 1px solid #e2e8f0; padding: 6px; border-radius: 8px; flex: 1; text-align: center;">
+                  <div style="font-size: 0.65rem; font-weight: 700; color: #64748b; text-transform: uppercase;">Mobile</div>
+                  <div style="font-size: 1.1rem; font-weight: 900; color: #0f172a;">${dev.mobile_pct}%</div>
+                </div>
+                <div style="background: #f8fafc; border: 1px solid #e2e8f0; padding: 6px; border-radius: 8px; flex: 1; text-align: center;">
+                  <div style="font-size: 0.65rem; font-weight: 700; color: #64748b; text-transform: uppercase;">Desktop</div>
+                  <div style="font-size: 1.1rem; font-weight: 900; color: #0f172a;">${dev.desktop_pct}%</div>
+                </div>
+                <div style="background: #f8fafc; border: 1px solid #e2e8f0; padding: 6px; border-radius: 8px; flex: 1; text-align: center;">
+                  <div style="font-size: 0.65rem; font-weight: 700; color: #64748b; text-transform: uppercase;">Tablet</div>
+                  <div style="font-size: 1.1rem; font-weight: 900; color: #0f172a;">${dev.tablet_pct}%</div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Breakdown Grids (2 Columns) -->
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 18px; margin-bottom: 20px;">
+            
+            <!-- Left Box: Top Visited Pages & Countries -->
+            <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 14px; padding: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.03);">
+              <h4 style="font-size: 1rem; font-weight: 800; color: #0f172a; margin: 0 0 14px 0; padding-bottom: 10px; border-bottom: 1px solid #f1f5f9;">Top Content &amp; Visited Pages</h4>
+              
+              <div style="margin-bottom: 18px;">
+                <div style="font-size: 0.74rem; font-weight: 800; color: #64748b; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">Most Visited Page Paths</div>
+                ${topPages.length === 0 ? '<div style="font-size: 0.82rem; color: #94a3b8; padding: 8px 0;">No page visits recorded yet.</div>' : `
+                  <div style="display: flex; flex-direction: column; gap: 6px;">
+                    ${topPages.map(pg => {
+                      let pathLabel = '';
+                      if (pg.path === '/' || pg.path === '/index.html') pathLabel = ' (Homepage)';
+                      else if (pg.path === '/properties' || pg.path === '/properties.html') pathLabel = ' (Properties Directory)';
+                      else if (pg.path === '/calculator' || pg.path === '/calculator.html') pathLabel = ' (Legal Fee & DSR Calc)';
+                      else if (pg.path === '/blog' || pg.path === '/blog.html') pathLabel = ' (Knowledge Hub)';
+                      else if (pg.path === '/services' || pg.path === '/services.html') pathLabel = ' (REN Services)';
+                      else if (pg.path === '/about' || pg.path === '/about.html') pathLabel = ' (About Zaim Rosli)';
+                      
+                      return `
+                        <div style="display: flex; justify-content: space-between; align-items: center; padding: 7px 10px; background: #f8fafc; border-radius: 8px; font-size: 0.82rem; gap: 8px; border: 1px solid #f1f5f9;">
+                          <span style="font-weight: 700; color: #0f172a; font-family: monospace; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1;">
+                            ${pg.path}<span style="font-family: inherit; font-size: 0.75rem; color: #64748b; font-weight: 600;">${pathLabel}</span>
+                          </span>
+                          <span style="font-weight: 800; color: #0f172a; background: #e2e8f0; padding: 2px 8px; border-radius: 6px; font-size: 0.72rem; white-space: nowrap;">${pg.count} hits</span>
+                        </div>
+                      `;
+                    }).join('')}
+                  </div>
+                `}
+              </div>
+
+              <!-- Top Visitor Countries -->
+              <div style="padding-top: 14px; border-top: 1px solid #f1f5f9;">
+                <div style="font-size: 0.74rem; font-weight: 800; color: #64748b; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">Top Visitor Countries</div>
+                ${topCountries.length === 0 ? '<div style="font-size: 0.82rem; color: #94a3b8; padding: 8px 0;">No country data recorded yet.</div>' : `
+                  <div style="display: flex; flex-direction: column; gap: 8px;">
+                    ${topCountries.map(c => `
+                      <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 8px 12px; font-size: 0.82rem;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+                          <span style="font-weight: 700; color: #0f172a;">${c.country}</span>
+                          <span style="font-weight: 800; color: #64748b; font-size: 0.75rem;">${c.count} visits (${c.pct}%)</span>
+                        </div>
+                        <div style="width: 100%; height: 6px; background: #e2e8f0; border-radius: 3px; overflow: hidden;">
+                          <div style="width: ${c.pct}%; height: 100%; background: linear-gradient(90deg, #f59e0b, #d97706); border-radius: 3px;"></div>
+                        </div>
+                      </div>
+                    `).join('')}
+                  </div>
+                `}
+              </div>
+
+            </div>
+
+            <!-- Right Box: Live Activity Stream Feed -->
+            <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 14px; padding: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.03);">
+              <h4 style="font-size: 1rem; font-weight: 800; color: #0f172a; margin: 0 0 14px 0; padding-bottom: 10px; border-bottom: 1px solid #f1f5f9; display: flex; justify-content: space-between; align-items: center;">
+                <span>Live Inquiries &amp; Activity Stream</span>
+                <span style="font-size: 0.70rem; font-weight: 700; color: #16a34a; background: #f0fdf4; border: 1px solid #bbf7d0; padding: 2px 8px; border-radius: 10px;">● REAL-TIME</span>
+              </h4>
+              
+              ${recent.length === 0 ? '<div style="font-size: 0.82rem; color: #94a3b8; padding: 20px 0; text-align: center;">No visitor activity recorded yet. Browse the website to begin live tracking.</div>' : `
+                <div style="display: flex; flex-direction: column; gap: 8px; max-height: 480px; overflow-y: auto; padding-right: 4px;">
+                  ${recent.map(act => {
+                    const dt = new Date(act.created_at).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+                    const isWa = act.type && act.type.includes('WHATSAPP');
+                    const badgeBg = isWa ? '#dcfce7' : '#eff6ff';
+                    const badgeColor = isWa ? '#166534' : '#1e40af';
+                    const badgeBorder = isWa ? '#bbf7d0' : '#bfdbfe';
+                    const label = isWa ? '💬 WhatsApp Lead' : '🌐 Page View';
+
+                    return `
+                      <div style="padding: 9px 12px; background: #f8fafc; border-radius: 10px; border: 1px solid #e2e8f0; display: flex; flex-direction: column; gap: 4px;">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                          <span style="font-size: 0.68rem; font-weight: 800; background: ${badgeBg}; color: ${badgeColor}; border: 1px solid ${badgeBorder}; padding: 2px 7px; border-radius: 6px; text-transform: uppercase;">${label}</span>
+                          <span style="font-size: 0.72rem; color: #94a3b8; font-weight: 600;">${dt}</span>
+                        </div>
+                        <div style="font-weight: 700; font-size: 0.82rem; color: #0f172a; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;" title="${act.title}">
+                          ${act.title}
+                        </div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.72rem; color: #64748b;">
+                          <span style="font-family: monospace; overflow: hidden; text-overflow: ellipsis; max-width: 60%;">${act.path}</span>
+                          <span>${act.city ? act.city + ', ' : ''}${act.country} (${act.device})</span>
+                        </div>
+                      </div>
+                    `;
+                  }).join('')}
+                </div>
+              `}
+            </div>
+
+          </div>
+        `;
+
+      } catch (err) {
+        console.error('Error loading traffic analytics:', err);
+        container.innerHTML = `
+          <div style="background:#ffffff; border:1px solid #fca5a5; border-radius:14px; padding:30px 20px; text-align:center; color:#dc2626;">
+            <p style="font-size:0.95rem; font-weight:800; margin-bottom:6px;">Gagal Memuat Data Analitik</p>
+            <p style="font-size:0.82rem; color:#64748b; margin-bottom:12px;">${err.message || 'Sila cuba sebentar lagi.'}</p>
+            <button onclick="loadTrafficAnalyticsAdmin()" style="padding:7px 14px; background:#0f172a; color:#ffffff; border:none; border-radius:6px; font-size:0.8rem; font-weight:700; cursor:pointer;">Cuba Semula</button>
+          </div>
+        `;
+      }
+    }
+
+    async function loadLocationsAdmin() {
+      try {
+        const res = await fetch('https://zaimrosli-worker.huzaimrosli.workers.dev/api/locations?t=' + Date.now(), {
+          signal: AbortSignal.timeout(5000)
+        });
+        if (res.ok) {
+          let data = await res.json();
+          if (typeof data === 'string') try { data = JSON.parse(data); } catch(e) {}
+          if (Array.isArray(data) && data.length > 0) {
+            locationsList = data;
+            try { localStorage.setItem('ZAIM_ROSLI_LOCATIONS', JSON.stringify(data)); } catch(e) {}
+          } else if (data && typeof data === 'object' && !data.message) {
+            locationsList = Object.values(data);
+            try { localStorage.setItem('ZAIM_ROSLI_LOCATIONS', JSON.stringify(locationsList)); } catch(e) {}
+          }
+        }
+      } catch(e) {}
+
+      // Always merge with latest LOCATIONS_CONFIG (Bangi, Nilai, etc.)
+      if (window.LOCATIONS_CONFIG && typeof window.LOCATIONS_CONFIG === 'object') {
+        const baseList = Object.values(window.LOCATIONS_CONFIG);
+        baseList.forEach(loc => {
+          if (!locationsList.some(item => item.slug === loc.slug)) {
+            locationsList.push(loc);
+          }
+        });
+      }
+
+      if (locationsList.length === 0) {
+        const stored = localStorage.getItem('ZAIM_ROSLI_LOCATIONS');
+        if (stored) {
+          try { locationsList = JSON.parse(stored); } catch(e) {}
+        }
+      }
+
+      renderLocationsAdmin();
+    }
+
+    function getMatchedPropertyCount(locConfig) {
+      if (!Array.isArray(currentProperties) || !locConfig) return 0;
+      let keywords = [];
+      if (Array.isArray(locConfig.filterKeywords) && locConfig.filterKeywords.length > 0) {
+        keywords = locConfig.filterKeywords.map(k => k.toLowerCase().trim()).filter(Boolean);
+      } else {
+        keywords = [
+          (locConfig.slug || '').toLowerCase(),
+          (locConfig.name || '').toLowerCase(),
+          ...(Array.isArray(locConfig.subareas) ? locConfig.subareas.map(s => s.toLowerCase().replace(/📍/g, '').trim()) : [])
+        ].filter(Boolean);
+      }
+      return currentProperties.filter(item => {
+        if (item.hidden) return false;
+        const combined = `
+          ${item.title || ''}
+          ${item.location || ''}
+          ${item.region || ''}
+          ${item.description || ''}
+        `.toLowerCase();
+        return keywords.some(k => combined.includes(k));
+      }).length;
+    }
+
+    function renderLocationsAdmin() {
+      const container = document.getElementById('admin-locations-grid');
+      const badge = document.getElementById('total-locations-badge');
+      if (badge) badge.textContent = locationsList.length;
+      if (!container) return;
+
+      if (locationsList.length === 0) {
+        container.innerHTML = `
+          <div style="grid-column: 1 / -1; text-align: center; padding: 40px; background: #ffffff; border: 1px dashed #cbd5e1; border-radius: 12px;">
+            <p style="color: #64748b; font-weight: 600;">No locations registered yet.</p>
+            <button onclick="openLocationModal()" class="btn" style="background:#d97706; color:#ffffff; font-weight:700; margin-top:8px;">+ Add First Location</button>
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = locationsList.map(loc => {
+        const isActive = loc.active !== false;
+        const statusBadge = isActive
+          ? `<span style="background:#dcfce7; color:#15803d; padding:3px 9px; border-radius:6px; font-size:0.7rem; font-weight:800; letter-spacing:0.5px;">ACTIVE (INDEXED)</span>`
+          : `<span style="background:#fee2e2; color:#b91c1c; padding:3px 9px; border-radius:6px; font-size:0.7rem; font-weight:800; letter-spacing:0.5px;">⊘ INACTIVE (DRAFT)</span>`;
+
+        const matchCount = getMatchedPropertyCount(loc);
+        const subareasList = Array.isArray(loc.subareas) ? loc.subareas : [];
+        const subareasPills = subareasList.slice(0, 4).map(s => `<span style="background:#f1f5f9; color:#475569; padding:2px 8px; border-radius:12px; font-size:0.72rem; font-weight:600;">${s}</span>`).join('');
+        const moreSubareas = subareasList.length > 4 ? `<span style="font-size:0.72rem; color:#94a3b8;">+${subareasList.length - 4} more</span>` : '';
+
+        return `
+          <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:14px; padding:18px; display:flex; flex-direction:column; justify-content:space-between; box-shadow:0 2px 6px rgba(0,0,0,0.02); transition:all 0.2s;">
+            <div>
+              <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:8px; margin-bottom:8px;">
+                <div>
+                  <h3 style="font-size:1.15rem; font-weight:800; color:#0f172a; margin:0 0 2px 0;">${loc.name}</h3>
+                  <span style="font-size:0.78rem; font-weight:600; color:#64748b;">${loc.state || 'Selangor'}</span>
+                </div>
+                ${statusBadge}
+              </div>
+
+              <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:8px 10px; margin:10px 0; font-family:monospace; font-size:0.8rem; color:#334155; display:flex; justify-content:space-between; align-items:center;">
+                <span style="overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">/properties/${loc.slug}</span>
+                <a href="/properties/${loc.slug}" target="_blank" style="color:#d97706; text-decoration:none; font-weight:700; margin-left:6px;" title="Buka Laman Live">↗</a>
+              </div>
+
+              <div style="display:flex; align-items:center; gap:6px; margin-bottom:10px;">
+                <span style="font-size:0.8rem; font-weight:700; color:#0f172a;">Matching Listings:</span>
+                <span style="background:${matchCount > 0 ? '#fef3c7' : '#f1f5f9'}; color:${matchCount > 0 ? '#b45309' : '#64748b'}; font-weight:800; font-size:0.75rem; padding:2px 8px; border-radius:10px;">${matchCount} Live ${matchCount === 1 ? 'Listing' : 'Listings'}</span>
+              </div>
+
+              ${subareasList.length > 0 ? `
+                <div style="display:flex; flex-wrap:wrap; gap:4px; margin-bottom:14px; align-items:center;">
+                  ${subareasPills}
+                  ${moreSubareas}
+                </div>
+              ` : ''}
+            </div>
+
+            <div style="display:flex; gap:6px; border-top:1px solid #f1f5f9; padding-top:12px; margin-top:8px;">
+              <button onclick="editLocation('${loc.slug}')" class="btn" style="flex:1; padding:7px; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px; font-size:0.78rem; font-weight:700; color:#334155; cursor:pointer;">Edit</button>
+              <button onclick="toggleLocationActive('${loc.slug}')" class="btn" style="flex:1; padding:7px; background:${isActive ? '#fffbeb' : '#f0fdf4'}; border:1px solid ${isActive ? '#fde68a' : '#bbf7d0'}; color:${isActive ? '#b45309' : '#15803d'}; border-radius:8px; font-size:0.78rem; font-weight:700; cursor:pointer;">
+                ${isActive ? '⏸ Deactivate' : '▶ Publish'}
+              </button>
+              <button onclick="deleteLocation('${loc.slug}')" class="btn" style="padding:7px 10px; background:#fef2f2; border:1px solid #fca5a5; color:#dc2626; border-radius:8px; font-size:0.78rem; font-weight:700; cursor:pointer;" title="Delete Location">Delete</button>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function openLocationModal() {
+      document.getElementById('loc-form').reset();
+      document.getElementById('loc-form-id').value = '';
+      document.getElementById('loc-is-edit').value = 'false';
+      document.getElementById('loc-modal-title').textContent = 'Add New Location SEO Page';
+      document.getElementById('loc-form-slug').readOnly = false;
+      document.getElementById('loc-form-status').value = 'active';
+      document.getElementById('loc-form-state').value = 'Selangor';
+      updateCharCount('loc-form-seo-title', 'loc-title-count', 65);
+      updateCharCount('loc-form-seo-desc', 'loc-desc-count', 160);
+      document.getElementById('location-modal').style.display = 'flex';
+    }
+
+    function closeLocationModal() {
+      document.getElementById('location-modal').style.display = 'none';
+    }
+
+    function handleLocationNameInput(val) {
+      const isEdit = document.getElementById('loc-is-edit').value === 'true';
+      if (!isEdit) {
+        const slug = val.toLowerCase().trim()
+          .replace(/[^a-z0-9\s-]/g, '')
+          .replace(/\s+/g, '-');
+        document.getElementById('loc-form-slug').value = slug;
+        document.getElementById('loc-form-seo-title').value = `Ejen Hartanah ${val} & Rumah Dijual / Sewa — Zaim Rosli (REN39575)`;
+        document.getElementById('loc-form-h1').value = `Hartanah di ${val}: Rumah Dijual & Sewa`;
+        document.getElementById('loc-form-seo-desc').value = `Cari rumah sewa, teres, semi-d & ruang komersial untuk dijual di ${val}. Khidmat ejen hartanah berdaftar REN39575.`;
+        document.getElementById('loc-form-keywords').value = `${slug}, ${val.toLowerCase()}`;
+        updateCharCount('loc-form-seo-title', 'loc-title-count', 65);
+        updateCharCount('loc-form-seo-desc', 'loc-desc-count', 160);
+      }
+    }
+
+    function updateCharCount(inputId, countId, max) {
+      const el = document.getElementById(inputId);
+      const countEl = document.getElementById(countId);
+      if (el && countEl) {
+        const len = el.value.length;
+        countEl.textContent = `${len} / ${max}`;
+        countEl.style.color = len > max ? '#ef4444' : '#64748b';
+      }
+    }
+
+    function editLocation(slug) {
+      const loc = locationsList.find(l => (l.slug || '').toLowerCase() === slug.toLowerCase());
+      if (!loc) return;
+
+      document.getElementById('loc-form-id').value = loc.slug;
+      document.getElementById('loc-is-edit').value = 'true';
+      document.getElementById('loc-modal-title').textContent = `Edit Location: ${loc.name}`;
+      document.getElementById('loc-form-name').value = loc.name || '';
+      document.getElementById('loc-form-slug').value = loc.slug || '';
+      document.getElementById('loc-form-slug').readOnly = true;
+      document.getElementById('loc-form-state').value = loc.state || 'Selangor';
+      document.getElementById('loc-form-status').value = (loc.active === false) ? 'inactive' : 'active';
+      document.getElementById('loc-form-seo-title').value = loc.seoTitle || '';
+      document.getElementById('loc-form-seo-desc').value = loc.seoDescription || '';
+      document.getElementById('loc-form-h1').value = loc.h1 || '';
+      document.getElementById('loc-form-intro').value = loc.introContent || '';
+      document.getElementById('loc-form-keywords').value = Array.isArray(loc.filterKeywords) ? loc.filterKeywords.join(', ') : (loc.filterKeywords || '');
+      document.getElementById('loc-form-subareas').value = Array.isArray(loc.subareas) ? loc.subareas.join(', ') : (loc.subareas || '');
+
+      updateCharCount('loc-form-seo-title', 'loc-title-count', 65);
+      updateCharCount('loc-form-seo-desc', 'loc-desc-count', 160);
+      document.getElementById('location-modal').style.display = 'flex';
+    }
+
+    async function saveLocation(e) {
+      e.preventDefault();
+      const isEdit = document.getElementById('loc-is-edit').value === 'true';
+      const name = document.getElementById('loc-form-name').value.trim();
+      const slug = document.getElementById('loc-form-slug').value.trim().toLowerCase()
+        .replace(/[^a-z0-9-]/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '');
+
+      if (!name || !slug) {
+        alert('Please fill in Location Name and URL Slug.');
+        return;
+      }
+
+      const reservedSlugs = ['properties', 'for-sale', 'for-rent', 'residential', 'commercial', 'commercial-industrial', 'admin', 'login', 'api', 'services', 'about', 'contact', 'faq', 'calculator', 'foreign-buyers', 'testimonials', 'blog', 'property', 'blog-post', 'propmall'];
+      if (reservedSlugs.includes(slug)) {
+        alert(`Slug '${slug}' adalah laluan sistem terlindung dan tidak boleh digunakan sebagai lokasi.`);
+        return;
+      }
+
+      if (!isEdit && locationsList.some(l => l.slug.toLowerCase() === slug)) {
+        alert(`Slug '${slug}' is already in use. Please choose another slug.`);
+        return;
+      }
+
+      const keywordsRaw = document.getElementById('loc-form-keywords').value;
+      const keywords = keywordsRaw ? keywordsRaw.split(',').map(s => s.trim().toLowerCase()).filter(Boolean) : [slug, name.toLowerCase()];
+
+      const subareasRaw = document.getElementById('loc-form-subareas').value;
+      const subareas = subareasRaw ? subareasRaw.split(',').map(s => s.trim()).filter(Boolean) : [];
+
+      const locObj = {
+        slug: slug,
+        name: name,
+        state: document.getElementById('loc-form-state').value.trim() || 'Selangor',
+        active: document.getElementById('loc-form-status').value === 'active',
+        seoTitle: document.getElementById('loc-form-seo-title').value.trim() || `Ejen Hartanah ${name} & Rumah Dijual / Sewa — Zaim Rosli (REN39575)`,
+        seoDescription: document.getElementById('loc-form-seo-desc').value.trim() || `Cari rumah sewa, teres, semi-d & ruang komersial untuk dijual di ${name}. Khidmat ejen hartanah berdaftar REN39575.`,
+        h1: document.getElementById('loc-form-h1').value.trim() || `Hartanah di ${name}: Rumah Dijual & Sewa`,
+        introContent: document.getElementById('loc-form-intro').value.trim() || `Senarai hartanah kediaman dan komersial disahkan di ${name} bersama Zaim Rosli (REN39575).`,
+        filterKeywords: keywords,
+        subareas: subareas,
+        relatedBlogSlugs: ["panduan-lengkap-sewa-rumah-malaysia-deposit-tenancy-agreement", "pembangunan-berasaskan-transit-tod-mrt-lrt-kuala-lumpur", "freehold-vs-leasehold-pelaburan-hartanah-malaysia"],
+        faqs: [
+          { question: `Apakah jenis hartanah yang terdapat di kawasan ${name}?`, answer: `Kawasan ${name} menawarkan pelbagai jenis hartanah merangkumi rumah teres, semi-D, banglo, serta ruang komersial pejabat/kedai.` },
+          { question: `Berapakah julat harga hartanah di ${name}?`, answer: `Julat harga jualan dan sewaan di ${name} bergantung kepada lokasi spesifik, saiz tanah dan built-up.` },
+          { question: `Bagaimanakah cara melantik Zaim Rosli untuk urusan hartanah di ${name}?`, answer: `Hubungi Zaim Rosli (REN39575) secara terus melalui WhatsApp untuk mendapatkan khidmat semakan nilai pasaran percuma dan rundingan profesional.` }
+        ]
+      };
+
+      const updatedList = [...locationsList];
+      const existingIdx = updatedList.findIndex(l => l.slug.toLowerCase() === slug);
+      if (existingIdx >= 0) {
+        updatedList[existingIdx] = { ...updatedList[existingIdx], ...locObj };
+      } else {
+        updatedList.push(locObj);
+      }
+
+      const submitBtn = e.target.querySelector('button[type="submit"]') || document.querySelector('#location-modal button[type="submit"]');
+      const originalText = submitBtn ? submitBtn.innerHTML : 'Save Location';
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '⌛ Menyimpan ke Server...';
+      }
+
+      const saveResult = await saveLocationsToStorage(updatedList);
+
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalText;
+      }
+
+      if (!saveResult.success) {
+        alert(`Failed to save location to server: ${saveResult.error || 'Please try again'}.\n\nChanges not saved to Cloudflare KV.`);
+        return;
+      }
+
+      locationsList = updatedList;
+      closeLocationModal();
+      await loadLocationsAdmin();
+      alert(`Location '${name}' (${slug}) successfully saved to Cloudflare KV server!`);
+    }
+
+    async function toggleLocationActive(slug) {
+      const loc = locationsList.find(l => l.slug.toLowerCase() === slug.toLowerCase());
+      if (!loc) return;
+      const updatedList = locationsList.map(l => l.slug.toLowerCase() === slug.toLowerCase() ? { ...l, active: !l.active } : l);
+      const res = await saveLocationsToStorage(updatedList);
+      if (res.success) {
+        locationsList = updatedList;
+        renderLocationsAdmin();
+      } else {
+        alert(`Failed to update status: ${res.error}`);
+      }
+    }
+
+    async function deleteLocation(slug) {
+      if (slug.toLowerCase() === 'bangi') {
+        if (!confirm("WARNING: 'bangi' is a primary production location. Are you sure you want to delete it?")) return;
+      } else {
+        if (!confirm(`Are you sure you want to delete location '${slug}'?`)) return;
+      }
+
+      const updatedList = locationsList.filter(l => l.slug.toLowerCase() !== slug.toLowerCase());
+      const res = await saveLocationsToStorage(updatedList);
+      if (res.success) {
+        locationsList = updatedList;
+        renderLocationsAdmin();
+      } else {
+        alert(`Failed to delete location on server: ${res.error}`);
+      }
+    }
+
+    async function saveLocationsToStorage(payloadToSave) {
+      const list = payloadToSave || locationsList;
+      try {
+        const headers = { 'Content-Type': 'application/json' };
+        if (typeof supabaseClient !== 'undefined' && supabaseClient.auth) {
+          const { data: { session } } = await supabaseClient.auth.getSession();
+          if (session && session.access_token) {
+            headers['Authorization'] = `Bearer ${session.access_token}`;
+          }
+        }
+
+        const locHeaders = await getAdminAuthHeaders({ 'Content-Type': 'application/json' });
+          await fetch('https://zaimrosli-worker.huzaimrosli.workers.dev/api/locations', {
+            method: 'POST',
+            headers: locHeaders,
+          body: JSON.stringify(list),
+          signal: AbortSignal.timeout(5000)
+        });
+
+        if (!res.ok) {
+          const errData = await res.json().catch(() => ({}));
+          console.error('Server save error:', res.status, errData);
+          return { success: false, status: res.status, error: errData.error || `HTTP ${res.status}` };
+        }
+
+        const data = await res.json().catch(() => ({}));
+        localStorage.setItem('ZAIM_ROSLI_LOCATIONS', JSON.stringify(list));
+        return { success: true, data };
+      } catch (err) {
+        console.error('Error persisting locations to Worker KV:', err);
+        return { success: false, error: err.message };
+      }
+    }
+
+    async function loadPastDealsAdmin() {
+      try {
+        const res = await fetch('https://zaimrosli-worker.huzaimrosli.workers.dev/api/past-deals?t=' + Date.now());
+        if (res.ok) {
+          let data = await res.json();
+          if (typeof data === 'string') try { data = JSON.parse(data); } catch(e) {}
+          if (Array.isArray(data) && data.length > 0) pastDealsList = data;
+        }
+      } catch(e) {}
+
+      if (pastDealsList.length === 0) {
+        const stored = localStorage.getItem('ZAIM_ROSLI_PAST_DEALS');
+        if (stored) {
+          try { pastDealsList = JSON.parse(stored); } catch(e) {}
+        }
+      }
+      if (!pastDealsList || pastDealsList.length === 0) {
+        pastDealsList = [
+          { id: 'p1', title: 'Double Storey Terrace House', type: 'Terrace House', location: 'Bandar Seri Putra, Bangi', category: 'RENTED', price: 'RM 2,100 / mo', image: 'https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=800&q=80' },
+          { id: 'p2', title: 'The Domain 4 - Neo Cyber', type: 'Condominium', location: 'Cyberjaya, Selangor', category: 'RENTED', price: 'RM 1,200 / mo', image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=800&q=80' },
+          { id: 'p3', title: '3-Storey Semi-D Villa Symphony Hills', type: 'Semi-D', location: 'Cyberjaya, Selangor', category: 'SOLD', price: 'RM 1,450,000', image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80' },
+          { id: 'p4', title: 'Partially Fitted Office Prima 10', type: 'Shop / Office', location: 'Cyberjaya, Selangor', category: 'RENTED', price: 'RM 35,000 / mo', image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80' }
+        ];
+      }
+
+      renderPastDealsAdmin();
+    }
+
+    function renderPastDealsAdmin() {
+      const container = document.getElementById('admin-past-deals-list');
+      if (!container) return;
+
+      container.innerHTML = pastDealsList.map(item => {
+        const isSold = (item.category || '').toUpperCase().includes('JUAL') || (item.category || '').toUpperCase().includes('SOLD');
+        const badgeBg = isSold ? '#fef3c7' : '#e0f2fe';
+        const badgeColor = isSold ? '#b45309' : '#0369a1';
+        const labelText = isSold ? 'SOLD' : 'RENTED';
+        const imgUrl = item.image || 'https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=800&q=80';
+
+        return `
+          <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; overflow:hidden; display:flex; flex-direction:column; justify-content:space-between;">
+            <div style="position:relative; height:140px; background:#f1f5f9;">
+              <img src="${imgUrl}" alt="${item.title}" style="width:100%; height:100%; object-fit:cover;">
+              <span style="position:absolute; top:8px; left:8px; background:${badgeBg}; color:${badgeColor}; font-size:0.7rem; font-weight:800; padding:2px 8px; border-radius:6px;">${labelText}</span>
+            </div>
+            <div style="padding:14px; flex:1; display:flex; flex-direction:column; justify-content:space-between;">
+              <div>
+                <h4 style="font-size:0.98rem; font-weight:800; color:#0f172a; margin-bottom:4px;">${item.title}</h4>
+                <p style="font-size:0.82rem; color:#64748b; margin-bottom:8px;">${item.location}</p>
+                <div style="font-size:1.05rem; font-weight:800; color:#d97706;">${item.price}</div>
+              </div>
+              <div style="display:flex; gap:8px; margin-top:12px; padding-top:8px; border-top:1px solid #f1f5f9;">
+                <button onclick="editPastDeal('${item.id}')" style="flex:1; padding:6px; background:#f1f5f9; border:1px solid #cbd5e1; border-radius:6px; font-weight:700; font-size:0.78rem; cursor:pointer;">Edit</button>
+                <button onclick="deletePastDeal('${item.id}')" style="flex:1; padding:6px; background:#fef2f2; border:1px solid #fca5a5; color:#dc2626; border-radius:6px; font-weight:700; font-size:0.78rem; cursor:pointer;">Delete</button>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function openPastDealModal() {
+      document.getElementById('past-form-id').value = '';
+      document.getElementById('past-form').reset();
+      document.getElementById('past-modal-title').textContent = 'Add Past Deal Record';
+      document.getElementById('past-deal-modal').style.display = 'flex';
+    }
+
+    function closePastDealModal() {
+      document.getElementById('past-deal-modal').style.display = 'none';
+    }
+
+    function editPastDeal(id) {
+      const item = pastDealsList.find(d => d.id === id);
+      if (!item) return;
+      document.getElementById('past-form-id').value = item.id;
+      document.getElementById('past-form-title').value = item.title;
+      document.getElementById('past-form-type').value = item.type;
+      document.getElementById('past-form-category').value = item.category;
+      document.getElementById('past-form-location').value = item.location;
+      document.getElementById('past-form-price').value = item.price;
+      document.getElementById('past-form-image').value = item.image || '';
+      document.getElementById('past-modal-title').textContent = 'Edit Past Deal Record';
+      document.getElementById('past-deal-modal').style.display = 'flex';
+    }
+
+    async function savePastDeal(e) {
+      e.preventDefault();
+      const id = document.getElementById('past-form-id').value || ('p_' + Date.now());
+      const newDeal = {
+        id: id,
+        title: document.getElementById('past-form-title').value,
+        type: document.getElementById('past-form-type').value,
+        category: document.getElementById('past-form-category').value,
+        location: document.getElementById('past-form-location').value,
+        price: document.getElementById('past-form-price').value,
+        image: document.getElementById('past-form-image').value || ''
+      };
+
+      const existingIdx = pastDealsList.findIndex(d => d.id === id);
+      if (existingIdx >= 0) {
+        pastDealsList[existingIdx] = newDeal;
+      } else {
+        pastDealsList.unshift(newDeal);
+      }
+
+      localStorage.setItem('ZAIM_ROSLI_PAST_DEALS', JSON.stringify(pastDealsList));
+      renderPastDealsAdmin();
+      closePastDealModal();
+
+      try {
+        const pastHeaders = await getAdminAuthHeaders({ 'Content-Type': 'application/json' });
+        await fetch('https://zaimrosli-worker.huzaimrosli.workers.dev/api/past-deals', {
+          method: 'POST',
+          headers: pastHeaders,
+          body: JSON.stringify(pastDealsList)
+        });
+      } catch(e) {}
+    }
+
+    async function deletePastDeal(id) {
+      if (!confirm('Are you sure you want to delete this past deal record?')) return;
+      pastDealsList = pastDealsList.filter(d => d.id !== id);
+      localStorage.setItem('ZAIM_ROSLI_PAST_DEALS', JSON.stringify(pastDealsList));
+      renderPastDealsAdmin();
+
+      try {
+        const pastHeaders = await getAdminAuthHeaders({ 'Content-Type': 'application/json' });
+        await fetch('https://zaimrosli-worker.huzaimrosli.workers.dev/api/past-deals', {
+          method: 'POST',
+          headers: pastHeaders,
+          body: JSON.stringify(pastDealsList)
+        });
+      } catch(e) {}
+    }
   </script>
   <script src="/pwa.js"></script>
+<script>
+    // Auto-Sync Import Handler from PropMall Bookmarklet
+    async function handleAutoSyncImport() {
+      try {
+        const urlParams = new URLSearchParams(window.location.search);
+        let autoSyncRaw = urlParams.get('auto_sync');
+        if (!autoSyncRaw && window.location.hash.includes('auto_sync=')) {
+          const hashParams = new URLSearchParams(window.location.hash.substring(1));
+          autoSyncRaw = hashParams.get('auto_sync');
+        }
+        if (!autoSyncRaw) return;
+
+        let listing = null;
+        try {
+          listing = JSON.parse(autoSyncRaw);
+        } catch (e1) {
+          try {
+            listing = JSON.parse(decodeURIComponent(autoSyncRaw));
+          } catch (e2) {
+            console.error('Failed to parse auto_sync payload:', e2);
+            return;
+          }
+        }
+        if (!listing || !listing.title) return;
+
+        // Clean query param from URL bar without page reload
+        window.history.replaceState({}, document.title, window.location.pathname);
+
+        // Instantly open the modal with the imported listing data!
+        editProperty(listing);
+
+        // Always fetch freshest data from KV to ensure no listings are lost
+        try {
+          const freshRes = await fetch('https://zaimrosli-worker.huzaimrosli.workers.dev/api/properties?t=' + Date.now());
+          if (freshRes.ok) {
+            const freshData = await freshRes.json();
+            if (Array.isArray(freshData) && freshData.length > 0) {
+              currentProperties = freshData;
+            }
+          }
+        } catch(e) {}
+
+        if (!currentProperties || currentProperties.length === 0) {
+          await loadPropertiesList();
+        }
+
+        // Check if listing already exists by exact title or exact slug
+        const existingIdx = currentProperties.findIndex(p => (listing.id && p.id === listing.id) || (p.slug === listing.slug && p.title.toLowerCase().trim() === listing.title.toLowerCase().trim()));
+        if (existingIdx >= 0) {
+          currentProperties[existingIdx] = { ...currentProperties[existingIdx], ...listing };
+        } else {
+          currentProperties.unshift(listing);
+        }
+
+        renderListingsGrid();
+        await saveToStorage();
+
+        // Show sleek luxury floating notification
+        const photoCount = (listing.images && listing.images.length) ? listing.images.length : (listing.image ? 1 : 0);
+        const toast = document.createElement('div');
+        toast.style.cssText = `
+          position: fixed;
+          top: 20px;
+          right: 20px;
+          background: #0f172a;
+          color: #ffffff;
+          padding: 10px 16px;
+          border-radius: 14px;
+          box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
+          z-index: 99999999;
+          font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          border: 1px solid #10b981;
+          max-width: 440px;
+          width: calc(100vw - 32px);
+          box-sizing: border-box;
+          transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        `;
+        toast.innerHTML = `
+          <div style="width: 34px; height: 34px; border-radius: 50%; background: #064e3b; color: #10b981; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; font-weight: 800; flex-shrink: 0; border: 1px solid #10b981;">
+            ✓
+          </div>
+          <div style="flex: 1; min-width: 0; text-align: left;">
+            <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 2px;">
+              <span style="font-size: 0.70rem; font-weight: 800; color: #10b981; text-transform: uppercase; letter-spacing: 0.5px;">Successfully Synced</span>
+              <span style="font-size: 0.65rem; background: #1e293b; color: #f59e0b; padding: 1px 6px; border-radius: 8px; font-weight: 800; border: 1px solid rgba(245,158,11,0.3);">${photoCount} HD Photos</span>
+            </div>
+            <div style="font-size: 0.82rem; font-weight: 700; color: #f8fafc; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+              ${listing.title}
+            </div>
+          </div>
+          <button onclick="this.parentElement.remove()" style="background: none; border: none; color: #94a3b8; font-size: 1.2rem; cursor: pointer; padding: 2px 4px; line-height: 1; display: flex; align-items: center; justify-content: center;" title="Close">&times;</button>
+        `;
+        document.body.appendChild(toast);
+
+        setTimeout(() => {
+          if (toast.parentNode) {
+            toast.style.opacity = '0';
+            toast.style.transform = 'translateY(-10px)';
+            setTimeout(() => { if (toast.parentNode) toast.parentNode.removeChild(toast); }, 300);
+          }
+        }, 5000);
+
+      } catch (err) {
+        console.error('Error importing auto_sync listing:', err);
+      }
+    }
+
+    // Call immediately & also on load
+    handleAutoSyncImport();
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', handleAutoSyncImport);
+    }
+</script>
 </body>
 </html>
