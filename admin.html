@@ -622,28 +622,44 @@
     overflow: hidden;
   }
   @media (max-width: 860px) {
+    .admin-container {
+      padding: 0 6px !important;
+    }
     .traffic-metrics-grid {
       grid-template-columns: repeat(2, 1fr) !important;
-      gap: 10px !important;
+      gap: 6px !important;
+      margin-bottom: 12px !important;
+    }
+    .traffic-metric-card {
+      padding: 10px 8px !important;
+      border-radius: 10px !important;
     }
     .traffic-sections-grid {
       grid-template-columns: 1fr !important;
-      gap: 14px !important;
+      gap: 10px !important;
+      margin-bottom: 16px !important;
+    }
+    .traffic-section-card {
+      padding: 12px 10px !important;
+      border-radius: 10px !important;
     }
   }
   @media (max-width: 480px) {
+    .admin-container {
+      padding: 0 4px !important;
+    }
     .traffic-metrics-grid {
       grid-template-columns: repeat(2, 1fr) !important;
-      gap: 8px !important;
+      gap: 6px !important;
     }
     .traffic-metric-card {
-      padding: 12px 10px !important;
+      padding: 10px 6px !important;
     }
     .traffic-metric-card .metric-val {
-      font-size: 1.45rem !important;
+      font-size: 1.40rem !important;
     }
     .traffic-section-card {
-      padding: 14px 12px !important;
+      padding: 12px 8px !important;
     }
   }
   
@@ -653,9 +669,7 @@
         padding-top: 70px !important;
         padding-bottom: 40px !important;
       }
-      .admin-container {
-        padding: 0 10px !important;
-      }
+      .admin-container { padding: 0 6px !important; }
       header.site-header {
         height: auto !important;
         padding: 8px 0 !important;
@@ -1234,8 +1248,7 @@
       padding-top: 70px !important;
       padding-bottom: 40px !important;
     }
-    .admin-container {
-      padding: 0 12px !important;
+    .admin-container { padding: 0 6px !important;
       width: 100% !important;
       box-sizing: border-box !important;
       overflow-x: hidden !important;
@@ -1437,9 +1450,7 @@
         padding-top: 80px !important;
         padding-bottom: 50px !important;
       }
-      .admin-container {
-        padding: 0 14px !important;
-      }
+      .admin-container { padding: 0 6px !important; }
     }
 
     .sidebar-brand {
