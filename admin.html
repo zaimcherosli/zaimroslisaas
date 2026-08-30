@@ -780,26 +780,26 @@
 
   /* RenHUB 3-Category Pills Bar */
   .renhub-category-tabs {
-    display: flex;
-    gap: 8px;
-    margin-bottom: 14px;
-    flex-wrap: wrap;
-  }
-  .renhub-cat-btn {
-    padding: 10px 18px;
-    border-radius: 24px;
-    font-size: 0.82rem;
-    font-weight: 800;
-    cursor: pointer;
-    border: 1.5px solid transparent;
-    transition: all 0.2s ease;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: #ffffff;
-    color: #475569;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.03);
-  }
+      display: grid !important;
+      grid-template-columns: repeat(2, 1fr) !important;
+      gap: 8px !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
+    }
+    .renhub-status-tabs {
+      display: grid !important;
+      grid-template-columns: repeat(3, 1fr) !important;
+      gap: 6px !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
+    }
+    .renhub-cat-btn, .renhub-status-btn {
+      width: 100% !important;
+      justify-content: space-between !important;
+      padding: 9px 10px !important;
+      font-size: 0.76rem !important;
+      box-sizing: border-box !important;
+    }
   .renhub-cat-btn .pill-count {
     padding: 2px 8px;
     border-radius: 12px;
@@ -888,56 +888,98 @@
     color: #c2410c;
   }
 
-  /* Status Filter Tabs (Semua / Jual / Sewa) */
+  /* RenHUB Status Tabs (Semua / Jual / Sewa) — Matches Category Tabs */
   .renhub-status-tabs {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 8px;
-    margin-bottom: 12px;
-    flex-wrap: wrap;
+    margin-bottom: 14px;
+    width: 100%;
+    box-sizing: border-box;
   }
   .renhub-status-btn {
-    padding: 7px 16px;
-    border-radius: 99px;
+    padding: 10px 16px;
+    border-radius: 24px;
     font-size: 0.82rem;
-    font-weight: 700;
-    border: 1.5px solid #cbd5e1;
-    background: #ffffff;
-    color: #334155;
+    font-weight: 800;
     cursor: pointer;
+    border: 1.5px solid transparent;
+    transition: all 0.2s ease;
     display: inline-flex;
     align-items: center;
-    gap: 6px;
-    transition: all 0.2s ease;
-  }
-  .renhub-status-btn:hover {
-    border-color: #94a3b8;
-    background: #f8fafc;
-  }
-  .renhub-status-btn.active {
-    background: #0f172a !important;
-    color: #ffffff !important;
-    border-color: #0f172a !important;
-    box-shadow: 0 2px 6px rgba(15, 23, 42, 0.2);
-  }
-  .renhub-status-btn.active .pill-count {
-    background: rgba(255, 255, 255, 0.25) !important;
-    color: #ffffff !important;
-  }
-  .renhub-status-btn.tab-sale.active {
-    background: linear-gradient(135deg, #d97706, #b45309) !important;
-    border-color: #b45309 !important;
-  }
-  .renhub-status-btn.tab-rent.active {
-    background: linear-gradient(135deg, #0284c7, #0369a1) !important;
-    border-color: #0369a1 !important;
+    justify-content: space-between;
+    gap: 8px;
+    background: #ffffff;
+    color: #475569;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+    box-sizing: border-box;
+    width: 100%;
   }
   .renhub-status-btn .pill-count {
-    background: #f1f5f9;
     padding: 2px 8px;
-    border-radius: 99px;
-    font-size: 0.74rem;
+    border-radius: 12px;
+    font-size: 0.72rem;
     font-weight: 800;
-    color: #475569;
+  }
+
+  /* Status Tab 1: Semua */
+  .renhub-status-btn.tab-all {
+    border-color: #cbd5e1;
+  }
+  .renhub-status-btn.tab-all .pill-count {
+    background: #e2e8f0;
+    color: #0f172a;
+  }
+  .renhub-status-btn.tab-all.active {
+    background: #0f172a;
+    color: #ffffff;
+    border-color: #0f172a;
+  }
+  .renhub-status-btn.tab-all.active .pill-count {
+    background: rgba(255,255,255,0.25);
+    color: #ffffff;
+  }
+
+  /* Status Tab 2: Untuk Jual (Amber / Orange) */
+  .renhub-status-btn.tab-sale {
+    border-color: #fed7aa;
+    background: #fff7ed;
+    color: #c2410c;
+  }
+  .renhub-status-btn.tab-sale .pill-count {
+    background: #ffedd5;
+    color: #9a3412;
+  }
+  .renhub-status-btn.tab-sale.active {
+    background: #ea580c;
+    color: #ffffff;
+    border-color: #ea580c;
+    box-shadow: 0 2px 8px rgba(234,88,12,0.25);
+  }
+  .renhub-status-btn.tab-sale.active .pill-count {
+    background: #ffffff;
+    color: #c2410c;
+  }
+
+  /* Status Tab 3: Untuk Sewa (Sky / Blue) */
+  .renhub-status-btn.tab-rent {
+    border-color: #bae6fd;
+    background: #f0f9ff;
+    color: #0369a1;
+  }
+  .renhub-status-btn.tab-rent .pill-count {
+    background: #e0f2fe;
+    color: #075985;
+  }
+  .renhub-status-btn.tab-rent.active {
+    background: #0284c7;
+    color: #ffffff;
+    border-color: #0284c7;
+    box-shadow: 0 2px 8px rgba(2,132,199,0.25);
+  }
+  .renhub-status-btn.tab-rent.active .pill-count {
+    background: #ffffff;
+    color: #0369a1;
   }
 
   /* Filter Bar (Search + State + District) */
@@ -1814,14 +1856,14 @@
 
         <!-- Status Filter Tabs (Semua / Jual / Sewa) -->
         <div class="renhub-status-tabs">
-          <button id="status-tab-all" onclick="setRenhubStatusFilter('all')" class="renhub-status-btn active">
+          <button id="status-tab-all" onclick="setRenhubStatusFilter('all')" class="renhub-status-btn tab-all active">
             Semua Status <span class="pill-count" id="count-status-all">0</span>
           </button>
           <button id="status-tab-sale" onclick="setRenhubStatusFilter('sale')" class="renhub-status-btn tab-sale">
-            🏷️ Untuk Jual <span class="pill-count" id="count-status-sale">0</span>
+            Untuk Jual <span class="pill-count" id="count-status-sale">0</span>
           </button>
           <button id="status-tab-rent" onclick="setRenhubStatusFilter('rent')" class="renhub-status-btn tab-rent">
-            🔑 Untuk Sewa <span class="pill-count" id="count-status-rent">0</span>
+            Untuk Sewa <span class="pill-count" id="count-status-rent">0</span>
           </button>
         </div>
 
@@ -1829,9 +1871,9 @@
         <div class="renhub-filter-bar">
           <input type="text" id="admin-search-input" oninput="renderListingsGrid()" placeholder="Cari tajuk, lokasi, rujukan, sewa, jual, ejen..." class="renhub-filter-search">
           <select id="admin-filter-status" onchange="setRenhubStatusFilter(this.value)" class="renhub-filter-select" style="font-weight: 700;">
-            <option value="all">Status: Semua (Jual &amp; Sewa)</option>
-            <option value="sale">🏷️ Untuk Dijual (For Sale)</option>
-            <option value="rent">🔑 Untuk Disewa (For Rent)</option>
+            <option value="all">Semua Status (Jual &amp; Sewa)</option>
+            <option value="sale">Untuk Jual (For Sale)</option>
+            <option value="rent">Untuk Sewa (For Rent)</option>
           </select>
           <select id="admin-filter-state" onchange="handleStateFilterChange()" class="renhub-filter-select">
             <option value="all">Select State (All)</option>
@@ -2551,13 +2593,25 @@
       let countMy = 0;
       let countCoa = 0;
       let countUndercon = 0;
+      let countSale = 0;
+      let countRent = 0;
 
       const now = new Date();
 
       currentProperties.forEach(p => {
         const isHidden = !!p.hidden;
-        if (!isHidden) active++;
-        else expired++;
+        if (!isHidden) {
+          active++;
+          const pStatus = (p.status || '').toLowerCase();
+          const pCat = (p.category || '').toLowerCase();
+          if (pStatus === 'rent' || pCat.includes('sewa') || pCat.includes('rent')) {
+            countRent++;
+          } else {
+            countSale++;
+          }
+        } else {
+          expired++;
+        }
 
         const src = p.listingSource || ((p.category && p.category.toLowerCase().includes('undercon')) ? 'undercon' : 'my_listing');
         if (src === 'coa') countCoa++;
