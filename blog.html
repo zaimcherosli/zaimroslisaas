@@ -898,7 +898,7 @@
             </p>
             <div class="blog-card-actions">
               <button class="btn-read-article" onclick="event.stopPropagation(); openBlogModal('panduan-pinjaman-perumahan-lppsa-2026-penjawat-awam-vs-bank', 'ms')">Baca Artikel Penuh</button>
-              <button class="btn-card-share" onclick="event.stopPropagation(); shareArticleDirectly('panduan-pinjaman-perumahan-lppsa-2026-penjawat-awam-vs-bank')" title="Kongsikan Artikel" aria-label="Kongsikan Artikel">
+              <button class="btn-card-share" onclick="event.stopPropagation(); shareArticleFromCard(event, 'panduan-pinjaman-perumahan-lppsa-2026-penjawat-awam-vs-bank')" title="Kongsikan Artikel" aria-label="Kongsikan Artikel">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                   <circle cx="18" cy="5" r="3"></circle>
                   <circle cx="6" cy="12" r="3"></circle>
@@ -3112,7 +3112,7 @@
       }
     }
 
-    // 5. Kongsi Asal Peranti Mudah Alih (Native Web Share API)
+    // 5. Kongsi Pintar & Fleksibel (Smart Native Web Share + Instant Fallback)
     async function shareViaNative(targetSlug) {
       const slug = targetSlug || (currentOpenArticle ? currentOpenArticle.slug : null);
       const article = BLOG_ARTICLES.find(a => a.slug === slug) || currentOpenArticle;
@@ -3120,7 +3120,9 @@
 
       const payload = getArticleSharePayload(article, currentBlogLang);
 
-      if (navigator.share) {
+      // On Mobile devices supporting navigator.share
+      const isMobile = /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent);
+      if (isMobile && navigator.share) {
         try {
           await navigator.share({
             title: payload.title,
@@ -3129,12 +3131,22 @@
           });
           return;
         } catch (err) {
-          if (err.name === 'AbortError') return; // User canceled
+          if (err && err.name === 'AbortError') return; // User closed share sheet
         }
       }
-      
-      // Fallback if Web Share API is cancelled or not available
-      shareToWhatsApp(slug);
+
+      // On Desktop or Fallback: Copy to clipboard & open WhatsApp sharing
+      try {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          await navigator.clipboard.writeText(payload.shareText);
+        }
+      } catch (e) {}
+
+      // Open WhatsApp directly
+      const waUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(payload.shareText)}`;
+      window.open(waUrl, '_blank');
+
+      showBlogToast(currentBlogLang === 'en' ? 'Link & summary copied! Opening WhatsApp...' : 'Pautan & ringkasan disalin! Membuka WhatsApp...');
     }
 
     // Shortcut untuk perkongsian dari Header / Sticky Footer Modal
@@ -3147,6 +3159,11 @@
     // Shortcut untuk butang Kongsi pada Grid Card
     function shareArticleFromCard(e, slug) {
       if (e && e.stopPropagation) e.stopPropagation();
+      if (e && e.preventDefault) e.preventDefault();
+      shareViaNative(slug);
+    }
+
+    function shareArticleDirectly(slug) {
       shareViaNative(slug);
     }
 
@@ -3229,6 +3246,7 @@
     window.closeBlogModal = closeBlogModal;
     window.toggleBlogModalLang = toggleBlogModalLang;
     window.shareArticleFromCard = shareArticleFromCard;
+    window.shareArticleDirectly = shareArticleDirectly;
     window.copyArticleShareText = copyArticleShareText;
     window.shareViaNative = shareViaNative;
     window.shareToWhatsApp = shareToWhatsApp;
