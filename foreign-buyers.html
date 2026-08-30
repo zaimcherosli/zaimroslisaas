@@ -884,6 +884,11 @@
       function isForeignEligible(item) {
         if (item.hidden) return false;
 
+        // Ensure listing has a valid photo
+        const hasPhoto = (item.image && typeof item.image === 'string' && item.image.trim().length > 0) || 
+                         (Array.isArray(item.images) && item.images.length > 0 && item.images[0]);
+        if (!hasPhoto) return false;
+
         const fullText = (item.title + ' ' + (item.location || '') + ' ' + (item.description || '') + ' ' + (item.tenure || '')).toLowerCase();
         
         // 1. Strict Malay Reserve / Bumiputera Quotas / Malay Settlement Check
@@ -938,8 +943,12 @@
 
       function renderForeignProperties() {
         const grid = document.getElementById('foreign-properties-grid');
-        if (grid && typeof PROPERTIES_DATA !== 'undefined' && Array.isArray(PROPERTIES_DATA)) {
-          const eligibleList = PROPERTIES_DATA.filter(isForeignEligible).slice(0, 6);
+        const dataSrc = (window.PROPERTIES_DATA && Array.isArray(window.PROPERTIES_DATA) && window.PROPERTIES_DATA.length > 0) 
+                          ? window.PROPERTIES_DATA 
+                          : (typeof PROPERTIES_DATA !== 'undefined' ? PROPERTIES_DATA : []);
+
+        if (grid && Array.isArray(dataSrc)) {
+          const eligibleList = dataSrc.filter(isForeignEligible).slice(0, 6);
 
           if (eligibleList.length === 0) {
             grid.innerHTML = `<div style="grid-column: 1 / -1; text-align: center; padding: 50px 20px; background: #fff; border-radius: 16px; border: 1px solid #e2e8f0;">
