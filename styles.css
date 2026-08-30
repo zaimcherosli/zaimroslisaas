@@ -1424,6 +1424,20 @@ footer.site-footer {
     margin-top: 4px !important;
   }
 
+  /* Responsive Pagination Controls on Mobile */
+  #properties-pagination, #location-pagination {
+    gap: 5px !important;
+    margin-top: 30px !important;
+    flex-wrap: nowrap !important;
+    justify-content: center !important;
+  }
+
+  #properties-pagination button, #location-pagination button {
+    padding: 7px 11px !important;
+    font-size: 0.8rem !important;
+    min-width: 36px !important;
+  }
+
   .stats-section-wrap {
     margin-top: 15px !important;
   }

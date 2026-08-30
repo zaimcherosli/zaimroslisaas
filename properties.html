@@ -279,41 +279,61 @@
           return;
         }
 
+        const isMobile = window.innerWidth <= 640;
         let pages = [];
-        if (totalPages <= 7) {
-          for (let i = 1; i <= totalPages; i++) pages.push(i);
-        } else {
-          if (currentPage <= 4) {
-            pages = [1, 2, 3, 4, 5, '...', totalPages];
-          } else if (currentPage >= totalPages - 3) {
-            pages = [1, '...', totalPages - 4, totalPages - 3, totalPages - 2, totalPages - 1, totalPages];
+
+        if (isMobile) {
+          // On Mobile: Clean 3-button window (e.g. 1, 2, 3 or 2, 3, 4)
+          if (totalPages <= 3) {
+            for (let i = 1; i <= totalPages; i++) pages.push(i);
           } else {
-            pages = [1, '...', currentPage - 1, currentPage, currentPage + 1, '...', totalPages];
+            let start = Math.max(1, currentPage - 1);
+            let end = start + 2;
+            if (end > totalPages) {
+              end = totalPages;
+              start = Math.max(1, end - 2);
+            }
+            for (let i = start; i <= end; i++) pages.push(i);
+          }
+        } else {
+          // On Desktop: Extended numbered list
+          if (totalPages <= 7) {
+            for (let i = 1; i <= totalPages; i++) pages.push(i);
+          } else {
+            if (currentPage <= 4) {
+              pages = [1, 2, 3, 4, 5, '...', totalPages];
+            } else if (currentPage >= totalPages - 3) {
+              pages = [1, '...', totalPages - 4, totalPages - 3, totalPages - 2, totalPages - 1, totalPages];
+            } else {
+              pages = [1, '...', currentPage - 1, currentPage, currentPage + 1, '...', totalPages];
+            }
           }
         }
 
         let html = '';
+        const navPad = isMobile ? 'padding: 7px 11px; font-size: 0.8rem;' : 'padding: 8px 16px; font-size: 0.85rem;';
+        const numPad = isMobile ? 'padding: 7px 11px; font-size: 0.82rem; min-width: 36px;' : 'padding: 8px 16px; font-size: 0.85rem; min-width: 40px;';
 
         // Prev Button
         const isFirst = currentPage === 1;
-        html += `<button type="button" onclick="goToPage(${currentPage - 1})" ${isFirst ? 'disabled style="padding: 8px 16px; border-radius: 8px; font-weight: 700; font-size: 0.85rem; border: 1px solid #e2e8f0; background: #f8fafc; color: #cbd5e1; cursor: not-allowed;"' : 'style="padding: 8px 16px; border-radius: 8px; font-weight: 700; font-size: 0.85rem; border: 1px solid #cbd5e1; background: #ffffff; color: #0f172a; cursor: pointer; transition: all 0.2s;"'}>&laquo; Prev</button>`;
+        html += `<button type="button" onclick="goToPage(${currentPage - 1})" ${isFirst ? `disabled style="${navPad} border-radius: 8px; font-weight: 700; border: 1px solid #e2e8f0; background: #f8fafc; color: #cbd5e1; cursor: not-allowed;"` : `style="${navPad} border-radius: 8px; font-weight: 700; border: 1px solid #cbd5e1; background: #ffffff; color: #0f172a; cursor: pointer; transition: all 0.2s;"`}>&laquo; Prev</button>`;
 
         // Page Number Buttons
         pages.forEach(p => {
           if (p === '...') {
-            html += `<span style="padding: 8px 6px; color: #94a3b8; font-weight: 700; font-size: 0.85rem;">&hellip;</span>`;
+            html += `<span style="padding: 7px 4px; color: #94a3b8; font-weight: 700; font-size: 0.85rem;">&hellip;</span>`;
           } else {
             const isActive = p === currentPage;
             const btnStyle = isActive
-              ? 'padding: 8px 16px; border-radius: 8px; font-weight: 800; font-size: 0.85rem; border: 1px solid #0f172a; background: #0f172a; color: #ffffff; box-shadow: 0 2px 6px rgba(15,23,42,0.25); cursor: default;'
-              : 'padding: 8px 16px; border-radius: 8px; font-weight: 700; font-size: 0.85rem; border: 1px solid #cbd5e1; background: #ffffff; color: #0f172a; cursor: pointer; transition: all 0.2s;';
+              ? `${numPad} border-radius: 8px; font-weight: 800; border: 1px solid #0f172a; background: #0f172a; color: #ffffff; box-shadow: 0 2px 6px rgba(15,23,42,0.25); cursor: default;`
+              : `${numPad} border-radius: 8px; font-weight: 700; border: 1px solid #cbd5e1; background: #ffffff; color: #0f172a; cursor: pointer; transition: all 0.2s;`;
             html += `<button type="button" onclick="goToPage(${p})" style="${btnStyle}">${p}</button>`;
           }
         });
 
         // Next Button
         const isLast = currentPage === totalPages;
-        html += `<button type="button" onclick="goToPage(${currentPage + 1})" ${isLast ? 'disabled style="padding: 8px 16px; border-radius: 8px; font-weight: 700; font-size: 0.85rem; border: 1px solid #e2e8f0; background: #f8fafc; color: #cbd5e1; cursor: not-allowed;"' : 'style="padding: 8px 16px; border-radius: 8px; font-weight: 700; font-size: 0.85rem; border: 1px solid #cbd5e1; background: #ffffff; color: #0f172a; cursor: pointer; transition: all 0.2s;"'}>Next &raquo;</button>`;
+        html += `<button type="button" onclick="goToPage(${currentPage + 1})" ${isLast ? `disabled style="${navPad} border-radius: 8px; font-weight: 700; border: 1px solid #e2e8f0; background: #f8fafc; color: #cbd5e1; cursor: not-allowed;"` : `style="${navPad} border-radius: 8px; font-weight: 700; border: 1px solid #cbd5e1; background: #ffffff; color: #0f172a; cursor: pointer; transition: all 0.2s;"`}>Next &raquo;</button>`;
 
         paginationEl.innerHTML = html;
       }
