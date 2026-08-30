@@ -40,6 +40,7 @@
   <link rel="apple-touch-icon" href="/icons/icon-192.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/icons/icon-192.png">
   <link rel="shortcut icon" href="/favicon.ico">
+  <script src="/analytics.js?v=91" defer></script>
 </head>
 <body>
 
@@ -114,10 +115,10 @@
           <a href="/properties.html" style="font-size: 0.9rem; color: var(--accent-gold); font-weight: 700;">← Back to All Properties</a>
         </div>
 
-        <div class="detail-grid">
+        <div class="detail-grid" style="min-width: 0; width: 100%; max-width: 100%; box-sizing: border-box;">
           
           <!-- Left Main Detail -->
-          <div>
+          <div style="min-width: 0; width: 100%; max-width: 100%; box-sizing: border-box; overflow: hidden;">
             <div class="detail-hero-wrap">
               <img id="d-main-img" src="" class="detail-hero-img" alt="Property Image" referrerpolicy="no-referrer">
               <span id="d-badge-status" class="property-badge badge-sale" style="top: 20px; left: 20px;">FOR SALE</span>
@@ -367,7 +368,18 @@
           document.getElementById('d-lotType').textContent = prop.lotType;
         }
 
-        document.getElementById('d-desc').textContent = prop.description;
+        function cleanPublicDescription(desc) {
+          if (!desc) return "";
+          return desc
+            .replace(/https?:\/\/(?:www\.)?propmall\.(?:co|my|net)\/[^\s]+/gi, '')
+            .replace(/https?:\/\/t\.me\/[^\s]+/gi, '')
+            .replace(/Hello Partner Agents,?\s*/gi, '')
+            .replace(/I want to share this Listing in PropMall with you\.?\s*/gi, '')
+            .replace(/\n\s*\n\s*\n/g, '\n\n')
+            .trim();
+        }
+
+        document.getElementById('d-desc').textContent = cleanPublicDescription(prop.description);
 
         // WhatsApp link with live page URL included
         const currentUrl = window.location.href;
