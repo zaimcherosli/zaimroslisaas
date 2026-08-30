@@ -23,8 +23,8 @@ export async function onRequestGet(context) {
   try {
     const { url: SUPABASE_URL, key: SUPABASE_SERVICE_ROLE_KEY } = getSupabaseConfig(context && context.env);
     
-    // 1. Fetch traffic events from activity_logs
-    const logsRes = await fetch(`${SUPABASE_URL}/rest/v1/activity_logs?action_type=like.TRAFFIC_*&order=created_at.desc&limit=1500`, {
+    // 1. Fetch traffic events ONLY for Zaim Rosli Portal (action_type=like.TRAFFIC_ZR_*)
+    const logsRes = await fetch(`${SUPABASE_URL}/rest/v1/activity_logs?action_type=like.TRAFFIC_ZR_*&order=created_at.desc&limit=1500`, {
       headers: {
         'apikey': SUPABASE_SERVICE_ROLE_KEY,
         'Authorization': `Bearer ${SUPABASE_SERVICE_ROLE_KEY}`
@@ -98,7 +98,7 @@ export async function onRequestGet(context) {
       }
 
       // Pageviews count
-      if (action === 'TRAFFIC_PAGE_VIEW') {
+      if (action.includes('PAGE_VIEW')) {
         totalPageviews++;
         if (isToday) todayPageviews++;
 
@@ -107,7 +107,7 @@ export async function onRequestGet(context) {
       }
 
       // WhatsApp Conversion clicks
-      if (action === 'TRAFFIC_WHATSAPP_CLICK') {
+      if (action.includes('WHATSAPP')) {
         totalWhatsappClicks++;
         if (isToday) todayWhatsappClicks++;
       }

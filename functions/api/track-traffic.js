@@ -46,7 +46,8 @@ export async function onRequestPost(context) {
     const city = (context.request.cf && context.request.cf.city) || '';
     const region = (context.request.cf && context.request.cf.region) || '';
 
-    const actionType = `TRAFFIC_${event_type.toUpperCase()}`;
+    // Isolated Action Type for Zaim Rosli Portal
+    const actionType = `TRAFFIC_ZR_${event_type.toUpperCase()}`;
     const details = JSON.stringify({
       path: page_path,
       title: page_title,
@@ -62,7 +63,7 @@ export async function onRequestPost(context) {
     });
 
     // 1. Insert into activity_logs table
-    const logRes = await fetch(`${SUPABASE_URL}/rest/v1/activity_logs`, {
+    await fetch(`${SUPABASE_URL}/rest/v1/activity_logs`, {
       method: 'POST',
       headers: {
         'apikey': SUPABASE_SERVICE_ROLE_KEY,
@@ -77,29 +78,6 @@ export async function onRequestPost(context) {
         created_at: new Date().toISOString()
       })
     });
-
-    // 2. Also try insert into site_traffic table if available
-    try {
-      await fetch(`${SUPABASE_URL}/rest/v1/site_traffic`, {
-        method: 'POST',
-        headers: {
-          'apikey': SUPABASE_SERVICE_ROLE_KEY,
-          'Authorization': `Bearer ${SUPABASE_SERVICE_ROLE_KEY}`,
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          event_type: event_type,
-          page_path: page_path,
-          page_title: page_title,
-          target_id: target_id,
-          target_title: target_title,
-          referrer: referrer,
-          device_type: device_type,
-          session_id: session_id,
-          created_at: new Date().toISOString()
-        })
-      });
-    } catch (e) {}
 
     return new Response(JSON.stringify({ success: true, recorded: actionType }), {
       status: 200,
