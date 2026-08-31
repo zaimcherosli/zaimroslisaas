@@ -43,7 +43,7 @@ const PROPERTIES_DATA = [
       "https://cdn.propmall.net/media/img-property/list-112764/list-112764-01-691dcc1e980c25.93516875.jpg"
     ],
     "description": "WTL / FOR RENT\n\n[To Let] Semi-D Factory Rawang Avenue Hi-Tech Industrial Park Rawang\n\nPROPERTY DETAILS\n- RM 17,000 Monthly\n- Factory\n- Land Area : 13,250 sqft\n- Asking Rental : RM19K\n- 2 Storey Semi-D Factory\n- ⁠CCC, CF ready\n- Land Size 13,253 sqft\n- Built-up: 40'x109' (4500 sqft approx)\n- Office : 40'x42' (1680 sqft)\n- Ceiling Height: 39ft (12 meter)\n- Power Supply: 150amp\n- ⁠Owner Just use to storage things\n- note : not actual unit. photos just resemble similar unit at same location.\n- Location :\n\n========================\nAsking Rental : RM 17,000 / month\n========================\n\n--- MAKLUMAT ASAL (RUJUKAN EJEN) ---\nEjen Listing : Zaim Rosli\nAgensi : JAZ INTERNATIONAL MALAYSIA SDN BHD (VEPM (1) 0120/4)\nNo. Tel : +60108118559\nPautan Rujukan : https://propmall.co/listing?str=&state=&area=&price_min=&price_max=&category=2012&type=&room=any&bath=any&goprice=ANY&status=ALL",
-    "refUrl": "https://propmall.co/listing?str=&state=&area=&price_min=&price_max=&category=2012&type=&room=any&bath=any&goprice=ANY&status=ALL",
+    "refUrl": "",
     "listingSource": "coa",
     "exclusiveExpiryDate": "",
     "coaAgentName": "",
@@ -94,7 +94,7 @@ const PROPERTIES_DATA = [
       "https://cdn.propmall.net/media/img-property/list-112764/list-112764-01-691dcc1e980c25.93516875.jpg"
     ],
     "description": "WTS / FOR SALE\n\n3 Storeys Adjacent Shop Lot @ Kepayang Commerce Square Seremban - near Seremban/Labu Tolls, visible from the main road\n\nPROPERTY DETAILS\n- 3 STOREY SHOPLOT (2 UNITS)\n- @ KEPAYANG COMMERCE SQUARE\n- Tenanted shoplot\n- 3 storey\n- Built Up : 4848 sqft (No 84) and 4480 sqft (No 85)\n- Land Area : 1679 sqft each (24x80)\n- Individual Title\n- FREEHOLD Bumi\n- Tenanted\n- 100% visible from the main road\n- High traffic area\n- Suitable for any type of businesses\n- nearby Toll Seremban/Labu\n- Facing Open\n\nAMENITIES:\n- Lotus Seremban 2\n- Seremban Getaway\n- hotel, café, restaurant\n- Columbia Hospital\n- AEON Mall Seremban 2\n- Masjid Hussain\n\nACCESSIBILITIES:\n- Jalan Sg Ujong, Jalan Labu\n- PLUS Highway (Toll Seremban/Labu)\n- Jalan Taman Bukit Kepayang Besar\n- Persiaran Utama, Jalan Haruan\n\n** Price : RM2.4 million (both units)\n\n\n========================\nAsking Price : RM 2,400,000\n========================\n\n--- MAKLUMAT ASAL (RUJUKAN EJEN) ---\nEjen Listing : Zaim Rosli\nAgensi : JAZ INTERNATIONAL MALAYSIA SDN BHD (VEPM (1) 0120/4)\nNo. Tel : +60108118559\nPautan Rujukan : https://propmall.co/listing?str=&state=&area=&price_min=&price_max=&category=2012&type=&room=any&bath=any&goprice=ANY&status=ALL",
-    "refUrl": "https://propmall.co/listing?str=&state=&area=&price_min=&price_max=&category=2012&type=&room=any&bath=any&goprice=ANY&status=ALL",
+    "refUrl": "",
     "listingSource": "coa",
     "exclusiveExpiryDate": "",
     "coaAgentName": "",
@@ -147,7 +147,7 @@ const PROPERTIES_DATA = [
       "https://cdn.propmall.net/media/img-property/list-112764/list-112764-01-691dcc1e980c25.93516875.jpg"
     ],
     "description": "WTS / FOR SALE\n\n[Facing main road] 4.5 storey adjacent shoplot @ Bukit Ubi, Kuantan\n\nPROPERTY DETAILS\n- 4.5 storey\n- Total Built Up : 17,935 sqft (both units)\n- Land Area : 1604 sqft each\n- Individual Title\n- Freehold Bumi\n- Tenanted (hotel)\n- 100% visible from the main road\n- Facing main road & open facing\n- Suitable for any type of businesses\n- located between Bandar Kuantan and Indera Mahkota\n- .\n\nAMENITIES:\n- pejabat-pejabat kerajaan\n- shoplot, kedai-kedai, restoran, cafe\n- Bukit Bayroute view point – 1.5km\n- KMI Kuantan Medical Centre – 2km\n- Bandar Kuantan – 3km\n- Masjid Negeri – 3km\n- Bandar Indera Mahkota – 4km\n- UIA Kuantan – 4km\n- Terminal Sentral Kuantan – 5km\n- Tanjung Lumpur – 7km\n- Plaza Toll Kuantan – 12km\n\nACCESSIBILITIES:\n- Jalan Bukit Ubi, Jalan Sekilau, Jalan Bay Route\n- Jalan Indera Mahkota\n- Jalan ByPass Kuantan\n- Lebuhraya Pantai Timur\n\n**Price : RM4.5 million (both units)\n\n\n========================\nAsking Price : RM 4,500,000\n========================\n\n--- MAKLUMAT ASAL (RUJUKAN EJEN) ---\nEjen Listing : Zaim Rosli\nAgensi : JAZ INTERNATIONAL MALAYSIA SDN BHD (VEPM (1) 0120/4)\nNo. Tel : +60108118559\nPautan Rujukan : https://propmall.co/listing?str=&state=&area=&price_min=&price_max=&category=2012&type=&room=any&bath=any&goprice=ANY&status=ALL",
-    "refUrl": "https://propmall.co/listing?str=&state=&area=&price_min=&price_max=&category=2012&type=&room=any&bath=any&goprice=ANY&status=ALL",
+    "refUrl": "",
     "listingSource": "coa",
     "exclusiveExpiryDate": "",
     "coaAgentName": "",
@@ -208,7 +208,7 @@ const PROPERTIES_DATA = [
       "https://cdn.propmall.net/media/img-property/list-167644/list-167644-01-6a8dbc0f261d93.23076195.jpg"
     ],
     "description": "WTS / FOR SALE\n\nPALING MURAH! GROUND FLOOR Shoplot Enigma Square, Bandar Puteri Bangi\n\nPROPERTY DETAILS\n- Type : Shop / Office\n- Tenure : Freehold (Non-Bumi Lot)\n- Build Up : 1754 sqft\n\n- Ground Floor Shoplot Enigma Square, Bandar Puteri Bangi\n- Ground Floor Shop Lot\n- Size: 1,754 sqft\n- Freehold Open\n- Intermediate Unit\n- Strata Title\n\nACCESSIBILITIES:\n- KL-Seremban Highway\n- ELITE Highway\n\n========================\nAsking Price : RM 900,000\n========================\n\n--- MAKLUMAT ASAL (RUJUKAN EJEN) ---\nEjen Listing : Zaim Rosli\nAgensi : JAZ INTERNATIONAL MALAYSIA SDN BHD (VEPM (1) 0120/4)\nNo. Tel : +60108118559\nPautan Rujukan : https://propmall.co/listing?str=&state=&area=&price_min=&price_max=&category=2012&type=&room=any&bath=any&goprice=ANY&status=ALL",
-    "refUrl": "https://propmall.co/listing?str=&state=&area=&price_min=&price_max=&category=2012&type=&room=any&bath=any&goprice=ANY&status=ALL",
+    "refUrl": "",
     "listingSource": "coa",
     "exclusiveExpiryDate": "",
     "coaAgentName": "",
@@ -272,7 +272,7 @@ const PROPERTIES_DATA = [
       "https://cdn.propmall.net/media/img-property/list-167644/list-167644-01-6a8dbc0f261d93.23076195.jpg"
     ],
     "description": "WTS / FOR SALE\n\nBangunan Pejabat 6 Tingkat dan Tanah Kampung Baru Kuala lumpur\n\nPROPERTY DETAILS\n- Land Area : 8,428 sqft\n- Peluang Pelaburan Strategik\n- Pusat tumpuan pelancong Kg Baru, KL\n- Bangunan Pejabat 6 Tingkat dan 1 Tingkat Tempat Kereta\n- Kawasan : Wilayah Persekutuan Kuala Lumpur\n- Keluasan Bangunan : 26,728 sqft\n- Pegangan : Pegangan Bebas\n- Penempatan Tanah : Tanah Simpanan Melayu\n- Kemudahan Sedia Ada :\n- Struktur Moden dan kukuh\n- Rekabentuk ergonomik dan selesa\n- Fleksibel - boleh digunakan untuk pelbagai acara\n- Ruang rooftop pemandangan KLCC\n- Sistem keselamatan lengkap 24/7\n- Lift dan akses OKU\n- Parking Luas dan selesa\n- Sistem pendingin berpusat\n\nAkses Pusat Bandar :\n- KLCC\n- Jalan Ampang\n- Bukit Bintang\n- Akses pengangkutan awam terdekat:\n- Stesen LRT KLCC\n- Stesen MRT / LRT Ampang Park n\n- Monorail Bukit Nanas\n- Laluan bas GoKL\n\n========================\nAsking Price : RM 24,000,000\n========================\n\n--- MAKLUMAT ASAL (RUJUKAN EJEN) ---\nEjen Listing : Zaim Rosli\nAgensi : JAZ INTERNATIONAL MALAYSIA SDN BHD (VEPM (1) 0120/4)\nNo. Tel : +60108118559\nPautan Rujukan : https://propmall.co/listing?str=&state=&area=&price_min=&price_max=&category=2012&type=&room=any&bath=any&goprice=ANY&status=ALL",
-    "refUrl": "https://propmall.co/listing?str=&state=&area=&price_min=&price_max=&category=2012&type=&room=any&bath=any&goprice=ANY&status=ALL",
+    "refUrl": "",
     "listingSource": "coa",
     "exclusiveExpiryDate": "",
     "coaAgentName": "",
@@ -333,7 +333,7 @@ const PROPERTIES_DATA = [
       "https://cdn.propmall.net/media/img-property/list-167644/list-167644-01-6a8dbc0f261d93.23076195.jpg"
     ],
     "description": "WTL / FOR RENT\n\n2 Storey Shoplot At Seksyen 8 Bangi, Selangor\n\nPROPERTY DETAILS\n- Type : Shop / Office\n- 2 Storey Shoplot At Seksyen 8\n- Built-up : 1540 sqft\n- Fronting Main Road.\n- Super High Traffic\n- parking\n- Opposite McD/EVO Mall, Seksyen 8\n- Rental price :\n- GF- RM 12,000\n- 1st Floor Rm 3000\n\n========================\nAsking Rental : RM 12,000 / month\n========================\n\n--- MAKLUMAT ASAL (RUJUKAN EJEN) ---\nEjen Listing : Zaim Rosli\nAgensi : JAZ INTERNATIONAL MALAYSIA SDN BHD (VEPM (1) 0120/4)\nNo. Tel : +60108118559\nPautan Rujukan : https://propmall.co/listing?str=&state=&area=&price_min=&price_max=&category=2012&type=&room=any&bath=any&goprice=ANY&status=ALL",
-    "refUrl": "https://propmall.co/listing?str=&state=&area=&price_min=&price_max=&category=2012&type=&room=any&bath=any&goprice=ANY&status=ALL",
+    "refUrl": "",
     "listingSource": "coa",
     "exclusiveExpiryDate": "",
     "coaAgentName": "",
@@ -388,7 +388,7 @@ const PROPERTIES_DATA = [
       "https://cdn.propmall.net/media/img-property/list-64888/list-64888-01-67a44cbc6719c5.98242826.jpg"
     ],
     "description": "WTL / FOR RENT\n\nGround Floor Shoplot For Rent at Wangsa Maju . Equipment & cafe setup For Sale\n\nPROPERTY DETAILS\n- Type : Shop / Office\n- Build Up : 1582 sqft\n- Shop Lot\n- Ground Floor SHOPLOT FOR RENT — Wangsa Maju\n- Facing main road • Owner nak jual sekali equipment & setup dalam cafe ni.\n- Jalan Wangsa Delima 6 (Sebelah AmBank)\n- 1,582 sqft • 20' x 79'\n- Rental: RM7,500/month\n- Complete café equipment & setup for sale: RM95,000 (negotiable)\n- Siap kitchen equipment • Dining setup • 3 unit aircond • Ready operate terus.\n- Surroundings: banks • clinics • tuition centres • restaurants • heavy commercial traffic.\n- Prime spot untuk F&B, cafe, grab‑and‑go, atau takeover terus.\n\n========================\nAsking Rental : RM 7,500 / month\n========================\n\n--- MAKLUMAT ASAL (RUJUKAN EJEN) ---\nEjen Listing : Zaim Rosli\nAgensi : JAZ INTERNATIONAL MALAYSIA SDN BHD (VEPM (1) 0120/4)\nNo. Tel : +60108118559\nPautan Rujukan : https://propmall.co/listing?str=&state=&area=&price_min=&price_max=&category=2012&type=&room=any&bath=any&goprice=ANY&status=ALL",
-    "refUrl": "https://propmall.co/listing?str=&state=&area=&price_min=&price_max=&category=2012&type=&room=any&bath=any&goprice=ANY&status=ALL",
+    "refUrl": "",
     "listingSource": "coa",
     "exclusiveExpiryDate": "",
     "coaAgentName": "",
@@ -439,7 +439,7 @@ const PROPERTIES_DATA = [
       "https://cdn.propmall.net/media/img-property/list-64888/list-64888-01-67a44cbc6719c5.98242826.jpg"
     ],
     "description": "WTL / FOR RENT\n\nFACING OPEN Elmina Business Park Detached Twin Factory Sungai Buloh\n\nPROPERTY DETAILS\n- RM 40,000 Monthly\n- Warehouse\n- Land Area : 24,000 sqft\n- ELMINA BUSINESS PARK DETACHED TWIN FACTORY SUNGAI BULOH\n- Two unit side by side - Facing open GCE highway*\n- Land area : 120x200 sqft (24,000 sqft)\n- Built up : 14,800 sqft\n- Power supply : 200 amps\n- Suitable for concierge, office and warehouse\n- NorthWest direction\n- Facing open GCE highway\n- LOCATION\n- Highways (GCE, LATAR, NSE, DASH, NKVE)\n- Port Klang - 40km\n- Subang Airport - 19km\n- KLCC - 32km\n- KLIA - 60km\n- Asking Rental : RM40,000/month each unit\n\n========================\nAsking Rental : RM 40,000 / month\n========================\n\n--- MAKLUMAT ASAL (RUJUKAN EJEN) ---\nEjen Listing : Zaim Rosli\nAgensi : JAZ INTERNATIONAL MALAYSIA SDN BHD (VEPM (1) 0120/4)\nNo. Tel : +60108118559\nPautan Rujukan : https://propmall.co/listing?str=&state=&area=&price_min=&price_max=&category=2012&type=&room=any&bath=any&goprice=ANY&status=ALL",
-    "refUrl": "https://propmall.co/listing?str=&state=&area=&price_min=&price_max=&category=2012&type=&room=any&bath=any&goprice=ANY&status=ALL",
+    "refUrl": "",
     "listingSource": "coa",
     "exclusiveExpiryDate": "",
     "coaAgentName": "",
@@ -496,7 +496,7 @@ const PROPERTIES_DATA = [
       "https://cdn.propmall.net/media/img-property/list-64888/list-64888-01-67a44cbc6719c5.98242826.jpg"
     ],
     "description": "WTS / FOR SALE\n\nFACING MAINROAD FULLY TENANTED 3 Storey Commercial Building Jalan Tuanku Abdul Rahman KL (JALAN TAR)\n\nPROPERTY DETAILS\n- Hot area facing main road - Tenanted at RM160k/mont*\n- Land area : 5,371 sqft\n- Built up : 15,000 sqft (approximately)\n- Fully tenanted RM160k/month\n- Freehold Nonbumi\n- SOGO - 550m\n- KLCC - 2.4km\n- Stadium Merdeka 1.7km\n\n========================\nAsking Price : RM 60,000,000\n========================\n\n--- MAKLUMAT ASAL (RUJUKAN EJEN) ---\nEjen Listing : Zaim Rosli\nAgensi : JAZ INTERNATIONAL MALAYSIA SDN BHD (VEPM (1) 0120/4)\nNo. Tel : +60108118559\nPautan Rujukan : https://propmall.co/listing?str=&state=&area=&price_min=&price_max=&category=2012&type=&room=any&bath=any&goprice=ANY&status=ALL",
-    "refUrl": "https://propmall.co/listing?str=&state=&area=&price_min=&price_max=&category=2012&type=&room=any&bath=any&goprice=ANY&status=ALL",
+    "refUrl": "",
     "listingSource": "coa",
     "exclusiveExpiryDate": "",
     "coaAgentName": "",
@@ -547,7 +547,7 @@ const PROPERTIES_DATA = [
       "https://cdn.propmall.net/media/img-property/list-29539/list-29539-01-66ae03e3669722.12973256.jpg"
     ],
     "description": "WTS / FOR SALE\n\nTWIN VILLA HOMESTAY BERDEKATAN PANTAI TELUK BIDARA DUNGUN, TERENGGANU\n\nPROPERTY DETAILS\n- Land Area : 13,261 sqft\n- 5 Rooms and 5 Bathrooms\n- TWIN VILLA HOMESTAY\n- BERDEKATAN PANTAI TELUK BIDARA\n- SEA VIEW\n- Freehold\n- Rezab Melayu\n- 2 Unit Homestay dan Kawasan Parking 1\n- Lot Tanah berasingan.\n- 3 Bilik + 3 Bilik air setiap Bilik\n- 2 Bilik + 2 Bilik Air setiap Bilik\n- Setiap Unit Satu Private Pool\n- Luas Tanah 13,261 sqft\n- BBQ Pit.\n- Jalan Kaki Ke Pantai\n\nAMENITIES:\n- 5 minit Tanjung Jara Resort\n- 6 minit Jetty ke Tenggo Beach\n- 7 minit Balai Polis\n- 11 minit Hospital Dungun\n\nACCESSIBILITIES:\n- Jalan Alternatif Pantai Teluk Bidara   - Kuala Dungun\n- Jalan Persekutuan Kuantan - Terengganu\n\n========================\nAsking Price : RM 650,000\n========================\n\n--- MAKLUMAT ASAL (RUJUKAN EJEN) ---\nEjen Listing : Zaim Rosli\nAgensi : JAZ INTERNATIONAL MALAYSIA SDN BHD (VEPM (1) 0120/4)\nNo. Tel : +60108118559\nPautan Rujukan : https://propmall.co/listing",
-    "refUrl": "https://propmall.co/listing",
+    "refUrl": "",
     "listingSource": "coa",
     "exclusiveExpiryDate": "",
     "coaAgentName": "",
@@ -594,7 +594,7 @@ const PROPERTIES_DATA = [
       "https://cdn.propmall.net/media/img-property/list-87926/list-87926-01-684927d89bd136.59957751.jpg"
     ],
     "description": "WTS / FOR SALE\n\nAmpang waterfront Budget Hotel for sale Good ROI\n\nPROPERTY DETAILS\n- Tenure : Leasehold (Non-Bumi Lot)\n- Land Area : 5,148 sqft\n- 22 Rooms\n- Ampang Water Front Budget Hotel at Ampang Jaya for Sale\n- Fully operational as 2 star budget hotel comes with 22 rooms with attached Bathroom\n- Total Floor size: 5148ft2\n- 5 minute by Taxi from Star LRT Station.\n- Nearby Restaurants, Amenitities, Mall, Bank and etc.\n- All rooms are equipped with full air conditioned, Wi-Fi, Flat screen tv\n- All bath rooms hv hot shower.\n- 24 hrs front desk service\n- Open Space Car Park free parking 24 hrs\n- Water dispensers provided on every floor\n- Fire Protection System\n- The hotel is protected with early warning automatic and manual fire detection and alarm system. Fire Supression system consist of hose reel system and portable fire extinguishers. Other fire safety facilities are emergency exit sign and lighting system together fire resistant exit doors including all room doors.\n- Nearby Recreationals*\n- Tmn Rimba Ampag/Hutan Lipur Ampang, or Ampang Forest Eco Park only 8 Km, Its about 25,000 hactres of forest reserve from city centre, along jalan ampang/jln Bkt Belachan its also a water catchment area jungle trail, nice lake, people go for hiking. There are water falls, great place for recreational & adventure favourite spot. From time to time Selangor tourism is upgrading/ improving the place to make it a major tourist destination, stunning night view /birds eye view of KL city\n- ROI\n- Good monthly ROI return\n\n========================\nAsking Price : RM 3,000,000\n========================\n\n--- MAKLUMAT ASAL (RUJUKAN EJEN) ---\nEjen Listing : Zaim Rosli\nAgensi : JAZ INTERNATIONAL MALAYSIA SDN BHD (VEPM (1) 0120/4)\nNo. Tel : +60108118559\nPautan Rujukan : https://propmall.co/listing?str=&forWTS=Y&state=&area=&price_min=&price_max=&category=2014&type=&room=any&bath=any&goprice=ANY&status=ALL",
-    "refUrl": "https://propmall.co/listing?str=&forWTS=Y&state=&area=&price_min=&price_max=&category=2014&type=&room=any&bath=any&goprice=ANY&status=ALL",
+    "refUrl": "",
     "listingSource": "coa",
     "exclusiveExpiryDate": "",
     "coaAgentName": "",
@@ -676,7 +676,7 @@ const PROPERTIES_DATA = [
       "https://cdn.propmall.net/media/img-property/list-87926/list-87926-01-684927d89bd136.59957751.jpg"
     ],
     "description": "WTS / FOR SALE\n\nGreat for Investment Established Riverfront Resort Janda Baik, Bentong, Pahang\n\nPROPERTY DETAILS\n- Type : Land\n- Tenure : Freehold (Malay Reserve)\n- 30 Rooms\n- Riverfront Resort Janda Baik, Bentong, Pahang\n- Land Size: Approx. 2.68 acres / 1.0851 hectares\n- Tenure: Freehold - Malay Reserve\n- Riverfront location\n- Backing onto extensive forest reserve\n- Established since 2014\n- Capacity: Up to approximately 150 guests\n\nExisting Development:\n- 5 existing operational villas\n- 1 additional villa under construction\n- 4 villas with private swimming pools\n- Selected villas with direct river frontage\n- Surau accommodating approximately 60 pax\n- Worker’s quarters\n- Storage facility\n- Badminton / multipurpose court\n- Wakaf & stage\n- 3 man-made fish ponds\n- Riverside relaxation area\n- BBQ, dining and activity areas\n\nThe resort is suitable for:\n- Family gatherings • Corporate retreats • Team building • Private events • Group holidays • Reunions • Nature retreats\n\nESTABLISHED BUSINESS WITH PROVEN SALES\n- Highest recorded monthly sales: RM115,305\n- Average resort sales: approximately RM75,000/month\n- The resort also comes with an established online audience/followers:\n- Fesbuk: 35,000 followers\n- TkTok: 15,000 followers\n- Insta: 10,000 followers\n- With approximately 15 years of business presence, the buyer is acquiring more than buildings and land , there is already an established customer base and market recognition.\n\nKEY INVESTMENT HIGHLIGHTS\n- Prime riverfront resort in Janda Baik\n- Freehold Malay Reserve land\n- Existing operating hospitality business\n- Established villas & private pools\n- Capacity of approximately 150 guests\n- Proven monthly revenue history\n- Existing social media following\n- Established business presence\n- Licensed by Majlis Perbandaran Bentong\n- MOTAC registration/licensing stated by owner\n- Forest reserve immediately behind the property\n- Potential for further enhancement, repositioning and expansio\n\nSuitable for:\n- Resort Operators | Hospitality Groups | Investors | Family Offices | Corporate Retreat Operators | Tourism Entrepreneurs\n- Serious buyers and qualified investors are invited to enquire for further information, financial details and private viewing arrangements.\n\n========================\nAsking Price : RM 5,500,000\n========================\n\n--- MAKLUMAT ASAL (RUJUKAN EJEN) ---\nEjen Listing : Zaim Rosli\nAgensi : JAZ INTERNATIONAL MALAYSIA SDN BHD (VEPM (1) 0120/4)\nNo. Tel : +60108118559\nPautan Rujukan : https://propmall.co/listing?str=&forWTS=Y&state=&area=&price_min=&price_max=&category=2014&type=&room=any&bath=any&goprice=ANY&status=ALL",
-    "refUrl": "https://propmall.co/listing?str=&forWTS=Y&state=&area=&price_min=&price_max=&category=2014&type=&room=any&bath=any&goprice=ANY&status=ALL",
+    "refUrl": "",
     "listingSource": "coa",
     "exclusiveExpiryDate": "",
     "coaAgentName": "",
@@ -729,7 +729,7 @@ const PROPERTIES_DATA = [
       "https://cdn.propmall.net/media/img-property/list-129448/list-129448-01-6956b83a7af407.95015262.jpg"
     ],
     "description": "WTS / FOR SALE\n\nReady To Develope - Rectangular - Freehold - Opentitle\n\nPROPERTY DETAILS\n- Type : Commercial Land\n- Tenure : Freehold (Non-Bumi Lot)\n- Land Area : 3.00 acre\n- Kegunaan : Commercial\n- Shape: Rectangle\n- HIGHLIGHTS:\n- Prime location within Segamat town centre\n- Suitable for shopping mall, supermarket, hotel or mixed commercial development\n- High visibility and strategic frontage\n- Excellent accessibility via main roads and highways\n- Surrounded by established residential & commercial areas\n- Growing township with increasing commercial demand\n- Suitable for investment or future Development\n- Strong long term capital appreciation potential\n\n========================\nAsking Price : RM 65,340,000\n========================\n\n--- MAKLUMAT ASAL (RUJUKAN EJEN) ---\nEjen Listing : Zaim Rosli\nAgensi : JAZ INTERNATIONAL MALAYSIA SDN BHD (VEPM (1) 0120/4)\nNo. Tel : +60108118559\nPautan Rujukan : https://propmall.co/listing",
-    "refUrl": "https://propmall.co/listing",
+    "refUrl": "",
     "listingSource": "coa",
     "exclusiveExpiryDate": "",
     "coaAgentName": "",
@@ -846,7 +846,7 @@ const PROPERTIES_DATA = [
       "https://cdn.propmall.net/media/img-property/list-165394/list-165394-01-6a7b2e5f9d4d22.96952312.jpg"
     ],
     "description": "WTS / FOR SALE\n\nShoplot Facing Mainroad Double Storey Jalan Pudu Kuala Lumpur\n\nPROPERTY DETAILS\n- Type : Shop / Office\n- Tenure : Freehold (Non-Bumi Lot)\n- Build Up : 4800 sqft\n\n- Commercial 2 Storey Shoplot\n- Jalan Pudu, Kuala Lumpur\n- 💥 PRIME LOCATION\n- 💥 FACING MAIN ROAD\n- 💥 BELOW MARKET VALUE\n- Double Storey Shop\n- Bank Valuation : Rm 3 Mil\n- 20x120 approx (2,400 sqft)\n- Currently rented\n- Zoning : (MC) Perdagangan Utama\n- Basic PR : 1:8\n\nHIGHLIGHTS:\n- Prime city commercial belt\n- ⁠High visibility along Jalan Pudu commercial stretch\n- Existing long-term tenant (30+ years)\n- Suitable for investment hold / value unlock\n- ⁠Strong redevelopment potential play - Located within DBKL MC (Major Commercial) zone\n- Strategic KL city location - Minutes to Times Square, Bukit Bintang, Jalan Pasar & Pudu commercial hub\n\n========================\nAsking Price : RM 2,450,000\n========================\n\n--- MAKLUMAT ASAL (RUJUKAN EJEN) ---\nEjen Listing : Zaim Rosli\nAgensi : JAZ INTERNATIONAL MALAYSIA SDN BHD (VEPM (1) 0120/4)\nNo. Tel : +60108118559\nPautan Rujukan : https://propmall.co/listing?str=&forWTS=Y&state=&area=&price_min=&price_max=&category=2012&type=&LotTypeNonBumi=Y&room=any&bath=any&goprice=ANY&status=ALL",
-    "refUrl": "https://propmall.co/listing?str=&forWTS=Y&state=&area=&price_min=&price_max=&category=2012&type=&LotTypeNonBumi=Y&room=any&bath=any&goprice=ANY&status=ALL",
+    "refUrl": "",
     "listingSource": "coa",
     "exclusiveExpiryDate": "",
     "coaAgentName": "",
@@ -920,7 +920,7 @@ const PROPERTIES_DATA = [
       "https://cdn.propmall.net/media/img-property/list-165394/list-165394-01-6a7b2e5f9d4d22.96952312.jpg"
     ],
     "description": "WTS / FOR SALE\n\n[FREEHOLD] 1st Floor Office Lot Taman Melati Setapak Gombak. Facing KL East Mall\n\nPROPERTY DETAILS\n- Property Type : END LOT Shop/Office Lot\n- Tenure : Freehold\n- Status : Non-Bumi Lot\n- Situated : 1st Floor\n- Strata Title ready.\n- Property: 1st floor Shop/Office Lot\n- Land Area: 1360sqft\n- Facing mainroad (facing KL East Mall)\n- Tenanted - almost 8 years\n- Near Surau and next to the elevator.\n\nAMENITIES:\n- Shopping Mall, Supermarket, Banks, Restaurants, Schools, Mosque, Universities, Hospitals,\n- ACCESS / HIGHWAY:\n- MRR2\n- DUKE\n- SELLING PRICE:\n- RM 890K Negotiable\n- Lawyer and Loan can be arranged.\n\n========================\nAsking Price : RM 890,000\n========================\n\n--- MAKLUMAT ASAL (RUJUKAN EJEN) ---\nEjen Listing : Zaim Rosli\nAgensi : JAZ INTERNATIONAL MALAYSIA SDN BHD (VEPM (1) 0120/4)\nNo. Tel : +60108118559\nPautan Rujukan : https://propmall.co/listing?str=&forWTS=Y&state=&area=&price_min=&price_max=&category=2012&type=&LotTypeNonBumi=Y&room=any&bath=any&goprice=ANY&status=ALL",
-    "refUrl": "https://propmall.co/listing?str=&forWTS=Y&state=&area=&price_min=&price_max=&category=2012&type=&LotTypeNonBumi=Y&room=any&bath=any&goprice=ANY&status=ALL",
+    "refUrl": "",
     "listingSource": "coa",
     "exclusiveExpiryDate": "",
     "coaAgentName": "",
@@ -999,7 +999,7 @@ const PROPERTIES_DATA = [
       "https://cdn.propmall.net/media/img-property/list-165394/list-165394-01-6a7b2e5f9d4d22.96952312.jpg"
     ],
     "description": "WTS / FOR SALE\n\nMELAWATI CORPORATE CENTRE (MCC)Jalan Taman Melawati, Kuala Lumpur\n\nPROPERTY DETAILS\n- Type : Shop / Office\n- Tenure : Freehold (Non-Bumi Lot)\n- Shop Office\n- Freehold\n- Level 6\n- Built-up: 1,873 sqft\n- Bare Unit\n- Completed in 2017\n- Vacant & Ready for Own Use / Investment\n- Facilities\n- 24-Hour Security\n- Ample Parking\n- Lift Access\n- Well-Maintained Commercial Environment\n- Nearby Amenities\n- Melawati Mall\n- Hari-Hari Taman Permata\n- Big Blue Fresh Meat\n- Educational Centres\n- Restaurants, Banks & Retail Outlets\n- Easy Access to MRR2, DUKE & Jalan Genting Klang\n- Investment Highlights\n- Strategic commercial location in Taman Melawati\n- Suitable for office, clinic, tuition centre, showroom or investment\n- High visibility with excellent accessibility\n- Surrounded by established residential and commercial catchment\n\n========================\nAsking Price : RM 1,300,000\n========================\n\n--- MAKLUMAT ASAL (RUJUKAN EJEN) ---\nEjen Listing : Zaim Rosli\nAgensi : JAZ INTERNATIONAL MALAYSIA SDN BHD (VEPM (1) 0120/4)\nNo. Tel : +60108118559\nPautan Rujukan : https://propmall.co/listing?str=&forWTS=Y&state=&area=&price_min=&price_max=&category=2012&type=&LotTypeNonBumi=Y&room=any&bath=any&goprice=ANY&status=ALL",
-    "refUrl": "https://propmall.co/listing?str=&forWTS=Y&state=&area=&price_min=&price_max=&category=2012&type=&LotTypeNonBumi=Y&room=any&bath=any&goprice=ANY&status=ALL",
+    "refUrl": "",
     "listingSource": "coa",
     "exclusiveExpiryDate": "",
     "coaAgentName": "",
@@ -1057,7 +1057,7 @@ const PROPERTIES_DATA = [
       "https://cdn.propmall.net/media/img-property/list-166778/list-166778-01-6a866acd455f74.54121725.jpg"
     ],
     "description": "WTS / FOR SALE\n\nFACING MAINROAD, CORNER LOT - 3 Storey Shoplot, Siera Park @ Ara Damansara\n\nPROPERTY DETAILS\n- Facing Mainroad\n- [End Lot] 3 Storey Shoplot, Siera Park @ Ara Damansara\n- Freehold\n- Land Size : 23 x 75\n- Build up : 4844 sqft\n\nAll level tenanted :\n- 1. Ground Floor\n- Rental : RM5500/ Month\n- 2. First Floor\n- Rental : RM2500/ Month\n- 3. Second Floor\n- Rental : RM2300/ Month\n\nAMENITIES:\n- LRT Station\n- School\n- Petrol Station\n- Hospital\n- Shopping Malls\n- Convenience Stores\n- Saujana Golf Club\n\n========================\nAsking Price : RM 3,200,000\n========================\n\n--- MAKLUMAT ASAL (RUJUKAN EJEN) ---\nEjen Listing : Zaim Rosli\nAgensi : JAZ INTERNATIONAL MALAYSIA SDN BHD (VEPM (1) 0120/4)\nNo. Tel : +60108118559\nPautan Rujukan : https://propmall.co/listing?str=&forWTS=Y&state=&area=&price_min=&price_max=&category=2012&type=&LotTypeNonBumi=Y&room=any&bath=any&goprice=ANY&status=ALL",
-    "refUrl": "https://propmall.co/listing?str=&forWTS=Y&state=&area=&price_min=&price_max=&category=2012&type=&LotTypeNonBumi=Y&room=any&bath=any&goprice=ANY&status=ALL",
+    "refUrl": "",
     "listingSource": "coa",
     "exclusiveExpiryDate": "",
     "coaAgentName": "",
@@ -1120,7 +1120,7 @@ const PROPERTIES_DATA = [
       "https://cdn.propmall.net/media/img-property/list-166778/list-166778-01-6a866acd455f74.54121725.jpg"
     ],
     "description": "WTS / FOR SALE\n\nDH RENO, STRATEGIC LOCATION - Office Lot unit @ Kelana Jaya Square, Kelana Jaya\n\nPROPERTY DETAILS\n- Type : Shop / Office\n- Tenure : Leasehold (Non-Bumi Lot)\n- Build Up : 928 sqft\n- [Renovated] Office Lot unit @ Kelana Jaya Square, Kelana Jaya\n- Leasehold, Non Bumi\n- Level 5\n- Strategic Commercial Area\n- Located behind Paradigm Mall\n- Include : Airconds\n- Nearby :\n- LRT Glenmarie\n- Paradigm Mall, Giant Mall\n- Kelana Jaya Medical Centre\n- Petrol Stations\n- CIMB, Maybank, RHB\n- Mosque\n- School\n\nACCESSIBILITIES:\n- Jalan Lapangan Terbang Subang\n- LDP Highway\n- FEDERAL Highway\n- NICE UNIT WITH VALUE PRICE\n\n========================\nAsking Price : RM 270,000\n========================\n\n--- MAKLUMAT ASAL (RUJUKAN EJEN) ---\nEjen Listing : Zaim Rosli\nAgensi : JAZ INTERNATIONAL MALAYSIA SDN BHD (VEPM (1) 0120/4)\nNo. Tel : +60108118559\nPautan Rujukan : https://propmall.co/listing?str=&forWTS=Y&state=&area=&price_min=&price_max=&category=2012&type=&LotTypeNonBumi=Y&room=any&bath=any&goprice=ANY&status=ALL",
-    "refUrl": "https://propmall.co/listing?str=&forWTS=Y&state=&area=&price_min=&price_max=&category=2012&type=&LotTypeNonBumi=Y&room=any&bath=any&goprice=ANY&status=ALL",
+    "refUrl": "",
     "listingSource": "coa",
     "exclusiveExpiryDate": "",
     "coaAgentName": "",
@@ -1178,7 +1178,7 @@ const PROPERTIES_DATA = [
       "https://cdn.propmall.net/media/img-property/list-166778/list-166778-01-6a866acd455f74.54121725.jpg"
     ],
     "description": "WTS / FOR SALE\n\nFactory Industrial Telok Panglima Garang Klang Freehold Status\n\nPROPERTY DETAILS\n- Land Area : 5.00 acre\n- Factory Industrial Telok Panglima Garang Klang\n- ✳️ Land Tenure : Freehold\n- ✳️ Zoning : Industrial\n- ✳️ Category Industrial : Medium\n- ✳️ Land Size : 5 acres\n- ✳️ Factory B/U : 133,000 sqft\n- ✳️ Office B/U : 6,000 sqft ( 2 storey each floor 3,000 sqft )\n- ✳️ Total Built-up ( Factory + office ) : 139,000 sqft\n- ✳️ Factory Ceiling Height : 13 metre\n- ✳️ Factory wall : Close up with 4 feet brick wall and full high metal cladding\n- ✳️ Inner road : Concrete road with concrete piling\n- ✳️ Inner road loading : 1 ton per sqm\n- ✳️ Front set back : 100 feets\n- ✳️ Left set back : 25 feets\n- ✳️ Right set back : 40 feets\n- ✳️ Back set back : 40 feets\n- ✳️ Power : Now 1,000 amps ( still available to upgrade anytime )\n- ✳️ Factory flooring Loading : piling 3 ton per sqm\n- ���️ Price : RM 45 M\n- ✳️ Rental : RM 236,300.00 per month ( RM 1.70 per sqft )\n- ✳️ Tenant : Nil\n- ✳️ Site stated : Construction fully completed and ready to move in\n- ✳️ CF : Confirm May / June 2026\n\nOTHERS ADVANTAGE :-\n- Gas pipe can be arrange ( 4 KM away )\n- Factory and outside road totally no flood.\n- Factory front 100 feets huge space for lorry and car parking\n- Huge space at front, back and side area design for container to turn\n- Fire sprinkler system and large power supply\n- Excellent location !!\n- Few minutes away from Jalan Banting main road.\n- 15 minutes to SKVE Highway\n- 16 minutes to WCE Highway\n- 20 minutes to Kesas Highway\n- 23 minutes to Bandar Bukit Tinggi\n- 35 minutes to North Port\n- 35 minutes to West Port\n- Good investment with more then 6 % ROI once rented out\n- High appreciation in future\n- Surrounding a lot of new factory under construction and many new projects is coming\n- Few small industries park like Tenda Ind. Park , Ample Ind. Park and others\n\n========================\nAsking Price : RM 45,000,000\n========================\n\n--- MAKLUMAT ASAL (RUJUKAN EJEN) ---\nEjen Listing : Zaim Rosli\nAgensi : JAZ INTERNATIONAL MALAYSIA SDN BHD (VEPM (1) 0120/4)\nNo. Tel : +60108118559\nPautan Rujukan : https://propmall.co/listing?str=&forWTS=Y&state=&area=&price_min=&price_max=&category=2012&type=&LotTypeNonBumi=Y&room=any&bath=any&goprice=ANY&status=ALL",
-    "refUrl": "https://propmall.co/listing?str=&forWTS=Y&state=&area=&price_min=&price_max=&category=2012&type=&LotTypeNonBumi=Y&room=any&bath=any&goprice=ANY&status=ALL",
+    "refUrl": "",
     "listingSource": "coa",
     "exclusiveExpiryDate": "",
     "coaAgentName": "",
@@ -1235,7 +1235,7 @@ const PROPERTIES_DATA = [
       "https://cdn.propmall.net/media/img-property/list-166778/list-166778-01-6a866acd455f74.54121725.jpg"
     ],
     "description": "WTS / FOR SALE\n\nFactory Industrial Telok Gong Port Klang\n\nPROPERTY DETAILS\n- Type : Factory\n- Tenure : Leasehold (Non-Bumi Lot)\n- Land Area : 2.58 acre\n- Land Tenure : Leasehold till 2083\n- Zoning : Industrial\n- Category Industrial : Medium\n- Land Size : 2.576 acres\n- Factory B/U : 61,220 sqft\n- Office B/U : 2,580 sqft ( 2 storey each floor 1,290 sqft )\n- Total Built-up ( Factory + office ) : 63,800 sqft\n- Factory Ceiling Height : 13 metre\n- Factory wall : close up with 4 feet brick wall and full high metal cladding\n- Inner road : Concrete road with concrete piling\n- Front set back : 40 feets\n- Right, left and back set back : 30 feets\n- Power : Now 1,200 amps ( Still available to upgrade anytime )\n- Factory floor Loading : Piling 3 ton per sqm\n- Price : RM 22.5 m ( Previously selling RM\n- Rental : RM 108,460.00\n- Now Tenanted : warehousing\n- Tenancy : 1 + 1 ( started May 2022 ) First 1 year tenancy finish but now not yet renew, consider monthly basis\n- CF : Confirm by May/June 2026\n\nOTHERS ADVANTAGE :-\n- Gas pipe can be arrange ( 1.5 KM away )\n- Front external surrender area have huge parking area\n- Factory totally no flood, out side only flood one time but not serious\n- Excellent location !!\n- 15 minutes to Kesas Highway\n- 18 minutes to North Port\n- 20 minutes to West Port\n- 18 minutes to Bandar Bukit Tinggi\n- Good investment if buy and rental out to new tenant easily can get 6 % ROI\n- High appreciation in future\n- Surrounding mature factory and warehousing\n- Widening / upgrading main Telok Gong road to double line , going to complete soon.\n\n========================\nAsking Price : RM 22,500,000\n========================\n\n--- MAKLUMAT ASAL (RUJUKAN EJEN) ---\nEjen Listing : Zaim Rosli\nAgensi : JAZ INTERNATIONAL MALAYSIA SDN BHD (VEPM (1) 0120/4)\nNo. Tel : +60108118559\nPautan Rujukan : https://propmall.co/listing?str=&forWTS=Y&state=&area=&price_min=&price_max=&category=2012&type=&LotTypeNonBumi=Y&room=any&bath=any&goprice=ANY&status=ALL",
-    "refUrl": "https://propmall.co/listing?str=&forWTS=Y&state=&area=&price_min=&price_max=&category=2012&type=&LotTypeNonBumi=Y&room=any&bath=any&goprice=ANY&status=ALL",
+    "refUrl": "",
     "listingSource": "coa",
     "exclusiveExpiryDate": "",
     "coaAgentName": "",
@@ -1304,7 +1304,7 @@ const PROPERTIES_DATA = [
       "https://cdn.propmall.net/media/img-property/list-166778/list-166778-01-6a866acd455f74.54121725.jpg"
     ],
     "description": "WTS / FOR SALE\n\nSTRATEGIC LOCATION SHOPLOT 2 Storey Taman Desa Cempaka, Bandar Baru Nilai\n\nPROPERTY DETAILS\n- SHOPLOT 2 STOREY TAMAN DESA CEMPAKA, BANDAR BARU NILAI\n- FACING OPEN TAPAK PASAR MALAM\n- Property Details\n- Freehold\n- Non Bumi lot\n- land area: 22x75\n- Rental atas bawah total Rm4K per month average\n\nAMENITIES:\n- Mini market/99 Speedmart/7Eleven\n- Surau/Masjid\n- Schools\n- Universities (USIM/INTI/MANIPAL)\n- Lotus/Giant/Aeon Nilai 10 mins\n- ERL Salak Tinggi 20 mins\n- KTM Nilai 10 mins\n\nACCESSIBILITIES:\n- KLIA/KLIA2/Mitsui 30 mins\n- Kota Warisan/Dengkil 30 mins\n- Cyberjaya/Putrajaya 35 mins\n- Bangi 35 mins\n- Easy access to PLUS/ELITE/MEX highway\n\n========================\nAsking Price : RM 1,040,000\n========================\n\n--- MAKLUMAT ASAL (RUJUKAN EJEN) ---\nEjen Listing : Zaim Rosli\nAgensi : JAZ INTERNATIONAL MALAYSIA SDN BHD (VEPM (1) 0120/4)\nNo. Tel : +60108118559\nPautan Rujukan : https://propmall.co/listing?str=&forWTS=Y&state=&area=&price_min=&price_max=&category=2012&type=&LotTypeNonBumi=Y&room=any&bath=any&goprice=ANY&status=ALL",
-    "refUrl": "https://propmall.co/listing?str=&forWTS=Y&state=&area=&price_min=&price_max=&category=2012&type=&LotTypeNonBumi=Y&room=any&bath=any&goprice=ANY&status=ALL",
+    "refUrl": "",
     "listingSource": "coa",
     "exclusiveExpiryDate": "",
     "coaAgentName": "",
@@ -1347,7 +1347,7 @@ const PROPERTIES_DATA = [
       "https://cdn.propmall.net/media/img-property/list-150273/list-150273-01-6a0ac4311efca6.10777627.jpg"
     ],
     "description": "WTS / FOR SALE\n\nCORNER GROUND The Grand Kelana Damansara Suite @ SS 6, Petaling Jaya\n\nPROPERTY DETAILS\n- Type : Shop / Office\n- Tenure : Freehold (Non-Bumi Lot)\n- Corner Ground & Mezzanine Grand Sofo\n- Located at Jalan SS 6/2\n- Built up : 4067 SF\n- Ground floor : 2152 SF\n- Mezzanine floor : 1915 SF\n- Tenanted Rm16,000\n- 2 car parks\n- Corner Ground & M floor Sofo, Sale below bank value Rm800k, Roi 4.1%\n\n========================\nAsking Price : RM 4,700,000\n========================\n\n--- MAKLUMAT ASAL (RUJUKAN EJEN) ---\nEjen Listing : Zaim Rosli\nAgensi : JAZ INTERNATIONAL MALAYSIA SDN BHD (VEPM (1) 0120/4)\nNo. Tel : +60108118559\nPautan Rujukan : https://propmall.co/listing?str=&forWTS=Y&state=&area=&price_min=&price_max=&category=2012&type=&LotTypeNonBumi=Y&room=any&bath=any&goprice=ANY&status=ALL",
-    "refUrl": "https://propmall.co/listing?str=&forWTS=Y&state=&area=&price_min=&price_max=&category=2012&type=&LotTypeNonBumi=Y&room=any&bath=any&goprice=ANY&status=ALL",
+    "refUrl": "",
     "listingSource": "coa",
     "exclusiveExpiryDate": "",
     "coaAgentName": "",
@@ -1394,7 +1394,7 @@ const PROPERTIES_DATA = [
       "https://cdn.propmall.net/media/img-property/list-150273/list-150273-01-6a0ac4311efca6.10777627.jpg"
     ],
     "description": "WTS / FOR SALE\n\nSHOP OFFICE 4 STOREY! Plaza Damas, Sri Hartamas, Mont Kiara Kuala Lumpur\n\nPROPERTY DETAILS\n- Type : Shop / Office\n- Tenure : Freehold (Non-Bumi Lot)\n- Build Up : 4019 sqft\n- Strata title\n- Tenanted all floors at RM17,300\n- 4.8% ROI\n- Great paymaster tenants:\n- GF: MK Mart (RM9,000)\n- M floor: Jewellery Company (RM2,700)\n- 1st floor: Legal firm (RM2,800)\n- 2nd floor: Fashion company (RM2,500)\n- Matured & prime location with great access\n\n========================\nAsking Price : RM 4,300,000\n========================\n\n--- MAKLUMAT ASAL (RUJUKAN EJEN) ---\nEjen Listing : Zaim Rosli\nAgensi : JAZ INTERNATIONAL MALAYSIA SDN BHD (VEPM (1) 0120/4)\nNo. Tel : +60108118559\nPautan Rujukan : https://propmall.co/listing?str=&forWTS=Y&state=&area=&price_min=&price_max=&category=2012&type=&LotTypeNonBumi=Y&room=any&bath=any&goprice=ANY&status=ALL",
-    "refUrl": "https://propmall.co/listing?str=&forWTS=Y&state=&area=&price_min=&price_max=&category=2012&type=&LotTypeNonBumi=Y&room=any&bath=any&goprice=ANY&status=ALL",
+    "refUrl": "",
     "listingSource": "coa",
     "exclusiveExpiryDate": "",
     "coaAgentName": "",
@@ -1438,7 +1438,7 @@ const PROPERTIES_DATA = [
       "https://cdn.propmall.net/media/img-property/list-150273/list-150273-01-6a0ac4311efca6.10777627.jpg"
     ],
     "description": "WTS / FOR SALE\n\nPlaza Damas @ Taman Sri Hartamas KL\n\nPROPERTY DETAILS\n- Type : Shop / Office\n- Tenure : Freehold (Non-Bumi Lot)\n- Build Up : 1518 sqft\n- Intermediate Ground & Mezzanine Floor Shop\n- Located at Jalan Sri Hartamas 1\n- Tenanted Rm11,000\n- Tenancy ends on 30/11/2026\n- Good for investment 4.3%\n- Ground & M Floor Shop, Sale below bank value Rm500k, Roi 4.3%\n\n========================\nAsking Price : RM 3,100,000\n========================\n\n--- MAKLUMAT ASAL (RUJUKAN EJEN) ---\nEjen Listing : Zaim Rosli\nAgensi : JAZ INTERNATIONAL MALAYSIA SDN BHD (VEPM (1) 0120/4)\nNo. Tel : +60108118559\nPautan Rujukan : https://propmall.co/listing?str=&forWTS=Y&state=&area=&price_min=&price_max=&category=2012&type=&LotTypeNonBumi=Y&room=any&bath=any&goprice=ANY&status=ALL",
-    "refUrl": "https://propmall.co/listing?str=&forWTS=Y&state=&area=&price_min=&price_max=&category=2012&type=&LotTypeNonBumi=Y&room=any&bath=any&goprice=ANY&status=ALL",
+    "refUrl": "",
     "listingSource": "coa",
     "exclusiveExpiryDate": "",
     "coaAgentName": "",
@@ -1487,7 +1487,7 @@ const PROPERTIES_DATA = [
       "https://cdn.propmall.net/media/img-property/list-150273/list-150273-01-6a0ac4311efca6.10777627.jpg"
     ],
     "description": "WTS / FOR SALE\n\nGROUND FLOOR RENOVATED Retail Shop Lot @ The Summit USJ Subang Jaya\n\nPROPERTY DETAILS\n- Type : Shop / Office\n- Tenure : Freehold (Non-Bumi Lot)\n- Ground floor\n- 582 sqft\n- Nicely located nearby escalator & beside HomePro ensuring the best traffic n view\n- Rental RM5K (ROI 6%)\n- NSK Grocer (45,000sf) recently open, is a big boost for this Mall\n\n========================\nAsking Price : RM 1,000,000\n========================\n\n--- MAKLUMAT ASAL (RUJUKAN EJEN) ---\nEjen Listing : Zaim Rosli\nAgensi : JAZ INTERNATIONAL MALAYSIA SDN BHD (VEPM (1) 0120/4)\nNo. Tel : +60108118559\nPautan Rujukan : https://propmall.co/listing?str=&forWTS=Y&state=&area=&price_min=&price_max=&category=2012&type=&LotTypeNonBumi=Y&room=any&bath=any&goprice=ANY&status=ALL",
-    "refUrl": "https://propmall.co/listing?str=&forWTS=Y&state=&area=&price_min=&price_max=&category=2012&type=&LotTypeNonBumi=Y&room=any&bath=any&goprice=ANY&status=ALL",
+    "refUrl": "",
     "listingSource": "coa",
     "exclusiveExpiryDate": "",
     "coaAgentName": "",
@@ -1535,7 +1535,7 @@ const PROPERTIES_DATA = [
       "https://cdn.propmall.net/media/img-property/list-150273/list-150273-01-6a0ac4311efca6.10777627.jpg"
     ],
     "description": "WTS / FOR SALE\n\nRoi 4.7% Ground floor, Shop, Sentul Point, Kuala Lumpur\n\nPROPERTY DETAILS\n- Type : Shop / Office\n- Tenure : Freehold (Non-Bumi Lot)\n- Build Up : 1356 sqft\n- The tenant is Uncle Don's restaurants and bars (25 branches in Malaysia)\n- High Commercial Demand\n- Prime Location\n- This unit is strategically positioned at Sentul Point with a fantastic ambience, a high-traffic, fast-developing area with excellent connectivity and strong commercial demand.\n\n========================\nAsking Price : RM 2,000,000\n========================\n\n--- MAKLUMAT ASAL (RUJUKAN EJEN) ---\nEjen Listing : Zaim Rosli\nAgensi : JAZ INTERNATIONAL MALAYSIA SDN BHD (VEPM (1) 0120/4)\nNo. Tel : +60108118559\nPautan Rujukan : https://propmall.co/listing?str=&forWTS=Y&state=&area=&price_min=&price_max=&category=2012&type=&LotTypeNonBumi=Y&room=any&bath=any&goprice=ANY&status=ALL",
-    "refUrl": "https://propmall.co/listing?str=&forWTS=Y&state=&area=&price_min=&price_max=&category=2012&type=&LotTypeNonBumi=Y&room=any&bath=any&goprice=ANY&status=ALL",
+    "refUrl": "",
     "listingSource": "coa",
     "exclusiveExpiryDate": "",
     "coaAgentName": "",
@@ -1599,7 +1599,7 @@ const PROPERTIES_DATA = [
       "https://cdn.propmall.net/media/img-property/list-139489/list-139489-01-69a7ffaaa92612.73077748.jpg"
     ],
     "description": "WTS / FOR SALE\n\nTANAH UNTUK DIJUALBatu 17, Kuang – Sungai Buloh, Selangor\n\nPROPERTY DETAILS\n- Land Area : 2.25 acre\n- TANAH UNTUK DIJUAL\n- Batu 17, Kuang – Sungai Buloh, Selangor\n- Tanah Simpanan Melayu\n- Luas: 0.9105 hektar (≈ 2.25 ekar)\n- Kategori penggunaan tanah: Bangunan kediaman\n- Akses berdekatan:\n- 7 min ke Pekan Kuang\n- 10 min ke Sungai Buloh\n- Berhampiran kawasan perumahan matang\n- Kemudahan kesihatan:\n- Klinik Kesihatan Kuang\n- Klinik desa dan klinik swasta\n- 15–20 min ke Hospital Sungai Buloh\n- Kemudahan sekitar:\n- Sekolah rendah dan menengah\n- Kedai runcit, restoran dan stesen minyak\n- Pengangkutan awam:\n- 10 min ke KTM Kuang\n- Akses ke KTM Sungai Buloh dan MRT Putrajaya Line\n- Akses lebuh raya:\n- LATAR Highway\n- PLUS Highway (Sungai Buloh exit)\n- Guthrie Corridor Expressway (GCE)\n\n========================\nAsking Price : RM 2,900,000\n========================\n\n--- MAKLUMAT ASAL (RUJUKAN EJEN) ---\nEjen Listing : Zaim Rosli\nAgensi : JAZ INTERNATIONAL MALAYSIA SDN BHD (VEPM (1) 0120/4)\nNo. Tel : +60108118559\nPautan Rujukan : https://propmall.co/listing?str=&forWTS=Y&state=&area=&price_min=&price_max=&category=2013&type=&room=any&bath=any&goprice=ANY&status=ALL",
-    "refUrl": "https://propmall.co/listing?str=&forWTS=Y&state=&area=&price_min=&price_max=&category=2013&type=&room=any&bath=any&goprice=ANY&status=ALL",
+    "refUrl": "",
     "listingSource": "coa",
     "exclusiveExpiryDate": "",
     "coaAgentName": "",
@@ -1668,7 +1668,7 @@ const PROPERTIES_DATA = [
       "https://cdn.propmall.net/media/img-property/list-139489/list-139489-01-69a7ffaaa92612.73077748.jpg"
     ],
     "description": "WTS / FOR SALE\n\nBungalow Land Facing Lake View, Kajang Country Heights\n\nPROPERTY DETAILS\n- Saiz Tanah: 20,000 sqft (≈0.46 ekar)\n- Pegangan: Freehold\n- Status: Individual Title\n- Facing Open & Menghadap Tasik (Lake View)\n- Tanah rata dan sesuai untuk bina banglo mewah\n- Kawasan Gated & Guarded, keselamatan 24 jam\n- Persekitaran tenang dan eksklusif dengan komuniti premium\n- NEARBY AMENITIES:\n- Country Heights Resort Club – fasiliti kolam renang, gym, tennis court & restoran\n- The Mines Shopping Mall & Mines Wellness City – 8 minit\n- Aeon Cheras Selatan – 10 minit\n- Lotus’s Kajang – 7 minit\n- Hospital Kajang – 10 minit\n- KPJ Kajang Specialist Hospital – 8 minit\n- Kajang 2 Township – 12 minit\n- UNITEN Bangi – 12 minit\n- UTAR Sungai Long – 15 minit\n- German Malaysian Institute (GMI) – 10 minit\n\nACCESSIBILITIES:\n- SILK Highway\n- LEKAS Highway\n- Cheras–Kajang Expressway (CKE)\n- PLUS Highway\n- Kajang Dispersal Link (Saujana Impian)\n- 10 minit ke Bandar Kajang\n- 20 minit ke Putrajaya / Bangi / Cheras Selatan\n- SURROUNDING AREA:\n- Komuniti eksklusif & berpagar\n- Persekitaran hijau, tenang & sesuai untuk bina kediaman peribadi\n- View tasik yang cantik sesuai untuk konsep rumah resort mewah\n- Nilai tanah tinggi & potensi pelaburan jangka panjang\n\n========================\nAsking Price : RM 3,000,000\n========================\n\n--- MAKLUMAT ASAL (RUJUKAN EJEN) ---\nEjen Listing : Zaim Rosli\nAgensi : JAZ INTERNATIONAL MALAYSIA SDN BHD (VEPM (1) 0120/4)\nNo. Tel : +60108118559\nPautan Rujukan : https://propmall.co/listing?str=&forWTS=Y&state=&area=&price_min=&price_max=&category=2013&type=&room=any&bath=any&goprice=ANY&status=ALL",
-    "refUrl": "https://propmall.co/listing?str=&forWTS=Y&state=&area=&price_min=&price_max=&category=2013&type=&room=any&bath=any&goprice=ANY&status=ALL",
+    "refUrl": "",
     "listingSource": "coa",
     "exclusiveExpiryDate": "",
     "coaAgentName": "",
@@ -1714,7 +1714,7 @@ const PROPERTIES_DATA = [
       "https://cdn.propmall.net/media/img-property/list-80144/list-80144-01-681448085a6409.13990151.jpg"
     ],
     "description": "WTS / FOR SALE\n\nBungalow Detached Plot Seksyen 7 Shah Alam\n\nPROPERTY DETAILS\n- Type : Land\n- Tenure : Leasehold (Non-Bumi Lot)\n- Land Area : 9,020 sqft\n- Bungalow Detached plot Land\n- Seksyen 7 , Shah Alam.\n- Flat land, no elevation\n- Easy access, culde-sac road.\n- Elite neighborhood area.\n- Ready to built Bungalow.\n\n========================\nAsking Price : RM 1,050,000\n========================\n\n--- MAKLUMAT ASAL (RUJUKAN EJEN) ---\nEjen Listing : Zaim Rosli\nAgensi : JAZ INTERNATIONAL MALAYSIA SDN BHD (VEPM (1) 0120/4)\nNo. Tel : +60108118559\nPautan Rujukan : https://propmall.co/listing?str=&forWTS=Y&state=&area=&price_min=&price_max=&category=2013&type=&room=any&bath=any&goprice=ANY&status=ALL",
-    "refUrl": "https://propmall.co/listing?str=&forWTS=Y&state=&area=&price_min=&price_max=&category=2013&type=&room=any&bath=any&goprice=ANY&status=ALL",
+    "refUrl": "",
     "listingSource": "coa",
     "exclusiveExpiryDate": "",
     "coaAgentName": "",
@@ -1763,7 +1763,7 @@ const PROPERTIES_DATA = [
       "https://cdn.propmall.net/media/img-property/list-80144/list-80144-01-681448085a6409.13990151.jpg"
     ],
     "description": "WTS / FOR SALE\n\nLand For Sale in Budiman Valley, Seksyen U15, Puncak Alam, Shah Alam, Selangor\n\nPROPERTY DETAILS\n- Type : Land\n- Tenure : Leasehold (Bumi Lot)\n- Land Area : 3.09 acre\n\n- Land Area : 3.09 acre\n- Huge potential due to strategically located next to current hpusing project & Uitm Puncak Alam\n- Property Details\n- Land Area : 3.091 acres/ 134,656 sqft\n- Status : Agriculture.\n- Zoning : Residential\n- Leasehold\n- 200 meter to Persiaran Mokhtar Dahari\n\nACCESSIBILITIES:\n- Easy access to DASH Highway\n- Easy access to Gutherie Highway\n- Easy access to LATAR Highway\n- Easy access to PLUS Highway\n\n========================\nAsking Price : RM 1,700,000\n========================\n\n--- MAKLUMAT ASAL (RUJUKAN EJEN) ---\nEjen Listing : Zaim Rosli\nAgensi : JAZ INTERNATIONAL MALAYSIA SDN BHD (VEPM (1) 0120/4)\nNo. Tel : +60108118559\nPautan Rujukan : https://propmall.co/listing?str=&forWTS=Y&state=&area=&price_min=&price_max=&category=2013&type=&room=any&bath=any&goprice=ANY&status=ALL",
-    "refUrl": "https://propmall.co/listing?str=&forWTS=Y&state=&area=&price_min=&price_max=&category=2013&type=&room=any&bath=any&goprice=ANY&status=ALL",
+    "refUrl": "",
     "hidden": false,
     "listingSource": "coa"
   },
@@ -1806,7 +1806,7 @@ const PROPERTIES_DATA = [
       "https://cdn.propmall.net/media/img-property/list-80144/list-80144-01-681448085a6409.13990151.jpg"
     ],
     "description": "WTS / FOR SALE\n\nLand for Sale In Ulu Melaka Langkawi Near Makam Mahsuri 3.83 acre\n\nPROPERTY DETAILS\n- Type : Land\n- Tenure : Freehold (Malay Reserve)\n- Land Area : 3.83 acre\n\n- Land Area : 3.83 acre\n- Tanah Ulu Melaka, Langkawi\n- 📌 Premium location along Jalan Makam Mahsuri\n- Strategic location & easy access\n- Suitable for investment, homestay, long-term rental or large family home\n- 💧 Water & electricity supply available\n- 🚗 Direct village road access to main road\n- 🕌 Neighborhood of mosque, mature area & ready housing\n- 🧘‍♂️ Peaceful village area, not busy\n- 🛻 Easy access, house along village road – not a forest niche\n- 📐 Land area: 1.5507 Hectares/\n- 3.832 Acres/ 166,916 sq ft\n- RM 8.++ sq ft\n\n========================\nAsking Price : RM 1,350,000\n========================\n\n--- MAKLUMAT ASAL (RUJUKAN EJEN) ---\nEjen Listing : Zaim Rosli\nAgensi : JAZ INTERNATIONAL MALAYSIA SDN BHD (VEPM (1) 0120/4)\nNo. Tel : +60108118559\nPautan Rujukan : https://propmall.co/listing?str=&forWTS=Y&state=&area=&price_min=&price_max=&category=2013&type=&room=any&bath=any&goprice=ANY&status=ALL",
-    "refUrl": "https://propmall.co/listing?str=&forWTS=Y&state=&area=&price_min=&price_max=&category=2013&type=&room=any&bath=any&goprice=ANY&status=ALL",
+    "refUrl": "",
     "hidden": false,
     "listingSource": "coa"
   },
@@ -1849,7 +1849,7 @@ const PROPERTIES_DATA = [
       "https://cdn.propmall.net/media/img-property/list-80144/list-80144-01-681448085a6409.13990151.jpg"
     ],
     "description": "WTS / FOR SALE\n\n1.1 ekar Tanah Lot Kediaman (Banglo) Desa Salak Akasia, Salak Tinggi Sepang FREEHOLD MALAY RESERVED\n\nPROPERTY DETAILS\n- Land Area : 1.10 acre\n- 1.1 Ekar Tanah Lot Banglo / Tanah Lot Kediaman\n- Salak Tinggi Sepang FREEHOLD\n- Status Bangunan Kediaman\n- 0.4462 Hektar @ 1.10 Ekar @ 47916 kaki persegi\n- Kawasan yang sudah matang.\n- Kawasan sedikit berbukit.\n- Sesuai untuk dijadikan lot banglo eksklusif, Sekolah Swasta, Maahad Tahfiz & Pondok Pengajian Moden, Wedding hall, Event hall & Private Building.\n- Akses tersedia melalui Desa Salak Akasia, Salak Tinggi.\n- Berhampiran Klinik Kesihatan Salak, Sekolah Integrasi, Masjid, Pasar basah Salak, Kelab Golf Kota Seriemas, barisan rumah kedai dan akses jalan utama ke Port Dickson / Sepang / Nilai / Salak Tinggi.\n- Anggaran harga pasaran RM24 sekaki persegi\n\n========================\nAsking Price : RM 650,000\n========================\n\n--- MAKLUMAT ASAL (RUJUKAN EJEN) ---\nEjen Listing : Zaim Rosli\nAgensi : JAZ INTERNATIONAL MALAYSIA SDN BHD (VEPM (1) 0120/4)\nNo. Tel : +60108118559\nPautan Rujukan : https://propmall.co/listing?str=&forWTS=Y&state=&area=&price_min=&price_max=&category=2013&type=&room=any&bath=any&goprice=ANY&status=ALL",
-    "refUrl": "https://propmall.co/listing?str=&forWTS=Y&state=&area=&price_min=&price_max=&category=2013&type=&room=any&bath=any&goprice=ANY&status=ALL",
+    "refUrl": "",
     "hidden": false,
     "listingSource": "coa"
   },
@@ -1896,7 +1896,7 @@ const PROPERTIES_DATA = [
       "https://cdn.propmall.net/media/img-property/list-80144/list-80144-01-681448085a6409.13990151.jpg"
     ],
     "description": "WTS / FOR SALE\n\nTanah Lot Jenderam Hulu Dengkil\n\nPROPERTY DETAILS\n- Land Area : 10,800 sqft\n- Kg Jenderam Hulu , Dengkil Selangor\n- Tanah package sekali rumah, jual harga tanah sahaja. rumah tiada CF\n- Tanah pembangunan\n- Leasehold until 2100\n- Bumi Lot\n- Luas tanah 60*180sqft\n- Luas rumah 28*80sqft\n- 2 Pintu rumah 28*40sqft\n- Pintu pertama: 2 ruang tamu, 3 bilik, 2 bilik air, kitchen table top\n- Pintu kedua: 1 ruang tamu, 4 bilik, 2 bilik air, kitchen table top, renovated satu bilik 10sqft\n- 400 meter dari jalan utama\n\nAMENITIES:\n- SRA Jenderam Hulu\n- SK Jenderam Hilir\n- Masjid Ar-Redha\n- Klinik Desa\n- NEARBY\n- 15 minit ke Putrajaya\n- 20 minit ke Bangi\n- 20 minit ke Bandar Baru Salak Tinggi\n- 30 minit ke Klia\n\n========================\nAsking Price : RM 589,000\n========================\n\n--- MAKLUMAT ASAL (RUJUKAN EJEN) ---\nEjen Listing : Zaim Rosli\nAgensi : JAZ INTERNATIONAL MALAYSIA SDN BHD (VEPM (1) 0120/4)\nNo. Tel : +60108118559\nPautan Rujukan : https://propmall.co/listing?str=&forWTS=Y&state=&area=&price_min=&price_max=&category=2013&type=&room=any&bath=any&goprice=ANY&status=ALL",
-    "refUrl": "https://propmall.co/listing?str=&forWTS=Y&state=&area=&price_min=&price_max=&category=2013&type=&room=any&bath=any&goprice=ANY&status=ALL",
+    "refUrl": "",
     "hidden": false,
     "listingSource": "coa"
   },
@@ -1974,7 +1974,7 @@ const PROPERTIES_DATA = [
       "https://cdn.propmall.net/media/img-property/list-142116/list-142116-01-69c9390bc6ac88.23405777.jpg"
     ],
     "description": "WTL / FOR RENT\n\nPremium Logistics Warehouse | 6 Loading Bays | Fire Sprinkler | CCC Obtained For Rent\n\nPROPERTY DETAILS\n- RM 195,037 Monthly\n- BRAND NEW FACTORY / WAREHOUSE\n- Land Area ~ 3.90 Acres\n- Warehouse Built-up ~ 97,735 sqft\n- 2-Storey Office ~ 10,619 sqft\n- Total Built-up = 108,354 sqft\n\nSpecifications:-\n- 40 ft Clear Ceiling Height\n- 4 Ton/m² Floor Loading\n- 1000 Amp Power Supply\n- 6 Loading Bays\n- Fire Sprinkler System\n- CCC Obtained\n- Modern Corporate Office\n- Wide Internal Warehouse Layout\n- Bright Natural Lighting\n- Suitable for Racking System\n- Heavy Vehicle Accessible\n\nSuitable For :-\n- Logistics Hub\n- Distribution Centre\n- E-commerce Fulfilment\n- Manufacturing\n- Engineering\n- FMCG\n- Cold Chain Conversion\n- Packaging\n- Automotive\n- Import & Export\n\nAdvantages :-\n- Brand New Building\n- Ready for Immediate Occupation\n- Excellent Warehouse Height\n- Efficient Column Layout\n- Spacious Loading & Unloading Area\n- Modern Industrial Design\n- Professional Corporate Image\n- Excellent Natural Lighting & Ventilation\n\n========================\nAsking Rental : RM 195,037 / month\n========================\n\n--- MAKLUMAT ASAL (RUJUKAN EJEN) ---\nEjen Listing : Zaim Rosli\nAgensi : JAZ INTERNATIONAL MALAYSIA SDN BHD (VEPM (1) 0120/4)\nNo. Tel : +60108118559\nPautan Rujukan : https://propmall.co/listing?str=&state=&area=&price_min=&price_max=&category=2012&type=&room=any&bath=any&goprice=ANY&status=ALL",
-    "refUrl": "https://propmall.co/listing?str=&state=&area=&price_min=&price_max=&category=2012&type=&room=any&bath=any&goprice=ANY&status=ALL",
+    "refUrl": "",
     "hidden": false,
     "listingSource": "coa"
   },
@@ -2022,7 +2022,7 @@ const PROPERTIES_DATA = [
       "https://cdn.propmall.net/media/img-property/list-156678/list-156678-20-6a631783b20201.34096384.jpg"
     ],
     "description": "WTL / FOR RENT\n\nPartially Furnished Double Storey Semi-D House Taman Kajang Impian @ Bandar Baru Bangi, Bangi, Selangor\n\nPROPERTY DETAILS\n- RM 2,500 Monthly\n- Semi-D (Landed), Two Storeys, Intermediate\n- Land Area : 3,000 sqft\n- 4 Rooms and 4 Bathrooms\n- WTL / FOR RENTAL\n- 🔥 NEWLY PAINTED 🔥\n- 🔥 EXTENDED UNIT 🔥\n- ‼️ MOVE IN CONDITION ‼️\n- Built-up size: 2700 square feet\n- Land size: 3000 square feet\n- 4 bedrooms\n- 4 bathrooms\n- Prefer Malay & Muslim Tenant\n- Newly Painted\n- Extended Unit\n- Gated & Guarded\n- Partially Furnished  Unit\n- FACILITIES:\n- Playground\n- Security\n- Parking\n\nAMENITIES:\n- SK Seksyen 7 Bandar Baru Bangi\n- SMK Seksyen 4\n- Bangi Gateway Shopping Complex\n- Hospital Pakar An-Nur\n- Pasaraya Econsave Bangi\n- KIP Mall Bangi\n- Universiti Kebangsaan Malaysia (UKM)\n- UniKL Malaysian French Institute\n- Kolej Poly Tech MARA (KPTM) Bangi\n- Shoplots\n- Restaurants\n- Petrol station\n\nACCESSIBILITIES:\n- SILK Highway\n- LEKAS Highway\n- PLUS Highway\n- Condition To Move In:\n- 2 months security deposit\n- 1 month advance rental\n- 1/2 month utilities deposit\n- Tenancy agreement\n- Asking Rental: RM2500\n\n========================\nAsking Rental : RM 2,500 / month\n========================\n\n--- MAKLUMAT ASAL (RUJUKAN EJEN) ---\nEjen Listing : Zaim Rosli\nAgensi : JAZ INTERNATIONAL MALAYSIA SDN BHD (VEPM (1) 0120/4)\nNo. Tel : +60108118559\nPautan Rujukan : https://propmall.co/listing?str=LR2606001068&strListingID=Y&state=&area=&price_min=&price_max=&category=&type=&room=any&bath=any&goprice=ANY&status=ALL&shareid=egd0t9u5nw&sharemod=partner&sharetype=comarketing&sharestat=verified&sharestrtype=ListingID&sharestrval=LR2606001068&shareidtype=IdListing&shareidval=156678",
-    "refUrl": "https://propmall.co/listing?str=LR2606001068&strListingID=Y&state=&area=&price_min=&price_max=&category=&type=&room=any&bath=any&goprice=ANY&status=ALL&shareid=egd0t9u5nw&sharemod=partner&sharetype=comarketing&sharestat=verified&sharestrtype=ListingID&sharestrval=LR2606001068&shareidtype=IdListing&shareidval=156678",
+    "refUrl": "",
     "hidden": false,
     "listingSource": "coa"
   },
@@ -2104,7 +2104,7 @@ const PROPERTIES_DATA = [
       "https://cdn.propmall.net/media/img-property/list-142116/list-142116-01-69c9390bc6ac88.23405777.jpg"
     ],
     "description": "WTS / FOR SALE\n\nGROUND FLOOR SHOP Taman Prima Saujana Impian Kajang Perdana TTDI Grove\n\nPROPERTY DETAILS\n- Type : Shop / Office\n- Tenure : Freehold (Bumi Lot)\n- Build Up : 1195 sqft\n- Bathroom : 2\n- PRIME AREA\n- HOT UNIT + BELOW MARKET\n- FREEHOLD\n- Built up : 111 sm ( 1,195 sf)\n- Ground Floor\n- Location : Jalan Prima Saujana 2B, Prima Saujana, Kajang\n\nACCESSIBILITIES:\n- Kajang Town Center\n- SILK Highway\n- LEKAS Highway\n- Cheras-Kajang Highway\n- South Klang Valley Expressway (SVKE)\n- Booking 3.24% & 6.76% upon sign SNP\n- Lawyer & loan can be arrange\n\n========================\nAsking Price : RM 770,000\n========================\n\n--- MAKLUMAT ASAL (RUJUKAN EJEN) ---\nEjen Listing : Zaim Rosli\nAgensi : JAZ INTERNATIONAL MALAYSIA SDN BHD (VEPM (1) 0120/4)\nNo. Tel : +60108118559\nPautan Rujukan : https://propmall.co/listing?str=&state=&area=&price_min=&price_max=&category=2012&type=&room=any&bath=any&goprice=ANY&status=ALL",
-    "refUrl": "https://propmall.co/listing?str=&state=&area=&price_min=&price_max=&category=2012&type=&room=any&bath=any&goprice=ANY&status=ALL",
+    "refUrl": "",
     "hidden": false,
     "listingSource": "coa"
   },
@@ -2185,7 +2185,7 @@ const PROPERTIES_DATA = [
       "https://cdn.propmall.net/media/img-property/list-142116/list-142116-01-69c9390bc6ac88.23405777.jpg"
     ],
     "description": "WTS / FOR SALE\n\nFreehold,Corner Lot ,Four Storey Shop building At Presint 15, Putrajaya\n\nPROPERTY DETAILS\n- Type : Land\n- Tenure : Freehold (Bumi Lot)\n- Land Area : 6,110 sqft\n\n- Land Area : 6,110 sqft\n- Presint 15 is a Freehold mixed development area covering  7.6 acres and only 10 minutes drive to Bandar Baru Bangi.\n- Average population 134,872\n- Business  hub at the Centre of Putrajaya\n- One stop Centre for Business and Food\n- Open car park is nearby shop lots\n- Property Details:\n-  Ground Floor - 2,558 sf, 26ft x 99.53 ft , - Tenanted\n-  First Floor       - 1,586 sf,26ft x 61 ft ,  - Tenanted\n-  Second Floor - 1,586 sf,26ft x 61 ft ,  - Tenanted\n-  Third Floor      - 1,586 sf,26ft x 61 ft , -  Tenanted\n- Facilities:\n- Nearby Government Buildings: Ministry of Home Affair,Ministry of Domestic Trade Cooperative and Consumerism ,Ministry of Finance\n- Nearby Hospitals: Hospital Putrajaya,Serdang Hospital\n-Education Instituitions:Nexus Putrajaya International school,UNITEN,Heriot-Watt University Malaysia, Sekolah Sukan Alam Shah\n- Residential catchment:Alam Desa Presint 15,Presint 14 housing area,Flora Rosa Condominium Presint 11,Astana Residence Presint 8\n\nACCESSIBILITIES:\n- MAJU Expressway,\n- PLUS Highway\n- South Klang Valley Expressway (SKVE)\n- LDP Highway\n\n========================\nAsking Price : RM 3,800,000\n========================\n\n--- MAKLUMAT ASAL (RUJUKAN EJEN) ---\nEjen Listing : Zaim Rosli\nAgensi : JAZ INTERNATIONAL MALAYSIA SDN BHD (VEPM (1) 0120/4)\nNo. Tel : +60108118559\nPautan Rujukan : https://propmall.co/listing?str=&state=&area=&price_min=&price_max=&category=2012&type=&room=any&bath=any&goprice=ANY&status=ALL",
-    "refUrl": "https://propmall.co/listing?str=&state=&area=&price_min=&price_max=&category=2012&type=&room=any&bath=any&goprice=ANY&status=ALL",
+    "refUrl": "",
     "hidden": false,
     "listingSource": "coa"
   },
@@ -2260,7 +2260,7 @@ const PROPERTIES_DATA = [
       "https://cdn.propmall.net/media/img-property/list-142116/list-142116-01-69c9390bc6ac88.23405777.jpg"
     ],
     "description": "WTS / FOR SALE\n\nFreehold,Intermediate lot ,Three Storey Shop Office @ Presint 15, Putrajaya\n\nPROPERTY DETAILS\n- Land Area : 2,362 sqft\n- For Sale Freehold,Intermediate Lot ,Three Storey Shop Office @ Presint 15, Putrajaya\n- Business hub at the Centre of Putrajaya\n- One stop Centre for Business and Food\n- Open car park is nearby shop lots\n- Property Details:\n- Intermediate Lot\n- Freehold\n- Non Bumi Lot\n- Open Title with special condition (consent from State Authority)\n- Ground Floor - 1,248 square feet - Tenanted\n- First Floor - 1,464 square feet - Tenanted\n- Second Floor - 1,464 square feet - Tenanted\n- Facilities:\n- Nearby Government Buildings: Ministry of Home Affair,Ministry of Domestic Trade Cooperative and Consumerism ,Ministry of Finance\n- Nearby Hospitals: Hospital Putrajaya,Serdang Hospital\n-Education Institutions :Nexus Putrajaya International school,UNITEN,Heriot-Watt University Malaysia, Sekolah Sukan Alam Shah\n- Residential catchment:Alam Desa Presint 15,Presint 14 housing area,Flora Rosa Condominium Presint 11,Astana Residence Presint 8\n\nACCESSIBILITIES:\n- MAJU Expressway,\n- PLUS Highway\n- South Klang Valley Expressway (SKVE)\n- LDP Highway\n\n========================\nAsking Price : RM 3,400,000\n========================\n\n--- MAKLUMAT ASAL (RUJUKAN EJEN) ---\nEjen Listing : Zaim Rosli\nAgensi : JAZ INTERNATIONAL MALAYSIA SDN BHD (VEPM (1) 0120/4)\nNo. Tel : +60108118559\nPautan Rujukan : https://propmall.co/listing?str=&state=&area=&price_min=&price_max=&category=2012&type=&room=any&bath=any&goprice=ANY&status=ALL",
-    "refUrl": "https://propmall.co/listing?str=&state=&area=&price_min=&price_max=&category=2012&type=&room=any&bath=any&goprice=ANY&status=ALL",
+    "refUrl": "",
     "hidden": false,
     "listingSource": "coa"
   },
@@ -2315,7 +2315,7 @@ const PROPERTIES_DATA = [
       "https://cdn.propmall.net/media/img-property/list-60515/list-60515-01-6787737dddab89.56310507.jpg"
     ],
     "description": "WTL / FOR RENT\n\nCorporate Office in KL Eco City Menara Pacific\n\nPROPERTY DETAILS\n- Type : Shop / Office\n- Build Up : 4467 sqft\n\n- RM 35,000 Monthly\n- Office Space\n- Menara Pacific, KL Eco City – Office for Rent\n- 4,467 sqft\n- Fully furnished\n- Prime KL Eco City location\n- Professional corporate environment\n- Ideal for growing teams or companies upgrading their office image.\n\n========================\nAsking Rental : RM 35,000 / month\n========================\n\n--- MAKLUMAT ASAL (RUJUKAN EJEN) ---\nEjen Listing : Zaim Rosli\nAgensi : JAZ INTERNATIONAL MALAYSIA SDN BHD (VEPM (1) 0120/4)\nNo. Tel : +60108118559\nPautan Rujukan : https://propmall.co/listing?str=&state=&area=&price_min=&price_max=&category=2012&type=&room=any&bath=any&goprice=ANY&status=ALL",
-    "refUrl": "https://propmall.co/listing?str=&state=&area=&price_min=&price_max=&category=2012&type=&room=any&bath=any&goprice=ANY&status=ALL",
+    "refUrl": "",
     "hidden": false,
     "listingSource": "coa"
   },
@@ -2381,7 +2381,7 @@ const PROPERTIES_DATA = [
       "https://cdn.propmall.net/media/img-property/list-60515/list-60515-01-6787737dddab89.56310507.jpg"
     ],
     "description": "WTL / FOR RENT\n\nBoutique office spaces at Taman Desa Union Tower 600sf to 12000sf\n\nPROPERTY DETAILS\n- Type : Shop / Office\n- Build Up : 1167 sqft\n\n- RM 3,500 Monthly\n- Office Space\n- Boutique office spaces at Taman Desa Union Tower\n- Flexible Sizes\n- Office sizes ranging from 670 sqft to 12,000 sqft\n- Between bare units or partially furnished units\n- Convenient Amenities\n- 4-storey basement car park + outdoor car parking\n- Easily accessible via major highways:\n- NPE, Sungai Besi, Federal, SPRINT, Kerinchi, SMART Tunnel, East-West Link, KL-Seremban, KL-Putrajaya Link\n- Security\n- 3-tier security system with full CCTV coverage\n- Rate\n- Only RM3 per sqft\n\n========================\nAsking Rental : RM 3,500 / month\n========================\n\n--- MAKLUMAT ASAL (RUJUKAN EJEN) ---\nEjen Listing : Zaim Rosli\nAgensi : JAZ INTERNATIONAL MALAYSIA SDN BHD (VEPM (1) 0120/4)\nNo. Tel : +60108118559\nPautan Rujukan : https://propmall.co/listing?str=&state=&area=&price_min=&price_max=&category=2012&type=&room=any&bath=any&goprice=ANY&status=ALL",
-    "refUrl": "https://propmall.co/listing?str=&state=&area=&price_min=&price_max=&category=2012&type=&room=any&bath=any&goprice=ANY&status=ALL",
+    "refUrl": "",
     "hidden": false,
     "listingSource": "coa"
   },
@@ -2444,7 +2444,7 @@ const PROPERTIES_DATA = [
       "https://cdn.propmall.net/media/img-property/list-60515/list-60515-01-6787737dddab89.56310507.jpg"
     ],
     "description": "WTL / FOR RENT\n\nBrand New ETP @ KIIP Kapar, Klang Warehouse for Rent\n\nPROPERTY DETAILS\n- RM 15,000 Monthly\n- Factory\n- Land Area : 11,526 sqft\n- ETP @KIIP Kapar\n- Selangor Booming Industrial Park Brand New Factory\n- Handover soon in 2025\n- Rental RM20,000\n- Freehold\n- Land Size: 85’x135.60’\n- Land Size : 11526 ft2\n- Ground Floor: 5736 ft2\n- 1st Floor: 2280 ft2\n- Total 8016 ft\n- 300amp-power supply\n- 3ton/m2 floor loading\n- 40’ /12m- Eave Height\n- concrete driveway\n- ✳️5mins (5km) to Jln Meru\n- ✳️ 10mins (10km) to Klang Utama\n- ✳️13mins (15km) to Setia Alam\n- ✳️35min (35km) to Kota Kemuning\n- ✳️35min (34km) to Subang Jaya\n- ✳️40min (36km ) to Puchong, Petaling Jaya\n\n========================\nAsking Rental : RM 15,000 / month\n========================\n\n--- MAKLUMAT ASAL (RUJUKAN EJEN) ---\nEjen Listing : Zaim Rosli\nAgensi : JAZ INTERNATIONAL MALAYSIA SDN BHD (VEPM (1) 0120/4)\nNo. Tel : +60108118559\nPautan Rujukan : https://propmall.co/listing?str=&state=&area=&price_min=&price_max=&category=2012&type=&room=any&bath=any&goprice=ANY&status=ALL",
-    "refUrl": "https://propmall.co/listing?str=&state=&area=&price_min=&price_max=&category=2012&type=&room=any&bath=any&goprice=ANY&status=ALL",
+    "refUrl": "",
     "hidden": false,
     "listingSource": "coa"
   },
@@ -2500,7 +2500,7 @@ const PROPERTIES_DATA = [
       "https://cdn.propmall.net/media/img-property/list-60515/list-60515-01-6787737dddab89.56310507.jpg"
     ],
     "description": "WTL / FOR RENT\n\n1.5 sty Semi-D Factory at Eco Business Park V, Puncak Alam for rent\n\nPROPERTY DETAILS\n- RM 13,000 Monthly\n- Factory\n- Land Area : 10,400 sqft\n- Eco Busineas Park V,\n- Puncak Alam\n- RENTAL:  RM13000 (Nego)\n- Tenure: Leasehold\n- Land size: 10400 sf (80'x130')\n- Built up: 4221sf\n- Extra land: 20ft\n- Ceiling Height: 26ft (8meter)\n- Power Supply: 3 phase 150AMP\n- Floor Loading: 1 ton/m2\n\n========================\nAsking Rental : RM 13,000 / month\n========================\n\n--- MAKLUMAT ASAL (RUJUKAN EJEN) ---\nEjen Listing : Zaim Rosli\nAgensi : JAZ INTERNATIONAL MALAYSIA SDN BHD (VEPM (1) 0120/4)\nNo. Tel : +60108118559\nPautan Rujukan : https://propmall.co/listing?str=&state=&area=&price_min=&price_max=&category=2012&type=&room=any&bath=any&goprice=ANY&status=ALL",
-    "refUrl": "https://propmall.co/listing?str=&state=&area=&price_min=&price_max=&category=2012&type=&room=any&bath=any&goprice=ANY&status=ALL",
+    "refUrl": "",
     "hidden": false,
     "listingSource": "coa"
   },
@@ -2558,7 +2558,7 @@ const PROPERTIES_DATA = [
       "https://cdn.propmall.net/media/img-property/list-60515/list-60515-01-6787737dddab89.56310507.jpg"
     ],
     "description": "WTL / FOR RENT\n\nGround Floor Shop Lot At Taman Maluri Desa Pandan, Kuala Lumpur\n\nPROPERTY DETAILS\n- Type : Shop / Office\n- Build Up : 2000 sqft\n\n- RM 10,000 Monthly\n- Shop Lot\n- WTL\n- Ground Floor Shop Lot At Taman Maluri\n- Built-up : 2,000 sqft\n- Ground Floor\n- Spacious open-plan layout\n- Wide frontage\n- High ceiling\n- Bright interior with ample lighting\n- Tiled flooring\n- Suitable for various types of businesses\n- Easy access and convenient location\n- Ample parking available\n- Rental price : RM 10,000\n\n========================\nAsking Rental : RM 10,000 / month\n========================\n\n--- MAKLUMAT ASAL (RUJUKAN EJEN) ---\nEjen Listing : Zaim Rosli\nAgensi : JAZ INTERNATIONAL MALAYSIA SDN BHD (VEPM (1) 0120/4)\nNo. Tel : +60108118559\nPautan Rujukan : https://propmall.co/listing?str=&state=&area=&price_min=&price_max=&category=2012&type=&room=any&bath=any&goprice=ANY&status=ALL",
-    "refUrl": "https://propmall.co/listing?str=&state=&area=&price_min=&price_max=&category=2012&type=&room=any&bath=any&goprice=ANY&status=ALL",
+    "refUrl": "",
     "hidden": false,
     "listingSource": "coa"
   },
@@ -2613,7 +2613,7 @@ const PROPERTIES_DATA = [
       "https://cdn.propmall.net/media/img-property/list-60515/list-60515-01-6787737dddab89.56310507.jpg"
     ],
     "description": "WTL / FOR RENT\n\nGround Floor Shop Lot At Ikon Seremban 2 Negeri Sembilan\n\nPROPERTY DETAILS\n- Type : Shop / Office\n- Build Up : 1920 sqft\n\n- RM 5,800 Monthly\n- Shop Lot\n- WTL\n- Ground Floor Shop Lot At Ikon Seremban 2\n- Negeri Sembilan\n- Built-up : 1,920 sqft\n- Intermediate bare unit\n- Ground Floor\n- Facing main road\n- Ample parking\n- Surrounded by established businesses,\n- eateries, banks, gov offices, schools\n- Nearby :\n- 2.8 km to AEON Mall Seremban 2\n- 2.0 km to Sena Hospital (Under Construction)\n- 1.4 km to AFFIN Bank Centrio Seremban 2\n- Rental price : RM 5,800\n\n========================\nAsking Rental : RM 5,800 / month\n========================\n\n--- MAKLUMAT ASAL (RUJUKAN EJEN) ---\nEjen Listing : Zaim Rosli\nAgensi : JAZ INTERNATIONAL MALAYSIA SDN BHD (VEPM (1) 0120/4)\nNo. Tel : +60108118559\nPautan Rujukan : https://propmall.co/listing?str=&state=&area=&price_min=&price_max=&category=2012&type=&room=any&bath=any&goprice=ANY&status=ALL",
-    "refUrl": "https://propmall.co/listing?str=&state=&area=&price_min=&price_max=&category=2012&type=&room=any&bath=any&goprice=ANY&status=ALL",
+    "refUrl": "",
     "hidden": false,
     "listingSource": "coa"
   },
@@ -2687,7 +2687,7 @@ const PROPERTIES_DATA = [
       "https://cdn.propmall.net/media/img-property/list-60515/list-60515-01-6787737dddab89.56310507.jpg"
     ],
     "description": "WTL / FOR RENT\n\n2 Storey Corner Shop Lot At Pusat Perdagangan Hillpark Puncak Alam, Selangor\n\nPROPERTY DETAILS\n- Type : Shop / Office\n- Build Up : 4000 sqft\n\n- RM 7,000 Monthly\n- Shop Lot\n- WTL\n- 2 Storey Corner Shop Lot At Pusat Perdagangan Hillpark\n- Puncak Alam, Selangor\n- Built-up : 4,000 sqft\n- Corner Shop Lot\n- Ground floor and 1st floor\n- Suitable for F&B (ready move in)\n- Nearby :\n- Less than 500 meter to Uitm and Hospital Uitm\n- Dikeliling oleh Kawasan Perumahan.\n- 1Km ke Eco World.\n- 550 acres integrated township of Hillpark Shah Alam.\n- Accessible via major link such as LATAR, Guthrie, NKVE & the newly propose DASH.\n- Rental price : RM 7,000\n- Gf + 1st Floor RM 10,000\n\n========================\nAsking Rental : RM 7,000 / month\n========================\n\n--- MAKLUMAT ASAL (RUJUKAN EJEN) ---\nEjen Listing : Zaim Rosli\nAgensi : JAZ INTERNATIONAL MALAYSIA SDN BHD (VEPM (1) 0120/4)\nNo. Tel : +60108118559\nPautan Rujukan : https://propmall.co/listing?str=&state=&area=&price_min=&price_max=&category=2012&type=&room=any&bath=any&goprice=ANY&status=ALL",
-    "refUrl": "https://propmall.co/listing?str=&state=&area=&price_min=&price_max=&category=2012&type=&room=any&bath=any&goprice=ANY&status=ALL",
+    "refUrl": "",
     "hidden": false,
     "listingSource": "coa"
   },
@@ -2730,7 +2730,7 @@ const PROPERTIES_DATA = [
       "https://cdn.propmall.net/media/img-property/list-165638/list-165638-01-6a7d55e0221642.22498941.jpg"
     ],
     "description": "WTS / FOR SALE\n\nShop Lot At Pangsapuri Sunway Gandaria Bangi, Selangor\n\nPROPERTY DETAILS\n- Type : Shop / Office\n- Tenure : Leasehold (Bumi Lot)\n- Build Up : 1439 sqft\n\n- WTS\n- Shop Lot At Pangsapuri Sunway Gandaria\n- Built-up : 1,439.13 sqft\n- Ground floor\n- Facing Bangi Sentral shopping area\n- Leasehold\n- Bumi Lot\n- Near to Paragon Point\n\n========================\nAsking Price : RM 1,600,000\n========================\n\n--- MAKLUMAT ASAL (RUJUKAN EJEN) ---\nEjen Listing : Zaim Rosli\nAgensi : JAZ INTERNATIONAL MALAYSIA SDN BHD (VEPM (1) 0120/4)\nNo. Tel : +60108118559\nPautan Rujukan : https://propmall.co/listing?str=&state=&area=&price_min=&price_max=&category=2012&type=&room=any&bath=any&goprice=ANY&status=ALL",
-    "refUrl": "https://propmall.co/listing?str=&state=&area=&price_min=&price_max=&category=2012&type=&room=any&bath=any&goprice=ANY&status=ALL",
+    "refUrl": "",
     "hidden": false,
     "listingSource": "coa"
   },
@@ -2784,7 +2784,7 @@ const PROPERTIES_DATA = [
       "https://cdn.propmall.net/media/img-property/list-124568/list-124568-01-693285f59bb5b1.84776044.jpg"
     ],
     "description": "WTS / FOR SALE\n\nCorner Lot Shoplot at Kubica Square Bandar Puteri Bangi, Selangor\n\nPROPERTY DETAILS\n- Type : Land\n- Tenure : Freehold (Non-Bumi Lot)\n\n- For Sale Corner Lot Shoplot at Kubica Square Bandar Puteri Bangi, Selangor.\n- Corner Lot Shoplot , KUBICA SQUARE Bandar Puteri Bangi\n- .\n- Size : 24.5' x 80’\n- Built up : 5832 - 11491 sqft\n- Built-up.:\n- * Level GF : 32' x 80'\n- * Level 1 & 2: 33' x 80'\n- Title : Freehold\n- Ample parking facilities\n- Ideal for F&B outlets, pharmacies, boutiques etc\n- Level GF : .Rental per moth RM6,000 (Workshop)\n- Level 1 & 2 : vacant\n- .\n\nAMENITIES:\n- 2.5KM To Masjid At Taqwa , Bandar Bukit Mahkota\n- less 1KM toVarieties restaurant, mamak stall.\n- 1KM to Eco Shop, 99 speedmart, Tesco Bdr Putri\n- 1KM to Tesco\n- 1.8KM to Petronas, Petron.\n- 3.5KM to Pasaraya CS\n- 3.5KM to Bangi Wonderland Themepark & Resort\n- 3KM to Sek Rendah Bukit Mahkota\n- 4.5KM to Bangi KTM Komuter\n- 6.5KM to to Nilai 3\n- 11KM to Bangi Gateway\n- 11KM to Hospital An Nur Bandar Baru Bangi\n- 40KM to Suria KLCC\n- .\n- Accesibility:\n- 1.5KM to Plaza Toll Putra Mahkota , Plus Highway\n- 10KM to Lekas Highway Plaza Toll Semenyih\n- Easy access to Semenyih\n- Easy access to Bandar Baru Bangi\n- Easy Access to KL\n\n========================\nAsking Price : RM 2,650,000\n========================\n\n--- MAKLUMAT ASAL (RUJUKAN EJEN) ---\nEjen Listing : Zaim Rosli\nAgensi : JAZ INTERNATIONAL MALAYSIA SDN BHD (VEPM (1) 0120/4)\nNo. Tel : +60108118559\nPautan Rujukan : https://propmall.co/listing?str=nilai&state=&area=&price_min=&price_max=&category=2012&type=&room=any&bath=any&goprice=ANY&status=ALL",
-    "refUrl": "https://propmall.co/listing?str=nilai&state=&area=&price_min=&price_max=&category=2012&type=&room=any&bath=any&goprice=ANY&status=ALL",
+    "refUrl": "",
     "hidden": false,
     "listingSource": "coa"
   },
@@ -2835,7 +2835,7 @@ const PROPERTIES_DATA = [
       "https://cdn.propmall.net/media/img-property/list-97403/list-97403-01-69ff4046a8d8c1.26841283.jpg"
     ],
     "description": "WTL / FOR RENT\n\nUnit shop lot cantik ground floor di Nilai\n\nPROPERTY DETAILS\n- Type : Shop / Office\n- Build Up : 1608 sqft\n- RM 2,200 Monthly\n- 4 STOREY SHOPLOT\n- Intermediate\n- Dimension: 23' x 75'\n- Build up:\n- Ground Floor: 1,608 Sqft\n- 1st Floor: 1,764 Sqft\n- 2nd Floor: 1,764 Sqft\n- 3rd Floor: 1,764 Sqft\n- 2 Toilets for each level\n\n- ASKING RENTAL\n- G Floor: RM2200\n- 1st Floor: RM1,500\n\n- Terms:\n- 1 Month Advance Rental\n- 2 Month Security Deposit\n- 1 Month Utilities Deposit\n- Processing and Stamping Tenancy Agreement\n- FREE 1 month rent for renovation - lock now*\n\n========================\nAsking Rental : RM 2,200 / month\n========================\n\n--- MAKLUMAT ASAL (RUJUKAN EJEN) ---\nEjen Listing : Zaim Rosli\nAgensi : JAZ INTERNATIONAL MALAYSIA SDN BHD (VEPM (1) 0120/4)\nNo. Tel : +60108118559\nPautan Rujukan : https://propmall.co/listing?str=nilai&state=&area=&price_min=&price_max=&category=2012&type=&room=any&bath=any&goprice=ANY&status=ALL",
-    "refUrl": "https://propmall.co/listing?str=nilai&state=&area=&price_min=&price_max=&category=2012&type=&room=any&bath=any&goprice=ANY&status=ALL",
+    "refUrl": "",
     "hidden": false,
     "listingSource": "coa"
   },
@@ -2878,7 +2878,7 @@ const PROPERTIES_DATA = [
       "https://cdn.propmall.net/media/img-property/list-97403/list-97403-01-69ff4046a8d8c1.26841283.jpg"
     ],
     "description": "WTS / FOR SALE\n\nBELOW MV SHOPLOT Taman Desa Melati Nilai\n\nPROPERTY DETAILS\n- SHOPLOT Taman Desa Melati, Bandar Baru Nilai\n- Near INTI International University\n- Property Details\n- Freehold\n- bumi lot\n- Land area: 22x75\n- 1 store\n- ready tenant rm2300/month\n\nAMENITIES:\n- INTI International University\n- Nilai International School\n- Nilai University\n- KPJ Healthcare University\n- Nilai University\n- MILA University\n- Universiti Sains Islam Malaysia\n- Aurelius Hospital Nilai\n- Kompleks Sukan\n- Aeon Mall, Giant, Lotus, Mesa Mall\n- Klinik Kesihatan Nilai\n- Masjid Putra Nilai\n- KTM Nilai\n- Pekan Nilai\n- Xiamen University\n- ERL Station\n- Klia, Klia 2\n\nACCESSIBILITIES:\n- Plus Highway\n- Lekas Highway\n- Mex Highway\n- Easy to Klia, Cyberjaya,Putrajaya\n- For viewing, please\n\n========================\nAsking Price : RM 460,000\n========================\n\n--- MAKLUMAT ASAL (RUJUKAN EJEN) ---\nEjen Listing : Zaim Rosli\nAgensi : JAZ INTERNATIONAL MALAYSIA SDN BHD (VEPM (1) 0120/4)\nNo. Tel : +60108118559\nPautan Rujukan : https://propmall.co/listing?str=nilai&state=&area=&price_min=&price_max=&category=2012&type=&room=any&bath=any&goprice=ANY&status=ALL",
-    "refUrl": "https://propmall.co/listing?str=nilai&state=&area=&price_min=&price_max=&category=2012&type=&room=any&bath=any&goprice=ANY&status=ALL",
+    "refUrl": "",
     "hidden": false,
     "listingSource": "coa"
   },
@@ -2923,7 +2923,7 @@ const PROPERTIES_DATA = [
       "https://cdn.propmall.net/media/img-property/list-97403/list-97403-01-69ff4046a8d8c1.26841283.jpg"
     ],
     "description": "WTL / FOR RENT\n\nEndlot Shop Lot for Rent Bandar Bukit Mahkota Bangi\n\nPROPERTY DETAILS\n- Type : Land\n\n- RM 4,500 Monthly\n- Shop Lot\n- Endlot Shop Lot for Rent Bandar Mahkota Bangi Kajang Nilai\n- Property Details\n- Size 20x65\n- Facing House and Empty Land\n- Endlot\n- New Repaint\n- Rental Whole Unit RM4500\n- Nearby : Highway, Lotus, MCD, Hospital, University, Kinder garden, Residence Area\n\n========================\nAsking Rental : RM 4,500 / month\n========================\n\n--- MAKLUMAT ASAL (RUJUKAN EJEN) ---\nEjen Listing : Zaim Rosli\nAgensi : JAZ INTERNATIONAL MALAYSIA SDN BHD (VEPM (1) 0120/4)\nNo. Tel : +60108118559\nPautan Rujukan : https://propmall.co/listing?str=nilai&state=&area=&price_min=&price_max=&category=2012&type=&room=any&bath=any&goprice=ANY&status=ALL",
-    "refUrl": "https://propmall.co/listing?str=nilai&state=&area=&price_min=&price_max=&category=2012&type=&room=any&bath=any&goprice=ANY&status=ALL",
+    "refUrl": "",
     "hidden": false,
     "listingSource": "coa"
   },
@@ -2973,7 +2973,7 @@ const PROPERTIES_DATA = [
       "https://cdn.propmall.net/media/img-property/list-161095/list-161095-01-6a5835074ea288.47332626.jpg"
     ],
     "description": "WTS / FOR SALE\n\n3 STOREY SHOP OFFICE JALAN KOTA WARISAN, SEPANG - FREEHOLD 1650 SQFT UNTUK DIJUAL\n\nPROPERTY DETAILS\n- Type : 3 STOREY SHOP OFFICE\n- Tenure : Freehold (Bumi Lot)\n- JLN KOTA WARISAN SEPANG*\n- Land area 1650 sqft (22x75)\n- Intermediate lot office space\n- Strategic location/facing main road/school.\n- Surrounded by residential, commercial shop, SK & SMK etc\n- Nearby Amenities:\n- KIP Mall\n- ERL Salak Tinggi Station\n- Xiamen University\n\nACCESSIBILITIES:\n- MEX Highway\n- LDP Highway\n- KESAS\n- North South Highway\n\n=========================\nAsking Price : RM 1,750,000\n=========================\n\n--- MAKLUMAT ASAL (RUJUKAN EJEN) ---\nEjen Listing : Zaim Rosli\nAgensi : JAZ INTERNATIONAL MALAYSIA SDN BHD (VEPM (1) 0120/4)\nNo. Tel : +60108118559\nPautan Rujukan : https://propmall.co/listing?str=&state=&area=&price_min=&price_max=&category=2012&type=&room=any&bath=any&goprice=ANY&status=ALL",
-    "refUrl": "https://propmall.co/listing?str=&state=&area=&price_min=&price_max=&category=2012&type=&room=any&bath=any&goprice=ANY&status=ALL",
+    "refUrl": "",
     "hidden": false,
     "listingSource": "coa"
   },
@@ -3023,7 +3023,7 @@ const PROPERTIES_DATA = [
       "https://cdn.propmall.net/media/img-property/list-149937/list-149937-01-6a081930021a25.53417278.jpg"
     ],
     "description": "WTL / FOR RENT\n\nWAREHOUSE SPACE @ TAMAN PERINDUSTRIAN SUBANG, SUBANG JAYA\n\nPROPERTY DETAILS\n- Type : Part of Single Storey Warehouse with 3-Storey Office Space\n- Land Area : 60,000 sqft\n- Warehouse Space: 46,021 sqft\n- Office Space: 14,028 sqft\n- Eaves Height: 40 ft\n- Power Supply: 300 Amps\n- Warehouse Floor Loading: 25 kN/m²\n- Office Floor Loading: 2.5 kN/m²\n\nSPACE BREAKDOWN\n- Single Storey Warehouse\n- Built-Up: 46,021 sqft\n- Eaves Height: 40 ft\n- Floor Loading: 25 kN/m²\n- Three-Storey Office\n- Built-Up: 14,028 sqft\n- Approx. 4,676 sqft per floor\n- Floor Loading: 2.5 kN/m²\n\nWHY THIS WAREHOUSE STANDS OUT\n- Large warehouse floor plate with practical industrial layout\n- Exceptional 40 ft eaves height — ideal for high-bay racking and vertical storage\n- Heavy warehouse floor loading of 25 kN/m²\n- Dedicated 3-storey office space within the property\n- 300 amps power supply available\n- Suitable for warehousing, distribution and industrial support operations\n- Located within an established Subang industrial area\n- Convenient access towards Persiaran Subang, Persiaran Kewajipan and the \nsurrounding USJ area\n\nSUITABLE FOR\n- Warehouse & Storage\n- Distribution Centre\n- Logistics Operations\n- E-Commerce Fulfilment Centre\n- FMCG Storage\n- High-Bay Racking Warehouse\n- Industrial Storage\n- Light Assembly / Packing Centre\n- Corporate Warehouse with Office Operations\n- Contact for full details and site viewing:\n\n=========================\nAsking Rental : RM 120,000 / month\n=========================\n\n--- MAKLUMAT ASAL (RUJUKAN EJEN) ---\nEjen Listing : Zaim Rosli\nAgensi : JAZ INTERNATIONAL MALAYSIA SDN BHD (VEPM (1) 0120/4)\nNo. Tel : +60108118559\nPautan Rujukan : https://propmall.co/listing?str=&forWTL=Y&state=&area=&price_min=&price_max=&category=2012&type=&room=any&bath=any&goprice=ANY&status=ALL",
-    "refUrl": "https://propmall.co/listing?str=&forWTL=Y&state=&area=&price_min=&price_max=&category=2012&type=&room=any&bath=any&goprice=ANY&status=ALL",
+    "refUrl": "",
     "hidden": false,
     "listingSource": "coa"
   },
@@ -3071,7 +3071,7 @@ const PROPERTIES_DATA = [
       "https://cdn.propmall.net/media/img-property/list-149937/list-149937-01-6a081930021a25.53417278.jpg"
     ],
     "description": "WTL / FOR RENT\n\nSri Petaling Ground Floor Corner Shop (102' x 80') For Rent\n\nPROPERTY DETAILS\n- Type : Shop / Office\n- Build Up : 6000 sqft\n- Built-Up Area: 102’ x 80’\n- Fully Renovated\n- Corner Unit\n- Wide Frontage\n- Facing Main Road\n- Ready for Business\n\nHighlights:\n- Prime Location\n- Facing Main Road\n- Fully Renovated\n- Busy Commercial Hub\n- Wide Frontage\n- Excellent Visibility & Accessibility\n\nIdeal For:\n- Retail / Showroom\n- F&B / Restaurant\n- Supermarket / Grocer\n- Office / Corporate Use\n- Service Centre\n- Various Commercial Businesses\n\n=========================\nAsking Rental : RM 39,000 / month\n=========================\n\n--- MAKLUMAT ASAL (RUJUKAN EJEN) ---\nEjen Listing : Zaim Rosli\nAgensi : JAZ INTERNATIONAL MALAYSIA SDN BHD (VEPM (1) 0120/4)\nNo. Tel : +60108118559\nPautan Rujukan : https://propmall.co/listing?str=&forWTL=Y&state=&area=&price_min=&price_max=&category=2012&type=&room=any&bath=any&goprice=ANY&status=ALL",
-    "refUrl": "https://propmall.co/listing?str=&forWTL=Y&state=&area=&price_min=&price_max=&category=2012&type=&room=any&bath=any&goprice=ANY&status=ALL",
+    "refUrl": "",
     "hidden": false,
     "listingSource": "coa"
   },
@@ -3121,7 +3121,7 @@ const PROPERTIES_DATA = [
       "https://cdn.propmall.net/media/img-property/list-149937/list-149937-01-6a081930021a25.53417278.jpg"
     ],
     "description": "WTL / FOR RENT\n\nFully Renovated Ground Floor Shop Lot For Rent Taman Batu Greenwood | 1,500 sqft | 3 Rooms\n\nPROPERTY DETAILS\n- Type : Shop / Office\n- Build Up : 1500 sqft\n- Bedroom : 3\n- Toilets: 1\n- Bathroom: 1\n- Unit Type: Intermediate\n- Floor: Ground Floor\n- Rooms: 3\n- Condition: Fully Renovated\n- Availability: Ready to Move In\n\nKEY BUSINESS ADVANTAGES:\n- Fully renovated and ready to move in\n- Ground floor for easy customer access\n- Approximately 1,500 sqft\n- 3 separate rooms\n- 1 toilet + 1 bathroom\n- Intermediate shop lot\n- Suitable for businesses requiring office, consultation or working rooms\n- Save time and renovation costs\n- Suitable For\n- The layout may suit a variety of businesses, subject to permitted use and relevant approvals:\n- Office\n- Consultancy\n- Training centre\n- Service business\n- Retail\n- Studio\n- Education / tuition\n- Professional practice\n- Other customer-facing businesses\n\n=========================\nAsking Rental : RM 6,000 / month\n=========================\n\n--- MAKLUMAT ASAL (RUJUKAN EJEN) ---\nEjen Listing : Zaim Rosli\nAgensi : JAZ INTERNATIONAL MALAYSIA SDN BHD (VEPM (1) 0120/4)\nNo. Tel : +60108118559\nPautan Rujukan : https://propmall.co/listing?str=&forWTL=Y&state=&area=&price_min=&price_max=&category=2012&type=&room=any&bath=any&goprice=ANY&status=ALL",
-    "refUrl": "https://propmall.co/listing?str=&forWTL=Y&state=&area=&price_min=&price_max=&category=2012&type=&room=any&bath=any&goprice=ANY&status=ALL",
+    "refUrl": "",
     "hidden": false,
     "listingSource": "coa"
   },
@@ -3177,7 +3177,7 @@ const PROPERTIES_DATA = [
       "https://cdn.propmall.net/media/img-property/list-165034/list-165034-01-6a7747ab94a372.77413354.jpg"
     ],
     "description": "WTS / FOR SALE\n\nCYBER HEIGHTS VILLA FOR SALE\n\nPROPERTY DETAILS\n- Type : Shop / Office\n- Tenure : Freehold (Bumi Lot)\n- Build Up : 1638 sqft\n- Bedroom : 3\n- Bathroom : 2\n- Balcony Facing Greeneries.\n- FULLY RENOVATED\n- Strata Title\n- Ground Floor\n- 3 Bedrooms\n- 2 Bathrooms\n- 2 Carparks (Infront of Unit)\n- Balcony Facing Greeneries. (Not Facing Other unit)\n\nFACILITIES :\n- Parking\n- Gated & Guarded\n- 24 hours security\n- Big playground for kids\n- Access to Putrajaya Lake Jogging and Cycling Track\n\nNEARBY AMENITIES :\n- D'Pulze, Tamarind Square, IOI City Mall, Alamanda Shopping Mall\n- Shaftsbury Square (Restaurant, clinic, 99 Speedmart, Starbuck, Maybank)\n- Sekolah Seri Puteri\n- Abedeen Academy\n- Hospital Cyberjaya\n- Hospital Putrajaya\n- MRT Cyberjaya\n- ERL / MRT Putrajaya Sentral\n\nACCESSIBILITIES:\n- MEX • ELITE • LDP Highways\n- KLIA T1 & T2\n\n=========================\nAsking Price : RM 690,000\n=========================\n\n--- MAKLUMAT ASAL (RUJUKAN EJEN) ---\nEjen Listing : Zaim Rosli\nAgensi : JAZ INTERNATIONAL MALAYSIA SDN BHD (VEPM (1) 0120/4)\nNo. Tel : +60108118559\nPautan Rujukan : https://propmall.co/listing",
-    "refUrl": "https://propmall.co/listing",
+    "refUrl": "",
     "hidden": false,
     "listingSource": "coa"
   },
@@ -3250,7 +3250,7 @@ const PROPERTIES_DATA = [
       "https://cdn.propmall.net/media/img-property/list-165034/list-165034-01-6a7747ab94a372.77413354.jpg"
     ],
     "description": "WTS / FOR SALE\n\nFREEHOLD FULLY RENOVATED 2 STOREY TERRACE @ PUNCAK SAUJANA 3 KAJANG\n\nPROPERTY DETAILS\n- Type : Tanah\n- Tenure : Freehold (Non-Bumi Lot)\n- Land Area : 1,800 sqft ( 361 per sqft)\n- 5 Rooms and 3 Bathrooms\n- RENOVATED & EXTENDED UNIT\n- STRATEGIC & CONVENIENT LOCATION\n- LOW DENSITY AREA\n- Status: Freehold\n- Individual Title\n- Tenure: Non Bumi Lot\n- Land Area : 20’x70’\n- Built Up: 1800 sqft (approx)\n- 4+1 Bedrooms & 3 Bathrooms\n- Store\n- Dry & Wet Kitchen\n- Porch fit 2 Cars\n- Intermediate unit\n- Facing North-east\n- 24 Hour Security\n- Gated and Guarded Community\n- Auto Gate\n- Security Guard Fee : RM50\n- Partially Furnished :\n- Aircond 4 nos\n- ⁠Build In Shoe Cabinet\n- ⁠Cabinet TV\n- ⁠Fully Kitchen Cabinet with hood & hob\n- Build in Microwave & Oven\n- ⁠All deco lamps & fans\n- Water Heater 3x\n- ⁠All attached Cabinet\n\nRENOVATION:\n- Extended kitchen & Bedroom\n- Beautiful house ID\n- Modern Plaster Ceiling design\n- ⁠Hall Flooring SPC\n- Unique type Extra Room Level 1\n\nAMENITIES:\n- CS Market\n- Econsave Prima Saujana\n- Lotus Kajang\n- Metro Kajang\n- Kamdar\n- SK Taman Kantan Permai\n- SMK Saujana Impian\n- McDonald's, KFC, Subway\n- Clinics\n- Groceries\n- Petrol Station: Shell & Petronas\n\n ACCESSBILITY:\n- Cheras-Kajang Highway\n- SILK Highway\n- LEKAS Highway\n- MRR2 Highway\n- Kajang-Cheras Highway (Grand Saga)\n- South Klang Valley Expressway (SKVE)\n- Sungai Besi Highway (BESRAYA)\n- MRT Sungai Jernih\n- Price : RM 650K (Negotiable)\n\n=========================\nAsking Price : RM 650,000\n=========================\n\n--- MAKLUMAT ASAL (RUJUKAN EJEN) ---\nEjen Listing : Zaim Rosli\nAgensi : JAZ INTERNATIONAL MALAYSIA SDN BHD (VEPM (1) 0120/4)\nNo. Tel : +60108118559\nPautan Rujukan : https://propmall.co/listing",
-    "refUrl": "https://propmall.co/listing",
+    "refUrl": "",
     "hidden": false,
     "listingSource": "coa"
   },
@@ -3295,7 +3295,7 @@ const PROPERTIES_DATA = [
       "https://cdn.propmall.net/media/img-property/list-117362/list-117362-01-690821511f4ef6.82415143.jpg"
     ],
     "description": "WTS / FOR SALE\n\nHOT! Tanah Berdekatan Upcoming Station ECRL Maran. Tanah Status Bangunan Perumahan, Komersial & Industri\n\nPROPERTY DETAILS\n- Type : Tanah\n- Tenure : Freehold (Malay Reserve)\n- Land Area : 9.00 acre ( 655,556 per acre)\n- Maran, Pahang\n- Tepi Jalan Utama KL-Kuantan\n- 6 minit Jarak antara Tanah ke Station ECRL Maran\n- 9.05 Ekar\n- Status Bangunan\n- Syarat Nyata untuk Perumahan, Komersial, Industri & Lain2\n- Sesuai Untuk Perumahan, Warehouse, Factory, Hospital & Lain2\n- Harga Jualan\n-RM15.00 / sqft\n-RM 5.9 Juta (Negotiable)\n\n=========================\nAsking Price : RM 5,900,000\n=========================\n\n--- MAKLUMAT ASAL (RUJUKAN EJEN) ---\nEjen Listing : Zaim Rosli\nAgensi : JAZ INTERNATIONAL MALAYSIA SDN BHD (VEPM (1) 0120/4)\nNo. Tel : +60108118559\nPautan Rujukan : https://propmall.co/listing?str=&state=&area=&price_min=&price_max=&category=2013&type=&room=any&bath=any&goprice=ANY&status=ALL",
-    "refUrl": "https://propmall.co/listing?str=&state=&area=&price_min=&price_max=&category=2013&type=&room=any&bath=any&goprice=ANY&status=ALL",
+    "refUrl": "",
     "hidden": false,
     "listingSource": "coa"
   },
@@ -3340,7 +3340,7 @@ const PROPERTIES_DATA = [
       "https://cdn.propmall.net/media/img-property/list-117362/list-117362-01-690821511f4ef6.82415143.jpg"
     ],
     "description": "WTS / FOR SALE\n\nHuge Corner Lot Bungalow at Seksyen 4 Bandar Baru Bangi For Sale\n\nPROPERTY DETAILS\n- Type : Tanah\n- Tenure : Leasehold (Bumi Lot)\n- Land Area : 20,774 sqft ( 75 per sqft)\n- Parking : 2\n- Below Market!!! RM75 per sqft\n- Very strategic location\n- Leasehold (Bumi) until August 2086\n- Land Area: 20,774 sqft\n- Flat land\n- Infra ready (ready to build)\n\nAMENITIES:\n- Bangi Gateway, PKNS Bangi, Evo Mall, Kipmall\n- SK & SMK Jalan 4, SK & SMK Jalan 3, Sekolah Agama\n- Beverly International School, SRI Al-Amin Bangi, SRITI\n- UKM, KPTM, GMI, MFI, KLIUC, UPM, UNITEN, MPI\n\nACCESIBILITIES:\n- Highway: PLUS, SILK, LEKAS, ELITE\n- 8 min to Bangi Toll\n- 15 min to Kajang town\n- 25 min to Putrajaya\n\n=========================\nAsking Price : RM 1,558,000\n=========================\n\n--- MAKLUMAT ASAL (RUJUKAN EJEN) ---\nEjen Listing : Zaim Rosli\nAgensi : JAZ INTERNATIONAL MALAYSIA SDN BHD (VEPM (1) 0120/4)\nNo. Tel : +60108118559\nPautan Rujukan : https://propmall.co/listing?str=&state=&area=&price_min=&price_max=&category=2013&type=&room=any&bath=any&goprice=ANY&status=ALL",
-    "refUrl": "https://propmall.co/listing?str=&state=&area=&price_min=&price_max=&category=2013&type=&room=any&bath=any&goprice=ANY&status=ALL",
+    "refUrl": "",
     "hidden": false,
     "listingSource": "coa"
   },
@@ -3383,7 +3383,7 @@ const PROPERTIES_DATA = [
       "https://cdn.propmall.net/media/img-property/list-117362/list-117362-01-690821511f4ef6.82415143.jpg"
     ],
     "description": "WTS / FOR SALE\n\n5 Ekar Tanah Status Geran Bangunan Jenderam Hulu Dengkil\n\nPROPERTY DETAILS\n- Type : Tanah\n- Tenure : Leasehold (Malay Reserve)\n- Build Up : 1000 sqft\n- Land Area : 5.00 acre ( 600,000 per acre)\n- Parking : 2\n\n5 Ekar Tanah Status Geran Bangunan Jenderam Hulu Dengkil\nWTS / FOR SALE\n- Land Area : 5.00 acre\nTanah Lot Status Bangunan, Jenderam Hulu, Geran Individu, Hak Milik Kekal, Malay Rizab.\n1 Owner (2 Geran) dan Jumlah Keluasan 5 Ekar\nRM3,000,000 (Nego)\n- Tanah Rezab Melayu\n- Hak Milik Kekal\n- Lot Tanah 5 ekar\n- Terdapat Jalan Masuk ke Lot Tanah\n- Boleh terus tukar nama ke dalam Geran\nDetails:\n- Lokasi: Jenderam Hulu\n- Type : Tanah Lot Status Bangunan\n- Title : Individual\n- Status : Pegangan Kekal (Malay Reserved)\n- Negeri : Selangor\n- Daerah : Sepang\n- Mukim : Dengkil\n- Land Area: 5 Ekar\n- Land Condition: Agak rata (terdapat anak sungai)\n- Infra Ready\n- Dikelilingi oleh kebun-kebun dan perumahan baru.\nAKSES:\n- Mudah akses ke KLIA, Dengkil & Kota Warisan\n- Mudah akses ke Putrajaya & Cyberjaya\n- Mudah akses ke Kajang\n- Mudah akses ke Bandar Baru Bangi\n\n=========================\nAsking Price : RM 3,000,000\n=========================\n\n--- MAKLUMAT ASAL (RUJUKAN EJEN) ---\nEjen Listing : Zaim Rosli\nAgensi : JAZ INTERNATIONAL MALAYSIA SDN BHD (VEPM (1) 0120/4)\nNo. Tel : +60108118559\nPautan Rujukan : https://propmall.co/listing?str=&state=&area=&price_min=&price_max=&category=2013&type=&room=any&bath=any&goprice=ANY&status=ALL",
-    "refUrl": "https://propmall.co/listing?str=&state=&area=&price_min=&price_max=&category=2013&type=&room=any&bath=any&goprice=ANY&status=ALL",
+    "refUrl": "",
     "hidden": false,
     "listingSource": "coa"
   },
@@ -3438,7 +3438,7 @@ const PROPERTIES_DATA = [
       "https://cdn.propmall.net/media/img-property/list-158868/list-158868-01-6a465284069a23.66679921.jpg"
     ],
     "description": "WTS / FOR SALE\n\n2 Storey Shop | 22'x70' | Office Layout | Seksyen 13 Shah Alam | RM1.35M\n\nPROPERTY DETAILS\n- Type : Tanah\n- Tenure : Leasehold (Bumi Lot)\n- Build Up : 3000 sqft\n- Parking : 2\n\n=========================\nAsking Price : RM 1,350,000\n=========================\n\n2 Storey Shop | 22'x70' | Office Layout | Seksyen 13 Shah Alam | RM1.35M\n\nWTS / FOR SALE\nAsking RM 1,350,000\n\n+ Shah Alam, Selangor\n+ Shop Lot, Leasehold, Bumi Lot, Individual Title\n+ Built-up Size : 3,000 sqft\n\n\n\n**********************************************************************\n\n\n2-Storey Shop (Office Layout) at Seksyen 13 Shah Alam\n\nLand size 22'x70'\nBuild-up approx 3,000sf\nIntermediate Unit\nOffice Layout with partitioned rooms, open hall, working area and storage area\n\nAsking Price : RM1,350,000 (Slim Nego)\n\nIdeal for:\nCompanies looking to own their own office premise\nShowroom or business operation centre\nInvestors seeking a commercial asset in a matured and strategic location\n\nSurrounded by Essential Amenities\nEstablished commercial district\nClose to Stadium Shah Alam\nClose to LRT3\n\nAccess to:\nFederal Highway\nNKVE\nDash\nElite Expressway\n\n--- MAKLUMAT ASAL (RUJUKAN EJEN) ---\nEjen Listing : Zaim Rosli\nAgensi : JAZ INTERNATIONAL MALAYSIA SDN BHD (VEPM (1) 0120/4)\nNo. Tel : +60108118559\nPautan Rujukan : https://propmall.co/listing?str=&forWTS=Y&state=&area=&price_min=&price_max=&category=2012&type=&room=any&bath=any&goprice=ANY&status=ALL",
-    "refUrl": "https://propmall.co/listing?str=&forWTS=Y&state=&area=&price_min=&price_max=&category=2012&type=&room=any&bath=any&goprice=ANY&status=ALL",
+    "refUrl": "",
     "hidden": false,
     "listingSource": "coa"
   },
