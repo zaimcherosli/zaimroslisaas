@@ -2634,6 +2634,8 @@
 
       currentProperties.forEach(p => {
         const isHidden = !!p.hidden;
+        const imgIdMatch = (p.image || '').match(/list-(\d+)/);
+        const propmallId = imgIdMatch ? imgIdMatch[1] : '';
         if (!isHidden) {
           active++;
           const pStatus = (p.status || '').toLowerCase();
@@ -2931,8 +2933,8 @@
                       <span>Link Referral</span>
                     </a>
                   ` : `
-                    <button type="button" onclick="editProperty(${idx})" class="renhub-ref-link renhub-ref-link-empty" title="Click to add referral link">
-                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg><span>Link Referral</span>
+                    <button type="button" onclick="editProperty(${idx})" class="renhub-ref-link renhub-ref-link-empty" title="${propmallId ? 'PropMall ID: ' + propmallId + ' (Klik untuk tambah pautan)' : 'Klik untuk tambah pautan rujukan'}">
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg><span>${propmallId ? '+ Link (' + propmallId + ')' : '+ Link Referral'}</span>
                     </button>
                   `}
                 </div>
