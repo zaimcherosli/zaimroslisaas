@@ -2864,8 +2864,6 @@
       grid.innerHTML = pagedList.map(({ property: p, originalIdx: idx }) => {
         const mainImg = p.image ? p.image.split(',')[0].trim() : 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=400&q=80';
         const isHidden = !!p.hidden;
-        const imgIdMatch = (p.image || '').match(/list-(\d+)/);
-        const propmallId = imgIdMatch ? imgIdMatch[1] : '';
         const src = p.listingSource || ((p.category && p.category.toLowerCase().includes('undercon')) ? 'undercon' : 'my_listing');
 
         let srcBadgeHTML = '';
@@ -2933,8 +2931,8 @@
                       <span>Link Referral</span>
                     </a>
                   ` : `
-                    <button type="button" onclick="editProperty(${idx})" class="renhub-ref-link renhub-ref-link-empty" title="${propmallId ? 'PropMall ID: ' + propmallId + ' (Klik untuk tambah pautan)' : 'Klik untuk tambah pautan rujukan'}">
-                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg><span>${propmallId ? '+ Link (' + propmallId + ')' : '+ Link Referral'}</span>
+                    <button type="button" onclick="editProperty(${idx})" class="renhub-ref-link renhub-ref-link-empty" title="Click to add referral link">
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg><span>Link Referral</span>
                     </button>
                   `}
                 </div>
