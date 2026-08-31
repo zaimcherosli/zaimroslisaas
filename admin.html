@@ -2634,8 +2634,6 @@
 
       currentProperties.forEach(p => {
         const isHidden = !!p.hidden;
-        const imgIdMatch = (p.image || '').match(/list-(\d+)/);
-        const propmallId = imgIdMatch ? imgIdMatch[1] : '';
         if (!isHidden) {
           active++;
           const pStatus = (p.status || '').toLowerCase();
@@ -2866,6 +2864,8 @@
       grid.innerHTML = pagedList.map(({ property: p, originalIdx: idx }) => {
         const mainImg = p.image ? p.image.split(',')[0].trim() : 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=400&q=80';
         const isHidden = !!p.hidden;
+        const imgIdMatch = (p.image || '').match(/list-(\d+)/);
+        const propmallId = imgIdMatch ? imgIdMatch[1] : '';
         const src = p.listingSource || ((p.category && p.category.toLowerCase().includes('undercon')) ? 'undercon' : 'my_listing');
 
         let srcBadgeHTML = '';
