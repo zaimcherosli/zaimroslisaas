@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>1-Click PropMall Sync Tool — Zaim Rosli Real Estate</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background: #f8fafc;
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: #0f172a;
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.5;
+    }
+    .sync-header {
+      background: #ffffff;
+      border-bottom: 1px solid #e2e8f0;
+      padding: 14px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .sync-header-inner {
+      max-width: 760px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .sync-container {
+      max-width: 760px;
+      margin: 24px auto 60px;
+      padding: 0 16px;
+    }
+    .sync-card {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 32px 24px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #fef3c7;
+      color: #92400e;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 12px;
+    }
+    .main-title {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: #0f172a;
+      margin: 0 0 10px;
+      line-height: 1.25;
+    }
+    .main-subtitle {
+      color: #64748b;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      margin: 0;
+    }
+    .section-divider {
+      border: none;
+      border-top: 1px solid #f1f5f9;
+      margin: 24px 0;
+    }
+    .platform-box {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 22px 18px;
+      margin-bottom: 20px;
+    }
+    .platform-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 14px;
+    }
+    .drag-btn-wrap {
+      margin: 18px 0;
+      text-align: center;
+    }
+    .bookmark-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: linear-gradient(135deg, #1e293b, #0f172a);
+      color: #f59e0b !important;
+      font-size: 1.1rem;
+      font-weight: 800;
+      padding: 14px 30px;
+      border-radius: 12px;
+      border: 2px dashed #f59e0b;
+      text-decoration: none !important;
+      cursor: move;
+      box-shadow: 0 4px 16px rgba(245, 158, 11, 0.25);
+      transition: all 0.2s ease;
+      max-width: 100%;
+      box-sizing: border-box;
+    }
+    .bookmark-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(245, 158, 11, 0.4);
+    }
+    .step-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-top: 14px;
+    }
+    .step-item {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      font-size: 0.90rem;
+      line-height: 1.5;
+      color: #334155;
+    }
+    .step-num {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: #f59e0b;
+      color: #0f172a;
+      font-weight: 800;
+      font-size: 0.80rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .btn-copy-code {
+      width: 100%;
+      background: #f59e0b;
+      color: #0f172a;
+      border: none;
+      font-weight: 800;
+      font-size: 0.95rem;
+      padding: 14px;
+      border-radius: 10px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+      transition: all 0.2s;
+    }
+    .btn-copy-code:hover {
+      background: #d97706;
+    }
+    .btn-copy-code:active {
+      transform: scale(0.98);
+    }
+    @media (max-width: 600px) {
+      .sync-card {
+        padding: 20px 16px;
+        border-radius: 16px;
+      }
+      .main-title {
+        font-size: 1.30rem;
+      }
+      .platform-box {
+        padding: 16px 14px;
+      }
+      .bookmark-btn {
+        width: 100%;
+        font-size: 0.95rem;
+        padding: 12px 14px;
+      }
+    }
+  </style>
+  <script src="/analytics.js?v=118" defer></script>
+</head>
+<body>
+
+  <!-- Site Navigation Header -->
+  <header class="sync-header">
+    <div class="sync-header-inner">
+      <a href="/" style="text-decoration: none; display: flex; align-items: center; gap: 8px;">
+        <span style="font-weight: 800; font-size: 1.15rem; color: #0f172a; letter-spacing: -0.5px;">ZAIM<span style="color: #f59e0b;">ROSLI</span></span>
+        <span style="font-size: 0.65rem; background: #0f172a; color: #f59e0b; padding: 2px 7px; border-radius: 6px; font-weight: 700;">SYNC TOOL</span>
+      </a>
+      <a href="/admin" style="background: #0f172a; color: #ffffff; text-decoration: none; font-size: 0.80rem; font-weight: 700; padding: 7px 14px; border-radius: 8px; display: flex; align-items: center; gap: 6px;">
+        📱 Admin Portal
+      </a>
+    </div>
+  </header>
+
+  <main class="sync-container">
+    <div class="sync-card">
+      <div class="hero-badge">⚡ PropMall Auto-Sync v4.0 (Anti-Popup & Smart Scraper)</div>
+      <h1 class="main-title">1-Click PropMall Sync Bookmarklet</h1>
+      <p class="main-subtitle">
+        Alat pintar untuk mengekstrak tajuk sebenar, spesifikasi tanpa parking palsu untuk tanah, dan susunan bersih tanpa teks berulang bersama <b>KESEMUA GAMBAR HD</b> dalam 1 klik!
+      </p>
+
+      <hr class="section-divider">
+
+      <!-- LAPTOP / DESKTOP GUIDE -->
+      <div class="platform-box">
+        <div class="platform-header">
+          <span>💻</span>
+          <span>Untuk Laptop / Komputer (Paling Mudah)</span>
+        </div>
+        <p style="font-size: 0.88rem; color: #64748b; margin: 0 0 12px;">
+          Tarik butang kuning di bawah dan letakkan (*drag & drop*) pada <b>Bookmarks Bar</b> pelayar Google Chrome / Edge abang:
+        </p>
+
+        <div class="drag-btn-wrap">
+          <a id="drag-bookmark-btn" class="bookmark-btn" href="">
+            ⚡ Sync to ZaimRosli
+          </a>
+        </div>
+
+        <div class="step-list">
+          <div class="step-item">
+            <div class="step-num">1</div>
+            <div>Pastikan <b>Bookmarks Bar</b> terbuka di pelayar Chrome/Edge anda (tekan <code>Ctrl + Shift + B</code> pada Windows atau <code>Cmd + Shift + B</code> pada Mac).</div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">2</div>
+            <div>Tarik butang <b>⚡ Sync to ZaimRosli</b> di atas ke bar bookmarks pelayar anda.</div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">3</div>
+            <div>Buka mana-mana iklan di <a href="https://propmall.my" target="_blank" style="color: #d97706; font-weight: 700;">PropMall.my</a>, kemudian klik butang <b>⚡ Sync to ZaimRosli</b> pada bookmarks bar!</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MOBILE / MANUAL COPY GUIDE -->
+      <div class="platform-box">
+        <div class="platform-header">
+          <span>📱</span>
+          <span>Untuk Telefon / Salin Manual (Copy Code)</span>
+        </div>
+        <p style="font-size: 0.88rem; color: #64748b; margin: 0 0 14px;">
+          Jika anda menggunakan telefon pintar atau ingin memasukkan kod bookmark secara manual:
+        </p>
+
+        <button type="button" id="btn-copy-code" class="btn-copy-code">
+          <span>📋</span>
+          <span id="copy-btn-text">Salin Kod Bookmarklet (v4.0)</span>
+        </button>
+
+        <div class="step-list" style="margin-top: 16px;">
+          <div class="step-item">
+            <div class="step-num">1</div>
+            <div>Klik butang kuning <b>"Salin Kod Bookmarklet"</b> di atas.</div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">2</div>
+            <div>Bookmark mana-mana halaman di browser Chrome telefon, edit bookmark tersebut, namakan sebagai <b>"⚡ Sync ZaimRosli"</b> dan tampal (*paste*) kod yang disalin ke dalam ruangan URL.</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <script>
+    const bookmarkletCode = `javascript:(function() {
+  try {
+    function isIgnored(text) {
+      if (!text) return true;
+      const lower = text.toLowerCase();
+      return lower.includes('subscribe propmall') || 
+             lower.includes('propmall premium') || 
+             lower.includes('subscription') || 
+             lower.includes('renew membership') || 
+             lower.includes('upgrade to premium') || 
+             lower.includes('terms of service') || 
+             lower.includes('privacy policy');
+    }
+
+    // 1. Locate active modal or details container
+    let allContainers = Array.from(document.querySelectorAll('.modal, .modal-dialog, .modal-content, .card, div[id*="Modal"], div[class*="modal"], div[class*="listing"], div[class*="detail"], body'));
+    let targetEl = null;
+
+    for (const el of allContainers) {
+      const txt = el.innerText || '';
+      if ((txt.includes('asking RM') || txt.includes('Asking RM') || txt.includes('Listing Details') || txt.includes('Listing Descriptions') || txt.includes('monthly') || txt.includes('Built-up Size')) && !isIgnored(txt.substring(0, 100))) {
+        targetEl = el;
+        if (el.tagName !== 'BODY') break;
+      }
+    }
+    if (!targetEl) targetEl = document.body;
+
+    const rawText = targetEl.innerText || document.body.innerText || '';
+    const lines = rawText.split('\n').map(l => l.trim()).filter(l => l.length > 0 && !isIgnored(l));
+
+    // 2. Extract Price
+    let price = 0;
+    let priceStr = "RM 0";
+    let askingLineIndex = -1;
+
+    for (let i = 0; i < lines.length; i++) {
+      const line = lines[i];
+      const match = line.match(/(?:asking|asking price|harga|rental|asking rental)?\s*RM\s*([\d,]+(?:\.\d+)?)/i);
+      if (match) {
+        const val = parseFloat(match[1].replace(/,/g, ''));
+        if (val >= 500 && val !== 365 && val !== 360 && val !== 199 && val !== 299 && !line.includes('sqft') && !line.includes('per sqft')) {
+          price = val;
+          askingLineIndex = i;
+          break;
+        }
+      }
+    }
+
+    if (price === 0) {
+      const allRMs = rawText.matchAll(/RM\s*([\d,]+)/gi);
+      for (const m of allRMs) {
+        const val = parseFloat(m[1].replace(/,/g, ''));
+        if (val >= 500 && val !== 365 && val !== 360 && val !== 199) {
+          price = val;
+          break;
+        }
+      }
+    }
+
+    // 3. Extract Title
+    let title = '';
+    if (askingLineIndex !== -1 && lines[askingLineIndex + 1]) {
+      const candidate = lines[askingLineIndex + 1];
+      if (candidate.length > 8 && !isIgnored(candidate) && !candidate.startsWith('📍') && !candidate.startsWith('RM') && !candidate.includes('Listing Details')) {
+        title = candidate;
+      }
+    }
+
+    if (!title) {
+      for (const l of lines) {
+        if (l.length >= 10 && l.length <= 150 && !isIgnored(l)) {
+          if (/Sale|Rent|Let|Office|Corner|Freehold|Leasehold|Putrajaya|Cyberjaya|Cheras|Klang|Shah Alam|Bangi|Kajang|Ayer8|Presint|Land|Tanah|Kilang|Factory|Semi-D|Banglo|Teres|Condo|Apartment|Pangsapuri|Maran|Pahang|Perak|Johor|Nilai|Damansara|Petaling Jaya|Subang/i.test(l) &&
+              !l.startsWith('asking') && !l.startsWith('RM') && !l.includes('Built-up') && !l.includes('Listing Details') && !l.includes('LF Updated') && !l.includes('Repost')) {
+            title = l;
+            break;
+          }
+        }
+      }
+    }
+
+    title = title.replace(/^[\s\p{Extended_Pictographic}\p{Emoji_Presentation}‼️🔥✨📍🏢🏠🏭🏬🏪📌🔑🌟⚡]+?/u, '').trim();
+    title = title.replace(/^(?:WTS|WTL|WTR|WTB|FOR SALE|FOR RENT|COA LISTING|EXCLUSIVE LISTING|HOT LISTING|UNTUK DIJUAL|UNTUK DISEWA|DISEWA|DIJUAL)\s*[:\-!\=\/,\|]*\s*(?:FOR SALE|FOR RENT|WTS|WTL|WTR)?\s*/i, '').trim();
+    title = title.replace(/^[,:\-––—\/.!#|*]+\s*/, '').replace(/[,:\-––—\/.!#|*]+\s*$/, '').trim();
+    if (!title || title.length < 5 || isIgnored(title)) {
+      title = "Hartanah PropMall " + new Date().toLocaleDateString();
+    }
+
+    // 4. Category & Status (Rent vs Sale)
+    const urlStr = window.location.href;
+    let isRent = false;
+    if (urlStr.includes('forWTS=Y') || urlStr.includes('status=FOR_SALE') || urlStr.includes('status=SALE')) {
+      isRent = false;
+    } else if (urlStr.includes('forWTR=Y') || urlStr.includes('forWTL=Y') || urlStr.includes('status=FOR_RENT') || urlStr.includes('status=RENT')) {
+      isRent = true;
+    } else {
+      const hasForSale = /FOR SALE|UNTUK DIJUAL|WTS|FOR-SALE/i.test(rawText.substring(0, 1500) + ' ' + title);
+      const hasForRent = /FOR RENT|UNTUK DISEWA|DISEWA|WTL|WTR|RENTAL|MONTHLY|TO LET/i.test(rawText.substring(0, 1500) + ' ' + title);
+      if (hasForSale && !hasForRent) isRent = false;
+      else if (hasForRent && !hasForSale) isRent = true;
+      else isRent = /FOR RENT|SEWA|RENTAL|DISEWA|WTL|TO LET/i.test(title);
+    }
+
+    const status = isRent ? 'rent' : 'sale';
+    const category = isRent ? 'Rental' : 'Subsales';
+
+    if (price > 0) {
+      priceStr = isRent ? `RM ${price.toLocaleString('en-US')} / month` : `RM ${price.toLocaleString('en-US')}`;
+    }
+
+    // 5. Location & Region
+    let location = '';
+    if (askingLineIndex !== -1 && lines[askingLineIndex + 2]) {
+      const locCand = lines[askingLineIndex + 2].replace(/^📍\s*/, '').trim();
+      if (!isIgnored(locCand) && !locCand.includes('Freehold') && !locCand.includes('Built-up') && !locCand.includes('sqft') && locCand.length < 80) {
+        location = locCand;
+      }
+    }
+    if (!location) {
+      const locMatch = rawText.match(/📍\s*([^\n]+)/) || rawText.match(/(?:Presint\s*\d+|Putrajaya|Cyberjaya|Puchong|Ijok|Bangi|Sepang|Kajang|Petaling Jaya|Subang|Shah Alam|Telok Panglima Garang|Klang|Cheras|Ulu Langat|Gombak|Rawang|Ampang|Bangsar|Mont Kiara|KLCC|Maran|Kuantan|Ipoh|Taiping|Simpang|Seremban|Nilai|Melaka|Johor Bahru|Damansara)[^\n]*/i);
+      if (locMatch) location = locMatch[1] ? locMatch[1].trim() : locMatch[0].trim();
+    }
+    location = (location || "Selangor").replace(/^[,:\-––—\/.!#|*\s]+/,'').replace(/[,:\-––—\/.!#|*\s]+$/,'').trim();
+    if (isIgnored(location) || location.length > 80) location = "Selangor";
+
+    let region = "Selangor";
+    const locLower = (location + " " + title).toLowerCase();
+    if (locLower.includes('putrajaya')) region = "Putrajaya";
+    else if (locLower.includes('kuala lumpur') || locLower.includes('bangsar') || locLower.includes('cheras') || locLower.includes('ampang') || locLower.includes('mont kiara') || locLower.includes('klcc')) region = "Kuala Lumpur";
+    else if (locLower.includes('pahang') || locLower.includes('maran') || locLower.includes('kuantan')) region = "Pahang";
+    else if (locLower.includes('perak') || locLower.includes('taiping') || locLower.includes('ipoh') || locLower.includes('simpang')) region = "Perak";
+    else if (locLower.includes('johor')) region = "Johor";
+    else if (locLower.includes('melaka')) region = "Melaka";
+    else if (locLower.includes('sembilan') || locLower.includes('seremban') || locLower.includes('nilai')) region = "Negeri Sembilan";
+    else region = "Selangor";
+
+    // 6. Specs (BuiltUp, LandSize, Beds, Baths, Parking)
+    let builtUp = 0;
+    const buMatch = rawText.match(/(?:Built[ -]?up\s*(?:Size)?|Size\s*Built\s*up|Keluasan|BU|Luas)[^\n\d]*([\d,]+)\s*(?:sqft|kaki)/i);
+    if (buMatch) builtUp = parseInt(buMatch[1].replace(/,/g, ''));
+
+    let landSize = "-";
+    const laMatch = rawText.match(/(?:Land[ -]?Area|Land[ -]?Size|Tanah|Keluasan Tanah)[^\n:]*:\s*([^\n]+)/i);
+    if (laMatch) landSize = laMatch[1].replace(/\s*\([^)]*\)/g, '').trim();
+
+    let beds = 0, baths = 0, parking = 0;
+    const bedM = rawText.match(/(\d+)\s*(?:Rooms|Bilik|Bedrooms|Bed|R)\b/i);
+    if (bedM) beds = parseInt(bedM[1]);
+    const bathM = rawText.match(/(\d+)\s*(?:Bathrooms|Bath|Bilik Air|B\.Air|B)\b/i);
+    if (bathM) baths = parseInt(bathM[1]);
+    const parkM = rawText.match(/(\d+)\s*(?:Car\s*Park|Parking|Lot\s*Parking|Petak\s*Kereta|Carpark|Park)\b/i);
+    if (parkM) parking = parseInt(parkM[1]);
+
+    // 7. Property Type
+    let pType = "Shop / Office";
+    const combinedCheck = (title + " " + rawText.substring(0, 1500)).toLowerCase();
+    if (combinedCheck.includes('residential lot') || combinedCheck.includes('tanah lot') || combinedCheck.includes('lot banglo') || combinedCheck.includes('tanah banglo') || combinedCheck.includes('status bangunan')) pType = "Land";
+    else if (combinedCheck.includes('commercial land') || combinedCheck.includes('tanah komersial')) pType = "Commercial Land";
+    else if (combinedCheck.includes('industrial land') || combinedCheck.includes('tanah industri')) pType = "Industrial Land";
+    else if (combinedCheck.includes('land') || combinedCheck.includes('tanah') || combinedCheck.includes('pertanian') || combinedCheck.includes('agricultural') || combinedCheck.includes('sawit')) pType = "Land";
+    else if (combinedCheck.includes('factory') || combinedCheck.includes('kilang') || combinedCheck.includes('warehouse') || combinedCheck.includes('gudang')) pType = "Factory";
+    else if (combinedCheck.includes('office') || combinedCheck.includes('pejabat') || combinedCheck.includes('shop') || combinedCheck.includes('kedai') || combinedCheck.includes('retail') || combinedCheck.includes('shoplot')) pType = "Shop / Office";
+    else if (combinedCheck.includes('semi-d') || combinedCheck.includes('semi d') || combinedCheck.includes('semi detached')) pType = "Semi-D";
+    else if (combinedCheck.includes('bungalow') || combinedCheck.includes('banglo')) pType = "Bungalow";
+    else if (combinedCheck.includes('townhouse')) pType = "Townhouse";
+    else if (combinedCheck.includes('condo') || combinedCheck.includes('serviced residence') || combinedCheck.includes('service apartment') || combinedCheck.includes('apartment') || combinedCheck.includes('pangsapuri')) pType = "Condominium";
+    else if (combinedCheck.includes('terrace') || combinedCheck.includes('teres') || combinedCheck.includes('storey') || combinedCheck.includes('tingkat')) pType = "Terrace House";
+    else if (combinedCheck.includes('commercial') || combinedCheck.includes('komersial')) pType = "Commercial Space";
+
+    const isLandProperty = pType.toLowerCase().includes('tanah') || pType.toLowerCase().includes('land');
+
+    let tenure = isRent ? "-" : (combinedCheck.includes('leasehold') ? "Leasehold" : "Freehold");
+    let lotType = isRent ? "-" : (combinedCheck.includes('bumi') && !combinedCheck.includes('non-bumi') && !combinedCheck.includes('non bumi') ? "Bumi Lot" : "Non-Bumi Lot");
+    if (combinedCheck.includes('malay reserved') || combinedCheck.includes('malay reserve') || combinedCheck.includes('rezab melayu') || combinedCheck.includes('rizab melayu')) {
+      lotType = "Malay Reserve";
+    }
+
+    // 8. Clean Copywriting & Agent Info
+    let bodyCopywriting = '';
+    const descHeaderEl = document.querySelector('#ModalListingListingCopywriting, div.listing-descriptions, div[id*="Copywriting"], div[class*="description"]');
+    if (descHeaderEl && descHeaderEl.innerText) {
+      bodyCopywriting = descHeaderEl.innerText.trim();
+    } else {
+      const descIdx = rawText.indexOf('Listing Descriptions');
+      if (descIdx !== -1) {
+        bodyCopywriting = rawText.substring(descIdx + 'Listing Descriptions'.length).trim();
+      }
+    }
+
+    let cleanCopy = bodyCopywriting;
+    const contactCut = cleanCopy.search(/(?:Interested\?|Contact\s*Me|Co-Marketing|Share Listing|Download Listing|Published|PropMall|Copyright)/i);
+    let agentFooterText = '';
+    if (contactCut !== -1) {
+      agentFooterText = cleanCopy.substring(contactCut).trim();
+      cleanCopy = cleanCopy.substring(0, contactCut).trim();
+    }
+
+    const titleLower = title.toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
+    const locLowerClean = location.toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
+    const rawCopyLines = cleanCopy.split('\n').map(l => l.trim()).filter(Boolean);
+    
+    let processedLines = [];
+    for (let line of rawCopyLines) {
+      const lLower = line.toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
+      if (lLower === titleLower || lLower === 'wts for sale' || lLower === 'wtl for rent' || lLower === 'for sale' || lLower === 'for rent') continue;
+      if (lLower === locLowerClean || lLower.startsWith('location ') || lLower.startsWith('lokasi ') || lLower.startsWith('type ') || lLower.startsWith('jenis ')) continue;
+      if (lLower.startsWith('asking price') || lLower.startsWith('harga jualan') || lLower.startsWith('asking rm') || lLower.startsWith('harga rm')) continue;
+      if (lLower === 'details' || lLower === 'maklumat' || lLower === 'spesifikasi') continue;
+      if (line.startsWith('***') || line.startsWith('===') || line.startsWith('---')) continue;
+      if (line.startsWith('+') && (lLower.includes('selangor') || lLower.includes('putrajaya') || lLower.includes('kl') || lLower.includes('freehold') || lLower.includes('built up') || lLower.includes('title'))) continue;
+
+      if (/^(?:amenities|kemudahan|fasiliti)\s*[:\-]?$/i.test(line)) {
+        processedLines.push('\nAMENITIES:');
+        continue;
+      }
+      if (/^(?:accessibilities|accessibility|access|akses|kemudahan akses)\s*[:\-]?$/i.test(line)) {
+        processedLines.push('\nACCESSIBILITIES:');
+        continue;
+      }
+
+      let cleanLine = line.replace(/^[~✔✅•*+]\s*/, '').trim();
+      if (!cleanLine.startsWith('-')) {
+        cleanLine = '- ' + cleanLine;
+      }
+      processedLines.push(cleanLine);
+    }
+
+    let cleanCopyText = processedLines.join('\n').trim();
+
+    let agentName = '', agentAgency = '', agentTel = '';
+    const telMatch = (agentFooterText || rawText).match(/(?:Tel|Phone|Contact|Mobile|WhatsApp|Wasap|Call)?\s*[:\=]?\s*(\+?6?01[\d\-\s]{7,14})/i);
+    if (telMatch) agentTel = telMatch[1].trim();
+
+    const agentLines = (agentFooterText || '').split('\n').map(l => l.trim()).filter(Boolean);
+    for (let i = 0; i < agentLines.length; i++) {
+      const l = agentLines[i];
+      if (l.includes('Contact Me Now') && agentLines[i+1]) {
+        agentName = agentLines[i+1];
+        if (agentLines[i+2] && !agentLines[i+2].toLowerCase().startsWith('tel')) {
+          agentAgency = agentLines[i+2];
+        }
+      }
+    }
+
+    // 8.5 SMART REFERRAL SHARE URL EXTRACTOR
+    let finalRefUrl = '';
+    if (window.location.href.includes('/share/')) {
+      finalRefUrl = window.location.href;
+    } else {
+      const shareInputs = Array.from(document.querySelectorAll('input[value*="/share/"], a[href*="/share/"], [data-share-url], [data-url*="/share/"]'));
+      for (const el of shareInputs) {
+        const val = el.value || el.href || el.getAttribute('data-share-url') || el.getAttribute('data-url') || '';
+        if (val.includes('/share/')) {
+          finalRefUrl = val.trim();
+          break;
+        }
+      }
+      if (!finalRefUrl) {
+        const shareHtmlMatch = document.documentElement.innerHTML.match(/https?:\/\/(?:www\.)?propmall\.(?:co|my)\/share\/[a-zA-Z0-9_-]+/i);
+        if (shareHtmlMatch) {
+          finalRefUrl = shareHtmlMatch[0];
+        }
+      }
+    }
+
+    let structuredDesc = `${isRent ? 'WTL / FOR RENT' : 'WTS / FOR SALE'}\n\n`;
+    structuredDesc += `${title}\n\n`;
+    structuredDesc += `PROPERTY DETAILS\n`;
+    structuredDesc += `- Type : ${pType}\n`;
+    if (!isRent) structuredDesc += `- Tenure : ${tenure} (${lotType})\n`;
+    if (builtUp > 0 && !isLandProperty) structuredDesc += `- Build Up : ${builtUp} sqft\n`;
+    if (landSize !== "-") structuredDesc += `- Land Area : ${landSize}\n`;
+    if (beds > 0 && !isLandProperty) structuredDesc += `- Bedroom : ${beds}\n`;
+    if (baths > 0 && !isLandProperty) structuredDesc += `- Bathroom : ${baths}\n`;
+    if (parking > 0 && !isLandProperty) structuredDesc += `- Parking : ${parking}\n`;
+
+    if (cleanCopyText && cleanCopyText.length > 10) {
+      structuredDesc += `\n${cleanCopyText}\n\n`;
+    } else {
+      structuredDesc += `\n`;
+    }
+
+    structuredDesc += `========================\n`;
+    structuredDesc += `${isRent ? 'Asking Rental' : 'Asking Price'} : ${priceStr}\n`;
+    structuredDesc += `========================\n\n`;
+
+    structuredDesc += `--- MAKLUMAT ASAL (RUJUKAN EJEN) ---\n`;
+    if (agentName) structuredDesc += `Ejen Listing : ${agentName}\n`;
+    if (agentAgency) structuredDesc += `Agensi : ${agentAgency}\n`;
+    if (agentTel) structuredDesc += `No. Tel : ${agentTel}\n`;
+    if (finalRefUrl) structuredDesc += `Pautan Rujukan : ${finalRefUrl}\n`;
+
+    // 9. Extract HD Images
+    let allImgs = [];
+    const imgs = document.querySelectorAll('img[src*="img-property/"], img[src*="propmall"], img[data-src*="img-property/"], img[id*="propmall"]');
+    imgs.forEach(img => {
+      let src = (img.src || img.getAttribute('data-src') || img.id || '').split('?')[0].trim();
+      if (src.includes('/img-property/') && !src.includes('logo') && !allImgs.includes(src)) {
+        allImgs.push(src);
+      }
+    });
+
+    const matches = document.documentElement.innerHTML.match(/https?:\/\/[^\s"'>]+\/media\/img-property\/[^\s"'>]+\.(?:jpg|png|jpeg)/gi) || [];
+    matches.forEach(url => {
+      let clean = url.split('?')[0].trim();
+      if (!allImgs.includes(clean)) allImgs.push(clean);
+    });
+
+    const coverImage = allImgs.length > 0 ? allImgs[0] : "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1200&q=80";
+    const slug = title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+
+    const newListing = {
+      id: `prop-${Date.now()}`,
+      slug: slug,
+      title: title,
+      price: price,
+      priceStr: priceStr,
+      category: category,
+      location: location,
+      region: region,
+      type: pType,
+      status: status,
+      beds: isLandProperty ? 0 : beds,
+      baths: isLandProperty ? 0 : baths,
+      parking: isLandProperty ? 0 : parking,
+      size: isLandProperty ? 0 : builtUp,
+      landSize: landSize,
+      tenure: tenure,
+      lotType: lotType,
+      image: coverImage,
+      images: allImgs.length > 0 ? allImgs : [coverImage],
+      description: structuredDesc.trim(),
+      refUrl: finalRefUrl || ''
+    };
+
+    const syncPayload = encodeURIComponent(JSON.stringify(newListing));
+    const syncUrl = 'https://zaimrosli.my/admin?auto_sync=' + syncPayload;
+
+    // Use native anchor trigger to bypass popup blockers
+    const a = document.createElement('a');
+    a.href = syncUrl;
+    a.target = '_blank';
+    a.rel = 'noopener noreferrer';
+    document.body.appendChild(a);
+    a.click();
+    setTimeout(() => { a.remove(); }, 500);
+
+  } catch(err) {
+    alert('Ralat semasa mengekstrak PropMall: ' + err.message);
+  }
+})();`;
+
+    const dragBtn = document.getElementById('drag-bookmark-btn');
+    if (dragBtn) {
+      dragBtn.setAttribute('href', bookmarkletCode);
+    }
+
+    const copyBtn = document.getElementById('btn-copy-code');
+    const copyText = document.getElementById('copy-btn-text');
+
+    if (copyBtn && copyText) {
+      copyBtn.addEventListener('click', () => {
+        navigator.clipboard.writeText(bookmarkletCode).then(() => {
+          copyBtn.style.background = '#10b981';
+          copyBtn.style.color = '#ffffff';
+          copyText.textContent = '✅ Berjaya Disalin ke Clipboard!';
+          setTimeout(() => {
+            copyBtn.style.background = '#f59e0b';
+            copyBtn.style.color = '#0f172a';
+            copyText.textContent = 'Salin Kod Bookmarklet (v4.0)';
+          }, 3500);
+        }).catch(() => {
+          alert('Sila guna Chrome atau Safari untuk fungsi salin automatik.');
+        });
+      });
+    }
+  </script>
+</body>
+</html>
