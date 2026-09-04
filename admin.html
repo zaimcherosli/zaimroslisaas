@@ -1883,7 +1883,7 @@
             <p style="font-size: 0.82rem; color: #64748b; margin: 2px 0 0;">Organize MyListing, COA Listing & Undercon in one streamlined workspace.</p>
           </div>
           <div style="display: flex; gap: 8px; align-items: center;">
-            <button onclick="loadPropertiesList()" class="renhub-action-btn" style="padding: 9px 14px; font-weight: 800;" title="Refresh Data">Refresh</button>
+            <button id="btn-refresh-portfolio" onclick="manualRefreshProperties()" class="renhub-action-btn" style="padding: 9px 14px; font-weight: 800; transition: all 0.25s ease;" title="Muat Semula & Selaraskan Data Awan">🔄 Refresh</button>
             <button onclick="openModal()" class="btn-add-primary" style="background: linear-gradient(135deg, #f59e0b, #d97706); color: #ffffff; font-weight: 800; font-size: 0.85rem; padding: 10px 20px; border-radius: 9px; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 2px 8px rgba(217, 119, 6, 0.25); white-space: nowrap; flex-shrink: 0;">
               + Add Property
             </button>
@@ -2429,7 +2429,14 @@
       window.location.href = 'login.html?logout=true';
     }
 
-    async function loadPropertiesList() {
+    async function loadPropertiesList(isManual = false) {
+      const refreshBtn = document.getElementById('btn-refresh-portfolio');
+      if (isManual && refreshBtn) {
+        refreshBtn.innerHTML = '⌛ Menyegerak...';
+        refreshBtn.style.opacity = '0.7';
+        refreshBtn.disabled = true;
+      }
+
       let localProps = [];
       const stored = localStorage.getItem('ZAIM_ROSLI_PROPERTIES');
       if (stored) {
@@ -2439,50 +2446,92 @@
         } catch(e) {}
       }
 
-      try {
-        const res = await fetch('https://zaimrosli-worker.huzaimrosli.workers.dev/api/properties?t=' + Date.now(), {
-          signal: AbortSignal.timeout(6000)
-        });
-        if (res.ok) {
-          let remoteData = await res.json();
-          if (typeof remoteData === 'string') {
-            try { remoteData = JSON.parse(remoteData); } catch(e) {}
-          }
-          if (remoteData && !Array.isArray(remoteData) && typeof remoteData === 'object') {
-            remoteData = [remoteData];
-          }
-          if (Array.isArray(remoteData) && remoteData.length > 0) {
-            let remoteProps = remoteData.filter(p => p && p.id !== '__SYS_LOCATIONS_DATA__');
+      // Endpoints to query: 1. Same-origin Cloudflare Pages API, 2. Direct Worker endpoint
+      const endpoints = [
+        '/api/properties?t=' + Date.now(),
+        'https://zaimrosli-worker.huzaimrosli.workers.dev/api/properties?t=' + Date.now()
+      ];
 
-            // Merge any locally added/newer properties that might not have reached KV yet
-            if (localProps.length > remoteProps.length) {
-              const remoteIds = new Set(remoteProps.map(p => p.id));
-              const missingLocals = localProps.filter(p => !remoteIds.has(p.id));
-              if (missingLocals.length > 0) {
-                remoteProps = [...missingLocals, ...remoteProps];
-                // Sync the merged list back to KV
-                saveToStorage();
-              }
+      let remoteProps = null;
+
+      for (const endpoint of endpoints) {
+        try {
+          const res = await fetch(endpoint, {
+            cache: 'no-store',
+            headers: { 'Pragma': 'no-cache', 'Cache-Control': 'no-cache' },
+            signal: AbortSignal.timeout(12000)
+          });
+          if (res.ok) {
+            let data = await res.json();
+            if (typeof data === 'string') {
+              try { data = JSON.parse(data); } catch(e) {}
             }
+            if (data && !Array.isArray(data) && typeof data === 'object') {
+              data = [data];
+            }
+            if (Array.isArray(data) && data.length > 0) {
+              remoteProps = data.filter(p => p && p.id !== '__SYS_LOCATIONS_DATA__');
+              break;
+            }
+          }
+        } catch(errFetch) {
+          console.warn('Endpoint fetch error (' + endpoint + '):', errFetch.message);
+        }
+      }
 
-            currentProperties = remoteProps;
-            localStorage.setItem('ZAIM_ROSLI_PROPERTIES', JSON.stringify(currentProperties));
-            updateRenhubStateFilterOptions();
-            renderListingsGrid();
-            return;
+      if (remoteProps && remoteProps.length > 0) {
+        // If local device has unsaved additions, safely merge
+        if (localProps.length > remoteProps.length) {
+          const remoteIds = new Set(remoteProps.map(p => p.id));
+          const missingLocals = localProps.filter(p => !remoteIds.has(p.id));
+          if (missingLocals.length > 0) {
+            remoteProps = [...missingLocals, ...remoteProps];
+            saveToStorage();
           }
         }
-      } catch(e) {
-        console.error('Live fetch error:', e);
+
+        currentProperties = remoteProps;
+        localStorage.setItem('ZAIM_ROSLI_PROPERTIES', JSON.stringify(currentProperties));
+        updateRenhubStateFilterOptions();
+        renderListingsGrid();
+
+        if (isManual && refreshBtn) {
+          refreshBtn.innerHTML = '✓ ' + currentProperties.length + ' Listing!';
+          refreshBtn.style.background = '#10b981';
+          refreshBtn.style.color = '#ffffff';
+          setTimeout(() => {
+            refreshBtn.innerHTML = '🔄 Refresh';
+            refreshBtn.style.background = '';
+            refreshBtn.style.color = '';
+            refreshBtn.style.opacity = '1';
+            refreshBtn.disabled = false;
+          }, 2500);
+        }
+        return;
       }
 
+      // Fallback to local storage or bundled properties-data.js
       if (localProps.length > 0) {
         currentProperties = localProps;
-      } else {
-        currentProperties = (typeof PROPERTIES_DATA !== 'undefined' && Array.isArray(PROPERTIES_DATA)) ? [...PROPERTIES_DATA] : [];
+      } else if (typeof PROPERTIES_DATA !== 'undefined' && Array.isArray(PROPERTIES_DATA)) {
+        currentProperties = [...PROPERTIES_DATA];
       }
 
+      updateRenhubStateFilterOptions();
       renderListingsGrid();
+
+      if (isManual && refreshBtn) {
+        refreshBtn.innerHTML = '⚠️ Offline (' + currentProperties.length + ')';
+        setTimeout(() => {
+          refreshBtn.innerHTML = '🔄 Refresh';
+          refreshBtn.style.opacity = '1';
+          refreshBtn.disabled = false;
+        }, 2000);
+      }
+    }
+
+    function manualRefreshProperties() {
+      loadPropertiesList(true);
     }
 
     // Real-Time Cross-Device Sync (Instantly updates desktop when edited on mobile & vice versa)
@@ -3365,34 +3414,48 @@
       // 1. Save to local storage immediately
       localStorage.setItem('ZAIM_ROSLI_PROPERTIES', JSON.stringify(currentProperties));
 
-      // 2. Persist to Cloudflare Worker KV Live Database
+      // 2. Persist to Cloudflare Live Database via Same-Origin API & Worker Fallback
       try {
         let fullList = [...currentProperties];
         const authHeaders = await getAdminAuthHeaders({ 'Content-Type': 'application/json' });
         
-        let res = await fetch('https://zaimrosli-worker.huzaimrosli.workers.dev/api/properties', {
-          method: 'POST',
-          headers: authHeaders,
-          body: JSON.stringify(fullList),
-          signal: AbortSignal.timeout(8000)
-        });
+        let saved = false;
+        const endpoints = [
+          '/api/properties',
+          'https://zaimrosli-worker.huzaimrosli.workers.dev/api/properties'
+        ];
 
-        if (!res.ok) {
-          console.warn('First KV save attempt failed, retrying with direct admin key...');
-          authHeaders['Authorization'] = 'Bearer zr_admin_sec_2026_x89p';
-          authHeaders['X-Admin-Key'] = 'zr_admin_sec_2026_x89p';
-          res = await fetch('https://zaimrosli-worker.huzaimrosli.workers.dev/api/properties', {
-            method: 'POST',
-            headers: authHeaders,
-            body: JSON.stringify(fullList),
-            signal: AbortSignal.timeout(8000)
-          });
-        }
+        for (const ep of endpoints) {
+          try {
+            let res = await fetch(ep, {
+              method: 'POST',
+              headers: authHeaders,
+              body: JSON.stringify(fullList),
+              signal: AbortSignal.timeout(10000)
+            });
 
-        if (res.ok) {
-          console.log('✓ Successfully persisted ' + fullList.length + ' properties to Cloudflare KV');
-        } else {
-          console.error('KV save failed with status:', res.status);
+            if (res.ok) {
+              console.log('✓ Successfully persisted ' + fullList.length + ' properties via ' + ep);
+              saved = true;
+              break;
+            } else if (res.status === 401) {
+              authHeaders['Authorization'] = 'Bearer zr_admin_sec_2026_x89p';
+              authHeaders['X-Admin-Key'] = 'zr_admin_sec_2026_x89p';
+              let retryRes = await fetch(ep, {
+                method: 'POST',
+                headers: authHeaders,
+                body: JSON.stringify(fullList),
+                signal: AbortSignal.timeout(10000)
+              });
+              if (retryRes.ok) {
+                console.log('✓ Successfully persisted with admin key via ' + ep);
+                saved = true;
+                break;
+              }
+            }
+          } catch(errEp) {
+            console.warn('Save attempt failed on ' + ep + ':', errEp.message);
+          }
         }
       } catch (e) {
         console.error('KV save error:', e);
