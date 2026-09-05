@@ -2034,7 +2034,7 @@
 
         <div class="form-group" style="margin-bottom: 16px;">
           <label style="display:block; font-size:0.75rem; font-weight:700; color:#64748b; margin-bottom:6px; text-transform:uppercase;">PRICE / RENTAL RATE</label>
-          <input type="text" id="past-form-price" class="form-input" placeholder="e.g. RM 2,100 / mo OR RM 1,450,000" required>
+          <input type="text" id="past-form-price" class="form-input" placeholder="e.g. RM 2,100 / month OR RM 1,450,000" required>
         </div>
 
         <div class="form-group" style="margin-bottom: 24px;">
@@ -2953,8 +2953,8 @@
           : `<span class="renhub-badge badge-for-rent">For Rent</span>`;
 
         const priceDisplay = (p.price != null && !isNaN(Number(p.price))) 
-          ? (p.status === 'sale' ? `RM ${Number(p.price).toLocaleString('en-US')}` : `RM ${Number(p.price).toLocaleString('en-US')} / mo`) 
-          : (p.priceStr || 'RM 0');
+          ? (p.status === 'sale' ? `RM ${Number(p.price).toLocaleString('en-US')}` : `RM ${Number(p.price).toLocaleString('en-US')} / month`) 
+          : ((p.priceStr || 'RM 0').replace(/\/\s*(mo|month|bln|bulan|mth)\b/gi, '/ month'));
 
         const specs = [];
         if (p.beds > 0) specs.push(`BD ${p.beds}`);
@@ -4309,10 +4309,10 @@
       }
       if (!pastDealsList || pastDealsList.length === 0) {
         pastDealsList = [
-          { id: 'p1', title: 'Double Storey Terrace House', type: 'Terrace House', location: 'Bandar Seri Putra, Bangi', category: 'RENTED', price: 'RM 2,100 / mo', image: 'https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=800&q=80' },
-          { id: 'p2', title: 'The Domain 4 - Neo Cyber', type: 'Condominium', location: 'Cyberjaya, Selangor', category: 'RENTED', price: 'RM 1,200 / mo', image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=800&q=80' },
+          { id: 'p1', title: 'Double Storey Terrace House', type: 'Terrace House', location: 'Bandar Seri Putra, Bangi', category: 'RENTED', price: 'RM 2,100 / month', image: 'https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=800&q=80' },
+          { id: 'p2', title: 'The Domain 4 - Neo Cyber', type: 'Condominium', location: 'Cyberjaya, Selangor', category: 'RENTED', price: 'RM 1,200 / month', image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=800&q=80' },
           { id: 'p3', title: '3-Storey Semi-D Villa Symphony Hills', type: 'Semi-D', location: 'Cyberjaya, Selangor', category: 'SOLD', price: 'RM 1,450,000', image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80' },
-          { id: 'p4', title: 'Partially Fitted Office Prima 10', type: 'Shop / Office', location: 'Cyberjaya, Selangor', category: 'RENTED', price: 'RM 35,000 / mo', image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80' }
+          { id: 'p4', title: 'Partially Fitted Office Prima 10', type: 'Shop / Office', location: 'Cyberjaya, Selangor', category: 'RENTED', price: 'RM 35,000 / month', image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80' }
         ];
       }
 

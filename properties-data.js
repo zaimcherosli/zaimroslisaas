@@ -5195,7 +5195,7 @@ const PROPERTIES_DATA = [
       "https://zaimrosli-worker.huzaimrosli.workers.dev/image/prop_1786773260018_yjcnj.jpg",
       "https://zaimrosli-worker.huzaimrosli.workers.dev/image/prop_1786773260351_7yyjs.jpg"
     ],
-    "description": "WTL / FOR RENT\n\nFACTORY IN TELOK MENGKUANG, TELOK PANGLIMA GARANG FOR RENT AND SALE\n\nPROPERTY DETAILS\n- Type : Kilang\n- Build Up : 139000 sqft\n- Land Area : 5.00 acre\n\n=========================\nAsking Rental : RM 239,300 / bln\n=========================\n\n\n--- MAKLUMAT ASAL ---\nFACTORY IN TELOK MENGKUANG, TELOK PANGLIMA GARANG FOR RENT AND SALE\n\nRM 239,300 Monthly\n\n+ Telok Panglima Garang, Selangor\n+ Factory\n+ Built-up Size : 139,000 sqft\n+ Land Area : 5.00 acre\n\nPropMall, Built By Agents, For Agents\n\nFACTORY IN TELOK MENGKUANG, TELOK PANGLIMA GARANG FOR RENT AND SALE",
+    "description": "WTL / FOR RENT\n\nFACTORY IN TELOK MENGKUANG, TELOK PANGLIMA GARANG FOR RENT AND SALE\n\nPROPERTY DETAILS\n- Type : Kilang\n- Build Up : 139000 sqft\n- Land Area : 5.00 acre\n\n=========================\nAsking Rental : RM 239,300 / month\n=========================\n\n\n--- MAKLUMAT ASAL ---\nFACTORY IN TELOK MENGKUANG, TELOK PANGLIMA GARANG FOR RENT AND SALE\n\nRM 239,300 Monthly\n\n+ Telok Panglima Garang, Selangor\n+ Factory\n+ Built-up Size : 139,000 sqft\n+ Land Area : 5.00 acre\n\nPropMall, Built By Agents, For Agents\n\nFACTORY IN TELOK MENGKUANG, TELOK PANGLIMA GARANG FOR RENT AND SALE",
     "refUrl": "https://propmall.co/share/g9bsu45ec5",
     "hidden": false,
     "listingSource": "coa"
@@ -5224,7 +5224,7 @@ const PROPERTIES_DATA = [
     "images": [
       "https://cdn.propmall.net/media/img-property/list-129635/list-129635-01-695890194189c7.70449302.jpg"
     ],
-    "description": "WTL / FOR RENT\n\n3.29 acres Industrial Land In Taman Perindustrian Pulau Indah For Rent, Flat Land With Crusher Run\n\nPROPERTY DETAILS\n- Type : Industrial Land\n- Land Area : 3.29 acre\n\n=========================\nAsking Rental : RM 50,000 / bln\n=========================\n\n\n--- MAKLUMAT ASAL ---\n3.29 acres Industrial Land In Taman Perindustrian Pulau Indah For Rent, Flat Land With Crusher Run\n\nRM 50,000 Monthly\n\n+ Pulau Indah (Pulau Lumut), Selangor\n+ Industrial Land\n+ Land Area : 3.29 acre\n\nPropMall, Built By Agents, For Agents\n\n3.29 acres Industrial Land In Taman Perindustrian Pulau Indah For Rent, Flat Land With  Crusher Run",
+    "description": "WTL / FOR RENT\n\n3.29 acres Industrial Land In Taman Perindustrian Pulau Indah For Rent, Flat Land With Crusher Run\n\nPROPERTY DETAILS\n- Type : Industrial Land\n- Land Area : 3.29 acre\n\n=========================\nAsking Rental : RM 50,000 / month\n=========================\n\n\n--- MAKLUMAT ASAL ---\n3.29 acres Industrial Land In Taman Perindustrian Pulau Indah For Rent, Flat Land With Crusher Run\n\nRM 50,000 Monthly\n\n+ Pulau Indah (Pulau Lumut), Selangor\n+ Industrial Land\n+ Land Area : 3.29 acre\n\nPropMall, Built By Agents, For Agents\n\n3.29 acres Industrial Land In Taman Perindustrian Pulau Indah For Rent, Flat Land With  Crusher Run",
     "refUrl": "https://propmall.co/share/g7pekwr9b2",
     "hidden": false,
     "listingSource": "coa"
@@ -5253,7 +5253,7 @@ const PROPERTIES_DATA = [
     "images": [
       "https://cdn.propmall.net/media/img-property/list-165880/list-165880-01-6a7f45a8966045.47718906.jpg"
     ],
-    "description": "WTL / FOR RENT\n\n,500 Monthly\n\nPROPERTY DETAILS\n- Type : Teres\n- Build Up : 2019 sqft\n- Land Area : 2,019 sqft\n- Bedroom : 4\n- Bathroom : 4\n- Parking : 2\n\n=========================\nAsking Rental : RM 2,500 / bln\n=========================\n\n\n--- MAKLUMAT ASAL ---\nElmina Valley 2 @ City Of Elmina Double Storey Terrace House For Rent\n\nRM 2,500 Monthly\n\n+ Elmina, Selangor\n+ Terrace (Landed), Two Storeys, Intermediate\n+ Built-up Size : 2,019 sqft\n+ Land Area : 2,019 sqft\n+ 4 Rooms and 4 Bathrooms\n\nPropMall.my\n\nElmina Valley 2 @ City Of Elmina Double Storey Terrace House For Rent",
+    "description": "WTL / FOR RENT\n\n,500 Monthly\n\nPROPERTY DETAILS\n- Type : Teres\n- Build Up : 2019 sqft\n- Land Area : 2,019 sqft\n- Bedroom : 4\n- Bathroom : 4\n- Parking : 2\n\n=========================\nAsking Rental : RM 2,500 / month\n=========================\n\n\n--- MAKLUMAT ASAL ---\nElmina Valley 2 @ City Of Elmina Double Storey Terrace House For Rent\n\nRM 2,500 Monthly\n\n+ Elmina, Selangor\n+ Terrace (Landed), Two Storeys, Intermediate\n+ Built-up Size : 2,019 sqft\n+ Land Area : 2,019 sqft\n+ 4 Rooms and 4 Bathrooms\n\nPropMall.my\n\nElmina Valley 2 @ City Of Elmina Double Storey Terrace House For Rent",
     "refUrl": "https://propmall.my/share/g7lic1zeow",
     "hidden": false,
     "listingSource": "coa"
@@ -5376,7 +5376,7 @@ const PROPERTIES_DATA = [
     "slug": "premium-office-space-pavilion-embassy-corporate-suites-jalan-ampang-klcc",
     "title": "Premium Office Space Pavilion Embassy Corporate Suites Jalan Ampang KLCC",
     "price": 8700,
-    "priceStr": "RM 8,700 / bln",
+    "priceStr": "RM 8,700 / month",
     "category": "Rental",
     "location": "Jalan Ampang KLCC",
     "region": "Selangor",
@@ -5397,7 +5397,7 @@ const PROPERTIES_DATA = [
       "https://cdn.propmall.net/media/img-property/list-143758/list-143758-04-69d731b3d8cc59.23192383.jpg",
       "https://cdn.propmall.net/media/img-property/list-143758/list-143758-05-69d731b4750603.71684970.jpg"
     ],
-    "description": "WTL / FOR RENT\n\nPremium Office Space Pavilion Embassy Corporate Suites Jalan Ampang KLCC\n\nPROPERTY DETAILS\n- Type : Kedai / Pejabat\n- Build Up : 1149 sqft\n\n=========================\nAsking Rental : RM 8,700 / bln\n=========================\n\n\n--- MAKLUMAT ASAL ---\nPremium Office Space Pavilion Embassy Corporate Suites Jalan Ampang KLCC\n\nRM 8,700 Monthly\n\n+ Jalan Ampang, Kuala Lumpur\n+ Office Space\n+ Built-up Size : 1,149 sqft\n\nPremium Office Space Pavilion Embassy Corporate Suites Jalan Ampang KLCC\n\nPropMall, Built By Agents, For Agents",
+    "description": "WTL / FOR RENT\n\nPremium Office Space Pavilion Embassy Corporate Suites Jalan Ampang KLCC\n\nPROPERTY DETAILS\n- Type : Kedai / Pejabat\n- Build Up : 1149 sqft\n\n=========================\nAsking Rental : RM 8,700 / month\n=========================\n\n\n--- MAKLUMAT ASAL ---\nPremium Office Space Pavilion Embassy Corporate Suites Jalan Ampang KLCC\n\nRM 8,700 Monthly\n\n+ Jalan Ampang, Kuala Lumpur\n+ Office Space\n+ Built-up Size : 1,149 sqft\n\nPremium Office Space Pavilion Embassy Corporate Suites Jalan Ampang KLCC\n\nPropMall, Built By Agents, For Agents",
     "refUrl": "https://propmall.co/share/en2lzcv43b",
     "listingSource": "coa"
   },
@@ -5406,7 +5406,7 @@ const PROPERTIES_DATA = [
     "slug": "partially-fitted-office-prima-10-cyberjaya",
     "title": "Partially Fitted Office Prima 10 Cyberjaya",
     "price": 35000,
-    "priceStr": "RM 35,000 / bln",
+    "priceStr": "RM 35,000 / month",
     "category": "Rental",
     "location": "Cyberjaya",
     "region": "Selangor",
@@ -5437,7 +5437,7 @@ const PROPERTIES_DATA = [
     "slug": "corner-townhouse-casa-bluebell-cybersouth",
     "title": "[CORNER] Townhouse Casa Bluebell, Cybersouth",
     "price": 1700,
-    "priceStr": "RM 1,700 / bln",
+    "priceStr": "RM 1,700 / month",
     "category": "Rental",
     "location": "Selangor",
     "region": "Selangor",
@@ -5469,7 +5469,7 @@ const PROPERTIES_DATA = [
     "slug": "lot-15-sjcc-fully-furnished-near-lrt",
     "title": "Lot 15 SJCC (Fully furnished near LRT)",
     "price": 3900,
-    "priceStr": "RM 3,900 / bln",
+    "priceStr": "RM 3,900 / month",
     "category": "Rental",
     "location": "Subang Jaya, Selangor",
     "region": "Selangor",
@@ -5506,7 +5506,7 @@ const PROPERTIES_DATA = [
     "slug": "fully-furnished-prima-u1-condominium-seksyen-13-shah-alam",
     "title": "Fully Furnished Prima U1 Condominium, Seksyen 13, Shah Alam",
     "price": 1800,
-    "priceStr": "RM 1,800 / bln",
+    "priceStr": "RM 1,800 / month",
     "category": "Rental",
     "location": "Seksyen 13, Shah Alam",
     "region": "Selangor",
@@ -5624,7 +5624,7 @@ const PROPERTIES_DATA = [
     "slug": "for-rent-available-in-july-2026-townhouse-kita-bayu-cybersouth",
     "title": "FOR RENT AVAILABLE IN JULY 2026 TOWNHOUSE KITA BAYU @ CYBERSOUTH",
     "price": 1500,
-    "priceStr": "RM 1,500 / bln",
+    "priceStr": "RM 1,500 / month",
     "location": "Kita Bayu, Cybersouth, Sepang, Selangor",
     "region": "Selangor",
     "type": "Townhouse",
