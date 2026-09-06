@@ -185,7 +185,7 @@ function createPropertyCardHTML(item) {
   }
 
   const detailUrl = `/property/${item.slug || item.id}`;
-  const cleanTitle = toTitleCase(item.title || 'Property Listing');
+  const cleanTitle = typeof toTitleCase === 'function' ? toTitleCase(item.title || 'Property Listing') : (item.title || 'Property Listing');
   const isSale = (item.status || 'sale').toLowerCase() === 'sale';
   let priceDisplay = item.priceStr;
   if (!priceDisplay && item.price != null && !isNaN(Number(item.price)) && Number(item.price) > 0) {
@@ -415,15 +415,16 @@ window.calcValuationFee = calcValuationFee;
 // Live Cloudflare KV Synchronizer for All Public Pages (Real-Time Mobile & Desktop Sync)
 (function initLivePropertiesSync() {
   function syncFromStorage() {
-  try {
-    const local = localStorage.getItem('ZAIM_ROSLI_PROPERTIES');
-    if (local) {
-      const parsed = JSON.parse(local);
-      if (Array.isArray(parsed) && parsed.length > 0) {
-        window.PROPERTIES_DATA = parsed;
+    try {
+      const local = localStorage.getItem('ZAIM_ROSLI_PROPERTIES');
+      if (local) {
+        const parsed = JSON.parse(local);
+        if (Array.isArray(parsed) && parsed.length > 0) {
+          window.PROPERTIES_DATA = parsed;
+        }
       }
-    }
-  } catch (e) {}
+    } catch (e) {}
+  }
 
   const endpoints = [
     '/api/properties?t=' + Date.now(),
@@ -447,20 +448,19 @@ window.calcValuationFee = calcValuationFee;
     }
   }
 
-  fetchLiveKV().catch(err => console.log('Live KV sync skipped:', err));
-}
-
   // 1. Initial fast local load + network fetch
   syncFromStorage();
-  fetchLiveKV();
+  fetchLiveKV().catch(err => console.log('Live KV sync skipped:', err));
 
   // 2. Real-time auto-sync when user returns to app/tab on mobile or desktop
   document.addEventListener('visibilitychange', () => {
     if (document.visibilityState === 'visible') {
-      fetchLiveKV();
+      fetchLiveKV().catch(() => {});
     }
   });
-  window.addEventListener('focus', fetchLiveKV);
+  window.addEventListener('focus', () => {
+    fetchLiveKV().catch(() => {});
+  });
 })();
 
 // 4. Dynamic Area Focus Navigation Menu from /api/locations & LOCATIONS_CONFIG
