@@ -282,6 +282,12 @@
         document.getElementById('d-location').innerHTML = `📍 ${prop.location}`;
         document.getElementById('d-price').textContent = prop.priceStr;
 
+        const isSale = (prop.status || 'sale').toLowerCase() === 'sale';
+        const rawPriceStr = prop.priceStr || (isSale ? `RM ${Number(prop.price).toLocaleString('en-US')}` : `RM ${Number(prop.price).toLocaleString('en-US')} / month`);
+        const actionPrefix = isSale ? 'Untuk Dijual' : 'Sewa';
+        const suffixHook = isSale ? 'Direct Agent REN39575' : 'Gambar & Info Penuh';
+        document.title = `${actionPrefix}: ${prop.title} | ${rawPriceStr} • ${suffixHook}`;
+
         // Image Gallery Handling
         let allImages = [];
         if (Array.isArray(prop.images) && prop.images.length > 0) {
