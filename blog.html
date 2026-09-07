@@ -619,7 +619,7 @@
     ]
   }
   </script>
-  <script src="https://zaimrosli.my/images/blog/refinance-rumah-cash-out.jpg" defer></script>
+  <script src="/analytics.js?v=129" defer></script>
 </head>
 <body>
 
@@ -1357,7 +1357,7 @@
     </div>
   </footer>
 
-  <script src="https://zaimrosli.my/images/blog/refinance-rumah-cash-out.jpg"></script>
+  <script src="/properties-data.js?v=129"></script>
   <script src="/locations-config.js?v=20"></script>
   <script src="/app.js?v=80"></script>
 
@@ -3381,7 +3381,9 @@
 
       const categoryText = (isEn && article.categoryEn) ? article.categoryEn : article.category;
       const titleText = (isEn && article.titleEn) ? article.titleEn : article.title;
-      const contentText = (isEn && article.contentEn) ? article.contentEn : article.content;
+      const rawContentText = (isEn && article.contentEn) ? article.contentEn : article.content;
+      // Strip redundant leading hero img inside content body since modal hero banner already renders it
+      const contentText = rawContentText.replace(/^\s*<img[^>]+style="[^"]*height:\s*320px[^"]*"[^>]*>\s*/i, '');
       const dateText = (isEn && article.dateEn) ? article.dateEn : article.date;
       const readTimeText = (isEn && article.readTimeEn) ? article.readTimeEn : article.readTime;
 
@@ -3426,7 +3428,7 @@
       document.getElementById('modal-body-content').innerHTML = `
         ${article.image ? `
         <div style="width: 100%; border-radius: 12px; overflow: hidden; margin-bottom: 20px; box-shadow: 0 4px 16px rgba(0,0,0,0.06); max-height: 340px;">
-          <img src="https://zaimrosli.my/images/blog/refinance-rumah-cash-out.jpg" alt="${titleText}" style="width: 100%; height: 100%; max-height: 340px; object-fit: cover; display: block;" loading="lazy">
+          <img src="${article.image}" alt="${titleText}" style="width: 100%; height: 100%; max-height: 340px; object-fit: cover; display: block;" loading="lazy">
         </div>
         ` : ''}
         <div class="blog-article-meta-row" style="display: flex; align-items: center; gap: 8px; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 12px; font-weight: 600;">
