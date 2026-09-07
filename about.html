@@ -119,6 +119,21 @@
     </div>
   </section>
 
+    <!-- Past Transactions & Track Record Section -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">PROVEN TRACK RECORD</span>
+        <h2 class="section-title">Past Transactions & Closed Deals</h2>
+        <p class="section-description">Rekod hartanah yang telah berjaya dijual dan disewakan oleh Zaim Rosli.</p>
+      </div>
+
+      <div id="past-deals-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px;">
+        <!-- Rendered dynamically -->
+      </div>
+    </div>
+  </section>
+
   <!-- Site Footer -->
   <footer class="site-footer">
     <div class="container">
@@ -130,5 +145,70 @@
   </footer>
 
   <script src="/app.js"></script>
+  <script>
+    const DEFAULT_PAST_DEALS = [
+      { id: 'p1', title: 'Double Storey Terrace House', type: 'Rumah Teres', location: 'Bandar Seri Putra, Bangi', category: 'DISEWAKAN', price: 'RM 2,100 / month', image: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=800&q=80' },
+      { id: 'p2', title: 'The Domain 4 - Neo Cyber', type: 'Kondominium', location: 'Cyberjaya, Selangor', category: 'DISEWAKAN', price: 'RM 1,200 / month', image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=800&q=80' },
+      { id: 'p3', title: '3-Storey Semi-D Villa Symphony Hills', type: 'Semi-D', location: 'Cyberjaya, Selangor', category: 'TERJUAL', price: 'RM 1,450,000', image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80' },
+      { id: 'p4', title: 'Partially Fitted Office Prima 10', type: 'Kedai / Pejabat', location: 'Cyberjaya, Selangor', category: 'DISEWAKAN', price: 'RM 35,000 / month', image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80' }
+    ];
+
+    async function loadPastDeals() {
+      const grid = document.getElementById('past-deals-grid');
+      if (!grid) return;
+      let deals = [];
+      try {
+        const res = await fetch('https://zaimrosli-worker.huzaimrosli.workers.dev/api/past-deals?t=' + Date.now());
+        if (res.ok) {
+          let data = await res.json();
+          if (typeof data === 'string') try { data = JSON.parse(data); } catch(e) {}
+          if (Array.isArray(data) && data.length > 0) deals = data;
+        }
+      } catch(e) {}
+
+      if (deals.length === 0) {
+        const stored = localStorage.getItem('ZAIM_ROSLI_PAST_DEALS');
+        if (stored) {
+          try { deals = JSON.parse(stored); } catch(e) {}
+        }
+      }
+      if (!deals || deals.length === 0) deals = DEFAULT_PAST_DEALS;
+
+      grid.innerHTML = deals.map(d => {
+        const isSold = (d.category || '').toUpperCase().includes('JUAL') || (d.category || '').toUpperCase().includes('SOLD');
+        const badgeBg = isSold ? '#fef3c7' : '#e0f2fe';
+        const badgeColor = isSold ? '#b45309' : '#0369a1';
+        const badgeBorder = isSold ? '#fde68a' : '#bae6fd';
+        const labelText = isSold ? 'TERJUAL' : 'DISEWAKAN';
+        const imgUrl = d.image || 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=800&q=80';
+
+        return `
+          <div style="background: #ffffff; border-radius: var(--radius-lg); border: 1px solid var(--border-color); box-shadow: var(--shadow-sm); overflow: hidden; display: flex; flex-direction: column; justify-content: space-between;">
+            <div style="position: relative; height: 180px; width: 100%; background: #f1f5f9;">
+              <img src="${imgUrl}" alt="${d.title}" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.src='https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=800&q=80'">
+              <div style="position: absolute; top: 12px; left: 12px;">
+                <span style="background: ${badgeBg}; color: ${badgeColor}; border: 1px solid ${badgeBorder}; font-size: 0.72rem; font-weight: 800; padding: 4px 10px; border-radius: 6px; box-shadow: var(--shadow-sm); font-family: sans-serif;">${labelText}</span>
+              </div>
+              <div style="position: absolute; top: 12px; right: 12px;">
+                <span style="background: rgba(15, 23, 42, 0.75); color: #ffffff; backdrop-filter: blur(4px); font-size: 0.72rem; font-weight: 600; padding: 4px 8px; border-radius: 6px; font-family: sans-serif;">${d.type || 'Hartanah'}</span>
+              </div>
+            </div>
+            <div style="padding: 18px; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+              <div>
+                <h3 style="font-size: 1.05rem; font-weight: 800; color: var(--text-main); margin-bottom: 6px; line-height: 1.4;">${d.title}</h3>
+                <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 14px;">${d.location}</p>
+              </div>
+              <div style="font-size: 1.1rem; font-weight: 800; color: var(--accent-gold); border-top: 1px dashed var(--border-color); padding-top: 10px; margin-top: 6px;">
+                ${d.price}
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    document.addEventListener('DOMContentLoaded', loadPastDeals);
+  </script>
+
 </body>
 </html>

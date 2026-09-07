@@ -4291,31 +4291,49 @@
       }
     }
 
+    let pastDealsList = [];
+
     async function loadPastDealsAdmin() {
+      const container = document.getElementById('admin-past-deals-list');
+      if (container) {
+        container.innerHTML = '<div style="grid-column:1/-1; padding:30px; text-align:center; color:#64748b;"><div style="display:inline-block; width:22px; height:22px; border:2px solid #cbd5e1; border-top-color:#d97706; border-radius:50%; animation:spin 1s linear infinite; margin-bottom:8px;"></div><br>Memuat turun rekod transaksi lalu...</div>';
+      }
+      let deals = [];
       try {
         const res = await fetch('https://zaimrosli-worker.huzaimrosli.workers.dev/api/past-deals?t=' + Date.now());
         if (res.ok) {
           let data = await res.json();
-          if (typeof data === 'string') try { data = JSON.parse(data); } catch(e) {}
-          if (Array.isArray(data) && data.length > 0) pastDealsList = data;
+          if (typeof data === 'string') {
+            try { data = JSON.parse(data); } catch(e) {}
+          }
+          if (Array.isArray(data) && data.length > 0) {
+            deals = data;
+          }
         }
-      } catch(e) {}
+      } catch(e) {
+        console.warn('Past deals fetch error:', e);
+      }
 
-      if (pastDealsList.length === 0) {
+      if (deals.length === 0) {
         const stored = localStorage.getItem('ZAIM_ROSLI_PAST_DEALS');
         if (stored) {
-          try { pastDealsList = JSON.parse(stored); } catch(e) {}
+          try {
+            const parsed = JSON.parse(stored);
+            if (Array.isArray(parsed) && parsed.length > 0) deals = parsed;
+          } catch(e) {}
         }
       }
-      if (!pastDealsList || pastDealsList.length === 0) {
-        pastDealsList = [
-          { id: 'p1', title: 'Double Storey Terrace House', type: 'Terrace House', location: 'Bandar Seri Putra, Bangi', category: 'RENTED', price: 'RM 2,100 / month', image: 'https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=800&q=80' },
-          { id: 'p2', title: 'The Domain 4 - Neo Cyber', type: 'Condominium', location: 'Cyberjaya, Selangor', category: 'RENTED', price: 'RM 1,200 / month', image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=800&q=80' },
-          { id: 'p3', title: '3-Storey Semi-D Villa Symphony Hills', type: 'Semi-D', location: 'Cyberjaya, Selangor', category: 'SOLD', price: 'RM 1,450,000', image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80' },
-          { id: 'p4', title: 'Partially Fitted Office Prima 10', type: 'Shop / Office', location: 'Cyberjaya, Selangor', category: 'RENTED', price: 'RM 35,000 / month', image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80' }
+
+      if (deals.length === 0) {
+        deals = [
+          { id: 'p1', title: 'Double Storey Terrace House', type: 'Rumah Teres', location: 'Bandar Seri Putra, Bangi', category: 'DISEWAKAN', price: 'RM 2,100 / month', image: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=800&q=80' },
+          { id: 'p2', title: 'The Domain 4 - Neo Cyber', type: 'Kondominium', location: 'Cyberjaya, Selangor', category: 'DISEWAKAN', price: 'RM 1,200 / month', image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=800&q=80' },
+          { id: 'p3', title: '3-Storey Semi-D Villa Symphony Hills', type: 'Semi-D', location: 'Cyberjaya, Selangor', category: 'TERJUAL', price: 'RM 1,450,000', image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80' },
+          { id: 'p4', title: 'Partially Fitted Office Prima 10', type: 'Kedai / Pejabat', location: 'Cyberjaya, Selangor', category: 'DISEWAKAN', price: 'RM 35,000 / month', image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80' }
         ];
       }
 
+      pastDealsList = deals;
       renderPastDealsAdmin();
     }
 
@@ -4323,28 +4341,34 @@
       const container = document.getElementById('admin-past-deals-list');
       if (!container) return;
 
+      if (!pastDealsList || pastDealsList.length === 0) {
+        container.innerHTML = '<div style="grid-column:1/-1; padding:40px 20px; text-align:center; color:#94a3b8; font-size:0.9rem; background:#f8fafc; border:1px dashed #cbd5e1; border-radius:12px;">Tiada rekod transaksi lalu. Klik <b>+ Add Past Deal</b> untuk menambah transaksi baru.</div>';
+        return;
+      }
+
       container.innerHTML = pastDealsList.map(item => {
         const isSold = (item.category || '').toUpperCase().includes('JUAL') || (item.category || '').toUpperCase().includes('SOLD');
         const badgeBg = isSold ? '#fef3c7' : '#e0f2fe';
         const badgeColor = isSold ? '#b45309' : '#0369a1';
         const labelText = isSold ? 'SOLD' : 'RENTED';
-        const imgUrl = item.image || 'https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=800&q=80';
+        const imgUrl = item.image || 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=800&q=80';
 
         return `
-          <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; overflow:hidden; display:flex; flex-direction:column; justify-content:space-between;">
-            <div style="position:relative; height:140px; background:#f1f5f9;">
-              <img src="${imgUrl}" alt="${item.title}" style="width:100%; height:100%; object-fit:cover;">
-              <span style="position:absolute; top:8px; left:8px; background:${badgeBg}; color:${badgeColor}; font-size:0.7rem; font-weight:800; padding:2px 8px; border-radius:6px;">${labelText}</span>
+          <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; overflow:hidden; display:flex; flex-direction:column; justify-content:space-between; box-shadow:0 1px 3px rgba(0,0,0,0.05);">
+            <div style="position:relative; height:150px; background:#f1f5f9;">
+              <img src="${imgUrl}" alt="${item.title}" style="width:100%; height:100%; object-fit:cover;" onerror="this.src='https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=800&q=80'">
+              <span style="position:absolute; top:8px; left:8px; background:${badgeBg}; color:${badgeColor}; font-size:0.7rem; font-weight:800; padding:2px 8px; border-radius:6px; box-shadow:0 1px 2px rgba(0,0,0,0.1); font-family:sans-serif;">${labelText}</span>
+              <span style="position:absolute; top:8px; right:8px; background:rgba(15,23,42,0.75); color:#fff; font-size:0.7rem; font-weight:600; padding:2px 8px; border-radius:6px; backdrop-filter:blur(4px); font-family:sans-serif;">${item.type || 'Hartanah'}</span>
             </div>
             <div style="padding:14px; flex:1; display:flex; flex-direction:column; justify-content:space-between;">
               <div>
-                <h4 style="font-size:0.98rem; font-weight:800; color:#0f172a; margin-bottom:4px;">${item.title}</h4>
+                <h4 style="font-size:0.98rem; font-weight:800; color:#0f172a; margin-bottom:4px; line-height:1.3;">${item.title}</h4>
                 <p style="font-size:0.82rem; color:#64748b; margin-bottom:8px;">${item.location}</p>
                 <div style="font-size:1.05rem; font-weight:800; color:#d97706;">${item.price}</div>
               </div>
               <div style="display:flex; gap:8px; margin-top:12px; padding-top:8px; border-top:1px solid #f1f5f9;">
-                <button onclick="editPastDeal('${item.id}')" style="flex:1; padding:6px; background:#f1f5f9; border:1px solid #cbd5e1; border-radius:6px; font-weight:700; font-size:0.78rem; cursor:pointer;">Edit</button>
-                <button onclick="deletePastDeal('${item.id}')" style="flex:1; padding:6px; background:#fef2f2; border:1px solid #fca5a5; color:#dc2626; border-radius:6px; font-weight:700; font-size:0.78rem; cursor:pointer;">Delete</button>
+                <button onclick="editPastDeal('${item.id}')" style="flex:1; padding:7px 10px; background:#f1f5f9; border:1px solid #cbd5e1; border-radius:6px; font-weight:700; font-size:0.78rem; cursor:pointer; color:#334155;">Edit</button>
+                <button onclick="deletePastDeal('${item.id}')" style="flex:1; padding:7px 10px; background:#fef2f2; border:1px solid #fca5a5; color:#dc2626; border-radius:6px; font-weight:700; font-size:0.78rem; cursor:pointer;">Delete</button>
               </div>
             </div>
           </div>
@@ -4387,7 +4411,7 @@
         category: document.getElementById('past-form-category').value,
         location: document.getElementById('past-form-location').value,
         price: document.getElementById('past-form-price').value,
-        image: document.getElementById('past-form-image').value || ''
+        image: document.getElementById('past-form-image').value.trim() || 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=800&q=80'
       };
 
       const existingIdx = pastDealsList.findIndex(d => d.id === id);
