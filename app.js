@@ -610,46 +610,56 @@ async function initLivePropertiesSync() {
   }
 }
 
-// 7. Interactive Number Count-Up Animation on Scroll (IntersectionObserver)
+// 7. Framer-Style Scroll Blur-Up Reveal & Interactive Number Count-Up (Khairul Zainal animation)
 function initCountUpAnimations() {
+  const statCards = document.querySelectorAll('.stat-card');
   const statElements = document.querySelectorAll('.stat-number.count-up');
-  if (!statElements.length) return;
+  if (!statElements.length && !statCards.length) return;
 
-  const observer = new IntersectionObserver((entries, obs) => {
+  const cardObserver = new IntersectionObserver((entries, obs) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        const el = entry.target;
-        obs.unobserve(el);
+        const card = entry.target;
+        obs.unobserve(card);
+        card.classList.add('framer-revealed');
 
-        const target = parseFloat(el.getAttribute('data-target')) || 0;
-        const prefix = el.getAttribute('data-prefix') || '';
-        const suffix = el.getAttribute('data-suffix') || '';
-        const duration = 1800; // 1.8 seconds smooth animation
-        const startTime = performance.now();
+        const numberEl = card.querySelector('.stat-number.count-up') || (card.classList.contains('count-up') ? card : null);
+        if (numberEl && !numberEl.dataset.counted) {
+          numberEl.dataset.counted = 'true';
+          const target = parseFloat(numberEl.getAttribute('data-target')) || 0;
+          const prefix = numberEl.getAttribute('data-prefix') || '';
+          const suffix = numberEl.getAttribute('data-suffix') || '';
+          const duration = 1800; // 1.8 seconds silky smooth count-up
+          const startTime = performance.now();
 
-        // Initial zero state
-        el.textContent = `${prefix}0${suffix}`;
+          // Initialize with 0
+          numberEl.textContent = `${prefix}0${suffix}`;
 
-        function updateCount(currentTime) {
-          const elapsed = currentTime - startTime;
-          const progress = Math.min(elapsed / duration, 1);
-          // Ease-out cubic: 1 - (1 - t)^3
-          const easeOut = 1 - Math.pow(1 - progress, 3);
-          const currentVal = Math.round(easeOut * target);
+          function updateCount(currentTime) {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            // Ultra smooth ease-out: 1 - (1 - t)^3
+            const easeOut = 1 - Math.pow(1 - progress, 3);
+            const currentVal = Math.round(easeOut * target);
 
-          el.textContent = `${prefix}${currentVal.toLocaleString()}${suffix}`;
+            numberEl.textContent = `${prefix}${currentVal.toLocaleString()}${suffix}`;
 
-          if (progress < 1) {
-            requestAnimationFrame(updateCount);
-          } else {
-            el.textContent = `${prefix}${target.toLocaleString()}${suffix}`;
+            if (progress < 1) {
+              requestAnimationFrame(updateCount);
+            } else {
+              numberEl.textContent = `${prefix}${target.toLocaleString()}${suffix}`;
+            }
           }
-        }
 
-        requestAnimationFrame(updateCount);
+          requestAnimationFrame(updateCount);
+        }
       }
     });
-  }, { threshold: 0.25 });
+  }, { threshold: 0.15, rootMargin: '0px 0px -30px 0px' });
 
-  statElements.forEach(el => observer.observe(el));
+  if (statCards.length > 0) {
+    statCards.forEach(card => cardObserver.observe(card));
+  } else {
+    statElements.forEach(el => cardObserver.observe(el));
+  }
 }
