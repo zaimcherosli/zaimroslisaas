@@ -1883,7 +1883,7 @@
             <p style="font-size: 0.82rem; color: #64748b; margin: 2px 0 0;">Organize MyListing, COA Listing & Undercon in one streamlined workspace.</p>
           </div>
           <div style="display: flex; gap: 8px; align-items: center;">
-            <button id="btn-refresh-portfolio" onclick="manualRefreshProperties()" class="renhub-action-btn" style="padding: 9px 14px; font-weight: 800; transition: all 0.25s ease;" title="Muat Semula & Selaraskan Data Awan">🔄 Refresh</button>
+            <button id="btn-refresh-portfolio" onclick="manualRefreshProperties()" class="renhub-action-btn" style="padding: 9px 14px; font-weight: 800; transition: all 0.25s ease;" title="Refresh &amp; Sync Cloud Data">🔄 Refresh</button>
             <button onclick="openModal()" class="btn-add-primary" style="background: linear-gradient(135deg, #f59e0b, #d97706); color: #ffffff; font-weight: 800; font-size: 0.85rem; padding: 10px 20px; border-radius: 9px; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 2px 8px rgba(217, 119, 6, 0.25); white-space: nowrap; flex-shrink: 0;">
               + Add Property
             </button>
@@ -1940,9 +1940,9 @@
       <!-- Past Deals Panel -->
       <div id="tab-panel-past" class="panel" style="display: none;">
         <div class="listings-header" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
-          <h2>Rekod Transaksi Lalu (Past Deals)</h2>
+          <h2>Past Transactions &amp; Closed Deals</h2>
           <div class="admin-btn-group" style="display:flex; gap:10px; align-items:center;">
-            <button onclick="loadPastDealsAdmin()" class="btn-add" style="background:#475569; color:#fff;" title="Muat Semula Past Deals">Refresh Past Deals</button>
+            <button onclick="loadPastDealsAdmin()" class="btn-add" style="background:#475569; color:#fff;" title="Refresh Past Deals">Refresh Past Deals</button>
             <button onclick="openPastDealModal()" class="btn-add" style="background: #d97706;">+ Add Past Deal</button>
           </div>
         </div>
@@ -3250,7 +3250,7 @@
         if (typeof event.stopPropagation === 'function') event.stopPropagation();
       }
 
-      const confirmed = confirm('Adakah anda pasti ingin memadam listing hartanah ini? / Are you sure you want to delete this listing?');
+      const confirmed = confirm('Are you sure you want to delete this property listing?');
       if (!confirmed) return;
 
       let idx = -1;
@@ -3390,7 +3390,7 @@
 
       } catch (err) {
         console.error('Error saving property:', err);
-        alert('Ralat menyimpan hartanah: ' + err.message);
+        alert('Error saving property: ' + err.message);
         submitBtn.innerHTML = originalText;
         submitBtn.disabled = false;
       }
@@ -3942,7 +3942,7 @@
         container.innerHTML = `
           <div style="background:#ffffff; border:1px solid #fca5a5; border-radius:12px; padding:30px 20px; text-align:center; color:#dc2626; width:100%; box-sizing:border-box;">
             <p style="font-size:0.95rem; font-weight:800; margin-bottom:6px;">Failed to Load Analytics Data</p>
-            <p style="font-size:0.82rem; color:#64748b; margin-bottom:12px;">${err.message || 'Sila cuba sebentar lagi.'}</p>
+            <p style="font-size:0.82rem; color:#64748b; margin-bottom:12px;">${err.message || 'Please try again in a moment.'}</p>
             <button onclick="loadTrafficAnalyticsAdmin()" style="padding:7px 14px; background:#0f172a; color:#ffffff; border:none; border-radius:6px; font-size:0.8rem; font-weight:700; cursor:pointer;">Try Again</button>
           </div>
         `;
@@ -4206,7 +4206,7 @@
       const originalText = submitBtn ? submitBtn.innerHTML : 'Save Location';
       if (submitBtn) {
         submitBtn.disabled = true;
-        submitBtn.innerHTML = '⌛ Menyimpan ke Server...';
+        submitBtn.innerHTML = '⌛ Saving to Server...';
       }
 
       const saveResult = await saveLocationsToStorage(updatedList);
@@ -4296,7 +4296,7 @@
     async function loadPastDealsAdmin() {
       const container = document.getElementById('admin-past-deals-list');
       if (container) {
-        container.innerHTML = '<div style="grid-column:1/-1; padding:30px; text-align:center; color:#64748b;"><div style="display:inline-block; width:22px; height:22px; border:2px solid #cbd5e1; border-top-color:#d97706; border-radius:50%; animation:spin 1s linear infinite; margin-bottom:8px;"></div><br>Memuat turun rekod transaksi lalu...</div>';
+        container.innerHTML = '<div style="grid-column:1/-1; padding:30px; text-align:center; color:#64748b;"><div style="display:inline-block; width:22px; height:22px; border:2px solid #cbd5e1; border-top-color:#d97706; border-radius:50%; animation:spin 1s linear infinite; margin-bottom:8px;"></div><br>Loading past transaction records...</div>';
       }
       let deals = [];
       try {
@@ -4326,10 +4326,10 @@
 
       if (deals.length === 0) {
         deals = [
-          { id: 'p1', title: 'Double Storey Terrace House', type: 'Rumah Teres', location: 'Bandar Seri Putra, Bangi', category: 'DISEWAKAN', price: 'RM 2,100 / month', image: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=800&q=80' },
-          { id: 'p2', title: 'The Domain 4 - Neo Cyber', type: 'Kondominium', location: 'Cyberjaya, Selangor', category: 'DISEWAKAN', price: 'RM 1,200 / month', image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=800&q=80' },
-          { id: 'p3', title: '3-Storey Semi-D Villa Symphony Hills', type: 'Semi-D', location: 'Cyberjaya, Selangor', category: 'TERJUAL', price: 'RM 1,450,000', image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80' },
-          { id: 'p4', title: 'Partially Fitted Office Prima 10', type: 'Kedai / Pejabat', location: 'Cyberjaya, Selangor', category: 'DISEWAKAN', price: 'RM 35,000 / month', image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80' }
+          { id: 'p1', title: 'Double Storey Terrace House', type: 'Terrace House', location: 'Bandar Seri Putra, Bangi', category: 'RENTED', price: 'RM 2,100 / month', image: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=800&q=80' },
+          { id: 'p2', title: 'The Domain 4 - Neo Cyber', type: 'Kondominium', location: 'Cyberjaya, Selangor', category: 'RENTED', price: 'RM 1,200 / month', image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=800&q=80' },
+          { id: 'p3', title: '3-Storey Semi-D Villa Symphony Hills', type: 'Semi-D', location: 'Cyberjaya, Selangor', category: 'SOLD', price: 'RM 1,450,000', image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80' },
+          { id: 'p4', title: 'Partially Fitted Office Prima 10', type: 'Shop / Office', location: 'Cyberjaya, Selangor', category: 'RENTED', price: 'RM 35,000 / month', image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80' }
         ];
       }
 
@@ -4342,7 +4342,7 @@
       if (!container) return;
 
       if (!pastDealsList || pastDealsList.length === 0) {
-        container.innerHTML = '<div style="grid-column:1/-1; padding:40px 20px; text-align:center; color:#94a3b8; font-size:0.9rem; background:#f8fafc; border:1px dashed #cbd5e1; border-radius:12px;">Tiada rekod transaksi lalu. Klik <b>+ Add Past Deal</b> untuk menambah transaksi baru.</div>';
+        container.innerHTML = '<div style="grid-column:1/-1; padding:40px 20px; text-align:center; color:#94a3b8; font-size:0.9rem; background:#f8fafc; border:1px dashed #cbd5e1; border-radius:12px;">No past deal records found. Click <b>+ Add Past Deal</b> to add a new transaction.</div>';
         return;
       }
 
@@ -4358,7 +4358,7 @@
             <div style="position:relative; height:150px; background:#f1f5f9;">
               <img src="${imgUrl}" alt="${item.title}" style="width:100%; height:100%; object-fit:cover;" onerror="this.src='https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=800&q=80'">
               <span style="position:absolute; top:8px; left:8px; background:${badgeBg}; color:${badgeColor}; font-size:0.7rem; font-weight:800; padding:2px 8px; border-radius:6px; box-shadow:0 1px 2px rgba(0,0,0,0.1); font-family:sans-serif;">${labelText}</span>
-              <span style="position:absolute; top:8px; right:8px; background:rgba(15,23,42,0.75); color:#fff; font-size:0.7rem; font-weight:600; padding:2px 8px; border-radius:6px; backdrop-filter:blur(4px); font-family:sans-serif;">${item.type || 'Hartanah'}</span>
+              <span style="position:absolute; top:8px; right:8px; background:rgba(15,23,42,0.75); color:#fff; font-size:0.7rem; font-weight:600; padding:2px 8px; border-radius:6px; backdrop-filter:blur(4px); font-family:sans-serif;">${item.type || 'Property'}</span>
             </div>
             <div style="padding:14px; flex:1; display:flex; flex-direction:column; justify-content:space-between;">
               <div>
