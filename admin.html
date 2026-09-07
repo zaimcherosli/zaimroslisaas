@@ -4291,14 +4291,14 @@
       }
     }
 
-    let pastDealsList = [];
+        let pastDealsList = [];
 
     async function loadPastDealsAdmin() {
       const container = document.getElementById('admin-past-deals-list');
       if (container) {
         container.innerHTML = '<div style="grid-column:1/-1; padding:30px; text-align:center; color:#64748b;"><div style="display:inline-block; width:22px; height:22px; border:2px solid #cbd5e1; border-top-color:#d97706; border-radius:50%; animation:spin 1s linear infinite; margin-bottom:8px;"></div><br>Loading past transaction records...</div>';
       }
-      let deals = [];
+      let deals = null;
       try {
         const res = await fetch('https://zaimrosli-worker.huzaimrosli.workers.dev/api/past-deals?t=' + Date.now());
         if (res.ok) {
@@ -4306,7 +4306,7 @@
           if (typeof data === 'string') {
             try { data = JSON.parse(data); } catch(e) {}
           }
-          if (Array.isArray(data) && data.length > 0) {
+          if (Array.isArray(data)) {
             deals = data;
           }
         }
@@ -4314,26 +4314,18 @@
         console.warn('Past deals fetch error:', e);
       }
 
-      if (deals.length === 0) {
+      if (deals === null) {
         const stored = localStorage.getItem('ZAIM_ROSLI_PAST_DEALS');
         if (stored) {
           try {
             const parsed = JSON.parse(stored);
-            if (Array.isArray(parsed) && parsed.length > 0) deals = parsed;
+            if (Array.isArray(parsed)) deals = parsed;
           } catch(e) {}
         }
       }
 
-      if (deals.length === 0) {
-        deals = [
-          { id: 'p1', title: 'Double Storey Terrace House', type: 'Terrace House', location: 'Bandar Seri Putra, Bangi', category: 'RENTED', price: 'RM 2,100 / month', image: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=800&q=80' },
-          { id: 'p2', title: 'The Domain 4 - Neo Cyber', type: 'Kondominium', location: 'Cyberjaya, Selangor', category: 'RENTED', price: 'RM 1,200 / month', image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=800&q=80' },
-          { id: 'p3', title: '3-Storey Semi-D Villa Symphony Hills', type: 'Semi-D', location: 'Cyberjaya, Selangor', category: 'SOLD', price: 'RM 1,450,000', image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80' },
-          { id: 'p4', title: 'Partially Fitted Office Prima 10', type: 'Shop / Office', location: 'Cyberjaya, Selangor', category: 'RENTED', price: 'RM 35,000 / month', image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80' }
-        ];
-      }
-
-      pastDealsList = deals;
+      // If deals is an array (even empty []), respect it! Do not inject fake dummy data.
+      pastDealsList = deals || [];
       renderPastDealsAdmin();
     }
 

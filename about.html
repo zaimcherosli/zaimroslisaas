@@ -120,7 +120,7 @@
   </section>
 
     <!-- Past Transactions & Track Record Section -->
-  <section class="section section-alt">
+  <section class="section section-alt" id="past-deals-section">
     <div class="container">
       <div class="section-header">
         <span class="section-subtitle">PROVEN TRACK RECORD</span>
@@ -146,40 +146,49 @@
 
   <script src="/app.js"></script>
   <script>
-    const DEFAULT_PAST_DEALS = [
-      { id: 'p1', title: 'Double Storey Terrace House', type: 'Terrace House', location: 'Bandar Seri Putra, Bangi', category: 'RENTED', price: 'RM 2,100 / month', image: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=800&q=80' },
-      { id: 'p2', title: 'The Domain 4 - Neo Cyber', type: 'Kondominium', location: 'Cyberjaya, Selangor', category: 'RENTED', price: 'RM 1,200 / month', image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=800&q=80' },
-      { id: 'p3', title: '3-Storey Semi-D Villa Symphony Hills', type: 'Semi-D', location: 'Cyberjaya, Selangor', category: 'SOLD', price: 'RM 1,450,000', image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80' },
-      { id: 'p4', title: 'Partially Fitted Office Prima 10', type: 'Shop / Office', location: 'Cyberjaya, Selangor', category: 'RENTED', price: 'RM 35,000 / month', image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80' }
-    ];
-
     async function loadPastDeals() {
       const grid = document.getElementById('past-deals-grid');
+      const section = document.getElementById('past-deals-section') || (grid ? grid.closest('section') : null);
       if (!grid) return;
-      let deals = [];
+
+      let deals = null;
       try {
         const res = await fetch('https://zaimrosli-worker.huzaimrosli.workers.dev/api/past-deals?t=' + Date.now());
         if (res.ok) {
           let data = await res.json();
           if (typeof data === 'string') try { data = JSON.parse(data); } catch(e) {}
-          if (Array.isArray(data) && data.length > 0) deals = data;
+          if (Array.isArray(data)) {
+            deals = data;
+          }
         }
-      } catch(e) {}
+      } catch(e) {
+        console.warn('Past deals fetch error:', e);
+      }
 
-      if (deals.length === 0) {
+      if (deals === null) {
         const stored = localStorage.getItem('ZAIM_ROSLI_PAST_DEALS');
         if (stored) {
-          try { deals = JSON.parse(stored); } catch(e) {}
+          try {
+            const parsed = JSON.parse(stored);
+            if (Array.isArray(parsed)) deals = parsed;
+          } catch(e) {}
         }
       }
-      if (!deals || deals.length === 0) deals = DEFAULT_PAST_DEALS;
 
+      // If no deals in database or explicitly emptied by admin, hide the section
+      if (!deals || deals.length === 0) {
+        if (section) section.style.display = 'none';
+        grid.innerHTML = '';
+        return;
+      }
+
+      if (section) section.style.display = 'block';
       grid.innerHTML = deals.map(d => {
         const isSold = (d.category || '').toUpperCase().includes('JUAL') || (d.category || '').toUpperCase().includes('SOLD');
         const badgeBg = isSold ? '#fef3c7' : '#e0f2fe';
         const badgeColor = isSold ? '#b45309' : '#0369a1';
         const badgeBorder = isSold ? '#fde68a' : '#bae6fd';
-        const labelText = isSold ? 'TERJUAL' : 'DISEWAKAN';
+        const labelText = isSold ? 'SOLD' : 'RENTED';
         const imgUrl = d.image || 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=800&q=80';
 
         return `
