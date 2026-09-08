@@ -558,45 +558,42 @@
       border-color: #fdba74;
       color: #c2410c;
     }
-    .time-slots-grid {
+        .time-chips-grid {
       display: grid;
-      grid-template-columns: 1fr;
-      gap: 8px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 6px;
+      margin-top: 8px;
     }
-    .time-slot-option {
-      cursor: pointer;
-      display: block;
+    @media (max-width: 440px) {
+      .time-chips-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 5px;
+      }
     }
-    .time-slot-option input {
-      display: none;
-    }
-    .slot-box {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 10px 14px;
-      border-radius: 10px;
+    .time-chip {
+      background: #f8fafc;
       border: 1.5px solid #e2e8f0;
-      background: #ffffff;
-      transition: all 0.2s ease;
-    }
-    .slot-time {
-      font-size: 0.88rem;
-      font-weight: 700;
-      color: #1e293b;
-    }
-    .slot-hours {
+      color: #334155;
+      padding: 8px 4px;
+      border-radius: 8px;
       font-size: 0.78rem;
-      color: #64748b;
-      font-weight: 500;
+      font-weight: 600;
+      cursor: pointer;
+      text-align: center;
+      transition: all 0.15s ease;
+      font-family: inherit;
     }
-    .time-slot-option input:checked + .slot-box {
-      border-color: #ea580c;
+    .time-chip:hover {
       background: #fff7ed;
-      box-shadow: 0 2px 8px rgba(234, 88, 12, 0.15);
-    }
-    .time-slot-option input:checked + .slot-box .slot-time {
+      border-color: #fdba74;
       color: #c2410c;
+    }
+    .time-chip.active {
+      background: #ea580c;
+      border-color: #ea580c;
+      color: #ffffff;
+      font-weight: 700;
+      box-shadow: 0 2px 8px rgba(234, 88, 12, 0.25);
     }
     .form-row-2 {
       display: grid;
@@ -1333,31 +1330,35 @@
           </div>
         </div>
 
-        <!-- Preferred Time Slot -->
+                <!-- Preferred Time Slot -->
         <div class="form-group">
-          <label class="form-label">2. Preferred Time Slot *</label>
-          <div class="time-slots-grid">
-            <label class="time-slot-option">
-              <input type="radio" name="time-slot" value="Morning (10:00 AM - 12:00 PM)" checked>
-              <span class="slot-box">
-                <span class="slot-time">Morning</span>
-                <span class="slot-hours">10:00 AM – 12:00 PM</span>
-              </span>
-            </label>
-            <label class="time-slot-option">
-              <input type="radio" name="time-slot" value="Afternoon (02:00 PM - 05:00 PM)">
-              <span class="slot-box">
-                <span class="slot-time">Afternoon</span>
-                <span class="slot-hours">02:00 PM – 05:00 PM</span>
-              </span>
-            </label>
-            <label class="time-slot-option">
-              <input type="radio" name="time-slot" value="Evening (05:00 PM - 07:00 PM)">
-              <span class="slot-box">
-                <span class="slot-time">Evening</span>
-                <span class="slot-hours">05:00 PM – 07:00 PM</span>
-              </span>
-            </label>
+          <label class="form-label" for="sched-time-select">2. Preferred Time Slot (Pilih Masa) *</label>
+          <div style="position: relative;">
+            <select id="sched-time-select" class="form-control" required style="font-weight: 600; color: #0f172a; height: 44px; cursor: pointer;">
+              <option value="10:00 AM" selected>10:00 AM</option>
+              <option value="11:00 AM">11:00 AM</option>
+              <option value="12:00 PM">12:00 PM</option>
+              <option value="01:00 PM">01:00 PM</option>
+              <option value="02:00 PM">02:00 PM</option>
+              <option value="03:00 PM">03:00 PM</option>
+              <option value="04:00 PM">04:00 PM</option>
+              <option value="05:00 PM">05:00 PM</option>
+              <option value="06:00 PM">06:00 PM</option>
+              <option value="07:00 PM">07:00 PM</option>
+              <option value="08:00 PM">08:00 PM</option>
+            </select>
+          </div>
+
+          <!-- Quick Hour Chips (Google Calendar Appointment Style) -->
+          <div class="time-chips-grid">
+            <button type="button" class="time-chip active" data-time="10:00 AM">10:00 AM</button>
+            <button type="button" class="time-chip" data-time="11:00 AM">11:00 AM</button>
+            <button type="button" class="time-chip" data-time="12:00 PM">12:00 PM</button>
+            <button type="button" class="time-chip" data-time="02:00 PM">02:00 PM</button>
+            <button type="button" class="time-chip" data-time="03:00 PM">03:00 PM</button>
+            <button type="button" class="time-chip" data-time="04:00 PM">04:00 PM</button>
+            <button type="button" class="time-chip" data-time="05:00 PM">05:00 PM</button>
+            <button type="button" class="time-chip" data-time="08:00 PM">08:00 PM</button>
           </div>
         </div>
 
@@ -2032,13 +2033,35 @@
             };
           });
 
+                    // Time Slot Dropdown & Google Calendar-style Hour Chips Sync
+          const schedTimeSelect = document.getElementById('sched-time-select');
+          const timeChips = document.querySelectorAll('.time-chip');
+
+          timeChips.forEach(chip => {
+            chip.onclick = () => {
+              timeChips.forEach(c => c.classList.remove('active'));
+              chip.classList.add('active');
+              const tVal = chip.getAttribute('data-time');
+              if (schedTimeSelect) schedTimeSelect.value = tVal;
+            };
+          });
+
+          if (schedTimeSelect) {
+            schedTimeSelect.onchange = () => {
+              const currentVal = schedTimeSelect.value;
+              timeChips.forEach(c => {
+                c.classList.toggle('active', c.getAttribute('data-time') === currentVal);
+              });
+            };
+          }
+
           // Form Submit: Send Structured Intent to WhatsApp
           if (scheduleForm) {
             scheduleForm.onsubmit = (e) => {
               e.preventDefault();
               const dateVal = document.getElementById('sched-date').value || 'Sedia bila-bila masa';
-              const timeSlotRadio = document.querySelector('input[name="time-slot"]:checked');
-              const timeSlotVal = timeSlotRadio ? timeSlotRadio.value : 'Pagi / Petang';
+              const schedTimeSelect = document.getElementById('sched-time-select');
+              const timeSlotVal = schedTimeSelect ? schedTimeSelect.value : '10:00 AM';
               const nameVal = document.getElementById('sched-name').value.trim();
               const phoneVal = document.getElementById('sched-phone').value.trim();
               const notesVal = document.getElementById('sched-notes').value.trim() || 'Tiada nota tambahan';
