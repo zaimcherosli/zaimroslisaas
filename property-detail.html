@@ -1346,6 +1346,7 @@
               <option value="06:00 PM">06:00 PM</option>
               <option value="07:00 PM">07:00 PM</option>
               <option value="08:00 PM">08:00 PM</option>
+              <option value="Others">Others (Key-in Masa Sendiri)</option>
             </select>
           </div>
 
@@ -1358,7 +1359,12 @@
             <button type="button" class="time-chip" data-time="03:00 PM">03:00 PM</button>
             <button type="button" class="time-chip" data-time="04:00 PM">04:00 PM</button>
             <button type="button" class="time-chip" data-time="05:00 PM">05:00 PM</button>
-            <button type="button" class="time-chip" data-time="08:00 PM">08:00 PM</button>
+            <button type="button" class="time-chip" data-time="Others">Others</button>
+          </div>
+
+          <!-- Custom Time Input (Revealed when Others is selected) -->
+          <div id="sched-custom-time-wrap" style="display: none; margin-top: 8px;">
+            <input type="text" id="sched-custom-time" class="form-control" placeholder="Nyatakan masa pilihan anda (cth: 11:30 AM / 6:30 PM)">
           </div>
         </div>
 
@@ -2036,13 +2042,27 @@
                     // Time Slot Dropdown & Google Calendar-style Hour Chips Sync
           const schedTimeSelect = document.getElementById('sched-time-select');
           const timeChips = document.querySelectorAll('.time-chip');
+          const customTimeWrap = document.getElementById('sched-custom-time-wrap');
+          const customTimeInput = document.getElementById('sched-custom-time');
+
+          function updateCustomTimeVisibility(val) {
+            if (val === 'Others') {
+              if (customTimeWrap) customTimeWrap.style.display = 'block';
+              if (customTimeInput) customTimeInput.focus();
+            } else {
+              if (customTimeWrap) customTimeWrap.style.display = 'none';
+            }
+          }
 
           timeChips.forEach(chip => {
             chip.onclick = () => {
               timeChips.forEach(c => c.classList.remove('active'));
               chip.classList.add('active');
               const tVal = chip.getAttribute('data-time');
-              if (schedTimeSelect) schedTimeSelect.value = tVal;
+              if (schedTimeSelect) {
+                schedTimeSelect.value = tVal;
+                updateCustomTimeVisibility(tVal);
+              }
             };
           });
 
@@ -2052,6 +2072,7 @@
               timeChips.forEach(c => {
                 c.classList.toggle('active', c.getAttribute('data-time') === currentVal);
               });
+              updateCustomTimeVisibility(currentVal);
             };
           }
 
@@ -2061,7 +2082,11 @@
               e.preventDefault();
               const dateVal = document.getElementById('sched-date').value || 'Sedia bila-bila masa';
               const schedTimeSelect = document.getElementById('sched-time-select');
-              const timeSlotVal = schedTimeSelect ? schedTimeSelect.value : '10:00 AM';
+              let timeSlotVal = schedTimeSelect ? schedTimeSelect.value : '10:00 AM';
+              if (timeSlotVal === 'Others') {
+                const customTyped = customTimeInput ? customTimeInput.value.trim() : '';
+                timeSlotVal = customTyped ? `Others (${customTyped})` : 'Masa pilihan pelanggan (Akan bincang via WhatsApp)';
+              }
               const nameVal = document.getElementById('sched-name').value.trim();
               const phoneVal = document.getElementById('sched-phone').value.trim();
               const notesVal = document.getElementById('sched-notes').value.trim() || 'Tiada nota tambahan';
