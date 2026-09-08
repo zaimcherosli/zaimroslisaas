@@ -832,6 +832,160 @@
       transform: translateY(-1px);
     }
 
+    /* =======================================================
+       SIMPLIFIED FEATURED / RECOMMENDED LISTINGS IN SIDEBAR
+       ======================================================= */
+    .sidebar-featured-wrap {
+      margin-top: 16px;
+    }
+    .sidebar-featured-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+    .sidebar-featured-title {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin: 0;
+      letter-spacing: -0.2px;
+    }
+    .sidebar-featured-all-link {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #d97706;
+      text-decoration: none;
+      transition: color 0.15s ease;
+    }
+    .sidebar-featured-all-link:hover {
+      color: #b45309;
+      text-decoration: underline;
+    }
+    .sidebar-featured-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .featured-mini-card {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 9px;
+      border-radius: 10px;
+      border: 1px solid #e2e8f0;
+      background: #f8fafc;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      box-sizing: border-box;
+    }
+    .featured-mini-card:hover {
+      background: #ffffff;
+      border-color: #cbd5e1;
+      box-shadow: 0 4px 14px rgba(15, 23, 42, 0.06);
+      transform: translateY(-1px);
+    }
+    .featured-mini-thumb-wrap {
+      position: relative;
+      width: 72px;
+      height: 72px;
+      flex-shrink: 0;
+      border-radius: 8px;
+      overflow: hidden;
+      background: #e2e8f0;
+    }
+    .featured-mini-thumb {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+    .featured-mini-card:hover .featured-mini-thumb {
+      transform: scale(1.06);
+    }
+    .featured-mini-badge {
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      font-size: 0.58rem;
+      font-weight: 800;
+      padding: 2px 5px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      line-height: 1;
+    }
+    .featured-mini-badge.badge-sale {
+      background: rgba(15, 23, 42, 0.85);
+      color: #ffffff;
+    }
+    .featured-mini-badge.badge-rent {
+      background: rgba(2, 132, 199, 0.9);
+      color: #ffffff;
+    }
+    .featured-mini-content {
+      flex: 1;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .featured-mini-loc {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: #64748b;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin-bottom: 3px;
+    }
+    .featured-mini-title {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: #0f172a;
+      line-height: 1.35;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      margin-bottom: 4px;
+      transition: color 0.15s ease;
+    }
+    .featured-mini-card:hover .featured-mini-title {
+      color: #d97706;
+    }
+    .featured-mini-price {
+      font-size: 0.86rem;
+      font-weight: 800;
+      color: #d97706;
+      white-space: nowrap;
+    }
+    .featured-mini-more-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      width: 100%;
+      padding: 9px 12px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #475569;
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      text-decoration: none;
+      margin-top: 6px;
+      box-sizing: border-box;
+      transition: all 0.2s ease;
+    }
+    .featured-mini-more-btn:hover {
+      background: #f1f5f9;
+      color: #0f172a;
+      border-color: #cbd5e1;
+    }
   </style>
   <link rel="manifest" href="/manifest.json">
   <meta name="theme-color" content="#0f172a">
@@ -1288,6 +1442,20 @@
                 <div id="d-legal-summary" style="font-size: 0.85rem; color: var(--text-muted); display: flex; flex-direction: column; gap: 8px;">
                   <!-- Populated dynamically -->
                 </div>
+              </div>
+
+              <hr style="margin: 20px 0; border: none; border-top: 1px solid var(--border-color);">
+
+              <!-- 7. Simplified Featured Listings / Hartanah Pilihan Lain -->
+              <div id="sidebar-featured-container" class="sidebar-featured-wrap">
+                <div class="sidebar-featured-header">
+                  <h4 class="sidebar-featured-title">Hartanah Pilihan Lain</h4>
+                  <a href="/properties" class="sidebar-featured-all-link">Lihat Semua →</a>
+                </div>
+                <div id="sidebar-featured-list" class="sidebar-featured-list">
+                  <!-- Populated dynamically -->
+                </div>
+                <a href="/properties" class="featured-mini-more-btn">Lihat Semua Listing (320+) →</a>
               </div>
             </div>
           </div>
@@ -2409,6 +2577,148 @@
               recalculateLoan();
             }
           }
+
+          // 8. Render Simplified Featured Listings in Sidebar
+          function renderSidebarFeatured(currentProp) {
+            const listEl = document.getElementById('sidebar-featured-list');
+            const wrapEl = document.getElementById('sidebar-featured-container');
+            if (!listEl || !wrapEl) return;
+
+            const dataset = (Array.isArray(window.PROPERTIES_DATA) && window.PROPERTIES_DATA.length > 0)
+              ? window.PROPERTIES_DATA
+              : [];
+
+            if (dataset.length === 0) {
+              wrapEl.style.display = 'none';
+              return;
+            }
+
+            const candidates = dataset.filter(item => {
+              if (!item) return false;
+              if (item.hidden === true) return false;
+              if ((item.status || '').toLowerCase() === 'sold') return false;
+              if (item.id === currentProp.id) return false;
+              if (item.slug && currentProp.slug && item.slug === currentProp.slug) return false;
+              return true;
+            });
+
+            if (candidates.length === 0) {
+              wrapEl.style.display = 'none';
+              return;
+            }
+
+            const curType = (currentProp.type || currentProp.category || '').toLowerCase();
+            const curLoc = (currentProp.location || currentProp.region || '').toLowerCase();
+            const curStatus = (currentProp.status || 'sale').toLowerCase();
+
+            const isCommercialType = (t) => {
+              return /shop|office|factory|kilang|industr|kedai|pejabat|komersil|land|tanah/i.test(t);
+            };
+            const isResidentialType = (t) => {
+              return /terrace|teres|condo|banglo|bungalow|apartment|pangsapuri|semi-d|townhouse/i.test(t);
+            };
+
+            const curIsComm = isCommercialType(curType);
+            const curIsRes = isResidentialType(curType);
+
+            // Score candidates for relevance
+            const scored = candidates.map(item => {
+              let score = 0;
+              const itemType = (item.type || item.category || '').toLowerCase();
+              const itemLoc = (item.location || item.region || '').toLowerCase();
+              const itemStatus = (item.status || 'sale').toLowerCase();
+
+              if (itemType && curType && itemType === curType) {
+                score += 60;
+              } else if (curIsComm && isCommercialType(itemType)) {
+                score += 45;
+              } else if (curIsRes && isResidentialType(itemType)) {
+                score += 45;
+              }
+
+              const areas = ['shah alam', 'bangi', 'kajang', 'semenyih', 'cyberjaya', 'putrajaya', 'cheras', 'puchong', 'subang', 'klang', 'kuala lumpur', 'selangor', 'nilai', 'seremban'];
+              for (let i = 0; i < areas.length; i++) {
+                const a = areas[i];
+                if (curLoc.includes(a) && itemLoc.includes(a)) {
+                  score += 35;
+                  break;
+                }
+              }
+
+              if (itemStatus === curStatus) {
+                score += 20;
+              }
+
+              if (item.featured) {
+                score += 15;
+              }
+
+              if (Array.isArray(item.images) && item.images.length > 1) {
+                score += 10;
+              }
+
+              if (currentProp.price > 0 && item.price > 0) {
+                const ratio = item.price / currentProp.price;
+                if (ratio >= 0.6 && ratio <= 1.4) {
+                  score += 10;
+                }
+              }
+
+              return { item, score };
+            });
+
+            scored.sort((a, b) => b.score - a.score);
+            const selected = scored.slice(0, 4).map(s => s.item);
+
+            function cleanMiniTitle(tStr) {
+              if (!tStr) return 'Hartanah Pilihan';
+              let t = tStr.replace(/^(WTS|WTL|FOR SALE|FOR RENT|UNTUK DIJUAL|UNTUK DISEWA|TO LET)[\s\/:–-]*/gi, '').trim();
+              t = t.replace(/^(WTS|WTL|FOR SALE|FOR RENT|UNTUK DIJUAL|UNTUK DISEWA|TO LET)[\s\/:–-]*/gi, '').trim();
+              t = t.replace(/\s*[([]?\s*(for\s+rent|for\s+sale|untuk\s+disewa|untuk\s+dijual|to\s+let)\s*[)\]]?\s*$/gi, '').trim();
+              t = t.replace(/^[-–—|:\s]+/, '').trim();
+              return t || tStr;
+            }
+
+            wrapEl.style.display = 'block';
+            listEl.innerHTML = selected.map(item => {
+              const itemTitle = cleanMiniTitle(item.title);
+              let itemImg = '/icons/icon-192.png';
+              if (Array.isArray(item.images) && item.images.length > 0 && typeof item.images[0] === 'string' && item.images[0].trim()) {
+                itemImg = item.images[0].trim();
+              } else if (typeof item.image === 'string' && item.image.trim()) {
+                itemImg = item.image.split(',')[0].trim();
+              }
+
+              const isSaleItem = (item.status || 'sale').toLowerCase() === 'sale';
+              const badgeText = isSaleItem ? 'JUAL' : 'SEWA';
+              const badgeClass = isSaleItem ? 'badge-sale' : 'badge-rent';
+
+              let priceFormatted = item.priceStr;
+              if (!priceFormatted && item.price) {
+                priceFormatted = !isSaleItem ? `RM ${Number(item.price).toLocaleString()} / bln` : `RM ${Number(item.price).toLocaleString()}`;
+              }
+              priceFormatted = (priceFormatted || 'RM 0').replace(/\/\s*(mo|month|bln|bulan|mth)\b/gi, '/ bln');
+
+              const cleanLoc = (item.location || item.region || 'Selangor').replace(/^\+\s*/, '').trim();
+              const itemHref = `/property/${item.slug || item.id}`;
+
+              return `
+                <a href="${itemHref}" class="featured-mini-card">
+                  <div class="featured-mini-thumb-wrap">
+                    <img src="${itemImg}" alt="${itemTitle.replace(/"/g, '&quot;')}" class="featured-mini-thumb" loading="lazy" referrerpolicy="no-referrer" onerror="this.src='/icons/icon-192.png';">
+                    <span class="featured-mini-badge ${badgeClass}">${badgeText}</span>
+                  </div>
+                  <div class="featured-mini-content">
+                    <div class="featured-mini-loc">${cleanLoc}</div>
+                    <div class="featured-mini-title">${itemTitle}</div>
+                    <div class="featured-mini-price">${priceFormatted}</div>
+                  </div>
+                </a>
+              `;
+            }).join('');
+          }
+
+          renderSidebarFeatured(prop);
 
           // 8. Inject Structured Data JSON-LD
           const propJsonLd = {
