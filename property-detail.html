@@ -632,6 +632,209 @@
       transform: translateY(-1px);
     }
 
+  
+    /* --- Interactive Loan Slider Calculator --- */
+    .calc-box-wrap {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      padding: 16px;
+      margin-top: 14px;
+      box-shadow: 0 2px 10px rgba(15, 23, 42, 0.03);
+    }
+    .calc-header-badge {
+      display: inline-block;
+      background: #e2e8f0;
+      color: #475569;
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 2px 8px;
+      border-radius: 4px;
+      margin-bottom: 6px;
+    }
+    .calc-header-title {
+      font-size: 0.98rem;
+      font-weight: 800;
+      color: #0f172a;
+      margin: 0 0 12px 0;
+    }
+    .calc-hero-result {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      color: #ffffff;
+      padding: 14px 16px;
+      border-radius: 12px;
+      margin-bottom: 16px;
+      box-shadow: 0 4px 14px rgba(15, 23, 42, 0.12);
+    }
+    .calc-hero-caption {
+      font-size: 0.72rem;
+      color: #94a3b8;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .calc-hero-val {
+      font-size: 1.65rem;
+      font-weight: 900;
+      color: #f59e0b;
+      margin: 2px 0 4px 0;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+    .calc-hero-val small {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #cbd5e1;
+    }
+    .calc-hero-pill {
+      font-size: 0.74rem;
+      color: #cbd5e1;
+      font-weight: 500;
+    }
+    .calc-slider-group {
+      margin-bottom: 14px;
+    }
+    .calc-slider-label-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+    }
+    .calc-slider-label {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #334155;
+    }
+    .calc-slider-val {
+      font-size: 0.82rem;
+      font-weight: 800;
+      color: #0f172a;
+    }
+    .calc-slider-val-sub {
+      font-size: 0.74rem;
+      font-weight: 600;
+      color: #64748b;
+    }
+    .calc-range-input {
+      -webkit-appearance: none;
+      width: 100%;
+      height: 6px;
+      border-radius: 4px;
+      background: #cbd5e1;
+      outline: none;
+      margin: 6px 0;
+      cursor: pointer;
+    }
+    .calc-range-input::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: #d97706;
+      border: 2px solid #ffffff;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      cursor: pointer;
+      transition: transform 0.15s ease;
+    }
+    .calc-range-input::-webkit-slider-thumb:hover {
+      transform: scale(1.15);
+      background: #b45309;
+    }
+    .calc-range-input::-moz-range-thumb {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: #d97706;
+      border: 2px solid #ffffff;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      cursor: pointer;
+    }
+    .calc-chips-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin-top: 5px;
+    }
+    .calc-chip-btn {
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      color: #475569;
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .calc-chip-btn:hover {
+      border-color: #f59e0b;
+      color: #b45309;
+    }
+    .calc-chip-btn.active {
+      background: #fef3c7;
+      border-color: #f59e0b;
+      color: #92400e;
+      font-weight: 700;
+    }
+    .calc-accordion {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-top: 12px;
+    }
+    .calc-accordion-header {
+      width: 100%;
+      padding: 10px 12px;
+      background: #ffffff;
+      border: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #334155;
+      text-align: left;
+    }
+    .calc-accordion-header:hover {
+      background: #f8fafc;
+    }
+    .calc-accordion-body {
+      padding: 12px;
+      border-top: 1px solid #f1f5f9;
+      font-size: 0.8rem;
+      color: #64748b;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .calc-cta-wa-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      padding: 11px 14px;
+      background: #0f172a;
+      color: #ffffff;
+      border: none;
+      border-radius: 10px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-decoration: none;
+      margin-top: 12px;
+      box-sizing: border-box;
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+    .calc-cta-wa-btn:hover {
+      background: #1e293b;
+      transform: translateY(-1px);
+    }
+
   </style>
   <link rel="manifest" href="/manifest.json">
   <meta name="theme-color" content="#0f172a">
@@ -1080,12 +1283,14 @@
                 </div>
               </div>
 
-              <hr style="margin: 20px 0; border: none; border-top: 1px solid var(--border-color);">
+                            <hr style="margin: 20px 0; border: none; border-top: 1px solid var(--border-color);">
 
-              <!-- 6. Estimated Entry Costs / Rental Deposit Summary -->
-              <h4 id="d-summary-header" style="font-size: 0.95rem; margin-bottom: 12px; font-weight: 700;">Estimated Entry Costs</h4>
-              <div id="d-legal-summary" style="font-size: 0.85rem; color: var(--text-muted); display: flex; flex-direction: column; gap: 8px;">
-                <!-- Populated dynamically -->
+              <!-- 6. Interactive Loan Calculator (Slider) or Rental Deposit Summary -->
+              <div id="calculator-container">
+                <h4 id="d-summary-header" style="font-size: 0.95rem; margin-bottom: 12px; font-weight: 700;">Kalkulator Pinjaman</h4>
+                <div id="d-legal-summary" style="font-size: 0.85rem; color: var(--text-muted); display: flex; flex-direction: column; gap: 8px;">
+                  <!-- Populated dynamically -->
+                </div>
               </div>
             </div>
           </div>
@@ -1624,29 +1829,93 @@
             document.getElementById('d-lotType').textContent = lotTypeVal;
           }
 
-          function cleanPublicDescription(desc) {
+                    function cleanPublicDescription(desc) {
             if (!desc) return "";
-            return desc
-              .replace(/---\s*MAKLUMAT ASAL[\s\S]*$/gi, '')
-              .replace(/---\s*RUJUKAN EJEN[\s\S]*$/gi, '')
-              .replace(/📝\s*MAKLUMAT TERPERINCI[\s\S]*$/gi, '')
-              .replace(/Ejen Listing\s*:[\s\S]*$/gi, '')
-              .replace(/Listing COA Agent\s*:[\s\S]*$/gi, '')
-              .replace(/PropMall,\s*Built By Agents,\s*For Agents/gi, '')
-              .replace(/https?:\/\/(?:www\.)?propmall\.(?:co|my|net)\/[^\s]+/gi, '')
-              .replace(/https?:\/\/t\.me\/[^\s]+/gi, '')
-              .replace(/Hello Partner Agents,?\s*/gi, '')
-              .replace(/I want to share this Listing in PropMall with you\.?\s*/gi, '')
-              .replace(/(?:for\s+(?:further\s+)?(?:inquiries|enquiries|viewing|appointment|info)|kindly\s+contact|contact\s*me|hubungi\s*(?:saya|kami)?|call\s*\/|whatsapp\s*\/|wasap\s*\/|sebarang\s+pertanyaan|sesi\s+viewing|maklumat\s+lanjut)[\s\S]*$/gi, '')
-              .replace(/(?:Buy\s*\|\s*Sell\s*\|\s*Rent)[\s\S]*$/gi, '')
-              .replace(/https?:\/\/(?:www\.)?(?:wasap\.my|wa\.me)\/[^\s]+/gi, '')
-              .replace(/(?:(?:\+?60|0)1[0-9][-\s]?[0-9]{7,8})/gi, function(match) {
-                if (match.replace(/[^\d]/g, '').includes('108118559')) return match;
-                return '';
-              })
-              .replace(/^[~✔✅•*+]\s+/gm, '- ')
-              .replace(/\n\s*\n\s*\n+/g, '\n\n')
-              .trim();
+            var cutMarkers = [
+              /---\s*MAKLUMAT ASAL[\s\S]*$/i,
+              /---\s*RUJUKAN EJEN[\s\S]*$/i,
+              /📝\s*MAKLUMAT TERPERINCI[\s\S]*$/i,
+              /Ejen Listing\s*:[\s\S]*$/i,
+              /Listing COA Agent\s*:[\s\S]*$/i,
+              /PropMall,\s*Built By Agents[\s\S]*$/i,
+              /Hello Partner Agents[\s\S]*$/i,
+              /I want to share this Listing in PropMall[\s\S]*$/i,
+              /(?:\n|\A)\s*(?:Your\s+trusted)[\s\S]*$/i,
+              /(?:\n|\A)\s*(?:Hubungi\s+untuk\s+viewing)[\s\S]*$/i,
+              /(?:\n|\A)\s*(?:Kindly\s+contact\s+for\s+viewing)[\s\S]*$/i,
+              /(?:for\s+(?:further\s+)?(?:inquiries|enquiries|viewing|appointment|info)|kindly\s+contact|contact\s*me|hubungi\s*(?:saya|kami)?|call\s*\/|whatsapp\s*\/|wasap\s*\/|sebarang\s+pertanyaan|sesi\s+viewing|maklumat\s+lanjut)[\s\S]*$/i,
+              /(?:Buy\s*\|\s*Sell\s*\|\s*Rent)[\s\S]*$/i,
+              /(?:Owner\s*(?:are\s*)?welcome\s*to\s*list)[\s\S]*$/i,
+              /(?:Owners\s*(?:are\s*)?welcome\s*to\s*list)[\s\S]*$/i
+            ];
+            var cleaned = desc;
+            cutMarkers.forEach(function(m) {
+              cleaned = cleaned.replace(m, '');
+            });
+
+            var agencyRegex = /\b(?:iqi\s*realty|maxxan\s*realty|renstar|qve|hunt\s*properties|firdaus|mn\s*associates|great\s*casa|chester|propnex|allied|cbd|landsworth|hartagroup|arcaland|protasa|legacy\s*real|transasia|oriental|zeema|homefield|esprit|azmi\s*real|rahim\s*&\s*co|reapfield|real\s*estate\s*negotiator|registered\s*estate)\b/i;
+
+            var lines = cleaned.split('\n');
+            var cleanLines = [];
+            var coaName = (prop && prop.coaAgentName) ? prop.coaAgentName.toLowerCase().trim() : '';
+
+            for (var i = 0; i < lines.length; i++) {
+              var lStr = lines[i].trim();
+              var lLower = lStr.toLowerCase();
+
+              if (!lStr) {
+                cleanLines.push('');
+                continue;
+              }
+
+              // Skip lines with external links
+              if (/(?:wasap\.my|wa\.me|t\.me\/|bit\.ly\/|linktr\.ee|\.com|\.my|\.co|\.net)/i.test(lLower) && !lLower.includes('zaimrosli.my')) {
+                continue;
+              }
+
+              // Skip Telegram link words
+              if (lLower.includes('telegram link') || lLower.includes('telegram channel') || lLower.includes('telegram:')) {
+                continue;
+              }
+
+              // Skip phone numbers except Zaim (108118559)
+              if (/(?:(?:\+?60|0)1[0-9](?:[\s\.\-]?[0-9]){7,8})\b/i.test(lStr)) {
+                var cleanDigits = lStr.replace(/[^\d]/g, '');
+                if (!cleanDigits.includes('108118559')) continue;
+              }
+
+              // Skip agencies
+              if (agencyRegex.test(lLower) && !lLower.includes('jaz international')) {
+                continue;
+              }
+
+              // Skip REN/PEA lines
+              if (/\b(?:REN|PEA|REA)\s*[\d#\.\-]+/i.test(lStr) && !lStr.includes('39575')) {
+                continue;
+              }
+
+              // Skip coa agent name if present
+              if (coaName && coaName.length > 3 && lLower.includes(coaName)) {
+                continue;
+              }
+
+              // Skip standalone person name / negotiator lines
+              if (lStr.length < 40) {
+                if (/(?:perunding hartanah|ejen hartanah|property negotiator|trusted agent|real estate negotiator)/i.test(lLower)) {
+                  continue;
+                }
+                if (/^(?:en\.?|encik|cik|tuan|puan|bro|sis)?\s*[a-z\s\.']{3,30}$/i.test(lLower) && coaName && lLower.includes(coaName.split(' ')[0])) {
+                  continue;
+                }
+              }
+
+              cleanLines.push(lines[i]);
+            }
+
+            var res = cleanLines.join('\n');
+            res = res.replace(/^[~✔✅•*+]\s+/gm, '- ');
+            res = res.replace(/\n{3,}/g, '\n\n');
+            return res.trim();
           }
 
           document.getElementById('d-desc').textContent = cleanPublicDescription(prop.description);
@@ -1848,39 +2117,249 @@
           }
 
 
-          // 7. Dynamic Legal Fee Breakdown
-          const summaryHeader = document.getElementById('d-summary-header');
+                    // 7. Interactive Loan Slider Calculator (Sale) & Rental Deposit (Rent)
+          const calcContainer = document.getElementById('calculator-container');
           if (prop.status === 'rent') {
-            if (summaryHeader) summaryHeader.textContent = 'Estimated Rental Deposit Summary';
             const secDep = prop.price * 2;
             const utilDep = prop.price * 0.5;
             const firstMonth = prop.price;
-            document.getElementById('d-legal-summary').innerHTML = `
-              <div class="legal-summary-row"><span>1st Month Advance Rent:</span> <strong>RM ${firstMonth.toLocaleString()}</strong></div>
-              <div class="legal-summary-row"><span>2 Months Security Deposit:</span> <strong>RM ${secDep.toLocaleString()}</strong></div>
-              <div class="legal-summary-row"><span>0.5 Month Utility Deposit:</span> <strong>RM ${utilDep.toLocaleString()}</strong></div>
-              <hr style="margin: 4px 0; border: none; border-top: 1px dashed var(--border-color);">
-              <div class="legal-summary-total">
-                <span>Est. Total Move-In Deposit:</span> <strong>RM ${(firstMonth + secDep + utilDep).toLocaleString()}</strong>
-              </div>
-            `;
+            if (calcContainer) {
+              calcContainer.innerHTML = `
+                <h4 style="font-size: 0.95rem; margin-bottom: 12px; font-weight: 700;">Deposit Sewa (Estimated)</h4>
+                <div style="font-size: 0.85rem; color: var(--text-muted); display: flex; flex-direction: column; gap: 8px;">
+                  <div class="legal-summary-row"><span>1st Month Advance Rent:</span> <strong>RM ${firstMonth.toLocaleString()}</strong></div>
+                  <div class="legal-summary-row"><span>2 Months Security Deposit:</span> <strong>RM ${secDep.toLocaleString()}</strong></div>
+                  <div class="legal-summary-row"><span>0.5 Month Utility Deposit:</span> <strong>RM ${utilDep.toLocaleString()}</strong></div>
+                  <hr style="margin: 4px 0; border: none; border-top: 1px dashed var(--border-color);">
+                  <div class="legal-summary-total">
+                    <span>Est. Total Move-In Deposit:</span> <strong>RM ${(firstMonth + secDep + utilDep).toLocaleString()}</strong>
+                  </div>
+                </div>
+              `;
+            }
           } else {
-            if (summaryHeader) summaryHeader.textContent = 'Estimated Entry Costs (SPA & Stamp Duty)';
-            const spaFee = calcSPALegalFee(prop.price);
-            const motDuty = calcMOTStampDuty(prop.price);
-            const loanFee = calcLoanLegalFee(prop.price * 0.9);
-            const loanDuty = calcLoanStampDuty(prop.price * 0.9);
+            // SALE: Render Full Interactive Slider Mortgage Calculator
+            const pPrice = (prop.price && !isNaN(prop.price)) ? Number(prop.price) : 0;
+            if (calcContainer && pPrice > 0) {
+              calcContainer.innerHTML = `
+                <div class="calc-box-wrap">
+                  <span class="calc-header-badge">ANGGARAN PINJAMAN</span>
+                  <h4 class="calc-header-title">Kalkulator Pinjaman</h4>
 
-            document.getElementById('d-legal-summary').innerHTML = `
-              <div class="legal-summary-row"><span>SPA Legal Fee:</span> <strong>RM ${spaFee.toLocaleString()}</strong></div>
-              <div class="legal-summary-row"><span>MOT Stamp Duty:</span> <strong>RM ${motDuty.toLocaleString()}</strong></div>
-              <div class="legal-summary-row"><span>Loan Legal Fee (90%):</span> <strong>RM ${loanFee.toLocaleString()}</strong></div>
-              <div class="legal-summary-row"><span>Loan Stamp Duty:</span> <strong>RM ${loanDuty.toLocaleString()}</strong></div>
-              <hr style="margin: 4px 0; border: none; border-top: 1px dashed var(--border-color);">
-              <div class="legal-summary-total">
-                <span>Est. Initial Entry Cost:</span> <strong>RM ${(spaFee + motDuty + loanFee + loanDuty).toLocaleString()}</strong>
-              </div>
-            `;
+                  <!-- Hero Monthly Output -->
+                  <div class="calc-hero-result">
+                    <div class="calc-hero-caption">Anggaran Ansuran Bulanan</div>
+                    <div class="calc-hero-val" id="calc-hero-monthly">RM 0 <small>/ bln</small></div>
+                    <div class="calc-hero-pill" id="calc-hero-pill">Loan 90% • 30 Thn • 4.2%</div>
+                  </div>
+
+                  <!-- Sliders Container -->
+                  <div class="calc-sliders-wrap">
+                    <!-- 1. Downpayment Slider -->
+                    <div class="calc-slider-group">
+                      <div class="calc-slider-label-row">
+                        <span class="calc-slider-label">Wang Muka (Downpayment)</span>
+                        <span class="calc-slider-val" id="disp-dp-val">10% <span class="calc-slider-val-sub" id="disp-dp-rm">(RM 0)</span></span>
+                      </div>
+                      <input type="range" class="calc-range-input" id="range-dp" min="0" max="30" step="1" value="10">
+                      <div class="calc-chips-container">
+                        <button type="button" class="calc-chip-btn" data-dp="0">0% (SJKP / 100%)</button>
+                        <button type="button" class="calc-chip-btn active" data-dp="10">10%</button>
+                        <button type="button" class="calc-chip-btn" data-dp="15">15%</button>
+                        <button type="button" class="calc-chip-btn" data-dp="20">20%</button>
+                      </div>
+                    </div>
+
+                    <!-- 2. Tenure Slider -->
+                    <div class="calc-slider-group">
+                      <div class="calc-slider-label-row">
+                        <span class="calc-slider-label">Tempoh Pinjaman</span>
+                        <span class="calc-slider-val" id="disp-tenure-val">30 Tahun</span>
+                      </div>
+                      <input type="range" class="calc-range-input" id="range-tenure" min="10" max="35" step="1" value="30">
+                      <div class="calc-chips-container">
+                        <button type="button" class="calc-chip-btn" data-tenure="20">20 Thn</button>
+                        <button type="button" class="calc-chip-btn" data-tenure="25">25 Thn</button>
+                        <button type="button" class="calc-chip-btn active" data-tenure="30">30 Thn</button>
+                        <button type="button" class="calc-chip-btn" data-tenure="35">35 Thn</button>
+                      </div>
+                    </div>
+
+                    <!-- 3. Interest Rate Slider -->
+                    <div class="calc-slider-group" style="margin-bottom: 8px;">
+                      <div class="calc-slider-label-row">
+                        <span class="calc-slider-label">Kadar Faedah Bank</span>
+                        <span class="calc-slider-val" id="disp-interest-val">4.20%</span>
+                      </div>
+                      <input type="range" class="calc-range-input" id="range-interest" min="3.0" max="6.0" step="0.05" value="4.2">
+                    </div>
+                  </div>
+
+                  <!-- Accordion / Toggle for Entry Costs (SPA & Stamp Duty) -->
+                  <div class="calc-accordion">
+                    <button type="button" class="calc-accordion-header" id="btn-toggle-entry">
+                      <span>Pecahan Kos Masuk (SPA & Stamp Duty)</span>
+                      <span id="icon-toggle-entry" style="font-size: 0.9rem; transition: transform 0.2s;">▾</span>
+                    </button>
+                    <div class="calc-accordion-body" id="body-entry-costs" style="display: none;">
+                      <div class="legal-summary-row"><span>SPA Legal Fee:</span> <strong id="val-spa-fee">RM 0</strong></div>
+                      <div class="legal-summary-row"><span>MOT Stamp Duty:</span> <strong id="val-mot-duty">RM 0</strong></div>
+                      <div class="legal-summary-row"><span>Loan Legal Fee (<span id="val-loan-pct-label">90%</span>):</span> <strong id="val-loan-fee">RM 0</strong></div>
+                      <div class="legal-summary-row"><span>Loan Stamp Duty:</span> <strong id="val-loan-duty">RM 0</strong></div>
+                      <hr style="margin: 4px 0; border: none; border-top: 1px dashed var(--border-color);">
+                      <div class="legal-summary-total">
+                        <span>Est. Initial Entry Cost:</span> <strong id="val-total-entry">RM 0</strong>
+                      </div>
+                      <div style="font-size: 0.70rem; color: #94a3b8; margin-top: 4px; line-height: 1.35;">
+                        *Anggaran kos guaman & duti setem sah mengikut skala Solicitors' Remuneration Order (SRO) 2023.
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- WhatsApp CTA with live calculation context -->
+                  <a id="btn-calc-whatsapp" href="#" target="_blank" rel="noopener" class="calc-cta-wa-btn">
+                    Semak Kelayakan Loan dengan Zaim
+                  </a>
+                </div>
+              `;
+
+              // Hook Calculator Logic
+              const rangeDp = document.getElementById('range-dp');
+              const rangeTenure = document.getElementById('range-tenure');
+              const rangeInterest = document.getElementById('range-interest');
+              const heroMonthly = document.getElementById('calc-hero-monthly');
+              const heroPill = document.getElementById('calc-hero-pill');
+              const dispDpVal = document.getElementById('disp-dp-val');
+              const dispTenureVal = document.getElementById('disp-tenure-val');
+              const dispInterestVal = document.getElementById('disp-interest-val');
+              const btnCalcWa = document.getElementById('btn-calc-whatsapp');
+
+              // Accordion elements
+              const btnToggleEntry = document.getElementById('btn-toggle-entry');
+              const bodyEntryCosts = document.getElementById('body-entry-costs');
+              const iconToggleEntry = document.getElementById('icon-toggle-entry');
+              const valSpaFee = document.getElementById('val-spa-fee');
+              const valMotDuty = document.getElementById('val-mot-duty');
+              const valLoanFee = document.getElementById('val-loan-fee');
+              const valLoanDuty = document.getElementById('val-loan-duty');
+              const valTotalEntry = document.getElementById('val-total-entry');
+              const valLoanPctLabel = document.getElementById('val-loan-pct-label');
+
+              let entryOpen = false;
+              if (btnToggleEntry) {
+                btnToggleEntry.onclick = () => {
+                  entryOpen = !entryOpen;
+                  bodyEntryCosts.style.display = entryOpen ? 'flex' : 'none';
+                  iconToggleEntry.style.transform = entryOpen ? 'rotate(180deg)' : 'rotate(0deg)';
+                };
+              }
+
+              function recalculateLoan() {
+                const dpPct = parseFloat(rangeDp.value) || 0;
+                const tenureYears = parseInt(rangeTenure.value, 10) || 30;
+                const interestRate = parseFloat(rangeInterest.value) || 4.2;
+
+                const dpAmount = Math.round(pPrice * (dpPct / 100));
+                const loanAmount = Math.max(0, pPrice - dpAmount);
+                const loanPct = 100 - dpPct;
+
+                // Monthly installment formula
+                let monthlyRepayment = 0;
+                if (loanAmount > 0) {
+                  const monthlyRate = (interestRate / 100) / 12;
+                  const totalMonths = tenureYears * 12;
+                  if (monthlyRate > 0) {
+                    monthlyRepayment = Math.round(
+                      loanAmount * (monthlyRate * Math.pow(1 + monthlyRate, totalMonths)) / (Math.pow(1 + monthlyRate, totalMonths) - 1)
+                    );
+                  } else {
+                    monthlyRepayment = Math.round(loanAmount / totalMonths);
+                  }
+                }
+
+                // Update Labels
+                dispDpVal.innerHTML = `${dpPct}% <span class="calc-slider-val-sub">(RM ${dpAmount.toLocaleString()})</span>`;
+                dispTenureVal.textContent = `${tenureYears} Tahun`;
+                dispInterestVal.textContent = `${interestRate.toFixed(2)}%`;
+
+                heroMonthly.innerHTML = `RM ${monthlyRepayment.toLocaleString()} <small>/ bln</small>`;
+                heroPill.textContent = `Loan ${loanPct}% (RM ${loanAmount.toLocaleString()}) • ${tenureYears} Thn • ${interestRate.toFixed(2)}%`;
+
+                // Update Entry Costs
+                const spaFee = calcSPALegalFee(pPrice);
+                const motDuty = calcMOTStampDuty(pPrice);
+                const loanFee = calcLoanLegalFee(loanAmount);
+                const loanDuty = calcLoanStampDuty(loanAmount);
+                const totalEntry = spaFee + motDuty + loanFee + loanDuty;
+
+                valSpaFee.textContent = `RM ${spaFee.toLocaleString()}`;
+                valMotDuty.textContent = `RM ${motDuty.toLocaleString()}`;
+                valLoanPctLabel.textContent = `${loanPct}%`;
+                valLoanFee.textContent = `RM ${loanFee.toLocaleString()}`;
+                valLoanDuty.textContent = `RM ${loanDuty.toLocaleString()}`;
+                valTotalEntry.textContent = `RM ${totalEntry.toLocaleString()}`;
+
+                // Update WhatsApp consultation link
+                const waText = encodeURIComponent(
+                  `Salam Zaim, saya nak semak kelayakan pinjaman bagi hartanah berikut:
+
+` +
+                  `Hartanah: ${prop.title}
+` +
+                  `Harga: ${detailPrice}
+` +
+                  `Cadangan Downpayment: ${dpPct}% (RM ${dpAmount.toLocaleString()})
+` +
+                  `Jumlah Pinjaman: RM ${loanAmount.toLocaleString()} (${tenureYears} Tahun)
+` +
+                  `Anggaran Ansuran Bulanan: RM ${monthlyRepayment.toLocaleString()}/bulan
+
+` +
+                  `Pautan: ${canonicalUrl}`
+                );
+                btnCalcWa.href = `https://wa.me/60108118559?text=${waText}`;
+              }
+
+              // Event listeners on range inputs
+              rangeDp.addEventListener('input', () => {
+                // Update chip active states
+                document.querySelectorAll('.calc-chip-btn[data-dp]').forEach(btn => {
+                  btn.classList.toggle('active', btn.getAttribute('data-dp') === rangeDp.value);
+                });
+                recalculateLoan();
+              });
+
+              rangeTenure.addEventListener('input', () => {
+                document.querySelectorAll('.calc-chip-btn[data-tenure]').forEach(btn => {
+                  btn.classList.toggle('active', btn.getAttribute('data-tenure') === rangeTenure.value);
+                });
+                recalculateLoan();
+              });
+
+              rangeInterest.addEventListener('input', recalculateLoan);
+
+              // Chip buttons
+              document.querySelectorAll('.calc-chip-btn[data-dp]').forEach(btn => {
+                btn.onclick = () => {
+                  rangeDp.value = btn.getAttribute('data-dp');
+                  document.querySelectorAll('.calc-chip-btn[data-dp]').forEach(b => b.classList.remove('active'));
+                  btn.classList.add('active');
+                  recalculateLoan();
+                };
+              });
+
+              document.querySelectorAll('.calc-chip-btn[data-tenure]').forEach(btn => {
+                btn.onclick = () => {
+                  rangeTenure.value = btn.getAttribute('data-tenure');
+                  document.querySelectorAll('.calc-chip-btn[data-tenure]').forEach(b => b.classList.remove('active'));
+                  btn.classList.add('active');
+                  recalculateLoan();
+                };
+              });
+
+              // Initial calculation
+              recalculateLoan();
+            }
           }
 
           // 8. Inject Structured Data JSON-LD
