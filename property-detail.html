@@ -3,11 +3,55 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- SEO_BLOCK_START -->
   <title>Property Details — Zaim Rosli (REN39575)</title>
   <meta name="description" content="View comprehensive property specifications, photo gallery, legal fees summary, and WhatsApp agent contact.">
-  <link rel="stylesheet" href="/styles.css">
+  
+  <!-- Canonical & SEO Meta Tags -->
+  <link rel="canonical" id="canonical-tag" href="https://zaimrosli.my/properties">
+  <meta name="robots" content="noindex, follow">
+  <meta property="og:site_name" content="Zaim Rosli Real Estate Portal">
+  <meta property="og:type" content="website">
+  <meta property="og:url" id="og-url" content="https://zaimrosli.my/properties">
+  <meta property="og:title" id="og-title" content="Property Listing — Zaim Rosli (REN39575)">
+  <meta property="og:description" id="og-desc" content="View verified residential, commercial, and industrial property listings for sale and rent across KL & Selangor.">
+  <meta property="og:image" id="og-image" content="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1200&q=80">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" id="tw-title" content="Property Listing — Zaim Rosli (REN39575)">
+  <meta name="twitter:description" id="tw-desc" content="View verified residential, commercial, and industrial property listings for sale and rent across KL & Selangor.">
+  <meta name="twitter:image" id="tw-image" content="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1200&q=80">
+
+  <!-- Schema.org Structured Data -->
+  <script id="property-jsonld" type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "RealEstateListing",
+    "name": "Senarai Hartanah Pilihan Selangor & KL — Zaim Rosli (REN39575)",
+    "description": "Maklumat lengkap hartanah kediaman, komersil & industri untuk dijual dan disewa di Selangor & Kuala Lumpur.",
+    "url": "https://zaimrosli.my/properties",
+    "image": "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1200&q=80",
+    "author": {
+      "@type": "Person",
+      "name": "Zaim Rosli (REN39575)",
+      "jobTitle": "Registered Real Estate Negotiator",
+      "telephone": "+60108118559",
+      "url": "https://zaimrosli.my"
+    }
+  }
+  </script>
+  <script id="breadcrumb-jsonld" type="application/ld+json">{}</script>
+  <!-- SEO_BLOCK_END -->
+
+  <link rel="stylesheet" href="/styles.css?v=129">
   <style>
     .specs-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin: 24px 0;
+    }
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 16px;
@@ -31,6 +75,57 @@
       color: var(--text-main);
       margin-top: 4px;
     }
+    .detail-sidebar {
+      padding: 24px;
+    }
+    .legal-summary-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.82rem;
+      white-space: nowrap;
+    }
+    .legal-summary-row span {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .legal-summary-row strong {
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .legal-summary-total {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.88rem;
+      color: var(--text-main);
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .legal-summary-total span {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .legal-summary-total strong {
+      white-space: nowrap;
+      flex-shrink: 0;
+      color: var(--accent-gold);
+    }
+    @media (max-width: 480px) {
+      .detail-sidebar {
+        padding: 16px 14px !important;
+      }
+      .legal-summary-row {
+        font-size: 0.76rem !important;
+      }
+      .legal-summary-total {
+        font-size: 0.84rem !important;
+      }
+    }
   </style>
   <link rel="manifest" href="/manifest.json">
   <meta name="theme-color" content="#0f172a">
@@ -40,11 +135,11 @@
   <link rel="apple-touch-icon" href="/icons/icon-192.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/icons/icon-192.png">
   <link rel="shortcut icon" href="/favicon.ico">
-  <script src="/analytics.js?v=91" defer></script>
+  <script src="/analytics.js?v=129" defer></script>
 </head>
 <body>
 
-  <!-- Site Navigation Header -->
+    <!-- Site Navigation Header -->
   <header class="site-header">
     <div class="container nav-wrapper">
       <a href="/index.html" class="logo">
@@ -54,13 +149,60 @@
 
       <ul class="nav-links">
         <li><a href="/index.html" class="nav-link">Home</a></li>
+        
+        <!-- Properties Dropdown -->
+        <li class="nav-item-dropdown">
+          <a href="/properties.html" class="nav-link nav-link-dropdown">
+            Properties <span class="arrow">▾</span>
+          </a>
+          <div class="dropdown-menu">
+            <a href="/properties/residential" class="dropdown-item">Residential Properties</a>
+            <a href="/properties/commercial-industrial" class="dropdown-item">Commercial & Industrial</a>
+            <div style="margin: 4px 8px; border-top: 1px solid rgba(255,255,255,0.15);"></div>
+            <a href="/properties/for-sale" class="dropdown-item">Properties For Sale</a>
+            <a href="/properties/for-rent" class="dropdown-item">Rental Properties</a>
+            <a href="/properties.html" class="dropdown-item">All Listings</a>
+          </div>
+        </li>
+
+        <!-- Services Dropdown -->
+        <li class="nav-item-dropdown">
+          <a href="/services.html" class="nav-link nav-link-dropdown">
+            Services <span class="arrow">▾</span>
+          </a>
+          <div class="dropdown-menu">
+            <a href="/services.html#selling" class="dropdown-item">Property Selling Advisory</a>
+            <a href="/services.html#valuation" class="dropdown-item">Free Market Valuation</a>
+            <a href="/services.html#legal-loan" class="dropdown-item">Legal & Loan Assistance</a>
+          </div>
+        </li>
+
+        <!-- Calculators Dropdown -->
+        <li class="nav-item-dropdown">
+          <a href="/calculator.html" class="nav-link nav-link-dropdown">
+            Calculators <span class="arrow">▾</span>
+          </a>
+          <div class="dropdown-menu">
+            <a href="/calculator.html" class="dropdown-item">Legal Fee & Stamp Duty</a>
+            <a href="/calculator.html" class="dropdown-item">Bank Loan DSR Check</a>
+          </div>
+        </li>
+
+        <!-- Resources Dropdown -->
+        <li class="nav-item-dropdown">
+          <a href="/blog.html" class="nav-link nav-link-dropdown">
+            Resources <span class="arrow">▾</span>
+          </a>
+          <div class="dropdown-menu">
+            <a href="/blog.html" class="dropdown-item">Blog & Guides</a>
+            <a href="/testimonials.html" class="dropdown-item">Client Reviews</a>
+            <a href="/faq.html" class="dropdown-item">FAQ</a>
+            <div style="margin: 4px 8px; border-top: 1px solid rgba(255,255,255,0.15);"></div>
+            <a href="/login.html" class="dropdown-item" style="color: #fbbf24; font-weight: 700;">Admin Portal</a>
+          </div>
+        </li>
+
         <li><a href="/about.html" class="nav-link">About Zaim</a></li>
-        <li><a href="/properties.html" class="nav-link active">Properties</a></li>
-        <li><a href="/services.html" class="nav-link">Services</a></li>
-        <li><a href="/calculator.html" class="nav-link">Calculators</a></li>
-        <li><a href="/blog.html" class="nav-link">Blog</a></li>
-        <li><a href="/testimonials.html" class="nav-link">Testimonials</a></li>
-        <li><a href="/faq.html" class="nav-link">FAQ</a></li>
         <li><a href="/contact.html" class="nav-link">Contact</a></li>
       </ul>
 
@@ -76,27 +218,124 @@
   </header>
 
   <!-- Mobile Drawer Overlay -->
-  <div class="mobile-overlay">
-    <div class="mobile-drawer">
+    <!-- PWA Mobile Navigation Drawer Overlay -->
+  <div class="mobile-overlay" id="mobile-nav-overlay">
+    <div class="mobile-drawer" id="mobile-nav-drawer">
       <div class="mobile-drawer-header">
-        <div class="logo">
+        <div class="drawer-logo">
           <span class="logo-main">ZAIM<span>ROSLI</span></span>
           <span class="logo-sub">REN39575</span>
         </div>
-        <button class="mobile-drawer-close">&times;</button>
+        <button class="mobile-drawer-close" aria-label="Close Navigation Menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
       </div>
 
-      <ul class="mobile-drawer-links">
-        <li><a href="/index.html" class="mobile-drawer-link">Home</a></li>
-        <li><a href="/about.html" class="mobile-drawer-link">About Zaim</a></li>
-        <li><a href="/properties.html" class="mobile-drawer-link active">Properties</a></li>
-        <li><a href="/services.html" class="mobile-drawer-link">Services</a></li>
-        <li><a href="/calculator.html" class="mobile-drawer-link">Calculators</a></li>
-        <li><a href="/blog.html" class="mobile-drawer-link">Blog</a></li>
-        <li><a href="/testimonials.html" class="mobile-drawer-link">Testimonials</a></li>
-        <li><a href="/faq.html" class="mobile-drawer-link">FAQ</a></li>
-        <li><a href="/contact.html" class="mobile-drawer-link">Contact</a></li>
-      </ul>
+      <div class="mobile-drawer-body">
+        <ul class="mobile-nav-list">
+          <li class="mobile-nav-item">
+            <a href="/" class="mobile-nav-link">HOME</a>
+          </li>
+
+          <!-- Properties Accordion -->
+          <li class="mobile-nav-item mobile-accordion-item">
+            <div class="mobile-accordion-header mobile-dropdown-toggle">
+              <span class="mobile-accordion-title">PROPERTIES</span>
+              <span class="mobile-accordion-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </span>
+            </div>
+            <div class="mobile-accordion-content">
+              <a href="/properties/residential" class="mobile-sublink">Residential Properties</a>
+              <a href="/properties/commercial-industrial" class="mobile-sublink">Commercial & Industrial</a>
+              <a href="/properties/for-sale" class="mobile-sublink">Properties For Sale</a>
+              <a href="/properties/for-rent" class="mobile-sublink">Rental Properties</a>
+              <a href="/properties" class="mobile-sublink">All Listings</a>
+              
+              <div class="mobile-subgroup-title">LOKASI FOKUS</div>
+              <div class="area-focus-nav area-focus-mobile">
+                <a href="/properties/bangi" class="mobile-sublink">Bangi Properties</a>
+                <a href="/properties/nilai" class="mobile-sublink">Nilai Properties</a>
+              </div>
+            </div>
+          </li>
+
+          <!-- Services Accordion -->
+          <li class="mobile-nav-item mobile-accordion-item">
+            <div class="mobile-accordion-header mobile-dropdown-toggle">
+              <span class="mobile-accordion-title">SERVICES</span>
+              <span class="mobile-accordion-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </span>
+            </div>
+            <div class="mobile-accordion-content">
+              <a href="/foreign-buyers" class="mobile-sublink" style="color: #d97706; font-weight: 800;">Foreign Buyer & Expat Advisory</a>
+              <a href="/services#selling" class="mobile-sublink">Property Selling Advisory</a>
+              <a href="/services#valuation" class="mobile-sublink">Free Market Valuation</a>
+              <a href="/services#legal-loan" class="mobile-sublink">Legal & Loan Screening</a>
+            </div>
+          </li>
+
+          <!-- Calculators Accordion -->
+          <li class="mobile-nav-item mobile-accordion-item">
+            <div class="mobile-accordion-header mobile-dropdown-toggle">
+              <span class="mobile-accordion-title">CALCULATORS</span>
+              <span class="mobile-accordion-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </span>
+            </div>
+            <div class="mobile-accordion-content">
+              <a href="/calculator#legal" class="mobile-sublink">Legal Fee & Stamp Duty (MOT)</a>
+              <a href="/calculator#dsr" class="mobile-sublink">Bank Loan DSR Check</a>
+            </div>
+          </li>
+
+          <!-- Resources Accordion -->
+          <li class="mobile-nav-item mobile-accordion-item">
+            <div class="mobile-accordion-header mobile-dropdown-toggle">
+              <span class="mobile-accordion-title">RESOURCES</span>
+              <span class="mobile-accordion-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </span>
+            </div>
+            <div class="mobile-accordion-content">
+              <a href="/blog" class="mobile-sublink">Blog & Property Guides</a>
+              <a href="/foreign-buyers" class="mobile-sublink" style="color: #d97706; font-weight: 800;">Foreign Buyer Guide</a>
+              <a href="/testimonials" class="mobile-sublink">Client Reviews & Testimonials</a>
+              <a href="/faq" class="mobile-sublink">Frequently Asked Questions (FAQ)</a>
+              <div style="margin: 6px 0; border-top: 1px solid #e2e8f0;"></div>
+              <a href="/login.html" class="mobile-sublink" style="color: #d97706; font-weight: 800;">Admin Portal (REN39575)</a>
+            </div>
+          </li>
+
+          <li class="mobile-nav-item">
+            <a href="/about" class="mobile-nav-link">ABOUT ZAIM</a>
+          </li>
+          <li class="mobile-nav-item">
+            <a href="/contact" class="mobile-nav-link">CONTACT</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="mobile-drawer-footer">
+        <a href="https://wa.me/60183863488?text=Salam%20Zaim,%20saya%20ingin%20berunding%20mengenai%20hartanah" target="_blank" rel="noopener" class="mobile-drawer-btn btn-wa-drawer">
+          WhatsApp Zaim (REN39575)
+        </a>
+        <a href="/contact" class="mobile-drawer-btn btn-appointment-drawer">
+          Appointment / Temu Janji
+        </a>
+      </div>
     </div>
   </div>
 
@@ -108,12 +347,31 @@
         <h3 style="color: var(--text-muted);">Loading property details...</h3>
       </div>
 
+      <!-- 404 State Container -->
+      <div id="detail-404" style="display: none; text-align: center; padding: 70px 20px; background: #ffffff; border-radius: var(--radius-lg); border: 1px solid var(--border-color); margin: 20px 0;">
+        <div style="width: 56px; height: 56px; border-radius: 16px; background: linear-gradient(135deg, rgba(217, 119, 6, 0.12), rgba(245, 158, 11, 0.04)); border: 1.5px solid rgba(217, 119, 6, 0.28); display: flex; align-items: center; justify-content: center; margin: 0 auto 16px;">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+          </svg>
+        </div>
+        <h2 style="font-size: 1.6rem; color: #0f172a; margin-bottom: 8px; font-weight: 800;">Property Listing Not Found</h2>
+        <p style="color: #64748b; font-size: 0.95rem; max-width: 500px; margin: 0 auto 24px; line-height: 1.6;">The listing you are looking for may have been sold, rented out, or the link has changed.</p>
+        <a href="/properties" class="btn btn-primary" style="display: inline-flex; align-items: center; gap: 8px;">
+          Browse All Available Properties
+        </a>
+      </div>
+
       <div id="detail-container" style="display: none;">
         
-        <!-- Breadcrumb & Back -->
-        <div style="margin-bottom: 20px;">
-          <a href="/properties.html" style="font-size: 0.9rem; color: var(--accent-gold); font-weight: 700;">← Back to All Properties</a>
-        </div>
+        <!-- Semantic Breadcrumbs Navigation -->
+        <nav aria-label="Breadcrumb" style="margin-bottom: 20px; font-size: 0.86rem; color: #64748b; display: flex; align-items: center; gap: 6px; flex-wrap: wrap;">
+          <a href="/" style="color: var(--accent-gold); font-weight: 600; text-decoration: none;">Home</a>
+          <span style="opacity: 0.5;">/</span>
+          <a href="/properties" style="color: var(--accent-gold); font-weight: 600; text-decoration: none;">Properties</a>
+          <span style="opacity: 0.5;">/</span>
+          <span id="d-breadcrumb-title" style="color: #0f172a; font-weight: 700; word-break: break-word;">Listing</span>
+        </nav>
 
         <div class="detail-grid" style="min-width: 0; width: 100%; max-width: 100%; box-sizing: border-box;">
           
@@ -127,13 +385,24 @@
             <!-- Photo Gallery Thumbnails Container -->
             <div id="d-gallery-thumbs" style="display: flex; gap: 8px; overflow-x: auto; margin-bottom: 20px; padding-bottom: 4px; width: 100%; max-width: 100%; box-sizing: border-box;"></div>
 
-            <div class="detail-header-row">
-              <div class="detail-title-box">
-                <h1 id="d-title">Property Title</h1>
-                <p id="d-location">📍 Location</p>
+            <!-- Property Title, Location & Price Stack -->
+            <div class="detail-header-stack" style="margin-bottom: 22px;">
+              <h1 id="d-title" style="font-size: clamp(1.4rem, 2.4vw, 1.9rem); font-weight: 800; color: #0f172a; line-height: 1.3; margin-bottom: 8px; word-break: break-word; text-transform: uppercase;">Property Title</h1>
+              <p id="d-location" style="font-size: 0.95rem; color: #64748b; margin-bottom: 12px; display: flex; align-items: center; gap: 6px; font-weight: 500;">Location</p>
+              
+              <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+                <div id="d-price" class="detail-price-box" style="font-size: clamp(1.6rem, 2.8vw, 2.2rem); font-weight: 800; color: #d97706; line-height: 1.2;">
+                  RM 0
+                </div>
+                <div id="d-currency-estimates" style="display: flex; gap: 6px; flex-wrap: wrap;"></div>
               </div>
-              <div id="d-price" class="detail-price-box">
-                RM 0
+
+              <!-- Foreign Buyer Eligibility Notice -->
+              <div id="d-foreigner-badge" style="display: none; margin-top: 10px;">
+                <a href="/foreign-buyers.html" style="display: inline-flex; align-items: center; gap: 6px; background: #e0f2fe; color: #0369a1; border: 1px solid #bae6fd; font-size: 0.78rem; font-weight: 700; padding: 4px 10px; border-radius: 8px; text-decoration: none;">
+                  <span>Foreigner Eligible Listing</span>
+                  <span style="font-weight: 400; opacity: 0.8;">• View Expat Guide</span>
+                </a>
               </div>
             </div>
 
@@ -151,7 +420,11 @@
                 <div class="spec-label">BATHROOMS</div>
                 <div id="d-baths" class="spec-val">-</div>
               </div>
-              <div class="spec-box">
+              <div id="box-landSize" class="spec-box">
+                <div class="spec-label">LAND AREA</div>
+                <div id="d-landSize" class="spec-val">-</div>
+              </div>
+              <div id="box-size" class="spec-box">
                 <div class="spec-label">BUILT-UP SIZE</div>
                 <div id="d-size" class="spec-val">- sqft</div>
               </div>
@@ -171,6 +444,12 @@
               <p id="d-desc" style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; white-space: pre-line;">
                 Description content...
               </p>
+              <div style="margin-top: 24px; padding-top: 16px; border-top: 1px dashed var(--border-color);">
+                <button id="d-bottom-share-btn" class="btn btn-outline" style="width: 100%; display: flex; align-items: center; justify-content: center; gap: 8px; font-weight: 700; height: 46px;">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
+                  Share Property Listing
+                </button>
+              </div>
             </div>
           </div>
 
@@ -188,11 +467,16 @@
                 </div>
               </div>
 
-              <a id="d-whatsapp-btn" href="#" target="_blank" class="btn btn-whatsapp" style="width: 100%; margin-bottom: 12px;">
-                💬 WhatsApp Agent Direct
+              <a id="d-whatsapp-btn" href="#" target="_blank" class="btn btn-whatsapp" style="width: 100%; margin-bottom: 10px; display: flex; align-items: center; justify-content: center; gap: 8px; font-weight: 700;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink: 0;">
+                  <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+                </svg>
+                WhatsApp Agent Direct
               </a>
-              <a href="tel:+60108118559" class="btn btn-outline" style="width: 100%;">
-                📞 Direct Phone Call
+
+              <a href="tel:+60108118559" class="btn btn-outline" style="width: 100%; display: flex; align-items: center; justify-content: center; gap: 8px; font-weight: 700;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                Direct Phone Call
               </a>
 
               <hr style="margin: 24px 0; border: none; border-top: 1px solid var(--border-color);">
@@ -221,8 +505,9 @@
     </div>
   </footer>
 
-  <script src="/properties-data.js"></script>
-  <script src="/app.js"></script>
+  <script src="/properties-data.js?v=133"></script>
+  <script src="/locations-config.js?v=20"></script>
+  <script src="/app.js?v=130"></script>
   <script>
     function slugify(text) {
       if (!text) return '';
@@ -253,183 +538,551 @@
     }
 
     document.addEventListener('DOMContentLoaded', () => {
-      function renderDetail() {
+      async function renderDetail() {
+        const loadingEl = document.getElementById('detail-loading');
+        const containerEl = document.getElementById('detail-container');
+        const notFoundEl = document.getElementById('detail-404');
+
         try {
           const urlParams = new URLSearchParams(window.location.search);
           const querySlug = urlParams.get('slug');
           const queryId = urlParams.get('id');
 
-          // Extract slug from URL path: /property-detail/the-grand-pavilion-penthouse
           const pathParts = window.location.pathname.split('/').filter(Boolean);
-          const pathSlug = (pathParts.length >= 2 && pathParts[0] === 'property-detail') ? pathParts[1] : null;
+          let pathSlug = null;
+          const validPrefixes = ['property', 'property-detail', 'properties', 'residential', 'commercial', 'commercial-industrial'];
+          if (pathParts.length >= 2 && validPrefixes.includes(pathParts[0])) {
+            pathSlug = pathParts[pathParts.length - 1];
+          } else if (pathParts.length === 1 && !pathParts[0].endsWith('.html') && pathParts[0] !== 'properties') {
+            pathSlug = pathParts[0];
+          }
+          const targetSlug = querySlug || pathSlug;
 
-          const targetSlug = pathSlug || querySlug;
-          
-          const prop = (window.PROPERTIES_DATA || []).find(p => 
-            p.slug === targetSlug || 
-            p.id === queryId || 
-            p.id === targetSlug ||
-            slugify(p.title) === targetSlug ||
-            (targetSlug && p.slug && p.slug.startsWith(targetSlug))
-          ) || (window.PROPERTIES_DATA || [])[0];
+          function matchProperty(dataset, slugOrId) {
+            if (!dataset || !Array.isArray(dataset) || !slugOrId) return null;
+            return dataset.find(p =>
+              p.slug === slugOrId ||
+              p.id === queryId ||
+              p.id === slugOrId ||
+              slugify(p.title) === slugOrId ||
+              (p.slug && p.slug.startsWith(slugOrId))
+            );
+          }
 
-          document.getElementById('detail-loading').style.display = 'none';
-          document.getElementById('detail-container').style.display = 'block';
+          let prop = null;
+          if (targetSlug && targetSlug !== 'property-detail' && targetSlug !== 'property-detail.html' && targetSlug !== 'properties') {
+            // A. Try local dataset (window.PROPERTIES_DATA)
+            prop = matchProperty(window.PROPERTIES_DATA, targetSlug);
 
-          if (!prop) return;
+            // B. If not found locally, fetch fresh live data from Worker API
+            if (!prop) {
+              try {
+                const apiRes = await fetch('/api/properties?t=' + Date.now(), { cache: 'no-store' });
+                if (apiRes.ok) {
+                  const liveList = await apiRes.json();
+                  if (Array.isArray(liveList) && liveList.length > 0) {
+                    window.PROPERTIES_DATA = liveList;
+                    try {
+                      localStorage.setItem('ZAIM_ROSLI_PROPERTIES', JSON.stringify(liveList));
+                    } catch (storeErr) {}
+                    prop = matchProperty(liveList, targetSlug);
+                  }
+                }
+              } catch (fetchErr) {
+                console.log('Live properties fetch skipped:', fetchErr);
+              }
+            }
+          }
 
-        document.getElementById('d-title').textContent = prop.title;
-        document.getElementById('d-location').innerHTML = `📍 ${prop.location}`;
-        document.getElementById('d-price').textContent = prop.priceStr;
+          if (loadingEl) loadingEl.style.display = 'none';
 
-        const isSale = (prop.status || 'sale').toLowerCase() === 'sale';
-        const rawPriceStr = prop.priceStr || (isSale ? `RM ${Number(prop.price).toLocaleString('en-US')}` : `RM ${Number(prop.price).toLocaleString('en-US')} / month`);
-        const actionPrefix = isSale ? 'Untuk Dijual' : 'Sewa';
-        const suffixHook = isSale ? 'Direct Agent REN39575' : 'Gambar & Info Penuh';
-        document.title = `${actionPrefix}: ${prop.title} | ${rawPriceStr} • ${suffixHook}`;
+          if (!prop) {
+            if (notFoundEl) notFoundEl.style.display = 'block';
+            if (containerEl) containerEl.style.display = 'none';
+            document.title = 'Property Not Found — Zaim Rosli (REN39575)';
+            return;
+          }
 
-        // Image Gallery Handling
-        let allImages = [];
-        if (Array.isArray(prop.images) && prop.images.length > 0) {
-          allImages = prop.images.map(img => typeof img === 'string' ? img.trim() : img).filter(Boolean);
-        } else if (typeof prop.image === 'string' && prop.image.trim()) {
-          allImages = prop.image.split(',').map(s => s.trim()).filter(Boolean);
-        }
+          if (notFoundEl) notFoundEl.style.display = 'none';
+          if (containerEl) containerEl.style.display = 'block';
 
-        if (allImages.length === 0) {
-          allImages = ["https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1200&q=80"];
-        }
+          // 1. Basic Content Setup
+          document.getElementById('d-title').textContent = prop.title;
+          document.getElementById('d-location').innerHTML = `${prop.location}`;
 
-        const mainImg = document.getElementById('d-main-img');
-        if (mainImg) {
-          mainImg.referrerPolicy = 'no-referrer';
-          mainImg.src = allImages[0];
-        }
+          const isRentalProp = (prop.status || 'sale').toLowerCase() === 'rent';
+          let detailPrice = prop.priceStr;
+          if (!detailPrice && prop.price != null && !isNaN(Number(prop.price))) {
+            detailPrice = isRentalProp ? `RM ${Number(prop.price).toLocaleString('en-US')} / month` : `RM ${Number(prop.price).toLocaleString('en-US')}`;
+          }
+          detailPrice = (detailPrice || (prop.price ? `RM ${Number(prop.price).toLocaleString('en-US')}` : 'RM 0'))
+            .replace(/\/\s*(mo|month|bln|bulan|mth)\b/gi, '/ month');
+          if (isRentalProp && !/\/\s*month\b/i.test(detailPrice) && detailPrice !== 'RM 0' && detailPrice !== '-') {
+            detailPrice += ' / month';
+          }
+          document.getElementById('d-price').textContent = detailPrice;
 
-        // Render Photo Gallery Thumbnails if multiple images exist
-        const thumbsContainer = document.getElementById('d-gallery-thumbs');
-        if (thumbsContainer) {
-          thumbsContainer.innerHTML = '';
-          if (allImages.length > 1) {
-            allImages.forEach((imgUrl, idx) => {
-              const thumb = document.createElement('img');
-              thumb.src = imgUrl;
-              thumb.referrerPolicy = 'no-referrer';
-              thumb.style.cssText = `width: 90px; height: 65px; object-fit: cover; border-radius: 8px; cursor: pointer; border: 2px solid ${idx === 0 ? 'var(--accent-gold)' : '#e2e8f0'}; transition: all 0.2s; flex-shrink: 0;`;
-              thumb.addEventListener('click', () => {
-                if (mainImg) mainImg.src = imgUrl;
-                Array.from(thumbsContainer.children).forEach(child => child.style.borderColor = '#e2e8f0');
-                thumb.style.borderColor = 'var(--accent-gold)';
+          const breadcrumbTitle = document.getElementById('d-breadcrumb-title');
+          if (breadcrumbTitle) breadcrumbTitle.textContent = prop.title;
+
+          // 2. Canonical URL & Meta Tags Injection
+          const canonicalUrl = `https://zaimrosli.my/property/${prop.slug || targetSlug}`;
+          const rawPriceStr = detailPrice;
+          const isSale = (prop.status || 'sale').toLowerCase() === 'sale';
+          const rawTitle = prop.title || 'Property Listing';
+
+          let cleanTitle = rawTitle.replace(/^(WTS|WTL|FOR SALE|FOR RENT|UNTUK DIJUAL|UNTUK DISEWA|TO LET)[\s\/:–-]*/gi, '').trim();
+          cleanTitle = cleanTitle.replace(/^(WTS|WTL|FOR SALE|FOR RENT|UNTUK DIJUAL|UNTUK DISEWA|TO LET)[\s\/:–-]*/gi, '').trim();
+          cleanTitle = cleanTitle.replace(/\s*[([]?\s*(for\s+rent|for\s+sale|untuk\s+disewa|untuk\s+dijual|to\s+let)\s*[)\]]?\s*$/gi, '').trim();
+          cleanTitle = cleanTitle.replace(/\s+for\s+(rent|sale)\s+@/gi, ' @');
+          cleanTitle = cleanTitle.replace(/\s+untuk\s+(disewa|dijual)\s+@/gi, ' @');
+          cleanTitle = cleanTitle.replace(/^[-–—|:\s]+/, '').trim();
+          cleanTitle = cleanTitle.replace(/([a-z])([A-Z])/g, '$1 $2').trim();
+          if (!cleanTitle) cleanTitle = rawTitle;
+
+          const actionPrefix = isSale ? 'Untuk Dijual' : 'Sewa';
+          const suffixHook = isSale ? 'Direct Agent REN39575' : 'Gambar & Info Penuh';
+
+          let pageTitle = '';
+          const lowerClean = cleanTitle.toLowerCase();
+          if (lowerClean.startsWith('sewa') || lowerClean.startsWith('untuk dijual') || lowerClean.startsWith('for rent') || lowerClean.startsWith('for sale') || lowerClean.includes('for rent') || lowerClean.includes('for sale')) {
+            pageTitle = `${cleanTitle} | ${rawPriceStr} • ${suffixHook}`;
+          } else {
+            pageTitle = `${actionPrefix}: ${cleanTitle} | ${rawPriceStr} • ${suffixHook}`;
+          }
+
+          const loc = (prop.location || prop.region || 'Selangor').replace(/^\+\s*/, '');
+          const region = prop.region || 'Selangor';
+          const type = prop.type || prop.category || 'Property';
+
+          const specsList = [];
+          if (loc) specsList.push(`Lokasi: ${loc}`);
+          if (type) specsList.push(`Jenis: ${type}`);
+          if (prop.size && Number(prop.size) > 0) specsList.push(`Binaan: ${Number(prop.size).toLocaleString('en-US')} sqft`);
+          if (prop.landSize && prop.landSize !== '-' && prop.landSize !== '0') specsList.push(`Tanah: ${prop.landSize}`);
+          const roomParts = [];
+          if (prop.beds > 0) roomParts.push(`${prop.beds}${prop.bedsPlus > 0 ? '+' + prop.bedsPlus : ''} Bilik`);
+          if (prop.baths > 0) roomParts.push(`${prop.baths}${prop.bathsPlus > 0 ? '+' + prop.bathsPlus : ''} Bilik Air`);
+          if (roomParts.length > 0) specsList.push(`Bilik: ${roomParts.join(' & ')}`);
+          if (prop.tenure && prop.tenure !== '-') specsList.push(`Pegangan: ${prop.tenure}`);
+
+          const actionLabel = isSale ? 'Hartanah Untuk Dijual (For Sale)' : 'Hartanah Untuk Disewa (For Rent)';
+          const specSummary = specsList.length > 0 ? specsList.slice(0, 4).join(' • ') : `${loc}, ${region}`;
+          const ctaText = isSale 
+            ? 'Lihat gambar penuh, pelan lantai & semak kelayakan loan percuma. Hubungi Ejen Berdaftar Zaim Rosli (REN39575) untuk viewing segera.'
+            : 'Lihat gambar dalaman penuh, kadar sewa & deposit. Hubungi Ejen Berdaftar Zaim Rosli (REN39575) untuk temujanji viewing segera.';
+
+          const pageDesc = `[${actionLabel}] ${rawPriceStr} — ${cleanTitle}. ${specSummary}. ${ctaText}`;
+
+          document.title = pageTitle;
+
+          const descMeta = document.querySelector('meta[name="description"]');
+          if (descMeta) descMeta.setAttribute('content', pageDesc);
+
+          const canonicalLink = document.getElementById('canonical-tag');
+          if (canonicalLink) canonicalLink.setAttribute('href', canonicalUrl);
+
+          const ogUrl = document.getElementById('og-url');
+          if (ogUrl) ogUrl.setAttribute('content', canonicalUrl);
+
+          const ogTitle = document.getElementById('og-title');
+          if (ogTitle) ogTitle.setAttribute('content', pageTitle);
+
+          const ogDesc = document.getElementById('og-desc');
+          if (ogDesc) ogDesc.setAttribute('content', pageDesc);
+
+          const twTitle = document.getElementById('tw-title');
+          if (twTitle) twTitle.setAttribute('content', pageTitle);
+
+          const twDesc = document.getElementById('tw-desc');
+          if (twDesc) twDesc.setAttribute('content', pageDesc);
+
+          // 3. Currency Converter Estimates
+          const currContainer = document.getElementById('d-currency-estimates');
+          if (currContainer && prop.price && prop.price > 0) {
+            const isRental = prop.status === 'rent';
+            const usdVal = Math.round(prop.price / 4.45);
+            const sgdVal = Math.round(prop.price / 3.32);
+            const suffix = isRental ? ' / month' : '';
+
+            currContainer.innerHTML = `
+              <span style="background:#f1f5f9; color:#475569; font-size:0.75rem; font-weight:700; padding:3px 8px; border-radius:6px; border:1px solid #e2e8f0;">
+                ≈ $${usdVal.toLocaleString('en-US')} USD${suffix}
+              </span>
+              <span style="background:#f1f5f9; color:#475569; font-size:0.75rem; font-weight:700; padding:3px 8px; border-radius:6px; border:1px solid #e2e8f0;">
+                ≈ S$${sgdVal.toLocaleString('en-US')} SGD${suffix}
+              </span>
+            `;
+          }
+
+          // 4. Check Foreigner Eligibility
+          const foreignBadge = document.getElementById('d-foreigner-badge');
+          if (foreignBadge) {
+            const isCommercial = ['Factory', 'Industrial Land', 'Commercial Land', 'Commercial Space', 'Office Space', 'Shop / Office', 'Land'].includes(prop.type);
+            const isEligible = (prop.status === 'rent') || isCommercial || (prop.price >= 1000000);
+            foreignBadge.style.display = isEligible ? 'block' : 'none';
+          }
+
+          // 5. Image Gallery Handling
+          let allImages = [];
+          if (Array.isArray(prop.images) && prop.images.length > 0) {
+            allImages = prop.images.map(img => typeof img === 'string' ? img.trim() : img).filter(Boolean);
+          } else if (typeof prop.image === 'string' && prop.image.trim()) {
+            allImages = prop.image.split(',').map(s => s.trim()).filter(Boolean);
+          }
+
+          if (allImages.length === 0) {
+            allImages = ["https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1200&q=80"];
+          }
+
+          const mainImg = document.getElementById('d-main-img');
+          if (mainImg) {
+            mainImg.referrerPolicy = 'no-referrer';
+            mainImg.onerror = function() {
+              this.src = 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1200&q=80';
+            };
+            mainImg.src = allImages[0];
+            mainImg.alt = prop.title || 'Property Image';
+            mainImg.style.transition = 'opacity 0.3s ease';
+          }
+
+          // Set OG and Twitter image tags
+          const ogImg = document.getElementById('og-image');
+          if (ogImg) ogImg.setAttribute('content', allImages[0]);
+          const twImg = document.getElementById('tw-image');
+          if (twImg) twImg.setAttribute('content', allImages[0]);
+
+          let currentImgIndex = 0;
+          let slideTimer = null;
+
+          function setActiveImage(index) {
+            if (!allImages || allImages.length === 0) return;
+            currentImgIndex = (index + allImages.length) % allImages.length;
+            if (mainImg) {
+              mainImg.src = allImages[currentImgIndex];
+            }
+            const thumbsContainer = document.getElementById('d-gallery-thumbs');
+            if (thumbsContainer && thumbsContainer.children.length > 0) {
+              Array.from(thumbsContainer.children).forEach((child, i) => {
+                if (i === currentImgIndex) {
+                  child.style.borderColor = 'var(--accent-gold)';
+                  child.style.opacity = '1';
+                  const targetLeft = child.offsetLeft - (thumbsContainer.clientWidth / 2) + (child.clientWidth / 2);
+                  thumbsContainer.scrollTo({ left: targetLeft, behavior: 'smooth' });
+                } else {
+                  child.style.borderColor = '#e2e8f0';
+                  child.style.opacity = '0.65';
+                }
               });
-              thumbsContainer.appendChild(thumb);
+            }
+          }
+
+          function startAutoSlide() {
+            stopAutoSlide();
+            if (allImages.length > 1) {
+              slideTimer = setInterval(() => {
+                currentImgIndex = (currentImgIndex + 1) % allImages.length;
+                setActiveImage(currentImgIndex);
+              }, 3500);
+            }
+          }
+
+          function stopAutoSlide() {
+            if (slideTimer) {
+              clearInterval(slideTimer);
+              slideTimer = null;
+            }
+          }
+
+          // Render Photo Gallery Thumbnails
+          const thumbsContainer = document.getElementById('d-gallery-thumbs');
+          if (thumbsContainer) {
+            thumbsContainer.innerHTML = '';
+            if (allImages.length > 1) {
+              allImages.forEach((imgUrl, idx) => {
+                const thumb = document.createElement('img');
+                thumb.src = imgUrl;
+                thumb.alt = `${prop.title} Photo ${idx + 1}`;
+                thumb.referrerPolicy = 'no-referrer';
+                thumb.onerror = function() {
+                  this.style.display = 'none';
+                };
+                thumb.style.cssText = `width: 90px; height: 65px; object-fit: cover; border-radius: 8px; cursor: pointer; border: 2px solid ${idx === 0 ? 'var(--accent-gold)' : '#e2e8f0'}; opacity: ${idx === 0 ? '1' : '0.65'}; transition: all 0.25s ease; flex-shrink: 0;`;
+                thumb.addEventListener('click', () => {
+                  setActiveImage(idx);
+                  startAutoSlide();
+                });
+                thumbsContainer.appendChild(thumb);
+              });
+            }
+          }
+
+          if (mainImg && allImages.length > 1) {
+            mainImg.style.cursor = 'pointer';
+            mainImg.addEventListener('click', () => {
+              setActiveImage(currentImgIndex + 1);
+              startAutoSlide();
             });
           }
-        }
 
-        const badge = document.getElementById('d-badge-status');
-        badge.textContent = prop.status === 'sale' ? 'FOR SALE' : 'FOR RENT';
-        badge.className = `property-badge ${prop.status === 'sale' ? 'badge-sale' : 'badge-rent'}`;
-
-        document.getElementById('d-type').textContent = prop.type;
-
-        // Hide Bedrooms for Commercial/Industrial properties or if 0
-        const isCommercial = ['Kilang', 'Tanah Industri', 'Kedai / Pejabat', 'Ruang Komersial'].includes(prop.type);
-        const bedsBox = document.getElementById('box-beds');
-        if (bedsBox) {
-          if (isCommercial || !prop.beds || prop.beds === 0) {
-            bedsBox.style.display = 'none';
-          } else {
-            bedsBox.style.display = 'block';
-            document.getElementById('d-beds').textContent = `${prop.beds} Beds`;
+          const heroWrap = document.querySelector('.detail-hero-wrap');
+          if (heroWrap) {
+            heroWrap.addEventListener('mouseenter', stopAutoSlide);
+            heroWrap.addEventListener('mouseleave', startAutoSlide);
           }
-        }
-
-        // Hide Bathrooms if 0 or missing
-        const bathsBox = document.getElementById('box-baths');
-        if (bathsBox) {
-          if (!prop.baths || prop.baths === 0) {
-            bathsBox.style.display = 'none';
-          } else {
-            bathsBox.style.display = 'block';
-            document.getElementById('d-baths').textContent = `${prop.baths} Baths`;
+          if (thumbsContainer) {
+            thumbsContainer.addEventListener('mouseenter', stopAutoSlide);
+            thumbsContainer.addEventListener('mouseleave', startAutoSlide);
           }
-        }
 
-        document.getElementById('d-size').textContent = `${prop.size} sqft`;
+          startAutoSlide();
 
-        // Hide Tenure and Lot Type for FOR RENT listings
-        const tenureBox = document.getElementById('box-tenure');
-        const lotTypeBox = document.getElementById('box-lotType');
-        if (prop.status === 'rent' || prop.tenure === '-' || !prop.tenure) {
-          if (tenureBox) tenureBox.style.display = 'none';
-        } else {
-          if (tenureBox) tenureBox.style.display = 'block';
-          document.getElementById('d-tenure').textContent = prop.tenure;
-        }
+          // 6. Property Badge & Type
+          const badge = document.getElementById('d-badge-status');
+          if (badge) {
+            badge.textContent = prop.status === 'sale' ? 'FOR SALE' : 'FOR RENT';
+            badge.className = `property-badge ${prop.status === 'sale' ? 'badge-sale' : 'badge-rent'}`;
+          }
 
-        if (prop.status === 'rent' || prop.lotType === '-' || !prop.lotType) {
-          if (lotTypeBox) lotTypeBox.style.display = 'none';
-        } else {
-          if (lotTypeBox) lotTypeBox.style.display = 'block';
-          document.getElementById('d-lotType').textContent = prop.lotType;
-        }
+          const typeMap = {
+            'Tanah': 'Land',
+            'Tanah Komersial': 'Commercial Land',
+            'Tanah Industri': 'Industrial Land',
+            'Kedai / Pejabat': 'Shop / Office',
+            'Ruang Komersial': 'Commercial Space',
+            'Ruang Pejabat': 'Office Space',
+            'Kilang': 'Factory',
+            'Banglo': 'Bungalow',
+            'Teres': 'Terrace House',
+            'Kondominium': 'Condominium',
+            'Kondominium / Pangsapuri': 'Condominium'
+          };
+          const rawType = (prop.type && prop.type !== '-' && prop.type !== '') ? prop.type : (prop.landSize && (!prop.beds || prop.beds === 0) ? 'Land' : (prop.category || 'Subsales'));
+          const resolvedType = typeMap[rawType] || rawType;
+          const typeEl = document.getElementById('d-type');
+          if (typeEl) {
+            typeEl.textContent = resolvedType;
+          }
 
-        function cleanPublicDescription(desc) {
-          if (!desc) return "";
-          return desc
-            .replace(/https?:\/\/(?:www\.)?propmall\.(?:co|my|net)\/[^\s]+/gi, '')
-            .replace(/https?:\/\/t\.me\/[^\s]+/gi, '')
-            .replace(/Hello Partner Agents,?\s*/gi, '')
-            .replace(/I want to share this Listing in PropMall with you\.?\s*/gi, '')
-            .replace(/\n\s*\n\s*\n/g, '\n\n')
-            .trim();
-        }
+          const isLand = (resolvedType && (resolvedType.toLowerCase().includes('tanah') || resolvedType.toLowerCase().includes('land')));
+          const commTypes = ['Factory', 'Industrial Land', 'Commercial Land', 'Commercial Space', 'Office Space', 'Shop / Office', 'Land', 'Kilang', 'Tanah Industri', 'Kedai / Pejabat', 'Ruang Komersial', 'Tanah', 'Tanah Komersial'];
+          const isCommercial = commTypes.includes(resolvedType) || (resolvedType && (resolvedType.toLowerCase().includes('office') || resolvedType.toLowerCase().includes('shop') || resolvedType.toLowerCase().includes('komersial')));
 
-        document.getElementById('d-desc').textContent = cleanPublicDescription(prop.description);
+          // Bedrooms
+          const bedsBox = document.getElementById('box-beds');
+          if (bedsBox) {
+            if (isLand || !prop.beds || prop.beds === 0) {
+              bedsBox.style.display = 'none';
+            } else {
+              bedsBox.style.display = 'block';
+              const labelEl = bedsBox.querySelector('.spec-label');
+              if (labelEl) {
+                labelEl.textContent = isCommercial ? 'ROOMS / PARTITIONS' : 'BEDROOMS';
+              }
+              const bedsVal = prop.bedsPlus > 0 ? `${prop.beds}+${prop.bedsPlus}` : prop.beds;
+              document.getElementById('d-beds').textContent = `${bedsVal} ${isCommercial ? 'Rooms' : 'Beds'}`;
+            }
+          }
 
-        // WhatsApp link with live page URL included
-        const currentUrl = window.location.href;
-        const waMsg = encodeURIComponent(`Hi Zaim, I am interested in inquiring about "${prop.title}" (${prop.priceStr}) located in ${prop.location}.\n\nListing Link: ${currentUrl}`);
-        document.getElementById('d-whatsapp-btn').href = `https://wa.me/60108118559?text=${waMsg}`;
+          // Bathrooms
+          const bathsBox = document.getElementById('box-baths');
+          if (bathsBox) {
+            if (!prop.baths || prop.baths === 0) {
+              bathsBox.style.display = 'none';
+            } else {
+              bathsBox.style.display = 'block';
+              const bathsVal = prop.bathsPlus > 0 ? `${prop.baths}+${prop.bathsPlus}` : prop.baths;
+              document.getElementById('d-baths').textContent = `${bathsVal} Baths`;
+            }
+          }
 
-        // Dynamic Fee Breakdown (Rental vs Subsales)
-        const summaryHeader = document.getElementById('d-summary-header');
-        if (prop.status === 'rent') {
-          if (summaryHeader) summaryHeader.textContent = 'Estimated Rental Deposit Summary';
-          const secDep = prop.price * 2;
-          const utilDep = prop.price * 0.5;
-          const firstMonth = prop.price;
-          document.getElementById('d-legal-summary').innerHTML = `
-            <div style="display:flex; justify-content:space-between;"><span>1st Month Advance Rent:</span> <strong>RM ${firstMonth.toLocaleString()}</strong></div>
-            <div style="display:flex; justify-content:space-between;"><span>2 Months Security Deposit:</span> <strong>RM ${secDep.toLocaleString()}</strong></div>
-            <div style="display:flex; justify-content:space-between;"><span>0.5 Month Utility Deposit:</span> <strong>RM ${utilDep.toLocaleString()}</strong></div>
-            <hr style="margin: 4px 0; border-top: 1px dashed var(--border-color);">
-            <div style="display:flex; justify-content:space-between; font-size: 0.95rem; color: var(--text-main);">
-              <span>Est. Total Move-In Deposit:</span> <strong style="color: var(--accent-gold);">RM ${(firstMonth + secDep + utilDep).toLocaleString()}</strong>
-            </div>
-          `;
-        } else {
-          if (summaryHeader) summaryHeader.textContent = 'Estimated Entry Costs (SPA & Stamp Duty)';
-          const spaFee = calcSPALegalFee(prop.price);
-          const motDuty = calcMOTStampDuty(prop.price);
-          const loanFee = calcLoanLegalFee(prop.price * 0.9);
-          const loanDuty = calcLoanStampDuty(prop.price * 0.9);
+          // Land Area
+          const landBox = document.getElementById('box-landSize');
+          if (landBox) {
+            const cleanLandText = (prop.landSize || '').replace(/\s*\([^)]*\)/g, '').trim();
+            if (!cleanLandText || cleanLandText === '-' || cleanLandText === '0') {
+              landBox.style.display = 'none';
+            } else {
+              landBox.style.display = 'block';
+              document.getElementById('d-landSize').textContent = cleanLandText;
+            }
+          }
 
-          document.getElementById('d-legal-summary').innerHTML = `
-            <div style="display:flex; justify-content:space-between;"><span>SPA Legal Fee:</span> <strong>RM ${spaFee.toLocaleString()}</strong></div>
-            <div style="display:flex; justify-content:space-between;"><span>MOT Stamp Duty:</span> <strong>RM ${motDuty.toLocaleString()}</strong></div>
-            <div style="display:flex; justify-content:space-between;"><span>Loan Legal Fee (90%):</span> <strong>RM ${loanFee.toLocaleString()}</strong></div>
-            <div style="display:flex; justify-content:space-between;"><span>Loan Stamp Duty:</span> <strong>RM ${loanDuty.toLocaleString()}</strong></div>
-            <hr style="margin: 4px 0; border-top: 1px dashed var(--border-color);">
-            <div style="display:flex; justify-content:space-between; font-size: 0.95rem; color: var(--text-main);">
-              <span>Est. Initial Entry Cost:</span> <strong style="color: var(--accent-gold);">RM ${(spaFee + motDuty + loanFee + loanDuty).toLocaleString()}</strong>
-            </div>
-          `;
-        }
+          // Built-up Size
+          const sizeBox = document.getElementById('box-size');
+          if (sizeBox) {
+            if (!prop.size || isNaN(prop.size) || prop.size === 0 || prop.size === '0' || prop.size === '-') {
+              sizeBox.style.display = 'none';
+            } else {
+              sizeBox.style.display = 'block';
+              document.getElementById('d-size').textContent = `${prop.size.toLocaleString('en-US')} sqft`;
+            }
+          }
+
+          // Tenure & Lot Type
+          const tenureBox = document.getElementById('box-tenure');
+          const lotTypeBox = document.getElementById('box-lotType');
+          if (prop.status === 'rent' || prop.tenure === '-' || !prop.tenure) {
+            if (tenureBox) tenureBox.style.display = 'none';
+          } else {
+            if (tenureBox) tenureBox.style.display = 'block';
+            document.getElementById('d-tenure').textContent = prop.tenure;
+          }
+
+          if (prop.status === 'rent' || prop.lotType === '-' || !prop.lotType) {
+            if (lotTypeBox) lotTypeBox.style.display = 'none';
+          } else {
+            if (lotTypeBox) lotTypeBox.style.display = 'block';
+            const lotTypeVal = prop.lotType === 'Rezab Melayu' ? 'Malay Reserve' : prop.lotType;
+            document.getElementById('d-lotType').textContent = lotTypeVal;
+          }
+
+          function cleanPublicDescription(desc) {
+            if (!desc) return "";
+            return desc
+              .replace(/---\s*MAKLUMAT ASAL[\s\S]*$/gi, '')
+              .replace(/---\s*RUJUKAN EJEN[\s\S]*$/gi, '')
+              .replace(/📝\s*MAKLUMAT TERPERINCI[\s\S]*$/gi, '')
+              .replace(/Ejen Listing\s*:[\s\S]*$/gi, '')
+              .replace(/Listing COA Agent\s*:[\s\S]*$/gi, '')
+              .replace(/PropMall,\s*Built By Agents,\s*For Agents/gi, '')
+              .replace(/https?:\/\/(?:www\.)?propmall\.(?:co|my|net)\/[^\s]+/gi, '')
+              .replace(/https?:\/\/t\.me\/[^\s]+/gi, '')
+              .replace(/Hello Partner Agents,?\s*/gi, '')
+              .replace(/I want to share this Listing in PropMall with you\.?\s*/gi, '')
+              .replace(/(?:for\s+(?:further\s+)?(?:inquiries|enquiries|viewing|appointment|info)|kindly\s+contact|contact\s*me|hubungi\s*(?:saya|kami)?|call\s*\/|whatsapp\s*\/|wasap\s*\/|sebarang\s+pertanyaan|sesi\s+viewing|maklumat\s+lanjut)[\s\S]*$/gi, '')
+              .replace(/(?:Buy\s*\|\s*Sell\s*\|\s*Rent)[\s\S]*$/gi, '')
+              .replace(/https?:\/\/(?:www\.)?(?:wasap\.my|wa\.me)\/[^\s]+/gi, '')
+              .replace(/(?:(?:\+?60|0)1[0-9][-\s]?[0-9]{7,8})/gi, function(match) {
+                if (match.replace(/[^\d]/g, '').includes('108118559')) return match;
+                return '';
+              })
+              .replace(/^[~✔✅•*+]\s+/gm, '- ')
+              .replace(/\n\s*\n\s*\n+/g, '\n\n')
+              .trim();
+          }
+
+          document.getElementById('d-desc').textContent = cleanPublicDescription(prop.description);
+
+          // WhatsApp CTA Link with Canonical URL
+          const waMsg = encodeURIComponent(`Hi Zaim, I am interested in inquiring about "${prop.title}" (${rawPriceStr}) located in ${prop.location}.\n\nListing Link: ${canonicalUrl}`);
+          document.getElementById('d-whatsapp-btn').href = `https://wa.me/60108118559?text=${waMsg}`;
+
+          const mainImgUrl = (allImages && allImages.length > 0) ? allImages[0] : prop.image;
+
+          const shareBtn = document.getElementById('d-share-btn');
+          const bottomShareBtn = document.getElementById('d-bottom-share-btn');
+
+          function handleShareClick(e) {
+            if (window.shareProperty) {
+              window.shareProperty(e, prop);
+            }
+          }
+
+          if (shareBtn) shareBtn.onclick = handleShareClick;
+          if (bottomShareBtn) bottomShareBtn.onclick = handleShareClick;
+
+          // 7. Dynamic Legal Fee Breakdown
+          const summaryHeader = document.getElementById('d-summary-header');
+          if (prop.status === 'rent') {
+            if (summaryHeader) summaryHeader.textContent = 'Estimated Rental Deposit Summary';
+            const secDep = prop.price * 2;
+            const utilDep = prop.price * 0.5;
+            const firstMonth = prop.price;
+            document.getElementById('d-legal-summary').innerHTML = `
+              <div class="legal-summary-row"><span>1st Month Advance Rent:</span> <strong>RM ${firstMonth.toLocaleString()}</strong></div>
+              <div class="legal-summary-row"><span>2 Months Security Deposit:</span> <strong>RM ${secDep.toLocaleString()}</strong></div>
+              <div class="legal-summary-row"><span>0.5 Month Utility Deposit:</span> <strong>RM ${utilDep.toLocaleString()}</strong></div>
+              <hr style="margin: 4px 0; border: none; border-top: 1px dashed var(--border-color);">
+              <div class="legal-summary-total">
+                <span>Est. Total Move-In Deposit:</span> <strong>RM ${(firstMonth + secDep + utilDep).toLocaleString()}</strong>
+              </div>
+            `;
+          } else {
+            if (summaryHeader) summaryHeader.textContent = 'Estimated Entry Costs (SPA & Stamp Duty)';
+            const spaFee = calcSPALegalFee(prop.price);
+            const motDuty = calcMOTStampDuty(prop.price);
+            const loanFee = calcLoanLegalFee(prop.price * 0.9);
+            const loanDuty = calcLoanStampDuty(prop.price * 0.9);
+
+            document.getElementById('d-legal-summary').innerHTML = `
+              <div class="legal-summary-row"><span>SPA Legal Fee:</span> <strong>RM ${spaFee.toLocaleString()}</strong></div>
+              <div class="legal-summary-row"><span>MOT Stamp Duty:</span> <strong>RM ${motDuty.toLocaleString()}</strong></div>
+              <div class="legal-summary-row"><span>Loan Legal Fee (90%):</span> <strong>RM ${loanFee.toLocaleString()}</strong></div>
+              <div class="legal-summary-row"><span>Loan Stamp Duty:</span> <strong>RM ${loanDuty.toLocaleString()}</strong></div>
+              <hr style="margin: 4px 0; border: none; border-top: 1px dashed var(--border-color);">
+              <div class="legal-summary-total">
+                <span>Est. Initial Entry Cost:</span> <strong>RM ${(spaFee + motDuty + loanFee + loanDuty).toLocaleString()}</strong>
+              </div>
+            `;
+          }
+
+          // 8. Inject Structured Data JSON-LD
+          const propJsonLd = {
+            "@context": "https://schema.org",
+            "@type": "RealEstateListing",
+            "name": pageTitle,
+            "description": pageDesc,
+            "url": canonicalUrl,
+            "image": allImages,
+            "offers": {
+              "@type": "Offer",
+              "price": (prop.price && !isNaN(Number(prop.price))) ? Number(prop.price) : 0,
+              "priceCurrency": "MYR",
+              "availability": "https://schema.org/InStock",
+              "businessFunction": isSale ? "https://schema.org/Sell" : "https://schema.org/LeaseOut"
+            },
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": prop.location,
+              "addressRegion": prop.region || "Selangor",
+              "addressCountry": "MY"
+            },
+            "broker": {
+              "@type": "RealEstateAgent",
+              "name": "Zaim Rosli",
+              "identifier": "REN39575",
+              "telephone": "+60108118559",
+              "url": "https://zaimrosli.my"
+            }
+          };
+
+          const breadcrumbJsonLd = {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://zaimrosli.my/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Properties",
+                "item": "https://zaimrosli.my/properties"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": prop.title,
+                "item": canonicalUrl
+              }
+            ]
+          };
+
+          const propScript = document.getElementById('property-jsonld');
+          if (propScript) propScript.textContent = JSON.stringify(propJsonLd);
+
+          const bcScript = document.getElementById('breadcrumb-jsonld');
+          if (bcScript) bcScript.textContent = JSON.stringify(breadcrumbJsonLd);
+
         } catch (e) {
           console.error("renderDetail error:", e);
-          document.getElementById('detail-loading').style.display = 'none';
-          document.getElementById('detail-container').style.display = 'block';
+          if (loadingEl) loadingEl.style.display = 'none';
+          if (containerEl) containerEl.style.display = 'none';
+          if (notFoundEl) notFoundEl.style.display = 'block';
         }
       }
 
