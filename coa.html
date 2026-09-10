@@ -520,7 +520,7 @@
           <li><a href="javascript:void(0)" onclick="setFilterTab('subsale')" class="nav-link" id="tab-link-subsale">Subsale</a></li>
           <li><a href="javascript:void(0)" onclick="setFilterTab('rental')" class="nav-link" id="tab-link-rental">Sewa</a></li>
           <li><a href="javascript:void(0)" onclick="setFilterTab('commercial')" class="nav-link" id="tab-link-commercial">Komersil</a></li>
-          <li><a href="javascript:void(0)" onclick="openAuthScreen('register')" class="nav-link" style="color: #64748b; font-size: 0.78rem; font-weight: 600;">Daftar COA</a></li>
+          <li><a href="/coa/admin" class="nav-link" style="color: #0f172a; font-weight: 700; background: #f1f5f9; padding: 6px 12px; border-radius: 6px;">Portal Ejen COA</a></li>
         </ul>
 
         <div class="nav-cta">
@@ -560,7 +560,7 @@
           <li class="mobile-nav-item"><a href="javascript:void(0)" onclick="setFilterTab('subsale'); closeDrawer();" class="mobile-nav-link">SUBSALE</a></li>
           <li class="mobile-nav-item"><a href="javascript:void(0)" onclick="setFilterTab('rental'); closeDrawer();" class="mobile-nav-link">SEWA (RENTAL)</a></li>
           <li class="mobile-nav-item"><a href="javascript:void(0)" onclick="setFilterTab('commercial'); closeDrawer();" class="mobile-nav-link">KOMERSIL &amp; INDUSTRI</a></li>
-          <li class="mobile-nav-item" style="border-top: 1px solid #f1f5f9; margin-top: 8px; padding-top: 8px;"><a href="javascript:void(0)" onclick="openAuthScreen('register')" class="mobile-nav-link" style="color: #d97706; font-weight: 700;">DAFTAR / LOG MASUK RAKAN COA</a></li>
+          <li class="mobile-nav-item" style="border-top: 1px solid #f1f5f9; margin-top: 8px; padding-top: 8px;"><a href="/coa/admin" class="mobile-nav-link" style="color: #d97706; font-weight: 800;">PORTAL EJEN COA (LOG MASUK / DAFTAR)</a></li>
           <li class="mobile-nav-item" style="margin-top: 16px;"><a href="/" class="mobile-nav-link" style="color: #64748b;">LAMAN UTAMA</a></li>
           <li class="mobile-nav-item"><a href="/properties" class="mobile-nav-link" style="color: #64748b;">SEMUA HARTANAH PORTAL</a></li>
         </ul>
@@ -1008,7 +1008,7 @@
         await supabaseClient.auth.signOut();
       } catch (e) {}
       currentPartner = null;
-      window.location.href = '/coa';
+      window.location.href = '/coa/admin';
     }
 
     // Main Initializer
@@ -1037,13 +1037,7 @@
       const urlParams = new URLSearchParams(window.location.search);
       const hasAuthParam = urlParams.has('auth') || urlParams.has('login') || urlParams.has('register') || window.location.hash === '#auth';
 
-      // 1. If explicit auth request (?auth=1 / ?login=1 / #auth)
-      if (hasAuthParam) {
-        openAuthScreen(urlParams.get('auth') === 'login' ? 'login' : 'register');
-        return;
-      }
-
-      // 1. Detect Agent Code from Path or Script or Query Param
+      // Detect Agent Code from Path or Script or Query Param
       let routeAgentCode = window.COA_STOREFRONT_AGENT || null;
       if (!routeAgentCode) {
         const pathParts = window.location.pathname.split('/').filter(Boolean);
@@ -1062,8 +1056,61 @@
         if (session && session.user) sessionUser = session.user;
       } catch (e) {}
 
-      // Case A: Specific Agent Code in URL (e.g. /coa/zaim or /coa/azman)
-      if (routeAgentCode) {
+      // ROUTE 1: Dedicated Agent Portal / Admin Route (/coa/admin)
+      const isAdminRoute = routeAgentCode === 'admin' || window.COA_ADMIN_ENTRY === true || urlParams.has('admin') || window.location.pathname.endsWith('/admin');
+      if (isAdminRoute) {
+        if (sessionUser) {
+          const userEmail = (sessionUser.email || '').toLowerCase();
+          if (userEmail === 'huzaimrosli@gmail.com') {
+            currentPartner = {
+              id: sessionUser.id,
+              full_name: 'Zaim Rosli',
+              agency: 'JAZ International Sdn Bhd',
+              ren_number: 'REN 39575',
+              phone: '60108118559',
+              agent_code: 'zaim',
+              status: 'approved'
+            };
+            loadingEl.style.display = 'none';
+            showStorefrontView(currentPartner, sessionUser);
+            return;
+          }
+
+          try {
+            const { data: partner } = await supabaseClient
+              .from('coa_partners')
+              .select('*')
+              .eq('id', sessionUser.id)
+              .maybeSingle();
+
+            loadingEl.style.display = 'none';
+
+            if (partner && partner.status === 'approved') {
+              currentPartner = partner;
+              showStorefrontView(currentPartner, sessionUser);
+              return;
+            } else if (partner && partner.status !== 'approved') {
+              currentPartner = partner;
+              showPendingView(currentPartner);
+              return;
+            }
+          } catch (e) {
+            console.error(e);
+          }
+        }
+        // Not logged in: directly show Auth Screen with login tab!
+        openAuthScreen('login');
+        return;
+      }
+
+      // 2. If explicit auth request (?auth=1 / ?login=1 / #auth)
+      if (hasAuthParam) {
+        openAuthScreen(urlParams.get('auth') === 'login' ? 'login' : 'register');
+        return;
+      }
+
+      // ROUTE 2: Specific Agent Code in URL (e.g. /coa/zaim or /coa/azman)
+      if (routeAgentCode && routeAgentCode !== 'admin') {
         let partnerData = null;
 
         if (routeAgentCode === 'zaim') {
@@ -1097,11 +1144,10 @@
         }
       }
 
-      // Case B: No code in URL, but user is logged in
+      // ROUTE 3: Visiting /coa root when user is already logged in
       if (sessionUser) {
         const userEmail = (sessionUser.email || '').toLowerCase();
 
-        // Superadmin auto-approved
         if (userEmail === 'huzaimrosli@gmail.com') {
           currentPartner = {
             id: sessionUser.id,
@@ -1117,7 +1163,6 @@
           return;
         }
 
-        // Fetch user partner profile
         try {
           const { data: partner, error } = await supabaseClient
             .from('coa_partners')
@@ -1141,7 +1186,7 @@
         }
       }
 
-      // Case C: Default: Public visitor on /coa sees Zaim Rosli Storefront Catalog!
+      // ROUTE 4: Default fallback on /coa -> Public visitor sees Zaim Rosli Storefront Catalog!
       currentPartner = {
         full_name: 'Zaim Rosli',
         agency: 'JAZ International Sdn Bhd',

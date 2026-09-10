@@ -19,7 +19,10 @@ export async function onRequest(context) {
 
   let html = await response.text();
 
-  if (agentCode) {
+  if (agentCode === 'admin') {
+    const adminInjection = `<script>window.COA_ADMIN_ENTRY = true; window.COA_STOREFRONT_AGENT = "admin";</script>`;
+    html = html.replace('</head>', `${adminInjection}\n</head>`);
+  } else if (agentCode) {
     const partnerInjection = `<script>window.COA_STOREFRONT_AGENT = "${agentCode}";</script>`;
     html = html.replace('</head>', `${partnerInjection}\n</head>`);
   }
@@ -28,7 +31,7 @@ export async function onRequest(context) {
     status: 200,
     headers: {
       'content-type': 'text/html; charset=utf-8',
-      'cache-control': 'public, max-age=120'
+      'cache-control': agentCode === 'admin' ? 'no-cache, no-store, must-revalidate' : 'public, max-age=120'
     }
   });
 }

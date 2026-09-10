@@ -1,14 +1,14 @@
-// PROPERTIES_DATA - Updated: 2026-09-11 (Undercon Sync from The Hartanah Channel)
+// PROPERTIES_DATA - Updated: 2026-09-11 (Cleaned & Standardized)
 const PROPERTIES_DATA = [
   {
     "id": "undercon-perumahan-baru-teres-setingkat-taman-warisan-hijau",
     "slug": "perumahan-baru-teres-setingkat-taman-warisan-hijau",
-    "title": "Perumahan Baru Teres Setingkat Taman Warisan Hijauan, Kota Warisa",
+    "title": "Perumahan Baru Teres Setingkat Taman Warisan Hijauan, Kota Warisan",
     "price": 428000,
     "priceStr": "RM 428,000 - RM 478,000",
     "category": "Undercon",
-    "location": "vidu, Putrajaya",
-    "region": "Putrajaya",
+    "location": "Kota Warisan, Sepang, Selangor",
+    "region": "Selangor",
     "type": "Teres",
     "status": "sale",
     "beds": 4,
@@ -22,12 +22,12 @@ const PROPERTIES_DATA = [
     "images": [
       "https://thehartanahchannel.com/images/projects/perumahan-baru-teres-setingkat-taman-warisan-hijau/thumbnail.jpg"
     ],
-    "description": "PROJEK UNDERCON BARU: Perumahan Baru Teres Setingkat Taman Warisan Hijauan, Kota Warisa\nLokasi: vidu, Putrajaya\nKategori: Teres\nHarga: RM 428,000 - RM 478,000\nPegangan: Leasehold (Malay Reserved)\nKeluasan Binaan: 1253 - 1540 kps\nBilik Tidur: 4 | Bilik Air: 2 | Parkir: 2\nPakej: Pakej Zero Downpayment + Percuma Yuran Guaman SPA & MOT\nJangkaan Siap: 2027\nPengangkutan & Kemudahan: Berdekatan dgn Sekolah, Masjid, Kedai Runcit & Kedai Makan, 10min ke Kota Warisan, KIP Mall, 20min ke KLIA, 20min ke Putrajaya & Cyberjaya\n\nKelebihan Projek:\n- Open Title, Geran Individu\n- Kawasan Bebas Banjir, Sistem Perparitan Baik dan Padat Dgn Penduduk Sekitar\n- Berkedudukan & Senang Akses ke Jalan Besar\n- Estimate Completion June 2028\n- Teres Setingkat\n- Luas Binaan 1253 sqft\n- Luas Tanah 1540 sqft (22x70)",
+    "description": "PROJEK UNDERCON BARU: Perumahan Baru Teres Setingkat Taman Warisan Hijauan, Kota Warisan\nLokasi: Kota Warisan, Sepang, Selangor\nKategori: Teres\nHarga: RM 428,000 - RM 478,000\nPegangan: Leasehold (Malay Reserved)\nKeluasan Binaan: 1253 - 1540 kps\nBilik Tidur: 4 | Bilik Air: 2 | Parkir: 2\nPakej: Pakej Zero Downpayment + Percuma Yuran Guaman SPA & MOT\nJangkaan Siap: 2027\nPengangkutan & Kemudahan: Berdekatan dgn Sekolah, Masjid, Kedai Runcit & Kedai Makan, 10min ke Kota Warisan, KIP Mall, 20min ke KLIA, 20min ke Putrajaya & Cyberjaya\n\nKelebihan Projek:\n- Open Title, Geran Individu\n- Kawasan Bebas Banjir, Sistem Perparitan Baik dan Padat Dgn Penduduk Sekitar\n- Berkedudukan & Senang Akses ke Jalan Besar\n- Estimate Completion June 2028\n- Teres Setingkat\n- Luas Binaan 1253 sqft\n- Luas Tanah 1540 sqft (22x70)",
     "refUrl": "https://thehartanahchannel.com/projek/perumahan-baru-teres-setingkat-taman-warisan-hijau",
     "hidden": false,
     "listingSource": "undercon",
     "openForCoa": true,
-    "state": "Putrajaya"
+    "state": "Selangor"
   },
   {
     "id": "undercon-perumahan-baru-teres-setingkat-taman-indah-puteri-",
@@ -36,8 +36,8 @@ const PROPERTIES_DATA = [
     "price": 396000,
     "priceStr": "RM 396,000 - RM 446,000",
     "category": "Undercon",
-    "location": "vidu, Putrajaya",
-    "region": "Putrajaya",
+    "location": "Taman Indah Puteri, Sepang, Selangor",
+    "region": "Selangor",
     "type": "Teres",
     "status": "sale",
     "beds": 4,
@@ -51,22 +51,22 @@ const PROPERTIES_DATA = [
     "images": [
       "https://thehartanahchannel.com/images/projects/perumahan-baru-teres-setingkat-taman-indah-puteri-/thumbnail.jpg"
     ],
-    "description": "PROJEK UNDERCON BARU: Perumahan Baru Teres Setingkat Taman Indah Puteri, Sepang\nLokasi: vidu, Putrajaya\nKategori: Teres\nHarga: RM 396,000 - RM 446,000\nPegangan: Leasehold (Malay Reserved)\nKeluasan Binaan: 1121 - 1640 kps\nBilik Tidur: 4 | Bilik Air: 2 | Parkir: 2\nPakej: Pakej Zero Downpayment + Percuma Yuran Guaman SPA & MOT\nJangkaan Siap: 2027\nPengangkutan & Kemudahan: Berdekatan dgn Sekolah, Masjid, Kedai Runcit & Kedai Makan, 5min ke KLIA, 10min ke Kota Warisan, KIP Mall, 20min ke Putrajaya & Cyberjaya\n\nKelebihan Projek:\n- Rezab Melayu, Geran Individu\n- Kawasan Bebas Banjir, Sistem Perparitan Baik dan Padat Dgn Penduduk Sekitar\n- Berkedudukan & Senang Akses ke Jalan Besar\n- Estimate Completion June 2028\n- Teres Setingkat\n- Luas Binaan 1121 sqft\n- Luas Tanah 1640 sqft (20x82)",
+    "description": "PROJEK UNDERCON BARU: Perumahan Baru Teres Setingkat Taman Indah Puteri, Sepang\nLokasi: Taman Indah Puteri, Sepang, Selangor\nKategori: Teres\nHarga: RM 396,000 - RM 446,000\nPegangan: Leasehold (Malay Reserved)\nKeluasan Binaan: 1121 - 1640 kps\nBilik Tidur: 4 | Bilik Air: 2 | Parkir: 2\nPakej: Pakej Zero Downpayment + Percuma Yuran Guaman SPA & MOT\nJangkaan Siap: 2027\nPengangkutan & Kemudahan: Berdekatan dgn Sekolah, Masjid, Kedai Runcit & Kedai Makan, 5min ke KLIA, 10min ke Kota Warisan, KIP Mall, 20min ke Putrajaya & Cyberjaya\n\nKelebihan Projek:\n- Rezab Melayu, Geran Individu\n- Kawasan Bebas Banjir, Sistem Perparitan Baik dan Padat Dgn Penduduk Sekitar\n- Berkedudukan & Senang Akses ke Jalan Besar\n- Estimate Completion June 2028\n- Teres Setingkat\n- Luas Binaan 1121 sqft\n- Luas Tanah 1640 sqft (20x82)",
     "refUrl": "https://thehartanahchannel.com/projek/perumahan-baru-teres-setingkat-taman-indah-puteri-",
     "hidden": false,
     "listingSource": "undercon",
     "openForCoa": true,
-    "state": "Putrajaya"
+    "state": "Selangor"
   },
   {
     "id": "undercon-brand-new-1-5-storey-superlinks-landed-house-hillt",
     "slug": "brand-new-1-5-storey-superlinks-landed-house-hillt",
-    "title": "Brand New 1.5 Storey Superlinks Landed House Hilltop Bandar Baru",
+    "title": "Brand New 1.5 Storey Superlinks Landed House Hilltop Bandar Baru Salak Tinggi",
     "price": 498000,
     "priceStr": "RM 498,000 - RM 548,000",
     "category": "Undercon",
-    "location": "Putrajaya",
-    "region": "Putrajaya",
+    "location": "Bandar Baru Salak Tinggi, Sepang, Selangor",
+    "region": "Selangor",
     "type": "Teres",
     "status": "sale",
     "beds": 3,
@@ -80,21 +80,21 @@ const PROPERTIES_DATA = [
     "images": [
       "https://thehartanahchannel.com/images/projects/brand-new-1-5-storey-superlinks-landed-house-hillt/thumbnail.jpg"
     ],
-    "description": "PROJEK UNDERCON BARU: Brand New 1.5 Storey Superlinks Landed House Hilltop Bandar Baru\nLokasi: Putrajaya\nKategori: Teres\nHarga: RM 498,000 - RM 548,000\nPegangan: Leasehold (Malay Reserved)\nKeluasan Binaan: 1862 - 1862 kps\nBilik Tidur: 3 | Bilik Air: 2 | Parkir: 2\nPakej: Pakej Zero Downpayment + Percuma Yuran Guaman SPA & MOT\nJangkaan Siap: 2027\nPengangkutan & Kemudahan: 8 mins to commercial area, Econsave, KIP Mall, Starbucks, Mc Donalds, 6 mins to ERL Salak Tinggi, 6 mins to Xiamen University, 10 mins to Elite Highway\n\nKelebihan Projek:\n- Low Density, 386 units\n- All units are on elevated ground with a min of 10m above road level\n- 20 feet wide green backlane for outdoor activities & relaxation\n- Gated guarded with security & RFID\n- 2.75 acres beautiful themed lush garden with various facilities\n- A multi-purpose hall provided to the community\n- Gateless design to promote intimate friendly neighborhood relationship",
+    "description": "PROJEK UNDERCON BARU: Brand New 1.5 Storey Superlinks Landed House Hilltop Bandar Baru Salak Tinggi\nLokasi: Bandar Baru Salak Tinggi, Sepang, Selangor\nKategori: Teres\nHarga: RM 498,000 - RM 548,000\nPegangan: Leasehold (Malay Reserved)\nKeluasan Binaan: 1862 - 1862 kps\nBilik Tidur: 3 | Bilik Air: 2 | Parkir: 2\nPakej: Pakej Zero Downpayment + Percuma Yuran Guaman SPA & MOT\nJangkaan Siap: 2027\nPengangkutan & Kemudahan: 8 mins to commercial area, Econsave, KIP Mall, Starbucks, Mc Donalds, 6 mins to ERL Salak Tinggi, 6 mins to Xiamen University, 10 mins to Elite Highway\n\nKelebihan Projek:\n- Low Density, 386 units\n- All units are on elevated ground with a min of 10m above road level\n- 20 feet wide green backlane for outdoor activities & relaxation\n- Gated guarded with security & RFID\n- 2.75 acres beautiful themed lush garden with various facilities\n- A multi-purpose hall provided to the community\n- Gateless design to promote intimate friendly neighborhood relationship",
     "refUrl": "https://thehartanahchannel.com/projek/brand-new-1-5-storey-superlinks-landed-house-hillt",
     "hidden": false,
     "listingSource": "undercon",
     "openForCoa": true,
-    "state": "Putrajaya"
+    "state": "Selangor"
   },
   {
     "id": "undercon-rumah-baru-teres-semi-d-setingkat-taman-dato-horma",
     "slug": "rumah-baru-teres-semi-d-setingkat-taman-dato-horma",
-    "title": "Rumah Baru Teres & Semi D Setingkat Taman Dato' Hormat, Kg Sungai",
+    "title": "Rumah Baru Teres & Semi D Setingkat Taman Dato' Hormat, Kg Sungai Kembung, Pulau Indah",
     "price": 315000,
     "priceStr": "RM 315,000 - RM 385,000",
     "category": "Undercon",
-    "location": "jangka siap Dec 2026, Selangor",
+    "location": "Pulau Indah, Klang, Selangor",
     "region": "Selangor",
     "type": "Semi D",
     "status": "sale",
@@ -109,7 +109,7 @@ const PROPERTIES_DATA = [
     "images": [
       "https://thehartanahchannel.com/images/projects/rumah-baru-teres-semi-d-setingkat-taman-dato-horma/thumbnail.jpg"
     ],
-    "description": "PROJEK UNDERCON BARU: Rumah Baru Teres & Semi D Setingkat Taman Dato' Hormat, Kg Sungai\nLokasi: jangka siap Dec 2026, Selangor\nKategori: Semi D\nHarga: RM 315,000 - RM 385,000\nPegangan: Freehold (Malay Reserved)\nKeluasan Binaan: 1000 - 2394 kps\nBilik Tidur: 4 | Bilik Air: 2 | Parkir: 2\nPakej: Pakej Zero Downpayment + Percuma Yuran Guaman SPA & MOT\nJangkaan Siap: 2027\nPengangkutan & Kemudahan: Masjid Sultan Abdul Aziz (3 min), Klinik Kesihatan Pulau Indah (4 min), Pulau Indah (5 min), SMK Pulau Indah (10 min)\n\nKelebihan Projek:\n- Freehold, Rezab Melayu\n- Harga Mampu Milik\n- Dijangka siap Dec 2026\n- Geran Individu\n- Boleh full loan Bank/LPPSA\n- Percuma Yuran Guaman Loan & SPA\n- Percuma Duti Setem MOT (Rumah Pertama)",
+    "description": "PROJEK UNDERCON BARU: Rumah Baru Teres & Semi D Setingkat Taman Dato' Hormat, Kg Sungai Kembung, Pulau Indah\nLokasi: Pulau Indah, Klang, Selangor\nKategori: Semi D\nHarga: RM 315,000 - RM 385,000\nPegangan: Freehold (Malay Reserved)\nKeluasan Binaan: 1000 - 2394 kps\nBilik Tidur: 4 | Bilik Air: 2 | Parkir: 2\nPakej: Pakej Zero Downpayment + Percuma Yuran Guaman SPA & MOT\nJangkaan Siap: 2027\nPengangkutan & Kemudahan: Masjid Sultan Abdul Aziz (3 min), Klinik Kesihatan Pulau Indah (4 min), Pulau Indah (5 min), SMK Pulau Indah (10 min)\n\nKelebihan Projek:\n- Freehold, Rezab Melayu\n- Harga Mampu Milik\n- Dijangka siap Dec 2026\n- Geran Individu\n- Boleh full loan Bank/LPPSA\n- Percuma Yuran Guaman Loan & SPA\n- Percuma Duti Setem MOT (Rumah Pertama)",
     "refUrl": "https://thehartanahchannel.com/projek/rumah-baru-teres-semi-d-setingkat-taman-dato-horma",
     "hidden": false,
     "listingSource": "undercon",
@@ -235,11 +235,11 @@ const PROPERTIES_DATA = [
   {
     "id": "undercon-brand-new-furnishd-2-tingkat-teres-kg-lombong-emas",
     "slug": "brand-new-furnishd-2-tingkat-teres-kg-lombong-emas",
-    "title": "Brand New Furnishd 2 Tingkat Teres Kg Lombong Emas, Seksyen 29 Sh",
+    "title": "Brand New Furnished 2 Tingkat Teres Kg Lombong Emas, Seksyen 29 Shah Alam",
     "price": 798000,
     "priceStr": "RM 798,000 - RM 848,000",
     "category": "Undercon",
-    "location": "jangka Siap Hujung Tahun 2026, Selangor",
+    "location": "Kg Lombong, Seksyen 29, Shah Alam, Selangor",
     "region": "Selangor",
     "type": "Teres",
     "status": "sale",
@@ -254,7 +254,7 @@ const PROPERTIES_DATA = [
     "images": [
       "https://thehartanahchannel.com/images/projects/brand-new-furnishd-2-tingkat-teres-kg-lombong-emas/thumbnail.jpg"
     ],
-    "description": "PROJEK UNDERCON BARU: Brand New Furnishd 2 Tingkat Teres Kg Lombong Emas, Seksyen 29 Sh\nLokasi: jangka Siap Hujung Tahun 2026, Selangor\nKategori: Teres\nHarga: RM 798,000 - RM 848,000\nPegangan: Leasehold (Malay Reserved)\nKeluasan Binaan: 2380 - 2380 kps\nBilik Tidur: 4 | Bilik Air: 4 | Parkir: 4\nPakej: Pakej Zero Downpayment + Percuma Yuran Guaman SPA & MOT\nJangkaan Siap: 2027\nPengangkutan & Kemudahan: 200m ke Quayside Shopping Mall, 3km ke EconSave, 3km ke Sek Kebangsaan Bkt Kemuning 2, 3km ke Masjid Al Falah, Jln Kebun\n\nKelebihan Projek:\n- Leasehold, Rezab Melayu\n- Geran Individu, Boleh Extend & Renovate Ikut Citarasa\n- Binaan 2380sqft, Tanah 20X79\n- 4 Bilik Tidur, 4 Bilik Air,\n- Boleh Parking 4 Kereta Dalam & Luar\n- Ruang Keluarga & SPECIAL Ada Ruang Courtyard\n- Lengkap ID & Perabot",
+    "description": "PROJEK UNDERCON BARU: Brand New Furnished 2 Tingkat Teres Kg Lombong Emas, Seksyen 29 Shah Alam\nLokasi: Kg Lombong, Seksyen 29, Shah Alam, Selangor\nKategori: Teres\nHarga: RM 798,000 - RM 848,000\nPegangan: Leasehold (Malay Reserved)\nKeluasan Binaan: 2380 - 2380 kps\nBilik Tidur: 4 | Bilik Air: 4 | Parkir: 4\nPakej: Pakej Zero Downpayment + Percuma Yuran Guaman SPA & MOT\nJangkaan Siap: 2027\nPengangkutan & Kemudahan: 200m ke Quayside Shopping Mall, 3km ke EconSave, 3km ke Sek Kebangsaan Bkt Kemuning 2, 3km ke Masjid Al Falah, Jln Kebun\n\nKelebihan Projek:\n- Leasehold, Rezab Melayu\n- Geran Individu, Boleh Extend & Renovate Ikut Citarasa\n- Binaan 2380sqft, Tanah 20X79\n- 4 Bilik Tidur, 4 Bilik Air,\n- Boleh Parking 4 Kereta Dalam & Luar\n- Ruang Keluarga & SPECIAL Ada Ruang Courtyard\n- Lengkap ID & Perabot",
     "refUrl": "https://thehartanahchannel.com/projek/brand-new-furnishd-2-tingkat-teres-kg-lombong-emas",
     "hidden": false,
     "listingSource": "undercon",
@@ -264,11 +264,11 @@ const PROPERTIES_DATA = [
   {
     "id": "undercon-rumah-baru-2-tingkat-teres-di-tmn-sijangkang-idama",
     "slug": "rumah-baru-2-tingkat-teres-di-tmn-sijangkang-idama",
-    "title": "Rumah Baru 2 Tingkat Teres di Tmn Sijangkang Idaman, Teluk Pangli",
+    "title": "Rumah Baru 2 Tingkat Teres di Taman Sijangkang Idaman, Teluk Panglima Garang",
     "price": 470000,
     "priceStr": "RM 470,000 - RM 520,000",
     "category": "Undercon",
-    "location": "Tmn Sijangkang Idaman, Teluk Panglima Garang, Selangor",
+    "location": "Teluk Panglima Garang, Kuala Langat, Selangor",
     "region": "Selangor",
     "type": "Teres",
     "status": "sale",
@@ -283,7 +283,7 @@ const PROPERTIES_DATA = [
     "images": [
       "https://thehartanahchannel.com/images/projects/rumah-baru-2-tingkat-teres-di-tmn-sijangkang-idama/thumbnail.jpg"
     ],
-    "description": "PROJEK UNDERCON BARU: Rumah Baru 2 Tingkat Teres di Tmn Sijangkang Idaman, Teluk Pangli\nLokasi: Tmn Sijangkang Idaman, Teluk Panglima Garang, Selangor\nKategori: Teres\nHarga: RM 470,000 - RM 520,000\nPegangan: Freehold (Malay Reserved)\nKeluasan Binaan: 1152 - 1699 kps\nBilik Tidur: 4 | Bilik Air: 3 | Parkir: 2\nPakej: Pakej Zero Downpayment + Percuma Yuran Guaman SPA & MOT\nJangkaan Siap: 2027\nPengangkutan & Kemudahan: Berdekatan sekolah, masjid, pasaraya dan akses lebuhraya utama.\n\nKelebihan Projek:\n- Lebuhraya Kesas, LKSA, SKVE, Elite\n- Jln Klang Banting",
+    "description": "PROJEK UNDERCON BARU: Rumah Baru 2 Tingkat Teres di Taman Sijangkang Idaman, Teluk Panglima Garang\nLokasi: Teluk Panglima Garang, Kuala Langat, Selangor\nKategori: Teres\nHarga: RM 470,000 - RM 520,000\nPegangan: Freehold (Malay Reserved)\nKeluasan Binaan: 1152 - 1699 kps\nBilik Tidur: 4 | Bilik Air: 3 | Parkir: 2\nPakej: Pakej Zero Downpayment + Percuma Yuran Guaman SPA & MOT\nJangkaan Siap: 2027\nPengangkutan & Kemudahan: Berdekatan sekolah, masjid, pasaraya dan akses lebuhraya utama.\n\nKelebihan Projek:\n- Lebuhraya Kesas, LKSA, SKVE, Elite\n- Jln Klang Banting",
     "refUrl": "https://thehartanahchannel.com/projek/rumah-baru-2-tingkat-teres-di-tmn-sijangkang-idama",
     "hidden": false,
     "listingSource": "undercon",
@@ -293,11 +293,11 @@ const PROPERTIES_DATA = [
   {
     "id": "undercon-brand-new-spacious-double-storey-terrace-in-taman-",
     "slug": "brand-new-spacious-double-storey-terrace-in-taman-",
-    "title": "Brand New Spacious Double Storey Terrace In Taman Gemilang Dengki",
+    "title": "Brand New Spacious Double Storey Terrace In Taman Gemilang, Dengkil",
     "price": 596000,
     "priceStr": "RM 596,000 - RM 646,000",
     "category": "Undercon",
-    "location": "vidual Title, Selangor",
+    "location": "Taman Gemilang, Dengkil, Selangor",
     "region": "Selangor",
     "type": "Teres",
     "status": "sale",
@@ -312,7 +312,7 @@ const PROPERTIES_DATA = [
     "images": [
       "https://thehartanahchannel.com/images/projects/brand-new-spacious-double-storey-terrace-in-taman-/thumbnail.jpg"
     ],
-    "description": "PROJEK UNDERCON BARU: Brand New Spacious Double Storey Terrace In Taman Gemilang Dengki\nLokasi: vidual Title, Selangor\nKategori: Teres\nHarga: RM 596,000 - RM 646,000\nPegangan: Freehold (Non-Bumi / Open)\nKeluasan Binaan: 2063 - 2063 kps\nBilik Tidur: 4 | Bilik Air: 3 | Parkir: 4\nPakej: Pakej Zero Downpayment + Percuma Yuran Guaman SPA & MOT\nJangkaan Siap: 2027\nPengangkutan & Kemudahan: 2.8km to Pekan Dengkil, 7km to Xiamen University, 10.9km to Bandar Baru Salak Tinggi, 10.5km to Nilai\n\nKelebihan Projek:\n- Freehold, Open Title\n- Individual Title\n- Build Up 2063 sqft, Land Size 20X66\n- 4 Bedrooms, 3 Bathrooms, 1 Store\n- Car Fix 4 Car Inside & Outside Car Poarch\n- Practical Family Layout & Fully Extend Balcony Upstairs\n- Estimate Completion Q2 2026",
+    "description": "PROJEK UNDERCON BARU: Brand New Spacious Double Storey Terrace In Taman Gemilang, Dengkil\nLokasi: Taman Gemilang, Dengkil, Selangor\nKategori: Teres\nHarga: RM 596,000 - RM 646,000\nPegangan: Freehold (Non-Bumi / Open)\nKeluasan Binaan: 2063 - 2063 kps\nBilik Tidur: 4 | Bilik Air: 3 | Parkir: 4\nPakej: Pakej Zero Downpayment + Percuma Yuran Guaman SPA & MOT\nJangkaan Siap: 2027\nPengangkutan & Kemudahan: 2.8km to Pekan Dengkil, 7km to Xiamen University, 10.9km to Bandar Baru Salak Tinggi, 10.5km to Nilai\n\nKelebihan Projek:\n- Freehold, Open Title\n- Individual Title\n- Build Up 2063 sqft, Land Size 20X66\n- 4 Bedrooms, 3 Bathrooms, 1 Store\n- Car Fix 4 Car Inside & Outside Car Poarch\n- Practical Family Layout & Fully Extend Balcony Upstairs\n- Estimate Completion Q2 2026",
     "refUrl": "https://thehartanahchannel.com/projek/brand-new-spacious-double-storey-terrace-in-taman-",
     "hidden": false,
     "listingSource": "undercon",
@@ -322,12 +322,12 @@ const PROPERTIES_DATA = [
   {
     "id": "undercon-low-density-freehold-exclusive-service-residence-i",
     "slug": "low-density-freehold-exclusive-service-residence-i",
-    "title": "Low Density Freehold Exclusive Service Residence In Bandar Seri P",
+    "title": "Low Density Freehold Exclusive Service Residence In Bandar Seri Putra, Bangi",
     "price": 500000,
     "priceStr": "RM 500,000 - RM 550,000",
     "category": "Undercon",
-    "location": "tioner x2, Putrajaya",
-    "region": "Putrajaya",
+    "location": "Bandar Seri Putra, Bangi, Selangor",
+    "region": "Selangor",
     "type": "Swasta",
     "status": "sale",
     "beds": 3,
@@ -341,22 +341,22 @@ const PROPERTIES_DATA = [
     "images": [
       "https://thehartanahchannel.com/images/projects/low-density-freehold-exclusive-service-residence-i/thumbnail.jpg"
     ],
-    "description": "PROJEK UNDERCON BARU: Low Density Freehold Exclusive Service Residence In Bandar Seri P\nLokasi: tioner x2, Putrajaya\nKategori: Swasta\nHarga: RM 500,000 - RM 550,000\nPegangan: Freehold (Non-Bumi / Open)\nKeluasan Binaan: 1087 - 1087 kps\nBilik Tidur: 3 | Bilik Air: 2 | Parkir: 2\nPakej: Pakej Zero Downpayment + Percuma Yuran Guaman SPA & MOT\nJangkaan Siap: 2027\nPengangkutan & Kemudahan: Berdekatan sekolah, masjid, pasaraya dan akses lebuhraya utama.\n\nKelebihan Projek:\n- Build in Kitchen Cabinet with Quartz Stone Workstop\n- Hood & Hob\n- Air Conditioner x2\n- Refrigerator\n- Washing Machine\n- Water Heater x2\n- Kitchen Fitting with Sink and Tap",
+    "description": "PROJEK UNDERCON BARU: Low Density Freehold Exclusive Service Residence In Bandar Seri Putra, Bangi\nLokasi: Bandar Seri Putra, Bangi, Selangor\nKategori: Swasta\nHarga: RM 500,000 - RM 550,000\nPegangan: Freehold (Non-Bumi / Open)\nKeluasan Binaan: 1087 - 1087 kps\nBilik Tidur: 3 | Bilik Air: 2 | Parkir: 2\nPakej: Pakej Zero Downpayment + Percuma Yuran Guaman SPA & MOT\nJangkaan Siap: 2027\nPengangkutan & Kemudahan: Berdekatan sekolah, masjid, pasaraya dan akses lebuhraya utama.\n\nKelebihan Projek:\n- Build in Kitchen Cabinet with Quartz Stone Workstop\n- Hood & Hob\n- Air Conditioner x2\n- Refrigerator\n- Washing Machine\n- Water Heater x2\n- Kitchen Fitting with Sink and Tap",
     "refUrl": "https://thehartanahchannel.com/projek/low-density-freehold-exclusive-service-residence-i",
     "hidden": false,
     "listingSource": "undercon",
     "openForCoa": true,
-    "state": "Putrajaya"
+    "state": "Selangor"
   },
   {
     "id": "undercon-freehold-2-tingkat-teres-2-5-tingkat-teres-di-desa",
     "slug": "freehold-2-tingkat-teres-2-5-tingkat-teres-di-desa",
-    "title": "Freehold 2 Tingkat Teres & 2.5 Tingkat Teres di Desa Salak Jaya,",
+    "title": "Freehold 2 Tingkat Teres & 2.5 Tingkat Teres di Desa Salak Jaya, Salak Tinggi",
     "price": 522000,
     "priceStr": "RM 522,000 - RM 526,000",
     "category": "Undercon",
-    "location": "Desa Salak Jaya, Salak Tinggi, Putrajaya",
-    "region": "Putrajaya",
+    "location": "Salak Tinggi, Sepang, Selangor",
+    "region": "Selangor",
     "type": "Teres",
     "status": "sale",
     "beds": 4,
@@ -370,12 +370,12 @@ const PROPERTIES_DATA = [
     "images": [
       "https://thehartanahchannel.com/images/projects/freehold-2-tingkat-teres-2-5-tingkat-teres-di-desa/thumbnail.jpg"
     ],
-    "description": "PROJEK UNDERCON BARU: Freehold 2 Tingkat Teres & 2.5 Tingkat Teres di Desa Salak Jaya,\nLokasi: Desa Salak Jaya, Salak Tinggi, Putrajaya\nKategori: Teres\nHarga: RM 522,000 - RM 526,000\nPegangan: Freehold (Malay Reserved)\nKeluasan Binaan: 1850 - 1857 kps\nBilik Tidur: 4 | Bilik Air: 4 | Parkir: 2\nPakej: Pakej Zero Downpayment + Percuma Yuran Guaman SPA & MOT\nJangkaan Siap: 2027\nPengangkutan & Kemudahan: 5min Selepas IPD Sepang, Belakang Shell, Berdekatan dgn Sekolah, Masjid, Kedai Runcit & Kedai Makan, 10min ke Kota Warisan, KIP Mall, 15min ke KLIA\n\nKelebihan Projek:\n- 2 Tingkat Teres (19 buah)\n- Rezab Melayu, Geran Individu\n- Luas Binaan 1857sf\n- Luas Tanah 20x67.5\n- 4 Bilik Tidur 4 Bilik Air\n- Dijangka Siap Dec 2028\n- Harga Jualan RM526K++",
+    "description": "PROJEK UNDERCON BARU: Freehold 2 Tingkat Teres & 2.5 Tingkat Teres di Desa Salak Jaya, Salak Tinggi\nLokasi: Salak Tinggi, Sepang, Selangor\nKategori: Teres\nHarga: RM 522,000 - RM 526,000\nPegangan: Freehold (Malay Reserved)\nKeluasan Binaan: 1850 - 1857 kps\nBilik Tidur: 4 | Bilik Air: 4 | Parkir: 2\nPakej: Pakej Zero Downpayment + Percuma Yuran Guaman SPA & MOT\nJangkaan Siap: 2027\nPengangkutan & Kemudahan: 5min Selepas IPD Sepang, Belakang Shell, Berdekatan dgn Sekolah, Masjid, Kedai Runcit & Kedai Makan, 10min ke Kota Warisan, KIP Mall, 15min ke KLIA\n\nKelebihan Projek:\n- 2 Tingkat Teres (19 buah)\n- Rezab Melayu, Geran Individu\n- Luas Binaan 1857sf\n- Luas Tanah 20x67.5\n- 4 Bilik Tidur 4 Bilik Air\n- Dijangka Siap Dec 2028\n- Harga Jualan RM526K++",
     "refUrl": "https://thehartanahchannel.com/projek/freehold-2-tingkat-teres-2-5-tingkat-teres-di-desa",
     "hidden": false,
     "listingSource": "undercon",
     "openForCoa": true,
-    "state": "Putrajaya"
+    "state": "Selangor"
   },
   {
     "id": "undercon-rumawip-rm300k-in-permaisuri-cheras-open-for-booki",
@@ -442,8 +442,8 @@ const PROPERTIES_DATA = [
     "price": 598000,
     "priceStr": "RM 598,000 - RM 648,000",
     "category": "Undercon",
-    "location": "Jenderam Hilir, Dengkil, Putrajaya",
-    "region": "Putrajaya",
+    "location": "Jenderam Hilir, Dengkil, Selangor",
+    "region": "Selangor",
     "type": "Semi D",
     "status": "sale",
     "beds": 4,
@@ -457,21 +457,21 @@ const PROPERTIES_DATA = [
     "images": [
       "https://thehartanahchannel.com/images/projects/rumah-semi-d-setingkat-freehold-jenderam-hilir-den/thumbnail.jpg"
     ],
-    "description": "PROJEK UNDERCON BARU: Rumah Semi D Setingkat Freehold @ Jenderam Hilir, Dengkil\nLokasi: Jenderam Hilir, Dengkil, Putrajaya\nKategori: Semi D\nHarga: RM 598,000 - RM 648,000\nPegangan: Freehold (Malay Reserved)\nKeluasan Binaan: 1228 - 1228 kps\nBilik Tidur: 4 | Bilik Air: 2 | Parkir: 2\nPakej: Pakej Zero Downpayment + Percuma Yuran Guaman SPA & MOT\nJangkaan Siap: 2027\nPengangkutan & Kemudahan: Berdekatan dgn Sekolah, Masjid, Kedai Runcit & Kedai Makan, 10min ke KLIA, 10min ke Kota Warisan, KIP Mall, 20min ke Putrajaya & Cyberjaya\n\nKelebihan Projek:\n- Pegangan Bebas\n- Rezab Melayu, Geran Individu\n- Luas Binaan 1228sf\n- Luas Tanah 40x70\n- 4 Bilik Tidur 2 Bilik Air\n- Dijangka Siap June 27",
+    "description": "PROJEK UNDERCON BARU: Rumah Semi D Setingkat Freehold @ Jenderam Hilir, Dengkil\nLokasi: Jenderam Hilir, Dengkil, Selangor\nKategori: Semi D\nHarga: RM 598,000 - RM 648,000\nPegangan: Freehold (Malay Reserved)\nKeluasan Binaan: 1228 - 1228 kps\nBilik Tidur: 4 | Bilik Air: 2 | Parkir: 2\nPakej: Pakej Zero Downpayment + Percuma Yuran Guaman SPA & MOT\nJangkaan Siap: 2027\nPengangkutan & Kemudahan: Berdekatan dgn Sekolah, Masjid, Kedai Runcit & Kedai Makan, 10min ke KLIA, 10min ke Kota Warisan, KIP Mall, 20min ke Putrajaya & Cyberjaya\n\nKelebihan Projek:\n- Pegangan Bebas\n- Rezab Melayu, Geran Individu\n- Luas Binaan 1228sf\n- Luas Tanah 40x70\n- 4 Bilik Tidur 2 Bilik Air\n- Dijangka Siap June 27",
     "refUrl": "https://thehartanahchannel.com/projek/rumah-semi-d-setingkat-freehold-jenderam-hilir-den",
     "hidden": false,
     "listingSource": "undercon",
     "openForCoa": true,
-    "state": "Putrajaya"
+    "state": "Selangor"
   },
   {
     "id": "undercon-melayu-sahaja-rumah-teres-2-tingkat-kg-lombong-sek",
     "slug": "melayu-sahaja-rumah-teres-2-tingkat-kg-lombong-sek",
-    "title": "Melayu Sahaja) Rumah Teres 2 Tingkat Kg Lombong, Seksyen 29 Shah",
+    "title": "Rumah Teres 2 Tingkat Kg Lombong, Seksyen 29 Shah Alam (Melayu Sahaja)",
     "price": 500000,
     "priceStr": "RM 500,000 - RM 539,900",
     "category": "Undercon",
-    "location": "sertai Bilik Air, Selangor",
+    "location": "Kg Lombong, Seksyen 29, Shah Alam, Selangor",
     "region": "Selangor",
     "type": "Teres",
     "status": "sale",
@@ -486,7 +486,7 @@ const PROPERTIES_DATA = [
     "images": [
       "https://thehartanahchannel.com/images/projects/melayu-sahaja-rumah-teres-2-tingkat-kg-lombong-sek/thumbnail.jpg"
     ],
-    "description": "PROJEK UNDERCON BARU: Melayu Sahaja) Rumah Teres 2 Tingkat Kg Lombong, Seksyen 29 Shah\nLokasi: sertai Bilik Air, Selangor\nKategori: Teres\nHarga: RM 500,000 - RM 539,900\nPegangan: Leasehold (Malay Reserved)\nKeluasan Binaan: 896 - 896 kps\nBilik Tidur: 4 | Bilik Air: 4 | Parkir: 2\nPakej: Pakej Zero Downpayment + Percuma Yuran Guaman SPA & MOT\nJangkaan Siap: 2027\nPengangkutan & Kemudahan: Berdekatan sekolah, masjid, pasaraya dan akses lebuhraya utama.\n\nKelebihan Projek:\n- Projek Kediaman Eksklusif di sertai Bilik Air, Selangor\n- Pilihan 4 Bilik & 4 Bilik Air\n- Pakej Zero Downpayment & Booking Rendah\n- Percuma Yuran Guaman SPA & MOT",
+    "description": "PROJEK UNDERCON BARU: Rumah Teres 2 Tingkat Kg Lombong, Seksyen 29 Shah Alam (Melayu Sahaja)\nLokasi: Kg Lombong, Seksyen 29, Shah Alam, Selangor\nKategori: Teres\nHarga: RM 500,000 - RM 539,900\nPegangan: Leasehold (Malay Reserved)\nKeluasan Binaan: 896 - 896 kps\nBilik Tidur: 4 | Bilik Air: 4 | Parkir: 2\nPakej: Pakej Zero Downpayment + Percuma Yuran Guaman SPA & MOT\nJangkaan Siap: 2027\nPengangkutan & Kemudahan: Berdekatan sekolah, masjid, pasaraya dan akses lebuhraya utama.\n\nKelebihan Projek:\n- Projek Kediaman Eksklusif di sertai Bilik Air, Selangor\n- Pilihan 4 Bilik & 4 Bilik Air\n- Pakej Zero Downpayment & Booking Rendah\n- Percuma Yuran Guaman SPA & MOT",
     "refUrl": "https://thehartanahchannel.com/projek/melayu-sahaja-rumah-teres-2-tingkat-kg-lombong-sek",
     "hidden": false,
     "listingSource": "undercon",
@@ -529,8 +529,8 @@ const PROPERTIES_DATA = [
     "price": 250000,
     "priceStr": "RM 250,000 - RM 300,000",
     "category": "Undercon",
-    "location": "Salak Tinggi, Sepang, Putrajaya",
-    "region": "Putrajaya",
+    "location": "Salak Tinggi, Sepang, Selangor",
+    "region": "Selangor",
     "type": "RSKU",
     "status": "sale",
     "beds": 3,
@@ -544,12 +544,12 @@ const PROPERTIES_DATA = [
     "images": [
       "https://thehartanahchannel.com/images/projects/rumah-selangorku-salak-tinggi-sepang/thumbnail.jpg"
     ],
-    "description": "PROJEK UNDERCON BARU: Rumah SelangorKu @ Salak Tinggi, Sepang\nLokasi: Salak Tinggi, Sepang, Putrajaya\nKategori: RSKU\nHarga: RM 250,000 - RM 300,000\nPegangan: Leasehold (Malay Reserved)\nKeluasan Binaan: 1100 - 1100 kps\nBilik Tidur: 3 | Bilik Air: 2 | Parkir: 2\nPakej: Pakej Zero Downpayment + Percuma Yuran Guaman SPA & MOT\nJangkaan Siap: 2027\nPengangkutan & Kemudahan: Berdekatan sekolah, masjid, pasaraya dan akses lebuhraya utama.\n\nKelebihan Projek:\n- RM250,000 Sahaja\n- Leasehold, Rizab Melayu\n- Pinjaman 100%\n- Percuma : SPA & Loan Legal + Disbursements\n- Percuma dapur kabinet\n- Percuma 3 airconds\n- 3 Bilik Tidur & 2 Bilik Air",
+    "description": "PROJEK UNDERCON BARU: Rumah SelangorKu @ Salak Tinggi, Sepang\nLokasi: Salak Tinggi, Sepang, Selangor\nKategori: RSKU\nHarga: RM 250,000 - RM 300,000\nPegangan: Leasehold (Malay Reserved)\nKeluasan Binaan: 1100 - 1100 kps\nBilik Tidur: 3 | Bilik Air: 2 | Parkir: 2\nPakej: Pakej Zero Downpayment + Percuma Yuran Guaman SPA & MOT\nJangkaan Siap: 2027\nPengangkutan & Kemudahan: Berdekatan sekolah, masjid, pasaraya dan akses lebuhraya utama.\n\nKelebihan Projek:\n- RM250,000 Sahaja\n- Leasehold, Rizab Melayu\n- Pinjaman 100%\n- Percuma : SPA & Loan Legal + Disbursements\n- Percuma dapur kabinet\n- Percuma 3 airconds\n- 3 Bilik Tidur & 2 Bilik Air",
     "refUrl": "https://thehartanahchannel.com/projek/rumah-selangorku-salak-tinggi-sepang",
     "hidden": false,
     "listingSource": "undercon",
     "openForCoa": true,
-    "state": "Putrajaya"
+    "state": "Selangor"
   },
   {
     "id": "undercon-rumah-baru-design-moden-2-tingkat-teres-di-jln-mer",
@@ -641,11 +641,11 @@ const PROPERTIES_DATA = [
   {
     "id": "undercon-freehold-brand-new-2-storey-terrace-jalan-pasar-ma",
     "slug": "freehold-brand-new-2-storey-terrace-jalan-pasar-ma",
-    "title": "Freehold Brand New 2 Storey Terrace Jalan Pasar Malam, Meru",
+    "title": "Freehold Brand New 2 Storey Terrace Jalan Pasar Malam, Meru Klang",
     "price": 500000,
     "priceStr": "RM 500,000 - RM 550,000",
     "category": "Undercon",
-    "location": "vidual Title, Selangor",
+    "location": "Meru, Klang, Selangor",
     "region": "Selangor",
     "type": "Teres",
     "status": "sale",
@@ -660,7 +660,7 @@ const PROPERTIES_DATA = [
     "images": [
       "https://thehartanahchannel.com/images/projects/freehold-brand-new-2-storey-terrace-jalan-pasar-ma/thumbnail.jpg"
     ],
-    "description": "PROJEK UNDERCON BARU: Freehold Brand New 2 Storey Terrace Jalan Pasar Malam, Meru\nLokasi: vidual Title, Selangor\nKategori: Teres\nHarga: RM 500,000 - RM 550,000\nPegangan: Freehold (Non-Bumi / Open)\nKeluasan Binaan: 1210 - 1761 kps\nBilik Tidur: 4 | Bilik Air: 4 | Parkir: 2\nPakej: Pakej Zero Downpayment + Percuma Yuran Guaman SPA & MOT\nJangkaan Siap: 2027\nPengangkutan & Kemudahan: 0.19km to 99 Speedmart, 1.8km to NSK Meru, 1.9km to SJK Tiong Hua Kok Bin, 2km to SK Binjal\n\nKelebihan Projek:\n- Projek Kediaman Eksklusif di vidual Title, Selangor\n- Pilihan 4 Bilik & 4 Bilik Air\n- Pakej Zero Downpayment & Booking Rendah\n- Percuma Yuran Guaman SPA & MOT",
+    "description": "PROJEK UNDERCON BARU: Freehold Brand New 2 Storey Terrace Jalan Pasar Malam, Meru Klang\nLokasi: Meru, Klang, Selangor\nKategori: Teres\nHarga: RM 500,000 - RM 550,000\nPegangan: Freehold (Non-Bumi / Open)\nKeluasan Binaan: 1210 - 1761 kps\nBilik Tidur: 4 | Bilik Air: 4 | Parkir: 2\nPakej: Pakej Zero Downpayment + Percuma Yuran Guaman SPA & MOT\nJangkaan Siap: 2027\nPengangkutan & Kemudahan: 0.19km to 99 Speedmart, 1.8km to NSK Meru, 1.9km to SJK Tiong Hua Kok Bin, 2km to SK Binjal\n\nKelebihan Projek:\n- Projek Kediaman Eksklusif di vidual Title, Selangor\n- Pilihan 4 Bilik & 4 Bilik Air\n- Pakej Zero Downpayment & Booking Rendah\n- Percuma Yuran Guaman SPA & MOT",
     "refUrl": "https://thehartanahchannel.com/projek/freehold-brand-new-2-storey-terrace-jalan-pasar-ma",
     "hidden": false,
     "listingSource": "undercon",
@@ -699,11 +699,11 @@ const PROPERTIES_DATA = [
   {
     "id": "undercon-exclusive-lifestyle-2-storey-landed-duplex-apartme",
     "slug": "exclusive-lifestyle-2-storey-landed-duplex-apartme",
-    "title": "Exclusive Lifestyle 2 Storey Landed Duplex & Apartment Kota Waris",
+    "title": "Exclusive Lifestyle 2 Storey Landed Duplex & Apartment Kota Warisan",
     "price": 180000,
     "priceStr": "RM 180,000 - RM 480,000",
     "category": "Undercon",
-    "location": "sbursement, Selangor",
+    "location": "Kota Warisan, Sepang, Selangor",
     "region": "Selangor",
     "type": "Swasta",
     "status": "sale",
@@ -718,7 +718,7 @@ const PROPERTIES_DATA = [
     "images": [
       "https://thehartanahchannel.com/images/projects/exclusive-lifestyle-2-storey-landed-duplex-apartme/thumbnail.jpg"
     ],
-    "description": "PROJEK UNDERCON BARU: Exclusive Lifestyle 2 Storey Landed Duplex & Apartment Kota Waris\nLokasi: sbursement, Selangor\nKategori: Swasta\nHarga: RM 180,000 - RM 480,000\nPegangan: Leasehold (Non-Bumi / Open)\nKeluasan Binaan: 1475 - 1604 kps\nBilik Tidur: 4 | Bilik Air: 3 | Parkir: 2\nPakej: Pakej Zero Downpayment + Percuma Yuran Guaman SPA & MOT\nJangkaan Siap: 2027\nPengangkutan & Kemudahan: Berdekatan sekolah, masjid, pasaraya dan akses lebuhraya utama.\n\nKelebihan Projek:\n- GATED GUARDED COMMUNITY\n- SURAU, MULTIPURPOSE HALL, JOGGING TRACK\n- 2 DESIGNATED CAR PARKING\n- LOW DENSITY - 96 UNITS\n- ESTIMATE COMPLETION Q3/2026\n- NEAR TO KIP MALL, XIAMEN UNIVERSITY, ERL SALAK TINGGI\n- SELLING PRICE FROM RM48X,XXX",
+    "description": "PROJEK UNDERCON BARU: Exclusive Lifestyle 2 Storey Landed Duplex & Apartment Kota Warisan\nLokasi: Kota Warisan, Sepang, Selangor\nKategori: Swasta\nHarga: RM 180,000 - RM 480,000\nPegangan: Leasehold (Non-Bumi / Open)\nKeluasan Binaan: 1475 - 1604 kps\nBilik Tidur: 4 | Bilik Air: 3 | Parkir: 2\nPakej: Pakej Zero Downpayment + Percuma Yuran Guaman SPA & MOT\nJangkaan Siap: 2027\nPengangkutan & Kemudahan: Berdekatan sekolah, masjid, pasaraya dan akses lebuhraya utama.\n\nKelebihan Projek:\n- GATED GUARDED COMMUNITY\n- SURAU, MULTIPURPOSE HALL, JOGGING TRACK\n- 2 DESIGNATED CAR PARKING\n- LOW DENSITY - 96 UNITS\n- ESTIMATE COMPLETION Q3/2026\n- NEAR TO KIP MALL, XIAMEN UNIVERSITY, ERL SALAK TINGGI\n- SELLING PRICE FROM RM48X,XXX",
     "refUrl": "https://thehartanahchannel.com/projek/exclusive-lifestyle-2-storey-landed-duplex-apartme",
     "hidden": false,
     "listingSource": "undercon",
@@ -728,11 +728,11 @@ const PROPERTIES_DATA = [
   {
     "id": "undercon-zero-deposit-single-storey-banglo-desa-rening-jaya",
     "slug": "zero-deposit-single-storey-banglo-desa-rening-jaya",
-    "title": "Zero Deposit Single Storey Banglo, Desa Rening Jaya, Rasa Kuala K",
+    "title": "Zero Deposit Single Storey Banglo Desa Rening Jaya, Rasa Hulu Selangor",
     "price": 499989,
     "priceStr": "RM 499,989 - RM 500,000",
     "category": "Undercon",
-    "location": "vidual Title, Open Title, Selangor",
+    "location": "Rasa, Batang Kali, Hulu Selangor, Selangor",
     "region": "Selangor",
     "type": "Teres",
     "status": "sale",
@@ -747,7 +747,7 @@ const PROPERTIES_DATA = [
     "images": [
       "https://thehartanahchannel.com/images/projects/zero-deposit-single-storey-banglo-desa-rening-jaya/thumbnail.jpg"
     ],
-    "description": "PROJEK UNDERCON BARU: Zero Deposit Single Storey Banglo, Desa Rening Jaya, Rasa Kuala K\nLokasi: vidual Title, Open Title, Selangor\nKategori: Teres\nHarga: RM 499,989 - RM 500,000\nPegangan: Leasehold (Non-Bumi / Open)\nKeluasan Binaan: 1100 - 1100 kps\nBilik Tidur: 3 | Bilik Air: 2 | Parkir: 2\nPakej: Pakej Zero Downpayment + Percuma Yuran Guaman SPA & MOT\nJangkaan Siap: 2027\nPengangkutan & Kemudahan: Berdekatan sekolah, masjid, pasaraya dan akses lebuhraya utama.\n\nKelebihan Projek:\n- Size: 50 x 80\n- SPA Price RM499,989 (Before Offer)\n- ⁠3 Bedroom, 2 Bathroom\n- ⁠Leasehold\n- Masjid Jamek Al-Khalidiah - 2.5km\n- ⁠SK Rasa - 2.8km\n- ⁠Klinik Kesihatan Rasa - 3.9km",
+    "description": "PROJEK UNDERCON BARU: Zero Deposit Single Storey Banglo Desa Rening Jaya, Rasa Hulu Selangor\nLokasi: Rasa, Batang Kali, Hulu Selangor, Selangor\nKategori: Teres\nHarga: RM 499,989 - RM 500,000\nPegangan: Leasehold (Non-Bumi / Open)\nKeluasan Binaan: 1100 - 1100 kps\nBilik Tidur: 3 | Bilik Air: 2 | Parkir: 2\nPakej: Pakej Zero Downpayment + Percuma Yuran Guaman SPA & MOT\nJangkaan Siap: 2027\nPengangkutan & Kemudahan: Berdekatan sekolah, masjid, pasaraya dan akses lebuhraya utama.\n\nKelebihan Projek:\n- Size: 50 x 80\n- SPA Price RM499,989 (Before Offer)\n- ⁠3 Bedroom, 2 Bathroom\n- ⁠Leasehold\n- Masjid Jamek Al-Khalidiah - 2.5km\n- ⁠SK Rasa - 2.8km\n- ⁠Klinik Kesihatan Rasa - 3.9km",
     "refUrl": "https://thehartanahchannel.com/projek/zero-deposit-single-storey-banglo-desa-rening-jaya",
     "hidden": false,
     "listingSource": "undercon",
@@ -815,11 +815,11 @@ const PROPERTIES_DATA = [
   {
     "id": "undercon-last-unit-reopen-balik-loan-tak-lepas",
     "slug": "last-unit-reopen-balik-loan-tak-lepas",
-    "title": "Last Unit Reopen Balik, Loan Tak Lepas**",
+    "title": "Rumah Teres Baru Last Unit Reopen Balik (Loan Tak Lepas)",
     "price": 395000,
     "priceStr": "RM 395,000 - RM 445,000",
     "category": "Undercon",
-    "location": "ate RM395K net, Selangor",
+    "location": "Dengkil, Sepang, Selangor",
     "region": "Selangor",
     "type": "Teres",
     "status": "sale",
@@ -834,7 +834,7 @@ const PROPERTIES_DATA = [
     "images": [
       "https://thehartanahchannel.com/images/projects/last-unit-reopen-balik-loan-tak-lepas/thumbnail.jpg"
     ],
-    "description": "PROJEK UNDERCON BARU: Last Unit Reopen Balik, Loan Tak Lepas**\nLokasi: ate RM395K net, Selangor\nKategori: Teres\nHarga: RM 395,000 - RM 445,000\nPegangan: Leasehold (Malay Reserved)\nKeluasan Binaan: 1100 - 1100 kps\nBilik Tidur: 3 | Bilik Air: 2 | Parkir: 2\nPakej: Pakej Zero Downpayment + Percuma Yuran Guaman SPA & MOT\nJangkaan Siap: 2027\nPengangkutan & Kemudahan: Berdekatan sekolah, masjid, pasaraya dan akses lebuhraya utama.\n\nKelebihan Projek:\n- Extra Cash Back ~~RM10K~~ RM15K\n- Free 1 aicrond 2 kipas\n- MOT 50% jika rumah kedua\n- Zero Downpayment (Full Loan)",
+    "description": "PROJEK UNDERCON BARU: Rumah Teres Baru Last Unit Reopen Balik (Loan Tak Lepas)\nLokasi: Dengkil, Sepang, Selangor\nKategori: Teres\nHarga: RM 395,000 - RM 445,000\nPegangan: Leasehold (Malay Reserved)\nKeluasan Binaan: 1100 - 1100 kps\nBilik Tidur: 3 | Bilik Air: 2 | Parkir: 2\nPakej: Pakej Zero Downpayment + Percuma Yuran Guaman SPA & MOT\nJangkaan Siap: 2027\nPengangkutan & Kemudahan: Berdekatan sekolah, masjid, pasaraya dan akses lebuhraya utama.\n\nKelebihan Projek:\n- Extra Cash Back ~~RM10K~~ RM15K\n- Free 1 aicrond 2 kipas\n- MOT 50% jika rumah kedua\n- Zero Downpayment (Full Loan)",
     "refUrl": "https://thehartanahchannel.com/projek/last-unit-reopen-balik-loan-tak-lepas",
     "hidden": false,
     "listingSource": "undercon",
@@ -848,8 +848,8 @@ const PROPERTIES_DATA = [
     "price": 380000,
     "priceStr": "RM 380,000 - RM 430,000",
     "category": "Undercon",
-    "location": "Putrajaya",
-    "region": "Putrajaya",
+    "location": "Kota Warisan, Sepang, Selangor",
+    "region": "Selangor",
     "type": "Swasta",
     "status": "sale",
     "beds": 3,
@@ -863,21 +863,21 @@ const PROPERTIES_DATA = [
     "images": [
       "https://thehartanahchannel.com/images/projects/cheapest-freehold-service-residence-in-kota-warisa/thumbnail.jpg"
     ],
-    "description": "PROJEK UNDERCON BARU: Cheapest Freehold Service Residence in Kota Warisan, Sepang\nLokasi: Putrajaya\nKategori: Swasta\nHarga: RM 380,000 - RM 430,000\nPegangan: Freehold (Non-Bumi / Open)\nKeluasan Binaan: 904 - 904 kps\nBilik Tidur: 3 | Bilik Air: 2 | Parkir: 2\nPakej: Pakej Zero Downpayment + Percuma Yuran Guaman SPA & MOT\nJangkaan Siap: 2027\nPengangkutan & Kemudahan: 6 mins to ERL Salak Tinggi, 6 mins to Xiamen University, 10 mins to Elite Highway, 15 mins to Bandar Baru Nilai\n\nKelebihan Projek:\n- Strategic & matured location (Located at KIP Mall)\n- Low Density, 2 Blocks with 344 Units Only\n- Separated 6 Level Car Park Podium & Facilities\n- Practical Family Layout, 904 sqft for 3 Bedrooms\n- 2 Car park side by side\n- Semi Furnished\n- Low Density, 2 Blocks with 344 Units Only",
+    "description": "PROJEK UNDERCON BARU: Cheapest Freehold Service Residence in Kota Warisan, Sepang\nLokasi: Kota Warisan, Sepang, Selangor\nKategori: Swasta\nHarga: RM 380,000 - RM 430,000\nPegangan: Freehold (Non-Bumi / Open)\nKeluasan Binaan: 904 - 904 kps\nBilik Tidur: 3 | Bilik Air: 2 | Parkir: 2\nPakej: Pakej Zero Downpayment + Percuma Yuran Guaman SPA & MOT\nJangkaan Siap: 2027\nPengangkutan & Kemudahan: 6 mins to ERL Salak Tinggi, 6 mins to Xiamen University, 10 mins to Elite Highway, 15 mins to Bandar Baru Nilai\n\nKelebihan Projek:\n- Strategic & matured location (Located at KIP Mall)\n- Low Density, 2 Blocks with 344 Units Only\n- Separated 6 Level Car Park Podium & Facilities\n- Practical Family Layout, 904 sqft for 3 Bedrooms\n- 2 Car park side by side\n- Semi Furnished\n- Low Density, 2 Blocks with 344 Units Only",
     "refUrl": "https://thehartanahchannel.com/projek/cheapest-freehold-service-residence-in-kota-warisa",
     "hidden": false,
     "listingSource": "undercon",
     "openForCoa": true,
-    "state": "Putrajaya"
+    "state": "Selangor"
   },
   {
     "id": "undercon-special-attention-team",
     "slug": "special-attention-team",
-    "title": "Special Attention Team ❗️",
+    "title": "Residensi Eksklusif Baru Selangor / Lembah Klang",
     "price": 350000,
     "priceStr": "RM 350,000 - RM 450,000",
     "category": "Undercon",
-    "location": "landmarks, etc, Selangor",
+    "location": "Cyberjaya / Sepang, Selangor",
     "region": "Selangor",
     "type": "Teres",
     "status": "sale",
@@ -892,7 +892,7 @@ const PROPERTIES_DATA = [
     "images": [
       "https://thehartanahchannel.com/images/projects/jaz-bangau/thumbnail.jpg"
     ],
-    "description": "PROJEK UNDERCON BARU: Special Attention Team ❗️\nLokasi: landmarks, etc, Selangor\nKategori: Teres\nHarga: RM 350,000 - RM 450,000\nPegangan: Leasehold (Malay Reserved)\nKeluasan Binaan: 1100 - 1100 kps\nBilik Tidur: 4 | Bilik Air: 2 | Parkir: 2\nPakej: Pakej Zero Downpayment + Percuma Yuran Guaman SPA & MOT\nJangkaan Siap: 2027\nPengangkutan & Kemudahan: Berdekatan sekolah, masjid, pasaraya dan akses lebuhraya utama.\n\nKelebihan Projek:\n- Project Name\n- Developer Name\n- Rebate/Discount/Cash Back (avoid these kind of words)",
+    "description": "PROJEK UNDERCON BARU: Residensi Eksklusif Baru Selangor / Lembah Klang\nLokasi: Cyberjaya / Sepang, Selangor\nKategori: Teres\nHarga: RM 350,000 - RM 450,000\nPegangan: Leasehold (Malay Reserved)\nKeluasan Binaan: 1100 - 1100 kps\nBilik Tidur: 4 | Bilik Air: 2 | Parkir: 2\nPakej: Pakej Zero Downpayment + Percuma Yuran Guaman SPA & MOT\nJangkaan Siap: 2027\nPengangkutan & Kemudahan: Berdekatan sekolah, masjid, pasaraya dan akses lebuhraya utama.\n\nKelebihan Projek:\n- Project Name\n- Developer Name\n- Rebate/Discount/Cash Back (avoid these kind of words)",
     "refUrl": "https://thehartanahchannel.com/projek/special-attention-team",
     "hidden": false,
     "listingSource": "undercon",
@@ -906,8 +906,8 @@ const PROPERTIES_DATA = [
     "price": 355500,
     "priceStr": "RM 355,500 - RM 459,000",
     "category": "Undercon",
-    "location": "Desa Anugerah, Salak Tinggi, Putrajaya",
-    "region": "Putrajaya",
+    "location": "Salak Tinggi, Sepang, Selangor",
+    "region": "Selangor",
     "type": "Teres",
     "status": "sale",
     "beds": 3,
@@ -921,21 +921,21 @@ const PROPERTIES_DATA = [
     "images": [
       "https://thehartanahchannel.com/images/projects/rumah-teres-setingkat-dua-tingkat-desa-anugerah-sa/thumbnail.jpg"
     ],
-    "description": "PROJEK UNDERCON BARU: Rumah Teres Setingkat & Dua Tingkat @ Desa Anugerah, Salak Tinggi\nLokasi: Desa Anugerah, Salak Tinggi, Putrajaya\nKategori: Teres\nHarga: RM 355,500 - RM 459,000\nPegangan: Leasehold (Malay Reserved)\nKeluasan Binaan: 900 - 1400 kps\nBilik Tidur: 3 | Bilik Air: 2 | Parkir: 2\nPakej: Pakej Zero Downpayment + Percuma Yuran Guaman SPA & MOT\nJangkaan Siap: 2027\nPengangkutan & Kemudahan: 3min Surau An Nur, Masjid As Syakirin Labu Lanjut, SK Labu Lanjut, Gerai Makan, Kedai Runcit, Dobi Layan Diri, 7 min ke Masjid KLIA, Kompleks Tabung Haji, Hotel Movenpick & Mitsui Outlet, 12 min ke KLIA2 & KLIA, 30 min k\n\nKelebihan Projek:\n- Keluasan Binaan 900 sqft\n- Keluasan Tanah 20X70, 20X75, 20X80\n- 3 Bilik Tidur, 2 Bilik Air\n- 1 Bilik Utilities\n- Keluasan Binaan 1400 sqft\n- Keluasan Tanah 20X65\n- 4 Bilik Tidur, 3 Bilik Air",
+    "description": "PROJEK UNDERCON BARU: Rumah Teres Setingkat & Dua Tingkat @ Desa Anugerah, Salak Tinggi\nLokasi: Salak Tinggi, Sepang, Selangor\nKategori: Teres\nHarga: RM 355,500 - RM 459,000\nPegangan: Leasehold (Malay Reserved)\nKeluasan Binaan: 900 - 1400 kps\nBilik Tidur: 3 | Bilik Air: 2 | Parkir: 2\nPakej: Pakej Zero Downpayment + Percuma Yuran Guaman SPA & MOT\nJangkaan Siap: 2027\nPengangkutan & Kemudahan: 3min Surau An Nur, Masjid As Syakirin Labu Lanjut, SK Labu Lanjut, Gerai Makan, Kedai Runcit, Dobi Layan Diri, 7 min ke Masjid KLIA, Kompleks Tabung Haji, Hotel Movenpick & Mitsui Outlet, 12 min ke KLIA2 & KLIA, 30 min k\n\nKelebihan Projek:\n- Keluasan Binaan 900 sqft\n- Keluasan Tanah 20X70, 20X75, 20X80\n- 3 Bilik Tidur, 2 Bilik Air\n- 1 Bilik Utilities\n- Keluasan Binaan 1400 sqft\n- Keluasan Tanah 20X65\n- 4 Bilik Tidur, 3 Bilik Air",
     "refUrl": "https://thehartanahchannel.com/projek/rumah-teres-setingkat-dua-tingkat-desa-anugerah-sa",
     "hidden": false,
     "listingSource": "undercon",
     "openForCoa": true,
-    "state": "Putrajaya"
+    "state": "Selangor"
   },
   {
     "id": "undercon-brand-new-freehold-teres-setingkat-jenderam-hilir-",
     "slug": "brand-new-freehold-teres-setingkat-jenderam-hilir-",
-    "title": "Brand New Freehold Teres Setingkat Jenderam Hilir Dengkil",
+    "title": "Brand New Freehold Teres Setingkat Jenderam Hilir, Dengkil",
     "price": 421000,
     "priceStr": "RM 421,000 - RM 471,000",
     "category": "Undercon",
-    "location": "jangka siap Aug 2026, Selangor",
+    "location": "Jenderam Hilir, Dengkil, Selangor",
     "region": "Selangor",
     "type": "Teres",
     "status": "sale",
@@ -950,7 +950,7 @@ const PROPERTIES_DATA = [
     "images": [
       "https://thehartanahchannel.com/images/projects/brand-new-freehold-teres-setingkat-jenderam-hilir-/thumbnail.jpg"
     ],
-    "description": "PROJEK UNDERCON BARU: Brand New Freehold Teres Setingkat Jenderam Hilir Dengkil\nLokasi: jangka siap Aug 2026, Selangor\nKategori: Teres\nHarga: RM 421,000 - RM 471,000\nPegangan: Freehold (Malay Reserved)\nKeluasan Binaan: 1040 - 1040 kps\nBilik Tidur: 1 | Bilik Air: 2 | Parkir: 2\nPakej: Pakej Zero Downpayment + Percuma Yuran Guaman SPA & MOT\nJangkaan Siap: 2027\nPengangkutan & Kemudahan: Berdekatan sekolah, masjid, pasaraya dan akses lebuhraya utama.\n\nKelebihan Projek:\n- Harga Jual Bermula RM421,000\n- Kawasan Tinggi, Bebas Banjir\n- Jumlah Perumahan 80 units sahaja\n- Dijangka siap Aug 2026\n- Zero Bayaran Pendahuluan\n- Percuma Yuran Guaman SPA\n- Percuma Disbursement SPA",
+    "description": "PROJEK UNDERCON BARU: Brand New Freehold Teres Setingkat Jenderam Hilir, Dengkil\nLokasi: Jenderam Hilir, Dengkil, Selangor\nKategori: Teres\nHarga: RM 421,000 - RM 471,000\nPegangan: Freehold (Malay Reserved)\nKeluasan Binaan: 1040 - 1040 kps\nBilik Tidur: 1 | Bilik Air: 2 | Parkir: 2\nPakej: Pakej Zero Downpayment + Percuma Yuran Guaman SPA & MOT\nJangkaan Siap: 2027\nPengangkutan & Kemudahan: Berdekatan sekolah, masjid, pasaraya dan akses lebuhraya utama.\n\nKelebihan Projek:\n- Harga Jual Bermula RM421,000\n- Kawasan Tinggi, Bebas Banjir\n- Jumlah Perumahan 80 units sahaja\n- Dijangka siap Aug 2026\n- Zero Bayaran Pendahuluan\n- Percuma Yuran Guaman SPA\n- Percuma Disbursement SPA",
     "refUrl": "https://thehartanahchannel.com/projek/brand-new-freehold-teres-setingkat-jenderam-hilir-",
     "hidden": false,
     "listingSource": "undercon",
@@ -960,12 +960,12 @@ const PROPERTIES_DATA = [
   {
     "id": "undercon-4-bilik-tidur-rumah-teres-setingkat-fasa-baru-tama",
     "slug": "4-bilik-tidur-rumah-teres-setingkat-fasa-baru-tama",
-    "title": "4 Bilik Tidur] Rumah Teres Setingkat Fasa Baru @ Taman Intan Baid",
+    "title": "Rumah Teres Setingkat 4 Bilik Tidur Fasa Baru @ Taman Intan Baiduri, Sepang",
     "price": 398000,
     "priceStr": "RM 398,000 - RM 448,000",
     "category": "Undercon",
-    "location": "Taman Intan Baiduri, Sepang, Putrajaya",
-    "region": "Putrajaya",
+    "location": "Taman Intan Baiduri, Sepang, Selangor",
+    "region": "Selangor",
     "type": "Teres",
     "status": "sale",
     "beds": 4,
@@ -979,21 +979,21 @@ const PROPERTIES_DATA = [
     "images": [
       "https://thehartanahchannel.com/images/projects/4-bilik-tidur-rumah-teres-setingkat-fasa-baru-tama/thumbnail.jpg"
     ],
-    "description": "PROJEK UNDERCON BARU: 4 Bilik Tidur] Rumah Teres Setingkat Fasa Baru @ Taman Intan Baid\nLokasi: Taman Intan Baiduri, Sepang, Putrajaya\nKategori: Teres\nHarga: RM 398,000 - RM 448,000\nPegangan: Leasehold (Malay Reserved)\nKeluasan Binaan: 1120 - 1120 kps\nBilik Tidur: 4 | Bilik Air: 2 | Parkir: 2\nPakej: Pakej Zero Downpayment + Percuma Yuran Guaman SPA & MOT\nJangkaan Siap: 2027\nPengangkutan & Kemudahan: Berdekatan dgn Sekolah, Masjid, Kedai Runcit & Kedai Makan, 5min ke KLIA, 10min ke Kota Warisan, KIP Mall, 20min ke Putrajaya & Cyberjaya\n\nKelebihan Projek:\n- Harga Bermula RM398,000\n- Kawasan Bebas Banjir, Sistem Perparitan Baik dan Padat Dgn Penduduk Sekitar\n- ZERO DOWNPAYMENT\n- FREE SPA LEGAL + DISBURSEMENT\n- FREE MOT STAMP DUTY",
+    "description": "PROJEK UNDERCON BARU: Rumah Teres Setingkat 4 Bilik Tidur Fasa Baru @ Taman Intan Baiduri, Sepang\nLokasi: Taman Intan Baiduri, Sepang, Selangor\nKategori: Teres\nHarga: RM 398,000 - RM 448,000\nPegangan: Leasehold (Malay Reserved)\nKeluasan Binaan: 1120 - 1120 kps\nBilik Tidur: 4 | Bilik Air: 2 | Parkir: 2\nPakej: Pakej Zero Downpayment + Percuma Yuran Guaman SPA & MOT\nJangkaan Siap: 2027\nPengangkutan & Kemudahan: Berdekatan dgn Sekolah, Masjid, Kedai Runcit & Kedai Makan, 5min ke KLIA, 10min ke Kota Warisan, KIP Mall, 20min ke Putrajaya & Cyberjaya\n\nKelebihan Projek:\n- Harga Bermula RM398,000\n- Kawasan Bebas Banjir, Sistem Perparitan Baik dan Padat Dgn Penduduk Sekitar\n- ZERO DOWNPAYMENT\n- FREE SPA LEGAL + DISBURSEMENT\n- FREE MOT STAMP DUTY",
     "refUrl": "https://thehartanahchannel.com/projek/4-bilik-tidur-rumah-teres-setingkat-fasa-baru-tama",
     "hidden": false,
     "listingSource": "undercon",
     "openForCoa": true,
-    "state": "Putrajaya"
+    "state": "Selangor"
   },
   {
     "id": "undercon-banglo-harga-teres-kerayong-hills-berdekatan-punca",
     "slug": "banglo-harga-teres-kerayong-hills-berdekatan-punca",
-    "title": "BANGLO HARGA TERES ! @ Kerayong Hills berdekatan Puncak Alam & Se",
+    "title": "Banglo Harga Teres @ Kerayong Hills Berdekatan Puncak Alam & Shah Alam 2",
     "price": 500000,
     "priceStr": "RM 500,000 - RM 550,000",
     "category": "Undercon",
-    "location": "vidu, Selangor",
+    "location": "Kerayong Hills, Puncak Alam, Selangor",
     "region": "Selangor",
     "type": "Teres",
     "status": "sale",
@@ -1008,7 +1008,7 @@ const PROPERTIES_DATA = [
     "images": [
       "https://thehartanahchannel.com/images/projects/jaz-bangau/thumbnail.jpg"
     ],
-    "description": "PROJEK UNDERCON BARU: BANGLO HARGA TERES ! @ Kerayong Hills berdekatan Puncak Alam & Se\nLokasi: vidu, Selangor\nKategori: Teres\nHarga: RM 500,000 - RM 550,000\nPegangan: Leasehold (Malay Reserved)\nKeluasan Binaan: 1173 - 1173 kps\nBilik Tidur: 3 | Bilik Air: 2 | Parkir: 2\nPakej: Pakej Zero Downpayment + Percuma Yuran Guaman SPA & MOT\nJangkaan Siap: 2027\nPengangkutan & Kemudahan: Berdekatan sekolah, masjid, pasaraya dan akses lebuhraya utama.\n\nKelebihan Projek:\n- TIADA downpayment / 100% loan LPPSA\n- FREE MOT (kos pindah milik)\n- FREE SPA & Loan Agreement\n- BOOKING RM500 Sahaja\n- Banglo 1 Tingkat\n- Geran Individu\n- Pajakan Rizab Melayu",
+    "description": "PROJEK UNDERCON BARU: Banglo Harga Teres @ Kerayong Hills Berdekatan Puncak Alam & Shah Alam 2\nLokasi: Kerayong Hills, Puncak Alam, Selangor\nKategori: Teres\nHarga: RM 500,000 - RM 550,000\nPegangan: Leasehold (Malay Reserved)\nKeluasan Binaan: 1173 - 1173 kps\nBilik Tidur: 3 | Bilik Air: 2 | Parkir: 2\nPakej: Pakej Zero Downpayment + Percuma Yuran Guaman SPA & MOT\nJangkaan Siap: 2027\nPengangkutan & Kemudahan: Berdekatan sekolah, masjid, pasaraya dan akses lebuhraya utama.\n\nKelebihan Projek:\n- TIADA downpayment / 100% loan LPPSA\n- FREE MOT (kos pindah milik)\n- FREE SPA & Loan Agreement\n- BOOKING RM500 Sahaja\n- Banglo 1 Tingkat\n- Geran Individu\n- Pajakan Rizab Melayu",
     "refUrl": "https://thehartanahchannel.com/projek/banglo-harga-teres-kerayong-hills-berdekatan-punca",
     "hidden": false,
     "listingSource": "undercon",
@@ -1058,7 +1058,7 @@ const PROPERTIES_DATA = [
     "price": 200000,
     "priceStr": "RM 200,000 - RM 300,000",
     "category": "Undercon",
-    "location": "ngly, Selangor",
+    "location": "Sungai Ramal Dalam, Kajang, Selangor",
     "region": "Selangor",
     "type": "Teres",
     "status": "sale",
@@ -1080,7 +1080,7 @@ const PROPERTIES_DATA = [
       "https://thehartanahchannel.com/images/projects/vista-bayu-sg-ramal-dalam-kajang/gallery-6.jpg",
       "https://thehartanahchannel.com/images/projects/vista-bayu-sg-ramal-dalam-kajang/gallery-7.jpg"
     ],
-    "description": "PROJEK UNDERCON BARU: Teres Vista Bayu Sg Ramal Dalam, Kajang\nLokasi: ngly, Selangor\nKategori: Teres\nHarga: RM 200,000 - RM 300,000\nPegangan: Leasehold (Malay Reserved)\nKeluasan Binaan: 917 - 1297 kps\nBilik Tidur: 4 | Bilik Air: 2 | Parkir: 14\nPakej: Pakej Zero Downpayment + Percuma Yuran Guaman SPA & Pinjaman + Percuma Duti Setem MOT\nJangkaan Siap: 2027\nPengangkutan & Kemudahan: Berdekatan sekolah, masjid, pasaraya dan akses lebuhraya utama.\n\nKelebihan Projek:\n- **Book your Vista Bayu unit today and receive an AEON Voucher worth RM200!**\n- minta buyer daftar di portal website ppam.\n- dapat surat tawaran ppam, baru lah boleh pilih unit. Hanya unit size standard 917 sqft sahaja.\n- 4 levels of parking\n- 1 level of facilities + residential unit",
+    "description": "PROJEK UNDERCON BARU: Teres Vista Bayu Sg Ramal Dalam, Kajang\nLokasi: Sungai Ramal Dalam, Kajang, Selangor\nKategori: Teres\nHarga: RM 200,000 - RM 300,000\nPegangan: Leasehold (Malay Reserved)\nKeluasan Binaan: 917 - 1297 kps\nBilik Tidur: 4 | Bilik Air: 2 | Parkir: 14\nPakej: Pakej Zero Downpayment + Percuma Yuran Guaman SPA & Pinjaman + Percuma Duti Setem MOT\nJangkaan Siap: 2027\nPengangkutan & Kemudahan: Berdekatan sekolah, masjid, pasaraya dan akses lebuhraya utama.\n\nKelebihan Projek:\n- **Book your Vista Bayu unit today and receive an AEON Voucher worth RM200!**\n- minta buyer daftar di portal website ppam.\n- dapat surat tawaran ppam, baru lah boleh pilih unit. Hanya unit size standard 917 sqft sahaja.\n- 4 levels of parking\n- 1 level of facilities + residential unit",
     "refUrl": "https://thehartanahchannel.com/projek/vista-bayu-sg-ramal-dalam-kajang",
     "hidden": false,
     "listingSource": "undercon",
@@ -1126,11 +1126,11 @@ const PROPERTIES_DATA = [
   {
     "id": "undercon-taman-desa-bukit-permata-jln-rebung-kapar-klang",
     "slug": "taman-desa-bukit-permata-jln-rebung-kapar-klang",
-    "title": "Taman Desa Bukit Permata, Jln Rebung Kapar Klang",
+    "title": "Taman Desa Bukit Permata, Jalan Rebung, Kapar, Klang",
     "price": 534000,
     "priceStr": "RM 534,000 - RM 594,300",
     "category": "Undercon",
-    "location": "Jln Rebung,, Selangor",
+    "location": "Kapar, Klang, Selangor",
     "region": "Selangor",
     "type": "Teres",
     "status": "sale",
@@ -1152,7 +1152,7 @@ const PROPERTIES_DATA = [
       "https://thehartanahchannel.com/images/projects/taman-desa-bukit-permata-jln-rebung-kapar-klang/gallery-6.jpg",
       "https://thehartanahchannel.com/images/projects/taman-desa-bukit-permata-jln-rebung-kapar-klang/gallery-7.jpg"
     ],
-    "description": "PROJEK UNDERCON BARU: Taman Desa Bukit Permata, Jln Rebung Kapar Klang\nLokasi: Jln Rebung,, Selangor\nKategori: Teres\nHarga: RM 534,000 - RM 594,300\nPegangan: Freehold (Malay Reserved)\nKeluasan Binaan: 1823 - 2066 kps\nBilik Tidur: 4 | Bilik Air: 4 | Parkir: 2\nPakej: Pakej Zero Downpayment + Percuma Yuran Guaman SPA & Pinjaman + Percuma Duti Setem MOT\nJangkaan Siap: 2027\nPengangkutan & Kemudahan: Berdekatan sekolah, masjid, pasaraya dan akses lebuhraya utama.\n\nKelebihan Projek:\n- Tiada booking fees\n- Rebate 10% daripada SPA\n- Percuma SPA + disbursement\n- Percuma Duti Setem MOT (pertukaran hak milik geran)\n- Jika buyer buat bank loan, tidak perlu 10% downpayment, terus buat full loan 90%\n- Jika buyer buat LPPSA loan (penjawat awam), boleh buat 100% loan ikut Kelayakan gaji, boleh dapat 10% cash back nanti.",
+    "description": "PROJEK UNDERCON BARU: Taman Desa Bukit Permata, Jalan Rebung, Kapar, Klang\nLokasi: Kapar, Klang, Selangor\nKategori: Teres\nHarga: RM 534,000 - RM 594,300\nPegangan: Freehold (Malay Reserved)\nKeluasan Binaan: 1823 - 2066 kps\nBilik Tidur: 4 | Bilik Air: 4 | Parkir: 2\nPakej: Pakej Zero Downpayment + Percuma Yuran Guaman SPA & Pinjaman + Percuma Duti Setem MOT\nJangkaan Siap: 2027\nPengangkutan & Kemudahan: Berdekatan sekolah, masjid, pasaraya dan akses lebuhraya utama.\n\nKelebihan Projek:\n- Tiada booking fees\n- Rebate 10% daripada SPA\n- Percuma SPA + disbursement\n- Percuma Duti Setem MOT (pertukaran hak milik geran)\n- Jika buyer buat bank loan, tidak perlu 10% downpayment, terus buat full loan 90%\n- Jika buyer buat LPPSA loan (penjawat awam), boleh buat 100% loan ikut Kelayakan gaji, boleh dapat 10% cash back nanti.",
     "refUrl": "https://thehartanahchannel.com/projek/taman-desa-bukit-permata-jln-rebung-kapar-klang",
     "hidden": false,
     "listingSource": "undercon",
@@ -1270,11 +1270,11 @@ const PROPERTIES_DATA = [
   {
     "id": "undercon-tmn-kelana-kapar-rantau-panjang-klang-teres-setingkat",
     "slug": "tmn-kelana-kapar-rantau-panjang-klang-teres-setingkat",
-    "title": "Teres Tmn Kelana, Kapar, Rantau Panjang Klang - Teres Setingkat",
+    "title": "Teres Taman Kelana, Kapar, Rantau Panjang, Klang",
     "price": 500000,
     "priceStr": "RM 500,000",
     "category": "Undercon",
-    "location": "vidu, Bebas Renovasi, Selangor",
+    "location": "Rantau Panjang, Klang, Selangor",
     "region": "Selangor",
     "type": "Teres",
     "status": "sale",
@@ -1296,7 +1296,7 @@ const PROPERTIES_DATA = [
       "https://thehartanahchannel.com/images/projects/tmn-kelana-kapar-rantau-panjang-klang-teres-setingkat/gallery-6.jpg",
       "https://thehartanahchannel.com/images/projects/tmn-kelana-kapar-rantau-panjang-klang-teres-setingkat/gallery-7.jpg"
     ],
-    "description": "PROJEK UNDERCON BARU: Teres Tmn Kelana, Kapar, Rantau Panjang Klang - Teres Setingkat\nLokasi: vidu, Bebas Renovasi, Selangor\nKategori: Teres\nHarga: RM 500,000\nPegangan: Leasehold (Non-Bumi / Open)\nKeluasan Binaan: 1080 - 1080 kps\nBilik Tidur: 4 | Bilik Air: 2 | Parkir: 2\nPakej: Pakej Zero Downpayment + Percuma Yuran Guaman SPA & Pinjaman + Percuma Duti Setem MOT\nJangkaan Siap: 2027\nPengangkutan & Kemudahan: Berdekatan sekolah, masjid, pasaraya dan akses lebuhraya utama.\n\nKelebihan Projek:\n- Binaan 1080 sqft (20X54)\n- Size Lot 20 X 84-87\n- 4 Bilik Tidur, 2 Bilik Air\n- 2 Parkir Kereta\n- Masjid Kiayi Hj. Abdullah - 1.7km\n- Masjid Al-Islah - 2.3km\n- Econsave Klang Utama - 2.4km\n- Segi Fresh Rantau Panjang - 3.2km",
+    "description": "PROJEK UNDERCON BARU: Teres Taman Kelana, Kapar, Rantau Panjang, Klang\nLokasi: Rantau Panjang, Klang, Selangor\nKategori: Teres\nHarga: RM 500,000\nPegangan: Leasehold (Non-Bumi / Open)\nKeluasan Binaan: 1080 - 1080 kps\nBilik Tidur: 4 | Bilik Air: 2 | Parkir: 2\nPakej: Pakej Zero Downpayment + Percuma Yuran Guaman SPA & Pinjaman + Percuma Duti Setem MOT\nJangkaan Siap: 2027\nPengangkutan & Kemudahan: Berdekatan sekolah, masjid, pasaraya dan akses lebuhraya utama.\n\nKelebihan Projek:\n- Binaan 1080 sqft (20X54)\n- Size Lot 20 X 84-87\n- 4 Bilik Tidur, 2 Bilik Air\n- 2 Parkir Kereta\n- Masjid Kiayi Hj. Abdullah - 1.7km\n- Masjid Al-Islah - 2.3km\n- Econsave Klang Utama - 2.4km\n- Segi Fresh Rantau Panjang - 3.2km",
     "refUrl": "https://thehartanahchannel.com/projek/tmn-kelana-kapar-rantau-panjang-klang-teres-setingkat",
     "hidden": false,
     "listingSource": "undercon",
@@ -1306,11 +1306,11 @@ const PROPERTIES_DATA = [
   {
     "id": "undercon-tmn-langat-utama-3-phase-2-teres-1-2-tingkat",
     "slug": "tmn-langat-utama-3-phase-2-teres-1-2-tingkat",
-    "title": "Teres Tmn Langat Utama 3 (Phase 2), Teres 1 & 2 Tingkat",
+    "title": "Teres Taman Langat Utama 3 (Phase 2), Bukit Changgang",
     "price": 416000,
     "priceStr": "RM 416,000 - RM 484,000",
     "category": "Undercon",
-    "location": "016-656 9187 Sha, Selangor",
+    "location": "Bukit Changgang, Banting, Selangor",
     "region": "Selangor",
     "type": "Teres",
     "status": "sale",
@@ -1332,7 +1332,7 @@ const PROPERTIES_DATA = [
       "https://thehartanahchannel.com/images/projects/tmn-langat-utama-3-phase-2-teres-1-2-tingkat/gallery-6.jpg",
       "https://thehartanahchannel.com/images/projects/tmn-langat-utama-3-phase-2-teres-1-2-tingkat/gallery-7.jpg"
     ],
-    "description": "PROJEK UNDERCON BARU: Teres Tmn Langat Utama 3 (Phase 2), Teres 1 & 2 Tingkat\nLokasi: 016-656 9187 Sha, Selangor\nKategori: Teres\nHarga: RM 416,000 - RM 484,000\nPegangan: Leasehold (Malay Reserved)\nKeluasan Binaan: 1095 - 1513 kps\nBilik Tidur: 4 | Bilik Air: 2 | Parkir: 2\nPakej: Pakej Zero Downpayment + Percuma Yuran Guaman SPA & Pinjaman + Percuma Duti Setem MOT\nJangkaan Siap: 2028\nPengangkutan & Kemudahan: Berdekatan sekolah, masjid, pasaraya dan akses lebuhraya utama.\n\nKelebihan Projek:\n- No booking fees\n- 14 rebate dari SPA Price\n- Free SPA & MOT\n- Free kitchen cabinet voucher RM5K",
+    "description": "PROJEK UNDERCON BARU: Teres Taman Langat Utama 3 (Phase 2), Bukit Changgang\nLokasi: Bukit Changgang, Banting, Selangor\nKategori: Teres\nHarga: RM 416,000 - RM 484,000\nPegangan: Leasehold (Malay Reserved)\nKeluasan Binaan: 1095 - 1513 kps\nBilik Tidur: 4 | Bilik Air: 2 | Parkir: 2\nPakej: Pakej Zero Downpayment + Percuma Yuran Guaman SPA & Pinjaman + Percuma Duti Setem MOT\nJangkaan Siap: 2028\nPengangkutan & Kemudahan: Berdekatan sekolah, masjid, pasaraya dan akses lebuhraya utama.\n\nKelebihan Projek:\n- No booking fees\n- 14 rebate dari SPA Price\n- Free SPA & MOT\n- Free kitchen cabinet voucher RM5K",
     "refUrl": "https://thehartanahchannel.com/projek/tmn-langat-utama-3-phase-2-teres-1-2-tingkat",
     "hidden": false,
     "listingSource": "undercon",
@@ -1378,11 +1378,11 @@ const PROPERTIES_DATA = [
   {
     "id": "undercon-2-storey-terrace-house-allamanda-saujana-klia",
     "slug": "2-storey-terrace-house-allamanda-saujana-klia",
-    "title": "Teres 2 Storey Terrace House Allamanda Saujana KLIA",
+    "title": "2-Storey Terrace House Allamanda Saujana KLIA, Sepang",
     "price": 399000,
     "priceStr": "RM 399,000 - RM 499,000",
     "category": "Undercon",
-    "location": "vidual Title, Selangor",
+    "location": "Saujana KLIA, Sepang, Selangor",
     "region": "Selangor",
     "type": "Teres",
     "status": "sale",
@@ -1404,7 +1404,7 @@ const PROPERTIES_DATA = [
       "https://thehartanahchannel.com/images/projects/2-storey-terrace-house-allamanda-saujana-klia/gallery-6.jpg",
       "https://thehartanahchannel.com/images/projects/2-storey-terrace-house-allamanda-saujana-klia/gallery-7.jpg"
     ],
-    "description": "PROJEK UNDERCON BARU: Teres 2 Storey Terrace House Allamanda Saujana KLIA\nLokasi: vidual Title, Selangor\nKategori: Teres\nHarga: RM 399,000 - RM 499,000\nPegangan: Leasehold (Non-Bumi / Open)\nKeluasan Binaan: 1200 - 1555 kps\nBilik Tidur: 4 | Bilik Air: 3 | Parkir: 2\nPakej: Pakej Zero Downpayment + Percuma Yuran Guaman SPA & Pinjaman + Percuma Duti Setem MOT\nJangkaan Siap: 2027\nPengangkutan & Kemudahan: 6 mins to ERL Salak Tinggi, 6 mins to SK Kota Warisan, SMK Bandar Baru Salak Tinggi, 6 mins to Xiamen University, 10 mins to Elite Highway, 15 mins to Bandar Baru Nilai, 15mins to KLIA, 20 mins to Cyberjaya, 25 mins to Putrajaya\n\nKelebihan Projek:\n- YOU’RE INVITED ✨\n- Limited viewing slots\n- Strong buyer interest\n- First come, first served\n- Leasehold, Open Title\n- Individual Title\n- Build Up 1555 sqft, Land Area 1200 sqft (20x60)\n- 4 Bedrooms, 3 Bathrooms",
+    "description": "PROJEK UNDERCON BARU: 2-Storey Terrace House Allamanda Saujana KLIA, Sepang\nLokasi: Saujana KLIA, Sepang, Selangor\nKategori: Teres\nHarga: RM 399,000 - RM 499,000\nPegangan: Leasehold (Non-Bumi / Open)\nKeluasan Binaan: 1200 - 1555 kps\nBilik Tidur: 4 | Bilik Air: 3 | Parkir: 2\nPakej: Pakej Zero Downpayment + Percuma Yuran Guaman SPA & Pinjaman + Percuma Duti Setem MOT\nJangkaan Siap: 2027\nPengangkutan & Kemudahan: 6 mins to ERL Salak Tinggi, 6 mins to SK Kota Warisan, SMK Bandar Baru Salak Tinggi, 6 mins to Xiamen University, 10 mins to Elite Highway, 15 mins to Bandar Baru Nilai, 15mins to KLIA, 20 mins to Cyberjaya, 25 mins to Putrajaya\n\nKelebihan Projek:\n- YOU’RE INVITED ✨\n- Limited viewing slots\n- Strong buyer interest\n- First come, first served\n- Leasehold, Open Title\n- Individual Title\n- Build Up 1555 sqft, Land Area 1200 sqft (20x60)\n- 4 Bedrooms, 3 Bathrooms",
     "refUrl": "https://thehartanahchannel.com/projek/2-storey-terrace-house-allamanda-saujana-klia",
     "hidden": false,
     "listingSource": "undercon",
@@ -1454,7 +1454,7 @@ const PROPERTIES_DATA = [
     "price": 500000,
     "priceStr": "RM 500,000 - RM 651,800",
     "category": "Undercon",
-    "location": "ng loan, ada yg dh signed SPA, Selangor",
+    "location": "Bukit Ampang, Ampang, Selangor",
     "region": "Selangor",
     "type": "Teres",
     "status": "sale",
@@ -1476,7 +1476,7 @@ const PROPERTIES_DATA = [
       "https://thehartanahchannel.com/images/projects/fona-vista-bukit-ampang-block-b/gallery-6.jpg",
       "https://thehartanahchannel.com/images/projects/fona-vista-bukit-ampang-block-b/gallery-7.jpg"
     ],
-    "description": "PROJEK UNDERCON BARU: Fona Vista Bukit Ampang (Block B)\nLokasi: ng loan, ada yg dh signed SPA, Selangor\nKategori: Teres\nHarga: RM 500,000 - RM 651,800\nPegangan: Leasehold (Malay Reserved)\nKeluasan Binaan: 1200 - 1200 kps\nBilik Tidur: 3 | Bilik Air: 2 | Parkir: 2\nPakej: Pakej Zero Downpayment + Percuma Yuran Guaman SPA & Pinjaman + Percuma Duti Setem MOT\nJangkaan Siap: 2027\nPengangkutan & Kemudahan: Berdekatan sekolah, masjid, pasaraya dan akses lebuhraya utama.\n\nKelebihan Projek:\n- **RM8,000** Loan Incentive (sign SPA within 30 days) – disbursed upon first loan drawdown\n- **RM10,000** MOT Subsidy – disbursed at VP (Vacant Possession) stage",
+    "description": "PROJEK UNDERCON BARU: Fona Vista Bukit Ampang (Block B)\nLokasi: Bukit Ampang, Ampang, Selangor\nKategori: Teres\nHarga: RM 500,000 - RM 651,800\nPegangan: Leasehold (Malay Reserved)\nKeluasan Binaan: 1200 - 1200 kps\nBilik Tidur: 3 | Bilik Air: 2 | Parkir: 2\nPakej: Pakej Zero Downpayment + Percuma Yuran Guaman SPA & Pinjaman + Percuma Duti Setem MOT\nJangkaan Siap: 2027\nPengangkutan & Kemudahan: Berdekatan sekolah, masjid, pasaraya dan akses lebuhraya utama.\n\nKelebihan Projek:\n- **RM8,000** Loan Incentive (sign SPA within 30 days) – disbursed upon first loan drawdown\n- **RM10,000** MOT Subsidy – disbursed at VP (Vacant Possession) stage",
     "refUrl": "https://thehartanahchannel.com/projek/fona-vista-bukit-ampang-block-b",
     "hidden": false,
     "listingSource": "undercon",
@@ -1623,11 +1623,11 @@ const PROPERTIES_DATA = [
   {
     "id": "undercon-jenderam-murni-single-storey",
     "slug": "jenderam-murni-single-storey",
-    "title": "Teres Jenderam Murni Single Storey",
+    "title": "Teres Setingkat Jenderam Murni, Dengkil",
     "price": 405000,
     "priceStr": "RM 405,000 - RM 450,000",
     "category": "Undercon",
-    "location": "ate 3 bilik tidur, Selangor",
+    "location": "Jenderam Murni, Dengkil, Selangor",
     "region": "Selangor",
     "type": "Teres",
     "status": "sale",
@@ -1649,7 +1649,7 @@ const PROPERTIES_DATA = [
       "https://thehartanahchannel.com/images/projects/jenderam-murni-single-storey/gallery-6.jpg",
       "https://thehartanahchannel.com/images/projects/jenderam-murni-single-storey/gallery-7.jpg"
     ],
-    "description": "PROJEK UNDERCON BARU: Teres Jenderam Murni Single Storey\nLokasi: ate 3 bilik tidur, Selangor\nKategori: Teres\nHarga: RM 405,000 - RM 450,000\nPegangan: Freehold (Malay Reserved)\nKeluasan Binaan: 1052 - 1430 kps\nBilik Tidur: 3 | Bilik Air: 2 | Parkir: 2\nPakej: Pakej Zero Downpayment + Percuma Yuran Guaman SPA & Pinjaman + Percuma Duti Setem MOT\nJangkaan Siap: 2028\nPengangkutan & Kemudahan: Berdekatan sekolah, masjid, pasaraya dan akses lebuhraya utama.\n\nKelebihan Projek:\n- Harga Jual Bermula RM405,000\n- Kawasan Tinggi, Bebas Banjir\n- Jumlah Perumahan 26 units sahaja\n- Dijangka siap Q1 2028\n- Zero Bayaran Pendahuluan\n- Percuma Yuran Guaman SPA\n- Percuma Disbursement SPA\n- Percuma Duti Setem MOT",
+    "description": "PROJEK UNDERCON BARU: Teres Setingkat Jenderam Murni, Dengkil\nLokasi: Jenderam Murni, Dengkil, Selangor\nKategori: Teres\nHarga: RM 405,000 - RM 450,000\nPegangan: Freehold (Malay Reserved)\nKeluasan Binaan: 1052 - 1430 kps\nBilik Tidur: 3 | Bilik Air: 2 | Parkir: 2\nPakej: Pakej Zero Downpayment + Percuma Yuran Guaman SPA & Pinjaman + Percuma Duti Setem MOT\nJangkaan Siap: 2028\nPengangkutan & Kemudahan: Berdekatan sekolah, masjid, pasaraya dan akses lebuhraya utama.\n\nKelebihan Projek:\n- Harga Jual Bermula RM405,000\n- Kawasan Tinggi, Bebas Banjir\n- Jumlah Perumahan 26 units sahaja\n- Dijangka siap Q1 2028\n- Zero Bayaran Pendahuluan\n- Percuma Yuran Guaman SPA\n- Percuma Disbursement SPA\n- Percuma Duti Setem MOT",
     "refUrl": "https://thehartanahchannel.com/projek/jenderam-murni-single-storey",
     "hidden": false,
     "listingSource": "undercon",
@@ -1659,11 +1659,11 @@ const PROPERTIES_DATA = [
   {
     "id": "undercon-taman-dato-hormat-kg-sungai-kembung-pulau-indah",
     "slug": "taman-dato-hormat-kg-sungai-kembung-pulau-indah",
-    "title": "Taman Dato Hormat @ Kg Sungai Kembung Pulau Indah",
+    "title": "Taman Dato Hormat @ Kg Sungai Kembung, Pulau Indah, Klang",
     "price": 315000,
     "priceStr": "RM 315,000 - RM 448,200",
     "category": "Undercon",
-    "location": "jangka siap Dec 2026, Selangor",
+    "location": "Pulau Indah, Klang, Selangor",
     "region": "Selangor",
     "type": "Semi D",
     "status": "sale",
@@ -1685,7 +1685,7 @@ const PROPERTIES_DATA = [
       "https://thehartanahchannel.com/images/projects/taman-dato-hormat-kg-sungai-kembung-pulau-indah/gallery-6.jpg",
       "https://thehartanahchannel.com/images/projects/taman-dato-hormat-kg-sungai-kembung-pulau-indah/gallery-7.jpg"
     ],
-    "description": "PROJEK UNDERCON BARU: Taman Dato Hormat @ Kg Sungai Kembung Pulau Indah\nLokasi: jangka siap Dec 2026, Selangor\nKategori: Semi D\nHarga: RM 315,000 - RM 448,200\nPegangan: Freehold (Malay Reserved)\nKeluasan Binaan: 1000 - 2394 kps\nBilik Tidur: 4 | Bilik Air: 2 | Parkir: 2\nPakej: Pakej Zero Downpayment + Percuma Yuran Guaman SPA & Pinjaman + Percuma Duti Setem MOT\nJangkaan Siap: 2026\nPengangkutan & Kemudahan: Berdekatan sekolah, masjid, pasaraya dan akses lebuhraya utama.\n\nKelebihan Projek:\n- full house lighting\n- 3 ceiling fans\n- basic grill\n- Teres Setingkat\n- Masjid Sultan Abdul Aziz (3 min)\n- Klinik Kesihatan Pulau Indah (4 min)\n- Pulau Indah (5 min)\n- SMK Pulau Indah (10 min)",
+    "description": "PROJEK UNDERCON BARU: Taman Dato Hormat @ Kg Sungai Kembung, Pulau Indah, Klang\nLokasi: Pulau Indah, Klang, Selangor\nKategori: Semi D\nHarga: RM 315,000 - RM 448,200\nPegangan: Freehold (Malay Reserved)\nKeluasan Binaan: 1000 - 2394 kps\nBilik Tidur: 4 | Bilik Air: 2 | Parkir: 2\nPakej: Pakej Zero Downpayment + Percuma Yuran Guaman SPA & Pinjaman + Percuma Duti Setem MOT\nJangkaan Siap: 2026\nPengangkutan & Kemudahan: Berdekatan sekolah, masjid, pasaraya dan akses lebuhraya utama.\n\nKelebihan Projek:\n- full house lighting\n- 3 ceiling fans\n- basic grill\n- Teres Setingkat\n- Masjid Sultan Abdul Aziz (3 min)\n- Klinik Kesihatan Pulau Indah (4 min)\n- Pulau Indah (5 min)\n- SMK Pulau Indah (10 min)",
     "refUrl": "https://thehartanahchannel.com/projek/taman-dato-hormat-kg-sungai-kembung-pulau-indah",
     "hidden": false,
     "listingSource": "undercon",
@@ -1695,11 +1695,11 @@ const PROPERTIES_DATA = [
   {
     "id": "undercon-tmn-seri-changgang-3-teres-setingkat",
     "slug": "tmn-seri-changgang-3-teres-setingkat",
-    "title": "Semi D Tmn Seri Changgang 3 (Teres Setingkat)",
+    "title": "Teres Setingkat Taman Seri Changgang 3, Banting",
     "price": 200000,
     "priceStr": "RM 200,000 - RM 350,000",
     "category": "Undercon",
-    "location": "NDING, Selangor",
+    "location": "Bukit Changgang, Banting, Selangor",
     "region": "Selangor",
     "type": "Semi D",
     "status": "sale",
@@ -1720,7 +1720,7 @@ const PROPERTIES_DATA = [
       "https://thehartanahchannel.com/images/projects/tmn-seri-changgang-3-teres-setingkat/gallery-5.jpg",
       "https://thehartanahchannel.com/images/projects/tmn-seri-changgang-3-teres-setingkat/gallery-6.jpg"
     ],
-    "description": "PROJEK UNDERCON BARU: Semi D Tmn Seri Changgang 3 (Teres Setingkat)\nLokasi: NDING, Selangor\nKategori: Semi D\nHarga: RM 200,000 - RM 350,000\nPegangan: Leasehold (Malay Reserved)\nKeluasan Binaan: 1160 - 1400 kps\nBilik Tidur: 4 | Bilik Air: 2 | Parkir: 2\nPakej: Pakej Zero Downpayment + Percuma Yuran Guaman SPA & Pinjaman + Percuma Duti Setem MOT\nJangkaan Siap: 2027\nPengangkutan & Kemudahan: Berdekatan sekolah, masjid, pasaraya dan akses lebuhraya utama.\n\nKelebihan Projek:\n- Booking Fees RM200 (Agency)\n- Rebate ~~10%~~ (Now 15%++) from SPA\n- Free SPA Legal Fees\n- Free Solar Panel & Installation\n- Booking Fees RM200 (Agency)\n- Rebate 10% from SPA Price\n- Free SPA Legal Fees\n- Free MOT Stamps Duty",
+    "description": "PROJEK UNDERCON BARU: Teres Setingkat Taman Seri Changgang 3, Banting\nLokasi: Bukit Changgang, Banting, Selangor\nKategori: Semi D\nHarga: RM 200,000 - RM 350,000\nPegangan: Leasehold (Malay Reserved)\nKeluasan Binaan: 1160 - 1400 kps\nBilik Tidur: 4 | Bilik Air: 2 | Parkir: 2\nPakej: Pakej Zero Downpayment + Percuma Yuran Guaman SPA & Pinjaman + Percuma Duti Setem MOT\nJangkaan Siap: 2027\nPengangkutan & Kemudahan: Berdekatan sekolah, masjid, pasaraya dan akses lebuhraya utama.\n\nKelebihan Projek:\n- Booking Fees RM200 (Agency)\n- Rebate ~~10%~~ (Now 15%++) from SPA\n- Free SPA Legal Fees\n- Free Solar Panel & Installation\n- Booking Fees RM200 (Agency)\n- Rebate 10% from SPA Price\n- Free SPA Legal Fees\n- Free MOT Stamps Duty",
     "refUrl": "https://thehartanahchannel.com/projek/tmn-seri-changgang-3-teres-setingkat",
     "hidden": false,
     "listingSource": "undercon",
@@ -1730,12 +1730,12 @@ const PROPERTIES_DATA = [
   {
     "id": "undercon-flora-hijauan-melati-east-kl",
     "slug": "flora-hijauan-melati-east-kl",
-    "title": "Flora Hijauan Melati East KL",
+    "title": "Flora Hijauan Melati, East KL / Gombak",
     "price": 356900,
     "priceStr": "RM 356,900",
     "category": "Undercon",
-    "location": "masih ada dekat 600 units boleh jual ya, Selangor",
-    "region": "Selangor",
+    "location": "Taman Melati, Gombak / KL, Kuala Lumpur",
+    "region": "Kuala Lumpur",
     "type": "Swasta",
     "status": "sale",
     "beds": 3,
@@ -1756,12 +1756,12 @@ const PROPERTIES_DATA = [
       "https://thehartanahchannel.com/images/projects/flora-hijauan-melati-east-kl/gallery-6.jpg",
       "https://thehartanahchannel.com/images/projects/flora-hijauan-melati-east-kl/gallery-7.jpg"
     ],
-    "description": "PROJEK UNDERCON BARU: Flora Hijauan Melati East KL\nLokasi: masih ada dekat 600 units boleh jual ya, Selangor\nKategori: Swasta\nHarga: RM 356,900\nPegangan: Leasehold (Malay Reserved)\nKeluasan Binaan: 848 - 848 kps\nBilik Tidur: 3 | Bilik Air: 3 | Parkir: 2\nPakej: Pakej Zero Downpayment + Percuma Yuran Guaman SPA & Pinjaman + Percuma Duti Setem MOT\nJangkaan Siap: 2027\nPengangkutan & Kemudahan: Berdekatan sekolah, masjid, pasaraya dan akses lebuhraya utama.\n\nKelebihan Projek:\n- Bank Rakyat\n- View Facing\n- Type of Layout\n- Register first time log in\n- Follow Steps\n- Pay RM1 for processing fees using own account bank.\n- Download CCRIS Report with BNM logo in PDF File.\n- Birth Certificate",
+    "description": "PROJEK UNDERCON BARU: Flora Hijauan Melati, East KL / Gombak\nLokasi: Taman Melati, Gombak / KL, Kuala Lumpur\nKategori: Swasta\nHarga: RM 356,900\nPegangan: Leasehold (Malay Reserved)\nKeluasan Binaan: 848 - 848 kps\nBilik Tidur: 3 | Bilik Air: 3 | Parkir: 2\nPakej: Pakej Zero Downpayment + Percuma Yuran Guaman SPA & Pinjaman + Percuma Duti Setem MOT\nJangkaan Siap: 2027\nPengangkutan & Kemudahan: Berdekatan sekolah, masjid, pasaraya dan akses lebuhraya utama.\n\nKelebihan Projek:\n- Bank Rakyat\n- View Facing\n- Type of Layout\n- Register first time log in\n- Follow Steps\n- Pay RM1 for processing fees using own account bank.\n- Download CCRIS Report with BNM logo in PDF File.\n- Birth Certificate",
     "refUrl": "https://thehartanahchannel.com/projek/flora-hijauan-melati-east-kl",
     "hidden": false,
     "listingSource": "undercon",
     "openForCoa": true,
-    "state": "Selangor"
+    "state": "Kuala Lumpur"
   },
   {
     "id": "undercon-2-storey-terrace-tmn-bkt-permata-jln-rebung-kapar-klang",
@@ -18141,5 +18141,10 @@ const PROPERTIES_DATA = [
     "listingSource": "coa"
   }
 ];
-if (typeof window !== 'undefined') { window.PROPERTIES_DATA = PROPERTIES_DATA; }
-if (typeof module !== 'undefined' && module.exports) { module.exports = PROPERTIES_DATA; }
+
+if (typeof window !== 'undefined') {
+  window.PROPERTIES_DATA = PROPERTIES_DATA;
+}
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = PROPERTIES_DATA;
+}
