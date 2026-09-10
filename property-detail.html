@@ -1617,9 +1617,13 @@
 
           const pathParts = window.location.pathname.split('/').filter(Boolean);
           let pathSlug = null;
+          let pathAgent = null;
           const validPrefixes = ['property', 'property-detail', 'properties', 'residential', 'commercial', 'commercial-industrial'];
-          if (pathParts.length >= 2 && validPrefixes.includes(pathParts[0])) {
-            pathSlug = pathParts[pathParts.length - 1];
+          if (pathParts.length >= 3 && validPrefixes.includes(pathParts[0])) {
+            pathSlug = pathParts[1];
+            pathAgent = pathParts[2];
+          } else if (pathParts.length === 2 && validPrefixes.includes(pathParts[0])) {
+            pathSlug = pathParts[1];
           } else if (pathParts.length === 1 && !pathParts[0].endsWith('.html') && pathParts[0] !== 'properties') {
             pathSlug = pathParts[0];
           }
@@ -2727,21 +2731,37 @@
               const SUPABASE_URL = 'https://csrzhidtzqxfbapsenhu.supabase.co';
               const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNzcnpoaWR0enF4ZmJhcHNlbmh1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODU0OTM3OTYsImV4cCI6MjEwMTA2OTc5Nn0.NnHFURbQTvsdgGbm1d_PC-hkOgQFQIHKTMQaS2n44SU';
 
-              const cleanCode = encodeURIComponent(refCode.trim().toLowerCase());
-              const endpoint = `${SUPABASE_URL}/rest/v1/coa_partners?agent_code=eq.${cleanCode}&status=eq.approved&select=*`;
+              const cleanCode = refCode.trim().toLowerCase();
+              let partner = null;
 
-              const res = await fetch(endpoint, {
-                headers: {
-                  'apikey': SUPABASE_ANON_KEY,
-                  'Authorization': `Bearer ${SUPABASE_ANON_KEY}`
+              if (cleanCode === 'zaim') {
+                partner = {
+                  full_name: 'Zaim Rosli',
+                  agency: 'JAZ International Sdn Bhd',
+                  ren_number: 'REN 39575',
+                  phone: '60108118559',
+                  agent_code: 'zaim',
+                  status: 'approved'
+                };
+              } else {
+                const endpoint = `${SUPABASE_URL}/rest/v1/coa_partners?agent_code=eq.${encodeURIComponent(cleanCode)}&status=eq.approved&select=*`;
+
+                const res = await fetch(endpoint, {
+                  headers: {
+                    'apikey': SUPABASE_ANON_KEY,
+                    'Authorization': `Bearer ${SUPABASE_ANON_KEY}`
+                  }
+                });
+
+                if (res.ok) {
+                  const partners = await res.json();
+                  if (Array.isArray(partners) && partners.length > 0) {
+                    partner = partners[0];
+                  }
                 }
-              });
+              }
 
-              if (!res.ok) return;
-              const partners = await res.json();
-              if (!Array.isArray(partners) || partners.length === 0) return;
-
-              const partner = partners[0];
+              if (!partner) return;
               let cleanPhone = (partner.phone || '').replace(/[^0-9]/g, '');
               if (cleanPhone.startsWith('0')) cleanPhone = '60' + cleanPhone.substring(1);
               if (!cleanPhone.startsWith('60')) cleanPhone = '60' + cleanPhone;
@@ -2845,7 +2865,8 @@ Pautan: ${window.location.href}`);
             }
           }
 
-await applyCoBrandedPartner(urlParams.get('ref'), prop, detailPrice, canonicalUrl);
+const partnerRefCode = window.COA_PARTNER_CODE || pathAgent || urlParams.get('ref');
+          await applyCoBrandedPartner(partnerRefCode, prop, detailPrice, canonicalUrl);
 
           // 8. Inject Structured Data JSON-LD
           const propJsonLd = {

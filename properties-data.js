@@ -34,7 +34,7 @@ const PROPERTIES_DATA = [
     ],
     "description": "WTS / FOR SALE\n\n3 Storey Shoplot, Seksyen 23 Shah Alam\n\nPROPERTY DETAILS\n- Type : Terrace House\n- Tenure : Leasehold (Non-Bumi Lot)\n- Build Up : 1650 sqft\n- Land Area : 22 x 75 sqft (approx)\n- Bedroom : 0\n- Bathroom : 0\n- Parking : 0\n\nWTS / For Sale :\n\n3 Storey <em>Shoplot</em>, Seksyen 23 Shah Alam\n\nAsking Price : RM 2,880,000\n\nFacing Main Road 🔥\nROi : 4.74% 🔥\n\nDetails :\n*Leasehold (Non Bumi Lot)\n*Individual title\n*Land size : 22 x 75 sqft (approx)\n*Built up size : 4700 sqft (approx)\n\n*Hotspot area\n*High Traffic\n*Nearby Shah Alam city\n*In a Residential, Commercial & Industrial area\n\nAccess :\n*KESAS\n*LKSA\n*FEDERAL\n\n========================\nAsking Price : RM 2,880,000\n========================",
     "refUrl": "https://t.me/zsplisting/7218",
-    "listingSource": "coa",
+    "listingSource": "my_listing",
     "coaAgentName": "Zahir Ajran",
     "coaAgentPhone": "60187733630",
     "hidden": false,
