@@ -8,7 +8,7 @@
   <link rel="canonical" href="https://zaimrosli.my/coa">
   <meta name="robots" content="index, follow">
   
-  <link rel="stylesheet" href="/styles.css?v=129">
+  <link rel="stylesheet" href="/styles.css?v=133">
   <link rel="manifest" href="/manifest.json">
   <meta name="theme-color" content="#0f172a">
   <link rel="icon" type="image/png" sizes="192x192" href="/icons/icon-192.png">
@@ -16,90 +16,94 @@
 
   <style>
     /* =======================================================
-       COA PORTAL STYLES (CLEAN & NO ICONS IN FRONT OF TEXT)
+       PORTAL RAKAN COA - CLEAN MODERN STYLES
+       STRICT RULE: NO ICONS OR EMOJIS IN FRONT OF TEXT
        ======================================================= */
     body {
       background-color: #f8fafc;
       color: #0f172a;
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      margin: 0;
+      padding: 0;
     }
 
-    .coa-hero-section {
-      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-      color: #ffffff;
-      padding: 60px 20px 45px 20px;
-      text-align: center;
+    .coa-page-wrapper {
+      padding-top: 96px;
+      min-height: calc(100vh - 120px);
+      padding-bottom: 70px;
     }
-    .coa-hero-badge {
+
+    .coa-banner {
+      background: #0f172a;
+      color: #ffffff;
+      padding: 44px 20px;
+      text-align: center;
+      margin-bottom: 36px;
+      border-bottom: 1px solid #1e293b;
+    }
+    .coa-badge-tag {
       display: inline-block;
-      padding: 5px 14px;
-      background: rgba(217, 119, 6, 0.18);
-      color: #fbbf24;
+      padding: 4px 14px;
+      background: rgba(217, 119, 6, 0.15);
+      color: #f59e0b;
       border: 1px solid rgba(217, 119, 6, 0.35);
       border-radius: 999px;
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-      margin-bottom: 16px;
-    }
-    .coa-hero-title {
-      font-size: clamp(1.8rem, 3.2vw, 2.5rem);
+      font-size: 0.76rem;
       font-weight: 800;
-      line-height: 1.25;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
       margin-bottom: 12px;
+    }
+    .coa-banner-title {
+      font-size: clamp(1.7rem, 3vw, 2.3rem);
+      font-weight: 800;
+      color: #ffffff;
+      margin: 0 0 10px 0;
+      line-height: 1.25;
       letter-spacing: -0.5px;
     }
-    .coa-hero-desc {
-      font-size: 1rem;
+    .coa-banner-desc {
+      font-size: 0.96rem;
       color: #94a3b8;
-      max-width: 640px;
+      max-width: 650px;
       margin: 0 auto;
       line-height: 1.6;
     }
 
-    .coa-main-container {
-      max-width: 1140px;
-      margin: -30px auto 70px auto;
-      padding: 0 20px;
-      position: relative;
-      z-index: 10;
-    }
-
-    /* Auth Card Styling */
-    .coa-auth-card {
+    /* Auth Card */
+    .coa-card-box {
       max-width: 520px;
       margin: 0 auto;
       background: #ffffff;
       border: 1px solid #e2e8f0;
-      border-radius: 20px;
-      box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
       overflow: hidden;
     }
-    .coa-tabs-header {
+    .coa-auth-tabs {
       display: flex;
       background: #f1f5f9;
       border-bottom: 1px solid #e2e8f0;
     }
-    .coa-tab-btn {
+    .coa-tab-button {
       flex: 1;
-      padding: 16px 20px;
+      padding: 15px 18px;
       background: transparent;
       border: none;
       font-family: inherit;
-      font-size: 0.92rem;
+      font-size: 0.90rem;
       font-weight: 700;
       color: #64748b;
       cursor: pointer;
       transition: all 0.2s ease;
       text-align: center;
     }
-    .coa-tab-btn.active {
+    .coa-tab-button.active {
       background: #ffffff;
       color: #0f172a;
       border-bottom: 2px solid #d97706;
     }
-    .coa-auth-body {
+    .coa-card-content {
       padding: 32px 28px;
     }
 
@@ -108,7 +112,7 @@
     }
     .form-label {
       display: block;
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       font-weight: 700;
       color: #334155;
       margin-bottom: 6px;
@@ -118,9 +122,9 @@
     .form-input {
       width: 100%;
       padding: 11px 14px;
-      border-radius: 10px;
-      border: 1.5px solid #e2e8f0;
-      background: #f8fafc;
+      border-radius: 8px;
+      border: 1.5px solid #cbd5e1;
+      background: #ffffff;
       font-family: inherit;
       font-size: 0.92rem;
       color: #0f172a;
@@ -129,12 +133,11 @@
     }
     .form-input:focus {
       outline: none;
-      background: #ffffff;
       border-color: #d97706;
       box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.12);
     }
     .form-hint {
-      font-size: 0.76rem;
+      font-size: 0.75rem;
       color: #64748b;
       margin-top: 5px;
       line-height: 1.4;
@@ -156,10 +159,10 @@
     .link-preview-box {
       margin-top: 6px;
       padding: 8px 12px;
-      border-radius: 8px;
+      border-radius: 6px;
       background: #f1f5f9;
       font-size: 0.76rem;
-      color: #475569;
+      color: #334155;
       border: 1px dashed #cbd5e1;
       display: none;
       word-break: break-all;
@@ -169,7 +172,7 @@
       display: block;
       width: 100%;
       padding: 13px;
-      border-radius: 10px;
+      border-radius: 8px;
       background: #d97706;
       color: #ffffff;
       border: none;
@@ -180,33 +183,33 @@
       transition: all 0.2s ease;
       text-align: center;
       text-decoration: none;
-      box-shadow: 0 4px 14px rgba(217, 119, 6, 0.25);
+      box-sizing: border-box;
+      box-shadow: 0 3px 12px rgba(217, 119, 6, 0.25);
     }
     .btn-coa-primary:hover {
       background: #b45309;
-      transform: translateY(-1px);
     }
     .btn-coa-primary:disabled {
       background: #94a3b8;
       cursor: not-allowed;
       box-shadow: none;
-      transform: none;
     }
 
     .btn-coa-outline {
       display: inline-block;
-      padding: 8px 14px;
+      padding: 9px 16px;
       border-radius: 8px;
       background: #ffffff;
       color: #334155;
       border: 1px solid #cbd5e1;
       font-family: inherit;
-      font-size: 0.8rem;
-      font-weight: 600;
+      font-size: 0.82rem;
+      font-weight: 700;
       cursor: pointer;
       transition: all 0.15s ease;
       text-decoration: none;
       text-align: center;
+      box-sizing: border-box;
     }
     .btn-coa-outline:hover {
       background: #f1f5f9;
@@ -219,57 +222,57 @@
       max-width: 580px;
       margin: 0 auto;
       background: #ffffff;
-      border-radius: 20px;
-      padding: 40px 32px;
+      border-radius: 16px;
+      padding: 38px 32px;
       border: 1px solid #e2e8f0;
-      box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
       text-align: center;
     }
-    .pending-badge {
+    .pending-pill {
       display: inline-block;
       background: #fef3c7;
       color: #b45309;
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       font-weight: 800;
-      padding: 4px 12px;
+      padding: 4px 14px;
       border-radius: 999px;
-      margin-bottom: 14px;
+      margin-bottom: 16px;
       text-transform: uppercase;
-      letter-spacing: 0.5px;
+      letter-spacing: 0.6px;
     }
     .pending-title {
-      font-size: 1.4rem;
+      font-size: 1.35rem;
       font-weight: 800;
       color: #0f172a;
-      margin-bottom: 12px;
+      margin: 0 0 12px 0;
     }
     .pending-desc {
       font-size: 0.92rem;
       color: #64748b;
       line-height: 1.6;
-      margin-bottom: 24px;
+      margin: 0 0 24px 0;
     }
 
     /* Approved Dashboard Layout */
-    .partner-hero-box {
+    .partner-hero-card {
       background: #ffffff;
       border: 1px solid #e2e8f0;
-      border-radius: 16px;
+      border-radius: 14px;
       padding: 24px;
       margin-bottom: 24px;
-      box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04);
+      box-shadow: 0 4px 16px rgba(15, 23, 42, 0.03);
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
       align-items: center;
       gap: 16px;
     }
-    .partner-hero-info {
+    .partner-hero-left {
       flex: 1;
       min-width: 260px;
     }
     .partner-name {
-      font-size: 1.25rem;
+      font-size: 1.3rem;
       font-weight: 800;
       color: #0f172a;
       margin-bottom: 4px;
@@ -279,24 +282,23 @@
       color: #64748b;
       line-height: 1.5;
     }
-    .partner-ref-chip {
+    .partner-code-chip {
       display: inline-block;
       background: #f1f5f9;
       color: #0f172a;
       font-weight: 700;
       padding: 2px 8px;
       border-radius: 6px;
-      border: 1px solid #e2e8f0;
+      border: 1px solid #cbd5e1;
       font-family: monospace;
     }
-
-    .partner-actions-box {
+    .partner-hero-actions {
       display: flex;
       gap: 10px;
       flex-wrap: wrap;
     }
 
-    .partner-filter-bar {
+    .partner-filter-row {
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -304,96 +306,96 @@
       margin-bottom: 20px;
       flex-wrap: wrap;
     }
-    .partner-search-input {
+    .partner-search-field {
       flex: 1;
       min-width: 240px;
       padding: 10px 14px;
-      border-radius: 10px;
-      border: 1.5px solid #e2e8f0;
+      border-radius: 8px;
+      border: 1.5px solid #cbd5e1;
       font-family: inherit;
       font-size: 0.88rem;
       background: #ffffff;
     }
-    .partner-cat-select {
+    .partner-cat-dropdown {
       padding: 10px 14px;
-      border-radius: 10px;
-      border: 1.5px solid #e2e8f0;
+      border-radius: 8px;
+      border: 1.5px solid #cbd5e1;
       font-family: inherit;
       font-size: 0.88rem;
       background: #ffffff;
       color: #0f172a;
-      font-weight: 600;
+      font-weight: 700;
       cursor: pointer;
     }
 
-    /* Listing Grid for Partners */
-    .coa-listing-grid {
+    /* Listing Grid */
+    .coa-cards-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
       gap: 20px;
     }
-    .coa-prop-card {
+    .coa-item-card {
       background: #ffffff;
       border: 1px solid #e2e8f0;
-      border-radius: 16px;
+      border-radius: 14px;
       overflow: hidden;
-      box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
+      box-shadow: 0 4px 16px rgba(15, 23, 42, 0.03);
       display: flex;
       flex-direction: column;
       transition: all 0.2s ease;
     }
-    .coa-prop-card:hover {
+    .coa-item-card:hover {
       transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.07);
       border-color: #cbd5e1;
     }
-    .coa-prop-thumb-wrap {
+    .coa-thumb-box {
       position: relative;
       width: 100%;
       height: 190px;
       background: #e2e8f0;
       overflow: hidden;
     }
-    .coa-prop-thumb {
+    .coa-thumb-img {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
-    .coa-badge-stack {
+    .coa-tag-stack {
       position: absolute;
       top: 10px;
       left: 10px;
       display: flex;
       gap: 6px;
     }
-    .coa-badge-pill {
-      background: rgba(15, 23, 42, 0.85);
+    .coa-tag-status {
+      background: rgba(15, 23, 42, 0.88);
       color: #ffffff;
       font-size: 0.65rem;
       font-weight: 800;
       padding: 3px 8px;
-      border-radius: 6px;
+      border-radius: 4px;
       text-transform: uppercase;
       letter-spacing: 0.5px;
     }
-    .coa-badge-comm {
+    .coa-tag-comm {
       background: #d97706;
       color: #ffffff;
       font-size: 0.65rem;
       font-weight: 800;
       padding: 3px 8px;
-      border-radius: 6px;
+      border-radius: 4px;
       text-transform: uppercase;
       letter-spacing: 0.5px;
     }
 
-    .coa-prop-content {
-      padding: 16px;
+    .coa-body-box {
+      padding: 18px;
       flex: 1;
       display: flex;
       flex-direction: column;
     }
-    .coa-prop-loc {
+    .coa-loc-text {
       font-size: 0.74rem;
       color: #64748b;
       font-weight: 600;
@@ -404,7 +406,7 @@
       overflow: hidden;
       text-overflow: ellipsis;
     }
-    .coa-prop-title {
+    .coa-title-text {
       font-size: 0.95rem;
       font-weight: 800;
       color: #0f172a;
@@ -415,248 +417,284 @@
       -webkit-box-orient: vertical;
       overflow: hidden;
     }
-    .coa-prop-price {
-      font-size: 1.1rem;
+    .coa-price-text {
+      font-size: 1.15rem;
       font-weight: 800;
       color: #d97706;
       margin-bottom: 14px;
     }
-    .coa-card-actions {
+    .coa-actions-stack {
       margin-top: auto;
       display: flex;
       flex-direction: column;
       gap: 8px;
-      padding-top: 12px;
+      padding-top: 14px;
       border-top: 1px solid #f1f5f9;
     }
-    .coa-action-row {
+    .coa-action-dual {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 8px;
     }
 
-    /* Toast Notification */
-    .toast-msg {
+    .toast-popup {
       position: fixed;
       bottom: 24px;
       left: 50%;
       transform: translateX(-50%);
       background: #0f172a;
       color: #ffffff;
-      padding: 10px 22px;
+      padding: 11px 24px;
       border-radius: 999px;
       font-size: 0.85rem;
       font-weight: 700;
       z-index: 999999;
       box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-      animation: fadeIn 0.2s ease;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translate(-50%, 10px); }
-      to { opacity: 1; transform: translate(-50%, 0); }
     }
   </style>
 </head>
 <body>
 
-  <!-- Site Navigation -->
+  <!-- Site Navigation Header (Standard Site Header) -->
   <header class="site-header">
-    <div class="header-inner container">
-      <a href="/" class="brand-logo" aria-label="Zaim Rosli Homepage">
+    <div class="container nav-wrapper">
+      <a href="/" class="logo" aria-label="Zaim Rosli Homepage">
         <span class="logo-main">ZAIM<span>ROSLI</span></span>
         <span class="logo-sub">REGISTERED REAL ESTATE PORTAL</span>
       </a>
-      <nav class="nav-links">
-        <a href="/">Home</a>
-        <a href="/properties">Properties</a>
-        <a href="/services">Services</a>
-        <a href="/calculators">Calculators</a>
-        <a href="/about">About Zaim</a>
-        <a href="/contact">Contact</a>
-        <a href="/coa.html" class="active" style="color: #d97706; font-weight: 700;">COA Portal</a>
-      </nav>
-      <div class="header-actions">
-        <a href="https://wa.me/60108118559" class="btn btn-primary" target="_blank" rel="noopener">Direct WhatsApp</a>
+
+      <ul class="nav-links">
+        <li><a href="/" class="nav-link">Home</a></li>
+        <li><a href="/properties" class="nav-link">Properties</a></li>
+        <li><a href="/services" class="nav-link">Services</a></li>
+        <li><a href="/calculator" class="nav-link">Calculators</a></li>
+        <li><a href="/about" class="nav-link">About Zaim</a></li>
+        <li><a href="/contact" class="nav-link">Contact</a></li>
+        <li><a href="/coa.html" class="nav-link active" style="color: #d97706; font-weight: 800;">COA Portal</a></li>
+      </ul>
+
+      <div class="nav-cta">
+        <a href="/admin.html" class="btn btn-accent btn-sm" style="background: #0f172a; color: #ffffff; border: 1px solid #334155;">Admin Portal</a>
+        <button class="mobile-nav-toggle" aria-label="Toggle Navigation Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="coa-hero-section">
+  <!-- Mobile Drawer Overlay -->
+  <div class="mobile-overlay" id="mobile-nav-overlay">
+    <div class="mobile-drawer" id="mobile-nav-drawer">
+      <div class="mobile-drawer-header">
+        <div class="drawer-logo">
+          <span class="logo-main">ZAIM<span>ROSLI</span></span>
+          <span class="logo-sub">REN39575</span>
+        </div>
+        <button class="mobile-drawer-close" aria-label="Close Navigation Menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="mobile-drawer-body">
+        <ul class="mobile-nav-list">
+          <li class="mobile-nav-item"><a href="/" class="mobile-nav-link">HOME</a></li>
+          <li class="mobile-nav-item"><a href="/properties" class="mobile-nav-link">PROPERTIES</a></li>
+          <li class="mobile-nav-item"><a href="/services" class="mobile-nav-link">SERVICES</a></li>
+          <li class="mobile-nav-item"><a href="/calculator" class="mobile-nav-link">CALCULATORS</a></li>
+          <li class="mobile-nav-item"><a href="/about" class="mobile-nav-link">ABOUT ZAIM</a></li>
+          <li class="mobile-nav-item"><a href="/contact" class="mobile-nav-link">CONTACT</a></li>
+          <li class="mobile-nav-item"><a href="/coa.html" class="mobile-nav-link" style="color: #d97706; font-weight: 800;">COA PORTAL</a></li>
+          <li class="mobile-nav-item"><a href="/admin.html" class="mobile-nav-link">ADMIN DASHBOARD</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Page Wrapper -->
+  <main class="coa-page-wrapper">
+
+    <!-- Hero Banner -->
+    <div class="coa-banner">
+      <div class="container">
+        <span class="coa-badge-tag">Rangkaian B2B Rakan Agensi</span>
+        <h1 class="coa-banner-title">Portal Rakan Agensi COA</h1>
+        <p class="coa-banner-desc">
+          Akses senarai listing terus pemilik (direct owner subsale) dan projek undercon pilihan Zaim Rosli (REN39575). Dapatkan pautan promosi khas nama dan nombor WhatsApp anda sendiri.
+        </p>
+      </div>
+    </div>
+
     <div class="container">
-      <span class="coa-hero-badge">Rangkaian B2B Rakan Agensi</span>
-      <h1 class="coa-hero-title">Portal Rakan Agensi COA</h1>
-      <p class="coa-hero-desc">
-        Akses senarai listing terus pemilik (direct owner subsale) dan projek undercon pilihan Zaim Rosli (REN39575). Dapatkan pautan promosi khas nama dan nombor WhatsApp anda sendiri.
-      </p>
-    </div>
-  </section>
 
-  <!-- Main Dynamic Container -->
-  <main class="coa-main-container">
-
-    <!-- Loading State -->
-    <div id="coa-loading-view" style="text-align: center; padding: 50px 20px;">
-      <p style="color: #64748b; font-weight: 600;">Memuatkan portal rakan agensi...</p>
-    </div>
-
-    <!-- 1. AUTH SCREEN (Register & Login) -->
-    <div id="coa-auth-view" class="coa-auth-card" style="display: none;">
-      <div class="coa-tabs-header">
-        <button type="button" class="coa-tab-btn active" id="btn-tab-login" onclick="switchCoaAuthTab('login')">Log Masuk</button>
-        <button type="button" class="coa-tab-btn" id="btn-tab-register" onclick="switchCoaAuthTab('register')">Daftar Rakan COA</button>
+      <!-- Loading View -->
+      <div id="coa-loading-view" style="text-align: center; padding: 40px 20px;">
+        <p style="color: #64748b; font-weight: 600;">Memuatkan portal rakan agensi...</p>
       </div>
 
-      <div class="coa-auth-body">
+      <!-- 1. AUTH CARD (Register & Login) -->
+      <div id="coa-auth-view" class="coa-card-box" style="display: none;">
+        <div class="coa-auth-tabs">
+          <button type="button" class="coa-tab-button active" id="btn-tab-login" onclick="switchCoaAuthTab('login')">Log Masuk</button>
+          <button type="button" class="coa-tab-button" id="btn-tab-register" onclick="switchCoaAuthTab('register')">Daftar Rakan COA</button>
+        </div>
+
+        <div class="coa-card-content">
+          
+          <!-- Login Form -->
+          <div id="coa-panel-login">
+            <form id="form-coa-login" onsubmit="handleCoaLogin(event)">
+              <div class="form-group">
+                <label class="form-label" for="login-email">Emel Berdaftar</label>
+                <input type="email" id="login-email" class="form-input" placeholder="nama@agensi.com" required>
+              </div>
+              <div class="form-group" style="margin-bottom: 24px;">
+                <label class="form-label" for="login-password">Kata Laluan</label>
+                <input type="password" id="login-password" class="form-input" placeholder="••••••••" required>
+              </div>
+              <div id="login-error-msg" class="status-msg-box err" style="margin-bottom: 14px; text-align: center;"></div>
+              <button type="submit" id="btn-submit-login" class="btn-coa-primary">Log Masuk ke Portal COA</button>
+            </form>
+          </div>
+
+          <!-- Register Form -->
+          <div id="coa-panel-register" style="display: none;">
+            <form id="form-coa-register" onsubmit="handleCoaRegister(event)">
+              <div class="form-group">
+                <label class="form-label" for="reg-name">Nama Penuh (Seperti Kad Pengenalan / LPPEH) *</label>
+                <input type="text" id="reg-name" class="form-input" placeholder="contoh: Ahmad Azman Bin Razali" required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="reg-agency">Nama Agensi Hartanah *</label>
+                <input type="text" id="reg-agency" class="form-input" placeholder="contoh: PropNex Malaysia / IQI Realty / JAZ International" required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="reg-ren">No. Pendaftaran REN / PEA / REA *</label>
+                <input type="text" id="reg-ren" class="form-input" placeholder="contoh: REN 45892" required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="reg-phone">Nombor WhatsApp *</label>
+                <input type="tel" id="reg-phone" class="form-input" placeholder="contoh: 0123456789" required>
+                <div class="form-hint">Nombor ini akan digunakan untuk butang WhatsApp di landing page promosi anda.</div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="reg-code">Kod Rujukan Ejen (Untuk URL Anda) *</label>
+                <input type="text" id="reg-code" class="form-input" placeholder="contoh: azman" required autocomplete="off">
+                <div id="code-status-msg" class="status-msg-box"></div>
+                <div id="code-link-preview" class="link-preview-box"></div>
+                <div class="form-hint">Gunakan huruf kecil dan tanda sempang sahaja (a-z, 0-9, -).</div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="reg-email">Emel *</label>
+                <input type="email" id="reg-email" class="form-input" placeholder="nama@email.com" required>
+              </div>
+
+              <div class="form-group" style="margin-bottom: 24px;">
+                <label class="form-label" for="reg-pass">Cipta Kata Laluan (Minima 6 Aksara) *</label>
+                <input type="password" id="reg-pass" class="form-input" placeholder="••••••••" minlength="6" required>
+              </div>
+
+              <div id="reg-error-msg" class="status-msg-box err" style="margin-bottom: 14px; text-align: center;"></div>
+              <button type="submit" id="btn-submit-reg" class="btn-coa-primary">Hantar Pendaftaran Rakan COA</button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- 2. PENDING SCREEN (Waiting for Superadmin Approval) -->
+      <div id="coa-pending-view" class="pending-card" style="display: none;">
+        <span class="pending-pill">Permohonan Sedang Disemak</span>
+        <h2 class="pending-title">Menunggu Kelulusan Superadmin</h2>
+        <p class="pending-desc">
+          Akaun rakan COA anda telah selamat didaftarkan. Untuk menjaga keselamatan dan integriti urusan hartanah, permohonan anda sedang disemak oleh <strong>Zaim Rosli (REN39575)</strong>.
+        </p>
+
+        <div style="background: #f8fafc; border: 1.5px solid #e2e8f0; border-radius: 12px; padding: 18px; margin-bottom: 26px; text-align: left;">
+          <div style="font-size: 0.84rem; color: #64748b; margin-bottom: 6px;">Nama Ejen: <strong id="pending-display-name" style="color: #0f172a;">-</strong></div>
+          <div style="font-size: 0.84rem; color: #64748b; margin-bottom: 6px;">Agensi: <strong id="pending-display-agency" style="color: #0f172a;">-</strong></div>
+          <div style="font-size: 0.84rem; color: #64748b;">Kod Promosi Pilihan: <span id="pending-display-code" class="partner-code-chip">-</span></div>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 12px;">
+          <a id="btn-pending-whatsapp" href="#" target="_blank" class="btn-coa-primary">
+            Hubungi Zaim Rosli via WhatsApp Untuk Kelulusan Segera
+          </a>
+          <button type="button" onclick="handleCoaLogout()" class="btn-coa-outline">Log Keluar</button>
+        </div>
+      </div>
+
+      <!-- 3. APPROVED DASHBOARD SCREEN -->
+      <div id="coa-dashboard-view" style="display: none;">
         
-        <!-- A. Login Form -->
-        <div id="coa-panel-login">
-          <form id="form-coa-login" onsubmit="handleCoaLogin(event)">
-            <div class="form-group">
-              <label class="form-label" for="login-email">Emel Berdaftar</label>
-              <input type="email" id="login-email" class="form-input" placeholder="nama@agensi.com" required>
+        <!-- Top Info Hero -->
+        <div class="partner-hero-card">
+          <div class="partner-hero-left">
+            <div class="partner-name" id="dash-partner-name">Nama Ejen</div>
+            <div class="partner-meta">
+              <span id="dash-partner-agency">Agensi</span> • 
+              <span id="dash-partner-ren">REN Number</span> • 
+              Kod Promosi Anda: <span id="dash-partner-code" class="partner-code-chip">code</span>
             </div>
-            <div class="form-group" style="margin-bottom: 24px;">
-              <label class="form-label" for="login-password">Kata Laluan</label>
-              <input type="password" id="login-password" class="form-input" placeholder="••••••••" required>
-            </div>
-            <div id="login-error-msg" class="status-msg-box err" style="margin-bottom: 14px; text-align: center;"></div>
-            <button type="submit" id="btn-submit-login" class="btn-coa-primary">Log Masuk ke Portal COA</button>
-          </form>
-        </div>
-
-        <!-- B. Register Form -->
-        <div id="coa-panel-register" style="display: none;">
-          <form id="form-coa-register" onsubmit="handleCoaRegister(event)">
-            <div class="form-group">
-              <label class="form-label" for="reg-name">Nama Penuh (Seperti Kad Pengenalan / LPPEH) *</label>
-              <input type="text" id="reg-name" class="form-input" placeholder="contoh: Ahmad Azman Bin Razali" required>
-            </div>
-
-            <div class="form-group">
-              <label class="form-label" for="reg-agency">Nama Agensi Hartanah *</label>
-              <input type="text" id="reg-agency" class="form-input" placeholder="contoh: PropNex Malaysia / IQI Realty / JAZ International" required>
-            </div>
-
-            <div class="form-group">
-              <label class="form-label" for="reg-ren">No. Pendaftaran REN / PEA / REA *</label>
-              <input type="text" id="reg-ren" class="form-input" placeholder="contoh: REN 45892" required>
-            </div>
-
-            <div class="form-group">
-              <label class="form-label" for="reg-phone">Nombor WhatsApp *</label>
-              <input type="tel" id="reg-phone" class="form-input" placeholder="contoh: 0123456789" required>
-              <div class="form-hint">Nombor ini akan digunakan untuk butang WhatsApp di landing page promosi anda.</div>
-            </div>
-
-            <div class="form-group">
-              <label class="form-label" for="reg-code">Kod Rujukan Ejen (Untuk URL Anda) *</label>
-              <input type="text" id="reg-code" class="form-input" placeholder="contoh: azman" required autocomplete="off">
-              <div id="code-status-msg" class="status-msg-box"></div>
-              <div id="code-link-preview" class="link-preview-box"></div>
-              <div class="form-hint">Gunakan huruf kecil dan tanda sempang sahaja (a-z, 0-9, -).</div>
-            </div>
-
-            <div class="form-group">
-              <label class="form-label" for="reg-email">Emel *</label>
-              <input type="email" id="reg-email" class="form-input" placeholder="nama@email.com" required>
-            </div>
-
-            <div class="form-group" style="margin-bottom: 24px;">
-              <label class="form-label" for="reg-pass">Cipta Kata Laluan (Minima 6 Aksara) *</label>
-              <input type="password" id="reg-pass" class="form-input" placeholder="••••••••" minlength="6" required>
-            </div>
-
-            <div id="reg-error-msg" class="status-msg-box err" style="margin-bottom: 14px; text-align: center;"></div>
-            <button type="submit" id="btn-submit-reg" class="btn-coa-primary">Hantar Pendaftaran Rakan COA</button>
-          </form>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- 2. PENDING SCREEN (Waiting for Superadmin Approval) -->
-    <div id="coa-pending-view" class="pending-card" style="display: none;">
-      <span class="pending-badge">Permohonan Sedang Disemak</span>
-      <h2 class="pending-title">Menunggu Kelulusan Superadmin</h2>
-      <p class="pending-desc">
-        Akaun rakan COA anda telah selamat didaftarkan. Untuk menjaga keselamatan dan integriti urusan hartanah, permohonan anda sedang disemak oleh <strong>Zaim Rosli (REN39575)</strong>.
-      </p>
-      <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 16px; margin-bottom: 24px; text-align: left;">
-        <div style="font-size: 0.82rem; color: #64748b; margin-bottom: 4px;">Nama Ejen: <strong id="pending-display-name" style="color: #0f172a;">-</strong></div>
-        <div style="font-size: 0.82rem; color: #64748b; margin-bottom: 4px;">Agensi: <strong id="pending-display-agency" style="color: #0f172a;">-</strong></div>
-        <div style="font-size: 0.82rem; color: #64748b;">Kod Promosi Pilihan: <span id="pending-display-code" class="partner-ref-chip">-</span></div>
-      </div>
-      <div style="display: flex; flex-direction: column; gap: 10px;">
-        <a id="btn-pending-whatsapp" href="#" target="_blank" class="btn-coa-primary">
-          Hubungi Zaim Rosli via WhatsApp Untuk Kelulusan Segera
-        </a>
-        <button type="button" onclick="handleCoaLogout()" class="btn-coa-outline">Log Keluar</button>
-      </div>
-    </div>
-
-    <!-- 3. APPROVED DASHBOARD SCREEN -->
-    <div id="coa-dashboard-view" style="display: none;">
-      
-      <!-- Top Info Hero -->
-      <div class="partner-hero-box">
-        <div class="partner-hero-info">
-          <div class="partner-name" id="dash-partner-name">Nama Ejen</div>
-          <div class="partner-meta">
-            <span id="dash-partner-agency">Agensi</span> • 
-            <span id="dash-partner-ren">REN Number</span> • 
-            Kod Pautan Anda: <span id="dash-partner-code" class="partner-ref-chip">code</span>
+          </div>
+          <div class="partner-hero-actions">
+            <button type="button" onclick="copyMainRefLink()" class="btn-coa-outline" title="Salin pautan utama portal anda">
+              Salin Pautan Portal Saya
+            </button>
+            <button type="button" onclick="handleCoaLogout()" class="btn-coa-outline" style="color: #dc2626; border-color: #fca5a5;">
+              Log Keluar
+            </button>
           </div>
         </div>
-        <div class="partner-actions-box">
-          <button type="button" onclick="copyMainRefLink()" class="btn-coa-outline" title="Salin pautan utama portal anda">
-            Salin Pautan Portal Saya
-          </button>
-          <button type="button" onclick="handleCoaLogout()" class="btn-coa-outline" style="color: #ef4444; border-color: #fecaca;">
-            Log Keluar
-          </button>
+
+        <!-- Filter Row -->
+        <div class="partner-filter-row">
+          <input type="text" id="coa-search-kw" class="partner-search-field" placeholder="Cari mengikut lokasi, nama projek, atau jenis hartanah..." oninput="filterCoaListings()">
+          <select id="coa-cat-select" class="partner-cat-dropdown" onchange="filterCoaListings()">
+            <option value="all">Semua Kategori</option>
+            <option value="subsale">Subsale Sahaja</option>
+            <option value="commercial">Komersil &amp; Industri</option>
+            <option value="undercon">Projek Undercon</option>
+          </select>
         </div>
-      </div>
 
-      <!-- Filter Bar -->
-      <div class="partner-filter-bar">
-        <input type="text" id="coa-search-kw" class="partner-search-input" placeholder="Cari mengikut lokasi, nama projek, atau jenis hartanah..." oninput="filterCoaListings()">
-        <select id="coa-cat-select" class="partner-cat-select" onchange="filterCoaListings()">
-          <option value="all">Semua Kategori</option>
-          <option value="subsale">Subsale Sahaja</option>
-          <option value="commercial">Komersil &amp; Industri</option>
-          <option value="undercon">Projek Undercon</option>
-        </select>
-      </div>
+        <!-- Listings Count Header -->
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+          <h3 style="font-size: 1.05rem; font-weight: 800; color: #0f172a; margin: 0;">Senarai Listing Buka Untuk COA</h3>
+          <span id="coa-listings-count" style="font-size: 0.82rem; font-weight: 700; color: #64748b;">0 listing</span>
+        </div>
 
-      <!-- Listings Count Header -->
-      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
-        <h3 style="font-size: 1.05rem; font-weight: 800; color: #0f172a; margin: 0;">Senarai Listing Buka Untuk COA</h3>
-        <span id="coa-listings-count" style="font-size: 0.82rem; font-weight: 700; color: #64748b;">0 listing</span>
-      </div>
+        <!-- Listing Cards Grid -->
+        <div id="coa-listings-grid" class="coa-cards-grid">
+          <!-- Rendered dynamically -->
+        </div>
 
-      <!-- Listing Cards Grid -->
-      <div id="coa-listings-grid" class="coa-listing-grid">
-        <!-- Rendered dynamically -->
       </div>
 
     </div>
-
   </main>
 
   <!-- Footer -->
-  <footer class="site-footer" style="background: #0f172a; color: #94a3b8; padding: 40px 20px; text-align: center; font-size: 0.85rem;">
+  <footer class="site-footer" style="background: #0f172a; color: #94a3b8; padding: 36px 20px; text-align: center; font-size: 0.85rem; border-top: 1px solid #1e293b;">
     <div class="container">
-      <p style="margin-bottom: 8px;">Portal Rakan Agensi COA — Zaim Rosli (REN 39575)</p>
-      <p style="opacity: 0.7;">Hak Cipta Terpelihara &copy; 2026 Zaim Rosli Real Estate Portal. Dikuasakan oleh JAZ International Sdn Bhd.</p>
+      <p style="margin: 0 0 6px 0; font-weight: 700; color: #ffffff;">Portal Rakan Agensi COA — Zaim Rosli (REN 39575)</p>
+      <p style="margin: 0; opacity: 0.7;">Hak Cipta Terpelihara &copy; 2026 Zaim Rosli Real Estate Portal. Dikuasakan oleh JAZ International Sdn Bhd.</p>
     </div>
   </footer>
 
-  <!-- Supabase JS Client & Properties Data -->
+  <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script src="/properties-data.js?v=130"></script>
+  <script src="/properties-data.js?v=133"></script>
+  <script src="/app.js?v=130"></script>
   <script>
-    // Supabase Configuration
     const SUPABASE_URL = 'https://csrzhidtzqxfbapsenhu.supabase.co';
     const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNzcnpoaWR0enF4ZmJhcHNlbmh1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODU0OTM3OTYsImV4cCI6MjEwMTA2OTc5Nn0.NnHFURbQTvsdgGbm1d_PC-hkOgQFQIHKTMQaS2n44SU';
     const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
@@ -666,18 +704,18 @@
     let isCodeAvailable = false;
     let allCoaListings = [];
 
-    // 1. Toast Notification Helper
+    // Toast Notification
     function showToast(msg) {
-      const existing = document.querySelector('.toast-msg');
+      const existing = document.querySelector('.toast-popup');
       if (existing) existing.remove();
       const t = document.createElement('div');
-      t.className = 'toast-msg';
+      t.className = 'toast-popup';
       t.textContent = msg;
       document.body.appendChild(t);
       setTimeout(() => { t.remove(); }, 2500);
     }
 
-    // 2. Tab Switcher
+    // Tab Switcher
     function switchCoaAuthTab(tab) {
       const btnLogin = document.getElementById('btn-tab-login');
       const btnReg = document.getElementById('btn-tab-register');
@@ -697,7 +735,7 @@
       }
     }
 
-    // 3. Live Agent Code Uniqueness & Format Check (Debounced)
+    // Live Agent Code Uniqueness Check
     const codeInput = document.getElementById('reg-code');
     const codeStatusMsg = document.getElementById('code-status-msg');
     const codeLinkPreview = document.getElementById('code-link-preview');
@@ -707,7 +745,6 @@
       codeInput.addEventListener('input', () => {
         clearTimeout(codeCheckTimeout);
         let rawVal = codeInput.value;
-        // Clean to valid slug format
         let cleanVal = rawVal.toLowerCase().replace(/[^a-z0-9-]/g, '-').replace(/-+/g, '-').replace(/^-/, '');
         codeInput.value = cleanVal;
 
@@ -731,10 +768,6 @@
               .eq('agent_code', cleanVal)
               .maybeSingle();
 
-            if (error) {
-              console.error('Code check error:', error);
-            }
-
             if (data) {
               isCodeAvailable = false;
               codeStatusMsg.className = 'status-msg-box err';
@@ -745,7 +778,7 @@
               codeStatusMsg.className = 'status-msg-box ok';
               codeStatusMsg.textContent = `Kod rujukan '${cleanVal}' boleh digunakan.`;
               codeLinkPreview.style.display = 'block';
-              codeLinkPreview.textContent = `Pautan anda: https://zaimrosli.my/property/nama-listing?ref=${cleanVal}`;
+              codeLinkPreview.textContent = `Pautan anda nanti: https://zaimrosli.my/property/nama-listing?ref=${cleanVal}`;
             }
           } catch (e) {
             console.error(e);
@@ -754,7 +787,7 @@
       });
     }
 
-    // 4. Handle Registration
+    // Handle Register
     async function handleCoaRegister(e) {
       e.preventDefault();
       const errBox = document.getElementById('reg-error-msg');
@@ -781,7 +814,6 @@
       btnSubmitReg.textContent = 'Menghantar Pendaftaran...';
 
       try {
-        // Sign up with Supabase Auth
         const { data: authData, error: authError } = await supabaseClient.auth.signUp({
           email: email,
           password: password,
@@ -797,17 +829,12 @@
           }
         });
 
-        if (authError) {
-          throw new Error(authError.message || 'Ralat semasa mendaftar akaun.');
-        }
+        if (authError) throw new Error(authError.message || 'Ralat semasa mendaftar akaun.');
 
         const userId = authData.user ? authData.user.id : null;
-        if (!userId) {
-          throw new Error('Gagal mendapatkan ID pengguna. Sila cuba lagi.');
-        }
+        if (!userId) throw new Error('Gagal mendapatkan ID pengguna. Sila cuba lagi.');
 
-        // Insert into public.coa_partners
-        const { error: insertError } = await supabaseClient
+        await supabaseClient
           .from('coa_partners')
           .insert([{
             id: userId,
@@ -820,11 +847,6 @@
             status: 'pending'
           }]);
 
-        if (insertError) {
-          console.warn('Profile insert error (may need Superadmin RLS check):', insertError);
-        }
-
-        // Switch to pending view
         currentPartner = {
           full_name: name,
           agency: agency,
@@ -845,7 +867,7 @@
       }
     }
 
-    // 5. Handle Login
+    // Handle Login
     async function handleCoaLogin(e) {
       e.preventDefault();
       const errBox = document.getElementById('login-error-msg');
@@ -877,7 +899,7 @@
       }
     }
 
-    // 6. Handle Logout
+    // Handle Logout
     async function handleCoaLogout() {
       try {
         await supabaseClient.auth.signOut();
@@ -890,7 +912,7 @@
       showToast('Anda telah berjaya log keluar.');
     }
 
-    // 7. Check Current Session & Load Partner Data
+    // Check Current Session & Load Partner Data
     async function checkPartnerSession() {
       const loadingEl = document.getElementById('coa-loading-view');
       const authEl = document.getElementById('coa-auth-view');
@@ -907,7 +929,25 @@
           return;
         }
 
-        // Fetch partner record
+        const userEmail = (session.user.email || '').toLowerCase();
+
+        // Check if user is Superadmin (Zaim Rosli) -> Auto-Approved!
+        if (userEmail === 'huzaimrosli@gmail.com') {
+          currentPartner = {
+            id: session.user.id,
+            full_name: 'Zaim Rosli',
+            agency: 'JAZ International Sdn Bhd',
+            ren_number: 'REN 39575',
+            phone: '60108118559',
+            agent_code: 'zaim',
+            status: 'approved'
+          };
+          loadingEl.style.display = 'none';
+          showDashboardView(currentPartner);
+          return;
+        }
+
+        // Fetch regular partner record
         const { data: partner, error } = await supabaseClient
           .from('coa_partners')
           .select('*')
@@ -917,7 +957,6 @@
         loadingEl.style.display = 'none';
 
         if (!partner) {
-          // If auth exists but table record not found, read from metadata
           const meta = session.user.user_metadata || {};
           currentPartner = {
             id: session.user.id,
@@ -945,7 +984,7 @@
       }
     }
 
-    // 8. Show Pending View
+    // Show Pending View
     function showPendingView(partner) {
       document.getElementById('coa-loading-view').style.display = 'none';
       document.getElementById('coa-auth-view').style.display = 'none';
@@ -968,7 +1007,7 @@ Mohon semakan dan kelulusan akaun saya. Terima kasih!`);
       document.getElementById('btn-pending-whatsapp').href = `https://wa.me/60108118559?text=${waMsg}`;
     }
 
-    // 9. Show Dashboard View & Render Listings
+    // Show Dashboard View & Render Listings
     function showDashboardView(partner) {
       document.getElementById('coa-loading-view').style.display = 'none';
       document.getElementById('coa-auth-view').style.display = 'none';
@@ -984,7 +1023,7 @@ Mohon semakan dan kelulusan akaun saya. Terima kasih!`);
       loadCoaListings();
     }
 
-    // 10. Copy Main Referral Link
+    // Copy Main Referral Link
     function copyMainRefLink() {
       if (!currentPartner) return;
       const refUrl = `https://zaimrosli.my/?ref=${currentPartner.agent_code}`;
@@ -995,18 +1034,16 @@ Mohon semakan dan kelulusan akaun saya. Terima kasih!`);
       });
     }
 
-    // 11. Load & Render Listings
+    // Load & Render Listings
     function loadCoaListings() {
       const rawData = (Array.isArray(window.PROPERTIES_DATA) && window.PROPERTIES_DATA.length > 0)
         ? window.PROPERTIES_DATA
         : [];
 
-      // Filter active listings
       allCoaListings = rawData.filter(p => {
         if (!p) return false;
         if (p.hidden === true) return false;
         if ((p.status || '').toLowerCase() === 'sold') return false;
-        // If listing has specific openForCoa flag, check it. Otherwise include by default for partner marketing.
         if (p.openForCoa === false) return false;
         return true;
       });
@@ -1025,12 +1062,10 @@ Mohon semakan dan kelulusan akaun saya. Terima kasih!`);
         const loc = (item.location || item.region || '').toLowerCase();
         const type = (item.type || item.category || '').toLowerCase();
 
-        // Search match
         if (kw && !title.includes(kw) && !loc.includes(kw) && !type.includes(kw)) {
           return false;
         }
 
-        // Category match
         if (cat === 'subsale') {
           const isComm = /shop|office|factory|kilang|industr|kedai|pejabat|land|tanah/i.test(type);
           if (isComm || item.category === 'Undercon') return false;
@@ -1055,7 +1090,7 @@ Mohon semakan dan kelulusan akaun saya. Terima kasih!`);
         return;
       }
 
-      const pCode = currentPartner ? currentPartner.agent_code : 'partner';
+      const pCode = currentPartner ? currentPartner.agent_code : 'zaim';
 
       grid.innerHTML = filtered.map(item => {
         let img = '/icons/icon-192.png';
@@ -1071,26 +1106,26 @@ Mohon semakan dan kelulusan akaun saya. Terima kasih!`);
         const promoUrl = `https://zaimrosli.my/property/${item.slug || item.id}?ref=${pCode}`;
 
         return `
-          <div class="coa-prop-card">
-            <div class="coa-prop-thumb-wrap">
-              <img src="${img}" alt="${(item.title || '').replace(/"/g, '&quot;')}" class="coa-prop-thumb" loading="lazy" referrerpolicy="no-referrer" onerror="this.src='/icons/icon-192.png';">
-              <div class="coa-badge-stack">
-                <span class="coa-badge-pill">${badgeStatus}</span>
-                <span class="coa-badge-comm">${commText}</span>
+          <div class="coa-item-card">
+            <div class="coa-thumb-box">
+              <img src="${img}" alt="${(item.title || '').replace(/"/g, '&quot;')}" class="coa-thumb-img" loading="lazy" referrerpolicy="no-referrer" onerror="this.src='/icons/icon-192.png';">
+              <div class="coa-tag-stack">
+                <span class="coa-tag-status">${badgeStatus}</span>
+                <span class="coa-tag-comm">${commText}</span>
               </div>
             </div>
 
-            <div class="coa-prop-content">
-              <div class="coa-prop-loc">${item.location || item.region || 'Selangor'}</div>
-              <div class="coa-prop-title" title="${item.title}">${item.title}</div>
-              <div class="coa-prop-price">${item.priceStr || ('RM ' + Number(item.price || 0).toLocaleString())}</div>
+            <div class="coa-body-box">
+              <div class="coa-loc-text">${item.location || item.region || 'Selangor'}</div>
+              <div class="coa-title-text" title="${item.title}">${item.title}</div>
+              <div class="coa-price-text">${item.priceStr || ('RM ' + Number(item.price || 0).toLocaleString())}</div>
 
-              <div class="coa-card-actions">
+              <div class="coa-actions-stack">
                 <button type="button" class="btn-coa-primary" style="padding: 10px; font-size: 0.82rem;" onclick="copyPromoLink('${promoUrl}')">
                   Salin Pautan Promosi Anda
                 </button>
 
-                <div class="coa-action-row">
+                <div class="coa-action-dual">
                   <button type="button" class="btn-coa-outline" onclick="copyCleanDesc('${item.id || item.slug}')">
                     Salin Teks Iklan
                   </button>
@@ -1109,7 +1144,7 @@ Mohon semakan dan kelulusan akaun saya. Terima kasih!`);
       }).join('');
     }
 
-    // 12. Copy Promo Link
+    // Copy Promo Link
     function copyPromoLink(url) {
       navigator.clipboard.writeText(url).then(() => {
         showToast('Pautan promosi berjaya disalin ke clipboard!');
@@ -1118,31 +1153,22 @@ Mohon semakan dan kelulusan akaun saya. Terima kasih!`);
       });
     }
 
-    // 13. Copy Clean Description (Free of Zaim's numbers)
+    // Copy Clean Description
     function copyCleanDesc(propId) {
       const item = allCoaListings.find(p => p.id === propId || p.slug === propId);
       if (!item) return;
 
       let desc = item.description || '';
-      // Clean external contacts and agency names
       desc = desc.replace(/(?:for\s+(?:further\s+)?(?:inquiries|enquiries|viewing|appointment|info)|kindly\s+contact|contact\s*me|hubungi\s*(?:saya|kami)?|call\s*\/|whatsapp\s*\/|wasap\s*\/)[\s\S]*$/i, '');
       desc = desc.replace(/(?:\+?60|0)1[0-9][\s.-]?[0-9]{7,8}/g, '');
       desc = desc.replace(/REN\s*[0-9]+/gi, '');
       desc = desc.replace(/Zaim\s*Rosli/gi, '');
       desc = desc.replace(/JAZ\s*International\s*(?:Sdn\s*Bhd)?/gi, '');
 
-      const pCode = currentPartner ? currentPartner.agent_code : 'partner';
+      const pCode = currentPartner ? currentPartner.agent_code : 'zaim';
       const promoUrl = `https://zaimrosli.my/property/${item.slug || item.id}?ref=${pCode}`;
 
-      const fullCopy = `${item.title.toUpperCase()}
-
-Harga: ${item.priceStr || 'RM ' + item.price}
-Lokasi: ${item.location || item.region}
-
-${desc.trim()}
-
-Maklumat lanjut & gambar penuh:
-${promoUrl}`;
+      const fullCopy = `${item.title.toUpperCase()}\n\nHarga: ${item.priceStr || 'RM ' + item.price}\nLokasi: ${item.location || item.region}\n\n${desc.trim()}\n\nMaklumat lanjut & gambar penuh:\n${promoUrl}`;
 
       navigator.clipboard.writeText(fullCopy).then(() => {
         showToast('Teks iklan bersih berjaya disalin!');
@@ -1151,7 +1177,6 @@ ${promoUrl}`;
       });
     }
 
-    // Initialize
     window.addEventListener('DOMContentLoaded', () => {
       checkPartnerSession();
     });
