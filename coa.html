@@ -1215,7 +1215,24 @@ Mohon semakan dan kelulusan akaun saya. Terima kasih!`);
         heroTitle.textContent = `Selamat Datang, ${partner.full_name}`;
         heroDesc.textContent = `${partner.agency} • ${partner.ren_number} • Tekan butang WhatsApp pada mana-mana listing di bawah untuk semak maklumat lanjut atau ketersediaan unit dengan Zaim Rosli.`;
 
-        const generalZaimMsg = encodeURIComponent(`Salam Zaim, saya ${partner.full_name} (${partner.agency}). Saya sedang melihat katalog COA di portal dan ingin berbincang mengenai kerjasama projek/listing.`);
+        const senderParts = [];
+        if (partner && partner.full_name) senderParts.push(partner.full_name);
+        if (partner && partner.agency) {
+          let ag = partner.agency;
+          if (partner.ren_number) ag += ` (${partner.ren_number})`;
+          senderParts.push(ag);
+        } else if (partner && partner.ren_number) {
+          senderParts.push(partner.ren_number);
+        }
+        if (partner && partner.phone) {
+          let sp = partner.phone.replace(/[^0-9]/g, '');
+          if (sp.startsWith('0')) sp = '60' + sp.substring(1);
+          if (!sp.startsWith('60')) sp = '60' + sp;
+          senderParts.push(`Tel: +${sp}`);
+        }
+        const senderBlock = senderParts.length > 0 ? `\n\n${senderParts.join(' ')}` : '';
+        const portalUrl = `https://zaimrosli.my/coa/${partner.agent_code || 'zaim'}`;
+        const generalZaimMsg = encodeURIComponent(`Hello Zaim Rosli, I'm interested to Co-Agency your Property Listings at ${portalUrl} And I hope that we can Close Sales together.${senderBlock}`);
         heroWaBtn.textContent = 'Hubungi Zaim (WhatsApp)';
         heroWaBtn.href = `https://wa.me/${zaimPhone}?text=${generalZaimMsg}`;
 
@@ -1381,16 +1398,37 @@ Mohon semakan dan kelulusan akaun saya. Terima kasih!`);
         let waButtonText = 'Hubungi WhatsApp';
 
         if (isLoggedInCoa) {
-          // Logged-in COA Agent contacts ZAIM ROSLI directly to ask about the project!
+          // Logged-in COA Agent contacts ZAIM ROSLI directly using exact Co-Agency industry template
           waButtonText = 'Hubungi Zaim (WhatsApp)';
-          const itemWaMsg = encodeURIComponent(`Salam Zaim, saya ${currentPartner ? currentPartner.full_name : 'Rakan COA'} (${currentPartner ? currentPartner.agency : 'Agensi'}). Saya ingin bertanya details dan ketersediaan unit untuk projek/listing ini:
 
-"${item.title}"
-Harga: ${priceDisplay}
-Lokasi: ${item.location || item.region || 'Selangor'}
-ID Listing: ${item.id}
+          const rawCode = item.listingCode || item.code || item.id || '';
+          const listingCode = rawCode ? `#${rawCode}` : '';
+          const listingUrl = item.refUrl || `https://zaimrosli.my${propDetailUrl}`;
 
-Pautan: https://zaimrosli.my${propDetailUrl}`);
+          const senderParts = [];
+          if (currentPartner && currentPartner.full_name) {
+            senderParts.push(currentPartner.full_name);
+          }
+          if (currentPartner && currentPartner.agency) {
+            let ag = currentPartner.agency;
+            if (currentPartner.ren_number) {
+              ag += ` (${currentPartner.ren_number})`;
+            }
+            senderParts.push(ag);
+          } else if (currentPartner && currentPartner.ren_number) {
+            senderParts.push(currentPartner.ren_number);
+          }
+
+          if (currentPartner && currentPartner.phone) {
+            let sp = currentPartner.phone.replace(/[^0-9]/g, '');
+            if (sp.startsWith('0')) sp = '60' + sp.substring(1);
+            if (!sp.startsWith('60')) sp = '60' + sp;
+            senderParts.push(`Tel: +${sp}`);
+          }
+
+          const senderBlock = senderParts.length > 0 ? `\n\n${senderParts.join(' ')}` : '';
+          const codeSuffix = listingCode ? ` ${listingCode}` : '';
+          const itemWaMsg = encodeURIComponent(`Hello Zaim Rosli, I'm interested to Co-Agency your Property Listing at ${listingUrl}${codeSuffix} And I hope that we can Close Sales together.${senderBlock}`);
           itemWaUrl = `https://wa.me/${zaimPhone}?text=${itemWaMsg}`;
         } else {
           // Public visitor contacts the COA Agent!
