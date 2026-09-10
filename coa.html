@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portal Rakan Agensi COA — Zaim Rosli Real Estate</title>
-  <meta name="description" content="Katalog hartanah pilihan terus pemilik dan projek undercon rakan agensi Zaim Rosli (REN39575).">
+  <meta name="description" content="Katalog projek perumahan baru undercon, hartanah subsale, dan rental pilihan rakan agensi Zaim Rosli (REN39575).">
   <link rel="canonical" href="https://zaimrosli.my/coa">
   <meta name="robots" content="index, follow">
   
@@ -16,7 +16,7 @@
 
   <style>
     /* =======================================================
-       PORTAL RAKAN COA - AGENT STOREFRONT & PUBLIC CATALOG
+       PORTAL RAKAN COA - AGENT STOREFRONT & UNDERCON CATALOG
        STRICT RULE: NO ICONS OR EMOJIS IN FRONT OF TEXT
        ======================================================= */
     body {
@@ -27,16 +27,27 @@
       padding: 0;
     }
 
-    /* Top Agent Utility Bar (Only visible for logged-in agents) */
-    .coa-agent-topbar {
+    /* Unified Header Container - Eliminates overlapping completely */
+    .coa-header-container {
+      position: sticky;
+      top: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      z-index: 10000;
+      background: #ffffff;
+      box-shadow: 0 2px 10px rgba(15, 23, 42, 0.05);
+    }
+
+    .coa-header-container .coa-agent-topbar {
       background: #0f172a;
       color: #ffffff;
       padding: 10px 16px;
       font-size: 0.82rem;
       border-bottom: 1px solid #1e293b;
-      position: sticky;
-      top: 0;
-      z-index: 10000;
+      position: relative !important;
+      top: auto !important;
+      z-index: 10002;
     }
     .coa-topbar-inner {
       display: flex;
@@ -46,8 +57,19 @@
       gap: 8px;
     }
 
+    .coa-header-container header.site-header {
+      position: relative !important;
+      top: auto !important;
+      left: auto !important;
+      width: 100% !important;
+      background: #ffffff !important;
+      border-bottom: 1px solid #e2e8f0;
+      z-index: 10001;
+      display: block !important;
+    }
+
     .coa-page-wrapper {
-      padding-top: 96px;
+      padding-top: 0 !important;
       min-height: calc(100vh - 120px);
       padding-bottom: 70px;
     }
@@ -95,6 +117,36 @@
       gap: 10px;
       margin-top: 20px;
       flex-wrap: wrap;
+    }
+
+    /* Quick Filter Nav Pills */
+    .coa-quick-pills {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
+    }
+    .coa-pill-btn {
+      padding: 8px 16px;
+      border-radius: 999px;
+      border: 1.5px solid #cbd5e1;
+      background: #ffffff;
+      color: #334155;
+      font-family: inherit;
+      font-size: 0.82rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .coa-pill-btn:hover {
+      border-color: #d97706;
+      color: #d97706;
+      background: #fffbf0;
+    }
+    .coa-pill-btn.active {
+      background: #0f172a;
+      color: #ffffff;
+      border-color: #0f172a;
     }
 
     /* Auth Card */
@@ -334,7 +386,7 @@
     .coa-thumb-box {
       position: relative;
       width: 100%;
-      height: 195px;
+      height: 200px;
       background: #e2e8f0;
       overflow: hidden;
     }
@@ -349,9 +401,10 @@
       left: 10px;
       display: flex;
       gap: 6px;
+      flex-wrap: wrap;
     }
     .coa-tag-status {
-      background: rgba(15, 23, 42, 0.88);
+      background: rgba(15, 23, 42, 0.90);
       color: #ffffff;
       font-size: 0.65rem;
       font-weight: 800;
@@ -359,6 +412,10 @@
       border-radius: 4px;
       text-transform: uppercase;
       letter-spacing: 0.5px;
+    }
+    .coa-tag-status.undercon-tag {
+      background: #d97706;
+      color: #ffffff;
     }
 
     .coa-body-box {
@@ -393,8 +450,18 @@
       font-size: 1.15rem;
       font-weight: 800;
       color: #d97706;
-      margin-bottom: 14px;
+      margin-bottom: 8px;
     }
+    .coa-specs-snippet {
+      font-size: 0.76rem;
+      color: #64748b;
+      margin-bottom: 14px;
+      line-height: 1.4;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
     .coa-actions-stack {
       margin-top: auto;
       display: flex;
@@ -422,56 +489,61 @@
 </head>
 <body>
 
-  <!-- Agent Logged-In Top Utility Bar -->
-  <div id="coa-agent-topbar" class="coa-agent-topbar" style="display: none;">
-    <div class="container coa-topbar-inner">
-      <div>
-        <span style="color: #94a3b8;">Portal Ejen Anda:</span>
-        <strong id="topbar-portal-link" style="color: #f59e0b; margin-left: 6px; font-family: monospace;">https://zaimrosli.my/coa/zaim</strong>
-      </div>
-      <div style="display: flex; gap: 8px; align-items: center;">
-        <button type="button" onclick="copyMyPortalLink()" class="btn-coa-outline" style="padding: 4px 12px; font-size: 0.74rem; background: #1e293b; color: #ffffff; border-color: #334155;">Salin Pautan</button>
-        <button type="button" onclick="handleCoaLogout()" class="btn-coa-outline" style="padding: 4px 10px; font-size: 0.74rem; color: #f87171; border-color: #7f1d1d; background: transparent;">Log Keluar</button>
+  <!-- Unified Sticky Header Container (Zero Overlap) -->
+  <div class="coa-header-container">
+
+    <!-- Agent Logged-In Top Utility Bar -->
+    <div id="coa-agent-topbar" class="coa-agent-topbar" style="display: none;">
+      <div class="container coa-topbar-inner">
+        <div>
+          <span style="color: #94a3b8;">Portal Ejen Anda:</span>
+          <strong id="topbar-portal-link" style="color: #f59e0b; margin-left: 6px; font-family: monospace;">https://zaimrosli.my/coa/zaim</strong>
+        </div>
+        <div style="display: flex; gap: 8px; align-items: center;">
+          <button type="button" onclick="copyMyPortalLink()" class="btn-coa-outline" style="padding: 4px 12px; font-size: 0.74rem; background: #1e293b; color: #ffffff; border-color: #334155;">Salin Pautan</button>
+          <button type="button" onclick="handleCoaLogout()" class="btn-coa-outline" style="padding: 4px 10px; font-size: 0.74rem; color: #f87171; border-color: #7f1d1d; background: transparent;">Log Keluar</button>
+        </div>
       </div>
     </div>
+
+    <!-- Site Navigation Header -->
+    <header class="site-header">
+      <div class="container nav-wrapper">
+        <a href="/" class="logo" aria-label="Zaim Rosli Homepage">
+          <span class="logo-main" id="coa-nav-brand-name">ZAIM<span>ROSLI</span></span>
+          <span class="logo-sub" id="coa-nav-brand-sub">REGISTERED REAL ESTATE PORTAL</span>
+        </a>
+
+        <ul class="nav-links">
+          <li><a href="javascript:void(0)" onclick="setFilterTab('all')" class="nav-link active" id="tab-link-all">Semua Listing</a></li>
+          <li><a href="javascript:void(0)" onclick="setFilterTab('undercon')" class="nav-link" id="tab-link-undercon">Projek Undercon</a></li>
+          <li><a href="javascript:void(0)" onclick="setFilterTab('subsale')" class="nav-link" id="tab-link-subsale">Subsale</a></li>
+          <li><a href="javascript:void(0)" onclick="setFilterTab('rental')" class="nav-link" id="tab-link-rental">Sewa</a></li>
+          <li><a href="javascript:void(0)" onclick="setFilterTab('commercial')" class="nav-link" id="tab-link-commercial">Komersil</a></li>
+        </ul>
+
+        <div class="nav-cta">
+          <a id="nav-cta-wa-btn" href="https://wa.me/60108118559" target="_blank" class="btn btn-accent btn-sm" style="background: #d97706; color: #ffffff; border: none; font-weight: 700;">
+            WhatsApp Ejen
+          </a>
+          <button class="mobile-nav-toggle" aria-label="Toggle Navigation Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
   </div>
-
-  <!-- Site Navigation Header -->
-  <header class="site-header">
-    <div class="container nav-wrapper">
-      <a href="/" class="logo" aria-label="Zaim Rosli Homepage">
-        <span class="logo-main">ZAIM<span>ROSLI</span></span>
-        <span class="logo-sub">REGISTERED REAL ESTATE PORTAL</span>
-      </a>
-
-      <ul class="nav-links">
-        <li><a href="/" class="nav-link">Home</a></li>
-        <li><a href="/properties" class="nav-link">Properties</a></li>
-        <li><a href="/services" class="nav-link">Services</a></li>
-        <li><a href="/calculator" class="nav-link">Calculators</a></li>
-        <li><a href="/about" class="nav-link">About Zaim</a></li>
-        <li><a href="/contact" class="nav-link">Contact</a></li>
-        <li><a href="/coa" class="nav-link active" style="color: #d97706; font-weight: 800;">COA Portal</a></li>
-      </ul>
-
-      <div class="nav-cta">
-        <a href="/admin.html" class="btn btn-accent btn-sm" style="background: #0f172a; color: #ffffff; border: 1px solid #334155;">Admin Portal</a>
-        <button class="mobile-nav-toggle" aria-label="Toggle Navigation Menu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </div>
-    </div>
-  </header>
 
   <!-- Mobile Drawer Overlay -->
   <div class="mobile-overlay" id="mobile-nav-overlay">
     <div class="mobile-drawer" id="mobile-nav-drawer">
       <div class="mobile-drawer-header">
         <div class="drawer-logo">
-          <span class="logo-main">ZAIM<span>ROSLI</span></span>
-          <span class="logo-sub">REN39575</span>
+          <span class="logo-main" id="drawer-brand-name">ZAIM<span>ROSLI</span></span>
+          <span class="logo-sub" id="drawer-brand-sub">REN39575</span>
         </div>
         <button class="mobile-drawer-close" aria-label="Close Navigation Menu">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
@@ -482,14 +554,13 @@
       </div>
       <div class="mobile-drawer-body">
         <ul class="mobile-nav-list">
-          <li class="mobile-nav-item"><a href="/" class="mobile-nav-link">HOME</a></li>
-          <li class="mobile-nav-item"><a href="/properties" class="mobile-nav-link">PROPERTIES</a></li>
-          <li class="mobile-nav-item"><a href="/services" class="mobile-nav-link">SERVICES</a></li>
-          <li class="mobile-nav-item"><a href="/calculator" class="mobile-nav-link">CALCULATORS</a></li>
-          <li class="mobile-nav-item"><a href="/about" class="mobile-nav-link">ABOUT ZAIM</a></li>
-          <li class="mobile-nav-item"><a href="/contact" class="mobile-nav-link">CONTACT</a></li>
-          <li class="mobile-nav-item"><a href="/coa" class="mobile-nav-link" style="color: #d97706; font-weight: 800;">COA PORTAL</a></li>
-          <li class="mobile-nav-item"><a href="/admin.html" class="mobile-nav-link">ADMIN DASHBOARD</a></li>
+          <li class="mobile-nav-item"><a href="javascript:void(0)" onclick="setFilterTab('all'); closeDrawer();" class="mobile-nav-link">SEMUA LISTING</a></li>
+          <li class="mobile-nav-item"><a href="javascript:void(0)" onclick="setFilterTab('undercon'); closeDrawer();" class="mobile-nav-link" style="color: #d97706; font-weight: 800;">PROJEK UNDERCON</a></li>
+          <li class="mobile-nav-item"><a href="javascript:void(0)" onclick="setFilterTab('subsale'); closeDrawer();" class="mobile-nav-link">SUBSALE</a></li>
+          <li class="mobile-nav-item"><a href="javascript:void(0)" onclick="setFilterTab('rental'); closeDrawer();" class="mobile-nav-link">SEWA (RENTAL)</a></li>
+          <li class="mobile-nav-item"><a href="javascript:void(0)" onclick="setFilterTab('commercial'); closeDrawer();" class="mobile-nav-link">KOMERSIL &amp; INDUSTRI</a></li>
+          <li class="mobile-nav-item" style="margin-top: 16px;"><a href="/" class="mobile-nav-link" style="color: #64748b;">LAMAN UTAMA</a></li>
+          <li class="mobile-nav-item"><a href="/properties" class="mobile-nav-link" style="color: #64748b;">SEMUA HARTANAH PORTAL</a></li>
         </ul>
       </div>
     </div>
@@ -523,7 +594,7 @@
         <span class="coa-badge-tag">Rangkaian B2B Rakan Agensi</span>
         <h1 class="coa-banner-title">Portal Rakan Agensi COA</h1>
         <p class="coa-banner-desc">
-          Sertai rangkaian rakan agensi Zaim Rosli (REN39575). Dapatkan pautan storefront katalog hartanah atas nama dan agensi anda sendiri.
+          Sertai rangkaian rakan agensi Zaim Rosli (REN39575). Dapatkan pautan storefront katalog projek undercon, subsale dan rental atas nama anda sendiri.
         </p>
       </div>
     </div>
@@ -537,20 +608,31 @@
 
       <!-- 1. PUBLIC STOREFRONT VIEW (Listings Catalog) -->
       <div id="coa-storefront-view" style="display: none;">
+        
+        <!-- Quick Filter Pills -->
+        <div class="coa-quick-pills">
+          <button type="button" class="coa-pill-btn active" id="pill-all" onclick="setFilterTab('all')">Semua Listing</button>
+          <button type="button" class="coa-pill-btn" id="pill-undercon" onclick="setFilterTab('undercon')">Projek Undercon (Baru)</button>
+          <button type="button" class="coa-pill-btn" id="pill-subsale" onclick="setFilterTab('subsale')">Subsale Sahaja</button>
+          <button type="button" class="coa-pill-btn" id="pill-rental" onclick="setFilterTab('rental')">Sewa (Rental)</button>
+          <button type="button" class="coa-pill-btn" id="pill-commercial" onclick="setFilterTab('commercial')">Komersil &amp; Industri</button>
+        </div>
+
         <!-- Filter Row -->
         <div class="partner-filter-row">
-          <input type="text" id="coa-search-kw" class="partner-search-field" placeholder="Cari mengikut lokasi, nama projek, atau jenis hartanah..." oninput="filterCoaListings()">
-          <select id="coa-cat-select" class="partner-cat-dropdown" onchange="filterCoaListings()">
+          <input type="text" id="coa-search-kw" class="partner-search-field" placeholder="Cari mengikut lokasi, nama projek, pemaju atau jenis hartanah..." oninput="filterCoaListings()">
+          <select id="coa-cat-select" class="partner-cat-dropdown" onchange="onDropdownCategoryChange()">
             <option value="all">Semua Kategori</option>
+            <option value="undercon">Projek Undercon (Baru)</option>
             <option value="subsale">Subsale Sahaja</option>
+            <option value="rental">Sewa (Rental)</option>
             <option value="commercial">Komersil &amp; Industri</option>
-            <option value="undercon">Projek Undercon</option>
           </select>
         </div>
 
         <!-- Listings Count Header -->
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
-          <h3 style="font-size: 1.05rem; font-weight: 800; color: #0f172a; margin: 0;">Senarai Hartanah Pilihan</h3>
+          <h3 style="font-size: 1.05rem; font-weight: 800; color: #0f172a; margin: 0;" id="coa-catalog-header-title">Senarai Hartanah &amp; Projek</h3>
           <span id="coa-listings-count" style="font-size: 0.82rem; font-weight: 700; color: #64748b;">0 listing</span>
         </div>
 
@@ -668,7 +750,7 @@
 
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script src="/properties-data.js?v=134"></script>
+  <script src="/properties-data.js?v=135"></script>
   <script src="/app.js?v=130"></script>
   <script>
     const SUPABASE_URL = 'https://csrzhidtzqxfbapsenhu.supabase.co';
@@ -679,6 +761,39 @@
     let codeCheckTimeout = null;
     let isCodeAvailable = false;
     let allCoaListings = [];
+    let activeCategory = 'all';
+
+    function closeDrawer() {
+      const drawer = document.getElementById('mobile-nav-drawer');
+      const overlay = document.getElementById('mobile-nav-overlay');
+      if (drawer) drawer.classList.remove('active');
+      if (overlay) overlay.classList.remove('active');
+    }
+
+    function setFilterTab(cat) {
+      activeCategory = cat;
+      
+      // Update dropdown
+      const sel = document.getElementById('coa-cat-select');
+      if (sel) sel.value = cat;
+
+      // Update pills
+      document.querySelectorAll('.coa-pill-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.id === 'pill-' + cat);
+      });
+
+      // Update nav links
+      document.querySelectorAll('.nav-links .nav-link').forEach(link => {
+        link.classList.toggle('active', link.id === 'tab-link-' + cat);
+      });
+
+      filterCoaListings();
+    }
+
+    function onDropdownCategoryChange() {
+      const val = document.getElementById('coa-cat-select').value;
+      setFilterTab(val);
+    }
 
     // Toast Notification
     function showToast(msg) {
@@ -1059,9 +1174,22 @@ Mohon semakan dan kelulusan akaun saya. Terima kasih!`);
       if (cleanPhone.startsWith('0')) cleanPhone = '60' + cleanPhone.substring(1);
       if (!cleanPhone.startsWith('60')) cleanPhone = '60' + cleanPhone;
 
-      const waMsg = encodeURIComponent(`Salam ${partner.full_name}, saya melawat portal hartanah anda di zaimrosli.my dan ingin bertanya tentang senarai listing yang ditawarkan.`);
+      const waMsg = encodeURIComponent(`Salam ${partner.full_name}, saya melawat portal hartanah anda di zaimrosli.my dan ingin bertanya tentang senarai projek/listing yang ditawarkan.`);
       document.getElementById('storefront-wa-btn').href = `https://wa.me/${cleanPhone}?text=${waMsg}`;
       document.getElementById('storefront-call-btn').href = `tel:+${cleanPhone}`;
+
+      // Update Nav Branding
+      const navBrandName = document.getElementById('coa-nav-brand-name');
+      const navBrandSub = document.getElementById('coa-nav-brand-sub');
+      const drawerBrandName = document.getElementById('drawer-brand-name');
+      const drawerBrandSub = document.getElementById('drawer-brand-sub');
+      const navCtaWa = document.getElementById('nav-cta-wa-btn');
+
+      if (navBrandName) navBrandName.textContent = partner.full_name;
+      if (navBrandSub) navBrandSub.textContent = `${partner.agency} • ${partner.ren_number}`;
+      if (drawerBrandName) drawerBrandName.textContent = partner.full_name;
+      if (drawerBrandSub) drawerBrandSub.textContent = `${partner.agency} • ${partner.ren_number}`;
+      if (navCtaWa) navCtaWa.href = `https://wa.me/${cleanPhone}?text=${waMsg}`;
 
       // Update Footer
       document.getElementById('footer-agent-title').textContent = `Katalog Hartanah Rakan Agensi — ${partner.full_name} (${partner.ren_number})`;
@@ -1078,7 +1206,7 @@ Mohon semakan dan kelulusan akaun saya. Terima kasih!`);
       loadCoaListings();
     }
 
-    // Load & Filter Listings (ONLY Zaim's own listings & undercons)
+    // Load & Filter Listings (Undercon projects, Zaim's own listings & open COA)
     function loadCoaListings() {
       const rawData = (Array.isArray(window.PROPERTIES_DATA) && window.PROPERTIES_DATA.length > 0)
         ? window.PROPERTIES_DATA
@@ -1087,12 +1215,20 @@ Mohon semakan dan kelulusan akaun saya. Terima kasih!`);
       allCoaListings = rawData.filter(p => {
         if (!p || p.hidden === true || (p.status || '').toLowerCase() === 'sold') return false;
         
-        // Strict filter: Only Zaim's direct listings and undercons
-        const isMy = p.listingSource === 'my_listing';
         const isUndercon = p.listingSource === 'undercon' || p.category === 'Undercon' || (p.type || '').toLowerCase().includes('undercon');
+        const isMy = p.listingSource === 'my_listing';
         const isOpenCoa = p.openForCoa === true;
         
-        return isMy || isUndercon || isOpenCoa;
+        return isUndercon || isMy || isOpenCoa;
+      });
+
+      // Sort so undercon projects appear first
+      allCoaListings.sort((a, b) => {
+        const aUndercon = a.category === 'Undercon' || a.listingSource === 'undercon';
+        const bUndercon = b.category === 'Undercon' || b.listingSource === 'undercon';
+        if (aUndercon && !bUndercon) return -1;
+        if (!aUndercon && bUndercon) return 1;
+        return 0;
       });
 
       filterCoaListings();
@@ -1100,7 +1236,6 @@ Mohon semakan dan kelulusan akaun saya. Terima kasih!`);
 
     function filterCoaListings() {
       const kw = (document.getElementById('coa-search-kw').value || '').toLowerCase().trim();
-      const cat = document.getElementById('coa-cat-select').value;
       const grid = document.getElementById('coa-listings-grid');
       const countEl = document.getElementById('coa-listings-count');
 
@@ -1108,19 +1243,24 @@ Mohon semakan dan kelulusan akaun saya. Terima kasih!`);
         const title = (item.title || '').toLowerCase();
         const loc = (item.location || item.region || '').toLowerCase();
         const type = (item.type || item.category || '').toLowerCase();
+        const dev = (item.developer || '').toLowerCase();
 
-        if (kw && !title.includes(kw) && !loc.includes(kw) && !type.includes(kw)) {
+        if (kw && !title.includes(kw) && !loc.includes(kw) && !type.includes(kw) && !dev.includes(kw)) {
           return false;
         }
 
-        if (cat === 'subsale') {
-          const isComm = /shop|office|factory|kilang|industr|kedai|pejabat|land|tanah/i.test(type);
-          if (isComm || item.category === 'Undercon') return false;
-        } else if (cat === 'commercial') {
-          const isComm = /shop|office|factory|kilang|industr|kedai|pejabat|land|tanah/i.test(type);
+        const isUndercon = item.category === 'Undercon' || (item.type || '').toLowerCase().includes('undercon') || item.listingSource === 'undercon';
+        const isRental = (item.status || '').toLowerCase() === 'rent' || item.category === 'Rental';
+        const isComm = /shop|office|factory|kilang|industr|kedai|pejabat|land|tanah/i.test(type);
+
+        if (activeCategory === 'undercon') {
+          if (!isUndercon) return false;
+        } else if (activeCategory === 'rental') {
+          if (!isRental) return false;
+        } else if (activeCategory === 'subsale') {
+          if (isUndercon || isRental || isComm) return false;
+        } else if (activeCategory === 'commercial') {
           if (!isComm) return false;
-        } else if (cat === 'undercon') {
-          if (item.category !== 'Undercon' && !type.includes('undercon') && item.listingSource !== 'undercon') return false;
         }
 
         return true;
@@ -1131,7 +1271,7 @@ Mohon semakan dan kelulusan akaun saya. Terima kasih!`);
       if (filtered.length === 0) {
         grid.innerHTML = `
           <div style="grid-column: 1 / -1; text-align: center; padding: 48px 20px; background: #ffffff; border-radius: 14px; border: 1px solid #e2e8f0;">
-            <p style="color: #64748b; font-size: 0.95rem; margin: 0;">Tiada listing ditemui untuk carian atau kategori ini.</p>
+            <p style="color: #64748b; font-size: 0.95rem; margin: 0;">Tiada listing ditemui untuk pilihan kategori atau carian ini.</p>
           </div>
         `;
         return;
@@ -1151,14 +1291,32 @@ Mohon semakan dan kelulusan akaun saya. Terima kasih!`);
           img = item.image.split(',')[0].trim();
         }
 
-        const isSale = (item.status || 'sale').toLowerCase() === 'sale';
-        const badgeStatus = isSale ? 'UNTUK DIJUAL' : 'UNTUK DISEWA';
+        const isUndercon = item.category === 'Undercon' || item.listingSource === 'undercon';
+        const isRent = (item.status || '').toLowerCase() === 'rent' || item.category === 'Rental';
+        
+        let badgeStatus = 'UNTUK DIJUAL';
+        let badgeClass = 'coa-tag-status';
+        if (isUndercon) {
+          badgeStatus = 'PROJEK BARU (UNDERCON)';
+          badgeClass = 'coa-tag-status undercon-tag';
+        } else if (isRent) {
+          badgeStatus = 'UNTUK DISEWA';
+        }
+
         const priceDisplay = item.priceStr || ('RM ' + Number(item.price || 0).toLocaleString());
         
+        // Specs snippet
+        const specsParts = [];
+        if (item.beds > 0) specsParts.push(`${item.beds} Bilik`);
+        if (item.baths > 0) specsParts.push(`${item.baths} Bilik Air`);
+        if (item.size > 0) specsParts.push(`${Number(item.size).toLocaleString()} kps`);
+        if (item.type) specsParts.push(item.type);
+        const specsText = specsParts.length > 0 ? specsParts.join(' • ') : (item.tenure || 'Pilihan Menarik');
+
         // Clean URL route with agent code
         const propTarget = item.slug || item.id;
         const propDetailUrl = `/property/${propTarget}/${pCode}`;
-        const itemWaMsg = encodeURIComponent(`Salam ${agentName}, saya berminat dengan listing "${item.title}" (${priceDisplay}) yang dipaparkan di portal anda.
+        const itemWaMsg = encodeURIComponent(`Salam ${agentName}, saya berminat dengan projek/listing "${item.title}" (${priceDisplay}) yang dipaparkan di portal anda.
 
 Pautan: https://zaimrosli.my${propDetailUrl}`);
         const itemWaUrl = `https://wa.me/${cleanPhone}?text=${itemWaMsg}`;
@@ -1168,7 +1326,7 @@ Pautan: https://zaimrosli.my${propDetailUrl}`);
             <div class="coa-thumb-box">
               <img src="${img}" alt="${(item.title || '').replace(/"/g, '&quot;')}" class="coa-thumb-img" loading="lazy" referrerpolicy="no-referrer" onerror="this.src='/icons/icon-192.png';">
               <div class="coa-tag-stack">
-                <span class="coa-tag-status">${badgeStatus}</span>
+                <span class="${badgeClass}">${badgeStatus}</span>
               </div>
             </div>
 
@@ -1176,6 +1334,7 @@ Pautan: https://zaimrosli.my${propDetailUrl}`);
               <div class="coa-loc-text">${item.location || item.region || 'Selangor'}</div>
               <div class="coa-title-text" title="${item.title}">${item.title}</div>
               <div class="coa-price-text">${priceDisplay}</div>
+              <div class="coa-specs-snippet">${specsText}</div>
 
               <div class="coa-actions-stack">
                 <a href="${itemWaUrl}" target="_blank" class="btn-coa-primary" style="padding: 10px; font-size: 0.85rem; text-decoration: none;">
