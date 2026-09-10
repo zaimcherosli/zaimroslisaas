@@ -1,4 +1,4 @@
-// PROPERTIES_DATA - Updated: 2026-09-11 (Audited Freehold & Presint 7)
+// PROPERTIES_DATA - Updated: 2026-09-11 (Cross-checked with JAZ Telegram Group)
 const PROPERTIES_DATA = [
   {
     "id": "undercon-perumahan-baru-teres-setingkat-taman-warisan-hijau",
@@ -16,8 +16,8 @@ const PROPERTIES_DATA = [
     "parking": 2,
     "size": 1253,
     "landSize": "-",
-    "tenure": "Leasehold (Malay Reserved)",
-    "lotType": "Malay Reserved",
+    "tenure": "Leasehold (Open Title)",
+    "lotType": "Open Title",
     "image": "https://thehartanahchannel.com/images/projects/perumahan-baru-teres-setingkat-taman-warisan-hijau/thumbnail.jpg",
     "images": [
       "https://thehartanahchannel.com/images/projects/perumahan-baru-teres-setingkat-taman-warisan-hijau/thumbnail.jpg"
@@ -27,7 +27,10 @@ const PROPERTIES_DATA = [
     "hidden": false,
     "listingSource": "undercon",
     "openForCoa": true,
-    "state": "Selangor"
+    "state": "Selangor",
+    "jazTelegramMsgId": 155,
+    "jazTelegramDate": "2026-05-20 16:07:53+00:00",
+    "telegramChannel": "https://t.me/+w7eOke94IdkzNDI1"
   },
   {
     "id": "undercon-perumahan-baru-teres-setingkat-taman-indah-puteri-",
@@ -45,8 +48,8 @@ const PROPERTIES_DATA = [
     "parking": 2,
     "size": 1121,
     "landSize": "-",
-    "tenure": "Leasehold (Malay Reserved)",
-    "lotType": "Malay Reserved",
+    "tenure": "Freehold (Malay Reserved / Bumi Lot)",
+    "lotType": "Malay Reserved / Bumi Lot",
     "image": "https://thehartanahchannel.com/images/projects/perumahan-baru-teres-setingkat-taman-indah-puteri-/thumbnail.jpg",
     "images": [
       "https://thehartanahchannel.com/images/projects/perumahan-baru-teres-setingkat-taman-indah-puteri-/thumbnail.jpg"
@@ -56,7 +59,10 @@ const PROPERTIES_DATA = [
     "hidden": false,
     "listingSource": "undercon",
     "openForCoa": true,
-    "state": "Selangor"
+    "state": "Selangor",
+    "jazTelegramMsgId": 154,
+    "jazTelegramDate": "2026-05-20 15:07:48+00:00",
+    "telegramChannel": "https://t.me/+MmVWXvcKPXo0ZWJl"
   },
   {
     "id": "undercon-brand-new-1-5-storey-superlinks-landed-house-hillt",
@@ -74,8 +80,8 @@ const PROPERTIES_DATA = [
     "parking": 2,
     "size": 1862,
     "landSize": "-",
-    "tenure": "Leasehold (Malay Reserved)",
-    "lotType": "Malay Reserved",
+    "tenure": "Freehold (Open Title)",
+    "lotType": "Open Title",
     "image": "https://thehartanahchannel.com/images/projects/brand-new-1-5-storey-superlinks-landed-house-hillt/thumbnail.jpg",
     "images": [
       "https://thehartanahchannel.com/images/projects/brand-new-1-5-storey-superlinks-landed-house-hillt/thumbnail.jpg"
@@ -85,7 +91,10 @@ const PROPERTIES_DATA = [
     "hidden": false,
     "listingSource": "undercon",
     "openForCoa": true,
-    "state": "Selangor"
+    "state": "Selangor",
+    "jazTelegramMsgId": 153,
+    "jazTelegramDate": "2026-05-19 14:44:31+00:00",
+    "telegramChannel": "https://t.me/+tTQKiB8suRAzYWE1"
   },
   {
     "id": "undercon-rumah-baru-teres-semi-d-setingkat-taman-dato-horma",
@@ -103,8 +112,8 @@ const PROPERTIES_DATA = [
     "parking": 2,
     "size": 1000,
     "landSize": "-",
-    "tenure": "Freehold (Malay Reserved)",
-    "lotType": "Malay Reserved",
+    "tenure": "Freehold (Malay Reserved / Bumi Lot)",
+    "lotType": "Malay Reserved / Bumi Lot",
     "image": "https://thehartanahchannel.com/images/projects/rumah-baru-teres-semi-d-setingkat-taman-dato-horma/thumbnail.jpg",
     "images": [
       "https://thehartanahchannel.com/images/projects/rumah-baru-teres-semi-d-setingkat-taman-dato-horma/thumbnail.jpg"
@@ -114,7 +123,10 @@ const PROPERTIES_DATA = [
     "hidden": false,
     "listingSource": "undercon",
     "openForCoa": true,
-    "state": "Selangor"
+    "state": "Selangor",
+    "jazTelegramMsgId": 151,
+    "jazTelegramDate": "2026-05-15 17:01:59+00:00",
+    "telegramChannel": "https://t.me/+nyC9lKD4fsphZmQ1"
   },
   {
     "id": "undercon-rumah-baru-2-tingkat-teres-di-lorong-mastam-jln-ke",
@@ -132,8 +144,8 @@ const PROPERTIES_DATA = [
     "parking": 2,
     "size": 1280,
     "landSize": "-",
-    "tenure": "Freehold (Malay Reserved)",
-    "lotType": "Malay Reserved",
+    "tenure": "Freehold (Malay Reserved / Bumi Lot)",
+    "lotType": "Malay Reserved / Bumi Lot",
     "image": "https://thehartanahchannel.com/images/projects/rumah-baru-2-tingkat-teres-di-lorong-mastam-jln-ke/thumbnail.jpg",
     "images": [
       "https://thehartanahchannel.com/images/projects/rumah-baru-2-tingkat-teres-di-lorong-mastam-jln-ke/thumbnail.jpg"
@@ -143,7 +155,9 @@ const PROPERTIES_DATA = [
     "hidden": false,
     "listingSource": "undercon",
     "openForCoa": true,
-    "state": "Selangor"
+    "state": "Selangor",
+    "jazTelegramMsgId": 140,
+    "jazTelegramDate": "2026-04-17 16:23:08+00:00"
   },
   {
     "id": "undercon-rumawip-rm300k-di-desa-timur-sungai-besi",
@@ -161,8 +175,8 @@ const PROPERTIES_DATA = [
     "parking": 2,
     "size": 800,
     "landSize": "-",
-    "tenure": "Leasehold (Malay Reserved)",
-    "lotType": "Malay Reserved",
+    "tenure": "Freehold (Open Title / Non-Bumi)",
+    "lotType": "Open Title / Non-Bumi",
     "image": "https://thehartanahchannel.com/images/projects/rumawip-rm300k-di-desa-timur-sungai-besi/thumbnail.jpg",
     "images": [
       "https://thehartanahchannel.com/images/projects/rumawip-rm300k-di-desa-timur-sungai-besi/thumbnail.jpg"
@@ -172,7 +186,10 @@ const PROPERTIES_DATA = [
     "hidden": false,
     "listingSource": "undercon",
     "openForCoa": true,
-    "state": "Kuala Lumpur"
+    "state": "Kuala Lumpur",
+    "jazTelegramMsgId": 137,
+    "jazTelegramDate": "2026-04-13 15:51:24+00:00",
+    "telegramChannel": "https://t.me/+_V8qwS0pmwxjMjNl"
   },
   {
     "id": "undercon-bumiputera-lot-rumawip-rm300k-di-salak-south-dibuk",
@@ -190,8 +207,8 @@ const PROPERTIES_DATA = [
     "parking": 2,
     "size": 852,
     "landSize": "-",
-    "tenure": "Leasehold (Malay Reserved)",
-    "lotType": "Malay Reserved",
+    "tenure": "Freehold (Malay Reserved / Bumi Lot)",
+    "lotType": "Malay Reserved / Bumi Lot",
     "image": "https://thehartanahchannel.com/images/projects/bumiputera-lot-rumawip-rm300k-di-salak-south-dibuk/thumbnail.jpg",
     "images": [
       "https://thehartanahchannel.com/images/projects/bumiputera-lot-rumawip-rm300k-di-salak-south-dibuk/thumbnail.jpg"
@@ -201,7 +218,10 @@ const PROPERTIES_DATA = [
     "hidden": false,
     "listingSource": "undercon",
     "openForCoa": true,
-    "state": "Kuala Lumpur"
+    "state": "Kuala Lumpur",
+    "jazTelegramMsgId": 136,
+    "jazTelegramDate": "2026-04-12 15:02:03+00:00",
+    "telegramChannel": "https://t.me/+4kPc5_weI1MzMzJl"
   },
   {
     "id": "undercon-rumawip-rm300k-di-presint-7-putrajaya-dibuka-juala",
@@ -219,8 +239,8 @@ const PROPERTIES_DATA = [
     "parking": 2,
     "size": 850,
     "landSize": "-",
-    "tenure": "Freehold (Pegangan Bebas)",
-    "lotType": "Open (Syarat Residensi Wilayah)",
+    "tenure": "Freehold (Open Title / Semua Bangsa)",
+    "lotType": "Open Title / Semua Bangsa",
     "image": "https://thehartanahchannel.com/images/projects/rumawip-rm300k-di-presint-7-putrajaya-dibuka-juala/thumbnail.jpg",
     "images": [
       "https://thehartanahchannel.com/images/projects/rumawip-rm300k-di-presint-7-putrajaya-dibuka-juala/thumbnail.jpg"
@@ -230,7 +250,10 @@ const PROPERTIES_DATA = [
     "hidden": false,
     "listingSource": "undercon",
     "openForCoa": true,
-    "state": "Putrajaya"
+    "state": "Putrajaya",
+    "jazTelegramMsgId": 135,
+    "jazTelegramDate": "2026-04-12 04:20:49+00:00",
+    "telegramChannel": "https://t.me/+s9iENjkWFiVkNjc1"
   },
   {
     "id": "undercon-brand-new-furnishd-2-tingkat-teres-kg-lombong-emas",
@@ -248,8 +271,8 @@ const PROPERTIES_DATA = [
     "parking": 4,
     "size": 2380,
     "landSize": "-",
-    "tenure": "Leasehold (Malay Reserved)",
-    "lotType": "Malay Reserved",
+    "tenure": "Leasehold (Malay Reserved / Bumi Lot)",
+    "lotType": "Malay Reserved / Bumi Lot",
     "image": "https://thehartanahchannel.com/images/projects/brand-new-furnishd-2-tingkat-teres-kg-lombong-emas/thumbnail.jpg",
     "images": [
       "https://thehartanahchannel.com/images/projects/brand-new-furnishd-2-tingkat-teres-kg-lombong-emas/thumbnail.jpg"
@@ -259,7 +282,10 @@ const PROPERTIES_DATA = [
     "hidden": false,
     "listingSource": "undercon",
     "openForCoa": true,
-    "state": "Selangor"
+    "state": "Selangor",
+    "jazTelegramMsgId": 131,
+    "jazTelegramDate": "2026-04-09 10:25:10+00:00",
+    "telegramChannel": "https://t.me/+ESVQL60wMKJkYTI1"
   },
   {
     "id": "undercon-rumah-baru-2-tingkat-teres-di-tmn-sijangkang-idama",
@@ -277,8 +303,8 @@ const PROPERTIES_DATA = [
     "parking": 2,
     "size": 1152,
     "landSize": "-",
-    "tenure": "Freehold (Malay Reserved)",
-    "lotType": "Malay Reserved",
+    "tenure": "Freehold (Malay Reserved / Bumi Lot)",
+    "lotType": "Malay Reserved / Bumi Lot",
     "image": "https://thehartanahchannel.com/images/projects/rumah-baru-2-tingkat-teres-di-tmn-sijangkang-idama/thumbnail.jpg",
     "images": [
       "https://thehartanahchannel.com/images/projects/rumah-baru-2-tingkat-teres-di-tmn-sijangkang-idama/thumbnail.jpg"
@@ -288,7 +314,10 @@ const PROPERTIES_DATA = [
     "hidden": false,
     "listingSource": "undercon",
     "openForCoa": true,
-    "state": "Selangor"
+    "state": "Selangor",
+    "jazTelegramMsgId": 130,
+    "jazTelegramDate": "2026-04-09 09:51:41+00:00",
+    "telegramChannel": "https://t.me/+qXDj08p0HpBkNGNl"
   },
   {
     "id": "undercon-brand-new-spacious-double-storey-terrace-in-taman-",
@@ -306,8 +335,8 @@ const PROPERTIES_DATA = [
     "parking": 4,
     "size": 2063,
     "landSize": "-",
-    "tenure": "Freehold (Non-Bumi / Open)",
-    "lotType": "Non-Bumi / Open Title",
+    "tenure": "Freehold (Open Title / Non-Bumi)",
+    "lotType": "Open Title / Non-Bumi",
     "image": "https://thehartanahchannel.com/images/projects/brand-new-spacious-double-storey-terrace-in-taman-/thumbnail.jpg",
     "images": [
       "https://thehartanahchannel.com/images/projects/brand-new-spacious-double-storey-terrace-in-taman-/thumbnail.jpg"
@@ -317,7 +346,10 @@ const PROPERTIES_DATA = [
     "hidden": false,
     "listingSource": "undercon",
     "openForCoa": true,
-    "state": "Selangor"
+    "state": "Selangor",
+    "jazTelegramMsgId": 129,
+    "jazTelegramDate": "2026-04-08 17:15:49+00:00",
+    "telegramChannel": "https://t.me/+k42zntwuZ3UwNzY1"
   },
   {
     "id": "undercon-low-density-freehold-exclusive-service-residence-i",
@@ -335,8 +367,8 @@ const PROPERTIES_DATA = [
     "parking": 2,
     "size": 1087,
     "landSize": "-",
-    "tenure": "Freehold (Non-Bumi / Open)",
-    "lotType": "Non-Bumi / Open Title",
+    "tenure": "Freehold (Open Title)",
+    "lotType": "Open Title",
     "image": "https://thehartanahchannel.com/images/projects/low-density-freehold-exclusive-service-residence-i/thumbnail.jpg",
     "images": [
       "https://thehartanahchannel.com/images/projects/low-density-freehold-exclusive-service-residence-i/thumbnail.jpg"
@@ -346,7 +378,10 @@ const PROPERTIES_DATA = [
     "hidden": false,
     "listingSource": "undercon",
     "openForCoa": true,
-    "state": "Selangor"
+    "state": "Selangor",
+    "jazTelegramMsgId": 123,
+    "jazTelegramDate": "2026-04-03 16:13:37+00:00",
+    "telegramChannel": "https://t.me/+y4tMod7nLG5lYWI9"
   },
   {
     "id": "undercon-freehold-2-tingkat-teres-2-5-tingkat-teres-di-desa",
@@ -364,8 +399,8 @@ const PROPERTIES_DATA = [
     "parking": 2,
     "size": 1850,
     "landSize": "-",
-    "tenure": "Freehold (Malay Reserved)",
-    "lotType": "Malay Reserved",
+    "tenure": "Freehold (Malay Reserved / Bumi Lot)",
+    "lotType": "Malay Reserved / Bumi Lot",
     "image": "https://thehartanahchannel.com/images/projects/freehold-2-tingkat-teres-2-5-tingkat-teres-di-desa/thumbnail.jpg",
     "images": [
       "https://thehartanahchannel.com/images/projects/freehold-2-tingkat-teres-2-5-tingkat-teres-di-desa/thumbnail.jpg"
@@ -375,7 +410,10 @@ const PROPERTIES_DATA = [
     "hidden": false,
     "listingSource": "undercon",
     "openForCoa": true,
-    "state": "Selangor"
+    "state": "Selangor",
+    "jazTelegramMsgId": 114,
+    "jazTelegramDate": "2026-03-23 15:31:42+00:00",
+    "telegramChannel": "https://t.me/+fphupLAgkKQ5MjE9"
   },
   {
     "id": "undercon-rumawip-rm300k-in-permaisuri-cheras-open-for-booki",
@@ -393,8 +431,8 @@ const PROPERTIES_DATA = [
     "parking": 2,
     "size": 900,
     "landSize": "-",
-    "tenure": "Leasehold (Malay Reserved)",
-    "lotType": "Malay Reserved",
+    "tenure": "Freehold (Open Title / Non-Bumi)",
+    "lotType": "Open Title / Non-Bumi",
     "image": "https://thehartanahchannel.com/images/projects/rumawip-rm300k-in-permaisuri-cheras-open-for-booki/thumbnail.jpg",
     "images": [
       "https://thehartanahchannel.com/images/projects/rumawip-rm300k-in-permaisuri-cheras-open-for-booki/thumbnail.jpg"
@@ -404,7 +442,10 @@ const PROPERTIES_DATA = [
     "hidden": false,
     "listingSource": "undercon",
     "openForCoa": true,
-    "state": "Kuala Lumpur"
+    "state": "Kuala Lumpur",
+    "jazTelegramMsgId": 96,
+    "jazTelegramDate": "2026-01-07 17:58:19+00:00",
+    "telegramChannel": "https://t.me/+garV2KNMYFRlODM1"
   },
   {
     "id": "undercon-the-vybe-soho-cyberjaya",
@@ -422,8 +463,8 @@ const PROPERTIES_DATA = [
     "parking": 1,
     "size": 1100,
     "landSize": "-",
-    "tenure": "Freehold (Malay Reserved)",
-    "lotType": "Malay Reserved",
+    "tenure": "Freehold (Open Title (Bumi & Non-Bumi))",
+    "lotType": "Open Title (Bumi & Non-Bumi)",
     "image": "https://thehartanahchannel.com/images/projects/the-vybe-soho-cyberjaya/thumbnail.jpg",
     "images": [
       "https://thehartanahchannel.com/images/projects/the-vybe-soho-cyberjaya/thumbnail.jpg"
@@ -433,7 +474,10 @@ const PROPERTIES_DATA = [
     "hidden": false,
     "listingSource": "undercon",
     "openForCoa": true,
-    "state": "Selangor"
+    "state": "Selangor",
+    "jazTelegramMsgId": 86,
+    "jazTelegramDate": "2025-12-09 16:09:49+00:00",
+    "telegramChannel": "https://t.me/+wkpxyecr3ls2Njc1"
   },
   {
     "id": "undercon-rumah-semi-d-setingkat-freehold-jenderam-hilir-den",
@@ -451,8 +495,8 @@ const PROPERTIES_DATA = [
     "parking": 2,
     "size": 1228,
     "landSize": "-",
-    "tenure": "Freehold (Malay Reserved)",
-    "lotType": "Malay Reserved",
+    "tenure": "Freehold (Malay Reserved / Bumi Lot)",
+    "lotType": "Malay Reserved / Bumi Lot",
     "image": "https://thehartanahchannel.com/images/projects/rumah-semi-d-setingkat-freehold-jenderam-hilir-den/thumbnail.jpg",
     "images": [
       "https://thehartanahchannel.com/images/projects/rumah-semi-d-setingkat-freehold-jenderam-hilir-den/thumbnail.jpg"
@@ -462,7 +506,10 @@ const PROPERTIES_DATA = [
     "hidden": false,
     "listingSource": "undercon",
     "openForCoa": true,
-    "state": "Selangor"
+    "state": "Selangor",
+    "jazTelegramMsgId": 84,
+    "jazTelegramDate": "2025-11-23 03:01:26+00:00",
+    "telegramChannel": "https://t.me/+dAozc8lTYQAyNDll"
   },
   {
     "id": "undercon-melayu-sahaja-rumah-teres-2-tingkat-kg-lombong-sek",
@@ -480,8 +527,8 @@ const PROPERTIES_DATA = [
     "parking": 2,
     "size": 896,
     "landSize": "-",
-    "tenure": "Leasehold (Malay Reserved)",
-    "lotType": "Malay Reserved",
+    "tenure": "Leasehold (Malay Reserved / Bumi Lot)",
+    "lotType": "Malay Reserved / Bumi Lot",
     "image": "https://thehartanahchannel.com/images/projects/melayu-sahaja-rumah-teres-2-tingkat-kg-lombong-sek/thumbnail.jpg",
     "images": [
       "https://thehartanahchannel.com/images/projects/melayu-sahaja-rumah-teres-2-tingkat-kg-lombong-sek/thumbnail.jpg"
@@ -491,7 +538,10 @@ const PROPERTIES_DATA = [
     "hidden": false,
     "listingSource": "undercon",
     "openForCoa": true,
-    "state": "Selangor"
+    "state": "Selangor",
+    "jazTelegramMsgId": 79,
+    "jazTelegramDate": "2025-11-02 12:41:55+00:00",
+    "telegramChannel": "https://t.me/+CTmMjDyNZdAzZDQ1"
   },
   {
     "id": "undercon-freehold-fully-furnished-exclusive-new-condo-sentu",
@@ -509,8 +559,8 @@ const PROPERTIES_DATA = [
     "parking": 2,
     "size": 667,
     "landSize": "-",
-    "tenure": "Freehold (Non-Bumi / Open)",
-    "lotType": "Non-Bumi / Open Title",
+    "tenure": "Freehold (Open Title / Non-Bumi)",
+    "lotType": "Open Title / Non-Bumi",
     "image": "https://thehartanahchannel.com/images/projects/freehold-fully-furnished-exclusive-new-condo-sentu/thumbnail.jpg",
     "images": [
       "https://thehartanahchannel.com/images/projects/freehold-fully-furnished-exclusive-new-condo-sentu/thumbnail.jpg"
@@ -520,7 +570,10 @@ const PROPERTIES_DATA = [
     "hidden": false,
     "listingSource": "undercon",
     "openForCoa": true,
-    "state": "Kuala Lumpur"
+    "state": "Kuala Lumpur",
+    "jazTelegramMsgId": 76,
+    "jazTelegramDate": "2025-10-29 12:45:28+00:00",
+    "telegramChannel": "https://t.me/+EkFhuJhpDrI0YWM1"
   },
   {
     "id": "undercon-rumah-selangorku-salak-tinggi-sepang",
@@ -538,8 +591,8 @@ const PROPERTIES_DATA = [
     "parking": 2,
     "size": 1100,
     "landSize": "-",
-    "tenure": "Leasehold (Malay Reserved)",
-    "lotType": "Malay Reserved",
+    "tenure": "Leasehold (Open Title)",
+    "lotType": "Open Title",
     "image": "https://thehartanahchannel.com/images/projects/rumah-selangorku-salak-tinggi-sepang/thumbnail.jpg",
     "images": [
       "https://thehartanahchannel.com/images/projects/rumah-selangorku-salak-tinggi-sepang/thumbnail.jpg"
@@ -549,7 +602,10 @@ const PROPERTIES_DATA = [
     "hidden": false,
     "listingSource": "undercon",
     "openForCoa": true,
-    "state": "Selangor"
+    "state": "Selangor",
+    "jazTelegramMsgId": 72,
+    "jazTelegramDate": "2025-10-25 13:43:40+00:00",
+    "telegramChannel": "https://t.me/+dZyNj6Gr7L00N2Zl"
   },
   {
     "id": "undercon-rumah-baru-design-moden-2-tingkat-teres-di-jln-mer",
@@ -567,8 +623,8 @@ const PROPERTIES_DATA = [
     "parking": 4,
     "size": 1974,
     "landSize": "-",
-    "tenure": "Leasehold (Malay Reserved)",
-    "lotType": "Malay Reserved",
+    "tenure": "Leasehold (Malay Reserved / Bumi Lot)",
+    "lotType": "Malay Reserved / Bumi Lot",
     "image": "https://thehartanahchannel.com/images/projects/rumah-baru-design-moden-2-tingkat-teres-di-jln-mer/thumbnail.jpg",
     "images": [
       "https://thehartanahchannel.com/images/projects/rumah-baru-design-moden-2-tingkat-teres-di-jln-mer/thumbnail.jpg"
@@ -578,7 +634,10 @@ const PROPERTIES_DATA = [
     "hidden": false,
     "listingSource": "undercon",
     "openForCoa": true,
-    "state": "Selangor"
+    "state": "Selangor",
+    "jazTelegramMsgId": 66,
+    "jazTelegramDate": "2025-10-10 14:35:02+00:00",
+    "telegramChannel": "https://t.me/+UqxsNjyGuR40ZDQ9"
   },
   {
     "id": "undercon-freehold-pangsapuri-selangor-ku-taman-jenderam-dam",
@@ -596,8 +655,8 @@ const PROPERTIES_DATA = [
     "parking": 2,
     "size": 1035,
     "landSize": "-",
-    "tenure": "Freehold (Malay Reserved)",
-    "lotType": "Malay Reserved",
+    "tenure": "Freehold (Malay Reserved / Bumi Lot)",
+    "lotType": "Malay Reserved / Bumi Lot",
     "image": "https://thehartanahchannel.com/images/projects/freehold-pangsapuri-selangor-ku-taman-jenderam-dam/thumbnail.jpg",
     "images": [
       "https://thehartanahchannel.com/images/projects/freehold-pangsapuri-selangor-ku-taman-jenderam-dam/thumbnail.jpg"
@@ -607,7 +666,10 @@ const PROPERTIES_DATA = [
     "hidden": false,
     "listingSource": "undercon",
     "openForCoa": true,
-    "state": "Selangor"
+    "state": "Selangor",
+    "jazTelegramMsgId": 62,
+    "jazTelegramDate": "2025-10-01 13:49:20+00:00",
+    "telegramChannel": "https://t.me/+0Le4SPu3OSI5MWQ1"
   },
   {
     "id": "undercon-rumah-baru-design-moden-2-tingkat-teres-di-jalan-m",
@@ -625,8 +687,8 @@ const PROPERTIES_DATA = [
     "parking": 4,
     "size": 2180,
     "landSize": "-",
-    "tenure": "Leasehold (Malay Reserved)",
-    "lotType": "Malay Reserved",
+    "tenure": "Leasehold (Malay Reserved / Bumi Lot)",
+    "lotType": "Malay Reserved / Bumi Lot",
     "image": "https://thehartanahchannel.com/images/projects/rumah-baru-design-moden-2-tingkat-teres-di-jalan-m/thumbnail.jpg",
     "images": [
       "https://thehartanahchannel.com/images/projects/rumah-baru-design-moden-2-tingkat-teres-di-jalan-m/thumbnail.jpg"
@@ -636,7 +698,10 @@ const PROPERTIES_DATA = [
     "hidden": false,
     "listingSource": "undercon",
     "openForCoa": true,
-    "state": "Selangor"
+    "state": "Selangor",
+    "jazTelegramMsgId": 61,
+    "jazTelegramDate": "2025-09-28 15:15:25+00:00",
+    "telegramChannel": "https://t.me/+zXBNOOV3ke41NjRl"
   },
   {
     "id": "undercon-freehold-brand-new-2-storey-terrace-jalan-pasar-ma",
@@ -654,8 +719,8 @@ const PROPERTIES_DATA = [
     "parking": 2,
     "size": 1210,
     "landSize": "-",
-    "tenure": "Freehold (Non-Bumi / Open)",
-    "lotType": "Non-Bumi / Open Title",
+    "tenure": "Freehold (Open Title / Non-Bumi)",
+    "lotType": "Open Title / Non-Bumi",
     "image": "https://thehartanahchannel.com/images/projects/freehold-brand-new-2-storey-terrace-jalan-pasar-ma/thumbnail.jpg",
     "images": [
       "https://thehartanahchannel.com/images/projects/freehold-brand-new-2-storey-terrace-jalan-pasar-ma/thumbnail.jpg"
@@ -665,7 +730,10 @@ const PROPERTIES_DATA = [
     "hidden": false,
     "listingSource": "undercon",
     "openForCoa": true,
-    "state": "Selangor"
+    "state": "Selangor",
+    "jazTelegramMsgId": 51,
+    "jazTelegramDate": "2025-07-27 05:11:26+00:00",
+    "telegramChannel": "https://t.me/+CYAnd7rZBEgyN2Nl"
   },
   {
     "id": "undercon-rumah-baru-teres-setingkat-dua-tingkat-di-taman-be",
@@ -683,8 +751,8 @@ const PROPERTIES_DATA = [
     "parking": 2,
     "size": 1151,
     "landSize": "-",
-    "tenure": "Freehold (Non-Bumi / Open)",
-    "lotType": "Non-Bumi / Open Title",
+    "tenure": "Freehold (Open Title / Non-Bumi)",
+    "lotType": "Open Title / Non-Bumi",
     "image": "https://thehartanahchannel.com/images/projects/rumah-baru-teres-setingkat-dua-tingkat-di-taman-be/thumbnail.jpg",
     "images": [
       "https://thehartanahchannel.com/images/projects/rumah-baru-teres-setingkat-dua-tingkat-di-taman-be/thumbnail.jpg"
@@ -694,7 +762,10 @@ const PROPERTIES_DATA = [
     "hidden": false,
     "listingSource": "undercon",
     "openForCoa": true,
-    "state": "Selangor"
+    "state": "Selangor",
+    "jazTelegramMsgId": 50,
+    "jazTelegramDate": "2025-07-26 11:22:58+00:00",
+    "telegramChannel": "https://t.me/+6nk0uIWRajcxN2Fl"
   },
   {
     "id": "undercon-exclusive-lifestyle-2-storey-landed-duplex-apartme",
@@ -712,8 +783,8 @@ const PROPERTIES_DATA = [
     "parking": 2,
     "size": 1475,
     "landSize": "-",
-    "tenure": "Leasehold (Non-Bumi / Open)",
-    "lotType": "Non-Bumi / Open Title",
+    "tenure": "Leasehold (Open Title)",
+    "lotType": "Open Title",
     "image": "https://thehartanahchannel.com/images/projects/exclusive-lifestyle-2-storey-landed-duplex-apartme/thumbnail.jpg",
     "images": [
       "https://thehartanahchannel.com/images/projects/exclusive-lifestyle-2-storey-landed-duplex-apartme/thumbnail.jpg"
@@ -723,7 +794,10 @@ const PROPERTIES_DATA = [
     "hidden": false,
     "listingSource": "undercon",
     "openForCoa": true,
-    "state": "Selangor"
+    "state": "Selangor",
+    "jazTelegramMsgId": 45,
+    "jazTelegramDate": "2025-07-24 13:47:35+00:00",
+    "telegramChannel": "https://t.me/+HwKHO-YUTKI1YmY1"
   },
   {
     "id": "undercon-zero-deposit-single-storey-banglo-desa-rening-jaya",
@@ -741,8 +815,8 @@ const PROPERTIES_DATA = [
     "parking": 2,
     "size": 1100,
     "landSize": "-",
-    "tenure": "Leasehold (Non-Bumi / Open)",
-    "lotType": "Non-Bumi / Open Title",
+    "tenure": "Leasehold (Open Title / Non-Bumi)",
+    "lotType": "Open Title / Non-Bumi",
     "image": "https://thehartanahchannel.com/images/projects/zero-deposit-single-storey-banglo-desa-rening-jaya/thumbnail.jpg",
     "images": [
       "https://thehartanahchannel.com/images/projects/zero-deposit-single-storey-banglo-desa-rening-jaya/thumbnail.jpg"
@@ -752,7 +826,10 @@ const PROPERTIES_DATA = [
     "hidden": false,
     "listingSource": "undercon",
     "openForCoa": true,
-    "state": "Selangor"
+    "state": "Selangor",
+    "jazTelegramMsgId": 44,
+    "jazTelegramDate": "2025-07-07 14:55:09+00:00",
+    "telegramChannel": "https://t.me/+-Aeyyg0kXdVhN2M1"
   },
   {
     "id": "undercon-brand-new-3-storey-terrace-house-antara-gapi-seren",
@@ -770,8 +847,8 @@ const PROPERTIES_DATA = [
     "parking": 2,
     "size": 2329,
     "landSize": "-",
-    "tenure": "Leasehold (Non-Bumi / Open)",
-    "lotType": "Non-Bumi / Open Title",
+    "tenure": "Leasehold (Open Title / Non-Bumi)",
+    "lotType": "Open Title / Non-Bumi",
     "image": "https://thehartanahchannel.com/images/projects/brand-new-3-storey-terrace-house-antara-gapi-seren/thumbnail.jpg",
     "images": [
       "https://thehartanahchannel.com/images/projects/brand-new-3-storey-terrace-house-antara-gapi-seren/thumbnail.jpg"
@@ -781,7 +858,10 @@ const PROPERTIES_DATA = [
     "hidden": false,
     "listingSource": "undercon",
     "openForCoa": true,
-    "state": "Selangor"
+    "state": "Selangor",
+    "jazTelegramMsgId": 43,
+    "jazTelegramDate": "2025-07-06 13:12:31+00:00",
+    "telegramChannel": "https://t.me/+_oIRMnN2Swk2MmQ1"
   },
   {
     "id": "undercon-rumah-teres-2-tingkat-baru-di-ulu-yam-bharu-batu-c",
@@ -799,8 +879,8 @@ const PROPERTIES_DATA = [
     "parking": 2,
     "size": 1694,
     "landSize": "-",
-    "tenure": "Leasehold (Malay Reserved)",
-    "lotType": "Malay Reserved",
+    "tenure": "Freehold (Open Title)",
+    "lotType": "Open Title",
     "image": "https://thehartanahchannel.com/images/projects/rumah-teres-2-tingkat-baru-di-ulu-yam-bharu-batu-c/thumbnail.jpg",
     "images": [
       "https://thehartanahchannel.com/images/projects/rumah-teres-2-tingkat-baru-di-ulu-yam-bharu-batu-c/thumbnail.jpg"
@@ -810,7 +890,10 @@ const PROPERTIES_DATA = [
     "hidden": false,
     "listingSource": "undercon",
     "openForCoa": true,
-    "state": "Selangor"
+    "state": "Selangor",
+    "jazTelegramMsgId": 41,
+    "jazTelegramDate": "2025-07-03 16:55:43+00:00",
+    "telegramChannel": "https://t.me/+_D8K-qad0sQ0MjU1"
   },
   {
     "id": "undercon-last-unit-reopen-balik-loan-tak-lepas",
@@ -828,8 +911,8 @@ const PROPERTIES_DATA = [
     "parking": 2,
     "size": 1100,
     "landSize": "-",
-    "tenure": "Leasehold (Malay Reserved)",
-    "lotType": "Malay Reserved",
+    "tenure": "Freehold (Open Title)",
+    "lotType": "Open Title",
     "image": "https://thehartanahchannel.com/images/projects/last-unit-reopen-balik-loan-tak-lepas/thumbnail.jpg",
     "images": [
       "https://thehartanahchannel.com/images/projects/last-unit-reopen-balik-loan-tak-lepas/thumbnail.jpg"
@@ -839,7 +922,9 @@ const PROPERTIES_DATA = [
     "hidden": false,
     "listingSource": "undercon",
     "openForCoa": true,
-    "state": "Selangor"
+    "state": "Selangor",
+    "jazTelegramMsgId": 39,
+    "jazTelegramDate": "2025-07-02 15:13:02+00:00"
   },
   {
     "id": "undercon-cheapest-freehold-service-residence-in-kota-warisa",
@@ -857,8 +942,8 @@ const PROPERTIES_DATA = [
     "parking": 2,
     "size": 904,
     "landSize": "-",
-    "tenure": "Freehold (Non-Bumi / Open)",
-    "lotType": "Non-Bumi / Open Title",
+    "tenure": "Freehold (Open Title)",
+    "lotType": "Open Title",
     "image": "https://thehartanahchannel.com/images/projects/cheapest-freehold-service-residence-in-kota-warisa/thumbnail.jpg",
     "images": [
       "https://thehartanahchannel.com/images/projects/cheapest-freehold-service-residence-in-kota-warisa/thumbnail.jpg"
@@ -868,7 +953,10 @@ const PROPERTIES_DATA = [
     "hidden": false,
     "listingSource": "undercon",
     "openForCoa": true,
-    "state": "Selangor"
+    "state": "Selangor",
+    "jazTelegramMsgId": 36,
+    "jazTelegramDate": "2025-06-19 13:45:41+00:00",
+    "telegramChannel": "https://t.me/+WD4NREMeSxYzNDE1"
   },
   {
     "id": "undercon-special-attention-team",
@@ -886,8 +974,8 @@ const PROPERTIES_DATA = [
     "parking": 2,
     "size": 1100,
     "landSize": "-",
-    "tenure": "Leasehold (Malay Reserved)",
-    "lotType": "Malay Reserved",
+    "tenure": "Freehold (Malay Reserved / Bumi Lot)",
+    "lotType": "Malay Reserved / Bumi Lot",
     "image": "https://thehartanahchannel.com/images/projects/jaz-bangau/thumbnail.jpg",
     "images": [
       "https://thehartanahchannel.com/images/projects/jaz-bangau/thumbnail.jpg"
@@ -897,7 +985,10 @@ const PROPERTIES_DATA = [
     "hidden": false,
     "listingSource": "undercon",
     "openForCoa": true,
-    "state": "Selangor"
+    "state": "Selangor",
+    "jazTelegramMsgId": 150,
+    "jazTelegramDate": "2026-05-14 17:04:10+00:00",
+    "telegramChannel": "https://t.me/+jR5C2zJGjPtlNjQ1"
   },
   {
     "id": "undercon-rumah-teres-setingkat-dua-tingkat-desa-anugerah-sa",
@@ -915,8 +1006,8 @@ const PROPERTIES_DATA = [
     "parking": 2,
     "size": 900,
     "landSize": "-",
-    "tenure": "Leasehold (Malay Reserved)",
-    "lotType": "Malay Reserved",
+    "tenure": "Freehold (Open Title)",
+    "lotType": "Open Title",
     "image": "https://thehartanahchannel.com/images/projects/rumah-teres-setingkat-dua-tingkat-desa-anugerah-sa/thumbnail.jpg",
     "images": [
       "https://thehartanahchannel.com/images/projects/rumah-teres-setingkat-dua-tingkat-desa-anugerah-sa/thumbnail.jpg"
@@ -926,7 +1017,10 @@ const PROPERTIES_DATA = [
     "hidden": false,
     "listingSource": "undercon",
     "openForCoa": true,
-    "state": "Selangor"
+    "state": "Selangor",
+    "jazTelegramMsgId": 28,
+    "jazTelegramDate": "2025-06-16 16:17:06+00:00",
+    "telegramChannel": "https://t.me/+sYFBglSvjK85YTQ9"
   },
   {
     "id": "undercon-brand-new-freehold-teres-setingkat-jenderam-hilir-",
@@ -944,8 +1038,8 @@ const PROPERTIES_DATA = [
     "parking": 2,
     "size": 1040,
     "landSize": "-",
-    "tenure": "Freehold (Malay Reserved)",
-    "lotType": "Malay Reserved",
+    "tenure": "Freehold (Malay Reserved / Bumi Lot)",
+    "lotType": "Malay Reserved / Bumi Lot",
     "image": "https://thehartanahchannel.com/images/projects/brand-new-freehold-teres-setingkat-jenderam-hilir-/thumbnail.jpg",
     "images": [
       "https://thehartanahchannel.com/images/projects/brand-new-freehold-teres-setingkat-jenderam-hilir-/thumbnail.jpg"
@@ -955,7 +1049,10 @@ const PROPERTIES_DATA = [
     "hidden": false,
     "listingSource": "undercon",
     "openForCoa": true,
-    "state": "Selangor"
+    "state": "Selangor",
+    "jazTelegramMsgId": 107,
+    "jazTelegramDate": "2026-02-07 14:55:24+00:00",
+    "telegramChannel": "https://t.me/+D2jKncTAWpZmYTI1"
   },
   {
     "id": "undercon-4-bilik-tidur-rumah-teres-setingkat-fasa-baru-tama",
@@ -973,8 +1070,8 @@ const PROPERTIES_DATA = [
     "parking": 2,
     "size": 1120,
     "landSize": "-",
-    "tenure": "Leasehold (Malay Reserved)",
-    "lotType": "Malay Reserved",
+    "tenure": "Freehold (Malay Reserved / Bumi Lot)",
+    "lotType": "Malay Reserved / Bumi Lot",
     "image": "https://thehartanahchannel.com/images/projects/4-bilik-tidur-rumah-teres-setingkat-fasa-baru-tama/thumbnail.jpg",
     "images": [
       "https://thehartanahchannel.com/images/projects/4-bilik-tidur-rumah-teres-setingkat-fasa-baru-tama/thumbnail.jpg"
@@ -984,7 +1081,10 @@ const PROPERTIES_DATA = [
     "hidden": false,
     "listingSource": "undercon",
     "openForCoa": true,
-    "state": "Selangor"
+    "state": "Selangor",
+    "jazTelegramMsgId": 22,
+    "jazTelegramDate": "2025-06-13 14:54:03+00:00",
+    "telegramChannel": "https://t.me/+X3Tdz9_7QzAyNjVl"
   },
   {
     "id": "undercon-banglo-harga-teres-kerayong-hills-berdekatan-punca",
@@ -1002,8 +1102,8 @@ const PROPERTIES_DATA = [
     "parking": 2,
     "size": 1173,
     "landSize": "-",
-    "tenure": "Leasehold (Malay Reserved)",
-    "lotType": "Malay Reserved",
+    "tenure": "Leasehold (Open Title)",
+    "lotType": "Open Title",
     "image": "https://thehartanahchannel.com/images/projects/jaz-bangau/thumbnail.jpg",
     "images": [
       "https://thehartanahchannel.com/images/projects/jaz-bangau/thumbnail.jpg"
@@ -1013,7 +1113,10 @@ const PROPERTIES_DATA = [
     "hidden": false,
     "listingSource": "undercon",
     "openForCoa": true,
-    "state": "Selangor"
+    "state": "Selangor",
+    "jazTelegramMsgId": 7,
+    "jazTelegramDate": "2025-06-03 16:18:25+00:00",
+    "telegramChannel": "https://t.me/+vR7TvwoIy4phMGY1"
   },
   {
     "id": "undercon-tmn-semarang-intan-ph-5-lot-2752",
@@ -1103,8 +1206,8 @@ const PROPERTIES_DATA = [
     "parking": 4132,
     "size": 1101,
     "landSize": "-",
-    "tenure": "Leasehold (Non-Bumi / Open)",
-    "lotType": "Non-Bumi / Open Title",
+    "tenure": "Leasehold (Open Title / Non-Bumi)",
+    "lotType": "Open Title / Non-Bumi",
     "image": "https://thehartanahchannel.com/images/projects/laman-cherakah-seksyen-u15-shah-alam-teres-setingkat-dua-tingkat/thumbnail.jpg",
     "images": [
       "https://thehartanahchannel.com/images/projects/laman-cherakah-seksyen-u15-shah-alam-teres-setingkat-dua-tingkat/thumbnail.jpg",
@@ -1121,7 +1224,10 @@ const PROPERTIES_DATA = [
     "hidden": false,
     "listingSource": "undercon",
     "openForCoa": true,
-    "state": "Selangor"
+    "state": "Selangor",
+    "jazTelegramMsgId": 160,
+    "jazTelegramDate": "2026-06-17 17:52:52+00:00",
+    "telegramChannel": "https://t.me/+bAprVvJjaRhhNWE1"
   },
   {
     "id": "undercon-taman-desa-bukit-permata-jln-rebung-kapar-klang",
@@ -1139,8 +1245,8 @@ const PROPERTIES_DATA = [
     "parking": 2,
     "size": 1823,
     "landSize": "-",
-    "tenure": "Freehold (Malay Reserved)",
-    "lotType": "Malay Reserved",
+    "tenure": "Freehold (Malay Reserved / Bumi Lot)",
+    "lotType": "Malay Reserved / Bumi Lot",
     "image": "https://thehartanahchannel.com/images/projects/taman-desa-bukit-permata-jln-rebung-kapar-klang/thumbnail.jpg",
     "images": [
       "https://thehartanahchannel.com/images/projects/taman-desa-bukit-permata-jln-rebung-kapar-klang/thumbnail.jpg",
@@ -1157,7 +1263,10 @@ const PROPERTIES_DATA = [
     "hidden": false,
     "listingSource": "undercon",
     "openForCoa": true,
-    "state": "Selangor"
+    "state": "Selangor",
+    "jazTelegramMsgId": 162,
+    "jazTelegramDate": "2026-06-18 13:02:02+00:00",
+    "telegramChannel": "https://t.me/+oNRRQojUFwJkNmU1"
   },
   {
     "id": "undercon-harmoni-indah-pulau-indah-teres-2-tingkat",
@@ -1175,8 +1284,8 @@ const PROPERTIES_DATA = [
     "parking": 2,
     "size": 1200,
     "landSize": "-",
-    "tenure": "Freehold (Malay Reserved)",
-    "lotType": "Malay Reserved",
+    "tenure": "Freehold (Malay Reserved / Bumi Lot)",
+    "lotType": "Malay Reserved / Bumi Lot",
     "image": "https://thehartanahchannel.com/images/projects/harmoni-indah-pulau-indah-teres-2-tingkat/thumbnail.jpg",
     "images": [
       "https://thehartanahchannel.com/images/projects/harmoni-indah-pulau-indah-teres-2-tingkat/thumbnail.jpg",
@@ -1193,7 +1302,10 @@ const PROPERTIES_DATA = [
     "hidden": false,
     "listingSource": "undercon",
     "openForCoa": true,
-    "state": "Selangor"
+    "state": "Selangor",
+    "jazTelegramMsgId": 150,
+    "jazTelegramDate": "2026-05-14 17:04:10+00:00",
+    "telegramChannel": "https://t.me/+jR5C2zJGjPtlNjQ1"
   },
   {
     "id": "undercon-tmn-sri-kandi-jln-sukepi-jenjarom",
@@ -1211,8 +1323,8 @@ const PROPERTIES_DATA = [
     "parking": 4,
     "size": 1698,
     "landSize": "-",
-    "tenure": "Leasehold (Malay Reserved)",
-    "lotType": "Malay Reserved",
+    "tenure": "Freehold (Malay Reserved / Bumi Lot)",
+    "lotType": "Malay Reserved / Bumi Lot",
     "image": "https://thehartanahchannel.com/images/projects/tmn-sri-kandi-jln-sukepi-jenjarom/thumbnail.jpg",
     "images": [
       "https://thehartanahchannel.com/images/projects/tmn-sri-kandi-jln-sukepi-jenjarom/thumbnail.jpg",
@@ -1229,7 +1341,10 @@ const PROPERTIES_DATA = [
     "hidden": false,
     "listingSource": "undercon",
     "openForCoa": true,
-    "state": "Selangor"
+    "state": "Selangor",
+    "jazTelegramMsgId": 158,
+    "jazTelegramDate": "2026-06-17 15:00:57+00:00",
+    "telegramChannel": "https://t.me/+XgQLiCeaA482ODk1"
   },
   {
     "id": "undercon-3-storey-townhouse-aurelia-senna-puteri-salak-tinggi",
@@ -1247,8 +1362,8 @@ const PROPERTIES_DATA = [
     "parking": 1,
     "size": 1690,
     "landSize": "-",
-    "tenure": "Leasehold (Malay Reserved)",
-    "lotType": "Malay Reserved",
+    "tenure": "Freehold (Open Title)",
+    "lotType": "Open Title",
     "image": "https://thehartanahchannel.com/images/projects/3-storey-townhouse-aurelia-senna-puteri-salak-tinggi/thumbnail.jpg",
     "images": [
       "https://thehartanahchannel.com/images/projects/3-storey-townhouse-aurelia-senna-puteri-salak-tinggi/thumbnail.jpg",
@@ -1265,7 +1380,10 @@ const PROPERTIES_DATA = [
     "hidden": false,
     "listingSource": "undercon",
     "openForCoa": true,
-    "state": "Selangor"
+    "state": "Selangor",
+    "jazTelegramMsgId": 37,
+    "jazTelegramDate": "2025-06-19 16:28:00+00:00",
+    "telegramChannel": "https://t.me/+tTQKiB8suRAzYWE1"
   },
   {
     "id": "undercon-tmn-kelana-kapar-rantau-panjang-klang-teres-setingkat",
@@ -1283,8 +1401,8 @@ const PROPERTIES_DATA = [
     "parking": 2,
     "size": 1080,
     "landSize": "-",
-    "tenure": "Leasehold (Non-Bumi / Open)",
-    "lotType": "Non-Bumi / Open Title",
+    "tenure": "Freehold (Malay Reserved / Bumi Lot)",
+    "lotType": "Malay Reserved / Bumi Lot",
     "image": "https://thehartanahchannel.com/images/projects/tmn-kelana-kapar-rantau-panjang-klang-teres-setingkat/thumbnail.jpg",
     "images": [
       "https://thehartanahchannel.com/images/projects/tmn-kelana-kapar-rantau-panjang-klang-teres-setingkat/thumbnail.jpg",
@@ -1301,7 +1419,10 @@ const PROPERTIES_DATA = [
     "hidden": false,
     "listingSource": "undercon",
     "openForCoa": true,
-    "state": "Selangor"
+    "state": "Selangor",
+    "jazTelegramMsgId": 162,
+    "jazTelegramDate": "2026-06-18 13:02:02+00:00",
+    "telegramChannel": "https://t.me/+oNRRQojUFwJkNmU1"
   },
   {
     "id": "undercon-tmn-langat-utama-3-phase-2-teres-1-2-tingkat",
@@ -1319,8 +1440,8 @@ const PROPERTIES_DATA = [
     "parking": 2,
     "size": 1095,
     "landSize": "-",
-    "tenure": "Leasehold (Malay Reserved)",
-    "lotType": "Malay Reserved",
+    "tenure": "Leasehold (Malay Reserved / Bumi Lot)",
+    "lotType": "Malay Reserved / Bumi Lot",
     "image": "https://thehartanahchannel.com/images/projects/tmn-langat-utama-3-phase-2-teres-1-2-tingkat/thumbnail.jpg",
     "images": [
       "https://thehartanahchannel.com/images/projects/tmn-langat-utama-3-phase-2-teres-1-2-tingkat/thumbnail.jpg",
@@ -1337,7 +1458,10 @@ const PROPERTIES_DATA = [
     "hidden": false,
     "listingSource": "undercon",
     "openForCoa": true,
-    "state": "Selangor"
+    "state": "Selangor",
+    "jazTelegramMsgId": 120,
+    "jazTelegramDate": "2026-03-29 14:22:27+00:00",
+    "telegramChannel": "https://t.me/+deet7rmm_1g1MWNl"
   },
   {
     "id": "undercon-semi-d-teres-setingkat-jln-pipit-telok-panglima-garang",
@@ -1355,8 +1479,8 @@ const PROPERTIES_DATA = [
     "parking": 2,
     "size": 1210,
     "landSize": "-",
-    "tenure": "Leasehold (Malay Reserved)",
-    "lotType": "Malay Reserved",
+    "tenure": "Leasehold (Malay Reserved / Bumi Lot)",
+    "lotType": "Malay Reserved / Bumi Lot",
     "image": "https://thehartanahchannel.com/images/projects/semi-d-teres-setingkat-jln-pipit-telok-panglima-garang/thumbnail.jpg",
     "images": [
       "https://thehartanahchannel.com/images/projects/semi-d-teres-setingkat-jln-pipit-telok-panglima-garang/thumbnail.jpg",
@@ -1373,7 +1497,10 @@ const PROPERTIES_DATA = [
     "hidden": false,
     "listingSource": "undercon",
     "openForCoa": true,
-    "state": "Selangor"
+    "state": "Selangor",
+    "jazTelegramMsgId": 159,
+    "jazTelegramDate": "2026-06-17 16:18:45+00:00",
+    "telegramChannel": "https://t.me/+3xsVkwbGYCI2ZjE1"
   },
   {
     "id": "undercon-2-storey-terrace-house-allamanda-saujana-klia",
@@ -1391,8 +1518,8 @@ const PROPERTIES_DATA = [
     "parking": 2,
     "size": 1200,
     "landSize": "-",
-    "tenure": "Leasehold (Non-Bumi / Open)",
-    "lotType": "Non-Bumi / Open Title",
+    "tenure": "Leasehold (Open Title / Non-Bumi)",
+    "lotType": "Open Title / Non-Bumi",
     "image": "https://thehartanahchannel.com/images/projects/2-storey-terrace-house-allamanda-saujana-klia/thumbnail.jpg",
     "images": [
       "https://thehartanahchannel.com/images/projects/2-storey-terrace-house-allamanda-saujana-klia/thumbnail.jpg",
@@ -1409,7 +1536,10 @@ const PROPERTIES_DATA = [
     "hidden": false,
     "listingSource": "undercon",
     "openForCoa": true,
-    "state": "Selangor"
+    "state": "Selangor",
+    "jazTelegramMsgId": 81,
+    "jazTelegramDate": "2025-11-03 11:04:12+00:00",
+    "telegramChannel": "https://t.me/+TlJ0qiYYyZ80ODM1"
   },
   {
     "id": "undercon-semi-d-tmn-langat-utama-3-bkt-changgang",
@@ -1427,7 +1557,7 @@ const PROPERTIES_DATA = [
     "parking": 2,
     "size": 1200,
     "landSize": "-",
-    "tenure": "Freehold",
+    "tenure": "Freehold (Open Title)",
     "lotType": "Open Title",
     "image": "https://thehartanahchannel.com/images/projects/semi-d-tmn-langat-utama-3-bkt-changgang/thumbnail.jpg",
     "images": [
@@ -1445,7 +1575,10 @@ const PROPERTIES_DATA = [
     "hidden": false,
     "listingSource": "undercon",
     "openForCoa": true,
-    "state": "Selangor"
+    "state": "Selangor",
+    "jazTelegramMsgId": 133,
+    "jazTelegramDate": "2026-04-09 16:06:57+00:00",
+    "telegramChannel": "https://t.me/+DfameVeNutZjN2Q1"
   },
   {
     "id": "undercon-fona-vista-bukit-ampang-block-b",
@@ -1463,8 +1596,8 @@ const PROPERTIES_DATA = [
     "parking": 2,
     "size": 1200,
     "landSize": "-",
-    "tenure": "Leasehold (Malay Reserved)",
-    "lotType": "Malay Reserved",
+    "tenure": "Freehold (Open Title)",
+    "lotType": "Open Title",
     "image": "https://thehartanahchannel.com/images/projects/fona-vista-bukit-ampang-block-b/thumbnail.jpg",
     "images": [
       "https://thehartanahchannel.com/images/projects/fona-vista-bukit-ampang-block-b/thumbnail.jpg",
@@ -1481,7 +1614,10 @@ const PROPERTIES_DATA = [
     "hidden": false,
     "listingSource": "undercon",
     "openForCoa": true,
-    "state": "Selangor"
+    "state": "Selangor",
+    "jazTelegramMsgId": 78,
+    "jazTelegramDate": "2025-10-31 14:23:19+00:00",
+    "telegramChannel": "https://t.me/+tiF5WXHu9uFjNTE1"
   },
   {
     "id": "undercon-tmn-bajuri-olak-lempit-banting",
@@ -1499,8 +1635,8 @@ const PROPERTIES_DATA = [
     "parking": 4,
     "size": 1996,
     "landSize": "-",
-    "tenure": "Leasehold (Malay Reserved)",
-    "lotType": "Malay Reserved",
+    "tenure": "Leasehold (Malay Reserved / Bumi Lot)",
+    "lotType": "Malay Reserved / Bumi Lot",
     "image": "https://thehartanahchannel.com/images/projects/tmn-bajuri-olak-lempit-banting/thumbnail.jpg",
     "images": [
       "https://thehartanahchannel.com/images/projects/tmn-bajuri-olak-lempit-banting/thumbnail.jpg",
@@ -1517,7 +1653,10 @@ const PROPERTIES_DATA = [
     "hidden": false,
     "listingSource": "undercon",
     "openForCoa": true,
-    "state": "Selangor"
+    "state": "Selangor",
+    "jazTelegramMsgId": 132,
+    "jazTelegramDate": "2026-04-09 16:05:53+00:00",
+    "telegramChannel": "https://t.me/+p5ku1-pR2mQwMzM1"
   },
   {
     "id": "undercon-tmn-mutiara-salak-dsth-ss-semi-d",
@@ -1535,7 +1674,7 @@ const PROPERTIES_DATA = [
     "parking": 2,
     "size": 1200,
     "landSize": "-",
-    "tenure": "Freehold",
+    "tenure": "Freehold (Open Title)",
     "lotType": "Open Title",
     "image": "https://thehartanahchannel.com/images/projects/tmn-mutiara-salak-dsth-ss-semi-d/thumbnail.jpg",
     "images": [
@@ -1553,7 +1692,10 @@ const PROPERTIES_DATA = [
     "hidden": false,
     "listingSource": "undercon",
     "openForCoa": true,
-    "state": "Selangor"
+    "state": "Selangor",
+    "jazTelegramMsgId": 134,
+    "jazTelegramDate": "2026-04-09 16:40:25+00:00",
+    "telegramChannel": "https://t.me/+tncz30_oXxM4Zjg1"
   },
   {
     "id": "undercon-tmn-sri-kandi-jenjarom",
@@ -1600,8 +1742,8 @@ const PROPERTIES_DATA = [
     "parking": 2,
     "size": 1197,
     "landSize": "-",
-    "tenure": "Freehold (Malay Reserved)",
-    "lotType": "Malay Reserved",
+    "tenure": "Freehold (Malay Reserved / Bumi Lot)",
+    "lotType": "Malay Reserved / Bumi Lot",
     "image": "https://thehartanahchannel.com/images/projects/semi-d-setingkat-jenderam-aman-dengkil/thumbnail.jpg",
     "images": [
       "https://thehartanahchannel.com/images/projects/semi-d-setingkat-jenderam-aman-dengkil/thumbnail.jpg",
@@ -1618,7 +1760,10 @@ const PROPERTIES_DATA = [
     "hidden": false,
     "listingSource": "undercon",
     "openForCoa": true,
-    "state": "Selangor"
+    "state": "Selangor",
+    "jazTelegramMsgId": 56,
+    "jazTelegramDate": "2025-09-10 15:22:17+00:00",
+    "telegramChannel": "https://t.me/+h7rM6bEpeOZiMThl"
   },
   {
     "id": "undercon-jenderam-murni-single-storey",
@@ -1636,8 +1781,8 @@ const PROPERTIES_DATA = [
     "parking": 2,
     "size": 1052,
     "landSize": "-",
-    "tenure": "Freehold (Malay Reserved)",
-    "lotType": "Malay Reserved",
+    "tenure": "Freehold (Malay Reserved / Bumi Lot)",
+    "lotType": "Malay Reserved / Bumi Lot",
     "image": "https://thehartanahchannel.com/images/projects/jenderam-murni-single-storey/thumbnail.jpg",
     "images": [
       "https://thehartanahchannel.com/images/projects/jenderam-murni-single-storey/thumbnail.jpg",
@@ -1654,7 +1799,10 @@ const PROPERTIES_DATA = [
     "hidden": false,
     "listingSource": "undercon",
     "openForCoa": true,
-    "state": "Selangor"
+    "state": "Selangor",
+    "jazTelegramMsgId": 107,
+    "jazTelegramDate": "2026-02-07 14:55:24+00:00",
+    "telegramChannel": "https://t.me/+D2jKncTAWpZmYTI1"
   },
   {
     "id": "undercon-taman-dato-hormat-kg-sungai-kembung-pulau-indah",
@@ -1672,8 +1820,8 @@ const PROPERTIES_DATA = [
     "parking": 2,
     "size": 1000,
     "landSize": "-",
-    "tenure": "Freehold (Malay Reserved)",
-    "lotType": "Malay Reserved",
+    "tenure": "Freehold (Malay Reserved / Bumi Lot)",
+    "lotType": "Malay Reserved / Bumi Lot",
     "image": "https://thehartanahchannel.com/images/projects/taman-dato-hormat-kg-sungai-kembung-pulau-indah/thumbnail.jpg",
     "images": [
       "https://thehartanahchannel.com/images/projects/taman-dato-hormat-kg-sungai-kembung-pulau-indah/thumbnail.jpg",
@@ -1690,7 +1838,10 @@ const PROPERTIES_DATA = [
     "hidden": false,
     "listingSource": "undercon",
     "openForCoa": true,
-    "state": "Selangor"
+    "state": "Selangor",
+    "jazTelegramMsgId": 151,
+    "jazTelegramDate": "2026-05-15 17:01:59+00:00",
+    "telegramChannel": "https://t.me/+nyC9lKD4fsphZmQ1"
   },
   {
     "id": "undercon-tmn-seri-changgang-3-teres-setingkat",
@@ -1708,8 +1859,8 @@ const PROPERTIES_DATA = [
     "parking": 2,
     "size": 1160,
     "landSize": "-",
-    "tenure": "Leasehold (Malay Reserved)",
-    "lotType": "Malay Reserved",
+    "tenure": "Leasehold (Malay Reserved / Bumi Lot)",
+    "lotType": "Malay Reserved / Bumi Lot",
     "image": "https://thehartanahchannel.com/images/projects/tmn-seri-changgang-3-teres-setingkat/thumbnail.jpg",
     "images": [
       "https://thehartanahchannel.com/images/projects/tmn-seri-changgang-3-teres-setingkat/thumbnail.jpg",
@@ -1725,7 +1876,10 @@ const PROPERTIES_DATA = [
     "hidden": false,
     "listingSource": "undercon",
     "openForCoa": true,
-    "state": "Selangor"
+    "state": "Selangor",
+    "jazTelegramMsgId": 120,
+    "jazTelegramDate": "2026-03-29 14:22:27+00:00",
+    "telegramChannel": "https://t.me/+deet7rmm_1g1MWNl"
   },
   {
     "id": "undercon-flora-hijauan-melati-east-kl",
@@ -1743,8 +1897,8 @@ const PROPERTIES_DATA = [
     "parking": 2,
     "size": 848,
     "landSize": "-",
-    "tenure": "Leasehold (Malay Reserved)",
-    "lotType": "Malay Reserved",
+    "tenure": "Freehold (Malay Reserved / Bumi Lot)",
+    "lotType": "Malay Reserved / Bumi Lot",
     "image": "https://thehartanahchannel.com/images/projects/flora-hijauan-melati-east-kl/thumbnail.jpg",
     "images": [
       "https://thehartanahchannel.com/images/projects/flora-hijauan-melati-east-kl/thumbnail.jpg",
@@ -1761,7 +1915,10 @@ const PROPERTIES_DATA = [
     "hidden": false,
     "listingSource": "undercon",
     "openForCoa": true,
-    "state": "Kuala Lumpur"
+    "state": "Kuala Lumpur",
+    "jazTelegramMsgId": 104,
+    "jazTelegramDate": "2026-01-25 12:49:31+00:00",
+    "telegramChannel": "https://t.me/+z4V0PMGwt3QxYmU1"
   },
   {
     "id": "undercon-2-storey-terrace-tmn-bkt-permata-jln-rebung-kapar-klang",
@@ -1779,8 +1936,8 @@ const PROPERTIES_DATA = [
     "parking": 2,
     "size": 1823,
     "landSize": "-",
-    "tenure": "Freehold (Malay Reserved)",
-    "lotType": "Malay Reserved",
+    "tenure": "Freehold (Malay Reserved / Bumi Lot)",
+    "lotType": "Malay Reserved / Bumi Lot",
     "image": "https://thehartanahchannel.com/images/projects/2-storey-terrace-tmn-bkt-permata-jln-rebung-kapar-klang/thumbnail.jpg",
     "images": [
       "https://thehartanahchannel.com/images/projects/2-storey-terrace-tmn-bkt-permata-jln-rebung-kapar-klang/thumbnail.jpg",
@@ -1792,7 +1949,10 @@ const PROPERTIES_DATA = [
     "hidden": false,
     "listingSource": "undercon",
     "openForCoa": true,
-    "state": "Selangor"
+    "state": "Selangor",
+    "jazTelegramMsgId": 162,
+    "jazTelegramDate": "2026-06-18 13:02:02+00:00",
+    "telegramChannel": "https://t.me/+oNRRQojUFwJkNmU1"
   },
   {
     "id": "undercon-taman-salak-impian-sepang",
@@ -1810,8 +1970,8 @@ const PROPERTIES_DATA = [
     "parking": 2,
     "size": 1120,
     "landSize": "-",
-    "tenure": "Leasehold (Malay Reserved)",
-    "lotType": "Malay Reserved",
+    "tenure": "Freehold (Malay Reserved / Bumi Lot)",
+    "lotType": "Malay Reserved / Bumi Lot",
     "image": "https://thehartanahchannel.com/images/projects/taman-salak-impian-sepang/thumbnail.jpg",
     "images": [
       "https://thehartanahchannel.com/images/projects/taman-salak-impian-sepang/thumbnail.jpg",
@@ -1826,7 +1986,10 @@ const PROPERTIES_DATA = [
     "hidden": false,
     "listingSource": "undercon",
     "openForCoa": true,
-    "state": "Selangor"
+    "state": "Selangor",
+    "jazTelegramMsgId": 145,
+    "jazTelegramDate": "2026-04-17 17:38:31+00:00",
+    "telegramChannel": "https://t.me/+VEM-d_QoUVBiYjE9"
   },
   {
     "id": "undercon-teres-2-tingkat-taman-shah-bandar-2-klang",
@@ -1844,8 +2007,8 @@ const PROPERTIES_DATA = [
     "parking": 2,
     "size": 1763,
     "landSize": "-",
-    "tenure": "Freehold (Malay Reserved)",
-    "lotType": "Malay Reserved",
+    "tenure": "Freehold (Malay Reserved / Bumi Lot)",
+    "lotType": "Malay Reserved / Bumi Lot",
     "image": "https://thehartanahchannel.com/images/projects/taman-shah-bandar-2-klang/thumbnail.jpg",
     "images": [
       "https://thehartanahchannel.com/images/projects/taman-shah-bandar-2-klang/thumbnail.jpg",
@@ -1860,7 +2023,10 @@ const PROPERTIES_DATA = [
     "hidden": false,
     "listingSource": "undercon",
     "openForCoa": true,
-    "state": "Selangor"
+    "state": "Selangor",
+    "jazTelegramMsgId": 38,
+    "jazTelegramDate": "2025-06-30 15:38:17+00:00",
+    "telegramChannel": "https://t.me/+gALUQqhuZqRhYjI1"
   },
   {
     "id": "undercon-tetra-residence-selindung-daun-ulu-yam",
@@ -1912,7 +2078,7 @@ const PROPERTIES_DATA = [
     "parking": 2,
     "size": 850,
     "landSize": "-",
-    "tenure": "Freehold",
+    "tenure": "Freehold (Open Title)",
     "lotType": "Open Title",
     "image": "https://thehartanahchannel.com/images/projects/ayu-residence-bsp/thumbnail.jpg",
     "images": [
@@ -1928,7 +2094,10 @@ const PROPERTIES_DATA = [
     "hidden": false,
     "listingSource": "undercon",
     "openForCoa": true,
-    "state": "Selangor"
+    "state": "Selangor",
+    "jazTelegramMsgId": 123,
+    "jazTelegramDate": "2026-04-03 16:13:37+00:00",
+    "telegramChannel": "https://t.me/+y4tMod7nLG5lYWI9"
   },
   {
     "id": "undercon-teres-2-tingkat-jalan-bangau-telok-panglima-garang",
@@ -1946,8 +2115,8 @@ const PROPERTIES_DATA = [
     "parking": 4,
     "size": 2100,
     "landSize": "-",
-    "tenure": "Leasehold (Malay Reserved)",
-    "lotType": "Malay Reserved",
+    "tenure": "Leasehold (Malay Reserved / Bumi Lot)",
+    "lotType": "Malay Reserved / Bumi Lot",
     "image": "https://thehartanahchannel.com/images/projects/jaz-bangau/thumbnail.jpg",
     "images": [
       "https://thehartanahchannel.com/images/projects/jaz-bangau/thumbnail.jpg",
@@ -1962,7 +2131,10 @@ const PROPERTIES_DATA = [
     "hidden": false,
     "listingSource": "undercon",
     "openForCoa": true,
-    "state": "Selangor"
+    "state": "Selangor",
+    "jazTelegramMsgId": 139,
+    "jazTelegramDate": "2026-04-17 15:18:06+00:00",
+    "telegramChannel": "https://t.me/+4BmswHTwfZxiYjM9"
   },
   {
     "id": "undercon-fona-vista-bukit-ampang",
@@ -2016,8 +2188,8 @@ const PROPERTIES_DATA = [
     "parking": 3,
     "size": 1250,
     "landSize": "-",
-    "tenure": "Leasehold (Malay Reserved)",
-    "lotType": "Malay Reserved",
+    "tenure": "Freehold (Open Title)",
+    "lotType": "Open Title",
     "image": "https://thehartanahchannel.com/uploads/projects/langat_utama_3_semid/semid_langat_1.jpg",
     "images": [
       "https://thehartanahchannel.com/uploads/projects/langat_utama_3_semid/semid_langat_2.jpg",
@@ -2028,7 +2200,10 @@ const PROPERTIES_DATA = [
     "hidden": false,
     "listingSource": "undercon",
     "openForCoa": true,
-    "state": "Selangor"
+    "state": "Selangor",
+    "jazTelegramMsgId": 133,
+    "jazTelegramDate": "2026-04-09 16:06:57+00:00",
+    "telegramChannel": "https://t.me/+DfameVeNutZjN2Q1"
   },
   {
     "id": "undercon-teres-taman-semarang-intan-dengkil",
@@ -2046,8 +2221,8 @@ const PROPERTIES_DATA = [
     "parking": 4,
     "size": 2066,
     "landSize": "-",
-    "tenure": "Freehold (Non-Bumi / Open)",
-    "lotType": "Non-Bumi / Open Title",
+    "tenure": "Leasehold (Malay Reserved / Bumi Lot)",
+    "lotType": "Malay Reserved / Bumi Lot",
     "image": "https://thehartanahchannel.com/uploads/projects/semarang_intan/semarang_intan_7.jpg",
     "images": [
       "https://thehartanahchannel.com/uploads/projects/semarang_intan/semarang_intan_8.jpg",
@@ -2063,7 +2238,10 @@ const PROPERTIES_DATA = [
     "hidden": false,
     "listingSource": "undercon",
     "openForCoa": true,
-    "state": "Selangor"
+    "state": "Selangor",
+    "jazTelegramMsgId": 132,
+    "jazTelegramDate": "2026-04-09 16:05:53+00:00",
+    "telegramChannel": "https://t.me/+p5ku1-pR2mQwMzM1"
   },
   {
     "id": "undercon-vista-bayu-sungai-ramal-kajang",
@@ -2081,8 +2259,8 @@ const PROPERTIES_DATA = [
     "parking": 2,
     "size": 917,
     "landSize": "-",
-    "tenure": "Freehold (Malay Reserved)",
-    "lotType": "Malay Reserved",
+    "tenure": "Freehold (Open Title)",
+    "lotType": "Open Title",
     "image": "https://thehartanahchannel.com/uploads/projects/tg_3808773058/post_17.jpg",
     "images": [
       "https://thehartanahchannel.com/uploads/projects/tg_3808773058/post_18.jpg",
@@ -2097,7 +2275,10 @@ const PROPERTIES_DATA = [
     "hidden": false,
     "listingSource": "undercon",
     "openForCoa": true,
-    "state": "Selangor"
+    "state": "Selangor",
+    "jazTelegramMsgId": 124,
+    "jazTelegramDate": "2026-04-03 16:15:59+00:00",
+    "telegramChannel": "https://t.me/+ESmiLdU1jctlYTY1"
   },
   {
     "id": "undercon-teres-2-tingkat-taman-mutiara-salak",
@@ -2115,8 +2296,8 @@ const PROPERTIES_DATA = [
     "parking": 2,
     "size": 1980,
     "landSize": "-",
-    "tenure": "Freehold (Malay Reserved)",
-    "lotType": "Malay Reserved",
+    "tenure": "Freehold (Open Title)",
+    "lotType": "Open Title",
     "image": "https://thehartanahchannel.com/uploads/projects/mutiara_salak_official/mutiara_salak_1.jpg",
     "images": [
       "https://thehartanahchannel.com/uploads/projects/mutiara_salak_official/mutiara_salak_2.jpg",
@@ -2127,7 +2308,10 @@ const PROPERTIES_DATA = [
     "hidden": false,
     "listingSource": "undercon",
     "openForCoa": true,
-    "state": "Selangor"
+    "state": "Selangor",
+    "jazTelegramMsgId": 134,
+    "jazTelegramDate": "2026-04-09 16:40:25+00:00",
+    "telegramChannel": "https://t.me/+tncz30_oXxM4Zjg1"
   },
   {
     "id": "undercon-teres-2-tingkat-idaman-putra-bangi",
@@ -2145,8 +2329,8 @@ const PROPERTIES_DATA = [
     "parking": 2,
     "size": 1850,
     "landSize": "-",
-    "tenure": "Freehold",
-    "lotType": "Open Title",
+    "tenure": "Freehold (Malay Reserved / Bumi Lot)",
+    "lotType": "Malay Reserved / Bumi Lot",
     "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80",
     "images": [
       "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80",
@@ -2157,7 +2341,10 @@ const PROPERTIES_DATA = [
     "hidden": false,
     "listingSource": "undercon",
     "openForCoa": true,
-    "state": "Selangor"
+    "state": "Selangor",
+    "jazTelegramMsgId": 158,
+    "jazTelegramDate": "2026-06-17 15:00:57+00:00",
+    "telegramChannel": "https://t.me/+XgQLiCeaA482ODk1"
   },
   {
     "id": "undercon-teres-2-tingkat-desa-harmoni-puncak-alam",
@@ -2175,8 +2362,8 @@ const PROPERTIES_DATA = [
     "parking": 2,
     "size": 1720,
     "landSize": "-",
-    "tenure": "Leasehold",
-    "lotType": "Open Title",
+    "tenure": "Freehold (Malay Reserved / Bumi Lot)",
+    "lotType": "Malay Reserved / Bumi Lot",
     "image": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80",
     "images": [
       "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80",
@@ -2187,7 +2374,10 @@ const PROPERTIES_DATA = [
     "hidden": false,
     "listingSource": "undercon",
     "openForCoa": true,
-    "state": "Selangor"
+    "state": "Selangor",
+    "jazTelegramMsgId": 114,
+    "jazTelegramDate": "2026-03-23 15:31:42+00:00",
+    "telegramChannel": "https://t.me/+fphupLAgkKQ5MjE9"
   },
   {
     "id": "undercon-aman-madani-permaisuri-cheras",
@@ -2266,8 +2456,8 @@ const PROPERTIES_DATA = [
     "parking": 2,
     "size": 1000,
     "landSize": "-",
-    "tenure": "Leasehold",
-    "lotType": "Open Title",
+    "tenure": "Freehold (Open Title / Non-Bumi)",
+    "lotType": "Open Title / Non-Bumi",
     "image": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80",
     "images": [
       "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80"
@@ -2277,7 +2467,10 @@ const PROPERTIES_DATA = [
     "hidden": false,
     "listingSource": "undercon",
     "openForCoa": true,
-    "state": "Selangor"
+    "state": "Selangor",
+    "jazTelegramMsgId": 51,
+    "jazTelegramDate": "2025-07-27 05:11:26+00:00",
+    "telegramChannel": "https://t.me/+CYAnd7rZBEgyN2Nl"
   },
   {
     "id": "undercon-melati-setapak-kl",
@@ -2353,8 +2546,8 @@ const PROPERTIES_DATA = [
     "parking": 1,
     "size": 621,
     "landSize": "-",
-    "tenure": "Freehold",
-    "lotType": "Open Title",
+    "tenure": "Freehold (Malay Reserved / Bumi Lot)",
+    "lotType": "Malay Reserved / Bumi Lot",
     "image": "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=800&q=80",
     "images": [
       "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=800&q=80"
@@ -2364,7 +2557,10 @@ const PROPERTIES_DATA = [
     "hidden": false,
     "listingSource": "undercon",
     "openForCoa": true,
-    "state": "Selangor"
+    "state": "Selangor",
+    "jazTelegramMsgId": 104,
+    "jazTelegramDate": "2026-01-25 12:49:31+00:00",
+    "telegramChannel": "https://t.me/+z4V0PMGwt3QxYmU1"
   },
   {
     "id": "undercon-aman-residensi-bukit-raja",
@@ -2411,8 +2607,8 @@ const PROPERTIES_DATA = [
     "parking": 2,
     "size": 850,
     "landSize": "-",
-    "tenure": "Leasehold",
-    "lotType": "Open Title",
+    "tenure": "Freehold (Malay Reserved / Bumi Lot)",
+    "lotType": "Malay Reserved / Bumi Lot",
     "image": "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=800&q=80",
     "images": [
       "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=800&q=80"
@@ -2422,7 +2618,10 @@ const PROPERTIES_DATA = [
     "hidden": false,
     "listingSource": "undercon",
     "openForCoa": true,
-    "state": "Selangor"
+    "state": "Selangor",
+    "jazTelegramMsgId": 158,
+    "jazTelegramDate": "2026-06-17 15:00:57+00:00",
+    "telegramChannel": "https://t.me/+XgQLiCeaA482ODk1"
   },
   {
     "id": "prop-1788861202496-0",
