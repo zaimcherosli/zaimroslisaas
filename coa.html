@@ -574,7 +574,7 @@
     <!-- Storefront Showcase Hero (Public Storefront) -->
     <div class="coa-banner" id="coa-storefront-banner" style="display: none;">
       <div class="container">
-        <span class="coa-badge-tag">Katalog Hartanah Pilihan</span>
+        <span class="coa-badge-tag" id="storefront-badge-tag">Katalog Hartanah Pilihan</span>
         <h1 class="coa-banner-title" id="storefront-agent-title">Zaim Rosli</h1>
         <p class="coa-banner-desc" id="storefront-agent-desc">
           JAZ International Sdn Bhd • REN 39575
@@ -1179,8 +1179,12 @@ Mohon semakan dan kelulusan akaun saya. Terima kasih!`);
       document.getElementById('btn-pending-whatsapp').href = `https://wa.me/60108118559?text=${waMsg}`;
     }
 
-    // Show Storefront View (Public-Facing Property Catalog)
+    // Show Storefront View (Public Storefront OR Logged-in COA Dashboard)
     function showStorefrontView(partner, sessionUser) {
+      activeSessionUser = sessionUser;
+      const isLoggedInCoa = !!sessionUser;
+      const zaimPhone = '60108118559';
+
       document.getElementById('coa-loading-view').style.display = 'none';
       document.getElementById('coa-auth-view').style.display = 'none';
       document.getElementById('coa-pending-view').style.display = 'none';
@@ -1192,32 +1196,68 @@ Mohon semakan dan kelulusan akaun saya. Terima kasih!`);
       const storefrontEl = document.getElementById('coa-storefront-view');
       storefrontEl.style.display = 'block';
 
-      // Update Hero Content
-      document.getElementById('storefront-agent-title').textContent = partner.full_name;
-      document.getElementById('storefront-agent-desc').textContent = `${partner.agency} • ${partner.ren_number}`;
-
       let cleanPhone = (partner.phone || '').replace(/[^0-9]/g, '');
       if (cleanPhone.startsWith('0')) cleanPhone = '60' + cleanPhone.substring(1);
       if (!cleanPhone.startsWith('60')) cleanPhone = '60' + cleanPhone;
 
-      const waMsg = encodeURIComponent(`Salam ${partner.full_name}, saya melawat portal hartanah anda di zaimrosli.my dan ingin bertanya tentang senarai projek/listing yang ditawarkan.`);
-      document.getElementById('storefront-wa-btn').href = `https://wa.me/${cleanPhone}?text=${waMsg}`;
-      document.getElementById('storefront-call-btn').href = `tel:+${cleanPhone}`;
-
-      // Update Nav Branding & WhatsApp CTA
+      const badgeTag = document.getElementById('storefront-badge-tag');
+      const heroTitle = document.getElementById('storefront-agent-title');
+      const heroDesc = document.getElementById('storefront-agent-desc');
+      const heroWaBtn = document.getElementById('storefront-wa-btn');
+      const heroCallBtn = document.getElementById('storefront-call-btn');
       const navCtaWa = document.getElementById('nav-cta-wa-btn');
-      if (navCtaWa) navCtaWa.href = `https://wa.me/${cleanPhone}?text=${waMsg}`;
-
-      // Update Footer
-      document.getElementById('footer-agent-title').textContent = `Katalog Hartanah — ${partner.full_name} (${partner.ren_number})`;
-
-      // Show Agent Topbar ONLY if the user is logged in
+      const footerTitle = document.getElementById('footer-agent-title');
       const topBar = document.getElementById('coa-agent-topbar');
-      if (sessionUser && (sessionUser.email === 'huzaimrosli@gmail.com' || (currentPartner && currentPartner.id === sessionUser.id))) {
-        topBar.style.display = 'block';
-        document.getElementById('topbar-portal-link').textContent = `https://zaimrosli.my/coa/${partner.agent_code}`;
+
+      if (isLoggedInCoa) {
+        // --- LOGGED-IN COA AGENT DASHBOARD MODE ---
+        if (badgeTag) badgeTag.textContent = 'Papan Pemuka Ejen COA';
+        heroTitle.textContent = `Selamat Datang, ${partner.full_name}`;
+        heroDesc.textContent = `${partner.agency} • ${partner.ren_number} • Tekan butang WhatsApp pada mana-mana listing di bawah untuk semak maklumat lanjut atau ketersediaan unit dengan Zaim Rosli.`;
+
+        const generalZaimMsg = encodeURIComponent(`Salam Zaim, saya ${partner.full_name} (${partner.agency}). Saya sedang melihat katalog COA di portal dan ingin berbincang mengenai kerjasama projek/listing.`);
+        heroWaBtn.textContent = 'Hubungi Zaim (WhatsApp)';
+        heroWaBtn.href = `https://wa.me/${zaimPhone}?text=${generalZaimMsg}`;
+
+        heroCallBtn.textContent = 'Salin Pautan Promosi';
+        heroCallBtn.href = 'javascript:void(0)';
+        heroCallBtn.onclick = copyMyPortalLink;
+
+        if (navCtaWa) {
+          navCtaWa.textContent = 'WhatsApp Zaim';
+          navCtaWa.href = `https://wa.me/${zaimPhone}?text=${generalZaimMsg}`;
+        }
+
+        if (topBar) {
+          topBar.style.display = 'block';
+          document.getElementById('topbar-portal-link').textContent = `https://zaimrosli.my/coa/${partner.agent_code}`;
+        }
       } else {
-        topBar.style.display = 'none';
+        // --- PUBLIC GUEST STOREFRONT MODE ---
+        if (badgeTag) badgeTag.textContent = 'Katalog Hartanah Pilihan';
+        heroTitle.textContent = partner.full_name;
+        heroDesc.textContent = `${partner.agency} • ${partner.ren_number}`;
+
+        const waMsg = encodeURIComponent(`Salam ${partner.full_name}, saya melawat portal hartanah anda di zaimrosli.my dan ingin bertanya tentang senarai projek/listing yang ditawarkan.`);
+        heroWaBtn.textContent = 'Hubungi WhatsApp';
+        heroWaBtn.href = `https://wa.me/${cleanPhone}?text=${waMsg}`;
+
+        heroCallBtn.textContent = 'Hubungi Telefon';
+        heroCallBtn.href = `tel:+${cleanPhone}`;
+        heroCallBtn.onclick = null;
+
+        if (navCtaWa) {
+          navCtaWa.textContent = 'WhatsApp Ejen';
+          navCtaWa.href = `https://wa.me/${cleanPhone}?text=${waMsg}`;
+        }
+
+        if (topBar) {
+          topBar.style.display = 'none';
+        }
+      }
+
+      if (footerTitle) {
+        footerTitle.textContent = `Katalog Hartanah — ${partner.full_name} (${partner.ren_number})`;
       }
 
       loadCoaListings();
@@ -1300,6 +1340,9 @@ Mohon semakan dan kelulusan akaun saya. Terima kasih!`);
       if (cleanPhone.startsWith('0')) cleanPhone = '60' + cleanPhone.substring(1);
       if (!cleanPhone.startsWith('60')) cleanPhone = '60' + cleanPhone;
 
+      const zaimPhone = '60108118559';
+      const isLoggedInCoa = !!activeSessionUser;
+
       grid.innerHTML = filtered.map(item => {
         let img = '/icons/icon-192.png';
         if (Array.isArray(item.images) && item.images.length > 0 && typeof item.images[0] === 'string' && item.images[0].trim()) {
@@ -1333,10 +1376,30 @@ Mohon semakan dan kelulusan akaun saya. Terima kasih!`);
         // Clean URL route with agent code
         const propTarget = item.slug || item.id;
         const propDetailUrl = `/property/${propTarget}/${pCode}`;
-        const itemWaMsg = encodeURIComponent(`Salam ${agentName}, saya berminat dengan projek/listing "${item.title}" (${priceDisplay}) yang dipaparkan di portal anda.
+
+        let itemWaUrl = '';
+        let waButtonText = 'Hubungi WhatsApp';
+
+        if (isLoggedInCoa) {
+          // Logged-in COA Agent contacts ZAIM ROSLI directly to ask about the project!
+          waButtonText = 'Hubungi Zaim (WhatsApp)';
+          const itemWaMsg = encodeURIComponent(`Salam Zaim, saya ${currentPartner ? currentPartner.full_name : 'Rakan COA'} (${currentPartner ? currentPartner.agency : 'Agensi'}). Saya ingin bertanya details dan ketersediaan unit untuk projek/listing ini:
+
+"${item.title}"
+Harga: ${priceDisplay}
+Lokasi: ${item.location || item.region || 'Selangor'}
+ID Listing: ${item.id}
 
 Pautan: https://zaimrosli.my${propDetailUrl}`);
-        const itemWaUrl = `https://wa.me/${cleanPhone}?text=${itemWaMsg}`;
+          itemWaUrl = `https://wa.me/${zaimPhone}?text=${itemWaMsg}`;
+        } else {
+          // Public visitor contacts the COA Agent!
+          waButtonText = 'Hubungi WhatsApp';
+          const itemWaMsg = encodeURIComponent(`Salam ${agentName}, saya berminat dengan projek/listing "${item.title}" (${priceDisplay}) yang dipaparkan di portal anda.
+
+Pautan: https://zaimrosli.my${propDetailUrl}`);
+          itemWaUrl = `https://wa.me/${cleanPhone}?text=${itemWaMsg}`;
+        }
 
         return `
           <div class="coa-item-card">
@@ -1355,7 +1418,7 @@ Pautan: https://zaimrosli.my${propDetailUrl}`);
 
               <div class="coa-actions-stack">
                 <a href="${itemWaUrl}" target="_blank" class="btn-coa-primary" style="padding: 10px; font-size: 0.85rem; text-decoration: none;">
-                  Hubungi WhatsApp
+                  ${waButtonText}
                 </a>
                 <a href="${propDetailUrl}" class="btn-coa-outline" style="padding: 9px; font-size: 0.82rem;">
                   Lihat Maklumat Penuh
