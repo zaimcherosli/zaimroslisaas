@@ -520,7 +520,7 @@
           <li><a href="javascript:void(0)" onclick="setFilterTab('subsale')" class="nav-link" id="tab-link-subsale">Subsale</a></li>
           <li><a href="javascript:void(0)" onclick="setFilterTab('rental')" class="nav-link" id="tab-link-rental">Sewa</a></li>
           <li><a href="javascript:void(0)" onclick="setFilterTab('commercial')" class="nav-link" id="tab-link-commercial">Komersil</a></li>
-          <li><a href="/coa?auth=1" class="nav-link" style="color: #64748b; font-size: 0.78rem; font-weight: 600;">Daftar COA</a></li>
+          <li><a href="javascript:void(0)" onclick="openAuthScreen('register')" class="nav-link" style="color: #64748b; font-size: 0.78rem; font-weight: 600;">Daftar COA</a></li>
         </ul>
 
         <div class="nav-cta">
@@ -560,7 +560,7 @@
           <li class="mobile-nav-item"><a href="javascript:void(0)" onclick="setFilterTab('subsale'); closeDrawer();" class="mobile-nav-link">SUBSALE</a></li>
           <li class="mobile-nav-item"><a href="javascript:void(0)" onclick="setFilterTab('rental'); closeDrawer();" class="mobile-nav-link">SEWA (RENTAL)</a></li>
           <li class="mobile-nav-item"><a href="javascript:void(0)" onclick="setFilterTab('commercial'); closeDrawer();" class="mobile-nav-link">KOMERSIL &amp; INDUSTRI</a></li>
-          <li class="mobile-nav-item" style="border-top: 1px solid #f1f5f9; margin-top: 8px; padding-top: 8px;"><a href="/coa?auth=1" class="mobile-nav-link" style="color: #d97706; font-weight: 700;">DAFTAR / LOG MASUK RAKAN COA</a></li>
+          <li class="mobile-nav-item" style="border-top: 1px solid #f1f5f9; margin-top: 8px; padding-top: 8px;"><a href="javascript:void(0)" onclick="openAuthScreen('register')" class="mobile-nav-link" style="color: #d97706; font-weight: 700;">DAFTAR / LOG MASUK RAKAN COA</a></li>
           <li class="mobile-nav-item" style="margin-top: 16px;"><a href="/" class="mobile-nav-link" style="color: #64748b;">LAMAN UTAMA</a></li>
           <li class="mobile-nav-item"><a href="/properties" class="mobile-nav-link" style="color: #64748b;">SEMUA HARTANAH PORTAL</a></li>
         </ul>
@@ -1012,6 +1012,19 @@
     }
 
     // Main Initializer
+    function openAuthScreen(tab) {
+      document.getElementById('coa-loading-view').style.display = 'none';
+      document.getElementById('coa-storefront-banner').style.display = 'none';
+      document.getElementById('coa-general-banner').style.display = 'block';
+      document.getElementById('coa-storefront-view').style.display = 'none';
+      document.getElementById('coa-pending-view').style.display = 'none';
+      document.getElementById('coa-auth-view').style.display = 'block';
+      const topBar = document.getElementById('coa-agent-topbar');
+      if (topBar) topBar.style.display = 'none';
+      switchCoaAuthTab(tab || 'register');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
     async function checkInitialState() {
       const loadingEl = document.getElementById('coa-loading-view');
       const authEl = document.getElementById('coa-auth-view');
@@ -1020,6 +1033,15 @@
       const heroStorefront = document.getElementById('coa-storefront-banner');
       const heroGeneral = document.getElementById('coa-general-banner');
       const topBar = document.getElementById('coa-agent-topbar');
+
+      const urlParams = new URLSearchParams(window.location.search);
+      const hasAuthParam = urlParams.has('auth') || urlParams.has('login') || urlParams.has('register') || window.location.hash === '#auth';
+
+      // 1. If explicit auth request (?auth=1 / ?login=1 / #auth)
+      if (hasAuthParam) {
+        openAuthScreen(urlParams.get('auth') === 'login' ? 'login' : 'register');
+        return;
+      }
 
       // 1. Detect Agent Code from Path or Script or Query Param
       let routeAgentCode = window.COA_STOREFRONT_AGENT || null;
@@ -1030,7 +1052,6 @@
         }
       }
       if (!routeAgentCode) {
-        const urlParams = new URLSearchParams(window.location.search);
         routeAgentCode = urlParams.get('ref');
       }
 
@@ -1120,22 +1141,7 @@
         }
       }
 
-      // Case C: Guest visiting /coa without code
-      // Check if user explicitly wants to login/register (?auth=1 or #auth)
-      const hasAuthParam = urlParams.has('auth') || urlParams.has('login') || urlParams.has('register') || window.location.hash === '#auth';
-
-      if (hasAuthParam) {
-        loadingEl.style.display = 'none';
-        heroGeneral.style.display = 'block';
-        heroStorefront.style.display = 'none';
-        authEl.style.display = 'block';
-        pendingEl.style.display = 'none';
-        storefrontEl.style.display = 'none';
-        if (topBar) topBar.style.display = 'none';
-        return;
-      }
-
-      // Default: Public visitor on /coa sees Zaim Rosli Storefront Catalog!
+      // Case C: Default: Public visitor on /coa sees Zaim Rosli Storefront Catalog!
       currentPartner = {
         full_name: 'Zaim Rosli',
         agency: 'JAZ International Sdn Bhd',
