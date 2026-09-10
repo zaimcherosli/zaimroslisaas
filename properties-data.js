@@ -1,4 +1,4 @@
-// PROPERTIES_DATA - Updated: 2026-09-11 (Cleaned & Standardized)
+// PROPERTIES_DATA - Updated: 2026-09-11 (Audited Freehold & Presint 7)
 const PROPERTIES_DATA = [
   {
     "id": "undercon-perumahan-baru-teres-setingkat-taman-warisan-hijau",
@@ -206,7 +206,7 @@ const PROPERTIES_DATA = [
   {
     "id": "undercon-rumawip-rm300k-di-presint-7-putrajaya-dibuka-juala",
     "slug": "rumawip-rm300k-di-presint-7-putrajaya-dibuka-juala",
-    "title": "RumaWip RM300K di Presint 7 Putrajaya Dibuka Jualan ❗️❗️❗️",
+    "title": "Residensi Sentral @ Presint 7 Putrajaya (Residensi Wilayah / Madani)",
     "price": 300000,
     "priceStr": "RM 300,000 - RM 350,000",
     "category": "Undercon",
@@ -219,13 +219,13 @@ const PROPERTIES_DATA = [
     "parking": 2,
     "size": 850,
     "landSize": "-",
-    "tenure": "Leasehold (Malay Reserved)",
-    "lotType": "Malay Reserved",
+    "tenure": "Freehold (Pegangan Bebas)",
+    "lotType": "Open (Syarat Residensi Wilayah)",
     "image": "https://thehartanahchannel.com/images/projects/rumawip-rm300k-di-presint-7-putrajaya-dibuka-juala/thumbnail.jpg",
     "images": [
       "https://thehartanahchannel.com/images/projects/rumawip-rm300k-di-presint-7-putrajaya-dibuka-juala/thumbnail.jpg"
     ],
-    "description": "PROJEK UNDERCON BARU: RumaWip RM300K di Presint 7 Putrajaya Dibuka Jualan ❗️❗️❗️\nLokasi: Putrajaya\nKategori: RUMAWIP\nHarga: RM 300,000 - RM 350,000\nPegangan: Leasehold (Malay Reserved)\nKeluasan Binaan: 850 - 850 kps\nBilik Tidur: 3 | Bilik Air: 2 | Parkir: 2\nPakej: Pakej Zero Downpayment + Percuma Yuran Guaman SPA & MOT\nJangkaan Siap: 2027\nPengangkutan & Kemudahan: Presint 7 Putrajaya, Jalan Kaki ke MRT/ERL Putrajaya, Hospital Putrajaya\n\nKelebihan Projek:\n- Projek Kediaman Eksklusif di Putrajaya\n- Pilihan 3 Bilik & 2 Bilik Air\n- Pakej Zero Downpayment & Booking Rendah\n- Percuma Yuran Guaman SPA & MOT",
+    "description": "PROJEK UNDERCON BARU: Residensi Sentral @ Presint 7 Putrajaya (Residensi Wilayah / Madani)\nLokasi: Putrajaya\nKategori: RUMAWIP\nHarga: RM 300,000 - RM 350,000\nPegangan: Freehold (Pegangan Bebas)\nKeluasan Binaan: 850 - 850 kps\nBilik Tidur: 3 | Bilik Air: 2 | Parkir: 2\nPakej: Pakej Zero Downpayment + Percuma Yuran Guaman SPA & MOT\nJangkaan Siap: 2027\nPengangkutan & Kemudahan: Presint 7 Putrajaya, Jalan Kaki ke MRT/ERL Putrajaya, Hospital Putrajaya\n\nKelebihan Projek:\n- Projek Kediaman Eksklusif di Putrajaya\n- Pilihan 3 Bilik & 2 Bilik Air\n- Pakej Zero Downpayment & Booking Rendah\n- Percuma Yuran Guaman SPA & MOT",
     "refUrl": "https://thehartanahchannel.com/projek/rumawip-rm300k-di-presint-7-putrajaya-dibuka-juala",
     "hidden": false,
     "listingSource": "undercon",
