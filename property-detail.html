@@ -2718,7 +2718,134 @@
             }).join('');
           }
 
-          renderSidebarFeatured(prop);
+                    renderSidebarFeatured(prop);
+          
+          // 9. Co-Branded Partner Landing Page Engine (Supabase)
+          async function applyCoBrandedPartner(refCode, currentProp, formattedPrice, pageUrl) {
+            if (!refCode) return;
+            try {
+              const SUPABASE_URL = 'https://csrzhidtzqxfbapsenhu.supabase.co';
+              const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNzcnpoaWR0enF4ZmJhcHNlbmh1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODU0OTM3OTYsImV4cCI6MjEwMTA2OTc5Nn0.NnHFURbQTvsdgGbm1d_PC-hkOgQFQIHKTMQaS2n44SU';
+
+              const cleanCode = encodeURIComponent(refCode.trim().toLowerCase());
+              const endpoint = `${SUPABASE_URL}/rest/v1/coa_partners?agent_code=eq.${cleanCode}&status=eq.approved&select=*`;
+
+              const res = await fetch(endpoint, {
+                headers: {
+                  'apikey': SUPABASE_ANON_KEY,
+                  'Authorization': `Bearer ${SUPABASE_ANON_KEY}`
+                }
+              });
+
+              if (!res.ok) return;
+              const partners = await res.json();
+              if (!Array.isArray(partners) || partners.length === 0) return;
+
+              const partner = partners[0];
+              let cleanPhone = (partner.phone || '').replace(/[^0-9]/g, '');
+              if (cleanPhone.startsWith('0')) cleanPhone = '60' + cleanPhone.substring(1);
+              if (!cleanPhone.startsWith('60')) cleanPhone = '60' + cleanPhone;
+
+              // A. Update WhatsApp Direct CTA
+              const waBtn = document.getElementById('d-whatsapp-btn');
+              if (waBtn && cleanPhone) {
+                const partnerWaMsg = encodeURIComponent(`Salam ${partner.full_name}, saya berminat untuk bertanya tentang "${currentProp.title}" (${formattedPrice}) di portal Zaim Rosli.
+
+Pautan: ${window.location.href}`);
+                waBtn.href = `https://wa.me/${cleanPhone}?text=${partnerWaMsg}`;
+                const waSub = waBtn.querySelector('.cta-subtitle');
+                if (waSub) waSub.textContent = `Direct WhatsApp • ${partner.full_name}`;
+              }
+
+              // B. Update Direct Phone Call CTA
+              const callBtn = document.querySelector('.btn-call-cta');
+              if (callBtn && cleanPhone) {
+                callBtn.href = `tel:+${cleanPhone}`;
+                const callTitle = callBtn.querySelector('.cta-main-title');
+                if (callTitle) callTitle.textContent = `+${cleanPhone}`;
+                const callSub = callBtn.querySelector('.cta-subtitle');
+                if (callSub) callSub.textContent = `Direct line • ${partner.full_name}`;
+              }
+
+              // C. Update Sidebar Agent Profile Box
+              const agentBox = document.querySelector('.agent-profile-box');
+              if (agentBox) {
+                const boxLabel = agentBox.querySelector('.agent-box-label');
+                if (boxLabel) boxLabel.textContent = 'PERUNDING HARTANAH ANDA';
+
+                const nameEl = agentBox.querySelector('.agent-info-meta h4');
+                if (nameEl) nameEl.textContent = partner.full_name;
+
+                const renEl = agentBox.querySelector('.ren-badge');
+                if (renEl) renEl.textContent = partner.ren_number || 'Registered Negotiator';
+
+                const agencyEl = agentBox.querySelector('.agent-agency-line');
+                if (agencyEl) agencyEl.textContent = `${partner.agency} • Rakan Niaga Berdaftar Zaim Rosli`;
+              }
+
+              // D. Update Schedule Viewing Form submission to send to Partner
+              const scheduleForm = document.getElementById('schedule-viewing-form');
+              if (scheduleForm && cleanPhone) {
+                scheduleForm.onsubmit = (e) => {
+                  e.preventDefault();
+                  const dateVal = document.getElementById('sched-date').value || 'Sedia bila-bila masa';
+                  const schedTimeSelect = document.getElementById('sched-time-select');
+                  let timeSlotVal = schedTimeSelect ? schedTimeSelect.value : '10:00 AM';
+                  if (timeSlotVal === 'Others') {
+                    const customTyped = document.getElementById('sched-custom-time') ? document.getElementById('sched-custom-time').value.trim() : '';
+                    timeSlotVal = customTyped ? `Others (${customTyped})` : 'Masa pilihan pelanggan';
+                  }
+                  const nameVal = document.getElementById('sched-name').value.trim();
+                  const phoneVal = document.getElementById('sched-phone').value.trim();
+                  const notesVal = document.getElementById('sched-notes').value.trim() || 'Tiada nota tambahan';
+
+                  if (!nameVal || !phoneVal) {
+                    alert('Sila lengkapkan Nama dan Nombor Telefon / WhatsApp anda.');
+                    return;
+                  }
+
+                  const pViewMsg = `Salam ${partner.full_name}, saya berminat untuk menjadualkan sesi viewing bagi hartanah berikut melalui portal Zaim Rosli:
+
+` +
+                    `Hartanah: ${currentProp.title}
+` +
+                    `Lokasi: ${currentProp.location}
+` +
+                    `Harga: ${formattedPrice}
+` +
+                    `Tarikh Cadangan: ${dateVal}
+` +
+                    `Masa Pilihan: ${timeSlotVal}
+` +
+                    `Nama Pelawat: ${nameVal}
+` +
+                    `No. WhatsApp: ${phoneVal}
+` +
+                    `Nota: ${notesVal}
+
+` +
+                    `Pautan: ${window.location.href}`;
+
+                  const waUrl = `https://wa.me/${cleanPhone}?text=${encodeURIComponent(pViewMsg)}`;
+                  const modalEl = document.getElementById('schedule-viewing-modal');
+                  if (modalEl) modalEl.style.display = 'none';
+                  window.open(waUrl, '_blank');
+                };
+              }
+
+              // E. Update Calculator WhatsApp Consultation Button
+              const calcWaBtn = document.getElementById('btn-calc-wa');
+              if (calcWaBtn && cleanPhone) {
+                const curCalcHref = calcWaBtn.href;
+                calcWaBtn.href = curCalcHref.replace(/wa\.me\/(?:\+?60108118559|60108118559)/, `wa.me/${cleanPhone}`);
+              }
+
+            } catch (pErr) {
+              console.warn('applyCoBrandedPartner error:', pErr);
+            }
+          }
+
+await applyCoBrandedPartner(urlParams.get('ref'), prop, detailPrice, canonicalUrl);
 
           // 8. Inject Structured Data JSON-LD
           const propJsonLd = {

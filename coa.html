@@ -1,0 +1,1160 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portal Rakan Agensi COA — Zaim Rosli Real Estate</title>
+  <meta name="description" content="Sertai rangkaian rakan agensi COA bersama Zaim Rosli (REN39575). Akses listing terus pemilik, projek undercon, pautan landing page khas nama anda, dan komisen telus.">
+  <link rel="canonical" href="https://zaimrosli.my/coa">
+  <meta name="robots" content="index, follow">
+  
+  <link rel="stylesheet" href="/styles.css?v=129">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#0f172a">
+  <link rel="icon" type="image/png" sizes="192x192" href="/icons/icon-192.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  <style>
+    /* =======================================================
+       COA PORTAL STYLES (CLEAN & NO ICONS IN FRONT OF TEXT)
+       ======================================================= */
+    body {
+      background-color: #f8fafc;
+      color: #0f172a;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    .coa-hero-section {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      color: #ffffff;
+      padding: 60px 20px 45px 20px;
+      text-align: center;
+    }
+    .coa-hero-badge {
+      display: inline-block;
+      padding: 5px 14px;
+      background: rgba(217, 119, 6, 0.18);
+      color: #fbbf24;
+      border: 1px solid rgba(217, 119, 6, 0.35);
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .coa-hero-title {
+      font-size: clamp(1.8rem, 3.2vw, 2.5rem);
+      font-weight: 800;
+      line-height: 1.25;
+      margin-bottom: 12px;
+      letter-spacing: -0.5px;
+    }
+    .coa-hero-desc {
+      font-size: 1rem;
+      color: #94a3b8;
+      max-width: 640px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .coa-main-container {
+      max-width: 1140px;
+      margin: -30px auto 70px auto;
+      padding: 0 20px;
+      position: relative;
+      z-index: 10;
+    }
+
+    /* Auth Card Styling */
+    .coa-auth-card {
+      max-width: 520px;
+      margin: 0 auto;
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+      overflow: hidden;
+    }
+    .coa-tabs-header {
+      display: flex;
+      background: #f1f5f9;
+      border-bottom: 1px solid #e2e8f0;
+    }
+    .coa-tab-btn {
+      flex: 1;
+      padding: 16px 20px;
+      background: transparent;
+      border: none;
+      font-family: inherit;
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: #64748b;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-align: center;
+    }
+    .coa-tab-btn.active {
+      background: #ffffff;
+      color: #0f172a;
+      border-bottom: 2px solid #d97706;
+    }
+    .coa-auth-body {
+      padding: 32px 28px;
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+    .form-label {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #334155;
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+    }
+    .form-input {
+      width: 100%;
+      padding: 11px 14px;
+      border-radius: 10px;
+      border: 1.5px solid #e2e8f0;
+      background: #f8fafc;
+      font-family: inherit;
+      font-size: 0.92rem;
+      color: #0f172a;
+      box-sizing: border-box;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .form-input:focus {
+      outline: none;
+      background: #ffffff;
+      border-color: #d97706;
+      box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.12);
+    }
+    .form-hint {
+      font-size: 0.76rem;
+      color: #64748b;
+      margin-top: 5px;
+      line-height: 1.4;
+    }
+    .status-msg-box {
+      font-size: 0.78rem;
+      font-weight: 600;
+      margin-top: 6px;
+      display: none;
+    }
+    .status-msg-box.err {
+      color: #dc2626;
+      display: block;
+    }
+    .status-msg-box.ok {
+      color: #16a34a;
+      display: block;
+    }
+    .link-preview-box {
+      margin-top: 6px;
+      padding: 8px 12px;
+      border-radius: 8px;
+      background: #f1f5f9;
+      font-size: 0.76rem;
+      color: #475569;
+      border: 1px dashed #cbd5e1;
+      display: none;
+      word-break: break-all;
+    }
+
+    .btn-coa-primary {
+      display: block;
+      width: 100%;
+      padding: 13px;
+      border-radius: 10px;
+      background: #d97706;
+      color: #ffffff;
+      border: none;
+      font-family: inherit;
+      font-size: 0.92rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-align: center;
+      text-decoration: none;
+      box-shadow: 0 4px 14px rgba(217, 119, 6, 0.25);
+    }
+    .btn-coa-primary:hover {
+      background: #b45309;
+      transform: translateY(-1px);
+    }
+    .btn-coa-primary:disabled {
+      background: #94a3b8;
+      cursor: not-allowed;
+      box-shadow: none;
+      transform: none;
+    }
+
+    .btn-coa-outline {
+      display: inline-block;
+      padding: 8px 14px;
+      border-radius: 8px;
+      background: #ffffff;
+      color: #334155;
+      border: 1px solid #cbd5e1;
+      font-family: inherit;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      text-decoration: none;
+      text-align: center;
+    }
+    .btn-coa-outline:hover {
+      background: #f1f5f9;
+      color: #0f172a;
+      border-color: #94a3b8;
+    }
+
+    /* Pending Screen Card */
+    .pending-card {
+      max-width: 580px;
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 40px 32px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+      text-align: center;
+    }
+    .pending-badge {
+      display: inline-block;
+      background: #fef3c7;
+      color: #b45309;
+      font-size: 0.8rem;
+      font-weight: 800;
+      padding: 4px 12px;
+      border-radius: 999px;
+      margin-bottom: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .pending-title {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 12px;
+    }
+    .pending-desc {
+      font-size: 0.92rem;
+      color: #64748b;
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+
+    /* Approved Dashboard Layout */
+    .partner-hero-box {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 24px;
+      box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+    .partner-hero-info {
+      flex: 1;
+      min-width: 260px;
+    }
+    .partner-name {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 4px;
+    }
+    .partner-meta {
+      font-size: 0.85rem;
+      color: #64748b;
+      line-height: 1.5;
+    }
+    .partner-ref-chip {
+      display: inline-block;
+      background: #f1f5f9;
+      color: #0f172a;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 6px;
+      border: 1px solid #e2e8f0;
+      font-family: monospace;
+    }
+
+    .partner-actions-box {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .partner-filter-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    .partner-search-input {
+      flex: 1;
+      min-width: 240px;
+      padding: 10px 14px;
+      border-radius: 10px;
+      border: 1.5px solid #e2e8f0;
+      font-family: inherit;
+      font-size: 0.88rem;
+      background: #ffffff;
+    }
+    .partner-cat-select {
+      padding: 10px 14px;
+      border-radius: 10px;
+      border: 1.5px solid #e2e8f0;
+      font-family: inherit;
+      font-size: 0.88rem;
+      background: #ffffff;
+      color: #0f172a;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    /* Listing Grid for Partners */
+    .coa-listing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 20px;
+    }
+    .coa-prop-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
+      display: flex;
+      flex-direction: column;
+      transition: all 0.2s ease;
+    }
+    .coa-prop-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+      border-color: #cbd5e1;
+    }
+    .coa-prop-thumb-wrap {
+      position: relative;
+      width: 100%;
+      height: 190px;
+      background: #e2e8f0;
+      overflow: hidden;
+    }
+    .coa-prop-thumb {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .coa-badge-stack {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      display: flex;
+      gap: 6px;
+    }
+    .coa-badge-pill {
+      background: rgba(15, 23, 42, 0.85);
+      color: #ffffff;
+      font-size: 0.65rem;
+      font-weight: 800;
+      padding: 3px 8px;
+      border-radius: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .coa-badge-comm {
+      background: #d97706;
+      color: #ffffff;
+      font-size: 0.65rem;
+      font-weight: 800;
+      padding: 3px 8px;
+      border-radius: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .coa-prop-content {
+      padding: 16px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .coa-prop-loc {
+      font-size: 0.74rem;
+      color: #64748b;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      margin-bottom: 4px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .coa-prop-title {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: #0f172a;
+      line-height: 1.35;
+      margin-bottom: 8px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .coa-prop-price {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: #d97706;
+      margin-bottom: 14px;
+    }
+    .coa-card-actions {
+      margin-top: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      padding-top: 12px;
+      border-top: 1px solid #f1f5f9;
+    }
+    .coa-action-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+
+    /* Toast Notification */
+    .toast-msg {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #0f172a;
+      color: #ffffff;
+      padding: 10px 22px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      z-index: 999999;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      animation: fadeIn 0.2s ease;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translate(-50%, 10px); }
+      to { opacity: 1; transform: translate(-50%, 0); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Site Navigation -->
+  <header class="site-header">
+    <div class="header-inner container">
+      <a href="/" class="brand-logo" aria-label="Zaim Rosli Homepage">
+        <span class="logo-main">ZAIM<span>ROSLI</span></span>
+        <span class="logo-sub">REGISTERED REAL ESTATE PORTAL</span>
+      </a>
+      <nav class="nav-links">
+        <a href="/">Home</a>
+        <a href="/properties">Properties</a>
+        <a href="/services">Services</a>
+        <a href="/calculators">Calculators</a>
+        <a href="/about">About Zaim</a>
+        <a href="/contact">Contact</a>
+        <a href="/coa.html" class="active" style="color: #d97706; font-weight: 700;">COA Portal</a>
+      </nav>
+      <div class="header-actions">
+        <a href="https://wa.me/60108118559" class="btn btn-primary" target="_blank" rel="noopener">Direct WhatsApp</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="coa-hero-section">
+    <div class="container">
+      <span class="coa-hero-badge">Rangkaian B2B Rakan Agensi</span>
+      <h1 class="coa-hero-title">Portal Rakan Agensi COA</h1>
+      <p class="coa-hero-desc">
+        Akses senarai listing terus pemilik (direct owner subsale) dan projek undercon pilihan Zaim Rosli (REN39575). Dapatkan pautan promosi khas nama dan nombor WhatsApp anda sendiri.
+      </p>
+    </div>
+  </section>
+
+  <!-- Main Dynamic Container -->
+  <main class="coa-main-container">
+
+    <!-- Loading State -->
+    <div id="coa-loading-view" style="text-align: center; padding: 50px 20px;">
+      <p style="color: #64748b; font-weight: 600;">Memuatkan portal rakan agensi...</p>
+    </div>
+
+    <!-- 1. AUTH SCREEN (Register & Login) -->
+    <div id="coa-auth-view" class="coa-auth-card" style="display: none;">
+      <div class="coa-tabs-header">
+        <button type="button" class="coa-tab-btn active" id="btn-tab-login" onclick="switchCoaAuthTab('login')">Log Masuk</button>
+        <button type="button" class="coa-tab-btn" id="btn-tab-register" onclick="switchCoaAuthTab('register')">Daftar Rakan COA</button>
+      </div>
+
+      <div class="coa-auth-body">
+        
+        <!-- A. Login Form -->
+        <div id="coa-panel-login">
+          <form id="form-coa-login" onsubmit="handleCoaLogin(event)">
+            <div class="form-group">
+              <label class="form-label" for="login-email">Emel Berdaftar</label>
+              <input type="email" id="login-email" class="form-input" placeholder="nama@agensi.com" required>
+            </div>
+            <div class="form-group" style="margin-bottom: 24px;">
+              <label class="form-label" for="login-password">Kata Laluan</label>
+              <input type="password" id="login-password" class="form-input" placeholder="••••••••" required>
+            </div>
+            <div id="login-error-msg" class="status-msg-box err" style="margin-bottom: 14px; text-align: center;"></div>
+            <button type="submit" id="btn-submit-login" class="btn-coa-primary">Log Masuk ke Portal COA</button>
+          </form>
+        </div>
+
+        <!-- B. Register Form -->
+        <div id="coa-panel-register" style="display: none;">
+          <form id="form-coa-register" onsubmit="handleCoaRegister(event)">
+            <div class="form-group">
+              <label class="form-label" for="reg-name">Nama Penuh (Seperti Kad Pengenalan / LPPEH) *</label>
+              <input type="text" id="reg-name" class="form-input" placeholder="contoh: Ahmad Azman Bin Razali" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="reg-agency">Nama Agensi Hartanah *</label>
+              <input type="text" id="reg-agency" class="form-input" placeholder="contoh: PropNex Malaysia / IQI Realty / JAZ International" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="reg-ren">No. Pendaftaran REN / PEA / REA *</label>
+              <input type="text" id="reg-ren" class="form-input" placeholder="contoh: REN 45892" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="reg-phone">Nombor WhatsApp *</label>
+              <input type="tel" id="reg-phone" class="form-input" placeholder="contoh: 0123456789" required>
+              <div class="form-hint">Nombor ini akan digunakan untuk butang WhatsApp di landing page promosi anda.</div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="reg-code">Kod Rujukan Ejen (Untuk URL Anda) *</label>
+              <input type="text" id="reg-code" class="form-input" placeholder="contoh: azman" required autocomplete="off">
+              <div id="code-status-msg" class="status-msg-box"></div>
+              <div id="code-link-preview" class="link-preview-box"></div>
+              <div class="form-hint">Gunakan huruf kecil dan tanda sempang sahaja (a-z, 0-9, -).</div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="reg-email">Emel *</label>
+              <input type="email" id="reg-email" class="form-input" placeholder="nama@email.com" required>
+            </div>
+
+            <div class="form-group" style="margin-bottom: 24px;">
+              <label class="form-label" for="reg-pass">Cipta Kata Laluan (Minima 6 Aksara) *</label>
+              <input type="password" id="reg-pass" class="form-input" placeholder="••••••••" minlength="6" required>
+            </div>
+
+            <div id="reg-error-msg" class="status-msg-box err" style="margin-bottom: 14px; text-align: center;"></div>
+            <button type="submit" id="btn-submit-reg" class="btn-coa-primary">Hantar Pendaftaran Rakan COA</button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 2. PENDING SCREEN (Waiting for Superadmin Approval) -->
+    <div id="coa-pending-view" class="pending-card" style="display: none;">
+      <span class="pending-badge">Permohonan Sedang Disemak</span>
+      <h2 class="pending-title">Menunggu Kelulusan Superadmin</h2>
+      <p class="pending-desc">
+        Akaun rakan COA anda telah selamat didaftarkan. Untuk menjaga keselamatan dan integriti urusan hartanah, permohonan anda sedang disemak oleh <strong>Zaim Rosli (REN39575)</strong>.
+      </p>
+      <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 16px; margin-bottom: 24px; text-align: left;">
+        <div style="font-size: 0.82rem; color: #64748b; margin-bottom: 4px;">Nama Ejen: <strong id="pending-display-name" style="color: #0f172a;">-</strong></div>
+        <div style="font-size: 0.82rem; color: #64748b; margin-bottom: 4px;">Agensi: <strong id="pending-display-agency" style="color: #0f172a;">-</strong></div>
+        <div style="font-size: 0.82rem; color: #64748b;">Kod Promosi Pilihan: <span id="pending-display-code" class="partner-ref-chip">-</span></div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 10px;">
+        <a id="btn-pending-whatsapp" href="#" target="_blank" class="btn-coa-primary">
+          Hubungi Zaim Rosli via WhatsApp Untuk Kelulusan Segera
+        </a>
+        <button type="button" onclick="handleCoaLogout()" class="btn-coa-outline">Log Keluar</button>
+      </div>
+    </div>
+
+    <!-- 3. APPROVED DASHBOARD SCREEN -->
+    <div id="coa-dashboard-view" style="display: none;">
+      
+      <!-- Top Info Hero -->
+      <div class="partner-hero-box">
+        <div class="partner-hero-info">
+          <div class="partner-name" id="dash-partner-name">Nama Ejen</div>
+          <div class="partner-meta">
+            <span id="dash-partner-agency">Agensi</span> • 
+            <span id="dash-partner-ren">REN Number</span> • 
+            Kod Pautan Anda: <span id="dash-partner-code" class="partner-ref-chip">code</span>
+          </div>
+        </div>
+        <div class="partner-actions-box">
+          <button type="button" onclick="copyMainRefLink()" class="btn-coa-outline" title="Salin pautan utama portal anda">
+            Salin Pautan Portal Saya
+          </button>
+          <button type="button" onclick="handleCoaLogout()" class="btn-coa-outline" style="color: #ef4444; border-color: #fecaca;">
+            Log Keluar
+          </button>
+        </div>
+      </div>
+
+      <!-- Filter Bar -->
+      <div class="partner-filter-bar">
+        <input type="text" id="coa-search-kw" class="partner-search-input" placeholder="Cari mengikut lokasi, nama projek, atau jenis hartanah..." oninput="filterCoaListings()">
+        <select id="coa-cat-select" class="partner-cat-select" onchange="filterCoaListings()">
+          <option value="all">Semua Kategori</option>
+          <option value="subsale">Subsale Sahaja</option>
+          <option value="commercial">Komersil &amp; Industri</option>
+          <option value="undercon">Projek Undercon</option>
+        </select>
+      </div>
+
+      <!-- Listings Count Header -->
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+        <h3 style="font-size: 1.05rem; font-weight: 800; color: #0f172a; margin: 0;">Senarai Listing Buka Untuk COA</h3>
+        <span id="coa-listings-count" style="font-size: 0.82rem; font-weight: 700; color: #64748b;">0 listing</span>
+      </div>
+
+      <!-- Listing Cards Grid -->
+      <div id="coa-listings-grid" class="coa-listing-grid">
+        <!-- Rendered dynamically -->
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" style="background: #0f172a; color: #94a3b8; padding: 40px 20px; text-align: center; font-size: 0.85rem;">
+    <div class="container">
+      <p style="margin-bottom: 8px;">Portal Rakan Agensi COA — Zaim Rosli (REN 39575)</p>
+      <p style="opacity: 0.7;">Hak Cipta Terpelihara &copy; 2026 Zaim Rosli Real Estate Portal. Dikuasakan oleh JAZ International Sdn Bhd.</p>
+    </div>
+  </footer>
+
+  <!-- Supabase JS Client & Properties Data -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="/properties-data.js?v=130"></script>
+  <script>
+    // Supabase Configuration
+    const SUPABASE_URL = 'https://csrzhidtzqxfbapsenhu.supabase.co';
+    const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNzcnpoaWR0enF4ZmJhcHNlbmh1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODU0OTM3OTYsImV4cCI6MjEwMTA2OTc5Nn0.NnHFURbQTvsdgGbm1d_PC-hkOgQFQIHKTMQaS2n44SU';
+    const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+    let currentPartner = null;
+    let codeCheckTimeout = null;
+    let isCodeAvailable = false;
+    let allCoaListings = [];
+
+    // 1. Toast Notification Helper
+    function showToast(msg) {
+      const existing = document.querySelector('.toast-msg');
+      if (existing) existing.remove();
+      const t = document.createElement('div');
+      t.className = 'toast-msg';
+      t.textContent = msg;
+      document.body.appendChild(t);
+      setTimeout(() => { t.remove(); }, 2500);
+    }
+
+    // 2. Tab Switcher
+    function switchCoaAuthTab(tab) {
+      const btnLogin = document.getElementById('btn-tab-login');
+      const btnReg = document.getElementById('btn-tab-register');
+      const panelLogin = document.getElementById('coa-panel-login');
+      const panelReg = document.getElementById('coa-panel-register');
+
+      if (tab === 'login') {
+        btnLogin.classList.add('active');
+        btnReg.classList.remove('active');
+        panelLogin.style.display = 'block';
+        panelReg.style.display = 'none';
+      } else {
+        btnReg.classList.add('active');
+        btnLogin.classList.remove('active');
+        panelReg.style.display = 'block';
+        panelLogin.style.display = 'none';
+      }
+    }
+
+    // 3. Live Agent Code Uniqueness & Format Check (Debounced)
+    const codeInput = document.getElementById('reg-code');
+    const codeStatusMsg = document.getElementById('code-status-msg');
+    const codeLinkPreview = document.getElementById('code-link-preview');
+    const btnSubmitReg = document.getElementById('btn-submit-reg');
+
+    if (codeInput) {
+      codeInput.addEventListener('input', () => {
+        clearTimeout(codeCheckTimeout);
+        let rawVal = codeInput.value;
+        // Clean to valid slug format
+        let cleanVal = rawVal.toLowerCase().replace(/[^a-z0-9-]/g, '-').replace(/-+/g, '-').replace(/^-/, '');
+        codeInput.value = cleanVal;
+
+        if (!cleanVal || cleanVal.length < 3) {
+          codeStatusMsg.className = 'status-msg-box err';
+          codeStatusMsg.textContent = 'Kod rujukan mestilah sekurang-kurangnya 3 aksara.';
+          codeLinkPreview.style.display = 'none';
+          isCodeAvailable = false;
+          return;
+        }
+
+        codeStatusMsg.className = 'status-msg-box';
+        codeStatusMsg.textContent = 'Menyemak ketersediaan kod...';
+        codeStatusMsg.style.display = 'block';
+
+        codeCheckTimeout = setTimeout(async () => {
+          try {
+            const { data, error } = await supabaseClient
+              .from('coa_partners')
+              .select('id')
+              .eq('agent_code', cleanVal)
+              .maybeSingle();
+
+            if (error) {
+              console.error('Code check error:', error);
+            }
+
+            if (data) {
+              isCodeAvailable = false;
+              codeStatusMsg.className = 'status-msg-box err';
+              codeStatusMsg.textContent = `Kod rujukan '${cleanVal}' telah digunakan oleh ejen lain. Sila pilih kod lain.`;
+              codeLinkPreview.style.display = 'none';
+            } else {
+              isCodeAvailable = true;
+              codeStatusMsg.className = 'status-msg-box ok';
+              codeStatusMsg.textContent = `Kod rujukan '${cleanVal}' boleh digunakan.`;
+              codeLinkPreview.style.display = 'block';
+              codeLinkPreview.textContent = `Pautan anda: https://zaimrosli.my/property/nama-listing?ref=${cleanVal}`;
+            }
+          } catch (e) {
+            console.error(e);
+          }
+        }, 350);
+      });
+    }
+
+    // 4. Handle Registration
+    async function handleCoaRegister(e) {
+      e.preventDefault();
+      const errBox = document.getElementById('reg-error-msg');
+      errBox.style.display = 'none';
+
+      if (!isCodeAvailable) {
+        errBox.textContent = 'Sila pastikan kod rujukan anda sah dan belum digunakan sebelum menghantar pendaftaran.';
+        errBox.style.display = 'block';
+        return;
+      }
+
+      const name = document.getElementById('reg-name').value.trim();
+      const agency = document.getElementById('reg-agency').value.trim();
+      const ren = document.getElementById('reg-ren').value.trim();
+      let phone = document.getElementById('reg-phone').value.trim().replace(/[^0-9+]/g, '');
+      if (phone.startsWith('0')) phone = '60' + phone.substring(1);
+      if (!phone.startsWith('60') && !phone.startsWith('+')) phone = '60' + phone;
+
+      const code = document.getElementById('reg-code').value.trim().toLowerCase();
+      const email = document.getElementById('reg-email').value.trim().toLowerCase();
+      const password = document.getElementById('reg-pass').value;
+
+      btnSubmitReg.disabled = true;
+      btnSubmitReg.textContent = 'Menghantar Pendaftaran...';
+
+      try {
+        // Sign up with Supabase Auth
+        const { data: authData, error: authError } = await supabaseClient.auth.signUp({
+          email: email,
+          password: password,
+          options: {
+            data: {
+              full_name: name,
+              agency: agency,
+              ren_number: ren,
+              phone: phone,
+              agent_code: code,
+              role: 'coa_partner'
+            }
+          }
+        });
+
+        if (authError) {
+          throw new Error(authError.message || 'Ralat semasa mendaftar akaun.');
+        }
+
+        const userId = authData.user ? authData.user.id : null;
+        if (!userId) {
+          throw new Error('Gagal mendapatkan ID pengguna. Sila cuba lagi.');
+        }
+
+        // Insert into public.coa_partners
+        const { error: insertError } = await supabaseClient
+          .from('coa_partners')
+          .insert([{
+            id: userId,
+            email: email,
+            full_name: name,
+            agency: agency,
+            ren_number: ren,
+            phone: phone,
+            agent_code: code,
+            status: 'pending'
+          }]);
+
+        if (insertError) {
+          console.warn('Profile insert error (may need Superadmin RLS check):', insertError);
+        }
+
+        // Switch to pending view
+        currentPartner = {
+          full_name: name,
+          agency: agency,
+          ren_number: ren,
+          phone: phone,
+          agent_code: code,
+          status: 'pending'
+        };
+        showPendingView(currentPartner);
+
+      } catch (err) {
+        console.error('Registration failed:', err);
+        errBox.textContent = err.message || 'Pendaftaran gagal. Sila periksa maklumat anda.';
+        errBox.style.display = 'block';
+      } finally {
+        btnSubmitReg.disabled = false;
+        btnSubmitReg.textContent = 'Hantar Pendaftaran Rakan COA';
+      }
+    }
+
+    // 5. Handle Login
+    async function handleCoaLogin(e) {
+      e.preventDefault();
+      const errBox = document.getElementById('login-error-msg');
+      const submitBtn = document.getElementById('btn-submit-login');
+      errBox.style.display = 'none';
+
+      const email = document.getElementById('login-email').value.trim();
+      const password = document.getElementById('login-password').value;
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Mengesahkan...';
+
+      try {
+        const { data, error } = await supabaseClient.auth.signInWithPassword({
+          email: email,
+          password: password
+        });
+
+        if (error) throw new Error(error.message || 'Emel atau kata laluan tidak sah.');
+
+        await checkPartnerSession();
+      } catch (err) {
+        console.error('Login error:', err);
+        errBox.textContent = err.message || 'Log masuk gagal. Sila semak emel dan kata laluan.';
+        errBox.style.display = 'block';
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Log Masuk ke Portal COA';
+      }
+    }
+
+    // 6. Handle Logout
+    async function handleCoaLogout() {
+      try {
+        await supabaseClient.auth.signOut();
+      } catch (e) {}
+      currentPartner = null;
+      document.getElementById('coa-dashboard-view').style.display = 'none';
+      document.getElementById('coa-pending-view').style.display = 'none';
+      document.getElementById('coa-auth-view').style.display = 'block';
+      switchCoaAuthTab('login');
+      showToast('Anda telah berjaya log keluar.');
+    }
+
+    // 7. Check Current Session & Load Partner Data
+    async function checkPartnerSession() {
+      const loadingEl = document.getElementById('coa-loading-view');
+      const authEl = document.getElementById('coa-auth-view');
+      const pendingEl = document.getElementById('coa-pending-view');
+      const dashEl = document.getElementById('coa-dashboard-view');
+
+      try {
+        const { data: { session } } = await supabaseClient.auth.getSession();
+        if (!session || !session.user) {
+          loadingEl.style.display = 'none';
+          authEl.style.display = 'block';
+          pendingEl.style.display = 'none';
+          dashEl.style.display = 'none';
+          return;
+        }
+
+        // Fetch partner record
+        const { data: partner, error } = await supabaseClient
+          .from('coa_partners')
+          .select('*')
+          .eq('id', session.user.id)
+          .maybeSingle();
+
+        loadingEl.style.display = 'none';
+
+        if (!partner) {
+          // If auth exists but table record not found, read from metadata
+          const meta = session.user.user_metadata || {};
+          currentPartner = {
+            id: session.user.id,
+            full_name: meta.full_name || 'Rakan Ejen',
+            agency: meta.agency || 'Agensi',
+            ren_number: meta.ren_number || 'REN',
+            phone: meta.phone || '',
+            agent_code: meta.agent_code || 'agent',
+            status: meta.status || 'pending'
+          };
+        } else {
+          currentPartner = partner;
+        }
+
+        if (currentPartner.status === 'approved') {
+          showDashboardView(currentPartner);
+        } else {
+          showPendingView(currentPartner);
+        }
+
+      } catch (e) {
+        console.error('Session check failed:', e);
+        loadingEl.style.display = 'none';
+        authEl.style.display = 'block';
+      }
+    }
+
+    // 8. Show Pending View
+    function showPendingView(partner) {
+      document.getElementById('coa-loading-view').style.display = 'none';
+      document.getElementById('coa-auth-view').style.display = 'none';
+      document.getElementById('coa-dashboard-view').style.display = 'none';
+      const pendingEl = document.getElementById('coa-pending-view');
+      pendingEl.style.display = 'block';
+
+      document.getElementById('pending-display-name').textContent = partner.full_name || 'Ejen';
+      document.getElementById('pending-display-agency').textContent = partner.agency || 'Agensi';
+      document.getElementById('pending-display-code').textContent = partner.agent_code || '-';
+
+      const waMsg = encodeURIComponent(`Salam Zaim Rosli, saya telah mendaftar sebagai Rakan COA di zaimrosli.my:
+
+Nama: ${partner.full_name}
+Agensi: ${partner.agency}
+No. REN: ${partner.ren_number}
+Kod Promosi: ${partner.agent_code}
+
+Mohon semakan dan kelulusan akaun saya. Terima kasih!`);
+      document.getElementById('btn-pending-whatsapp').href = `https://wa.me/60108118559?text=${waMsg}`;
+    }
+
+    // 9. Show Dashboard View & Render Listings
+    function showDashboardView(partner) {
+      document.getElementById('coa-loading-view').style.display = 'none';
+      document.getElementById('coa-auth-view').style.display = 'none';
+      document.getElementById('coa-pending-view').style.display = 'none';
+      const dashEl = document.getElementById('coa-dashboard-view');
+      dashEl.style.display = 'block';
+
+      document.getElementById('dash-partner-name').textContent = partner.full_name;
+      document.getElementById('dash-partner-agency').textContent = partner.agency;
+      document.getElementById('dash-partner-ren').textContent = partner.ren_number;
+      document.getElementById('dash-partner-code').textContent = partner.agent_code;
+
+      loadCoaListings();
+    }
+
+    // 10. Copy Main Referral Link
+    function copyMainRefLink() {
+      if (!currentPartner) return;
+      const refUrl = `https://zaimrosli.my/?ref=${currentPartner.agent_code}`;
+      navigator.clipboard.writeText(refUrl).then(() => {
+        showToast('Pautan induk berjaya disalin: ' + refUrl);
+      }).catch(() => {
+        prompt('Salin pautan induk anda:', refUrl);
+      });
+    }
+
+    // 11. Load & Render Listings
+    function loadCoaListings() {
+      const rawData = (Array.isArray(window.PROPERTIES_DATA) && window.PROPERTIES_DATA.length > 0)
+        ? window.PROPERTIES_DATA
+        : [];
+
+      // Filter active listings
+      allCoaListings = rawData.filter(p => {
+        if (!p) return false;
+        if (p.hidden === true) return false;
+        if ((p.status || '').toLowerCase() === 'sold') return false;
+        // If listing has specific openForCoa flag, check it. Otherwise include by default for partner marketing.
+        if (p.openForCoa === false) return false;
+        return true;
+      });
+
+      filterCoaListings();
+    }
+
+    function filterCoaListings() {
+      const kw = (document.getElementById('coa-search-kw').value || '').toLowerCase().trim();
+      const cat = document.getElementById('coa-cat-select').value;
+      const grid = document.getElementById('coa-listings-grid');
+      const countEl = document.getElementById('coa-listings-count');
+
+      const filtered = allCoaListings.filter(item => {
+        const title = (item.title || '').toLowerCase();
+        const loc = (item.location || item.region || '').toLowerCase();
+        const type = (item.type || item.category || '').toLowerCase();
+
+        // Search match
+        if (kw && !title.includes(kw) && !loc.includes(kw) && !type.includes(kw)) {
+          return false;
+        }
+
+        // Category match
+        if (cat === 'subsale') {
+          const isComm = /shop|office|factory|kilang|industr|kedai|pejabat|land|tanah/i.test(type);
+          if (isComm || item.category === 'Undercon') return false;
+        } else if (cat === 'commercial') {
+          const isComm = /shop|office|factory|kilang|industr|kedai|pejabat|land|tanah/i.test(type);
+          if (!isComm) return false;
+        } else if (cat === 'undercon') {
+          if (item.category !== 'Undercon' && !type.includes('undercon')) return false;
+        }
+
+        return true;
+      });
+
+      countEl.textContent = `${filtered.length} listing sedia COA`;
+
+      if (filtered.length === 0) {
+        grid.innerHTML = `
+          <div style="grid-column: 1 / -1; text-align: center; padding: 40px 20px; background: #ffffff; border-radius: 12px; border: 1px solid #e2e8f0;">
+            <p style="color: #64748b; font-size: 0.95rem;">Tiada listing ditemui untuk carian atau kategori ini.</p>
+          </div>
+        `;
+        return;
+      }
+
+      const pCode = currentPartner ? currentPartner.agent_code : 'partner';
+
+      grid.innerHTML = filtered.map(item => {
+        let img = '/icons/icon-192.png';
+        if (Array.isArray(item.images) && item.images.length > 0 && typeof item.images[0] === 'string' && item.images[0].trim()) {
+          img = item.images[0].trim();
+        } else if (typeof item.image === 'string' && item.image.trim()) {
+          img = item.image.split(',')[0].trim();
+        }
+
+        const isSale = (item.status || 'sale').toLowerCase() === 'sale';
+        const badgeStatus = isSale ? 'UNTUK DIJUAL' : 'UNTUK DISEWA';
+        const commText = item.coaCommission || (item.category === 'Undercon' ? 'Komisen: 2.0%' : 'Komisen: 50/50');
+        const promoUrl = `https://zaimrosli.my/property/${item.slug || item.id}?ref=${pCode}`;
+
+        return `
+          <div class="coa-prop-card">
+            <div class="coa-prop-thumb-wrap">
+              <img src="${img}" alt="${(item.title || '').replace(/"/g, '&quot;')}" class="coa-prop-thumb" loading="lazy" referrerpolicy="no-referrer" onerror="this.src='/icons/icon-192.png';">
+              <div class="coa-badge-stack">
+                <span class="coa-badge-pill">${badgeStatus}</span>
+                <span class="coa-badge-comm">${commText}</span>
+              </div>
+            </div>
+
+            <div class="coa-prop-content">
+              <div class="coa-prop-loc">${item.location || item.region || 'Selangor'}</div>
+              <div class="coa-prop-title" title="${item.title}">${item.title}</div>
+              <div class="coa-prop-price">${item.priceStr || ('RM ' + Number(item.price || 0).toLocaleString())}</div>
+
+              <div class="coa-card-actions">
+                <button type="button" class="btn-coa-primary" style="padding: 10px; font-size: 0.82rem;" onclick="copyPromoLink('${promoUrl}')">
+                  Salin Pautan Promosi Anda
+                </button>
+
+                <div class="coa-action-row">
+                  <button type="button" class="btn-coa-outline" onclick="copyCleanDesc('${item.id || item.slug}')">
+                    Salin Teks Iklan
+                  </button>
+                  <a href="${promoUrl}" target="_blank" class="btn-coa-outline">
+                    Buka Landing Page
+                  </a>
+                </div>
+
+                <a href="https://wa.me/60108118559?text=${encodeURIComponent('Salam Zaim, saya ' + (currentPartner ? currentPartner.full_name : 'Rakan COA') + ' (' + (currentPartner ? currentPartner.ren_number : '') + '). Saya ada buyer berminat nak lock/viewing listing: ' + item.title + ' (' + (item.priceStr || '') + '). Mohon info terkini unit ini.')}" target="_blank" class="btn-coa-outline" style="background: #0f172a; color: #ffffff; border-color: #0f172a; margin-top: 2px;">
+                  Hubungi Zaim (Lock Case / Viewing)
+                </a>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    // 12. Copy Promo Link
+    function copyPromoLink(url) {
+      navigator.clipboard.writeText(url).then(() => {
+        showToast('Pautan promosi berjaya disalin ke clipboard!');
+      }).catch(() => {
+        prompt('Salin pautan promosi anda:', url);
+      });
+    }
+
+    // 13. Copy Clean Description (Free of Zaim's numbers)
+    function copyCleanDesc(propId) {
+      const item = allCoaListings.find(p => p.id === propId || p.slug === propId);
+      if (!item) return;
+
+      let desc = item.description || '';
+      // Clean external contacts and agency names
+      desc = desc.replace(/(?:for\s+(?:further\s+)?(?:inquiries|enquiries|viewing|appointment|info)|kindly\s+contact|contact\s*me|hubungi\s*(?:saya|kami)?|call\s*\/|whatsapp\s*\/|wasap\s*\/)[\s\S]*$/i, '');
+      desc = desc.replace(/(?:\+?60|0)1[0-9][\s.-]?[0-9]{7,8}/g, '');
+      desc = desc.replace(/REN\s*[0-9]+/gi, '');
+      desc = desc.replace(/Zaim\s*Rosli/gi, '');
+      desc = desc.replace(/JAZ\s*International\s*(?:Sdn\s*Bhd)?/gi, '');
+
+      const pCode = currentPartner ? currentPartner.agent_code : 'partner';
+      const promoUrl = `https://zaimrosli.my/property/${item.slug || item.id}?ref=${pCode}`;
+
+      const fullCopy = `${item.title.toUpperCase()}
+
+Harga: ${item.priceStr || 'RM ' + item.price}
+Lokasi: ${item.location || item.region}
+
+${desc.trim()}
+
+Maklumat lanjut & gambar penuh:
+${promoUrl}`;
+
+      navigator.clipboard.writeText(fullCopy).then(() => {
+        showToast('Teks iklan bersih berjaya disalin!');
+      }).catch(() => {
+        prompt('Salin teks iklan berikut:', fullCopy);
+      });
+    }
+
+    // Initialize
+    window.addEventListener('DOMContentLoaded', () => {
+      checkPartnerSession();
+    });
+  </script>
+</body>
+</html>

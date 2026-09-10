@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Admin Dashboard - Zaim Rosli Portal</title>
-  <link rel="stylesheet" href="/styles.css?v=122">
+  <link rel="stylesheet" href="/styles.css?v=129">
   <style>
     html, body {
       background-color: #f8fafc;
@@ -1690,6 +1690,11 @@
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
           <span>Traffic &amp; Leads</span>
         </button>
+
+        <button id="tab-btn-coa" onclick="switchAdminTab('coa')" class="sidebar-nav-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+          <span>Rakan COA</span>
+        </button>
       </div>
 
       <!-- Group 2: Integrations & Public Site -->
@@ -1748,6 +1753,9 @@
         </button>
         <button id="tab-btn-past" onclick="switchAdminTab('past')" style="background: transparent; color: #64748b; border-radius: 24px; font-weight: 700; padding: 8px 18px; border: none; cursor: pointer; transition: all 0.2s; font-size: 0.85rem; display: flex; align-items: center; gap: 6px;">
           Past Deals
+        </button>
+        <button id="tab-btn-coa-top" onclick="switchAdminTab('coa')" style="background: transparent; color: #64748b; border-radius: 24px; font-weight: 700; padding: 8px 18px; border: none; cursor: pointer; transition: all 0.2s; font-size: 0.85rem; display: flex; align-items: center; gap: 6px;">
+          Rakan COA
         </button>
         <a href="/propmall-sync.html" style="background: linear-gradient(135deg, #1e293b, #0f172a); color: #f59e0b; border-radius: 24px; font-weight: 800; padding: 8px 16px; border: 1px solid #f59e0b; text-decoration: none; font-size: 0.82rem; display: flex; align-items: center; gap: 6px; box-shadow: 0 2px 6px rgba(245,158,11,0.2);">
           PropMall Sync
@@ -1992,6 +2000,75 @@
 
         <div id="trafficAnalyticsContainer" style="width: 100%; box-sizing: border-box;">
           <!-- Rendered dynamically by loadTrafficAnalyticsAdmin() -->
+        </div>
+      </div>
+
+      <!-- Tab Panel COA Partners -->
+      <div id="tab-panel-coa" class="panel" style="display: none; background: transparent; border: none; box-shadow: none; padding: 0;">
+        <div class="admin-top-action-bar" style="display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-bottom: 20px; flex-wrap: wrap;">
+          <div>
+            <h2 style="font-size: 1.3rem; font-weight: 800; color: #0f172a; margin: 0;">Pengurusan Rakan Agensi COA</h2>
+            <p style="font-size: 0.82rem; color: #64748b; margin: 2px 0 0;">Semak permohonan rakan ejen, luluskan akses pangkalan listing, dan pantau kod rujukan promosi.</p>
+          </div>
+          <div style="display: flex; gap: 8px; align-items: center;">
+            <a href="/coa.html" target="_blank" class="renhub-action-btn" style="padding: 9px 14px; font-weight: 700; width: auto; height: auto;" title="Buka Portal COA Awam">Buka Portal Awam</a>
+            <button onclick="loadCoaPartnersAdmin()" class="renhub-action-btn" style="padding: 9px 14px; font-weight: 800; width: auto; height: auto;" title="Muat Semula">Muat Semula</button>
+          </div>
+        </div>
+
+        <!-- Metrics Summary Row -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin-bottom: 20px;">
+          <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 14px; padding: 18px; box-shadow: 0 2px 8px rgba(15,23,42,0.03);">
+            <div style="font-size: 0.74rem; font-weight: 700; color: #64748b; text-transform: uppercase;">JUMLAH PERMOHONAN</div>
+            <div id="coa-stat-total" style="font-size: 1.8rem; font-weight: 900; color: #0f172a; margin-top: 4px;">0</div>
+          </div>
+          <div style="background: #ffffff; border: 1px solid #fed7aa; border-radius: 14px; padding: 18px; box-shadow: 0 2px 8px rgba(217,119,6,0.06);">
+            <div style="font-size: 0.74rem; font-weight: 700; color: #c2410c; text-transform: uppercase;">MENUNGGU KELULUSAN</div>
+            <div id="coa-stat-pending" style="font-size: 1.8rem; font-weight: 900; color: #ea580c; margin-top: 4px;">0</div>
+          </div>
+          <div style="background: #ffffff; border: 1px solid #bbf7d0; border-radius: 14px; padding: 18px; box-shadow: 0 2px 8px rgba(22,163,74,0.06);">
+            <div style="font-size: 0.74rem; font-weight: 700; color: #15803d; text-transform: uppercase;">AKTIF / DILULUSKAN</div>
+            <div id="coa-stat-approved" style="font-size: 1.8rem; font-weight: 900; color: #16a34a; margin-top: 4px;">0</div>
+          </div>
+          <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 14px; padding: 18px; box-shadow: 0 2px 8px rgba(15,23,42,0.03);">
+            <div style="font-size: 0.74rem; font-weight: 700; color: #64748b; text-transform: uppercase;">DITOLAK / DIGANTUNG</div>
+            <div id="coa-stat-rejected" style="font-size: 1.8rem; font-weight: 900; color: #64748b; margin-top: 4px;">0</div>
+          </div>
+        </div>
+
+        <!-- Filter & Search Bar -->
+        <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 14px; padding: 16px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap;">
+          <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+            <button type="button" class="btn-action-pill active" id="btn-filter-coa-all" onclick="setCoaStatusFilter('all')">Semua</button>
+            <button type="button" class="btn-action-pill" id="btn-filter-coa-pending" onclick="setCoaStatusFilter('pending')">Menunggu Kelulusan</button>
+            <button type="button" class="btn-action-pill" id="btn-filter-coa-approved" onclick="setCoaStatusFilter('approved')">Aktif</button>
+            <button type="button" class="btn-action-pill" id="btn-filter-coa-rejected" onclick="setCoaStatusFilter('rejected')">Ditolak</button>
+          </div>
+          <div style="flex: 1; max-width: 340px; min-width: 200px;">
+            <input type="text" id="input-search-coa" placeholder="Cari nama, agensi, no REN, atau kod..." oninput="filterCoaPartnersTable()" style="width: 100%; padding: 8px 12px; border-radius: 8px; border: 1.5px solid #cbd5e1; font-size: 0.85rem; box-sizing: border-box;">
+          </div>
+        </div>
+
+        <!-- Partners Table -->
+        <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 14px; overflow-x: auto; box-shadow: 0 4px 16px rgba(15,23,42,0.03);">
+          <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.84rem;">
+            <thead>
+              <tr style="background: #f8fafc; border-bottom: 1.5px solid #e2e8f0; color: #475569; font-weight: 800; font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.4px;">
+                <th style="padding: 14px 16px;">Nama Ejen</th>
+                <th style="padding: 14px 16px;">Agensi</th>
+                <th style="padding: 14px 16px;">No. REN</th>
+                <th style="padding: 14px 16px;">WhatsApp</th>
+                <th style="padding: 14px 16px;">Kod Promosi</th>
+                <th style="padding: 14px 16px;">Status</th>
+                <th style="padding: 14px 16px; text-align: right;">Tindakan</th>
+              </tr>
+            </thead>
+            <tbody id="coaPartnersTableBody">
+              <tr>
+                <td colspan="7" style="text-align: center; padding: 30px; color: #64748b;">Memuatkan data rakan COA...</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
@@ -2334,6 +2411,17 @@
           <input type="url" id="form-ref-url" class="form-input" placeholder="https://propmall.co/share/eezmfo1hta">
         </div>
 
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 16px; padding: 12px 14px; background: #f8fafc; border: 1.5px solid #e2e8f0; border-radius: 10px;">
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <input type="checkbox" id="form-open-coa" style="width: 18px; height: 18px; cursor: pointer;">
+            <label for="form-open-coa" style="font-size: 0.8rem; font-weight: 700; color: #0f172a; cursor: pointer; text-transform: uppercase;">Buka Untuk Rakan COA</label>
+          </div>
+          <div>
+            <label style="display:block; font-size:0.70rem; font-weight:700; color:#64748b; margin-bottom:4px; text-transform:uppercase;">Kadar Komisen COA</label>
+            <input type="text" id="form-coa-comm" class="form-input" placeholder="contoh: 50/50 atau 2.0%" style="width: 100%; box-sizing: border-box; height: 34px; font-size: 0.82rem;">
+          </div>
+        </div>
+
         <!-- Image Upload & Drag Drop Grid -->
         <div class="form-group" style="margin-bottom: 18px;">
           <label style="display:block; font-size:0.75rem; font-weight:700; color:#64748b; margin-bottom:6px; text-transform:uppercase;">PROPERTY IMAGES (CLOUDFLARE R2 UPLOAD)</label>
@@ -2366,7 +2454,7 @@
 
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="/properties-data.js?v=133"></script>
-  <script src="/app.js?v=122"></script>
+  <script src="/app.js?v=130"></script>
   <script>
     const SUPABASE_URL = 'https://csrzhidtzqxfbapsenhu.supabase.co';
     const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNzcnpoaWR0enF4ZmJhcHNlbmh1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODU0OTM3OTYsImV4cCI6MjEwMTA2OTc5Nn0.NnHFURbQTvsdgGbm1d_PC-hkOgQFQIHKTMQaS2n44SU';
@@ -2763,6 +2851,38 @@
       if (countStatusRentEl) countStatusRentEl.innerText = countRent;
     }
 
+    // --- UNIVERSAL TEXT FORMATTING (NATIVE BOLD & ITALIC FOR WHATSAPP, TELEGRAM, SMS, ETC.) ---
+    function toUnicodeBold(str) {
+      return Array.from(str).map(ch => {
+        const c = ch.codePointAt(0);
+        if (c >= 65 && c <= 90) return String.fromCodePoint(0x1D5D4 + c - 65); // Sans-serif Bold A-Z
+        if (c >= 97 && c <= 122) return String.fromCodePoint(0x1D5EE + c - 97); // Sans-serif Bold a-z
+        if (c >= 48 && c <= 57) return String.fromCodePoint(0x1D7EC + c - 48); // Sans-serif Bold 0-9
+        return ch;
+      }).join('');
+    }
+
+    function toUnicodeItalic(str) {
+      return Array.from(str).map(ch => {
+        const c = ch.codePointAt(0);
+        if (c >= 65 && c <= 90) return String.fromCodePoint(0x1D608 + c - 65); // Sans-serif Italic A-Z
+        if (c >= 97 && c <= 122) return String.fromCodePoint(0x1D622 + c - 97); // Sans-serif Italic a-z
+        return ch;
+      }).join('');
+    }
+
+    function toUnicodeUnderline(str) {
+      return Array.from(str).map(ch => (ch === '\n' || ch === ' ') ? ch : ch + '\u0332').join('');
+    }
+
+    function formatUniversalShareText(text) {
+      if (!text) return '';
+      let res = text.replace(/<u>([\s\S]*?)<\/u>/gi, (m, inner) => toUnicodeUnderline(inner));
+      res = res.replace(/(\*\*|\*)([^\*\n]+?)\1/g, (m, p1, inner) => toUnicodeBold(inner));
+      res = res.replace(/(_)([^_\n]+?)\1/g, (m, p1, inner) => toUnicodeItalic(inner));
+      return res;
+    }
+
     function copyListingShareLink(slugOrId, idx) {
       const url = `${window.location.origin}/property/${slugOrId}`;
       let prop = (typeof idx === 'number' && currentProperties[idx]) ? currentProperties[idx] : currentProperties.find(p => p.slug === slugOrId || p.id === slugOrId);
@@ -2785,11 +2905,14 @@
       } else if (prop) {
         const isSale = (prop.status || 'sale').toLowerCase() === 'sale';
         const statusHeader = isSale ? '*WTS / UNTUK DIJUAL (FOR SALE)*' : '*WTL / UNTUK DISEWA (FOR RENT)*';
-        let priceDisplay = 'RM 0';
-        if (prop.price != null && !isNaN(Number(prop.price)) && Number(prop.price) > 0) {
-          priceDisplay = isSale ? 'RM ' + Number(prop.price).toLocaleString('en-US') : 'RM ' + Number(prop.price).toLocaleString('en-US') + ' / bulan';
-        } else if (prop.priceStr) {
-          priceDisplay = prop.priceStr;
+        let priceDisplay = prop.priceStr;
+        if (!priceDisplay && prop.price != null && !isNaN(Number(prop.price)) && Number(prop.price) > 0) {
+          priceDisplay = isSale ? 'RM ' + Number(prop.price).toLocaleString('en-US') : 'RM ' + Number(prop.price).toLocaleString('en-US') + ' / month';
+        }
+        priceDisplay = (priceDisplay || (prop.price ? 'RM ' + Number(prop.price).toLocaleString('en-US') : 'RM 0'))
+          .replace(/\/\s*(mo|month|bln|bulan|mth)\b/gi, '/ month');
+        if (!isSale && !/\/\s*month\b/i.test(priceDisplay) && priceDisplay !== 'RM 0' && priceDisplay !== '-') {
+          priceDisplay += ' / month';
         }
         const askingLine = isSale ? `*Harga Tawaran (Asking Price):* ${priceDisplay}` : `*Kadar Sewa (Rental Rate):* ${priceDisplay}`;
         const details = [];
@@ -2805,6 +2928,8 @@
         
         shareText = `${statusHeader}\n${askingLine}\n\n*${prop.title || 'Hartanah Pilihan'}*\n\n*MAKLUMAT HARTANAH (PROPERTY DETAILS):*\n${details.join('\n')}\n\n*Maklumat lanjut, gambar penuh & temujanji:*\n${url}`;
       }
+
+      shareText = formatUniversalShareText(shareText);
 
       if (navigator.share) {
         navigator.share({
@@ -2948,13 +3073,20 @@
           srcBadgeHTML = `<span class="renhub-badge badge-my">My Listing</span>`;
         }
 
-        const transBadge = p.status === 'sale' 
+        const isSale = (p.status || 'sale').toLowerCase() === 'sale';
+        const transBadge = isSale 
           ? `<span class="renhub-badge badge-for-sale">For Sale</span>`
           : `<span class="renhub-badge badge-for-rent">For Rent</span>`;
 
-        const priceDisplay = (p.price != null && !isNaN(Number(p.price))) 
-          ? (p.status === 'sale' ? `RM ${Number(p.price).toLocaleString('en-US')}` : `RM ${Number(p.price).toLocaleString('en-US')} / month`) 
-          : ((p.priceStr || 'RM 0').replace(/\/\s*(mo|month|bln|bulan|mth)\b/gi, '/ month'));
+        let priceDisplay = p.priceStr;
+        if (!priceDisplay && p.price != null && !isNaN(Number(p.price))) {
+          priceDisplay = isSale ? `RM ${Number(p.price).toLocaleString('en-US')}` : `RM ${Number(p.price).toLocaleString('en-US')} / month`;
+        }
+        priceDisplay = (priceDisplay || (p.price ? `RM ${Number(p.price).toLocaleString('en-US')}` : 'RM 0'))
+          .replace(/\/\s*(mo|month|bln|bulan|mth)\b/gi, '/ month');
+        if (!isSale && !/\/\s*month\b/i.test(priceDisplay) && priceDisplay !== 'RM 0' && priceDisplay !== '-') {
+          priceDisplay += ' / month';
+        }
 
         const specs = [];
         if (p.beds > 0) specs.push(`BD ${p.beds}`);
@@ -3141,6 +3273,8 @@
       document.getElementById('form-category').value = 'Subsales';
       document.getElementById('form-landSize').value = '';
       document.getElementById('form-ref-url').value = '';
+      if (document.getElementById('form-open-coa')) document.getElementById('form-open-coa').checked = true;
+      if (document.getElementById('form-coa-comm')) document.getElementById('form-coa-comm').value = '50/50';
       if (document.getElementById('form-source')) document.getElementById('form-source').value = 'my_listing';
       if (document.getElementById('form-exclusive-expiry')) document.getElementById('form-exclusive-expiry').value = '';
       if (document.getElementById('form-coa-agent')) document.getElementById('form-coa-agent').value = '';
@@ -3195,6 +3329,8 @@
       document.getElementById('form-tenure').value = p.tenure || '-';
       document.getElementById('form-lotType').value = p.lotType || '-';
       document.getElementById('form-ref-url').value = p.refUrl || '';
+      if (document.getElementById('form-open-coa')) document.getElementById('form-open-coa').checked = p.openForCoa !== false;
+      if (document.getElementById('form-coa-comm')) document.getElementById('form-coa-comm').value = p.coaCommission || '';
       document.getElementById('form-description').value = p.description || '';
       if (document.getElementById('form-source')) document.getElementById('form-source').value = p.listingSource || ((p.category && p.category.toLowerCase().includes('undercon')) ? 'undercon' : 'my_listing');
       if (document.getElementById('form-exclusive-expiry')) document.getElementById('form-exclusive-expiry').value = p.exclusiveExpiryDate || '';
@@ -3312,6 +3448,8 @@
         const tenure = document.getElementById('form-tenure').value;
         const lotType = document.getElementById('form-lotType').value;
         const refUrl = document.getElementById('form-ref-url').value.trim();
+      const openForCoa = document.getElementById('form-open-coa') ? document.getElementById('form-open-coa').checked : true;
+      const coaCommission = document.getElementById('form-coa-comm') ? document.getElementById('form-coa-comm').value.trim() : '50/50';
         const description = document.getElementById('form-description').value.trim();
 
         let mainImg = "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1200&q=80";
@@ -3360,6 +3498,8 @@
           images: imagesArr,
           description: description,
           refUrl: refUrl,
+        openForCoa: openForCoa,
+        coaCommission: coaCommission,
           listingSource: listingSourceVal,
           exclusiveExpiryDate: exclusiveExpiryVal,
           coaAgentName: coaAgentNameVal,
@@ -3684,7 +3824,7 @@
       const trafficPanel = document.getElementById('tab-panel-traffic');
 
       // Reset all buttons
-      [activeBtn, locBtn, pastBtn, trafficBtn, topTrafficBtn].forEach(b => {
+      [activeBtn, locBtn, pastBtn, trafficBtn, topTrafficBtn, coaBtn, coaTopBtn].forEach(b => {
         if (b) {
           b.style.background = 'transparent';
           b.style.color = '#64748b';
@@ -3692,7 +3832,7 @@
           b.classList.remove('active');
         }
       });
-      [mActiveBtn, mLocBtn, mPastBtn, mTrafficBtn].forEach(b => {
+      [mActiveBtn, mLocBtn, mPastBtn, mTrafficBtn, mCoaBtn].forEach(b => {
         if (b) {
           b.style.background = '#ffffff';
           b.style.color = '#334155';
@@ -3706,6 +3846,7 @@
       if (locPanel) locPanel.style.display = 'none';
       if (pastPanel) pastPanel.style.display = 'none';
       if (trafficPanel) trafficPanel.style.display = 'none';
+      if (coaPanel) coaPanel.style.display = 'none';
 
       if (tab === 'active') {
         if (activeBtn) {
@@ -3767,6 +3908,30 @@
         }
         if (trafficPanel) trafficPanel.style.display = 'block';
         loadTrafficAnalyticsAdmin();
+      } else if (tab === 'coa') {
+        const coaBtn = document.getElementById('tab-btn-coa');
+        const coaTopBtn = document.getElementById('tab-btn-coa-top');
+        const mCoaBtn = document.getElementById('mobile-tab-btn-coa');
+        const coaPanel = document.getElementById('tab-panel-coa');
+
+        if (coaBtn) {
+          coaBtn.style.background = '#0f172a';
+          coaBtn.style.color = '#ffffff';
+          coaBtn.style.boxShadow = '0 2px 6px rgba(15,23,42,0.15)';
+          coaBtn.classList.add('active');
+        }
+        if (coaTopBtn) {
+          coaTopBtn.style.background = '#0f172a';
+          coaTopBtn.style.color = '#ffffff';
+          coaTopBtn.style.boxShadow = '0 2px 6px rgba(15,23,42,0.15)';
+        }
+        if (mCoaBtn) {
+          mCoaBtn.style.background = '#0f172a';
+          mCoaBtn.style.color = '#ffffff';
+          mCoaBtn.style.border = 'none';
+        }
+        if (coaPanel) coaPanel.style.display = 'block';
+        loadCoaPartnersAdmin();
       }
     }
 
@@ -4559,6 +4724,163 @@
     if (document.readyState === 'loading') {
       document.addEventListener('DOMContentLoaded', handleAutoSyncImport);
     }
+
+    // =========================================================================
+    // COA PARTNER AGENCY MANAGEMENT SYSTEM (SUPABASE)
+    // =========================================================================
+    let _coaPartnersList = [];
+    let _currentCoaFilter = 'all';
+
+    async function loadCoaPartnersAdmin() {
+      const tbody = document.getElementById('coaPartnersTableBody');
+      if (!tbody) return;
+      tbody.innerHTML = '<tr><td colspan="7" style="text-align: center; padding: 24px; color: #64748b;">Memuatkan senarai rakan COA...</td></tr>';
+
+      try {
+        const { data: partners, error } = await supabaseClient
+          .from('coa_partners')
+          .select('*')
+          .order('created_at', { ascending: false });
+
+        if (error) throw error;
+        _coaPartnersList = partners || [];
+        updateCoaPartnersStats();
+        renderCoaPartnersTable();
+      } catch (err) {
+        console.error('loadCoaPartnersAdmin error:', err);
+        tbody.innerHTML = `<tr><td colspan="7" style="text-align: center; padding: 24px; color: #ef4444;">Ralat memuatkan rakan COA: ${err.message || 'Sila pastikan jadual coa_partners telah dicipta di Supabase.'}</td></tr>`;
+      }
+    }
+
+    function updateCoaPartnersStats() {
+      const total = _coaPartnersList.length;
+      const pending = _coaPartnersList.filter(p => p.status === 'pending').length;
+      const approved = _coaPartnersList.filter(p => p.status === 'approved').length;
+      const rejected = _coaPartnersList.filter(p => p.status === 'rejected' || p.status === 'suspended').length;
+
+      if (document.getElementById('coa-stat-total')) document.getElementById('coa-stat-total').textContent = total;
+      if (document.getElementById('coa-stat-pending')) document.getElementById('coa-stat-pending').textContent = pending;
+      if (document.getElementById('coa-stat-approved')) document.getElementById('coa-stat-approved').textContent = approved;
+      if (document.getElementById('coa-stat-rejected')) document.getElementById('coa-stat-rejected').textContent = rejected;
+    }
+
+    function setCoaStatusFilter(status) {
+      _currentCoaFilter = status;
+      ['all', 'pending', 'approved', 'rejected'].forEach(s => {
+        const btn = document.getElementById(`btn-filter-coa-${s}`);
+        if (btn) btn.classList.toggle('active', s === status);
+      });
+      renderCoaPartnersTable();
+    }
+
+    function filterCoaPartnersTable() {
+      renderCoaPartnersTable();
+    }
+
+    function renderCoaPartnersTable() {
+      const tbody = document.getElementById('coaPartnersTableBody');
+      if (!tbody) return;
+
+      const kw = (document.getElementById('input-search-coa') ? document.getElementById('input-search-coa').value : '').toLowerCase().trim();
+
+      const filtered = _coaPartnersList.filter(p => {
+        if (_currentCoaFilter !== 'all' && p.status !== _currentCoaFilter) {
+          if (_currentCoaFilter === 'rejected' && p.status !== 'suspended') return false;
+          if (_currentCoaFilter !== 'rejected') return false;
+        }
+
+        if (kw) {
+          const name = (p.full_name || '').toLowerCase();
+          const agency = (p.agency || '').toLowerCase();
+          const ren = (p.ren_number || '').toLowerCase();
+          const code = (p.agent_code || '').toLowerCase();
+          const phone = (p.phone || '').toLowerCase();
+          if (!name.includes(kw) && !agency.includes(kw) && !ren.includes(kw) && !code.includes(kw) && !phone.includes(kw)) {
+            return false;
+          }
+        }
+        return true;
+      });
+
+      if (filtered.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="7" style="text-align: center; padding: 28px; color: #64748b;">Tiada rekod rakan COA dijumpai.</td></tr>';
+        return;
+      }
+
+      tbody.innerHTML = filtered.map(item => {
+        const isPending = item.status === 'pending';
+        const isApproved = item.status === 'approved';
+
+        let statusBadge = '<span style="background: #f1f5f9; color: #64748b; padding: 3px 8px; border-radius: 6px; font-weight: 800; font-size: 0.70rem;">' + (item.status || 'PENDING').toUpperCase() + '</span>';
+        if (isPending) {
+          statusBadge = '<span style="background: #fef3c7; color: #b45309; padding: 3px 8px; border-radius: 6px; font-weight: 800; font-size: 0.70rem;">MENUNGGU KELULUSAN</span>';
+        } else if (isApproved) {
+          statusBadge = '<span style="background: #dcfce7; color: #15803d; padding: 3px 8px; border-radius: 6px; font-weight: 800; font-size: 0.70rem;">AKTIF / DILULUSKAN</span>';
+        } else {
+          statusBadge = '<span style="background: #fee2e2; color: #b91c1c; padding: 3px 8px; border-radius: 6px; font-weight: 800; font-size: 0.70rem;">DITOLAK</span>';
+        }
+
+        let cleanPhone = (item.phone || '').replace(/[^0-9]/g, '');
+        if (cleanPhone.startsWith('0')) cleanPhone = '60' + cleanPhone.substring(1);
+        if (!cleanPhone.startsWith('60')) cleanPhone = '60' + cleanPhone;
+
+        const welcomeWaMsg = encodeURIComponent(`Salam ${item.full_name}, permohonan akaun Rakan COA anda di portal Zaim Rosli telah diluluskan!\n\nAnda kini boleh log masuk ke portal rakan agensi di:\nhttps://zaimrosli.my/coa.html\n\nKod rujukan promosi anda: ${item.agent_code}\nSemua listing yang anda kongsikan akan automatik memaparkan nombor WhatsApp anda.\n\nSelamat bekerjasama!`);
+        const waLink = `https://wa.me/${cleanPhone}?text=${welcomeWaMsg}`;
+
+        return `
+          <tr style="border-bottom: 1px solid #f1f5f9; transition: background 0.15s;" onmouseover="this.style.background='#f8fafc'" onmouseout="this.style.background='transparent'">
+            <td style="padding: 14px 16px; font-weight: 700; color: #0f172a;">${item.full_name || '-'}</td>
+            <td style="padding: 14px 16px; color: #334155;">${item.agency || '-'}</td>
+            <td style="padding: 14px 16px; font-weight: 600; color: #475569;">${item.ren_number || '-'}</td>
+            <td style="padding: 14px 16px; color: #0f172a;">${item.phone || '-'}</td>
+            <td style="padding: 14px 16px;"><span style="background: #f1f5f9; padding: 2px 8px; border-radius: 6px; font-family: monospace; font-weight: 700; border: 1px solid #e2e8f0;">${item.agent_code || '-'}</span></td>
+            <td style="padding: 14px 16px;">${statusBadge}</td>
+            <td style="padding: 14px 16px; text-align: right; white-space: nowrap;">
+              <div style="display: inline-flex; gap: 6px; align-items: center;">
+                ${isPending ? `<button type="button" onclick="updateCoaPartnerStatus('${item.id}', 'approved')" style="padding: 5px 10px; background: #16a34a; color: #ffffff; border: none; border-radius: 6px; font-size: 0.74rem; font-weight: 700; cursor: pointer;">Luluskan</button>` : ''}
+                ${isApproved ? `<button type="button" onclick="updateCoaPartnerStatus('${item.id}', 'suspended')" style="padding: 5px 10px; background: #f1f5f9; color: #b45309; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.74rem; font-weight: 700; cursor: pointer;">Gantung</button>` : ''}
+                ${isPending ? `<button type="button" onclick="updateCoaPartnerStatus('${item.id}', 'rejected')" style="padding: 5px 10px; background: #fef2f2; color: #dc2626; border: 1px solid #fecaca; border-radius: 6px; font-size: 0.74rem; font-weight: 700; cursor: pointer;">Tolak</button>` : ''}
+                <a href="${waLink}" target="_blank" style="padding: 5px 10px; background: #0f172a; color: #ffffff; border: none; border-radius: 6px; font-size: 0.74rem; font-weight: 700; text-decoration: none; display: inline-block;">WhatsApp</a>
+                <button type="button" onclick="deleteCoaPartner('${item.id}', '${(item.full_name || '').replace(/'/g, "\\'")}')" style="padding: 5px 8px; background: transparent; color: #94a3b8; border: 1px solid #e2e8f0; border-radius: 6px; font-size: 0.74rem; cursor: pointer;" title="Padam">&times;</button>
+              </div>
+            </td>
+          </tr>
+        `;
+      }).join('');
+    }
+
+    async function updateCoaPartnerStatus(partnerId, newStatus) {
+      if (!confirm(`Tukar status rakan ejen ini kepada '${newStatus}'?`)) return;
+      try {
+        const { error } = await supabaseClient
+          .from('coa_partners')
+          .update({ status: newStatus, updated_at: new Date().toISOString() })
+          .eq('id', partnerId);
+
+        if (error) throw error;
+        alert(`Status berjaya dikemaskini kepada '${newStatus}'.`);
+        loadCoaPartnersAdmin();
+      } catch (err) {
+        alert('Ralat menukar status: ' + err.message);
+      }
+    }
+
+    async function deleteCoaPartner(partnerId, partnerName) {
+      if (!confirm(`Adakah anda pasti mahu memadamkan rakan ejen '${partnerName}'?`)) return;
+      try {
+        const { error } = await supabaseClient
+          .from('coa_partners')
+          .delete()
+          .eq('id', partnerId);
+
+        if (error) throw error;
+        alert('Rakan ejen berjaya dipadam.');
+        loadCoaPartnersAdmin();
+      } catch (err) {
+        alert('Ralat memadam rakan ejen: ' + err.message);
+      }
+    }
+
 </script>
 </body>
 </html>
