@@ -3,59 +3,215 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Frequently Asked Questions (FAQ) — Zaim Rosli (REN39575)</title>
-  <meta name="description" content="Common questions and answers regarding Malaysian real estate purchases, bank loans, legal fees, and REN services.">
-  <link rel="stylesheet" href="/styles.css">
+  <meta name="keywords" content="Zaim Rosli REN39575, ejen hartanah berdaftar selangor, perunding hartanah kl, pakar jual beli tanah, ejen kilang industri selangor, ejen sewa kedai pejabat">
+  <title>Soalan Lazim (FAQ) - Zaim Rosli (REN39575)</title>
+  <meta name="description" content="Clear answers to common questions regarding property sales, purchases, bank loan eligibility, legal fees, stamp duty, and REN services in Malaysia.">
+  <link rel="canonical" href="https://zaimrosli.my/faq">
+  <link rel="stylesheet" href="/styles.css?v=129">
   <style>
+    .faq-container {
+      max-width: 860px;
+      margin: 0 auto;
+    }
     .faq-item {
       background: #ffffff;
       border: 1px solid var(--border-color);
       border-radius: var(--radius-md);
       margin-bottom: 16px;
       overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.25s ease;
+    }
+    .faq-item:hover {
+      border-color: var(--accent-gold);
+      box-shadow: var(--shadow-md);
     }
     .faq-question {
       padding: 20px 24px;
       font-weight: 700;
       font-size: 1.05rem;
+      color: var(--primary-navy);
       cursor: pointer;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 16px;
+      user-select: none;
+    }
+    .faq-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--bg-surface);
+      color: var(--accent-gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      font-weight: 800;
+      flex-shrink: 0;
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+    .faq-item.active .faq-icon {
+      transform: rotate(45deg);
+      background: var(--accent-gold);
+      color: #ffffff;
     }
     .faq-answer {
-      padding: 0 24px 20px;
-      color: var(--text-muted);
+      display: none;
+      padding: 0 24px 22px;
+      color: #334155;
       font-size: 0.98rem;
-      line-height: 1.7;
+      line-height: 1.75;
+      border-top: 1px dashed #f1f5f9;
+      margin-top: 4px;
+      padding-top: 16px;
+    }
+    .faq-item.active .faq-answer {
+      display: block;
+    }
+    .faq-category-badge {
+      display: inline-block;
+      padding: 3px 10px;
+      background: rgba(217, 119, 6, 0.12);
+      color: #d97706;
+      border-radius: 12px;
+      font-size: 0.72rem;
+      font-weight: 800;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+    }
+    .faq-cta-box {
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+      color: #ffffff;
+      padding: 36px 28px;
+      border-radius: 20px;
+      margin-top: 50px;
+      text-align: center;
+      border: 1px solid rgba(245, 158, 11, 0.25);
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.12);
+    }
+    .faq-cta-box h3 {
+      color: #ffffff;
+      font-size: 1.4rem;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+    .faq-cta-box p {
+      color: #cbd5e1;
+      font-size: 1rem;
+      margin-bottom: 22px;
+    }
+    .btn-wa-faq {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 28px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #25d366, #128c7e);
+      color: #ffffff !important;
+      font-weight: 800;
+      font-size: 1rem;
+      text-decoration: none !important;
+      box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4);
+      transition: all 0.2s ease;
+    }
+    .btn-wa-faq:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 22px rgba(37, 211, 102, 0.5);
     }
   </style>
-  <script src="/analytics.js?v=91" defer></script>
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#0f172a">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Zaim Rosli">
+  <link rel="apple-touch-icon" href="/icons/icon-192.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/icons/icon-192.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <script src="/analytics.js?v=129" defer></script>
 </head>
 <body>
 
-  <!-- Site Navigation Header -->
+                  <!-- Site Navigation Header -->
   <header class="site-header">
     <div class="container nav-wrapper">
-      <a href="index.html" class="logo">
+      <a href="/" class="logo">
         <span class="logo-main">ZAIM<span>ROSLI</span></span>
         <span class="logo-sub">REGISTERED REAL ESTATE PORTAL</span>
       </a>
 
       <ul class="nav-links">
-        <li><a href="index.html" class="nav-link">Home</a></li>
-        <li><a href="about.html" class="nav-link">About Zaim</a></li>
-        <li><a href="properties.html" class="nav-link">Properties</a></li>
-        <li><a href="services.html" class="nav-link">Services</a></li>
-        <li><a href="calculator.html" class="nav-link">Calculators</a></li>
-        <li><a href="blog.html" class="nav-link">Blog</a></li>
-        <li><a href="testimonials.html" class="nav-link">Testimonials</a></li>
-        <li><a href="faq.html" class="nav-link active">FAQ</a></li>
-        <li><a href="contact.html" class="nav-link">Contact</a></li>
+        <li><a href="/" class="nav-link">Home</a></li>
+        
+        <!-- Properties Dropdown -->
+        <li class="nav-item-dropdown">
+          <a href="/properties" class="nav-link nav-link-dropdown">
+            Properties <span class="arrow">▾</span>
+          </a>
+          <div class="dropdown-menu">
+            <a href="/properties/undercon" class="dropdown-item" style="color: #fbbf24; font-weight: 700;">Undercons / New Projects</a>
+            <a href="/properties/residential" class="dropdown-item">Residential Properties</a>
+            <a href="/properties/commercial-industrial" class="dropdown-item">Commercial & Industrial</a>
+            <div style="margin: 4px 8px; border-top: 1px solid rgba(255,255,255,0.15);"></div>
+            <a href="/properties/for-sale" class="dropdown-item">Properties For Sale</a>
+            <a href="/properties/for-rent" class="dropdown-item">Rental Properties</a>
+            <a href="/properties" class="dropdown-item">All Listings</a>
+            <div class="area-focus-nav area-focus-desktop">
+            <div style="margin: 6px 8px; border-top: 1px solid rgba(255,255,255,0.15);"></div>
+            <div class="dropdown-section-header" style="font-size: 0.72rem; font-weight: 800; color: #fbbf24; padding: 4px 14px 2px; text-transform: uppercase; letter-spacing: 0.8px;">LOKASI FOKUS</div>
+            <a href="/properties/bangi" class="dropdown-item">Bangi Properties</a>
+            <a href="/properties/nilai" class="dropdown-item">Nilai Properties</a>
+            </div>
+          </div>
+        </li>
+
+        <!-- Services Dropdown -->
+        <li class="nav-item-dropdown">
+          <a href="/services" class="nav-link nav-link-dropdown">
+            Services <span class="arrow">▾</span>
+          </a>
+          <div class="dropdown-menu">
+            <a href="/services#selling" class="dropdown-item">Property Selling Advisory</a>
+            <a href="/services#valuation" class="dropdown-item">Free Market Valuation</a>
+            <a href="/services#legal-loan" class="dropdown-item">Legal & Loan Assistance</a>
+            <a href="/foreign-buyers" class="dropdown-item" style="color: #f59e0b; font-weight: 800;">Foreign Buyer & Expat Advisory</a>
+          </div>
+        </li>
+
+        <!-- Calculators Dropdown -->
+        <li class="nav-item-dropdown">
+          <a href="/calculator" class="nav-link nav-link-dropdown">
+            Calculators <span class="arrow">▾</span>
+          </a>
+          <div class="dropdown-menu">
+            <a href="/calculator#legal" class="dropdown-item">Legal Fee & Stamp Duty</a>
+            <a href="/calculator#dsr" class="dropdown-item">Bank Loan DSR Check</a>
+          </div>
+        </li>
+
+        <!-- Resources Dropdown -->
+        <li class="nav-item-dropdown">
+          <a href="/blog" class="nav-link nav-link-dropdown">
+            Resources <span class="arrow">▾</span>
+          </a>
+          <div class="dropdown-menu">
+            <a href="/foreign-buyers" class="dropdown-item" style="color: #f59e0b; font-weight: 800;">Foreign Buyer Guide</a>
+            <a href="/blog" class="dropdown-item">Blog & Guides</a>
+            <a href="/testimonials" class="dropdown-item">Client Reviews</a>
+            <a href="/faq" class="dropdown-item active">FAQ</a>
+            <div style="margin: 4px 8px; border-top: 1px solid rgba(255,255,255,0.15);"></div>
+            <a href="/login.html" class="dropdown-item" style="color: #fbbf24; font-weight: 700;">Admin Portal</a>
+          </div>
+        </li>
+
+        <li><a href="/about" class="nav-link">About Zaim</a></li>
+        <li><a href="/contact" class="nav-link">Contact</a></li>
       </ul>
 
       <div class="nav-cta">
-        <a href="contact.html" class="btn btn-accent btn-sm">Appointment</a>
+        <a href="/contact" class="btn btn-accent btn-sm">Appointment</a>
         <button class="mobile-nav-toggle" aria-label="Toggle Navigation Menu">
           <span></span>
           <span></span>
@@ -66,90 +222,287 @@
   </header>
 
   <!-- Mobile Drawer Overlay -->
-  <div class="mobile-overlay">
-    <div class="mobile-drawer">
+    <!-- PWA Mobile Navigation Drawer Overlay -->
+  <div class="mobile-overlay" id="mobile-nav-overlay">
+    <div class="mobile-drawer" id="mobile-nav-drawer">
       <div class="mobile-drawer-header">
-        <div class="logo">
+        <div class="drawer-logo">
           <span class="logo-main">ZAIM<span>ROSLI</span></span>
           <span class="logo-sub">REN39575</span>
         </div>
-        <button class="mobile-drawer-close">&times;</button>
+        <button class="mobile-drawer-close" aria-label="Close Navigation Menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
       </div>
 
-      <ul class="mobile-drawer-links">
-        <li><a href="index.html" class="mobile-drawer-link">Home</a></li>
-        <li><a href="about.html" class="mobile-drawer-link">About Zaim</a></li>
-        <li><a href="properties.html" class="mobile-drawer-link">Properties</a></li>
-        <li><a href="services.html" class="mobile-drawer-link">Services</a></li>
-        <li><a href="calculator.html" class="mobile-drawer-link">Calculators</a></li>
-        <li><a href="blog.html" class="mobile-drawer-link">Blog</a></li>
-        <li><a href="testimonials.html" class="mobile-drawer-link">Testimonials</a></li>
-        <li><a href="faq.html" class="mobile-drawer-link active">FAQ</a></li>
-        <li><a href="contact.html" class="mobile-drawer-link">Contact</a></li>
-      </ul>
+      <div class="mobile-drawer-body">
+        <ul class="mobile-nav-list">
+          <li class="mobile-nav-item">
+            <a href="/" class="mobile-nav-link">HOME</a>
+          </li>
+
+          <!-- Properties Accordion -->
+          <li class="mobile-nav-item mobile-accordion-item">
+            <div class="mobile-accordion-header mobile-dropdown-toggle">
+              <span class="mobile-accordion-title">PROPERTIES</span>
+              <span class="mobile-accordion-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </span>
+            </div>
+            <div class="mobile-accordion-content">
+              <a href="/properties/residential" class="mobile-sublink">Residential Properties</a>
+              <a href="/properties/commercial-industrial" class="mobile-sublink">Commercial & Industrial</a>
+              <a href="/properties/for-sale" class="mobile-sublink">Properties For Sale</a>
+              <a href="/properties/for-rent" class="mobile-sublink">Rental Properties</a>
+              <a href="/properties" class="mobile-sublink">All Listings</a>
+              
+              <div class="mobile-subgroup-title">LOKASI FOKUS</div>
+              <div class="area-focus-nav area-focus-mobile">
+                <a href="/properties/bangi" class="mobile-sublink">Bangi Properties</a>
+                <a href="/properties/nilai" class="mobile-sublink">Nilai Properties</a>
+              </div>
+            </div>
+          </li>
+
+          <!-- Services Accordion -->
+          <li class="mobile-nav-item mobile-accordion-item">
+            <div class="mobile-accordion-header mobile-dropdown-toggle">
+              <span class="mobile-accordion-title">SERVICES</span>
+              <span class="mobile-accordion-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </span>
+            </div>
+            <div class="mobile-accordion-content">
+              <a href="/foreign-buyers" class="mobile-sublink" style="color: #d97706; font-weight: 800;">Foreign Buyer & Expat Advisory</a>
+              <a href="/services#selling" class="mobile-sublink">Property Selling Advisory</a>
+              <a href="/services#valuation" class="mobile-sublink">Free Market Valuation</a>
+              <a href="/services#legal-loan" class="mobile-sublink">Legal & Loan Screening</a>
+            </div>
+          </li>
+
+          <!-- Calculators Accordion -->
+          <li class="mobile-nav-item mobile-accordion-item">
+            <div class="mobile-accordion-header mobile-dropdown-toggle">
+              <span class="mobile-accordion-title">CALCULATORS</span>
+              <span class="mobile-accordion-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </span>
+            </div>
+            <div class="mobile-accordion-content">
+              <a href="/calculator#legal" class="mobile-sublink">Legal Fee & Stamp Duty (MOT)</a>
+              <a href="/calculator#dsr" class="mobile-sublink">Bank Loan DSR Check</a>
+            </div>
+          </li>
+
+          <!-- Resources Accordion -->
+          <li class="mobile-nav-item mobile-accordion-item">
+            <div class="mobile-accordion-header mobile-dropdown-toggle">
+              <span class="mobile-accordion-title">RESOURCES</span>
+              <span class="mobile-accordion-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </span>
+            </div>
+            <div class="mobile-accordion-content">
+              <a href="/blog" class="mobile-sublink">Blog & Property Guides</a>
+              <a href="/foreign-buyers" class="mobile-sublink" style="color: #d97706; font-weight: 800;">Foreign Buyer Guide</a>
+              <a href="/testimonials" class="mobile-sublink">Client Reviews & Testimonials</a>
+              <a href="/faq" class="mobile-sublink">Frequently Asked Questions (FAQ)</a>
+              <div style="margin: 6px 0; border-top: 1px solid #e2e8f0;"></div>
+              <a href="/login.html" class="mobile-sublink" style="color: #d97706; font-weight: 800;">Admin Portal (REN39575)</a>
+            </div>
+          </li>
+
+          <li class="mobile-nav-item">
+            <a href="/about" class="mobile-nav-link">ABOUT ZAIM</a>
+          </li>
+          <li class="mobile-nav-item">
+            <a href="/contact" class="mobile-nav-link">CONTACT</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="mobile-drawer-footer">
+        <a href="https://wa.me/60183863488?text=Salam%20Zaim,%20saya%20ingin%20berunding%20mengenai%20hartanah" target="_blank" rel="noopener" class="mobile-drawer-btn btn-wa-drawer">
+          WhatsApp Zaim (REN39575)
+        </a>
+        <a href="/contact" class="mobile-drawer-btn btn-appointment-drawer">
+          Appointment / Temu Janji
+        </a>
+      </div>
     </div>
   </div>
 
-  <!-- Page Hero Banner -->
+  <!-- Page Header Hero Banner -->
   <section class="page-hero">
     <div class="container">
-      <h1>Frequently Asked <span>Questions (FAQ)</span></h1>
-      <p>Answers to common questions regarding property purchases, legal fees, and bank loans in Malaysia.</p>
+      <span class="section-subtitle">REAL ESTATE FAQ</span>
+      <h1>Answers To Your <span>Key Property Questions</span></h1>
+      <p>A comprehensive guide covering property sales, purchases, bank loan eligibility, legal fees, stamp duty, and Real Estate Negotiator (REN) services in Malaysia.</p>
     </div>
   </section>
 
-  <!-- FAQ Accordions -->
-  <section class="section">
-    <div class="container" style="max-width: 840px;">
-      
-      <div class="faq-item">
-        <div class="faq-question">
-          <span>1. What is the standard agent commission rate for property sales in Malaysia?</span>
-          <span>+</span>
+  <!-- FAQ Content Section -->
+  <section class="section" style="background: var(--bg-surface); min-height: 60vh;">
+    <div class="container faq-container">
+
+      <!-- Item 1 -->
+      <div class="faq-item active">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <div>
+            <span class="faq-category-badge">Agency Fees</span>
+            <div>1. What is the standard agent commission rate for property sales in Malaysia?</div>
+          </div>
+          <span class="faq-icon">+</span>
         </div>
         <div class="faq-answer">
-          According to LPPEH guidelines, the maximum agency fee for residential property transactions is capped at 3% of the agreed transacted price. This fee is paid by the property seller upon successful execution of the Sales and Purchase Agreement (SPA).
+          <p>According to LPPEH guidelines, the maximum agency fee for residential property transactions is capped at <strong>3% of the agreed transacted price</strong>.</p>
+          <p>This fee is paid by the <strong>property seller</strong> upon successful execution of the Sales and Purchase Agreement (SPA) and settlement of the 10% deposit.</p>
         </div>
       </div>
 
+      <!-- Item 2 -->
       <div class="faq-item">
-        <div class="faq-question">
-          <span>2. How much upfront cash do I need to purchase a residential home?</span>
-          <span>+</span>
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <div>
+            <span class="faq-category-badge">Homebuyers</span>
+            <div>2. How much upfront cash do I need to purchase a residential home?</div>
+          </div>
+          <span class="faq-icon">+</span>
         </div>
         <div class="faq-answer">
-          Typically, buyers require 10% downpayment plus approximately 3% to 5% of the purchase price to cover SPA legal fees, MOT stamp duty, loan facility agreement fees, and valuation fees. Use our online <a href="calculator.html" style="color: var(--accent-gold); font-weight:700;">Legal Fee Calculator</a> for a personalized calculation.
+          <p>For subsale property purchases, buyers typically require:</p>
+          <ul>
+            <li><strong>10% Cash Deposit:</strong> Consisting of 3.18% earnest deposit upon signing the Offer to Purchase (OTP), and 6.82% balance deposit upon signing the SPA.</li>
+            <li><strong>3% - 5% Additional Cash:</strong> Covering SPA & Loan legal fees, bank valuation fee, and MOT Stamp Duty.</li>
+          </ul>
+          <p><em>Note: First-time homebuyers enjoy 100% MOT stamp duty exemption on properties priced up to RM500,000.</em></p>
         </div>
       </div>
 
+      <!-- Item 3 -->
       <div class="faq-item">
-        <div class="faq-question">
-          <span>3. What is the difference between SPA Legal Fee and MOT Stamp Duty?</span>
-          <span>+</span>
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <div>
+            <span class="faq-category-badge">Land Tenure</span>
+            <div>3. What is the main difference between Freehold and Leasehold property?</div>
+          </div>
+          <span class="faq-icon">+</span>
         </div>
         <div class="faq-answer">
-          The SPA legal fee is paid to the appointed law firm for drafting and executing the Sale and Purchase Agreement. MOT (Memorandum of Transfer) stamp duty is a statutory tax paid directly to LHDN (Inland Revenue Board Malaysia) to officially transfer ownership of the property title.
+          <p><strong>Freehold:</strong> Grants perpetual land ownership with no expiration. Subsale transfers for non-Bumi buyers do not require State Consent, resulting in faster transactions (~3 months).</p>
+          <p><strong>Leasehold:</strong> Land is leased from the State Government (typically for 99 years). Each transfer requires State Consent approval (2-6 months). However, Leasehold properties are usually 15%-20% cheaper and offer higher rental yields.</p>
         </div>
       </div>
 
+      <!-- Item 4 -->
       <div class="faq-item">
-        <div class="faq-question">
-          <span>4. Can I withdraw from EPF Account 2 to finance my home purchase?</span>
-          <span>+</span>
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <div>
+            <span class="faq-category-badge">Bank Financing</span>
+            <div>4. How do Malaysian banks calculate my Debt Service Ratio (DSR)?</div>
+          </div>
+          <span class="faq-icon">+</span>
         </div>
         <div class="faq-answer">
-          Yes! First-time homebuyers or buyers upgrading their primary residence can withdraw from KWSP EPF Account 2 to cover downpayment shortages or reduce existing housing loan balances.
+          <p>Banks determine home loan eligibility using the Debt Service Ratio (DSR):</p>
+          <div class="blog-highlight-box" style="margin: 10px 0;">
+            <code>DSR = (Total Monthly Debt Commitments / Net Income After Tax & EPF) x 100%</code>
+          </div>
+          <p>The maximum DSR limit for most local banks ranges between <strong>60% and 70%</strong>. For example, with a net salary of RM5,000 and existing debts of RM1,500, your maximum eligible monthly housing instalment is around RM1,500 - RM2,000.</p>
         </div>
       </div>
 
+      <!-- Item 5 -->
       <div class="faq-item">
-        <div class="faq-question">
-          <span>5. How long does a property transfer transaction take from booking to key handover?</span>
-          <span>+</span>
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <div>
+            <span class="faq-category-badge">Loan Application</span>
+            <div>5. What essential documents are required for a bank loan application?</div>
+          </div>
+          <span class="faq-icon">+</span>
         </div>
         <div class="faq-answer">
-          For Freehold properties with no restrictions, completion usually takes 3 months from the date of SPA signing. For Leasehold properties requiring State Authority consent, completion typically ranges between 4 to 6 months.
+          <p><strong>For Salaried Employees (Private / Government Sector):</strong></p>
+          <ul>
+            <li>Copy of NRIC (Front & Back).</li>
+            <li>3 - 6 Months Latest Pay Slips.</li>
+            <li>3 - 6 Months Latest Bank Statements.</li>
+            <li>Latest EPF Statement.</li>
+            <li>Latest EA / BE LHDN Income Tax Form.</li>
+          </ul>
+          <p><strong>For Self-Employed / Business Owners:</strong> Provide SSM Registration, 6 Months Company Bank Statements, LHDN Form B, and Audited Accounts.</p>
         </div>
+      </div>
+
+      <!-- Item 6 -->
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <div>
+            <span class="faq-category-badge">Legal Requirements</span>
+            <div>6. Can a buyer and seller share the same law firm in a transaction?</div>
+          </div>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>Under the <strong>Legal Profession Act 1976</strong> in Malaysia, a single law firm <strong>CANNOT</strong> represent both buyer and seller in the same property transaction to prevent conflict of interest.</p>
+          <p>The law firm typically represents the buyer for SPA and loan documentation, while the seller may appoint their own lawyer or be unrepresented for discharge of charge purposes.</p>
+        </div>
+      </div>
+
+      <!-- Item 7 -->
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <div>
+            <span class="faq-category-badge">REN Role</span>
+            <div>7. What services does Registered Real Estate Negotiator Zaim Rosli (REN39575) provide?</div>
+          </div>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>As a registered REN under LPPEH with a licensed agency, Zaim Rosli provides comprehensive end-to-end services including:</p>
+          <ul>
+            <li>Free Market Valuation Checks (Bank Valuation).</li>
+            <li>Buyer Pre-Qualification & DSR Screening before booking fee payment.</li>
+            <li>Aggressively marketing properties via major portals & digital channels.</li>
+            <li>Managing Offer to Purchase (OTP) documentation, panel lawyers, and top banker connections.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Item 8 -->
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <div>
+            <span class="faq-category-badge">Transaction Timeline</span>
+            <div>8. How long does the entire subsale transfer process take until key handover?</div>
+          </div>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <p><strong>Freehold Property:</strong> Average transaction timeline is <strong>3 months</strong> from bank loan approval and SPA execution.</p>
+          <p><strong>Leasehold Property:</strong> Average timeline is <strong>4 to 6 months</strong>, as it requires State Consent application approval before the official 3-month completion clock starts.</p>
+        </div>
+      </div>
+
+      <!-- CTA Box -->
+      <div class="faq-cta-box">
+        <h3>Have Questions Not Answered Here?</h3>
+        <p>I am ready to assist you directly with custom advice regarding property purchases, sales, or loan eligibility.</p>
+        <a href="https://wa.me/60100000000?text=Hi%20Zaim,%20I%20have%20a%20question%20regarding%20buying/selling%20a%20property." target="_blank" class="btn-wa-faq">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+          Ask a Question via WhatsApp
+        </a>
       </div>
 
     </div>
@@ -165,6 +518,15 @@
     </div>
   </footer>
 
-  <script src="/app.js"></script>
+  <script src="/properties-data.js?v=133"></script>
+  <script src="/locations-config.js?v=20"></script>
+  <script src="/app.js?v=130"></script>
+  <script>
+    function toggleFaq(element) {
+      const item = element.parentElement;
+      item.classList.toggle('active');
+    }
+  </script>
+  <script src="/pwa.js"></script>
 </body>
 </html>

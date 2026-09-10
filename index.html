@@ -74,7 +74,11 @@
   }
   </script>
 
-  <link rel="stylesheet" href="/styles.css?v=132">
+  <!-- Preload Critical Hero Background for Instant LCP -->
+  <link rel="preload" as="image" href="/images/hero-bg.webp" media="(min-width: 769px)" fetchpriority="high">
+  <link rel="preload" as="image" href="/images/hero-bg-mobile.webp" media="(max-width: 768px)" fetchpriority="high">
+
+  <link rel="stylesheet" href="/styles.css?v=133">
   <link rel="manifest" href="/manifest.json">
   <meta name="theme-color" content="#0f172a">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -83,7 +87,7 @@
   <link rel="apple-touch-icon" href="/icons/icon-192.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/icons/icon-192.png">
   <link rel="shortcut icon" href="/favicon.ico">
-  <script src="/analytics.js?v=93" defer></script>
+  <script src="/analytics.js?v=129" defer></script>
 </head>
 <body>
 
@@ -104,6 +108,7 @@
             Properties <span class="arrow">▾</span>
           </a>
           <div class="dropdown-menu">
+            <a href="/properties/undercon" class="dropdown-item" style="color: #fbbf24; font-weight: 700;">Undercons / New Projects</a>
             <a href="/properties/residential" class="dropdown-item">Residential Properties</a>
             <a href="/properties/commercial-industrial" class="dropdown-item">Commercial & Industrial</a>
             <div style="margin: 4px 8px; border-top: 1px solid rgba(255,255,255,0.15);"></div>
@@ -114,7 +119,10 @@
             <div style="margin: 6px 8px; border-top: 1px solid rgba(255,255,255,0.15);"></div>
             <div class="dropdown-section-header" style="font-size: 0.72rem; font-weight: 800; color: #fbbf24; padding: 4px 14px 2px; text-transform: uppercase; letter-spacing: 0.8px;">LOKASI FOKUS</div>
             <a href="/properties/bangi" class="dropdown-item">Bangi Properties</a>
+            <a href="/properties/kajang" class="dropdown-item">Kajang Properties</a>
+            <a href="/properties/semenyih" class="dropdown-item">Semenyih Properties</a>
             <a href="/properties/nilai" class="dropdown-item">Nilai Properties</a>
+            <a href="/properties/kawasan-perindustrian-bangi" class="dropdown-item">Industri & Kilang</a>
             </div>
           </div>
         </li>
@@ -216,7 +224,10 @@
               <div class="mobile-subgroup-title">LOKASI FOKUS</div>
               <div class="area-focus-nav area-focus-mobile">
                 <a href="/properties/bangi" class="mobile-sublink">Bangi Properties</a>
+                <a href="/properties/kajang" class="mobile-sublink">Kajang Properties</a>
+                <a href="/properties/semenyih" class="mobile-sublink">Semenyih Properties</a>
                 <a href="/properties/nilai" class="mobile-sublink">Nilai Properties</a>
+                <a href="/properties/kawasan-perindustrian-bangi" class="mobile-sublink">Industri & Kilang</a>
               </div>
             </div>
           </li>
@@ -468,8 +479,8 @@
   </footer>
 
   <script src="/properties-data.js?v=133"></script>
-  <script src="/locations-config.js?v=20"></script>
-  <script src="/app.js?v=132"></script>
+  <script src="/locations-config.js?v=21"></script>
+  <script src="/app.js?v=133"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       function renderHomeFeatured() {

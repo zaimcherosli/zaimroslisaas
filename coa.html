@@ -509,10 +509,10 @@
     <!-- Site Navigation Header -->
     <header class="site-header">
       <div class="container nav-wrapper">
-        <a href="/" class="logo" aria-label="Zaim Rosli Homepage">
-          <span class="logo-main" id="coa-nav-brand-name">ZAIM<span>ROSLI</span></span>
-          <span class="logo-sub" id="coa-nav-brand-sub">REGISTERED REAL ESTATE PORTAL</span>
-        </a>
+        <div class="logo" style="cursor: default;">
+          <span class="logo-main" style="font-size: 1.15rem; font-weight: 800; color: #0f172a; letter-spacing: -0.4px;">KATALOG<span style="color: #d97706;">HARTANAH</span></span>
+          <span class="logo-sub" style="font-size: 0.7rem; color: #64748b; font-weight: 700; letter-spacing: 0.5px;">PROJEK &amp; SUBSALE</span>
+        </div>
 
         <ul class="nav-links">
           <li><a href="javascript:void(0)" onclick="setFilterTab('all')" class="nav-link active" id="tab-link-all">Semua Listing</a></li>
@@ -543,8 +543,8 @@
     <div class="mobile-drawer" id="mobile-nav-drawer">
       <div class="mobile-drawer-header">
         <div class="drawer-logo">
-          <span class="logo-main" id="drawer-brand-name">ZAIM<span>ROSLI</span></span>
-          <span class="logo-sub" id="drawer-brand-sub">REN39575</span>
+          <span class="logo-main" style="font-size: 1.15rem; font-weight: 800; color: #0f172a;">KATALOG<span style="color: #d97706;">HARTANAH</span></span>
+          <span class="logo-sub" style="font-size: 0.7rem; color: #64748b; font-weight: 700; letter-spacing: 0.5px;">PROJEK &amp; SUBSALE</span>
         </div>
         <button class="mobile-drawer-close" aria-label="Close Navigation Menu">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
@@ -574,10 +574,10 @@
     <!-- Storefront Showcase Hero (Public Storefront) -->
     <div class="coa-banner" id="coa-storefront-banner" style="display: none;">
       <div class="container">
-        <span class="coa-badge-tag">Katalog Hartanah Rakan Agensi</span>
+        <span class="coa-badge-tag">Katalog Hartanah Pilihan</span>
         <h1 class="coa-banner-title" id="storefront-agent-title">Zaim Rosli</h1>
         <p class="coa-banner-desc" id="storefront-agent-desc">
-          JAZ International Sdn Bhd • REN 39575 • Rakan Agensi Sah Zaim Rosli Real Estate Portal
+          JAZ International Sdn Bhd • REN 39575
         </p>
         <div class="coa-hero-actions">
           <a id="storefront-wa-btn" href="#" target="_blank" class="btn-coa-primary" style="padding: 11px 22px; font-size: 0.88rem;">
@@ -745,7 +745,7 @@
   <!-- Footer -->
   <footer class="site-footer" style="background: #0f172a; color: #94a3b8; padding: 36px 20px; text-align: center; font-size: 0.85rem; border-top: 1px solid #1e293b;">
     <div class="container">
-      <p style="margin: 0 0 6px 0; font-weight: 700; color: #ffffff;" id="footer-agent-title">Portal Rakan Agensi COA — Zaim Rosli (REN 39575)</p>
+      <p style="margin: 0 0 6px 0; font-weight: 700; color: #ffffff;" id="footer-agent-title">Katalog Hartanah — Zaim Rosli (REN 39575)</p>
       <p style="margin: 0; opacity: 0.7;">Hak Cipta Terpelihara &copy; 2026 Zaim Rosli Real Estate Portal. Dikuasakan oleh JAZ International Sdn Bhd.</p>
     </div>
   </footer>
@@ -1194,7 +1194,7 @@ Mohon semakan dan kelulusan akaun saya. Terima kasih!`);
 
       // Update Hero Content
       document.getElementById('storefront-agent-title').textContent = partner.full_name;
-      document.getElementById('storefront-agent-desc').textContent = `${partner.agency} • ${partner.ren_number} • Rakan Agensi Sah Zaim Rosli Real Estate Portal`;
+      document.getElementById('storefront-agent-desc').textContent = `${partner.agency} • ${partner.ren_number}`;
 
       let cleanPhone = (partner.phone || '').replace(/[^0-9]/g, '');
       if (cleanPhone.startsWith('0')) cleanPhone = '60' + cleanPhone.substring(1);
@@ -1204,21 +1204,12 @@ Mohon semakan dan kelulusan akaun saya. Terima kasih!`);
       document.getElementById('storefront-wa-btn').href = `https://wa.me/${cleanPhone}?text=${waMsg}`;
       document.getElementById('storefront-call-btn').href = `tel:+${cleanPhone}`;
 
-      // Update Nav Branding
-      const navBrandName = document.getElementById('coa-nav-brand-name');
-      const navBrandSub = document.getElementById('coa-nav-brand-sub');
-      const drawerBrandName = document.getElementById('drawer-brand-name');
-      const drawerBrandSub = document.getElementById('drawer-brand-sub');
+      // Update Nav Branding & WhatsApp CTA
       const navCtaWa = document.getElementById('nav-cta-wa-btn');
-
-      if (navBrandName) navBrandName.textContent = partner.full_name;
-      if (navBrandSub) navBrandSub.textContent = `${partner.agency} • ${partner.ren_number}`;
-      if (drawerBrandName) drawerBrandName.textContent = partner.full_name;
-      if (drawerBrandSub) drawerBrandSub.textContent = `${partner.agency} • ${partner.ren_number}`;
       if (navCtaWa) navCtaWa.href = `https://wa.me/${cleanPhone}?text=${waMsg}`;
 
       // Update Footer
-      document.getElementById('footer-agent-title').textContent = `Katalog Hartanah Rakan Agensi — ${partner.full_name} (${partner.ren_number})`;
+      document.getElementById('footer-agent-title').textContent = `Katalog Hartanah — ${partner.full_name} (${partner.ren_number})`;
 
       // Show Agent Topbar ONLY if the user is logged in
       const topBar = document.getElementById('coa-agent-topbar');

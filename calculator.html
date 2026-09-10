@@ -3,10 +3,76 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Real Estate Financial Calculator — Zaim Rosli (REN39575)</title>
-  <meta name="description" content="Calculate home loan monthly installments, SPA legal fees, MOT stamp duty, and entry costs for property purchases in Malaysia.">
-  <link rel="stylesheet" href="/styles.css">
+  <title>Kalkulator Hartanah & Kelayakan Loan (DSR) — Zaim Rosli (REN39575)</title>
+  <meta name="description" content="Kalkulator komprehensif hartanah Malaysia: Kira ansuran pinjaman bulanan, yuran guaman SPA, duti setem MOT, serta semakan kelayakan pinjaman bank (DSR - Debt Service Ratio).">
+  <link rel="canonical" href="https://zaimrosli.my/calculator">
+  <link rel="stylesheet" href="/styles.css?v=129">
   <style>
+    /* Calculator Tab Switcher Styling */
+    .calc-tabs-wrapper {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 36px;
+    }
+    .calc-tabs {
+      display: inline-flex;
+      background: #f1f5f9;
+      padding: 6px;
+      border-radius: 40px;
+      border: 1px solid #e2e8f0;
+      gap: 6px;
+      max-width: 100%;
+      overflow-x: auto;
+    }
+    .calc-tab-btn {
+      padding: 12px 24px;
+      border-radius: 30px;
+      border: none;
+      background: transparent;
+      color: #64748b;
+      font-weight: 700;
+      font-size: 0.95rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.25s ease;
+      white-space: nowrap;
+    }
+    .calc-tab-btn:hover {
+      color: #0f172a;
+    }
+    .calc-tab-btn.active {
+      background: #ffffff;
+      color: #0f172a;
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+    }
+    .calc-tab-btn.active .tab-badge-accent {
+      background: #d97706;
+      color: #ffffff;
+    }
+    .tab-badge-accent {
+      background: #e2e8f0;
+      color: #475569;
+      font-size: 0.72rem;
+      padding: 2px 8px;
+      border-radius: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .calc-view-panel {
+      display: none;
+      animation: fadeInTab 0.3s ease forwards;
+    }
+    .calc-view-panel.active {
+      display: block;
+    }
+    @keyframes fadeInTab {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
     .calc-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -22,9 +88,162 @@
     .result-row {
       display: flex;
       justify-content: space-between;
-      padding: 12px 0;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 0;
       border-bottom: 1px solid var(--border-color);
+      font-size: 0.88rem;
+    }
+    .result-row span {
+      flex: 1;
+      min-width: 0;
+      line-height: 1.35;
+      color: var(--text-main);
+      white-space: normal;
+    }
+    .result-row strong {
+      white-space: nowrap;
+      flex-shrink: 0;
+      text-align: right;
+    }
+    .result-row-total {
+      margin-top: 16px;
+      padding-top: 14px;
+      border-top: 2px solid var(--border-color);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
       font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--text-main);
+    }
+    .result-row-total span {
+      flex: 1;
+      min-width: 0;
+      line-height: 1.35;
+      white-space: normal;
+    }
+    .result-row-total strong {
+      white-space: nowrap;
+      flex-shrink: 0;
+      color: var(--accent-gold);
+      font-size: 1.15rem;
+      text-align: right;
+    }
+
+    .btn-dsr-consult {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      min-height: 48px;
+      padding: 12px 18px;
+      background: #16a34a !important;
+      color: #ffffff !important;
+      font-weight: 700;
+      font-size: 0.92rem;
+      border-radius: 8px;
+      text-decoration: none;
+      text-align: center;
+      line-height: 1.3;
+      transition: all 0.2s ease;
+      box-shadow: 0 2px 8px rgba(22, 163, 74, 0.2);
+    }
+    .btn-dsr-consult:hover {
+      background: #15803d !important;
+      transform: translateY(-1px);
+    }
+
+    /* DSR Specific Styles */
+    .dsr-meter-box {
+      padding: 24px;
+      border-radius: 16px;
+      text-align: center;
+      margin-bottom: 24px;
+      transition: all 0.3s ease;
+    }
+    .dsr-meter-box.status-good {
+      background: #f0fdf4;
+      border: 1.5px solid #86efac;
+    }
+    .dsr-meter-box.status-warn {
+      background: #fffbeb;
+      border: 1.5px solid #fde68a;
+    }
+    .dsr-meter-box.status-danger {
+      background: #fef2f2;
+      border: 1.5px solid #fca5a5;
+    }
+    .dsr-value-display {
+      font-family: var(--font-heading);
+      font-size: clamp(2rem, 7vw, 3rem);
+      font-weight: 900;
+      line-height: 1.1;
+      margin: 8px 0;
+    }
+    .status-good .dsr-value-display { color: #15803d; }
+    .status-warn .dsr-value-display { color: #b45309; }
+    .status-danger .dsr-value-display { color: #b91c1c; }
+
+    .dsr-pill-badge {
+      display: inline-block;
+      padding: 5px 14px;
+      border-radius: 20px;
+      font-size: 0.78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .status-good .dsr-pill-badge { background: #dcfce7; color: #166534; }
+    .status-warn .dsr-pill-badge { background: #fef3c7; color: #92400e; }
+    .status-danger .dsr-pill-badge { background: #fee2e2; color: #991b1b; }
+
+    .calc-input-group {
+      margin-bottom: 18px;
+    }
+    .calc-input-group label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+      text-transform: uppercase;
+    }
+    .calc-input-group input, .calc-input-group select {
+      width: 100%;
+      padding: 12px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border-color);
+      font-size: 1rem;
+      background: #ffffff;
+    }
+
+    @media (max-width: 860px) {
+      .calc-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+      .calc-card {
+        padding: 24px 18px !important;
+      }
+    }
+    @media (max-width: 480px) {
+      .calc-tab-btn {
+        padding: 10px 14px;
+        font-size: 0.82rem;
+      }
+      .result-row {
+        font-size: 0.78rem !important;
+        padding: 8px 0 !important;
+      }
+      .result-row-total {
+        font-size: 0.84rem !important;
+      }
+      .result-row-total strong {
+        font-size: 0.95rem !important;
+      }
     }
   
     /* ==========================================================================
@@ -198,32 +417,111 @@
     }
 
   </style>
-  <script src="/analytics.js?v=91" defer></script>
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#0f172a">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Zaim Rosli">
+  <link rel="apple-touch-icon" href="/icons/icon-192.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/icons/icon-192.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Malaysian Real Estate Mortgage & Legal Fee Calculator",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "All",
+    "url": "https://zaimrosli.my/calculator",
+    "description": "Free interactive mortgage calculator to assess commercial bank loan eligibility (DSR), monthly installments, SPA & Loan legal fees, and MOT stamp duty in Malaysia.",
+    "author": {
+      "@type": "Person",
+      "name": "Zaim Rosli (REN39575)",
+      "jobTitle": "Registered Real Estate Negotiator"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "MYR"
+    }
+  }
+  </script>
+  <script src="/analytics.js?v=129" defer></script>
 </head>
 <body>
 
   <!-- Site Navigation Header -->
   <header class="site-header">
     <div class="container nav-wrapper">
-      <a href="index.html" class="logo">
+      <a href="/" class="logo">
         <span class="logo-main">ZAIM<span>ROSLI</span></span>
         <span class="logo-sub">REGISTERED REAL ESTATE PORTAL</span>
       </a>
 
       <ul class="nav-links">
-        <li><a href="index.html" class="nav-link">Home</a></li>
-        <li><a href="about.html" class="nav-link">About Zaim</a></li>
-        <li><a href="properties.html" class="nav-link">Properties</a></li>
-        <li><a href="services.html" class="nav-link">Services</a></li>
-        <li><a href="calculator.html" class="nav-link active">Calculators</a></li>
-        <li><a href="blog.html" class="nav-link">Blog</a></li>
-        <li><a href="testimonials.html" class="nav-link">Testimonials</a></li>
-        <li><a href="faq.html" class="nav-link">FAQ</a></li>
-        <li><a href="contact.html" class="nav-link">Contact</a></li>
+        <li><a href="/" class="nav-link">Home</a></li>
+        
+        <li class="nav-item-dropdown">
+          <a href="/properties" class="nav-link nav-link-dropdown">
+            Properties <span class="arrow">▾</span>
+          </a>
+          <div class="dropdown-menu">
+            <a href="/properties/undercon" class="dropdown-item" style="color: #fbbf24; font-weight: 700;">Undercons / New Projects</a>
+            <a href="/properties/residential" class="dropdown-item">Residential Properties</a>
+            <a href="/properties/commercial-industrial" class="dropdown-item">Commercial & Industrial</a>
+            <a href="/properties/for-sale" class="dropdown-item">For Sale</a>
+            <a href="/properties/for-rent" class="dropdown-item">For Rent</a>
+            <a href="/properties" class="dropdown-item">All Listings</a>
+            <div class="area-focus-nav area-focus-desktop">
+            <div style="margin: 4px 8px; border-top: 1px solid rgba(255,255,255,0.15);"></div>
+            <div style="font-size: 0.72rem; font-weight: 800; color: #d97706; padding: 4px 12px 2px; text-transform: uppercase; letter-spacing: 0.8px;">LOKASI FOKUS</div>
+            <a href="/properties/bangi" class="dropdown-item">Bangi Properties</a>
+            <a href="/properties/nilai" class="dropdown-item">Nilai Properties</a>
+            </div>
+          </div>
+        </li>
+
+        <li class="nav-item-dropdown">
+          <a href="/services" class="nav-link nav-link-dropdown">
+            Services <span class="arrow">▾</span>
+          </a>
+          <div class="dropdown-menu">
+            <a href="/services#selling" class="dropdown-item">Selling Advisory</a>
+            <a href="/services#valuation" class="dropdown-item">Market Valuation</a>
+            <a href="/services#legal-loan" class="dropdown-item">Legal & Loan</a>
+          </div>
+        </li>
+
+        <li class="nav-item-dropdown">
+          <a href="/calculator" class="nav-link nav-link-dropdown active">
+            Calculators <span class="arrow">▾</span>
+          </a>
+          <div class="dropdown-menu">
+            <a href="/calculator#legal" class="dropdown-item" onclick="switchCalcTab('legal')">Legal Fee & Stamp Duty</a>
+            <a href="/calculator#dsr" class="dropdown-item" onclick="switchCalcTab('dsr')">Bank Loan DSR Check</a>
+          </div>
+        </li>
+
+        <li class="nav-item-dropdown">
+          <a href="/blog" class="nav-link nav-link-dropdown">
+            Resources <span class="arrow">▾</span>
+          </a>
+          <div class="dropdown-menu">
+            <a href="/foreign-buyers" class="dropdown-item" style="color: #f59e0b; font-weight: 800;">Foreign Buyer Guide</a>
+            <a href="/blog" class="dropdown-item">Blog & Guides</a>
+            <a href="/testimonials" class="dropdown-item">Client Reviews</a>
+            <a href="/faq" class="dropdown-item">FAQ</a>
+            <div style="margin: 4px 8px; border-top: 1px solid rgba(255,255,255,0.15);"></div>
+            <a href="/login.html" class="dropdown-item" style="color: #fbbf24; font-weight: 700;">Admin Portal</a>
+          </div>
+        </li>
+
+        <li><a href="/about" class="nav-link">About Zaim</a></li>
+        <li><a href="/contact" class="nav-link">Contact</a></li>
       </ul>
 
       <div class="nav-cta">
-        <a href="contact.html" class="btn btn-accent btn-sm">Appointment</a>
+        <a href="/contact" class="btn btn-accent btn-sm">Appointment</a>
         <button class="mobile-nav-toggle" aria-label="Toggle Navigation Menu">
           <span></span>
           <span></span>
@@ -234,127 +532,444 @@
   </header>
 
   <!-- Mobile Drawer Overlay -->
-  <div class="mobile-overlay">
-    <div class="mobile-drawer">
+    <!-- PWA Mobile Navigation Drawer Overlay -->
+  <div class="mobile-overlay" id="mobile-nav-overlay">
+    <div class="mobile-drawer" id="mobile-nav-drawer">
       <div class="mobile-drawer-header">
-        <div class="logo">
+        <div class="drawer-logo">
           <span class="logo-main">ZAIM<span>ROSLI</span></span>
           <span class="logo-sub">REN39575</span>
         </div>
-        <button class="mobile-drawer-close">&times;</button>
+        <button class="mobile-drawer-close" aria-label="Close Navigation Menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
       </div>
 
-      <ul class="mobile-drawer-links">
-        <li><a href="index.html" class="mobile-drawer-link">Home</a></li>
-        <li><a href="about.html" class="mobile-drawer-link">About Zaim</a></li>
-        <li><a href="properties.html" class="mobile-drawer-link">Properties</a></li>
-        <li><a href="services.html" class="mobile-drawer-link">Services</a></li>
-        <li><a href="calculator.html" class="mobile-drawer-link active">Calculators</a></li>
-        <li><a href="blog.html" class="mobile-drawer-link">Blog</a></li>
-        <li><a href="testimonials.html" class="mobile-drawer-link">Testimonials</a></li>
-        <li><a href="faq.html" class="mobile-drawer-link">FAQ</a></li>
-        <li><a href="contact.html" class="mobile-drawer-link">Contact</a></li>
-      </ul>
+      <div class="mobile-drawer-body">
+        <ul class="mobile-nav-list">
+          <li class="mobile-nav-item">
+            <a href="/" class="mobile-nav-link">HOME</a>
+          </li>
+
+          <!-- Properties Accordion -->
+          <li class="mobile-nav-item mobile-accordion-item">
+            <div class="mobile-accordion-header mobile-dropdown-toggle">
+              <span class="mobile-accordion-title">PROPERTIES</span>
+              <span class="mobile-accordion-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </span>
+            </div>
+            <div class="mobile-accordion-content">
+              <a href="/properties/residential" class="mobile-sublink">Residential Properties</a>
+              <a href="/properties/commercial-industrial" class="mobile-sublink">Commercial & Industrial</a>
+              <a href="/properties/for-sale" class="mobile-sublink">Properties For Sale</a>
+              <a href="/properties/for-rent" class="mobile-sublink">Rental Properties</a>
+              <a href="/properties" class="mobile-sublink">All Listings</a>
+              
+              <div class="mobile-subgroup-title">LOKASI FOKUS</div>
+              <div class="area-focus-nav area-focus-mobile">
+                <a href="/properties/bangi" class="mobile-sublink">Bangi Properties</a>
+                <a href="/properties/nilai" class="mobile-sublink">Nilai Properties</a>
+              </div>
+            </div>
+          </li>
+
+          <!-- Services Accordion -->
+          <li class="mobile-nav-item mobile-accordion-item">
+            <div class="mobile-accordion-header mobile-dropdown-toggle">
+              <span class="mobile-accordion-title">SERVICES</span>
+              <span class="mobile-accordion-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </span>
+            </div>
+            <div class="mobile-accordion-content">
+              <a href="/foreign-buyers" class="mobile-sublink" style="color: #d97706; font-weight: 800;">Foreign Buyer & Expat Advisory</a>
+              <a href="/services#selling" class="mobile-sublink">Property Selling Advisory</a>
+              <a href="/services#valuation" class="mobile-sublink">Free Market Valuation</a>
+              <a href="/services#legal-loan" class="mobile-sublink">Legal & Loan Screening</a>
+            </div>
+          </li>
+
+          <!-- Calculators Accordion -->
+          <li class="mobile-nav-item mobile-accordion-item">
+            <div class="mobile-accordion-header mobile-dropdown-toggle">
+              <span class="mobile-accordion-title">CALCULATORS</span>
+              <span class="mobile-accordion-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </span>
+            </div>
+            <div class="mobile-accordion-content">
+              <a href="/calculator#legal" class="mobile-sublink" onclick="switchCalcTab('legal')">Legal Fees & Stamp Duty (MOT)</a>
+              <a href="/calculator#dsr" class="mobile-sublink" onclick="switchCalcTab('dsr')">Bank Loan DSR Check</a>
+            </div>
+          </li>
+
+          <!-- Resources Accordion -->
+          <li class="mobile-nav-item mobile-accordion-item">
+            <div class="mobile-accordion-header mobile-dropdown-toggle">
+              <span class="mobile-accordion-title">RESOURCES</span>
+              <span class="mobile-accordion-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </span>
+            </div>
+            <div class="mobile-accordion-content">
+              <a href="/blog" class="mobile-sublink">Blog & Property Guides</a>
+              <a href="/foreign-buyers" class="mobile-sublink" style="color: #d97706; font-weight: 800;">Foreign Buyer Guide</a>
+              <a href="/testimonials" class="mobile-sublink">Client Reviews & Testimonials</a>
+              <a href="/faq" class="mobile-sublink">Frequently Asked Questions (FAQ)</a>
+              <div style="margin: 6px 0; border-top: 1px solid #e2e8f0;"></div>
+              <a href="/login.html" class="mobile-sublink" style="color: #d97706; font-weight: 800;">Admin Portal (REN39575)</a>
+            </div>
+          </li>
+
+          <li class="mobile-nav-item">
+            <a href="/about" class="mobile-nav-link">ABOUT ZAIM</a>
+          </li>
+          <li class="mobile-nav-item">
+            <a href="/contact" class="mobile-nav-link">CONTACT</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="mobile-drawer-footer">
+        <a href="https://wa.me/60183863488?text=Salam%20Zaim,%20saya%20ingin%20berunding%20mengenai%20hartanah" target="_blank" rel="noopener" class="mobile-drawer-btn btn-wa-drawer">
+          WhatsApp Zaim (REN39575)
+        </a>
+        <a href="/contact" class="mobile-drawer-btn btn-appointment-drawer">
+          Appointment / Temu Janji
+        </a>
+      </div>
     </div>
   </div>
 
   <!-- Page Hero Banner -->
   <section class="page-hero">
     <div class="container">
-      <h1>Mortgage & <span>Legal Fee Calculator</span></h1>
-      <p>Calculate estimated monthly installments, SPA legal fees, MOT stamp duty, and upfront cash required.</p>
+      <span class="section-subtitle">ALAT KEWANGAN & HARTANAH MALAYSIA</span>
+      <h1 id="hero-title" style="margin-top: 10px;">Mortgage & <span>Legal Fee Calculator</span></h1>
+      <p id="hero-desc">Kira anggaran ansuran pinjaman bulanan, yuran guaman SPA, duti setem MOT, serta semakan kelayakan nisbah hutang (DSR Bank).</p>
     </div>
   </section>
 
-  <!-- Calculator Section -->
+  <!-- Calculator Main Hub -->
   <section class="section">
     <div class="container">
       
-      <div class="calc-grid">
-        
-        <!-- Input Form -->
-        <div class="calc-card">
-          <h3 style="font-size: 1.3rem; margin-bottom: 20px;">Financial Inputs</h3>
+      <!-- Interactive Tab Switcher -->
+      <div class="calc-tabs-wrapper">
+        <div class="calc-tabs" role="tablist">
+          <button type="button" id="tab-btn-legal" class="calc-tab-btn active" onclick="switchCalcTab('legal')" role="tab" aria-selected="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+            <span>Legal Fees & Stamp Duty</span>
+            <span class="tab-badge-accent">Legal & Stamp</span>
+          </button>
           
-          <div style="margin-bottom: 18px;">
-            <label style="display: block; font-size: 0.78rem; font-weight: 700; color: var(--text-muted); margin-bottom: 6px;">PROPERTY PRICE (RM)</label>
-            <input type="number" id="calc-price" value="650000" style="width: 100%; padding: 12px; border-radius: var(--radius-sm); border: 1px solid var(--border-color); font-size: 1rem;">
-          </div>
-
-          <div class="calc-form-row">
-            <div>
-              <label style="display: block; font-size: 0.78rem; font-weight: 700; color: var(--text-muted); margin-bottom: 6px;">DOWNPAYMENT (%)</label>
-              <input type="number" id="calc-down" value="10" style="width: 100%; padding: 12px; border-radius: var(--radius-sm); border: 1px solid var(--border-color); font-size: 1rem;">
-            </div>
-            <div>
-              <label style="display: block; font-size: 0.78rem; font-weight: 700; color: var(--text-muted); margin-bottom: 6px;">INTEREST RATE (%)</label>
-              <input type="number" step="0.1" id="calc-rate" value="4.2" style="width: 100%; padding: 12px; border-radius: var(--radius-sm); border: 1px solid var(--border-color); font-size: 1rem;">
-            </div>
-          </div>
-
-          <div style="margin-bottom: 24px;">
-            <label style="display: block; font-size: 0.78rem; font-weight: 700; color: var(--text-muted); margin-bottom: 6px;">LOAN TENURE (YEARS)</label>
-            <select id="calc-tenure" style="width: 100%; padding: 12px; border-radius: var(--radius-sm); border: 1px solid var(--border-color); font-size: 1rem;">
-              <option value="35" selected>35 Years</option>
-              <option value="30">30 Years</option>
-              <option value="25">25 Years</option>
-              <option value="20">20 Years</option>
-            </select>
-          </div>
-
-          <button type="button" id="calc-run-btn" class="btn btn-accent" style="width: 100%;">
-            🧮 Calculate Financial Breakdown
+          <button type="button" id="tab-btn-dsr" class="calc-tab-btn" onclick="switchCalcTab('dsr')" role="tab" aria-selected="false">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+            <span>Bank Eligibility Check (DSR)</span>
+            <span class="tab-badge-accent">DSR Loan Check</span>
           </button>
         </div>
+      </div>
 
-        <!-- Output Results Card -->
-        <div class="calc-card" style="background: var(--bg-alt);">
-          <h3 style="font-size: 1.3rem; margin-bottom: 20px;">Estimated Cost Breakdown</h3>
+      <!-- TAB 1: MORTGAGE & LEGAL FEE CALCULATOR -->
+      <div id="panel-legal" class="calc-view-panel active">
+        <div class="calc-grid">
           
-          <div style="background: #ffffff; padding: 20px; border-radius: var(--radius-md); border: 1px solid var(--border-color); margin-bottom: 20px; text-align: center;">
-            <div style="font-size: 0.8rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">ESTIMATED MONTHLY INSTALLMENT</div>
-            <div id="res-monthly" style="font-family: var(--font-heading); font-size: 2.2rem; font-weight: 800; color: var(--accent-gold); margin-top: 4px;">
-              RM 0 / mo
+          <!-- Input Form -->
+          <div class="calc-card">
+            <h3 style="font-size: 1.3rem; font-weight: 800; color: var(--primary-navy); margin-bottom: 20px;">Financial Inputs (Home Purchase)</h3>
+            
+            <div class="calc-input-group">
+              <label>PROPERTY PURCHASE PRICE (RM)</label>
+              <input type="number" id="calc-price" value="650000">
+            </div>
+
+            <div class="calc-form-row">
+              <div class="calc-input-group">
+                <label>DOWNPAYMENT / DEPOSIT (%)</label>
+                <input type="number" id="calc-down" value="10">
+              </div>
+              <div class="calc-input-group">
+                <label>BANK INTEREST RATE (%)</label>
+                <input type="number" step="0.1" id="calc-rate" value="4.2">
+              </div>
+            </div>
+
+            <div class="calc-input-group" style="margin-bottom: 24px;">
+              <label>LOAN TENURE (YEARS)</label>
+              <select id="calc-tenure">
+                <option value="35" selected>35 Years (Maximum)</option>
+                <option value="30">30 Years</option>
+                <option value="25">25 Years</option>
+                <option value="20">20 Years</option>
+              </select>
+            </div>
+
+            <button type="button" id="calc-run-btn" class="btn btn-accent" style="width: 100%;">
+              Calculate Financial & Legal Breakdown
+            </button>
+          </div>
+
+                              <!-- Output Results Card -->
+          <div class="calc-card" style="background: var(--bg-alt);">
+            <div style="margin-bottom: 12px;">
+              <h3 style="font-size: 1.25rem; font-weight: 800; color: var(--primary-navy); margin: 0 0 4px;">Complete Cost Breakdown Estimate</h3>
+              <p style="font-size: 0.78rem; color: #64748b; margin: 0; line-height: 1.4;">Select a purchase package or toggle individual costs according to your scenario.</p>
+            </div>
+
+            <!-- Quick Presets Segmented Bar -->
+            <div class="calc-presets-wrapper">
+              <div class="calc-presets-bar" role="group" aria-label="Pakej Pembelian Hartanah">
+                <button type="button" class="calc-preset-btn active" id="preset-subsale" onclick="applyFeePreset('subsale')">Subsale (All Costs)</button>
+                <button type="button" class="calc-preset-btn" id="preset-undercon" onclick="applyFeePreset('undercon')">New Project (Free SPA & Loan)</button>
+                <button type="button" class="calc-preset-btn" id="preset-firsthome" onclick="applyFeePreset('firsthome')">First Home (MOT Exemption)</button>
+              </div>
+            </div>
+            
+            <div style="background: #ffffff; padding: 18px 14px; border-radius: var(--radius-md); border: 1.5px solid var(--border-color); margin-bottom: 18px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.02);">
+              <div style="font-size: 0.74rem; font-weight: 800; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px;">ESTIMATED MONTHLY INSTALLMENT (MONTHLY PMT)</div>
+              <div id="res-monthly" style="font-family: var(--font-heading); font-size: clamp(1.4rem, 5.5vw, 2.2rem); font-weight: 800; color: var(--accent-gold); margin-top: 4px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                RM 0 / mo
+              </div>
+            </div>
+
+            <div class="result-row">
+              <span>Bank Loan Amount (90%):</span>
+              <strong id="res-loan">RM 0</strong>
+            </div>
+
+            <!-- Toggle 1: SPA Legal Fee -->
+            <div class="result-row-toggle" id="row-spa">
+              <div class="row-left">
+                <label class="toggle-switch">
+                  <input type="checkbox" id="toggle-spa" checked onchange="calculateLegal()">
+                  <span class="toggle-slider"></span>
+                </label>
+                <span>SPA Legal Fees (Sale & Purchase):</span>
+              </div>
+              <div class="row-right" id="res-spa-wrap">
+                <strong id="res-spa">RM 0</strong>
+              </div>
+            </div>
+
+            <!-- Toggle 2: MOT Stamp Duty -->
+            <div class="result-row-toggle" id="row-mot">
+              <div class="row-left">
+                <label class="toggle-switch">
+                  <input type="checkbox" id="toggle-mot" checked onchange="calculateLegal()">
+                  <span class="toggle-slider"></span>
+                </label>
+                <span>MOT Stamp Duty (Transfer of Title):</span>
+              </div>
+              <div class="row-right" id="res-mot-wrap">
+                <strong id="res-mot">RM 0</strong>
+              </div>
+            </div>
+
+            <!-- Toggle 3: Loan Legal Fee -->
+            <div class="result-row-toggle" id="row-loan-fee">
+              <div class="row-left">
+                <label class="toggle-switch">
+                  <input type="checkbox" id="toggle-loan-fee" checked onchange="calculateLegal()">
+                  <span class="toggle-slider"></span>
+                </label>
+                <span>Loan Agreement Legal Fees:</span>
+              </div>
+              <div class="row-right" id="res-loan-fee-wrap">
+                <strong id="res-loan-fee">RM 0</strong>
+              </div>
+            </div>
+
+            <!-- Toggle 4: Loan Stamp Duty -->
+            <div class="result-row-toggle" id="row-loan-duty">
+              <div class="row-left">
+                <label class="toggle-switch">
+                  <input type="checkbox" id="toggle-loan-duty" checked onchange="calculateLegal()">
+                  <span class="toggle-slider"></span>
+                </label>
+                <span>Loan Agreement Stamp Duty:</span>
+              </div>
+              <div class="row-right" id="res-loan-duty-wrap">
+                <strong id="res-loan-duty">RM 0</strong>
+              </div>
+            </div>
+
+            <!-- Toggle 5: Valuation Fee -->
+            <div class="result-row-toggle" id="row-valuation">
+              <div class="row-left">
+                <label class="toggle-switch">
+                  <input type="checkbox" id="toggle-valuation" checked onchange="calculateLegal()">
+                  <span class="toggle-slider"></span>
+                </label>
+                <span>Bank Property Valuation Fee:</span>
+              </div>
+              <div class="row-right" id="res-valuation-wrap">
+                <strong id="res-valuation">RM 0</strong>
+              </div>
+            </div>
+
+            <div class="result-row-total">
+              <span>Estimated Total Entry Cash Required:</span>
+              <strong id="res-total-cash">RM 0</strong>
+            </div>
+
+            <!-- Disclaimer Note on Web -->
+            <div style="margin-top: 14px; padding: 10px 14px; background: #f8fafc; border: 1px dashed #cbd5e1; border-radius: 8px; font-size: 0.8rem; color: #64748b; line-height: 1.5; display: flex; align-items: flex-start; gap: 8px;">
+              <span style="font-size: 1rem; flex-shrink: 0; line-height: 1.2;">ℹ️</span>
+              <div><strong>Nota / Penafian:</strong> Ini adalah anggaran kiraan sahaja, tertakluk kepada sebut harga (quotation) sebenar daripada pihak peguam &amp; bank.</div>
+            </div>
+
+            <div style="margin-top: 18px;">
+              <button id="calc-share-btn" onclick="shareCalculatorResults()" class="btn btn-outline" style="width: 100%; display: flex; align-items: center; justify-content: center; gap: 8px; font-weight: 700; height: 46px;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
+                Share Calculator Results
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 2: DSR (DEBT SERVICE RATIO) CALCULATOR -->
+      <div id="panel-dsr" class="calc-view-panel">
+        <div class="calc-grid">
+          
+          <!-- DSR Input Form -->
+          <div class="calc-card">
+            <h3 style="font-size: 1.3rem; font-weight: 800; color: var(--primary-navy); margin-bottom: 20px;">Income & Commitment Profile (DSR)</h3>
+            
+            <div class="calc-form-row">
+              <div class="calc-input-group">
+                <label>NET MONTHLY SALARY (RM)</label>
+                <input type="number" id="dsr-salary" value="5500" placeholder="e.g. 5500">
+              </div>
+              <div class="calc-input-group">
+                <label>ADDITIONAL INCOME / ALLOWANCE (RM)</label>
+                <input type="number" id="dsr-other-income" value="500" placeholder="e.g. 500">
+              </div>
+            </div>
+
+            <div style="margin: 14px 0 10px; font-size: 0.8rem; font-weight: 800; color: var(--primary-navy); text-transform: uppercase; border-bottom: 1px solid var(--border-color); padding-bottom: 4px;">
+              Existing Bank Debt Commitments (CCRIS / CTOS)
+            </div>
+
+            <div class="calc-form-row">
+              <div class="calc-input-group">
+                <label>CAR LOAN INSTALLMENT (RM)</label>
+                <input type="number" id="dsr-car" value="650" placeholder="0">
+              </div>
+              <div class="calc-input-group">
+                <label>PERSONAL LOAN INSTALLMENT (RM)</label>
+                <input type="number" id="dsr-personal" value="0" placeholder="0">
+              </div>
+            </div>
+
+            <div class="calc-form-row">
+              <div class="calc-input-group">
+                <label>CREDIT CARD (5% MINIMUM BALANCE) (RM)</label>
+                <input type="number" id="dsr-card" value="150" placeholder="0">
+              </div>
+              <div class="calc-input-group">
+                <label>PTPTN & OTHER COMMITMENTS (RM)</label>
+                <input type="number" id="dsr-ptptn" value="100" placeholder="0">
+              </div>
+            </div>
+
+            <div style="margin: 14px 0 10px; font-size: 0.8rem; font-weight: 800; color: var(--primary-navy); text-transform: uppercase; border-bottom: 1px solid var(--border-color); padding-bottom: 4px;">
+              Proposed Housing Financing
+            </div>
+
+            <div class="calc-form-row">
+              <div class="calc-input-group">
+                <label>ESTIMATED NEW HOUSING INSTALLMENT (RM)</label>
+                <input type="number" id="dsr-new-loan" value="1850" placeholder="e.g. 1850">
+              </div>
+              <div class="calc-input-group">
+                <label>MAXIMUM DSR BANK BENCHMARK</label>
+                <select id="dsr-max-benchmark">
+                  <option value="60">60% (Net Income Below RM3,000)</option>
+                  <option value="70" selected>70% (Net Income RM3,000 - RM8,000)</option>
+                  <option value="80">80% (Net Income Above RM8,000)</option>
+                </select>
+              </div>
+            </div>
+
+            <button type="button" id="dsr-run-btn" class="btn btn-accent" style="width: 100%; margin-top: 6px;">
+              Check Debt Service Ratio (DSR Eligibility)
+            </button>
+          </div>
+
+          <!-- DSR Output Card -->
+          <div class="calc-card" style="background: var(--bg-alt);">
+            <h3 style="font-size: 1.3rem; font-weight: 800; color: var(--primary-navy); margin-bottom: 20px;">Loan Eligibility Assessment</h3>
+            
+            <div id="dsr-meter-box" class="dsr-meter-box status-good">
+              <span id="dsr-status-badge" class="dsr-pill-badge">LULUS CEMERLANG</span>
+              <div class="dsr-value-display" id="dsr-pct-display">45.8%</div>
+              <div style="font-size: 0.88rem; font-weight: 700; color: var(--text-main);" id="dsr-status-title">Nisbah Hutang Dalam Zon Sihat</div>
+              <p style="font-size: 0.82rem; color: var(--text-muted); margin-top: 6px; line-height: 1.5;" id="dsr-status-desc">
+                Peluang kelulusan pinjaman bank komersial adalah amat tinggi berdasarkan nisbah komitmen semasa anda.
+              </p>
+            </div>
+
+            <div class="result-row">
+              <span>Total Net Income:</span>
+              <strong id="dsr-res-income">RM 0</strong>
+            </div>
+            <div class="result-row">
+              <span>Existing Debt Commitments:</span>
+              <strong id="dsr-res-existing">RM 0</strong>
+            </div>
+            <div class="result-row">
+              <span>Total Commitments (+ New Home):</span>
+              <strong id="dsr-res-total">RM 0</strong>
+            </div>
+            <div class="result-row">
+              <span>Selected Bank DSR Benchmark:</span>
+              <strong id="dsr-res-benchmark">70%</strong>
+            </div>
+
+            <div class="result-row-total" style="margin-top: 14px; border-color: #cbd5e1;">
+              <span>Maximum Allowable Monthly Installment:</span>
+              <strong id="dsr-res-max-installment" style="color: #059669;">RM 0 / mo</strong>
+            </div>
+
+            <div class="result-row" style="border-bottom: none; padding-top: 8px;">
+              <span>Estimated Maximum Affordable Property:</span>
+              <strong id="dsr-res-max-price" style="color: var(--primary-navy); font-size: 1.05rem;">RM 0</strong>
+            </div>
+
+            <!-- Disclaimer Note on Web -->
+            <div style="margin-top: 14px; padding: 10px 14px; background: #f8fafc; border: 1px dashed #cbd5e1; border-radius: 8px; font-size: 0.8rem; color: #64748b; line-height: 1.5; display: flex; align-items: flex-start; gap: 8px;">
+              <span style="font-size: 1rem; flex-shrink: 0; line-height: 1.2;">ℹ️</span>
+              <div><strong>Nota / Penafian:</strong> Ini adalah anggaran kiraan kelayakan sahaja, tertakluk kepada semakan rasmi dan polisi kredit institusi perbankan (CCRIS / CTOS).</div>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 20px;">
+              <button id="dsr-share-btn" type="button" onclick="shareDsrResults()" class="btn btn-outline" style="width: 100%; display: flex; align-items: center; justify-content: center; gap: 8px; font-weight: 700; height: 46px;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
+                Share DSR Assessment
+              </button>
+
+              <a id="dsr-wa-consult-btn" href="https://wa.me/60108118559" target="_blank" class="btn-dsr-consult">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                <span>WhatsApp Zaim for Bank Pre-Approval</span>
+              </a>
             </div>
           </div>
 
-          <div class="result-row">
-            <span>Loan Financing Amount (90%):</span>
-            <strong id="res-loan">RM 0</strong>
-          </div>
-          <div class="result-row">
-            <span>SPA Legal Fees:</span>
-            <strong id="res-spa">RM 0</strong>
-          </div>
-          <div class="result-row">
-            <span>MOT Stamp Duty:</span>
-            <strong id="res-mot">RM 0</strong>
-          </div>
-          <div class="result-row">
-            <span>Loan Facility Legal Fees:</span>
-            <strong id="res-loan-fee">RM 0</strong>
-          </div>
-          <div class="result-row">
-            <span>Loan Facility Stamp Duty:</span>
-            <strong id="res-loan-duty">RM 0</strong>
-          </div>
-          <div class="result-row">
-            <span>Est. Property Valuation Fee:</span>
-            <strong id="res-valuation">RM 0</strong>
-          </div>
-
-          <div style="margin-top: 20px; padding-top: 14px; border-top: 2px solid var(--border-color); display: flex; justify-content: space-between; font-size: 1.05rem; font-weight: 800; color: var(--text-main);">
-            <span>TOTAL ESTIMATED CASH REQUIRED:</span>
-            <span id="res-total-cash" style="color: var(--accent-gold);">RM 0</span>
-          </div>
-
-          <!-- Disclaimer Note -->
-          <div style="margin-top: 14px; padding: 10px 14px; background: #f8fafc; border: 1px dashed #cbd5e1; border-radius: 8px; font-size: 0.8rem; color: #64748b; line-height: 1.5; display: flex; align-items: flex-start; gap: 8px;">
-            <span style="font-size: 1rem; flex-shrink: 0; line-height: 1.2;">ℹ️</span>
-            <div><strong>Note / Disclaimer:</strong> This is an estimate only and subject to actual quotation from solicitors and bank loan offer letters.</div>
-          </div>
         </div>
-
       </div>
 
     </div>
@@ -370,56 +985,619 @@
     </div>
   </footer>
 
-  <script src="/properties-data.js"></script>
-  <script src="/app.js"></script>
+  <script src="/properties-data.js?v=133"></script>
+  <script src="/locations-config.js?v=20"></script>
+  <script src="/app.js?v=130"></script>
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
+    // Tab Switcher Handler
+    window.switchCalcTab = switchCalcTab;
+    function switchCalcTab(tabKey) {
+      const isDsr = (tabKey === 'dsr');
+      
+      const btnLegal = document.getElementById('tab-btn-legal');
+      const btnDsr = document.getElementById('tab-btn-dsr');
+      const panelLegal = document.getElementById('panel-legal');
+      const panelDsr = document.getElementById('panel-dsr');
+      const heroTitle = document.getElementById('hero-title');
+      const heroDesc = document.getElementById('hero-desc');
+
+      if (isDsr) {
+        btnLegal.classList.remove('active');
+        btnDsr.classList.add('active');
+        btnLegal.setAttribute('aria-selected', 'false');
+        btnDsr.setAttribute('aria-selected', 'true');
+        panelLegal.classList.remove('active');
+        panelDsr.classList.add('active');
+        heroTitle.innerHTML = 'Bank Loan <span>DSR Calculator</span>';
+        heroDesc.innerText = 'Check your Debt Service Ratio (DSR), bank housing loan eligibility, and maximum allowable monthly installment limits.';
+        calculateDSR();
+        if (history.replaceState) history.replaceState(null, null, '#dsr');
+      } else {
+        btnDsr.classList.remove('active');
+        btnLegal.classList.add('active');
+        btnDsr.setAttribute('aria-selected', 'false');
+        btnLegal.setAttribute('aria-selected', 'true');
+        panelDsr.classList.remove('active');
+        panelLegal.classList.add('active');
+        heroTitle.innerHTML = 'Mortgage & <span>Legal Fee Calculator</span>';
+        heroDesc.innerText = 'Calculate estimated monthly loan installments, SPA legal fees, MOT stamp duty, and total entry cash required.';
+        calculateLegal();
+        if (history.replaceState) history.replaceState(null, null, '#legal');
+      }
+    }
+
+            // Preset Handlers for Fee Scenarios
+    function applyFeePreset(preset) {
+      document.querySelectorAll('.calc-preset-btn').forEach(btn => btn.classList.remove('active'));
+      const activeBtn = document.getElementById('preset-' + preset);
+      if (activeBtn) activeBtn.classList.add('active');
+
+      const tSpa = document.getElementById('toggle-spa');
+      const tMot = document.getElementById('toggle-mot');
+      const tLoanFee = document.getElementById('toggle-loan-fee');
+      const tLoanDuty = document.getElementById('toggle-loan-duty');
+      const tValuation = document.getElementById('toggle-valuation');
+
+      if (preset === 'subsale') {
+        if (tSpa) tSpa.checked = true;
+        if (tMot) tMot.checked = true;
+        if (tLoanFee) tLoanFee.checked = true;
+        if (tLoanDuty) tLoanDuty.checked = true;
+        if (tValuation) tValuation.checked = true;
+      } else if (preset === 'undercon') {
+        if (tSpa) tSpa.checked = false;      // Free SPA Legal Fee
+        if (tMot) tMot.checked = true;       // MOT Paid on Title Issuance
+        if (tLoanFee) tLoanFee.checked = false;  // Free Loan Legal Fee
+        if (tLoanDuty) tLoanDuty.checked = false;// Free Loan Stamp Duty
+        if (tValuation) tValuation.checked = false; // Free Valuation
+      } else if (preset === 'firsthome') {
+        if (tSpa) tSpa.checked = true;
+        if (tMot) tMot.checked = false;      // 100% MOT Stamp Duty Exemption (<=RM500k)
+        if (tLoanFee) tLoanFee.checked = true;
+        if (tLoanDuty) tLoanDuty.checked = false;// 100% Loan Stamp Duty Exemption
+        if (tValuation) tValuation.checked = true;
+      }
+
+      calculateLegal();
+    }
+
+    // --- CENTRALIZED LEGAL & ENTRY COST BREAKDOWN COMPUTATION ---
+    function computeLegalBreakdown() {
       const priceIn = document.getElementById('calc-price');
       const downIn = document.getElementById('calc-down');
       const rateIn = document.getElementById('calc-rate');
       const tenureIn = document.getElementById('calc-tenure');
-      const runBtn = document.getElementById('calc-run-btn');
 
-      function calculate() {
-        const price = parseFloat(priceIn.value) || 0;
-        const downPct = parseFloat(downIn.value) || 0;
-        const annualRate = parseFloat(rateIn.value) || 0;
-        const tenureYears = parseInt(tenureIn.value) || 35;
+      const price = (priceIn && parseFloat(priceIn.value)) || 0;
+      const downPct = (downIn && parseFloat(downIn.value)) || 0;
+      const annualRate = (rateIn && parseFloat(rateIn.value)) || 0;
+      const tenureYears = (tenureIn && parseInt(tenureIn.value)) || 35;
 
-        const downpayment = price * (downPct / 100);
-        const loanAmount = price - downpayment;
+      const downpayment = price * (downPct / 100);
+      const loanAmount = Math.max(0, price - downpayment);
 
-        // Monthly installment formula PMT
-        const monthlyRate = (annualRate / 100) / 12;
-        const totalPayments = tenureYears * 12;
-        let monthlyPMT = 0;
-        if (monthlyRate > 0) {
-          monthlyPMT = (loanAmount * monthlyRate * Math.pow(1 + monthlyRate, totalPayments)) / (Math.pow(1 + monthlyRate, totalPayments) - 1);
-        } else {
-          monthlyPMT = loanAmount / totalPayments;
-        }
-
-        const spaFee = calcSPALegalFee(price);
-        const motDuty = calcMOTStampDuty(price);
-        const loanFee = calcLoanLegalFee(loanAmount);
-        const loanDuty = calcLoanStampDuty(loanAmount);
-        const valuation = calcValuationFee(price);
-
-        const totalUpfrontCash = downpayment + spaFee + motDuty + loanFee + loanDuty + valuation;
-
-        document.getElementById('res-monthly').textContent = `RM ${Math.round(monthlyPMT).toLocaleString()} / mo`;
-        document.getElementById('res-loan').textContent = `RM ${Math.round(loanAmount).toLocaleString()}`;
-        document.getElementById('res-spa').textContent = `RM ${spaFee.toLocaleString()}`;
-        document.getElementById('res-mot').textContent = `RM ${motDuty.toLocaleString()}`;
-        document.getElementById('res-loan-fee').textContent = `RM ${loanFee.toLocaleString()}`;
-        document.getElementById('res-loan-duty').textContent = `RM ${loanDuty.toLocaleString()}`;
-        document.getElementById('res-valuation').textContent = `RM ${valuation.toLocaleString()}`;
-        document.getElementById('res-total-cash').textContent = `RM ${Math.round(totalUpfrontCash).toLocaleString()}`;
+      // Monthly PMT
+      const monthlyRate = (annualRate / 100) / 12;
+      const totalPayments = tenureYears * 12;
+      let monthlyPMT = 0;
+      if (monthlyRate > 0 && totalPayments > 0 && loanAmount > 0) {
+        monthlyPMT = (loanAmount * monthlyRate * Math.pow(1 + monthlyRate, totalPayments)) / (Math.pow(1 + monthlyRate, totalPayments) - 1);
+      } else if (totalPayments > 0) {
+        monthlyPMT = loanAmount / totalPayments;
       }
 
-      runBtn.addEventListener('click', calculate);
-      calculate();
+      // Read Toggles directly from input checkbox states
+      const isSpa = document.getElementById('toggle-spa') ? document.getElementById('toggle-spa').checked : true;
+      const isMot = document.getElementById('toggle-mot') ? document.getElementById('toggle-mot').checked : true;
+      const isLoanFee = document.getElementById('toggle-loan-fee') ? document.getElementById('toggle-loan-fee').checked : true;
+      const isLoanDuty = document.getElementById('toggle-loan-duty') ? document.getElementById('toggle-loan-duty').checked : true;
+      const isValuation = document.getElementById('toggle-valuation') ? document.getElementById('toggle-valuation').checked : true;
+
+      // SPA Legal Fees Scale (Malaysia Solicitors' Remuneration Order SRO 2023)
+      let rawSpaFee = 0;
+      let remPrice = price;
+      if (remPrice > 0) {
+        const tier1 = Math.min(remPrice, 500000);
+        rawSpaFee += tier1 * 0.0125;
+        remPrice -= tier1;
+      }
+      if (remPrice > 0) {
+        const tier2 = Math.min(remPrice, 7000000);
+        rawSpaFee += tier2 * 0.01;
+        remPrice -= tier2;
+      }
+      rawSpaFee = Math.max(500, rawSpaFee);
+      const effectiveSpaFee = isSpa ? rawSpaFee : 0;
+
+      // MOT Stamp Duty Scale
+      let rawMotDuty = 0;
+      let remMot = price;
+      if (remMot > 0) {
+        const t1 = Math.min(remMot, 100000);
+        rawMotDuty += t1 * 0.01;
+        remMot -= t1;
+      }
+      if (remMot > 0) {
+        const t2 = Math.min(remMot, 400000);
+        rawMotDuty += t2 * 0.02;
+        remMot -= t2;
+      }
+      if (remMot > 0) {
+        const t3 = Math.min(remMot, 500000);
+        rawMotDuty += t3 * 0.03;
+        remMot -= t3;
+      }
+      if (remMot > 0) {
+        rawMotDuty += remMot * 0.04;
+      }
+      const effectiveMotDuty = isMot ? rawMotDuty : 0;
+
+      // Loan Legal Fee & Stamp Duty & Valuation
+      const rawLoanFee = (loanAmount > 0) ? Math.max(500, loanAmount * 0.01) : 0;
+      const effectiveLoanFee = isLoanFee ? rawLoanFee : 0;
+
+      const rawLoanDuty = loanAmount * 0.005;
+      const effectiveLoanDuty = isLoanDuty ? rawLoanDuty : 0;
+
+      const rawValuation = (price > 0) ? Math.max(400, price * 0.0025) : 0;
+      const effectiveValuation = isValuation ? rawValuation : 0;
+
+      const totalCash = downpayment + effectiveSpaFee + effectiveMotDuty + effectiveLoanFee + effectiveLoanDuty + effectiveValuation;
+
+      return {
+        price,
+        downPct,
+        annualRate,
+        tenureYears,
+        downpayment,
+        loanAmount,
+        monthlyPMT,
+        isSpa,
+        isMot,
+        isLoanFee,
+        isLoanDuty,
+        isValuation,
+        rawSpaFee,
+        rawMotDuty,
+        rawLoanFee,
+        rawLoanDuty,
+        rawValuation,
+        effectiveSpaFee,
+        effectiveMotDuty,
+        effectiveLoanFee,
+        effectiveLoanDuty,
+        effectiveValuation,
+        totalCash
+      };
+    }
+
+    // --- TAB 1: LEGAL & MORTGAGE CALCULATION LOGIC ---
+    function calculateLegal() {
+      const d = computeLegalBreakdown();
+
+      // Update UI with Formatted Currency
+      if (document.getElementById('res-monthly')) {
+        document.getElementById('res-monthly').textContent = 'RM ' + Math.round(d.monthlyPMT).toLocaleString('en-US') + ' / mo';
+      }
+      if (document.getElementById('res-loan')) {
+        document.getElementById('res-loan').textContent = 'RM ' + Math.round(d.loanAmount).toLocaleString('en-US');
+      }
+
+      // Helper function to update toggle row output while preserving inner IDs
+      function updateRow(rowId, wrapId, spanId, rawAmount, isEnabled, freeLabel) {
+        const rowEl = document.getElementById(rowId);
+        const wrapEl = document.getElementById(wrapId);
+        if (!wrapEl) return;
+
+        if (isEnabled) {
+          if (rowEl) rowEl.classList.remove('is-disabled');
+          wrapEl.innerHTML = '<strong id="' + spanId + '" style="font-size:0.95rem; font-weight:800; color:var(--text-main);">RM ' + Math.round(rawAmount).toLocaleString('en-US') + '</strong>';
+        } else {
+          if (rowEl) rowEl.classList.add('is-disabled');
+          wrapEl.innerHTML = '<span id="' + spanId + '" class="old-price-strike">RM ' + Math.round(rawAmount).toLocaleString('en-US') + '</span><span class="badge-free">' + freeLabel + '</span>';
+        }
+      }
+
+      updateRow('row-spa', 'res-spa-wrap', 'res-spa', d.rawSpaFee, d.isSpa, 'Free');
+      updateRow('row-mot', 'res-mot-wrap', 'res-mot', d.rawMotDuty, d.isMot, 'Exempted');
+      updateRow('row-loan-fee', 'res-loan-fee-wrap', 'res-loan-fee', d.rawLoanFee, d.isLoanFee, 'Free');
+      updateRow('row-loan-duty', 'res-loan-duty-wrap', 'res-loan-duty', d.rawLoanDuty, d.isLoanDuty, 'Exempted');
+      updateRow('row-valuation', 'res-valuation-wrap', 'res-valuation', d.rawValuation, d.isValuation, 'Exempted');
+
+      // Total Cash
+      if (document.getElementById('res-total-cash')) {
+        document.getElementById('res-total-cash').textContent = 'RM ' + Math.round(d.totalCash).toLocaleString('en-US');
+      }
+    }
+
+    // --- UNIVERSAL TEXT FORMATTING (NATIVE BOLD & ITALIC FOR WHATSAPP, TELEGRAM, SMS, ETC.) ---
+    function toUnicodeBold(str) {
+      return Array.from(str).map(ch => {
+        const c = ch.codePointAt(0);
+        if (c >= 65 && c <= 90) return String.fromCodePoint(0x1D5D4 + c - 65); // Sans-serif Bold A-Z
+        if (c >= 97 && c <= 122) return String.fromCodePoint(0x1D5EE + c - 97); // Sans-serif Bold a-z
+        if (c >= 48 && c <= 57) return String.fromCodePoint(0x1D7EC + c - 48); // Sans-serif Bold 0-9
+        return ch;
+      }).join('');
+    }
+
+    function toUnicodeItalic(str) {
+      return Array.from(str).map(ch => {
+        const c = ch.codePointAt(0);
+        if (c >= 65 && c <= 90) return String.fromCodePoint(0x1D608 + c - 65); // Sans-serif Italic A-Z
+        if (c >= 97 && c <= 122) return String.fromCodePoint(0x1D622 + c - 97); // Sans-serif Italic a-z
+        return ch;
+      }).join('');
+    }
+
+    function toUnicodeUnderline(str) {
+      return Array.from(str).map(ch => (ch === '\n' || ch === ' ') ? ch : ch + '\u0332').join('');
+    }
+
+    function formatUniversalShareText(text) {
+      if (!text) return '';
+      let res = text.replace(/<u>([\s\S]*?)<\/u>/gi, (m, inner) => toUnicodeUnderline(inner));
+      res = res.replace(/(\*\*|\*)([^\*\n]+?)\1/g, (m, p1, inner) => toUnicodeBold(inner));
+      res = res.replace(/(_)([^_\n]+?)\1/g, (m, p1, inner) => toUnicodeItalic(inner));
+      return res;
+    }
+
+    // Sleek Toast Notification for Calculator
+    function showCalcToast(msg) {
+      let toast = document.getElementById('calc-share-toast');
+      if (!toast) {
+        toast = document.createElement('div');
+        toast.id = 'calc-share-toast';
+        toast.style.cssText = 'position:fixed; bottom:28px; left:50%; transform:translateX(-50%); background:#0f172a; color:#ffffff; padding:12px 24px; border-radius:30px; font-size:0.9rem; font-weight:600; box-shadow:0 10px 30px rgba(0,0,0,0.3); z-index:999999; display:flex; align-items:center; gap:10px; opacity:0; transition:all 0.3s cubic-bezier(0.16, 1, 0.3, 1); pointer-events:none; border:1px solid rgba(255,255,255,0.15); max-width:90vw; text-align:center;';
+        document.body.appendChild(toast);
+      }
+      toast.innerHTML = '<span>📋</span> <span>' + msg + '</span>';
+      toast.style.opacity = '1';
+      toast.style.transform = 'translateX(-50%) translateY(0)';
+      clearTimeout(window.__calcToastTimer);
+      window.__calcToastTimer = setTimeout(() => {
+        toast.style.opacity = '0';
+        toast.style.transform = 'translateX(-50%) translateY(12px)';
+      }, 4000);
+    }
+
+    function copyToClipboardWithFeedback(text, btnId, successToast) {
+      const btn = document.getElementById(btnId);
+      const originalHtml = btn ? btn.innerHTML : '';
+
+      function onCopied() {
+        if (btn) {
+          btn.style.transition = 'all 0.25s ease';
+          btn.style.borderColor = '#10b981';
+          btn.style.background = '#ecfdf5';
+          btn.style.color = '#047857';
+          btn.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#047857" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><polyline points="20 6 9 17 4 12"></polyline></svg> <span>Disalin ke Clipboard! (Sedia Paste)</span>';
+          setTimeout(() => {
+            btn.innerHTML = originalHtml;
+            btn.style.borderColor = '';
+            btn.style.background = '';
+            btn.style.color = '';
+          }, 3500);
+        }
+        showCalcToast(successToast || 'Maklumat pengiraan lengkap & nota telah disalin ke clipboard! Sedia dipaste (Ctrl+V) ke Telegram, WhatsApp atau Facebook.');
+      }
+
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(onCopied).catch(() => {
+          fallbackCopy(text, onCopied);
+        });
+      } else {
+        fallbackCopy(text, onCopied);
+      }
+
+      function fallbackCopy(str, cb) {
+        try {
+          const ta = document.createElement('textarea');
+          ta.value = str;
+          ta.setAttribute('readonly', '');
+          ta.style.position = 'fixed';
+          ta.style.left = '-9999px';
+          ta.style.top = '-9999px';
+          document.body.appendChild(ta);
+          ta.focus();
+          ta.select();
+          document.execCommand('copy');
+          document.body.removeChild(ta);
+          if (cb) cb();
+        } catch(e) {
+          prompt('Salin maklumat ini:', str);
+        }
+      }
+    }
+
+    function shareCalculatorResults() {
+      const d = computeLegalBreakdown();
+      const depositVal = Math.round(d.downpayment).toLocaleString('en-US');
+      const loanStr = 'RM ' + Math.round(d.loanAmount).toLocaleString('en-US');
+      const monthlyStr = 'RM ' + Math.round(d.monthlyPMT).toLocaleString('en-US') + ' / mo';
+
+      const spaStr = d.isSpa ? ('RM ' + Math.round(d.rawSpaFee).toLocaleString('en-US')) : 'RM 0 [EXCLUDED]';
+      const motStr = d.isMot ? ('RM ' + Math.round(d.rawMotDuty).toLocaleString('en-US')) : 'RM 0 [EXEMPTED / EXCLUDED]';
+      const loanFeeStr = d.isLoanFee ? ('RM ' + Math.round(d.rawLoanFee).toLocaleString('en-US')) : 'RM 0 [FREE BANK PACKAGE]';
+      const loanDutyStr = d.isLoanDuty ? ('RM ' + Math.round(d.rawLoanDuty).toLocaleString('en-US')) : 'RM 0 [STAMP DUTY EXEMPTION]';
+      const valuationStr = d.isValuation ? ('RM ' + Math.round(d.rawValuation).toLocaleString('en-US')) : 'RM 0 [EXEMPTED]';
+      const totalCashStr = 'RM ' + Math.round(d.totalCash).toLocaleString('en-US');
+
+      const url = window.location.origin + '/calculator#legal';
+
+      const rawShareText = 
+`*ESTIMATED PROPERTY FEES & INSTALLMENTS*
+═════════════════
+*Property Price:* RM ` + Math.round(d.price).toLocaleString('en-US') + `
+*Downpayment (` + d.downPct + `%):* RM ` + depositVal + `
+*Loan Amount (` + (100 - d.downPct) + `%):* ` + loanStr + `
+*Interest Rate:* ` + d.annualRate + `% (` + d.tenureYears + ` Tahun)
+
+*Monthly Installment:* ` + monthlyStr + `
+
+*LEGAL FEES & STAMP DUTY BREAKDOWN:*
+• SPA Legal Fees: ` + spaStr + `
+• MOT Stamp Duty: ` + motStr + `
+• Loan Legal Fees: ` + loanFeeStr + `
+• Loan Stamp Duty: ` + loanDutyStr + `
+• Property Valuation Fee: ` + valuationStr + `
+
+*TOTAL ENTRY CASH REQUIRED:* ` + totalCashStr + `
+═════════════════
+_Nota: Ini adalah anggaran kiraan sahaja, tertakluk kepada sebut harga (quotation) sebenar daripada pihak peguam & bank._
+
+_Zaim Rosli Real Estate (REN39575)_
+` + url;
+
+      const shareText = formatUniversalShareText(rawShareText);
+
+      const isMobile = /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent);
+      if (isMobile && navigator.share) {
+        navigator.share({
+          title: 'Kalkulator Yuran Hartanah — Zaim Rosli',
+          text: shareText
+        }).catch((err) => {
+          if (err && err.name !== 'AbortError') {
+            copyToClipboardWithFeedback(shareText, 'calc-share-btn');
+          }
+        });
+      } else {
+        copyToClipboardWithFeedback(shareText, 'calc-share-btn');
+      }
+    }
+
+    // --- TAB 2: CENTRALIZED DSR (DEBT SERVICE RATIO) CALCULATION LOGIC ---
+    function computeDsrBreakdown() {
+      const salaryIn = document.getElementById('dsr-salary');
+      const otherIncomeIn = document.getElementById('dsr-other-income');
+      const carIn = document.getElementById('dsr-car');
+      const personalIn = document.getElementById('dsr-personal');
+      const cardIn = document.getElementById('dsr-card');
+      const ptptnIn = document.getElementById('dsr-ptptn');
+      const newLoanIn = document.getElementById('dsr-new-loan');
+      const maxBenchmarkIn = document.getElementById('dsr-max-benchmark');
+
+      const salary = (salaryIn && parseFloat(salaryIn.value)) || 0;
+      const otherIncome = (otherIncomeIn && parseFloat(otherIncomeIn.value)) || 0;
+      const car = (carIn && parseFloat(carIn.value)) || 0;
+      const personal = (personalIn && parseFloat(personalIn.value)) || 0;
+      const card = (cardIn && parseFloat(cardIn.value)) || 0;
+      const ptptn = (ptptnIn && parseFloat(ptptnIn.value)) || 0;
+      const newLoan = (newLoanIn && parseFloat(newLoanIn.value)) || 0;
+      const maxBenchmark = (maxBenchmarkIn && parseFloat(maxBenchmarkIn.value)) || 70;
+
+      const totalIncome = salary + otherIncome;
+      const existingCommitments = car + personal + card + ptptn;
+      const totalCommitments = existingCommitments + newLoan;
+
+      let dsrPct = 0;
+      if (totalIncome > 0) {
+        dsrPct = (totalCommitments / totalIncome) * 100;
+      }
+
+      // Max Allowable Housing Installment
+      const maxAllowableTotal = (totalIncome * (maxBenchmark / 100));
+      const maxHousingInstallment = Math.max(0, maxAllowableTotal - existingCommitments);
+
+      // Estimate Max Property Price based on Max Housing Installment (35 yrs @ 4.2% rate, 90% loan)
+      let maxPropertyPrice = 0;
+      if (maxHousingInstallment > 0) {
+        const monthlyRate = (4.2 / 100) / 12;
+        const totalMonths = 35 * 12;
+        const maxLoan = maxHousingInstallment * ((1 - Math.pow(1 + monthlyRate, -totalMonths)) / monthlyRate);
+        maxPropertyPrice = maxLoan / 0.90;
+      }
+
+      let meterClass = '';
+      let statusBadge = '';
+      let statusTitle = '';
+      let statusDesc = '';
+
+      if (dsrPct <= (maxBenchmark - 10)) {
+        meterClass = 'status-good';
+        statusBadge = 'EXCELLENT (HIGH APPROVAL PROBABILITY)';
+        statusTitle = 'Debt Ratio Within Healthy Zone';
+        statusDesc = 'Your financial profile is in the optimal bank lending zone. Commercial bank mortgage approval probability is exceptionally high.';
+      } else if (dsrPct <= maxBenchmark) {
+        meterClass = 'status-warn';
+        statusBadge = 'MODERATE (BORDERLINE APPROVAL)';
+        statusTitle = 'Debt Ratio Near Maximum Limit';
+        statusDesc = 'Application may be considered by selected banks but requires a clean CCRIS/CTOS credit history and strong income documentation.';
+      } else {
+        meterClass = 'status-danger';
+        statusBadge = 'HIGH RISK (EXCEEDS BANK DSR LIMIT)';
+        statusTitle = 'Debt Ratio Exceeds Bank Benchmark';
+        statusDesc = 'Commitments exceed the bank DSR threshold. It is recommended to extend the loan tenure, clear older debts, or apply with a joint applicant.';
+      }
+
+      return {
+        salary,
+        otherIncome,
+        totalIncome,
+        car,
+        personal,
+        card,
+        ptptn,
+        existingCommitments,
+        newLoan,
+        totalCommitments,
+        maxBenchmark,
+        dsrPct,
+        maxHousingInstallment,
+        maxPropertyPrice,
+        meterClass,
+        statusBadge,
+        statusTitle,
+        statusDesc
+      };
+    }
+
+    function calculateDSR() {
+      const d = computeDsrBreakdown();
+
+      // Update UI elements
+      if (document.getElementById('dsr-pct-display')) {
+        document.getElementById('dsr-pct-display').textContent = d.dsrPct.toFixed(1) + '%';
+      }
+      if (document.getElementById('dsr-res-income')) {
+        document.getElementById('dsr-res-income').textContent = 'RM ' + Math.round(d.totalIncome).toLocaleString('en-US');
+      }
+      if (document.getElementById('dsr-res-existing')) {
+        document.getElementById('dsr-res-existing').textContent = 'RM ' + Math.round(d.existingCommitments).toLocaleString('en-US');
+      }
+      if (document.getElementById('dsr-res-total')) {
+        document.getElementById('dsr-res-total').textContent = 'RM ' + Math.round(d.totalCommitments).toLocaleString('en-US');
+      }
+      if (document.getElementById('dsr-res-benchmark')) {
+        document.getElementById('dsr-res-benchmark').textContent = d.maxBenchmark + '%';
+      }
+      if (document.getElementById('dsr-res-max-installment')) {
+        document.getElementById('dsr-res-max-installment').textContent = 'RM ' + Math.round(d.maxHousingInstallment).toLocaleString('en-US') + ' / mo';
+      }
+      if (document.getElementById('dsr-res-max-price')) {
+        document.getElementById('dsr-res-max-price').textContent = '~ RM ' + Math.round(d.maxPropertyPrice).toLocaleString('en-US');
+      }
+
+      // Update Status Meter
+      const meterBox = document.getElementById('dsr-meter-box');
+      const badge = document.getElementById('dsr-status-badge');
+      const title = document.getElementById('dsr-status-title');
+      const desc = document.getElementById('dsr-status-desc');
+
+      if (meterBox) {
+        meterBox.classList.remove('status-good', 'status-warn', 'status-danger');
+        meterBox.classList.add(d.meterClass);
+      }
+      if (badge) badge.textContent = d.statusBadge;
+      if (title) title.textContent = d.statusTitle;
+      if (desc) desc.textContent = d.statusDesc;
+
+      // Update WhatsApp consult link
+      const waBtn = document.getElementById('dsr-wa-consult-btn');
+      if (waBtn) {
+        const waMsg = 'Hi Zaim, I have completed a DSR bank eligibility check on your portal:\n' +
+          '- Net Monthly Income: RM ' + Math.round(d.totalIncome).toLocaleString('en-US') + '\n' +
+          '- Existing Commitments: RM ' + Math.round(d.existingCommitments).toLocaleString('en-US') + '\n' +
+          '- Proposed Home Installment: RM ' + Math.round(d.newLoan).toLocaleString('en-US') + '\n' +
+          '- DSR Score: ' + d.dsrPct.toFixed(1) + '% (' + d.maxBenchmark + '% Max Limit)\n\n' +
+          'Could you assist with mortgage pre-approval and recommend matching properties?';
+        waBtn.href = 'https://wa.me/60108118559?text=' + encodeURIComponent(waMsg);
+      }
+    }
+
+    function shareDsrResults() {
+      const d = computeDsrBreakdown();
+      const incomeStr = 'RM ' + Math.round(d.totalIncome).toLocaleString('en-US');
+      const existingStr = 'RM ' + Math.round(d.existingCommitments).toLocaleString('en-US');
+      const totalCommStr = 'RM ' + Math.round(d.totalCommitments).toLocaleString('en-US');
+      const dsrPctStr = d.dsrPct.toFixed(1) + '%';
+      const maxInstallmentStr = 'RM ' + Math.round(d.maxHousingInstallment).toLocaleString('en-US') + ' / mo';
+      const maxPriceStr = '~ RM ' + Math.round(d.maxPropertyPrice).toLocaleString('en-US');
+      const url = window.location.origin + '/calculator#dsr';
+
+      const rawShareText = 
+`*BANK LOAN ELIGIBILITY ASSESSMENT (DSR)*
+═════════════════
+*Net Income:* ` + incomeStr + `
+*Existing Commitments:* ` + existingStr + `
+*Total Commitments:* ` + totalCommStr + `
+
+*Debt Service Ratio (DSR):* ` + dsrPctStr + `
+*Eligibility Status:* ` + d.statusBadge + `
+
+*Max Allowable Installment:* ` + maxInstallmentStr + `
+*Estimated Affordable Property Price:* ` + maxPriceStr + `
+═════════════════
+_Nota: Ini adalah anggaran kiraan sahaja, tertakluk kepada semakan rasmi dan polisi kredit institusi perbankan (CCRIS / CTOS)._
+
+_Zaim Rosli Real Estate (REN39575)_
+` + url;
+
+      const shareText = formatUniversalShareText(rawShareText);
+
+      const isMobile = /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent);
+      if (isMobile && navigator.share) {
+        navigator.share({
+          title: 'Semakan DSR Kelayakan Pinjaman — Zaim Rosli',
+          text: shareText
+        }).catch((err) => {
+          if (err && err.name !== 'AbortError') {
+            copyToClipboardWithFeedback(shareText, 'dsr-share-btn');
+          }
+        });
+      } else {
+        copyToClipboardWithFeedback(shareText, 'dsr-share-btn');
+      }
+    }
+
+    // Initialize Page & Event Listeners
+    document.addEventListener('DOMContentLoaded', () => {
+      // Check URL hash (#dsr or #legal)
+      const hash = window.location.hash.toLowerCase();
+      if (hash === '#dsr') {
+        switchCalcTab('dsr');
+      } else {
+        switchCalcTab('legal');
+      }
+
+      window.addEventListener('hashchange', () => {
+        const currentHash = window.location.hash.toLowerCase();
+        if (currentHash === '#dsr') {
+          switchCalcTab('dsr');
+        } else {
+          switchCalcTab('legal');
+        }
+      });
+
+      // Tab 1 Inputs Listeners
+      const legalInputs = ['calc-price', 'calc-down', 'calc-rate', 'calc-tenure'];
+      legalInputs.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) {
+          el.addEventListener('input', calculateLegal);
+          el.addEventListener('change', calculateLegal);
+        }
+      });
+      const runLegalBtn = document.getElementById('calc-run-btn');
+      if (runLegalBtn) runLegalBtn.addEventListener('click', calculateLegal);
+
+      // Tab 2 Inputs Listeners
+      const dsrInputs = ['dsr-salary', 'dsr-other-income', 'dsr-car', 'dsr-personal', 'dsr-card', 'dsr-ptptn', 'dsr-new-loan', 'dsr-max-benchmark'];
+      dsrInputs.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) {
+          el.addEventListener('input', calculateDSR);
+          el.addEventListener('change', calculateDSR);
+        }
+      });
+      const runDsrBtn = document.getElementById('dsr-run-btn');
+      if (runDsrBtn) runDsrBtn.addEventListener('click', calculateDSR);
+
+      // Initial runs
+      calculateLegal();
+      calculateDSR();
     });
   </script>
+  <script src="/pwa.js"></script>
 </body>
 </html>

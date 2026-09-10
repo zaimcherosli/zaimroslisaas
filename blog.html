@@ -7,7 +7,7 @@
   <meta name="description" content="Panduan lengkap rumah sewa di Malaysia, kiraan deposit 2+1, duti setem tenancy agreement, panduan pembeli rumah pertama, DSR, dan strategi pelaburan hartanah 2026.">
   <meta name="keywords" content="rumah sewa, rumah sewa malaysia, panduan sewa rumah, tenancy agreement malaysia, deposit rumah sewa, duti setem sewa lhdn, sewa rumah selangor, sewa rumah kl, blog hartanah malaysia, zaim rosli">
   <link rel="canonical" href="https://zaimrosli.my/blog">
-  <link rel="stylesheet" href="/styles.css?v=80">
+  <link rel="stylesheet" href="/styles.css?v=129">
   <link rel="manifest" href="/manifest.json">
   <meta name="theme-color" content="#0f172a">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -640,6 +640,7 @@
             Properties <span class="arrow">▾</span>
           </a>
           <div class="dropdown-menu">
+            <a href="/properties/undercon" class="dropdown-item" style="color: #fbbf24; font-weight: 700;">Undercons / New Projects</a>
             <a href="/properties/residential" class="dropdown-item">Residential Properties</a>
             <a href="/properties/commercial-industrial" class="dropdown-item">Commercial & Industrial</a>
             <div style="margin: 4px 8px; border-top: 1px solid rgba(255,255,255,0.15);"></div>
@@ -1391,7 +1392,7 @@
 
   <script src="/properties-data.js?v=133"></script>
   <script src="/locations-config.js?v=20"></script>
-  <script src="/app.js?v=80"></script>
+  <script src="/app.js?v=130"></script>
 
   <script>
     // Data Lengkap 7 Artikel Hartanah Berkualiti Tinggi (Sokongan Dwi-Bahasa BM & EN)
@@ -2529,7 +2530,7 @@
           <p>The primary barrier for first-time home buyers is rarely the monthly installment alone—it is the <strong>accumulated upfront cash required</strong>.</p>
 
           <div class="blog-highlight-box">
-            <strong>Upfront Capital Comparison (RM500,000 Property Purchase vs RM1,800/mo Rental):</strong><br><br>
+            <strong>Upfront Capital Comparison (RM500,000 Property Purchase vs RM1,800/month Rental):</strong><br><br>
             • <strong>Home Purchase Capital:</strong> 10% Downpayment (RM50,000) + SPA Legal Fee & MOT Stamp Duty (RM16,500) + Loan Agreement & Valuation (RM6,500) + Basic Renovation & Furnishing (RM20,000) = <strong>Est. Total Cash: RM93,000</strong>.<br><br>
             • <strong>Rental Capital:</strong> 2+1+0.5 month deposit + Tenancy Agreement Stamping = <strong>Est. Total Cash: RM6,800</strong>.
           </div>
@@ -3284,9 +3285,13 @@
           : 'Baca panduan dan analisis hartanah sahih daripada Perunding Hartanah Berdaftar Zaim Rosli (REN39575).';
       }
 
-      const shareText = isEn
+      const rawShareText = isEn
         ? `*${title}*\n\n*Key Highlights:* ${excerpt}\n\n*Read the full guide here:*\n${url}\n\nShared from Zaim Rosli (REN39575) Real Estate Portal\n#PropertyMalaysia #ZaimRosli #RealEstate`
         : `*${title}*\n\n*Ringkasan Utama:* ${excerpt}\n\n*Baca panduan penuh di sini:*\n${url}\n\nDikongsi daripada Portal Hartanah Zaim Rosli (REN39575)\n#HartanahMalaysia #ZaimRosli #EjenHartanah`;
+
+      const shareText = (typeof window.formatUniversalShareText === 'function')
+        ? window.formatUniversalShareText(rawShareText)
+        : rawShareText;
 
       return {
         title,

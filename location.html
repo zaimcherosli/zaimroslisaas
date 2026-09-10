@@ -3,17 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- SEO_BLOCK_START -->
   <title id="ssr-title">Hartanah di Malaysia — Zaim Rosli (REN39575)</title>
   <meta name="description" id="ssr-desc" content="Senarai hartanah untuk dijual dan disewa di Malaysia. Disahkan oleh REN Berdaftar.">
-  
   <link rel="canonical" id="ssr-canonical" href="https://zaimrosli.my/properties">
+  <meta name="robots" content="noindex, follow">
   <meta property="og:type" content="website">
   <meta property="og:title" id="ssr-og-title" content="Hartanah di Malaysia — Zaim Rosli (REN39575)">
   <meta property="og:description" id="ssr-og-desc" content="Senarai hartanah untuk dijual dan disewa di Malaysia.">
   <meta property="og:url" id="ssr-og-url" content="https://zaimrosli.my/properties">
   <meta property="og:image" content="https://zaimrosli.my/icons/og-share.jpg">
+  <!-- SEO_BLOCK_END -->
 
-  <link rel="stylesheet" href="/styles.css?v=94">
+  <link rel="stylesheet" href="/styles.css?v=133">
   <link rel="manifest" href="/manifest.json">
   <meta name="theme-color" content="#0f172a">
   <link rel="icon" type="image/png" sizes="192x192" href="/icons/icon-192.png">
@@ -191,7 +193,7 @@
       }
     }
   </style>
-  <script src="/analytics.js?v=94" defer></script>
+  <script src="/analytics.js?v=129" defer></script>
 </head>
 <body>
 
@@ -212,6 +214,7 @@
             Properties <span class="arrow">▾</span>
           </a>
           <div class="dropdown-menu">
+            <a href="/properties/undercon" class="dropdown-item" style="color: #fbbf24; font-weight: 700;">Undercons / New Projects</a>
             <a href="/properties/residential" class="dropdown-item">Residential Properties</a>
             <a href="/properties/commercial-industrial" class="dropdown-item">Commercial & Industrial</a>
             <div style="margin: 4px 8px; border-top: 1px solid rgba(255,255,255,0.15);"></div>
@@ -222,7 +225,10 @@
             <div style="margin: 6px 8px; border-top: 1px solid rgba(255,255,255,0.15);"></div>
             <div class="dropdown-section-header" style="font-size: 0.72rem; font-weight: 800; color: #fbbf24; padding: 4px 14px 2px; text-transform: uppercase; letter-spacing: 0.8px;">LOKASI FOKUS</div>
             <a href="/properties/bangi" class="dropdown-item">Bangi Properties</a>
+            <a href="/properties/kajang" class="dropdown-item">Kajang Properties</a>
+            <a href="/properties/semenyih" class="dropdown-item">Semenyih Properties</a>
             <a href="/properties/nilai" class="dropdown-item">Nilai Properties</a>
+            <a href="/properties/kawasan-perindustrian-bangi" class="dropdown-item">Industri & Kilang</a>
             </div>
           </div>
         </li>
@@ -324,7 +330,10 @@
               <div class="mobile-subgroup-title">LOKASI FOKUS</div>
               <div class="area-focus-nav area-focus-mobile">
                 <a href="/properties/bangi" class="mobile-sublink">Bangi Properties</a>
+                <a href="/properties/kajang" class="mobile-sublink">Kajang Properties</a>
+                <a href="/properties/semenyih" class="mobile-sublink">Semenyih Properties</a>
                 <a href="/properties/nilai" class="mobile-sublink">Nilai Properties</a>
+                <a href="/properties/kawasan-perindustrian-bangi" class="mobile-sublink">Industri & Kilang</a>
               </div>
             </div>
           </li>
@@ -445,7 +454,55 @@
 
   <!-- Main Content & Listings Grid -->
   <main class="container py-8" style="padding-top: 32px; padding-bottom: 64px;">
-    
+
+    <!-- Market Intelligence & Subsale Intelligence Box (Inspirasi List.my / JPPH) -->
+    <div class="market-intel-card" id="market-intel-card" style="background: linear-gradient(145deg, #1e293b 0%, #0f172a 100%); border: 1px solid rgba(217, 119, 6, 0.35); border-radius: 16px; padding: 24px; margin-bottom: 32px; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.3);">
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 18px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 14px;">
+        <div>
+          <h2 style="font-size: 1.15rem; font-weight: 800; color: #ffffff; margin: 0;">Market Intelligence & Trend Subsale: <span id="market-loc-title" style="color: var(--accent-gold);">Lokasi Ini</span></h2>
+          <span style="font-size: 0.78rem; color: #94a3b8;">Penanda aras harga transaksi subsale sebenar & analisis pasaran setempat</span>
+        </div>
+        <span style="display: inline-flex; align-items: center; background: rgba(16,185,129,0.12); border: 1px solid rgba(16,185,129,0.3); color: #34d399; font-size: 0.75rem; font-weight: 700; padding: 4px 12px; border-radius: 20px; letter-spacing: 0.5px; text-transform: uppercase;">
+          Data Disahkan Pasaran
+        </span>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 20px;">
+        <div style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 14px 16px;">
+          <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.5px; color: #94a3b8; margin-bottom: 4px;">Median Harga Subsale</div>
+          <div style="font-size: 1.35rem; font-weight: 800; color: #fbbf24;" id="market-median-price">RM 580,000</div>
+          <div style="font-size: 0.72rem; color: #64748b; margin-top: 2px;" id="market-dominant-type">Teres & Semi-D</div>
+        </div>
+
+        <div style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 14px 16px;">
+          <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.5px; color: #94a3b8; margin-bottom: 4px;">Purata Harga PSF</div>
+          <div style="font-size: 1.35rem; font-weight: 800; color: #38bdf8;" id="market-psf">RM 380 - RM 460 psf</div>
+          <div style="font-size: 0.72rem; color: #64748b; margin-top: 2px;">Keluasan Standard</div>
+        </div>
+
+        <div style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 14px 16px;">
+          <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.5px; color: #94a3b8; margin-bottom: 4px;">Anggaran Rental Yield</div>
+          <div style="font-size: 1.35rem; font-weight: 800; color: #34d399;" id="market-yield">4.3% - 5.2%</div>
+          <div style="font-size: 0.72rem; color: #64748b; margin-top: 2px;" id="market-rental-range">Sewa: RM 1,500 - RM 2,800/bln</div>
+        </div>
+
+        <div style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 14px 16px;">
+          <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.5px; color: #94a3b8; margin-bottom: 4px;">Tahap Permintaan</div>
+          <div style="font-size: 1.15rem; font-weight: 800; color: #f43f5e;" id="market-demand">Sangat Tinggi</div>
+          <div style="font-size: 0.72rem; color: #64748b; margin-top: 2px;">Keluarga & Profesional</div>
+        </div>
+      </div>
+
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; background: rgba(0,0,0,0.25); border-radius: 10px; padding: 12px 16px;">
+        <p style="font-size: 0.85rem; color: #cbd5e1; margin: 0; max-width: 650px; line-height: 1.5;">
+          <strong>Nota Pasaran:</strong> Data harga transaksi subsale membantu pembeli dan pemilik meletakkan jangkaan harga realistik mengikut nilai pasaran bank semasa (bank valuation), mengelakkan risiko penilaian rendah (*undervalue*).
+        </p>
+        <a id="market-valuation-cta" href="https://wa.me/60108118559?text=Salam%20Zaim,%20saya%20nak%20semak%20market%20value%20rumah%20di%20kawasan%20ini" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; background: var(--accent-gold); color: #0f172a; font-size: 0.82rem; font-weight: 800; padding: 10px 18px; border-radius: 8px; text-decoration: none; white-space: nowrap;">
+          Semak Nilai Rumah Percuma
+        </a>
+      </div>
+    </div>
+
     <!-- Filter Tabs -->
     <div class="filter-tabs-bar" id="loc-filter-tabs">
       <button class="loc-tab-btn active" data-filter="all" onclick="filterLocationListings('all')">All Listings (<span id="count-all">0</span>)</button>
@@ -474,10 +531,10 @@
       <div>
         <h3 style="font-size: 1.35rem; font-weight: 800; margin-bottom: 8px; color: #ffffff;">Pemilik Hartanah di <span id="cta-loc-name">Kawasan Ini</span>?</h3>
         <p style="font-size: 0.95rem; color: #cbd5e1; max-width: 600px; line-height: 1.5;">
-          Lantik Zaim Rosli (REN39575) untuk khidmat semakan nilai pasaran profesional percuma, penyediaan profil listing berkualiti tinggi, dan pemasaran kepada pembeli & penyewa sedia ada.
+          Dapatkan semakan nilai pasaran profesional percuma (*bank valuation*) dan rekod transaksi subsale terkini untuk unit anda bersama Zaim Rosli (REN39575).
         </p>
       </div>
-      <a href="https://wa.me/60108118559?text=Halo%20Zaim,%20saya%20pemilik%20hartanah%20dan%20ingin%20dapatkan%20nasihat%20jualan/sewaan" target="_blank" rel="noopener noreferrer" class="btn btn-accent" style="white-space: nowrap; padding: 12px 24px;">Lantik Ejen Hartanah</a>
+      <a id="owner-cta-btn" href="https://wa.me/60108118559?text=Halo%20Zaim,%20saya%20pemilik%20hartanah%20dan%20ingin%20dapatkan%20nasihat%20jualan/sewaan" target="_blank" rel="noopener noreferrer" class="btn btn-accent" style="white-space: nowrap; padding: 12px 24px;">Semak Nilai Pasaran Percuma</a>
     </div>
 
     <!-- Location FAQs -->
@@ -497,8 +554,8 @@
 
   <!-- Scripts -->
   <script src="/properties-data.js?v=133"></script>
-  <script src="/locations-config.js?v=20"></script>
-  <script src="/app.js?v=94"></script>
+  <script src="/locations-config.js?v=21"></script>
+  <script src="/app.js?v=133"></script>
 
   <script>
     let locationProperties = [];
@@ -512,9 +569,49 @@
       const config = (window.LOCATIONS_CONFIG && window.LOCATIONS_CONFIG[locSlug]) ? window.LOCATIONS_CONFIG[locSlug] : (window.__LOCATION_CONFIG__ || null);
       if (!config) return;
 
+      // Update Market Data & Dynamic WhatsApp CTAs
+      if (config.marketData) {
+        const md = config.marketData;
+        const medEl = document.getElementById('market-median-price');
+        const domEl = document.getElementById('market-dominant-type');
+        const psfEl = document.getElementById('market-psf');
+        const yieldEl = document.getElementById('market-yield');
+        const rentRngEl = document.getElementById('market-rental-range');
+        const demandEl = document.getElementById('market-demand');
+        const locTitleEl = document.getElementById('market-loc-title');
+        const valCtaEl = document.getElementById('market-valuation-cta');
+        const ownerCtaBtn = document.getElementById('owner-cta-btn');
+
+        if (medEl) medEl.innerText = md.medianPrice || '-';
+        if (domEl) domEl.innerText = md.dominantType || '-';
+        if (psfEl) psfEl.innerText = md.avgPsf || '-';
+        if (yieldEl) yieldEl.innerText = md.rentalYield || '-';
+        if (rentRngEl) rentRngEl.innerText = `Sewa: ${md.rentalRange || '-'}`;
+        if (demandEl) demandEl.innerText = md.demandRating || 'Tinggi';
+        if (locTitleEl) locTitleEl.innerText = config.name;
+
+        const waMsg = encodeURIComponent(`Salam Zaim, saya pemilik hartanah di ${config.name} dan ingin semak anggaran market value serta rekod transaksi subsale terkini.`);
+        if (valCtaEl) valCtaEl.href = `https://wa.me/60108118559?text=${waMsg}`;
+        if (ownerCtaBtn) ownerCtaBtn.href = `https://wa.me/60108118559?text=${waMsg}`;
+      }
+
+      // Update Subareas Links if container empty
+      const subareasListEl = document.getElementById('subareas-list');
+      if (subareasListEl && subareasListEl.children.length === 0 && Array.isArray(config.subareas)) {
+        subareasListEl.innerHTML = config.subareas.map(s => {
+          const sName = typeof s === 'string' ? s : s.name;
+          const sSlug = typeof s === 'object' && s.slug ? s.slug : null;
+          if (sSlug) {
+            return `<a href="/properties/${sSlug}" class="subarea-pill" style="text-decoration: none;">${sName}</a>`;
+          }
+          return `<span class="subarea-pill">${sName}</span>`;
+        }).join('');
+      }
+
       // 2. Set dataset (prefer SSR injected data, then fetch live if needed)
       if (window.__LOCATION_INITIAL_DATA__ && Array.isArray(window.__LOCATION_INITIAL_DATA__)) {
         locationProperties = window.__LOCATION_INITIAL_DATA__;
+        renderLocationListings();
       } else {
         fetchLiveLocationData(config);
       }
