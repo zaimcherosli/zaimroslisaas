@@ -2793,9 +2793,6 @@
     
     async function getAdminAuthHeaders(extraHeaders = {}) {
       const headers = { ...extraHeaders };
-      const ADMIN_SECRET = 'zr_admin_sec_2026_x89p';
-      headers['X-Admin-Key'] = ADMIN_SECRET;
-      
       try {
         let { data: { session } } = await supabaseClient.auth.getSession();
         if (!session || !session.access_token) {
@@ -2806,11 +2803,9 @@
         }
         if (session && session.access_token) {
           headers['Authorization'] = 'Bearer ' + session.access_token;
-        } else {
-          headers['Authorization'] = 'Bearer ' + ADMIN_SECRET;
         }
       } catch (e) {
-        headers['Authorization'] = 'Bearer ' + ADMIN_SECRET;
+        console.warn('Auth header retrieval error:', e);
       }
       return headers;
     }
@@ -3899,19 +3894,7 @@
               saved = true;
               break;
             } else if (res.status === 401) {
-              authHeaders['Authorization'] = 'Bearer zr_admin_sec_2026_x89p';
-              authHeaders['X-Admin-Key'] = 'zr_admin_sec_2026_x89p';
-              let retryRes = await fetch(ep, {
-                method: 'POST',
-                headers: authHeaders,
-                body: JSON.stringify(fullList),
-                signal: AbortSignal.timeout(10000)
-              });
-              if (retryRes.ok) {
-                console.log('✓ Successfully persisted with admin key via ' + ep);
-                saved = true;
-                break;
-              }
+              console.warn('Persistence unauthorized on ' + ep + '. Ensure active Supabase admin session.');
             }
           } catch(errEp) {
             console.warn('Save attempt failed on ' + ep + ':', errEp.message);

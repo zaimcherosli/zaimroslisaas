@@ -5,7 +5,6 @@
  */
 
 const WORKER_ENDPOINT = 'https://zaimrosli-worker.huzaimrosli.workers.dev/api/properties';
-const ADMIN_API_KEY = 'zr_admin_sec_2026_x89p';
 
 export async function onRequestGet(context) {
   const corsHeaders = {
@@ -70,16 +69,19 @@ export async function onRequestPost(context) {
 
   try {
     const body = await context.request.text();
-    const authHeader = context.request.headers.get('Authorization') || `Bearer ${ADMIN_API_KEY}`;
-    const adminKeyHeader = context.request.headers.get('X-Admin-Key') || ADMIN_API_KEY;
+    const envKey = (context.env && context.env.ADMIN_API_KEY) || '';
+    const authHeader = context.request.headers.get('Authorization') || (envKey ? `Bearer ${envKey}` : '');
+    const adminKeyHeader = context.request.headers.get('X-Admin-Key') || envKey;
+
+    const proxyHeaders = {
+      'Content-Type': 'application/json'
+    };
+    if (authHeader) proxyHeaders['Authorization'] = authHeader;
+    if (adminKeyHeader) proxyHeaders['X-Admin-Key'] = adminKeyHeader;
 
     const resp = await fetch(WORKER_ENDPOINT, {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': authHeader,
-        'X-Admin-Key': adminKeyHeader
-      },
+      headers: proxyHeaders,
       body: body
     });
 
